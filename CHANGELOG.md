@@ -1,3 +1,10 @@
+# [1.0.0-dev.2](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2025-12-07)
+
+
+### Bug Fixes
+
+* Fix publish? ([864f2ee](https://github.com/MorpheApp/morphe-patches/commit/864f2ee5cd4717930d7a74e3de597bfca6eeb2aa))
+
 # 1.0.0-dev.1 (2025-12-07)
 
 
