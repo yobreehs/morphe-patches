@@ -6,9 +6,9 @@ patches {
         description = "Patches for Morphe"
         source = "git@github.com:MorpheApp/morphe-patches.git"
         author = "MorpheApp"
-        contact = "na@na"
-        website = "na"
-        license = "GNU General Public License v3.0, with project attributation required"
+        contact = "na"
+        website = "https://morphe.software"
+        license = "GNU General Public License v3.0, with additional GPL section 7 requirements"
     }
 }
 
