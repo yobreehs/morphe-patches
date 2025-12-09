@@ -81,21 +81,28 @@ fun sharedExtensionPatch(
     }
 }
 
-class ExtensionHook(
+/**
+ * Handles passing the application context to the extension code. Typically the main activity
+ * onCreate() method is hooked, but sometimes additional hooks are required if extension code
+ * can be reached before the main activity is fully created.
+ */
+open class ExtensionHook(
     internal val fingerprint: Fingerprint,
     private val insertIndexResolver: BytecodePatchContext.(Method) -> Int = { 0 },
     private val contextRegisterResolver: BytecodePatchContext.(Method) -> String = { "p0" },
 ) {
     context(BytecodePatchContext)
     operator fun invoke(extensionClassDescriptor: String) {
-        val insertIndex = insertIndexResolver(fingerprint.method)
-        val contextRegister = contextRegisterResolver(fingerprint.method)
+        fingerprint.method.apply {
+            val insertIndex = insertIndexResolver(this)
+            val contextRegister = contextRegisterResolver(this)
 
-        fingerprint.method.addInstruction(
-            insertIndex,
-            "invoke-static/range { $contextRegister .. $contextRegister }, " +
-                    "$extensionClassDescriptor->setContext(Landroid/content/Context;)V",
-        )
+            addInstruction(
+                insertIndex,
+                "invoke-static/range { $contextRegister .. $contextRegister }, " +
+                        "$extensionClassDescriptor->setContext(Landroid/content/Context;)V",
+            )
+        }
     }
 }
 
@@ -128,9 +135,5 @@ fun activityOnCreateExtensionHook(activityClassType: String, targetBundleMethod:
         }
     )
 
-    return ExtensionHook(
-        fingerprint = fingerprint,
-        insertIndexResolver = { 0 },
-        contextRegisterResolver = { "p0" }
-    )
+    return ExtensionHook(fingerprint)
 }

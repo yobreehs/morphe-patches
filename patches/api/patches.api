@@ -152,19 +152,17 @@ public final class app/morphe/patches/shared/misc/checks/BaseCheckEnvironmentPat
 	public static final fun checkEnvironmentPatch (Lapp/morphe/patcher/Fingerprint;Lapp/morphe/patcher/patch/Patch;[Ljava/lang/String;)Lapp/morphe/patcher/patch/BytecodePatch;
 }
 
-public final class app/morphe/patches/shared/misc/extension/ExtensionHook {
+public class app/morphe/patches/shared/misc/extension/ExtensionHook {
+	public fun <init> (Lapp/morphe/patcher/Fingerprint;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;)V
+	public synthetic fun <init> (Lapp/morphe/patcher/Fingerprint;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun invoke (Lapp/morphe/patcher/patch/BytecodePatchContext;Ljava/lang/String;)V
 }
 
 public final class app/morphe/patches/shared/misc/extension/SharedExtensionPatchKt {
-	public static final fun activityOnCreateExtensionHook (Ljava/lang/String;Z)Lkotlin/jvm/functions/Function0;
-	public static synthetic fun activityOnCreateExtensionHook$default (Ljava/lang/String;ZILjava/lang/Object;)Lkotlin/jvm/functions/Function0;
-	public static final fun extensionHook (Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lapp/morphe/patcher/Fingerprint;)Lapp/morphe/patches/shared/misc/extension/ExtensionHook;
-	public static final fun extensionHook (Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;)Lkotlin/jvm/functions/Function0;
-	public static synthetic fun extensionHook$default (Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lapp/morphe/patcher/Fingerprint;ILjava/lang/Object;)Lapp/morphe/patches/shared/misc/extension/ExtensionHook;
-	public static synthetic fun extensionHook$default (Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lkotlin/jvm/functions/Function0;
-	public static final fun sharedExtensionPatch (Ljava/lang/String;[Lkotlin/jvm/functions/Function0;)Lapp/morphe/patcher/patch/BytecodePatch;
-	public static final fun sharedExtensionPatch ([Lkotlin/jvm/functions/Function0;)Lapp/morphe/patcher/patch/BytecodePatch;
+	public static final fun activityOnCreateExtensionHook (Ljava/lang/String;Z)Lapp/morphe/patches/shared/misc/extension/ExtensionHook;
+	public static synthetic fun activityOnCreateExtensionHook$default (Ljava/lang/String;ZILjava/lang/Object;)Lapp/morphe/patches/shared/misc/extension/ExtensionHook;
+	public static final fun sharedExtensionPatch (Ljava/lang/String;[Lapp/morphe/patches/shared/misc/extension/ExtensionHook;)Lapp/morphe/patcher/patch/BytecodePatch;
+	public static final fun sharedExtensionPatch ([Lapp/morphe/patches/shared/misc/extension/ExtensionHook;)Lapp/morphe/patcher/patch/BytecodePatch;
 }
 
 public final class app/morphe/patches/shared/misc/fix/verticalscroll/VerticalScrollPatchKt {
@@ -879,6 +877,7 @@ public final class app/morphe/util/BytecodeUtilsKt {
 	public static final fun containsLiteralInstruction (Lcom/android/tools/smali/dexlib2/iface/Method;D)Z
 	public static final fun containsLiteralInstruction (Lcom/android/tools/smali/dexlib2/iface/Method;F)Z
 	public static final fun containsLiteralInstruction (Lcom/android/tools/smali/dexlib2/iface/Method;J)Z
+	public static final fun customLiteral (Lkotlin/jvm/functions/Function0;)Lkotlin/jvm/functions/Function2;
 	public static final fun findInstructionIndicesReversed (Lcom/android/tools/smali/dexlib2/iface/Method;Lcom/android/tools/smali/dexlib2/Opcode;)Ljava/util/List;
 	public static final fun findInstructionIndicesReversed (Lcom/android/tools/smali/dexlib2/iface/Method;Lkotlin/jvm/functions/Function1;)Ljava/util/List;
 	public static final fun findInstructionIndicesReversedOrThrow (Lcom/android/tools/smali/dexlib2/iface/Method;Lcom/android/tools/smali/dexlib2/Opcode;)Ljava/util/List;
@@ -920,7 +919,6 @@ public final class app/morphe/util/BytecodeUtilsKt {
 	public static final fun indexOfFirstResourceId (Lcom/android/tools/smali/dexlib2/iface/Method;Ljava/lang/String;)I
 	public static final fun indexOfFirstResourceIdOrThrow (Lcom/android/tools/smali/dexlib2/iface/Method;Ljava/lang/String;)I
 	public static final fun injectHideViewCall (Lapp/morphe/patcher/util/proxy/mutableTypes/MutableMethod;IILjava/lang/String;Ljava/lang/String;)V
-	public static final fun literal (Lapp/morphe/patcher/FingerprintBuilder;Lkotlin/jvm/functions/Function0;)V
 	public static final fun returnEarly (Lapp/morphe/patcher/util/proxy/mutableTypes/MutableMethod;)V
 	public static final fun returnEarly (Lapp/morphe/patcher/util/proxy/mutableTypes/MutableMethod;B)V
 	public static final fun returnEarly (Lapp/morphe/patcher/util/proxy/mutableTypes/MutableMethod;C)V
