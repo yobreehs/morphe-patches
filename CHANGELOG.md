@@ -1,3 +1,10 @@
+# [1.0.0-dev.11](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2025-12-15)
+
+
+### Bug Fixes
+
+* Use 'notification' language instead of 'toast' ([06d18b8](https://github.com/MorpheApp/morphe-patches/commit/06d18b8c900e473f2859bb5aaf3b4eb68009e311))
+
 # [1.0.0-dev.10](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.9...v1.0.0-dev.10) (2025-12-13)
 
 
