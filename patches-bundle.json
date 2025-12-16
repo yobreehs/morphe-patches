@@ -1,7 +1,7 @@
 {
-  "created_at": "2025-12-15T11:02:52",
-  "description": "# [1.0.0-dev.11](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2025-12-15)\n\n\n### Bug Fixes\n\n* Use notification language instead of toast ([06d18b8](https://github.com/MorpheApp/morphe-patches/commit/06d18b8c900e473f2859bb5aaf3b4eb68009e311))\n\n\n\n",
-  "download_url": "https://github.com/MorpheApp/morphe-patches/releases/download/v1.0.0-dev.11/patches-1.0.0-dev.11.mpp",
-  "signature_download_url": "https://github.com/MorpheApp/morphe-patches/releases/download/v1.0.0-dev.11/patches-1.0.0-dev.11.mpp.asc",
-  "version": "v1.0.0-dev.11"
+  "created_at": "2025-12-16T02:16:17",
+  "description": "# [1.0.0-dev.12](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2025-12-16)\n\n\n### Bug Fixes\n\n* **YouTube - Hide video action buttons:** Update hide like and subscribe button glow for 20.22+ ([0fec09c](https://github.com/MorpheApp/morphe-patches/commit/0fec09c816cc2584e279d5290d082d391136bc0b))\n\n\n\n",
+  "download_url": "https://github.com/MorpheApp/morphe-patches/releases/download/v1.0.0-dev.12/patches-1.0.0-dev.12.mpp",
+  "signature_download_url": "https://github.com/MorpheApp/morphe-patches/releases/download/v1.0.0-dev.12/patches-1.0.0-dev.12.mpp.asc",
+  "version": "v1.0.0-dev.12"
 }

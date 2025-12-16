@@ -1,3 +1,10 @@
+# [1.0.0-dev.12](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2025-12-16)
+
+
+### Bug Fixes
+
+* **YouTube - Hide video action buttons:** Update hide like and subscribe button glow for 20.22+ ([0fec09c](https://github.com/MorpheApp/morphe-patches/commit/0fec09c816cc2584e279d5290d082d391136bc0b))
+
 # [1.0.0-dev.11](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2025-12-15)
 
 
