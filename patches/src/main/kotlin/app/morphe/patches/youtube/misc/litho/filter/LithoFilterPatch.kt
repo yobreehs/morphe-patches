@@ -160,11 +160,9 @@ val lithoFilterPatch = bytecodePatch(
                     parameters = listOf(),
                     returnType = "Ljava/lang/String;"
                 ),
-                // TODO: Change to methodCall(reference = accessibilityIdMethod, location = MatchAfterWithin(3))
-                //       After changing to latest patcher release.
                 methodCall(
-                    smali = accessibilityIdMethod.toString(),
-                    location = MatchAfterWithin(3)
+                    reference = accessibilityIdMethod,
+                    location = MatchAfterWithin(5)
                 )
             ),
             custom = { method, _ ->
