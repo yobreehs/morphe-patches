@@ -19,9 +19,13 @@ Second \"item\" text"</string>
   <!-- layout.branding.baseCustomBrandingPatch -->
   <string name="morphe_custom_branding_name_title">アプリ名</string>
   <!-- Translations of this should be identical to morphe_custom_branding_icon_entry_4 -->
+  <string name="morphe_custom_branding_name_entry_5">カスタム</string>
   <string name="morphe_custom_branding_icon_title">アプリアイコン</string>
   <string name="morphe_custom_branding_icon_entry_1">オリジナル</string>
+  <string name="morphe_custom_branding_icon_entry_2">Morphe ライト</string>
+  <string name="morphe_custom_branding_icon_entry_3">Morphe ダーク</string>
   <!-- Translations of this should be identical to morphe_custom_branding_name_entry_5 -->
+  <string name="morphe_custom_branding_icon_entry_4">カスタム</string>
   <!-- misc.dns.checkWatchHistoryDomainNameResolutionPatch -->
   <string name="morphe_check_watch_history_domain_name_dialog_title">Morphe からのお知らせ</string>
   <string name="morphe_check_watch_history_domain_name_dialog_message">再生履歴が保存されていません。&lt;br&gt;&lt;br&gt;これはおそらく、DNS 広告ブロッカーまたはネットワーク プロキシが原因です。&lt;br&gt;&lt;br&gt;この問題を解決するには、&lt;b&gt;s.youtube.com&lt;/b&gt; をホワイトリストに追加するか、すべての DNS ブロッカーとプロキシをオフにしてください。</string>
@@ -40,6 +44,8 @@ YouTube Premium ユーザーの場合、この設定は必要ない可能性が�
   <string name="morphe_spoof_video_streams_client_type_title">デフォルトのクライアント</string>
   <!-- misc.audio.forceOriginalAudioPatch -->
   <string name="morphe_force_original_audio_title">オリジナルの音声を強制的に使用</string>
+  <string name="morphe_force_original_audio_summary_on">オリジナルの音声言語を使用</string>
+  <string name="morphe_force_original_audio_summary_off">デフォルトの音声を使用</string>
   <!-- 'Spoof video streams' should be the same translation used for 'morphe_spoof_video_streams_screen_title'. -->
   <string name="morphe_force_original_audio_not_available">この機能を使用するには、「動画ストリームを偽装」のクライアントを Android Studio 以外の任意のクライアントに変更してください</string>
   <!-- misc.privacy.sanitizeSharingLinksPatch -->

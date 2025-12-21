@@ -20,11 +20,13 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_00_about_title">Om</string>
   <string name="morphe_settings_screen_01_ads_title">Annoncer</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Alternative miniaturebilleder</string>
+  <string name="morphe_settings_screen_03_feed_title">Feed</string>
   <string name="morphe_settings_screen_04_general_title">Generelt</string>
   <string name="morphe_settings_screen_05_player_title">Afspiller</string>
   <string name="morphe_settings_screen_07_seekbar_title">Søg i videon</string>
   <string name="morphe_settings_screen_08_swipe_controls_title">Strygekontroller</string>
   <string name="morphe_settings_screen_11_misc_title">Diverse</string>
+  <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Gendan gamle indstillingsmenuer</string>
   <string name="morphe_restore_old_settings_menus_summary_on">Gamle indstillingsmenuer er vist</string>
   <string name="morphe_restore_old_settings_menus_summary_off">Gamle indstillingsmenuer er ikke vist</string>
@@ -557,6 +559,9 @@ Hvis ændring af denne indstilling ikke træder i kraft, kan du prøve at skifte
   <string name="morphe_hide_navigation_button_labels_title">Skjul navigationsknappens etiketter</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Etiketter er skjult</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Etiketter er vist</string>
+  <string name="morphe_navigation_bar_animations_title">Aktivér animationer i navigationslinjen</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Navigationsovergange animeres</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Navigationsovergange animeres ikke</string>
   <string name="morphe_disable_translucent_status_bar_title">Deaktiver gennemsigtig statuslinje</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Statuslinjen er opak</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Statuslinjen er opak eller gennemsigtig</string>
@@ -643,6 +648,8 @@ For at vise lydsporsmenuen, skift 'Spoof videostreams' til iPadOS"</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">Baggrund for afspilningskontroller er skjult</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Baggrund for afspillerkontroller vises</string>
   <string name="morphe_hide_player_previous_next_buttons_title">Skjul Forrige &amp; Næste knapper</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Knapperne Forrige &amp; Næste er skjult</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Knapperne Forrige &amp; Næste vises</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Skjul slutskærmkort</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Slutskærmskortene er skjult</string>
@@ -667,6 +674,9 @@ For at vise lydsporsmenuen, skift 'Spoof videostreams' til iPadOS"</string>
   <string name="morphe_hide_seekbar_thumbnail_title">Skjul video-miniaturebilledernes søgelinje</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Video-miniaturebilledernes søgelinje er skjult</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Video-miniaturebilledernes søgelinje vises</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Aktivér stort søgefelt i fuldskærm</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Søgefelt i fuldskærm er stor størrelse</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Søgefelt i fuldskærm er normal størrelse</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Shorts-afspiller</string>
   <string name="morphe_shorts_player_screen_summary">Skjul eller vis Shorts-afspillerkomponenter</string>
@@ -866,20 +876,6 @@ Begrænsning: Synes ikke godt om vises muligvis ikke i inkognitotilstand"</strin
   <string name="morphe_wide_searchbar_title">Aktiver bred søgelinje</string>
   <string name="morphe_wide_searchbar_summary_on">Bred søgelinje er aktiveret</string>
   <string name="morphe_wide_searchbar_summary_off">Bred søgelinje er deaktiveret</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Aktiver miniaturer af høj kvalitet</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Seekbar miniaturer er af høj kvalitet</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Seekbar miniaturer er af middel kvalitet</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_on">Fuldskærmssøgerbar miniaturer er af høj kvalitet</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_off">Fuldskærmssøgerbar miniaturer er af middel kvalitet</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Dette vil også gendanne miniaturebilleder på livestreams, der ikke har miniaturebilleder i søgefeltet.
-
-Miniaturebilleder i søgefeltet bruger den samme kvalitet som den aktuelle video.
-
-Denne funktion fungerer bedst med en videokvalitet på 720p eller lavere og ved brug af en meget hurtig internetforbindelse."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Gendan gamle miniaturer på søgelinjen</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Seekbar miniaturer vises over søgelinjen</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Seekbar miniaturer vises i fuld skærm</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Aktiver SponsorBloker</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock er et crowdsourcet system, der springer irriterende dele af YouTube-videoer over</string>
@@ -961,6 +957,7 @@ Dit bruger-id er som en adgangskode, og det må aldrig deles.
 "</string>
   <string name="morphe_sb_settings_morphe_export_user_id_warning_dismiss">Vis ikke igen</string>
   <string name="morphe_sb_diff_segments">Ændr segmentadfærd</string>
+  <string name="morphe_sb_segments_sponsor">Sponsor</string>
   <string name="morphe_sb_segments_sponsor_sum">Betalt kampagne, betalte henvisninger og direkte reklamer. Ikke for selvpromoverende eller gratis råb til årsager/skabere/websteder/produkter, de kan lide</string>
   <string name="morphe_sb_segments_selfpromo">Ubetalt/Self Promotion</string>
   <string name="morphe_sb_segments_selfpromo_sum">Ligner Sponsor, men omfatter ikke ubetalt eller selvreklame. Indeholder sektioner om merchandise, donationer eller oplysninger om, hvem de har samarbejdet med</string>
@@ -1043,6 +1040,7 @@ Eksisterer allerede"</string>
   <string name="morphe_sb_new_segment_disabled_category">Kategori er deaktiveret i indstillinger. Aktivér kategori for at indsende.</string>
   <string name="morphe_sb_new_segment_title">Nyt SponsorBlock segment</string>
   <string name="morphe_sb_new_segment_mark_time_as_question">Sæt %s som start eller afslutning af et nyt segment?</string>
+  <string name="morphe_sb_new_segment_mark_start">Start</string>
   <string name="morphe_sb_new_segment_mark_end">Slut</string>
   <string name="morphe_sb_new_segment_now">Nu</string>
   <string name="morphe_sb_new_segment_time_start">Tidspunkt for segmentet begynder på</string>
@@ -1093,6 +1091,7 @@ Er du klar til at indsende?"</string>
   <string name="morphe_change_form_factor_title">Layout-formfaktor</string>
   <string name="morphe_change_form_factor_entry_1">Standard</string>
   <string name="morphe_change_form_factor_entry_2">Telefon</string>
+  <string name="morphe_change_form_factor_entry_3">Tablet</string>
   <string name="morphe_change_form_factor_entry_4">Bil</string>
   <string name="morphe_change_form_factor_user_dialog_message">"Ændringer omfatter:
 
@@ -1139,6 +1138,7 @@ Hvis det senere slås fra, anbefales det at rydde app-dataene for at forhindre U
   <string name="morphe_change_start_page_entry_sports">Sport</string>
   <string name="morphe_change_start_page_entry_subscriptions">Abonnementer</string>
   <string name="morphe_change_start_page_entry_trending">Populære</string>
+  <string name="morphe_change_start_page_entry_virtual_reality">Virtual Reality</string>
   <string name="morphe_change_start_page_entry_watch_later">Se senere</string>
   <string name="morphe_change_start_page_entry_your_clips">Dine klip</string>
   <string name="morphe_change_start_page_always_title">Skift altid startside</string>
@@ -1168,6 +1168,8 @@ Begrænsning: Brug af tilbage-knappen på værktøjslinjen fungerer muligvis ikk
   <string name="morphe_miniplayer_type_title">Type af miniplayer</string>
   <string name="morphe_miniplayer_type_entry_0">Deaktiveret</string>
   <string name="morphe_miniplayer_type_entry_1">Standard</string>
+  <string name="morphe_miniplayer_type_entry_2">Minimal</string>
+  <string name="morphe_miniplayer_type_entry_3">Tablet</string>
   <string name="morphe_miniplayer_type_entry_4">Moderne 1</string>
   <string name="morphe_miniplayer_type_entry_5">Moderne 2</string>
   <string name="morphe_miniplayer_type_entry_6">Moderne 3</string>
@@ -1194,6 +1196,11 @@ Miniafspiller kan trækkes ud over skærmen til venstre eller højre"</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Skjul overlay-knapper</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Overlay-knapper er skjult</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Overlay-knapper vises</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Skjul knapperne Udvid og Luk</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Knapperne er skjult
+
+Skub for at udvide eller lukke"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Knapperne Udvid og Luk vises</string>
   <string name="morphe_miniplayer_hide_subtext_title">Skjul undertekster</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Undertekster er skjult</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Undertekster er vist</string>

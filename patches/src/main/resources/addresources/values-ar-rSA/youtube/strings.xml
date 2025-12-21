@@ -306,6 +306,7 @@ Second \"item\" text"</string>
 • البحث عن كلمة ما قد لا يعطي نتائج"</string>
   <string name="morphe_hide_keyword_content_about_whole_words_title">مطابقة الكلمات بأكملها</string>
   <!-- Translations _must_ use a localized example.  For languages that do not use spaces between words (Chinese, Japanese, etc.) the English AI example should be used since no localized examples exist.  Or if using machine translations, or if nobody wants to think of a localized example, then the English 'ai' example should be left as-is. -->
+  <string name="morphe_hide_keyword_content_about_whole_words_summary">سيؤدي إحاطة كلمة رئيسية/عبارة بعلامتي اقتباس مزدوجتين إلى منع المطابقات الجزئية لعناوين الفيديو وأسماء القنوات&lt;br&gt;&lt;br&gt;على سبيل المثال،&lt;br&gt;&lt;b&gt;\"ai\"&lt;/b&gt; سيخفي الفيديو: &lt;b&gt;كيف يعمل الذكاء الاصطناعي؟&lt;/b&gt;&lt;br&gt;ولكن لن يخفي: &lt;b&gt;ماذا يعني الاستخدام العادل؟&lt;/b&gt;</string>
   <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
   <string name="morphe_hide_keyword_toast_invalid_common">لا يمكن استخدام الكلمة المفتاحية: %s</string>
   <string name="morphe_hide_keyword_toast_invalid_common_whole_word_required">إضافة اقتباسات لاستخدام الكلمة المفتاحية: %s</string>
@@ -558,6 +559,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_navigation_button_labels_title">إخفاء تسميات زر التنقل</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">تم إخفاء التسميات</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">يتم عرض التسميات</string>
+  <string name="morphe_navigation_bar_animations_title">تفعيل رسوم التنقل في شريط التنقل</string>
+  <string name="morphe_navigation_bar_animations_summary_on">يتم تحريك انتقالات التنقل</string>
+  <string name="morphe_navigation_bar_animations_summary_off">لا يتم تحريك انتقالات التنقل</string>
   <string name="morphe_disable_translucent_status_bar_title">تعطيل شريط الحالة الشفاف</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">شريط الحالة غير شفاف</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">شريط الحالة معتم أو شفاف</string>
@@ -670,6 +674,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_seekbar_thumbnail_title">إخفاء شريط تقدم مصغرات الفيديو</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">تم إخفاء شريط تقدم مصغرات الفيديو</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">يتم عرض شريط تقدم مصغرات الفيديو</string>
+  <string name="morphe_fullscreen_large_seekbar_title">تفعيل شريط البحث الكبير بملء الشاشة</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">شريط البحث بملء الشاشة كبير الحجم</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">شريط البحث بملء الشاشة بالحجم العادي</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">مشغل Shorts</string>
   <string name="morphe_shorts_player_screen_summary">إخفاء أو عرض مكونات مشغل Shorts</string>
@@ -869,19 +876,6 @@ Second \"item\" text"</string>
   <string name="morphe_wide_searchbar_title">تمكين شريط البحث العريض</string>
   <string name="morphe_wide_searchbar_summary_on">تم تمكين شريط البحث العريض</string>
   <string name="morphe_wide_searchbar_summary_off">تم تعطيل شريط البحث العريض</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">تمكين المصغرات عالية الجودة</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">مصغرات شريط التقدم عالية الجودة</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">مصغرات شريط التقدم متوسطة الجودة</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_off">مصغرات شريط التقدم بخلفية ملء الشاشة ذات جودة متوسطة</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"سيؤدي هذا أيضا إلى استعادة المصغرات على البث المباشر الذي لا يحتوي على مصغرات شريط التقدم.
-
-مصغرات شريط التقدم سوف تستخدم نفس جودة الفيديو الحالي.
-
-تعمل هذه الميزة بشكل أفضل مع جودة فيديو 720p أو أقل وعند استخدام اتصال إنترنت سريع جدًا."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">استعادة مصغرات شريط التقدم القديمة</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">مصغرات شريط التقدم ستظهر فوق شريط تقدم الفيديو</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">مصغرات شريط التقدم ستظهر في ملء الشاشة</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">تمكين SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">مانع الرُعَاة هو نظام جماعي لتخطي الأجزاء المزعجة من فيديوهات YouTube</string>
@@ -1098,6 +1092,7 @@ Second \"item\" text"</string>
   <string name="morphe_change_form_factor_entry_1">الافتراضي</string>
   <string name="morphe_change_form_factor_entry_2">الجوّال</string>
   <string name="morphe_change_form_factor_entry_3">الجهاز اللوحي</string>
+  <string name="morphe_change_form_factor_entry_4">سيارات</string>
   <string name="morphe_change_form_factor_user_dialog_message">"التغييرات تشمل:
 
 تصميم الجهاز اللوحي
@@ -1201,6 +1196,11 @@ Second \"item\" text"</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_title">إخفاء أزرار الواجهة</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">تم إخفاء أزرار الواجهة</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">يتم عرض أزرار الواجهة</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">إخفاء أزرار التوسيع والإغلاق</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"الأزرار مخفية
+
+اسحب للتوسيع أو الإغلاق"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">أزرار التوسيع والإغلاق معروضة</string>
   <string name="morphe_miniplayer_hide_subtext_title">إخفاء النصوص الفرعية</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">تم إخفاء النصوص الفرعية</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">يتم عرض النصوص الفرعية</string>
@@ -1248,6 +1248,7 @@ Second \"item\" text"</string>
   <string name="morphe_alt_thumbnail_subscription_title">علامة تبويب الاشتراكات</string>
   <!-- 'You' should be translated using the same localized wording YouTube displays for the You (Library) tab. -->
   <string name="morphe_alt_thumbnail_library_title">علامة التبويب أنت</string>
+  <string name="morphe_alt_thumbnail_player_title">قوائم تشغيل المشغل &amp; التوصيات</string>
   <string name="morphe_alt_thumbnail_search_title">نتائج البحث</string>
   <string name="morphe_alt_thumbnail_options_entry_1">المصغرات الأصلية</string>
   <string name="morphe_alt_thumbnail_options_entry_2">DeArrow &amp; المصغرات الأصلية</string>

@@ -19,9 +19,13 @@ Second \"item\" text"</string>
   <!-- layout.branding.baseCustomBrandingPatch -->
   <string name="morphe_custom_branding_name_title">Nom de l\'application</string>
   <!-- Translations of this should be identical to morphe_custom_branding_icon_entry_4 -->
+  <string name="morphe_custom_branding_name_entry_5">Personnalisé</string>
   <string name="morphe_custom_branding_icon_title">Icône de l\'application</string>
   <string name="morphe_custom_branding_icon_entry_1">Originale</string>
+  <string name="morphe_custom_branding_icon_entry_2">Morphe langue</string>
+  <string name="morphe_custom_branding_icon_entry_3">Morphe sombre</string>
   <!-- Translations of this should be identical to morphe_custom_branding_name_entry_5 -->
+  <string name="morphe_custom_branding_icon_entry_4">Personnalisé</string>
   <!-- misc.dns.checkWatchHistoryDomainNameResolutionPatch -->
   <string name="morphe_check_watch_history_domain_name_dialog_title">Avis Morphe</string>
   <string name="morphe_check_watch_history_domain_name_dialog_message">Les vidéos que vous regardez ne sont pas enregistrées dans votre historique.&lt;br&gt;&lt;br&gt;La cause la plus probable est l\'utilisation d\'un serveur DNS bloqueur de publicités ou d\'un proxy.&lt;br&gt;&lt;br&gt;Pour résoudre ce problème, autorisez l\'accès à &lt;b&gt;s.youtube.com&lt;/b&gt; ou désactivez tous vos bloqueurs DNS et proxys.</string>

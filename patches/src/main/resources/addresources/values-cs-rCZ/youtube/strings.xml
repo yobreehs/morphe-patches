@@ -26,6 +26,7 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_07_seekbar_title">Lišta</string>
   <string name="morphe_settings_screen_08_swipe_controls_title">Ovládání gesty</string>
   <string name="morphe_settings_screen_11_misc_title">Různé</string>
+  <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Obnovit staré menu nastavení</string>
   <string name="morphe_restore_old_settings_menus_summary_on">Staré menu nastavení se zobrazují</string>
   <string name="morphe_restore_old_settings_menus_summary_off">Staré menu nastavení se nezobrazují</string>
@@ -558,6 +559,9 @@ Pokud změna tohoto nastavení nemá žádný účinek, zkuste přepnout do rež
   <string name="morphe_hide_navigation_button_labels_title">Skrýt štítky navigačních tlačítek</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Štítky jsou skryty</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Štítky jsou zobrazeny</string>
+  <string name="morphe_navigation_bar_animations_title">Povolit animace navigační lišty</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Přechody navigace jsou animovány</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Přechody navigace nejsou animovány</string>
   <string name="morphe_disable_translucent_status_bar_title">Deaktivovat průsvitný stavový řádek</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Statusový řádek je neprůhledný</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Statusový řádek je neprůhledný nebo průsvitný</string>
@@ -643,6 +647,9 @@ Chcete-li zobrazit nabídku zvukové stopy, změňte 'Zfalšovat streamy videa' 
   <string name="morphe_hide_player_control_buttons_background_title">Skrýt pozadí ovládacích prvků přehrávače</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">Pozadí ovládacích prvků přehrávače je skryto</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Pozadí ovládacích prvků přehrávače je zobrazeno</string>
+  <string name="morphe_hide_player_previous_next_buttons_title">Skrýt tlačítka Předchozí &amp; Další</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Tlačítka Předchozí &amp; Další jsou skryta</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Tlačítka Předchozí &amp; Další jsou zobrazena</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Skrýt karty s informacemi o videu</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Karty s informacemi o videu jsou skryty</string>
@@ -667,6 +674,9 @@ Chcete-li zobrazit nabídku zvukové stopy, změňte 'Zfalšovat streamy videa' 
   <string name="morphe_hide_seekbar_thumbnail_title">Skrýt posuvník miniatur videí</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Posuvník miniatur videí je skryt</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Posuvník miniatur videí je zobrazen</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Povolit velký posuvník na celou obrazovku</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Posuvník na celou obrazovku je velký</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Posuvník na celou obrazovku má normální velikost</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Přehrávač Shorts</string>
   <string name="morphe_shorts_player_screen_summary">Skrýt nebo zobrazit komponenty přehrávače Shorts</string>
@@ -866,19 +876,6 @@ Omezení: Počty „Nelíbí se mi“ se nemusí zobrazit v anonymním režimu"<
   <string name="morphe_wide_searchbar_title">Povolit široký vyhledávací panel</string>
   <string name="morphe_wide_searchbar_summary_on">Široký vyhledávací panel je povolen</string>
   <string name="morphe_wide_searchbar_summary_off">Široký vyhledávací panel je zakázán</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Povolit miniatury vysoké kvality</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Miniatury posuvníku jsou vysoké kvality</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Miniatury posuvníku jsou střední kvality</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_on">Miniatury posuvníku na celou obrazovku jsou vysoké kvality</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Obnoví se také miniatury živých přenosů, které nemají miniatury s posuvníkem.
-
-Miniatury s posuvníkem budou používat stejnou kvalitu jako aktuální video.
-
-Tato funkce funguje nejlépe s kvalitou videa 720p nebo nižší a při použití velmi rychlého internetového připojení."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Obnovit staré miniatury posuvníku</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Miniatury posuvníku se zobrazí nad posuvníkem</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Miniatury posuvníku se zobrazí na celou obrazovku</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Povolit SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock je systém s participací komunity pro přeskakování otravných částí videí na YouTube</string>
@@ -1093,6 +1090,7 @@ Jste připraveni k odeslání?"</string>
   <string name="morphe_change_form_factor_title">Rozvržení formuláře</string>
   <string name="morphe_change_form_factor_entry_1">Výchozí</string>
   <string name="morphe_change_form_factor_entry_2">Telefon</string>
+  <string name="morphe_change_form_factor_entry_3">Tablet</string>
   <string name="morphe_change_form_factor_entry_4">Automobilový</string>
   <string name="morphe_change_form_factor_user_dialog_message">"Změny zahrnují:
 
@@ -1123,6 +1121,7 @@ Pokud bude později vypnuta, doporučujeme vymazat data aplikace, aby se zabrán
   <string name="morphe_change_start_page_entry_browse">Procházet kanály</string>
   <string name="morphe_change_start_page_entry_courses">Kurzy / Vzdělávání</string>
   <string name="morphe_change_start_page_entry_explore">Prozkoumat</string>
+  <string name="morphe_change_start_page_entry_fashion">Móda &amp; krása</string>
   <string name="morphe_change_start_page_entry_gaming">Hraní</string>
   <string name="morphe_change_start_page_entry_history">Historie</string>
   <string name="morphe_change_start_page_entry_library">Knihovna</string>
@@ -1154,6 +1153,7 @@ Omezení: Použití tlačítka zpět na panelu nástrojů nemusí fungovat"</str
   <string name="morphe_shorts_player_type_title">Otevřít Shorts s</string>
   <string name="morphe_shorts_player_type_shorts">Přehrávač Shorts</string>
   <string name="morphe_shorts_player_type_regular_player">Běžný přehrávač</string>
+  <string name="morphe_shorts_player_type_regular_player_fullscreen">Běžný přehrávač na celou obrazovku</string>
   <!-- layout.shortsautoplay.shortsAutoplayPatch -->
   <string name="morphe_shorts_autoplay_title">Automatické přehrávání Shorts</string>
   <string name="morphe_shorts_autoplay_summary_on">Shorts se budou automaticky přehrávat</string>
@@ -1168,6 +1168,7 @@ Omezení: Použití tlačítka zpět na panelu nástrojů nemusí fungovat"</str
   <string name="morphe_miniplayer_type_entry_0">Vypnuto</string>
   <string name="morphe_miniplayer_type_entry_1">Výchozí</string>
   <string name="morphe_miniplayer_type_entry_2">Minimální</string>
+  <string name="morphe_miniplayer_type_entry_3">Tablet</string>
   <string name="morphe_miniplayer_type_entry_4">Moderní 1</string>
   <string name="morphe_miniplayer_type_entry_5">Moderní 2</string>
   <string name="morphe_miniplayer_type_entry_6">Moderní 3</string>
@@ -1194,6 +1195,11 @@ Omezení: Použití tlačítka zpět na panelu nástrojů nemusí fungovat"</str
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Skrýt tlačítka překrytí</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Tlačítka překrytí jsou skrytá</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Tlačítka překrytí jsou zobrazena</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Skrýt tlačítka pro rozbalení a zavření</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Tlačítka jsou skrytá
+
+Přejetím prstem rozbalíte nebo zavřete"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Tlačítka pro rozbalení a zavření jsou zobrazena</string>
   <string name="morphe_miniplayer_hide_subtext_title">Skrýt podtexty</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Podtexty jsou skryty</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Podtexty jsou zobrazeny</string>

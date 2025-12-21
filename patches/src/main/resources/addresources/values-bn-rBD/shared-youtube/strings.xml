@@ -19,9 +19,13 @@ Second \"item\" text"</string>
   <!-- layout.branding.baseCustomBrandingPatch -->
   <string name="morphe_custom_branding_name_title">অ্যাপের নাম</string>
   <!-- Translations of this should be identical to morphe_custom_branding_icon_entry_4 -->
+  <string name="morphe_custom_branding_name_entry_5">কাস্টম</string>
   <string name="morphe_custom_branding_icon_title">অ্যাপ আইকন</string>
   <string name="morphe_custom_branding_icon_entry_1">মূল</string>
+  <string name="morphe_custom_branding_icon_entry_2">মরফ হালকা</string>
+  <string name="morphe_custom_branding_icon_entry_3">মরফ গাঢ়</string>
   <!-- Translations of this should be identical to morphe_custom_branding_name_entry_5 -->
+  <string name="morphe_custom_branding_icon_entry_4">কাস্টম</string>
   <!-- misc.dns.checkWatchHistoryDomainNameResolutionPatch -->
   <string name="morphe_check_watch_history_domain_name_dialog_title">Morphe নোটিশ</string>
   <string name="morphe_check_watch_history_domain_name_dialog_message">আপনার দেখার ইতিহাস সংরক্ষিত হচ্ছে না।&lt;br&gt;&lt;br&gt;এটি সম্ভবত DNS অ্যাড ব্লকার অথবা নেটওয়ার্ক প্রক্সির কারণে।&lt;br&gt;&lt;br&gt;এটি ঠিক করার জন্য, &lt;b&gt;s.youtube.com&lt;/b&gt;  সাদা তালিকাভুক্ত করুন অথবা সকল DNS ব্লকার এবং প্রক্সি বন্ধ করুন।</string>

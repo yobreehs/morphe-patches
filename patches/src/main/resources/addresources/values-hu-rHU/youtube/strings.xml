@@ -394,6 +394,9 @@ Ez a funkció csak régebbi eszközökön érhető el"</string>
   <string name="morphe_external_downloader_other_item">Egyéb</string>
   <string name="morphe_external_downloader_not_found_title">Az alkalmazás nincs telepítve</string>
   <string name="morphe_external_downloader_not_installed_warning">%s nincs telepítve. Kérjük telepítse.</string>
+  <string name="morphe_external_downloader_package_not_found_warning">"Nem található telepített alkalmazás a következő csomagnevével: %s
+
+Ellenőrizze, hogy a csomagnév helyes-e, és az alkalmazás telepítve van-e."</string>
   <string name="morphe_external_downloader_empty_warning">A csomagnév nem lehet üres</string>
   <!-- interaction.seekbar.disablePreciseSeekingGesturePatch -->
   <string name="morphe_disable_precise_seeking_gesture_title">Pontos keresési kézmozdulat letiltása</string>
@@ -556,6 +559,9 @@ Ha a beállítás módosítása nem lép életbe, próbáljon meg Inkognitó mó
   <string name="morphe_hide_navigation_button_labels_title">A navigációs gombok címkéinek elrejtése</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">A címke el vannak rejtve</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">A címke meg vannak jelenítve</string>
+  <string name="morphe_navigation_bar_animations_title">Navigációs sáv animációinak engedélyezése</string>
+  <string name="morphe_navigation_bar_animations_summary_on">A navigációs átmenetek animáltak</string>
+  <string name="morphe_navigation_bar_animations_summary_off">A navigációs átmenetek nem animáltak</string>
   <string name="morphe_disable_translucent_status_bar_title">Átlátszó állapotsor letiltása</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Az állapotsor nem áttetsző</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Az állapotsor nem áttetsző vagy áttetsző</string>
@@ -593,6 +599,9 @@ Ha a beállítás módosítása nem lép életbe, próbáljon meg Inkognitó mó
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">Megjelenik a Stabil hangerő menü</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">A Stabil hangerő menü el van rejtve</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
+  <string name="morphe_hide_player_flyout_help_title">Súgó &amp; visszajelzés elrejtése</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">A Súgó &amp; visszajelzés menü el van rejtve</string>
+  <string name="morphe_hide_player_flyout_help_summary_off">A Súgó &amp; visszajelzés menü megjelenik</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">Lejátszási sebesség elrejtése</string>
   <string name="morphe_hide_player_flyout_speed_summary_on">A lejátszási sebesség menü el van rejtve</string>
@@ -603,6 +612,8 @@ Ha a beállítás módosítása nem lép életbe, próbáljon meg Inkognitó mó
   <string name="morphe_hide_player_flyout_lock_screen_summary_off">A lezárási képernyő menü megjelenik</string>
   <!-- 'Listen with YouTube Music' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_listen_with_youtube_music_title">\"Meghallgatás YouTube Music alkalmazással\" elrejtése</string>
+  <string name="morphe_hide_player_flyout_listen_with_youtube_music_summary_on">A „Zenehallgatás a YouTube Music alkalmazásban” menü elrejtve</string>
+  <string name="morphe_hide_player_flyout_listen_with_youtube_music_summary_off">A „Zenehallgatás a YouTube Music alkalmazásban” menü megjelenik</string>
   <!-- 'Audio track' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_audio_track_title">Hangsáv elrejtése</string>
   <string name="morphe_hide_player_flyout_audio_track_summary_on">A hangsáv menü el van rejtve</string>
@@ -636,6 +647,9 @@ Az hangsáv menü megjelenítéséhez állítsa a 'Videó stream-ek meghamisít�
   <string name="morphe_hide_player_control_buttons_background_title">Lejátszóvezérlők hátterének elrejtése</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">A lejátszóvezérlők háttere rejtett</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">A lejátszóvezérlők háttere látható</string>
+  <string name="morphe_hide_player_previous_next_buttons_title">Előző &amp; Következő gombok elrejtése</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Az Előző &amp; Következő gombok el vannak rejtve</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Az Előző &amp; Következő gombok megjelennek</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Záróképernyő kártyák elrejtése</string>
   <string name="morphe_hide_endscreen_cards_summary_on">A záróképernyő kártyák el vannak rejtve</string>
@@ -660,6 +674,9 @@ Az hangsáv menü megjelenítéséhez állítsa a 'Videó stream-ek meghamisít�
   <string name="morphe_hide_seekbar_thumbnail_title">Videó miniatűrök keresősávjának elrejtése</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">A videó miniatűrök keresősávja elrejtve</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">A videó miniatűrök keresősávja megjelenítve</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Teljes képernyős, nagy méretű keresősáv engedélyezése</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Teljes képernyős keresősáv nagy méretben</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Teljes képernyős keresősáv normál méretben</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Shorts lejátszó</string>
   <string name="morphe_shorts_player_screen_summary">A Shorts lejátszó komponensek elrejtése vagy megjelenítése</string>
@@ -809,6 +826,7 @@ Beállítások → Lejátszás → Következő videó automatikus lejátszása"<
   <string name="morphe_player_overlay_opacity_invalid_toast">A lejátszó fedvény átlátszatlanságának 0 és 100 között kell lennie</string>
   <!-- layout.returnyoutubedislike.returnYouTubeDislikePatch -->
   <!-- Brief notification (toast) shown if network connection times out. Translations of this should not be longer than the original English or the text can be clipped and not entirely shown. -->
+  <string name="morphe_ryd_failure_connection_timeout">A nem kedvelések jelenleg nem elérhetők (API időtúllépés)</string>
   <string name="morphe_ryd_failure_connection_status_code">A nem tetszik funkció nem elérhető (állapot: %d)</string>
   <string name="morphe_ryd_failure_client_rate_limit_requested">A nem tetszések nem érhetők el (ügyfél API korlát)</string>
   <string name="morphe_ryd_failure_generic">A nem tetszik funkció nem elérhető (%s)</string>
@@ -858,18 +876,6 @@ Korlátozás: A nem tetszések inkognitómódban nem jelenhetnek meg"</string>
   <string name="morphe_wide_searchbar_title">Széles keresősáv bekapcsolása</string>
   <string name="morphe_wide_searchbar_summary_on">Széles keresősáv bekapcsolva</string>
   <string name="morphe_wide_searchbar_summary_off">Széles keresősáv kikapcsolva</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Jó minőségű miniatűrök engedélyezése</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">A keresősáv bélyegképei kiváló minőségűek</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">A keresősáv bélyegképei közepes minőségűek</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Ez visszaállítja a miniatűr képeket az élő közvetítéseknél, amelyeknek nincsenek keresősáv miniatűr képei.
-
-A keresősáv miniatűr képei ugyanazt a minőséget fogják használni, mint az aktuális videó.
-
-Ez a funkció a legjobban 720p vagy annál alacsonyabb videóminőség mellett és nagyon gyors internetkapcsolat használatakor működik."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Régi keresősáv bélyegképek visszaállítása</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">A keresősáv bélyegképei megjelennek a keresősáv felett</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">A keresősáv bélyegképei megjelennek a teljes képernyőn</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">SponsorBlock bekapcsolása</string>
   <string name="morphe_sb_enable_sb_sum">A SponsorBlock egy közösségi finanszírozású rendszer, amellyel kihagyhatod a YouTube videók idegesítő részeit</string>
@@ -1115,6 +1121,7 @@ Ha később kikapcsolja, akkor ajánlott az alkalmazás adatait törölni, hogy 
   <string name="morphe_change_start_page_entry_browse">Csatornák böngészése</string>
   <string name="morphe_change_start_page_entry_courses">Tanfolyamok / Tanulás</string>
   <string name="morphe_change_start_page_entry_explore">Felfedezés</string>
+  <string name="morphe_change_start_page_entry_fashion">Divat &amp; Szépség</string>
   <string name="morphe_change_start_page_entry_gaming">Játék</string>
   <string name="morphe_change_start_page_entry_history">Előzmények</string>
   <string name="morphe_change_start_page_entry_library">Könyvtár</string>
@@ -1160,6 +1167,10 @@ Ha később kikapcsolja, akkor ajánlott az alkalmazás adatait törölni, hogy 
   <string name="morphe_miniplayer_type_entry_1">Alapértelmezett</string>
   <string name="morphe_miniplayer_type_entry_2">Minimális</string>
   <string name="morphe_miniplayer_type_entry_3">Táblagép</string>
+  <string name="morphe_miniplayer_type_entry_4">Modern 1</string>
+  <string name="morphe_miniplayer_type_entry_5">Modern 2</string>
+  <string name="morphe_miniplayer_type_entry_6">Modern 3</string>
+  <string name="morphe_miniplayer_type_entry_7">Modern 4</string>
   <string name="morphe_miniplayer_disable_rounded_corners_title">Lekerekített sarkok letiltása</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_on">A sarkok négyzet alakúak</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_off">A sarkok lekerekítettek</string>
@@ -1182,6 +1193,11 @@ A miniatűr képernyőt a képernyő bal vagy jobb szélére húzhatja"</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Fedőgomb elrejtése</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">A fedőgombok rejtve vannak</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">A fedőgombok láthatók</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Expandálás és bezárás gombok elrejtése</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"A gombok elrejtve
+
+Csúsztassa a kibontáshoz vagy bezáráshoz"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">A kibontás és bezárás gombok láthatók</string>
   <string name="morphe_miniplayer_hide_subtext_title">Alszövegek elrejtése</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Az alfeliratok el vannak rejtve</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Az alfeliratok meg vannak jelenítve</string>
@@ -1232,6 +1248,8 @@ Ez a beállítás megoldhatja a hiányzó képek problémáját, amelyek blokkol
   <string name="morphe_alt_thumbnail_player_title">Lejátszó lejátszási listák &amp; ajánlások</string>
   <string name="morphe_alt_thumbnail_search_title">Keresési eredmények</string>
   <string name="morphe_alt_thumbnail_options_entry_1">Eredeti miniatűrök</string>
+  <string name="morphe_alt_thumbnail_options_entry_2">DeArrow &amp; Eredeti bélyegképek</string>
+  <string name="morphe_alt_thumbnail_options_entry_3">DeArrow &amp; Állóképek</string>
   <string name="morphe_alt_thumbnail_options_entry_4">Pillanatképek</string>
   <string name="morphe_alt_thumbnail_dearrow_about_summary">"A DeArrow tömegforrásból származó miniatűr képeket biztosít a YouTube-videókhoz. Ezek a miniatűr képek gyakran relevánsabbak, mint a YouTube által biztosítottak
 
@@ -1318,6 +1336,7 @@ Ez a beállítás lehetővé teszi a magasabb videóminőségek feloldását"</s
   <string name="morphe_shorts_quality_default_mobile_title">Alapértelmezett Shorts minőség mobilhálózaton</string>
   <string name="morphe_remember_video_quality_mobile">mobil</string>
   <string name="morphe_remember_video_quality_wifi">wi-fi</string>
+  <string name="morphe_remember_video_quality_toast">Az alapértelmezett %1$s minőség a következőre változott: %2$s</string>
   <string name="morphe_remember_video_quality_toast_shorts">A Shorts %1$s minősége megváltozott: %2$s</string>
   <!-- video.speed.button.playbackSpeedButtonPatch -->
   <string name="morphe_playback_speed_dialog_button_title">Sebesség párbeszédpanel megjelenítése</string>

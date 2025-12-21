@@ -18,6 +18,7 @@ Second \"item\" text"</string>
 <resources>
   <!-- misc.settings.settingsResourcePatch -->
   <string name="morphe_settings_submenu_title">设置</string>
+  <string name="morphe_settings_about_donate">捐赠</string>
   <string name="morphe_settings_confirm_user_dialog_title">确定要继续吗？</string>
   <string name="morphe_settings_save">保存</string>
   <string name="morphe_settings_reset">重置</string>
@@ -49,6 +50,9 @@ Second \"item\" text"</string>
   <string name="morphe_settings_search_history_title">显示设置搜索历史记录</string>
   <string name="morphe_settings_search_history_summary_on">设置搜索历史记录已显示</string>
   <string name="morphe_settings_search_history_summary_off">不显示设置搜索历史记录</string>
+  <string name="morphe_settings_disable_bold_icons_title">禁用粗体图标</string>
+  <string name="morphe_settings_disable_bold_icons_summary_on">图标不粗体</string>
+  <string name="morphe_settings_disable_bold_icons_summary_off">图标粗体</string>
   <string name="morphe_show_menu_icons_title">显示Morphe设置图标</string>
   <string name="morphe_show_menu_icons_summary_on">设置图标已显示</string>
   <string name="morphe_show_menu_icons_summary_off">未显示设置图标</string>
@@ -60,6 +64,7 @@ Second \"item\" text"</string>
   <string name="morphe_pref_import_export_title">导入/导出</string>
   <string name="morphe_pref_import_export_summary">导入/导出 Morphe 设置</string>
   <!-- Settings about dialog. -->
+  <string name="morphe_settings_about_links_body">您正在使用 Morphe Patches 版本 &lt;i&gt;%s&lt;/i&gt;</string>
   <string name="morphe_settings_about_links_dev_header">注意</string>
   <string name="morphe_settings_about_links_dev_body">此版本是预发布版本，您可能会遇到意外问题</string>
   <string name="morphe_settings_about_links_header">官方链接</string>

@@ -116,6 +116,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_doodles_title">הסתר YouTube Doodles</string>
   <string name="morphe_hide_doodles_summary_on">הנפשת YouTube Doodles על הלוגו מוסתרת</string>
   <string name="morphe_hide_doodles_summary_off">הנפשת YouTube Doodles על הלוגו מוצגת</string>
+  <string name="morphe_hide_doodles_user_dialog_message">"Doodles של YouTube מוצגים מספר ימים בכל שנה.
+
+אם Doodle מוצג כעת באזור שלך והגדרת הסתרה זו מופעלת, גם פס הסינון מתחת לשורת החיפוש יוסתר."</string>
   <string name="morphe_hide_channel_bar_title">הסתר סרגל ערוץ</string>
   <string name="morphe_hide_channel_bar_summary_on">סרגל הערוץ מוסתר</string>
   <string name="morphe_hide_channel_bar_summary_off">סרגל הערוץ מוצג</string>
@@ -556,6 +559,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_navigation_button_labels_title">הסתר תוויות לחצני ניווט</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">התוויות מוסתרות</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">התוויות מוצגות</string>
+  <string name="morphe_navigation_bar_animations_title">הפעלת אנימציות של שורת הניווט</string>
+  <string name="morphe_navigation_bar_animations_summary_on">מעברי ניווט מונפשים</string>
+  <string name="morphe_navigation_bar_animations_summary_off">מעברי ניווט אינם מונפשים</string>
   <string name="morphe_disable_translucent_status_bar_title">השבת שורת מצב שקופה</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">שורת מצב אטומה</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">שורת מצב אטומה או שקופה</string>
@@ -593,6 +599,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">תפריט עוצמת קול יציבה מוצג</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">תפריט עוצמת קול יציבה מוסתר</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
+  <string name="morphe_hide_player_flyout_help_title">הסתר עזרה ומשוב</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">תפריט עזרה ומשוב מוסתר</string>
+  <string name="morphe_hide_player_flyout_help_summary_off">תפריט עזרה ומשוב מוצג</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">הסתר מהירות ההפעלה</string>
   <string name="morphe_hide_player_flyout_speed_summary_on">תפריט מהירות ההפעלה מוסתר</string>
@@ -639,6 +648,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">רקע פקדי הנגן מוסתר</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">רקע פקדי הנגן מוצג</string>
   <string name="morphe_hide_player_previous_next_buttons_title">הסתר לחצני הקודם &amp; הבא</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">כפתורי \'קודם\' ו-\'הבא\' מוסתרים</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">כפתורי \"קודם\" ו-\"הבא\" מוצגים</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">הסתר כרטיסי מסך סיום</string>
   <string name="morphe_hide_endscreen_cards_summary_on">כרטיסי מסך מסיום מוסתרים</string>
@@ -663,7 +674,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_seekbar_thumbnail_title">הסתר סרגל דילוג עם תמונות ממוזערות של סרטון</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">סרגל דילוג עם תמונות ממוזערות של סרטון מוסתר</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">סרגל דילוג עם תמונות ממוזערות של סרטון מוצג</string>
+  <string name="morphe_fullscreen_large_seekbar_title">הפעלת סרגל חיפוש גדול במסך מלא</string>
   <string name="morphe_fullscreen_large_seekbar_summary_on">מחוון הכרטיסייה במסך מלא הוא בגודל גדול</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">סרגל חיפוש במסך מלא בגודל רגיל</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">נגן Shorts</string>
   <string name="morphe_shorts_player_screen_summary">הסתר או הצג רכיבי נגן Shorts</string>
@@ -864,20 +877,6 @@ Second \"item\" text"</string>
   <string name="morphe_wide_searchbar_title">הפעל סרגל חיפוש רחב</string>
   <string name="morphe_wide_searchbar_summary_on">סרגל חיפוש רחב מופעל</string>
   <string name="morphe_wide_searchbar_summary_off">סרגל חיפוש רחב מושבת</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">הפעל תמונות ממוזערות באיכות גבוהה</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">תמונות ממוזערות של סרגל דילוג הן באיכות גבוהה</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">תמונות ממוזערות של סרגל דילוג הן באיכות בינונית</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_on">תמונות ממוזערות של סרגל דילוג במסך מלא הן באיכות גבוהה</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_off">תמונות ממוזערות של סרגל דילוג במסך מלא הן באיכות בינונית</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"זה גם ישחזר תמונות ממוזערות בשידורים חיים שאין להם תמונות ממוזערות של סרגל דילוג.
-
-תמונות ממוזערות של סרגל דילוג ישתמשו באותה איכות כמו הסרטון הנוכחי.
-
-תכונה זו עובדת בצורה הטובה ביותר עם איכות סרטון של 720p או פחות ובעת שימוש בחיבור אינטרנט מהיר מאוד."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">שחזר תמונות ממוזערות של סרגל דילוג ישנות</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">תמונות ממוזערות של סרגל דילוג יופיעו מעל סרגל הדילוג</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">תמונות ממוזערות של סרגל דילוג יופיעו במסך מלא</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">הפעל את SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">המערכת SponsorBlock היא מערכת מיקור המונים לדילוג על חלקים מעצבנים של סרטוני YouTube</string>
@@ -1197,6 +1196,11 @@ Second \"item\" text"</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_title">הסתר לחצני שכבת-על</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">לחצני שכבת-על מוסתרים</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">לחצני שכבת-על מוצגים</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">הסתר כפתורי הרחבה וסגירה</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"הכפתורים מוסתרים
+
+החלק להרחבה או סגירה"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">כפתורי הרחבה וסגירה מוצגים</string>
   <string name="morphe_miniplayer_hide_subtext_title">הסתר תת-טקסטים</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">תת-טקסטים מוסתרים</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">תת-טקסטים מוצגים</string>

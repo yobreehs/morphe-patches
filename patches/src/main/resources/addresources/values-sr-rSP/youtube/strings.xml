@@ -559,6 +559,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_navigation_button_labels_title">Сакриј ознаке дугмади за навигацију</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Ознаке дугмади за навигацију су скривене</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Ознаке дугмади за навигацију су приказане</string>
+  <string name="morphe_navigation_bar_animations_title">Омогући анимације траке за навигацију</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Анимације прелаза у навигацији су укључене</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Анимације прелаза у навигацији су искључене</string>
   <string name="morphe_disable_translucent_status_bar_title">Онемогући прозирну статусну траку</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Статусна трака је непрозирна</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Статусна трака је непрозирна или прозирна</string>
@@ -596,6 +599,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">Дугме „Уједначена јачина звука” је приказано</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">Дугме „Уједначена јачина звука” је скривено</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
+  <string name="morphe_hide_player_flyout_help_title">Сакриј дугме „Помоћ и повратне информације”</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">Дугме „Помоћ и повратне информације” је скривено</string>
+  <string name="morphe_hide_player_flyout_help_summary_off">Дугме „Помоћ и повратне информације” је приказано</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">Сакриј мени „Брзина репродукције”</string>
   <string name="morphe_hide_player_flyout_speed_summary_on">Мени „Брзина репродукције” је скривен</string>
@@ -641,6 +647,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_control_buttons_background_title">Сакриј позадину контрола плејера</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">Позадина контрола плејера је скривена</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Позадина контрола плејера је приказана</string>
+  <string name="morphe_hide_player_previous_next_buttons_title">Сакриј дугмад за претходни и следећи видео</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Дугмићи Претходни и Следећи су скривени</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Дугмад Претходно и Следеће се приказују</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Сакриј картице завршног екрана</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Картице завршног екрана су скривене</string>
@@ -665,6 +674,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_seekbar_thumbnail_title">Сакриј траку за премотавање на сличицама видеа</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Трака за премотавање на сличицама видеа је скривена</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Трака за премотавање на сличицама видеа је приказана</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Омогући велику траку за премотавање у целом екрану</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Трака за премотавање у целом екрану је велике величине</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Трака за премотавање преко целог екрана је нормалне величине</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Shorts плејер</string>
   <string name="morphe_shorts_player_screen_summary">Сакријте или прикажите компоненте Shorts плејера</string>
@@ -864,18 +876,6 @@ Second \"item\" text"</string>
   <string name="morphe_wide_searchbar_title">Омогући широку траку за претрагу</string>
   <string name="morphe_wide_searchbar_summary_on">Широка трака за претрагу је омогућена</string>
   <string name="morphe_wide_searchbar_summary_off">Широка трака за претрагу је онемогућена</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Омогући висококвалитетне сличице</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Сличице траке за премотавање су високог квалитета</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Сличице траке за премотавање су средњег квалитета</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Ово ће такође вратити сличице на стримовима уживо који немају сличице траке за премотавање.
-
-Сличице траке за премотавање ће користити исти квалитет као тренутни видео.
-
-Ова функција најбоље ради са квалитетом видеа од 720p или нижим и када користите веома брзу интернет везу."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Врати старе сличице траке за премотавање</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Сличице траке за премотавање ће се појавити изнад ње</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Сличице траке за премотавање ће се појавити у режиму целог екрана</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Омогући SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock је систем заснован на доприносима корисника и служи за прескакање досадних делова YouTube видеа</string>
@@ -1121,6 +1121,7 @@ Second \"item\" text"</string>
   <string name="morphe_change_start_page_entry_browse">Претрага канала</string>
   <string name="morphe_change_start_page_entry_courses">Курсеви / Учење</string>
   <string name="morphe_change_start_page_entry_explore">Истражи</string>
+  <string name="morphe_change_start_page_entry_fashion">Мода и лепота</string>
   <string name="morphe_change_start_page_entry_gaming">Видео игре</string>
   <string name="morphe_change_start_page_entry_history">Историја</string>
   <string name="morphe_change_start_page_entry_library">Збирка</string>
@@ -1194,9 +1195,11 @@ Second \"item\" text"</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Сакриј дугмад преклопа</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Дугмад преклопа су скривена</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Дугмад преклопа су приказана</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Сакриј дугмад за проширење и затварање</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Дугмад су скривена
 
 Превуците да бисте проширили или затворили"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Дугмад за проширење и затварање су приказана</string>
   <string name="morphe_miniplayer_hide_subtext_title">Сакриј подтекстове</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Подтекстови су скривени</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Подтекстови су приказани</string>
@@ -1244,8 +1247,11 @@ Second \"item\" text"</string>
   <string name="morphe_alt_thumbnail_subscription_title">Картица „Праћења”</string>
   <!-- 'You' should be translated using the same localized wording YouTube displays for the You (Library) tab. -->
   <string name="morphe_alt_thumbnail_library_title">Картица „Ви”</string>
+  <string name="morphe_alt_thumbnail_player_title">Плејлисте плејера и препоруке</string>
   <string name="morphe_alt_thumbnail_search_title">Резултати претраге</string>
   <string name="morphe_alt_thumbnail_options_entry_1">Оригиналне сличице</string>
+  <string name="morphe_alt_thumbnail_options_entry_2">DeArrow и оригиналне сличице</string>
+  <string name="morphe_alt_thumbnail_options_entry_3">DeArrow и захвати кадра</string>
   <string name="morphe_alt_thumbnail_options_entry_4">Захвати кадра</string>
   <string name="morphe_alt_thumbnail_dearrow_about_summary">"DeArrow пружа сличице за YouTube видее прикупљене од заједнице корисника. Ове сличице су често релевантније од оних које пружа YouTube
 

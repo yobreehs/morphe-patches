@@ -18,6 +18,7 @@ Second \"item\" text"</string>
 <resources>
   <!-- misc.settings.settingsResourcePatch -->
   <string name="morphe_settings_submenu_title">Pengaturan</string>
+  <string name="morphe_settings_about_donate">Donasi</string>
   <string name="morphe_settings_confirm_user_dialog_title">Apakah Anda yakin ingin melanjutkan?</string>
   <string name="morphe_settings_save">Simpan</string>
   <string name="morphe_settings_reset">Setel ulang</string>
@@ -49,6 +50,9 @@ Second \"item\" text"</string>
   <string name="morphe_settings_search_history_title">Tampilkan riwayat pencarian setelan</string>
   <string name="morphe_settings_search_history_summary_on">Riwayat pencarian setelan ditampilkan</string>
   <string name="morphe_settings_search_history_summary_off">Riwayat pencarian setelan tidak ditampilkan</string>
+  <string name="morphe_settings_disable_bold_icons_title">Nonaktifkan ikon tebal</string>
+  <string name="morphe_settings_disable_bold_icons_summary_on">Ikon tidak tebal</string>
+  <string name="morphe_settings_disable_bold_icons_summary_off">Ikon tebal</string>
   <string name="morphe_show_menu_icons_title">Tampilkan ikon pengaturan Morphe</string>
   <string name="morphe_show_menu_icons_summary_on">Ikon pengaturan ditampilkan</string>
   <string name="morphe_show_menu_icons_summary_off">Ikon pengaturan tidak ditampilkan</string>

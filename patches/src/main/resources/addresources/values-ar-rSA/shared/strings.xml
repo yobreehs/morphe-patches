@@ -18,6 +18,7 @@ Second \"item\" text"</string>
 <resources>
   <!-- misc.settings.settingsResourcePatch -->
   <string name="morphe_settings_submenu_title">الإعدادات</string>
+  <string name="morphe_settings_about_donate">تبرع</string>
   <string name="morphe_settings_confirm_user_dialog_title">هل أنت متأكد أنك تريد المتابعة؟</string>
   <string name="morphe_settings_save">حفظ</string>
   <string name="morphe_settings_reset">إعادة التعيين</string>
@@ -49,6 +50,9 @@ Second \"item\" text"</string>
   <string name="morphe_settings_search_history_title">عرض سجل بحث الإعدادات</string>
   <string name="morphe_settings_search_history_summary_on">يتم عرض سجل البحث في الإعدادات</string>
   <string name="morphe_settings_search_history_summary_off">لا يتم عرض سجل البحث في الإعدادات</string>
+  <string name="morphe_settings_disable_bold_icons_title">تعطيل الأيقونات العريضة</string>
+  <string name="morphe_settings_disable_bold_icons_summary_on">الأيقونات ليست عريضة</string>
+  <string name="morphe_settings_disable_bold_icons_summary_off">الأيقونات عريضة</string>
   <string name="morphe_show_menu_icons_title">عرض أيقونات إعدادات Morphe</string>
   <string name="morphe_show_menu_icons_summary_on">يتم عرض أيقونات الإعدادات</string>
   <string name="morphe_show_menu_icons_summary_off">لا يتم عرض أيقونات الإعدادات</string>

@@ -559,6 +559,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_navigation_button_labels_title">Скрыть подписи кнопок навигации</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Подписи кнопок навигации скрыты</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Подписи кнопок навигации показаны</string>
+  <string name="morphe_navigation_bar_animations_title">Включить анимацию панели навигации</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Переходы навигации анимированы</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Переходы навигации не анимированы</string>
   <string name="morphe_disable_translucent_status_bar_title">Отключить полупрозрачность строки состояния</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Строка состояния непрозрачная</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Строка состояния непрозрачная или полупрозрачная</string>
@@ -596,6 +599,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">Пункт \"Постоянный уровень громкости\" в выдвижном меню плеера показан</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">Пункт \"Постоянный уровень громкости\" в выдвижном меню плеера скрыт</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
+  <string name="morphe_hide_player_flyout_help_title">Скрыть пункт \"Справка и отзывы\"</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">Пункт \"Справка и отзывы\" скрыт</string>
+  <string name="morphe_hide_player_flyout_help_summary_off">Пункт \"Справка и отзывы\" отображён</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">Скрыть пункт \"Скорость воспроизведения\"</string>
   <string name="morphe_hide_player_flyout_speed_summary_on">Пункт \"Скорость воспроизведения\" в выдвижном меню плеера скрыт</string>
@@ -641,6 +647,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_control_buttons_background_title">Скрыть фон кнопок управления плеера</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">Фон кнопок управления плеера скрыт</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Фон кнопок управления плеера показан</string>
+  <string name="morphe_hide_player_previous_next_buttons_title">Скрыть кнопки предыдущего и следующего видео</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Кнопки \"Предыдущееи Следующее скрыты</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Кнопки Предыдущее и следующее отображаются</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Скрыть заставки следующих видео</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Заставки следующих видео в конце просмотра скрыты</string>
@@ -665,6 +674,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_seekbar_thumbnail_title">Скрыть полосу прогресса миниатюр видео</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Полоса прогресса миниатюр видео скрыта</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Полоса прогресса миниатюр видео показана</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Включить полноэкранную большую панель поиска</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Полноэкранная панель поиска имеет большой размер</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Полноэкранная панель поиска имеет обычный размер</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Компоненты плеера Shorts</string>
   <string name="morphe_shorts_player_screen_summary">Скрыть или показать компоненты плеера Shorts</string>
@@ -862,21 +874,8 @@ Second \"item\" text"</string>
   <string name="morphe_ryd_statistics_millisecond_text">%d миллисекунд</string>
   <!-- layout.searchbar.wideSearchbarPatch -->
   <string name="morphe_wide_searchbar_title">Включить широкую панель поиска</string>
+  <string name="morphe_wide_searchbar_summary_on">Широкая панель поиска включена</string>
   <string name="morphe_wide_searchbar_summary_off">Широкая панель поиска отключена</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Включить высокое качество миниатюр</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Миниатюры полосы прогресса при перемотке имеют высокое качество</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Миниатюры полосы прогресса при перемотке имеют среднее качество</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_on">Полноэкранные миниатюры полосы прогресса при перемотке имеют высокое качество</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_off">Полноэкранные миниатюры полосы прогресса при перемотке имеют среднее качество</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Данная опция также восстановит миниатюры в прямых трансляциях, которые не имеют миниатюр полосы прогресса.
-
-Миниатюры полосы прогресса будут использовать такое же качество, как и текущее видео.
-
-Данная опция работает лучше с качеством видео 720p или ниже, и при использовании очень быстрого подключения к Интернету."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Включить старые миниатюры</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Старые миниатюры полосы прогресса включены и показываются в мини окнах над полосой прогресса</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Старые миниатюры полосы прогресса отключены и показываются в виде полноэкранных миниатюр</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Включить SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock – это краудсорсинговая система для пропуска раздражающих фрагментов видео YouTube</string>
@@ -919,6 +918,7 @@ Second \"item\" text"</string>
   <string name="morphe_sb_enable_create_segment_sum_on">Кнопка создания нового сегмента показана</string>
   <string name="morphe_sb_enable_create_segment_sum_off">Кнопка создания нового сегмента скрыта</string>
   <string name="morphe_sb_general_adjusting">Настроить шаг нового сегмента</string>
+  <string name="morphe_sb_general_adjusting_sum">Количество миллисекунд, на которое перемещаются кнопки регулировки времени при создании новых сегментов</string>
   <string name="morphe_sb_general_adjusting_invalid">Значение должно быть положительным числом</string>
   <string name="morphe_sb_guidelines_preference_title">Просмотреть инструкцию</string>
   <string name="morphe_sb_guidelines_preference_sum">Инструкция содержит правила и советы по созданию новых сегментов</string>
@@ -1081,6 +1081,7 @@ Second \"item\" text"</string>
   <string name="morphe_sb_stats_self_saved_sum">Это &lt;b&gt;%s&lt;/b&gt;</string>
   <string name="morphe_sb_stats_self_saved_reset_title">Сбросить счетчик пропущенных сегментов?</string>
   <string name="morphe_sb_stats_saved_hour_format">%1$s часов %2$s минут</string>
+  <string name="morphe_sb_stats_saved_minute_format">%1$s минут %2$s секунд</string>
   <string name="morphe_sb_stats_saved_second_format">%s секунд</string>
   <string name="morphe_sb_color_opacity_label">Непрозрачность:</string>
   <string name="morphe_sb_color_dot_label">Цвет:</string>
@@ -1121,6 +1122,7 @@ Second \"item\" text"</string>
   <string name="morphe_change_start_page_entry_browse">Просмотр каналов</string>
   <string name="morphe_change_start_page_entry_courses">Курсы / Обучение</string>
   <string name="morphe_change_start_page_entry_explore">Навигатор</string>
+  <string name="morphe_change_start_page_entry_fashion">Мода и&amp;Красота</string>
   <string name="morphe_change_start_page_entry_gaming">Игры</string>
   <string name="morphe_change_start_page_entry_history">История просмотров</string>
   <string name="morphe_change_start_page_entry_library">Библиотека</string>
@@ -1246,9 +1248,17 @@ Second \"item\" text"</string>
   <string name="morphe_alt_thumbnail_subscription_title">Вкладка \"Подписки\"</string>
   <!-- 'You' should be translated using the same localized wording YouTube displays for the You (Library) tab. -->
   <string name="morphe_alt_thumbnail_library_title">Вкладка \"Вы\"</string>
+  <string name="morphe_alt_thumbnail_player_title">Плейлисты и&amp;рекомендации плеера</string>
   <string name="morphe_alt_thumbnail_search_title">Результаты поиска</string>
   <string name="morphe_alt_thumbnail_options_entry_1">Оригинальные миниатюры</string>
+  <string name="morphe_alt_thumbnail_options_entry_2">Мини-альбомы DeArrow и&amp;оригинальные мини-альбомы</string>
+  <string name="morphe_alt_thumbnail_options_entry_3">Мини-альбомы DeArrow и&amp;кадры из видео</string>
   <string name="morphe_alt_thumbnail_options_entry_4">Захват кадра</string>
+  <string name="morphe_alt_thumbnail_dearrow_about_summary">"DeArrow предоставляет мини-альбомы для видео YouTube, созданные сообществом. Эти мини-альбомы часто более релевантны, чем предоставленные YouTube
+
+Если включено, URL-адреса видео будут отправляться на сервер API, и никакие другие данные не отправляются. Если у видео нет мини-альбомов DeArrow, показываются оригинальные или кадры из видео
+
+Нажмите здесь, чтобы узнать больше о DeArrow"</string>
   <string name="morphe_alt_thumbnail_dearrow_connection_toast_title">Показать всплывающее уведомление при недоступности API</string>
   <string name="morphe_alt_thumbnail_dearrow_connection_toast_summary_on">Всплывающее уведомление при недоступности DeArrow показано</string>
   <string name="morphe_alt_thumbnail_dearrow_connection_toast_summary_off">Всплывающее уведомление при недоступности DeArrow скрыто</string>
@@ -1305,6 +1315,8 @@ Second \"item\" text"</string>
   <string name="microg_offline_account_login_error">Если Вы недавно изменили данные для входа в свою учетную запись, удалите и переустановите MicroG.</string>
   <!-- misc.links.bypassURLRedirectsPatch -->
   <string name="morphe_bypass_url_redirects_title">Обход перенаправлений URL-адресов</string>
+  <string name="morphe_bypass_url_redirects_summary_on">Перенаправления URL-адресов обходятся</string>
+  <string name="morphe_bypass_url_redirects_summary_off">URL-перенаправления не обходятся</string>
   <!-- misc.links.openLinksExternallyPatch -->
   <string name="morphe_external_browser_title">Открывать ссылки в браузере</string>
   <string name="morphe_external_browser_summary_on">Ссылки открываются во внешнем браузере</string>
@@ -1383,6 +1395,7 @@ Second \"item\" text"</string>
   <!-- interaction.seekbar.enableSlideToSeekPatch -->
   <string name="morphe_slide_to_seek_title">Включить перемотку видео слайдом</string>
   <string name="morphe_slide_to_seek_summary_on">Перемотка видео слайдом включена</string>
+  <string name="morphe_slide_to_seek_summary_off">Перемотка видео слайдом выключена</string>
   <!-- misc.fix.playback.spoofVideoStreamsPatch -->
   <string name="morphe_spoof_video_streams_av1_title">Разрешить Android VR AV1</string>
   <string name="morphe_spoof_video_streams_av1_summary_on">"Видеокодек: AVC (H.264), VP9 или AV1

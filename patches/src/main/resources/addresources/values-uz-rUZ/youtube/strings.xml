@@ -118,7 +118,6 @@ Second \"item\" text"</string>
   <!-- Translations should use language similar to 'morphe_sb_enable_compact_skip_button'. -->
   <!-- Statistic strings are shown in the settings only when Morphe debug mode is enabled. Typical users will never see these. -->
   <!-- layout.searchbar.wideSearchbarPatch -->
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <!-- Translations should use language similar to 'morphe_ryd_compact_layout_title'. -->
   <!-- Notification (toast) shown if network connection times out. Translations of this should not be longer than the original English or the text can be clipped and not entirely shown. -->

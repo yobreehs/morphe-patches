@@ -20,11 +20,13 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_00_about_title">Informazioni</string>
   <string name="morphe_settings_screen_01_ads_title">Pubblicità</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Miniature alternative</string>
+  <string name="morphe_settings_screen_03_feed_title">Feed</string>
   <string name="morphe_settings_screen_04_general_title">Generale</string>
   <string name="morphe_settings_screen_05_player_title">Lettore</string>
   <string name="morphe_settings_screen_07_seekbar_title">Barra di avanzamento</string>
   <string name="morphe_settings_screen_08_swipe_controls_title">Controlli a gesti</string>
   <string name="morphe_settings_screen_11_misc_title">Varie</string>
+  <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Ripristina i vecchi menu delle impostazioni</string>
   <string name="morphe_restore_old_settings_menus_summary_on">I vecchi menu delle impostazioni vengono mostrati</string>
   <string name="morphe_restore_old_settings_menus_summary_off">I vecchi menu delle impostazioni non vengono mostrati</string>
@@ -557,6 +559,9 @@ Se la modifica di questa impostazione non ha effetto, prova a passare alla modal
   <string name="morphe_hide_navigation_button_labels_title">Nascondi etichette dei pulsanti di navigazione</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Le etichette sono nascoste</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Le etichette sono visibili</string>
+  <string name="morphe_navigation_bar_animations_title">Abilita animazioni della barra di navigazione</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Le transizioni di navigazione sono animate</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Le transizioni di navigazione non sono animate</string>
   <string name="morphe_disable_translucent_status_bar_title">Disabilita la barra di stato traslucida</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">La barra di stato è opaca</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">La barra di stato è opaca o traslucida</string>
@@ -594,6 +599,9 @@ Se la modifica di questa impostazione non ha effetto, prova a passare alla modal
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">Il menu Volume Stabile è visibile</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">Il menu Volume Stabile è nascosto</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
+  <string name="morphe_hide_player_flyout_help_title">Nascondi Guida e feedback</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">Il menù Guida e Feedback è nascosto</string>
+  <string name="morphe_hide_player_flyout_help_summary_off">Il menù Guida e Feedback è visibile</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">Nascondi Velocità di riproduzione</string>
   <string name="morphe_hide_player_flyout_speed_summary_on">Il menu Velocità di riproduzione è nascosto</string>
@@ -639,6 +647,9 @@ Per mostrare il menu della traccia audio, cambia \"Falsifica flussi video\" su i
   <string name="morphe_hide_player_control_buttons_background_title">Nascondi lo sfondo dei controlli del player</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">Lo sfondo dei controlli del player è nascosto</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Lo sfondo dei controlli del player è mostrato</string>
+  <string name="morphe_hide_player_previous_next_buttons_title">Nascondi i pulsanti Precedente e Successivo</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">I pulsanti Precedente e Successivo sono nascosti.</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">I pulsanti Precedente e Successivo sono mostrati</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Nascondi le schede della schermata finale</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Le schede della schermata finale sono nascoste</string>
@@ -663,6 +674,9 @@ Per mostrare il menu della traccia audio, cambia \"Falsifica flussi video\" su i
   <string name="morphe_hide_seekbar_thumbnail_title">Nascondi barra di ricerca delle miniature video</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">La barra di ricerca delle miniature video è nascosta</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">La barra di ricerca delle miniature video è mostrata</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Abilita la barra di avanzamento grande a schermo intero</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">La barra di avanzamento a schermo intero è di grandi dimensioni</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">La barra di avanzamento a schermo intero è di dimensioni normali</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Player Shorts</string>
   <string name="morphe_shorts_player_screen_summary">Nascondi o mostra i componenti del lettore Shorts</string>
@@ -862,18 +876,6 @@ Limitazione: i \"Non mi piace\" potrebbero non apparire in modalità incognito"<
   <string name="morphe_wide_searchbar_title">Attiva la barra di ricerca estesa</string>
   <string name="morphe_wide_searchbar_summary_on">La barra di ricerca estesa è abilitata</string>
   <string name="morphe_wide_searchbar_summary_off">La barra di ricerca estesa è disabilitata</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Abilita miniature di alta qualità</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Le miniature della barra di avanzamento sono di alta qualità</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Le miniature della barra di avanzamento sono di media qualità</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Questo ripristinerà anche le miniature sulle dirette che non hanno miniature della barra di avanzamento.
-
-Le miniature della barra di avanzamento utilizzeranno la stessa qualità del video corrente.
-
-Questa funzione funziona meglio con una qualità video di 720p o inferiore e quando si utilizza una connessione Internet molto veloce."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Ripristina vecchie miniature della barra di avanzamento</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Le miniature della barra di avanzamento appariranno sopra la barra di avanzamento</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Le miniature della barra di avanzamento appariranno a schermo intero</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Abilita SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock è un sistema collaborativo creato per saltare le parti fastidiose nei video di YouTube</string>
@@ -1088,6 +1090,8 @@ Pronto per l'invio?"</string>
   <string name="morphe_change_form_factor_title">Fattore di forma del layout</string>
   <string name="morphe_change_form_factor_entry_1">Predefinito</string>
   <string name="morphe_change_form_factor_entry_2">Telefono</string>
+  <string name="morphe_change_form_factor_entry_3">Tablet</string>
+  <string name="morphe_change_form_factor_entry_4">Veicoli</string>
   <string name="morphe_change_form_factor_user_dialog_message">"Le modifiche includono:
 
 Layout per tablet
@@ -1117,6 +1121,7 @@ Se in seguito verrà disattivato, si consiglia di cancellare i dati dell'app per
   <string name="morphe_change_start_page_entry_browse">Sfoglia canali</string>
   <string name="morphe_change_start_page_entry_courses">Corsi / Formazione</string>
   <string name="morphe_change_start_page_entry_explore">Esplora</string>
+  <string name="morphe_change_start_page_entry_fashion">Moda e Bellezza</string>
   <string name="morphe_change_start_page_entry_gaming">Giochi</string>
   <string name="morphe_change_start_page_entry_history">Cronologia</string>
   <string name="morphe_change_start_page_entry_library">Libreria</string>
@@ -1157,11 +1162,13 @@ Limitazione: l'utilizzo del pulsante Indietro sulla barra degli strumenti potreb
   <string name="morphe_shorts_autoplay_background_summary_on">Gli Short in background verranno riprodotti automaticamente</string>
   <string name="morphe_shorts_autoplay_background_summary_off">Gli Short in background si ripeteranno</string>
   <!-- layout.miniplayer.miniplayerPatch -->
+  <string name="morphe_miniplayer_screen_title">Miniplayer</string>
   <string name="morphe_miniplayer_screen_summary">Modifica lo stile del player minimizzato in-app</string>
   <string name="morphe_miniplayer_type_title">Tipo di Miniplayer</string>
   <string name="morphe_miniplayer_type_entry_0">Disattivato</string>
   <string name="morphe_miniplayer_type_entry_1">Predefinito</string>
   <string name="morphe_miniplayer_type_entry_2">Minimale</string>
+  <string name="morphe_miniplayer_type_entry_3">Tablet</string>
   <string name="morphe_miniplayer_type_entry_4">Moderno 1</string>
   <string name="morphe_miniplayer_type_entry_5">Moderno 2</string>
   <string name="morphe_miniplayer_type_entry_6">Moderno 3</string>
@@ -1188,6 +1195,11 @@ Il riproduttore minimizzato può essere trascinato fuori dallo schermo a sinistr
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Nascondi i pulsanti di overlay</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">I pulsanti di overlay sono nascosti</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">I pulsanti di overlay sono visualizzati</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Nascondi i pulsanti di espansione e chiusura</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"I pulsanti sono nascosti
+
+Scorri per espandere o chiudere"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">I pulsanti di espansione e chiusura sono mostrati</string>
   <string name="morphe_miniplayer_hide_subtext_title">Nascondi sottotitoli</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">I sottotitoli sono nascosti</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">I sottotitoli sono visibili</string>
@@ -1235,6 +1247,7 @@ Abilitare questa opzione può risolvere le immagini mancanti che sono bloccate i
   <string name="morphe_alt_thumbnail_subscription_title">Scheda Iscrizioni</string>
   <!-- 'You' should be translated using the same localized wording YouTube displays for the You (Library) tab. -->
   <string name="morphe_alt_thumbnail_library_title">Scheda Tu</string>
+  <string name="morphe_alt_thumbnail_player_title">Playlist e video consigliati</string>
   <string name="morphe_alt_thumbnail_search_title">Risultati della ricerca</string>
   <string name="morphe_alt_thumbnail_options_entry_1">Miniature originali</string>
   <string name="morphe_alt_thumbnail_options_entry_2">DeArrow &amp; miniature originali</string>
@@ -1324,6 +1337,7 @@ Abilitare questa opzione può sbloccare qualità video più elevate"</string>
   <string name="morphe_shorts_quality_default_wifi_title">Qualità predefinita di Shorts sulla rete Wi-Fi</string>
   <string name="morphe_shorts_quality_default_mobile_title">Qualità predefinita di Shorts sulla rete mobile</string>
   <string name="morphe_remember_video_quality_mobile">cellulare</string>
+  <string name="morphe_remember_video_quality_wifi">Wi-Fi</string>
   <string name="morphe_remember_video_quality_toast">Modificato la qualità predefinita %1$s in: %2$s</string>
   <string name="morphe_remember_video_quality_toast_shorts">Modificata la qualità Shorts %1$s in: %2$s</string>
   <!-- video.speed.button.playbackSpeedButtonPatch -->

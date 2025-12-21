@@ -559,6 +559,9 @@ Se alterar esta configuração não fizer efeito, tente alternar para o modo an�
   <string name="morphe_hide_navigation_button_labels_title">Ocultar rótulos dos botões de navegação</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Marcadores estão ocultos</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Marcadores são mostrados</string>
+  <string name="morphe_navigation_bar_animations_title">Ativar animações da barra de navegação</string>
+  <string name="morphe_navigation_bar_animations_summary_on">As transições de navegação são animadas</string>
+  <string name="morphe_navigation_bar_animations_summary_off">As transições de navegação não são animadas</string>
   <string name="morphe_disable_translucent_status_bar_title">Desativar a barra de status translúcida</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">A barra de status é opaca</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">A barra de status é opaca ou translúcida</string>
@@ -645,6 +648,8 @@ Para mostrar o menu da faixa de áudio, altere 'Falsificar fluxos de vídeo' par
   <string name="morphe_hide_player_control_buttons_background_summary_on">O fundo dos controles do reprodutor está oculto</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">O fundo dos controles do player é exibido</string>
   <string name="morphe_hide_player_previous_next_buttons_title">Ocultar botões Anterior &amp; Próximo</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Os botões Anterior &amp; Próximo estão ocultos</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Os botões Anterior &amp; Próximo são exibidos</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Esconder cartões de ecrã final</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Cartões de fim de ecrã estão escondidos</string>
@@ -669,6 +674,9 @@ Para mostrar o menu da faixa de áudio, altere 'Falsificar fluxos de vídeo' par
   <string name="morphe_hide_seekbar_thumbnail_title">Ocultar barra de busca de miniaturas de vídeo</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Barra de busca de miniaturas de vídeo está oculta</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Barra de busca de miniaturas de vídeo está visível</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Ativar barra de busca grande em tela cheia</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">A barra de busca em tela cheia é de tamanho grande</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">A barra de busca em tela cheia é de tamanho normal</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Reprodutor de Shorts</string>
   <string name="morphe_shorts_player_screen_summary">Ocultar ou mostrar componentes do player de Shorts</string>
@@ -868,18 +876,6 @@ Limitação: As não gostos podem não aparecer no modo anônimo"</string>
   <string name="morphe_wide_searchbar_title">Ativar barra de pesquisa ampla</string>
   <string name="morphe_wide_searchbar_summary_on">Barra de pesquisa ampla está ativada</string>
   <string name="morphe_wide_searchbar_summary_off">Barra de pesquisa ampla está desativada</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Habilitar miniaturas de alta qualidade</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">As miniaturas na barra de busca são de alta qualidade</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">As miniaturas na barra de busca são de qualidade média</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Điều này cũng sẽ khôi phục hình thu nhỏ trên các luồng trực tiếp không có các hình thu nhỏ thanh tìm kiếm.
-
-Hình thu nhỏ thanh tìm kiếm sẽ sử dụng chất lượng tương tự như video hiện tại.
-
-Tính năng này hoạt động tốt nhất với chất lg video là 720p trở xuống và khi sử dụng kết nối internet rất nhanh."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Restaurar as miniaturas antigas da barra de pesquisa</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">As miniaturas da barra de busca aparecerão acima da barra de busca</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">As miniaturas da Seekbar aparecerão em ecrã cheia</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Habilitar Patrocínio</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock é um sistema de crowdsourcing para saltar partes irritantes de vídeos do YouTube</string>
@@ -1095,6 +1091,7 @@ Pronto para enviar?"</string>
   <string name="morphe_change_form_factor_title">Fator de forma do layout</string>
   <string name="morphe_change_form_factor_entry_1">Padrão</string>
   <string name="morphe_change_form_factor_entry_2">Telemóvel</string>
+  <string name="morphe_change_form_factor_entry_3">Tablet</string>
   <string name="morphe_change_form_factor_entry_4">Automotivo</string>
   <string name="morphe_change_form_factor_user_dialog_message">"As alterações incluem:
 
@@ -1125,6 +1122,7 @@ Nếu sau này tắt, bạn nên xóa dữ liệu ứng dụng để tránh lỗ
   <string name="morphe_change_start_page_entry_browse">Procurar canais</string>
   <string name="morphe_change_start_page_entry_courses">Cursos / Aprendizado</string>
   <string name="morphe_change_start_page_entry_explore">Explorar</string>
+  <string name="morphe_change_start_page_entry_fashion">Moda &amp; Beleza</string>
   <string name="morphe_change_start_page_entry_gaming">Jogos</string>
   <string name="morphe_change_start_page_entry_history">Histórico</string>
   <string name="morphe_change_start_page_entry_library">Biblioteca</string>
@@ -1171,6 +1169,7 @@ Limitação: Usar o botão voltar na barra de ferramentas pode não funcionar"</
   <string name="morphe_miniplayer_type_entry_0">Desativado</string>
   <string name="morphe_miniplayer_type_entry_1">Padrão</string>
   <string name="morphe_miniplayer_type_entry_2">Mínimo</string>
+  <string name="morphe_miniplayer_type_entry_3">Tablet</string>
   <string name="morphe_miniplayer_type_entry_4">Moderno 1</string>
   <string name="morphe_miniplayer_type_entry_5">Moderno 2</string>
   <string name="morphe_miniplayer_type_entry_6">Moderno 3</string>
@@ -1197,6 +1196,11 @@ Miniplayer có thể được kéo ra khỏi màn hình sang trái hoặc phải
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Ocultar botões de sobreposição</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Os botões de sobreposição estão ocultos</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Os botões de sobreposição são mostrados</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Ocultar botões de expandir e fechar</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Botões ocultos
+
+Deslize para expandir ou fechar"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Botões de expandir e fechar visíveis</string>
   <string name="morphe_miniplayer_hide_subtext_title">Ocultar subtextos</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Subtextos estão ocultos</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Subtextos são exibidos</string>
@@ -1228,6 +1232,7 @@ Miniplayer có thể được kéo ra khỏi màn hình sang trái hoặc phải
   <!-- layout.branding.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Logotipo do cabeçalho</string>
   <string name="morphe_header_logo_entry_1">Padrão</string>
+  <string name="morphe_header_logo_entry_2">Normal</string>
   <!-- Translation of this should be identical to morphe_custom_branding_icon_entry_3 -->
   <string name="morphe_header_logo_entry_5">Morphe mínimo</string>
   <!-- layout.thumbnails.bypassImageRegionRestrictionsPatch -->
@@ -1243,6 +1248,7 @@ Bật tính năng này có thể sửa lỗi hình ảnh bị thiếu do bị ch
   <string name="morphe_alt_thumbnail_subscription_title">Guia Inscrições</string>
   <!-- 'You' should be translated using the same localized wording YouTube displays for the You (Library) tab. -->
   <string name="morphe_alt_thumbnail_library_title">Aba você</string>
+  <string name="morphe_alt_thumbnail_player_title">Playlists &amp; recomendações do reprodutor</string>
   <string name="morphe_alt_thumbnail_search_title">Resultados da pesquisa</string>
   <string name="morphe_alt_thumbnail_options_entry_1">Miniaturas originais</string>
   <string name="morphe_alt_thumbnail_options_entry_2">DeArrow &amp; Miniaturas originais</string>

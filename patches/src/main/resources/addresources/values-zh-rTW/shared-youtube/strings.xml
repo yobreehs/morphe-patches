@@ -19,9 +19,13 @@ Second \"item\" text"</string>
   <!-- layout.branding.baseCustomBrandingPatch -->
   <string name="morphe_custom_branding_name_title">應用程式名稱</string>
   <!-- Translations of this should be identical to morphe_custom_branding_icon_entry_4 -->
+  <string name="morphe_custom_branding_name_entry_5">自訂</string>
   <string name="morphe_custom_branding_icon_title">應用程式圖示</string>
   <string name="morphe_custom_branding_icon_entry_1">原始</string>
+  <string name="morphe_custom_branding_icon_entry_2">Morphe 淺色</string>
+  <string name="morphe_custom_branding_icon_entry_3">Morphe 深色</string>
   <!-- Translations of this should be identical to morphe_custom_branding_name_entry_5 -->
+  <string name="morphe_custom_branding_icon_entry_4">自訂</string>
   <!-- misc.dns.checkWatchHistoryDomainNameResolutionPatch -->
   <string name="morphe_check_watch_history_domain_name_dialog_title">Morphe 通知</string>
   <string name="morphe_check_watch_history_domain_name_dialog_message">你的觀看記錄未被儲存。&lt;br&gt;&lt;br&gt;這很可能是由於 DNS 廣告封鎖器或網路代理所導致。&lt;br&gt;&lt;br&gt;若要解決此問題，請將 &lt;b&gt;s.youtube.com&lt;/b&gt; 加入白名單，或關閉所有 DNS 封鎖器和代理。</string>

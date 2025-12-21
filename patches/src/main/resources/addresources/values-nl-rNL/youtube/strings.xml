@@ -20,11 +20,13 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_00_about_title">Info</string>
   <string name="morphe_settings_screen_01_ads_title">Advertenties</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Alternatieve miniaturen</string>
+  <string name="morphe_settings_screen_03_feed_title">Feed</string>
   <string name="morphe_settings_screen_04_general_title">Algemeen</string>
   <string name="morphe_settings_screen_05_player_title">Speler</string>
   <string name="morphe_settings_screen_07_seekbar_title">Zoekbalk</string>
   <string name="morphe_settings_screen_08_swipe_controls_title">Veegbediening</string>
   <string name="morphe_settings_screen_11_misc_title">Diversen</string>
+  <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Oude instellingenmenu\'s herstellen</string>
   <string name="morphe_restore_old_settings_menus_summary_on">Oude instellingenmenu\'s worden getoond</string>
   <string name="morphe_restore_old_settings_menus_summary_off">Oude instellingenmenu\'s worden niet getoond</string>
@@ -557,6 +559,9 @@ Als het wijzigen van deze instelling geen effect heeft, probeer dan over te scha
   <string name="morphe_hide_navigation_button_labels_title">Navigatieknoppenlabels verbergen</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Labels zijn verborgen</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Labels worden weergegeven</string>
+  <string name="morphe_navigation_bar_animations_title">Navigatiebalkanimaties inschakelen</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Navigatieovergangen worden geanimeerd</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Navigatieovergangen worden niet geanimeerd</string>
   <string name="morphe_disable_translucent_status_bar_title">Transparante statusbalk uitschakelen</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Statusbalk is ondoorzichtig</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Statusbalk is ondoorzichtig of doorschijnend</string>
@@ -594,6 +599,9 @@ Als het wijzigen van deze instelling geen effect heeft, probeer dan over te scha
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">Stabiel volume-menu wordt weergegeven</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">Stabiel volume-menu is verborgen</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
+  <string name="morphe_hide_player_flyout_help_title">Verberg Hulp &amp; feedback</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">Hulp &amp; feedback-menu is verborgen</string>
+  <string name="morphe_hide_player_flyout_help_summary_off">Hulp &amp; feedback-menu wordt getoond</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">Afspeel snelheid verbergen</string>
   <string name="morphe_hide_player_flyout_speed_summary_on">Afspeel snelheid-menu is verborgen</string>
@@ -640,6 +648,8 @@ Om het audiotracks-menu te tonen, wijzig 'Videostreams spoofen' naar iPadOS"</st
   <string name="morphe_hide_player_control_buttons_background_summary_on">Achtergrond van spelerbediening is verborgen</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Achtergrond van spelerbediening wordt weergegeven</string>
   <string name="morphe_hide_player_previous_next_buttons_title">Verberg Vorige &amp; Volgende knoppen</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Knoppen Vorige &amp; Volgende zijn verborgen</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Knoppen Vorige &amp; Volgende worden getoond</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Verberg eindschermkaarten</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Eindschermkaarten zijn verborgen</string>
@@ -664,6 +674,9 @@ Om het audiotracks-menu te tonen, wijzig 'Videostreams spoofen' naar iPadOS"</st
   <string name="morphe_hide_seekbar_thumbnail_title">Zoekbalk videominiaturen verbergen</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Zoekbalk videominiaturen is verborgen</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Zoekbalk videominiaturen is getoond</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Volledig scherm grote zoekbalk inschakelen</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Afzonderlijke afspeelbare afspeelbare zoekbalk is groot</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Afzonderlijke afspeelbare afspeelbare zoekbalk is normaal</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Shorts-speler</string>
   <string name="morphe_shorts_player_screen_summary">Shorts-spelercomponenten verbergen of tonen</string>
@@ -804,6 +817,7 @@ Instellingen → Afspelen → Volgende video automatisch afspelen"</string>
   <string name="morphe_exit_fullscreen_entry_3">Landschap</string>
   <string name="morphe_exit_fullscreen_entry_4">Portret en landschap</string>
   <!-- layout.player.fullscreen.openVideosFullscreen -->
+  <string name="morphe_open_videos_fullscreen_portrait_title">Video\'s openen in volledig scherm staand</string>
   <string name="morphe_open_videos_fullscreen_portrait_summary_on">Video\'s openen in volledig schermmodus</string>
   <string name="morphe_open_videos_fullscreen_portrait_summary_off">Video\'s openen niet in volledig schermmodus</string>
   <!-- layout.player.overlay.customPlayerOverlayOpacityResourcePatch -->
@@ -862,18 +876,6 @@ Beperking: Vind ik niet leuk verschijnen mogelijk niet in de incognitomodus"</st
   <string name="morphe_wide_searchbar_title">Schakel de brede zoekbalk in</string>
   <string name="morphe_wide_searchbar_summary_on">De brede zoekbalk is ingeschakeld</string>
   <string name="morphe_wide_searchbar_summary_off">De brede zoekbalk is uitgeschakeld</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Schakel miniatuurweergaven van hoge kwaliteit in</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Miniatuurweergaven van de zoekbalk zijn van hoge kwaliteit</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Miniatuurweergaven van de zoekbalk zijn van gemiddelde kwaliteit</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Dit zal ook miniatuurweergaven herstellen op livestreams die geen miniatuurweergaven van de zoekbalk hebben.
-
-Miniatuurweergaven van de zoekbalk gebruiken dezelfde kwaliteit als de huidige video.
-
-Deze functie werkt het beste met een videokwaliteit van 720p of lager en wanneer u een zeer snelle internetverbinding gebruikt."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Herstel oude miniatuurweergaven van de zoekbalk</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Miniatuurweergaven van de zoekbalk worden boven de zoekbalk weergegeven</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Miniatuurweergaven van de zoekbalk worden in volledig scherm weergegeven</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Schakel SponsorBlock in</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock is een crowdsourced systeem om vervelende delen van YouTube-video\'s over te slaan</string>
@@ -955,6 +957,7 @@ Uw gebruikers-ID is als een wachtwoord en mag nooit worden gedeeld.
 "</string>
   <string name="morphe_sb_settings_morphe_export_user_id_warning_dismiss">Niet meer tonen</string>
   <string name="morphe_sb_diff_segments">Verander het segmentgedrag</string>
+  <string name="morphe_sb_segments_sponsor">Sponsor</string>
   <string name="morphe_sb_segments_sponsor_sum">Betaalde promotie, betaalde verwijzingen en directe advertenties. Niet voor zelfpromotie of gratis shout-outs naar oorzaken/makers/websites/producten die ze leuk vinden</string>
   <string name="morphe_sb_segments_selfpromo">Onbetaalde/Zelfpromotie</string>
   <string name="morphe_sb_segments_selfpromo_sum">Vergelijkbaar met Sponsor, maar dan voor onbetaalde of zelfpromotie. Inclusief secties over merchandise, donaties of informatie over met wie ze hebben samengewerkt</string>
@@ -1037,6 +1040,7 @@ Bestaat al"</string>
   <string name="morphe_sb_new_segment_disabled_category">Categorie is uitgeschakeld in de instellingen. Schakel de categorie in om in te dienen.</string>
   <string name="morphe_sb_new_segment_title">Nieuw SponsorBlock-segment</string>
   <string name="morphe_sb_new_segment_mark_time_as_question">%s instellen als begin of einde van een nieuw segment?</string>
+  <string name="morphe_sb_new_segment_mark_start">Start</string>
   <string name="morphe_sb_new_segment_mark_end">Einde</string>
   <string name="morphe_sb_new_segment_now">Nu</string>
   <string name="morphe_sb_new_segment_time_start">Tijd waarop het segment begint</string>
@@ -1087,6 +1091,7 @@ Klaar om in te dienen?"</string>
   <string name="morphe_change_form_factor_title">Indelingsvormfactor</string>
   <string name="morphe_change_form_factor_entry_1">Standaard</string>
   <string name="morphe_change_form_factor_entry_2">Telefoon</string>
+  <string name="morphe_change_form_factor_entry_3">Tablet</string>
   <string name="morphe_change_form_factor_entry_4">Automobiel</string>
   <string name="morphe_change_form_factor_user_dialog_message">"Wijzigingen omvatten:
 
@@ -1122,6 +1127,7 @@ Als het later wordt uitgeschakeld, wordt aanbevolen om de app-gegevens te wissen
   <string name="morphe_change_start_page_entry_history">Geschiedenis</string>
   <string name="morphe_change_start_page_entry_library">Bibliotheek</string>
   <string name="morphe_change_start_page_entry_liked_videos">Gelikte video\'s</string>
+  <string name="morphe_change_start_page_entry_live">Live</string>
   <string name="morphe_change_start_page_entry_movies">Films</string>
   <string name="morphe_change_start_page_entry_music">Muziek</string>
   <string name="morphe_change_start_page_entry_news">Nieuws</string>
@@ -1161,6 +1167,11 @@ Als het later wordt uitgeschakeld, wordt aanbevolen om de app-gegevens te wissen
   <string name="morphe_miniplayer_type_entry_0">Uitgeschakeld</string>
   <string name="morphe_miniplayer_type_entry_1">Standaard</string>
   <string name="morphe_miniplayer_type_entry_2">Minimaal</string>
+  <string name="morphe_miniplayer_type_entry_3">Tablet</string>
+  <string name="morphe_miniplayer_type_entry_4">Modern 1</string>
+  <string name="morphe_miniplayer_type_entry_5">Modern 2</string>
+  <string name="morphe_miniplayer_type_entry_6">Modern 3</string>
+  <string name="morphe_miniplayer_type_entry_7">Modern 4</string>
   <string name="morphe_miniplayer_disable_rounded_corners_title">Afgeronde hoeken uitschakelen</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_on">Hoeken zijn vierkant</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_off">Hoeken zijn afgerond</string>
@@ -1183,6 +1194,11 @@ De miniplayer kan naar links of rechts van het scherm worden gesleept"</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Overlayknoppen verbergen</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Overlayknoppen zijn verborgen</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Overlayknoppen worden weergegeven</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Knop voor uitbreiden en sluiten verbergen</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Knoppen zijn verborgen
+
+Veeg om uit te breiden of te sluiten"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Knoppen voor uitbreiden en sluiten worden weergegeven</string>
   <string name="morphe_miniplayer_hide_subtext_title">Verberg subteksten</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Subteksten zijn verborgen</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Subteksten zijn zichtbaar</string>
@@ -1320,6 +1336,7 @@ Het inschakelen hiervan kan hogere videokwaliteiten ontgrendelen"</string>
   <string name="morphe_shorts_quality_default_wifi_title">Standaardkwaliteit voor Shorts op wifi-netwerk</string>
   <string name="morphe_shorts_quality_default_mobile_title">Standaardkwaliteit voor Shorts op mobiel netwerk</string>
   <string name="morphe_remember_video_quality_mobile">mobiel</string>
+  <string name="morphe_remember_video_quality_wifi">wifi</string>
   <string name="morphe_remember_video_quality_toast">Standaard %1$s-kwaliteit gewijzigd naar: %2$s</string>
   <string name="morphe_remember_video_quality_toast_shorts">De kwaliteit van Shorts %1$s is gewijzigd in: %2$s</string>
   <!-- video.speed.button.playbackSpeedButtonPatch -->

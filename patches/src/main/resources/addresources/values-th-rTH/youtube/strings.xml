@@ -557,6 +557,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_navigation_button_labels_title">ซ่อนป้ายกำกับปุ่มนำทาง</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">ป้ายกำกับถูกซ่อน</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">ป้ายกำกับถูกแสดง</string>
+  <string name="morphe_navigation_bar_animations_title">เปิดใช้งานภาพเคลื่อนไหวแถบนำทาง</string>
+  <string name="morphe_navigation_bar_animations_summary_on">การเปลี่ยนภาพเคลื่อนไหวจะถูกทำให้เป็นภาพเคลื่อนไหว</string>
+  <string name="morphe_navigation_bar_animations_summary_off">การเปลี่ยนภาพเคลื่อนไหวจะไม่ถูกทำให้เป็นภาพเคลื่อนไหว</string>
   <string name="morphe_disable_translucent_status_bar_title">ปิดใช้งานแถบสถานะแบบโปร่งแสง</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">แถบสถานะไม่โปร่งแสง</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">แถบสถานะโปร่งแสงหรือไม่โปร่งแสง</string>
@@ -594,6 +597,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">เมนูระดับเสียงคงที่แสดงอยู่</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">เมนูระดับเสียงคงที่ซ่อนอยู่</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
+  <string name="morphe_hide_player_flyout_help_title">ซ่อนความช่วยเหลือ &amp; ความคิดเห็น</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">เมนูความช่วยเหลือ &amp; ความคิดเห็นถูกซ่อน</string>
+  <string name="morphe_hide_player_flyout_help_summary_off">เมนูความช่วยเหลือ &amp; ความคิดเห็นแสดงอยู่</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">ซ่อนความเร็วในการเล่น</string>
   <string name="morphe_hide_player_flyout_speed_summary_on">เมนูความเร็วในการเล่นซ่อนอยู่</string>
@@ -640,6 +646,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">ซ่อนพื้นหลังส่วนควบคุมเครื่องเล่น</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">แสดงพื้นหลังส่วนควบคุมเครื่องเล่น</string>
   <string name="morphe_hide_player_previous_next_buttons_title">ซ่อนปุ่มก่อนหน้า &amp; ถัดไป</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">ปุ่มก่อนหน้า &amp; ถัดไปถูกซ่อน</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">ปุ่มก่อนหน้า &amp; ถัดไปแสดงอยู่</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">ซ่อนการ์ดหน้าจอสิ้นสุด</string>
   <string name="morphe_hide_endscreen_cards_summary_on">การ์ดหน้าจอสิ้นสุดซ่อนอยู่</string>
@@ -664,6 +672,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_seekbar_thumbnail_title">ซ่อนแถบเลื่อนภาพขนาดย่อของวิดีโอ</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">แถบเลื่อนภาพขนาดย่อของวิดีโอถูกซ่อนอยู่</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">แถบเลื่อนภาพขนาดย่อของวิดีโอแสดงอยู่</string>
+  <string name="morphe_fullscreen_large_seekbar_title">เปิดใช้งานแถบเลื่อนขนาดใหญ่แบบเต็มหน้าจอ</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">แถบเลื่อนแบบเต็มหน้าจอมีขนาดใหญ่</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">แถบเลื่อนแบบเต็มหน้าจอมีขนาดปกติ</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Shorts Player</string>
   <string name="morphe_shorts_player_screen_summary">ซ่อนหรือแสดงส่วนประกอบเครื่องเล่น Shorts</string>
@@ -863,19 +874,6 @@ Second \"item\" text"</string>
   <string name="morphe_wide_searchbar_title">ทั้งหละเย้ยนตะโรกเลียด</string>
   <string name="morphe_wide_searchbar_summary_on">ทั้งละเย้ยนตะโรกเลียด รตรอกลาดต้อง</string>
   <string name="morphe_wide_searchbar_summary_off">ทั้งหละเย้ยนตะโรกเลียด รบกใหม่ยเทศไทย</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">เปิดใช้งานรูปขนาดย่อคุณภาพสูง</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">รูปขนาดย่อแถบ Seek มีคุณภาพสูง</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">รูปขนาดย่อแถบ Seek มีคุณภาพปานกลาง</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_off">รูปขนาดย่อแถบ Seek แบบเต็มหน้าจอมีคุณภาพปานกลาง</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"สิ่งนี้จะคืนค่าภาพขนาดย่อบนการถ่ายทอดสดที่ไม่มีภาพขนาดย่อของแถบเลื่อนด้วย
-
-ภาพขนาดย่อของแถบเลื่อนจะใช้คุณภาพเดียวกับวิดีโอปัจจุบัน
-
-คุณสมบัตินี้ทํางานได้ดีที่สุดด้วยคุณภาพวิดีโอ 720p หรือต่ํากว่า และเมื่อใช้การเชื่อมต่ออินเทอร์เน็ตที่รวดเร็วมาก"</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">คืนค่าภาพขนาดย่อสำหรับแถบเลื่อนแบบเก่า</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">ภาพขนาดย่อสำหรับแถบเลื่อนจะปรากฏเหนือแถบเลื่อน</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">ภาพขนาดย่อสำหรับแถบเลื่อนจะปรากฏในโหมดเต็มจอ</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">เปิดใช้งาน SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock เป็นระบบ crowdsourced สำหรับการข้ามส่วนที่น่ารำคาญของวิดีโอ YouTube</string>
@@ -1122,6 +1120,7 @@ User id ของคุณเหมือนกับรหัสผ่าน �
   <string name="morphe_change_start_page_entry_browse">เรียกดูช่อง</string>
   <string name="morphe_change_start_page_entry_courses">เก็บค์คสตตว์อก / คมีนคร</string>
   <string name="morphe_change_start_page_entry_explore">สำรวจ</string>
+  <string name="morphe_change_start_page_entry_fashion">แฟชั่น &amp; ความงาม</string>
   <string name="morphe_change_start_page_entry_gaming">เกม</string>
   <string name="morphe_change_start_page_entry_history">ประวัติ</string>
   <string name="morphe_change_start_page_entry_library">คลัง</string>
@@ -1153,6 +1152,7 @@ User id ของคุณเหมือนกับรหัสผ่าน �
   <string name="morphe_shorts_player_type_title">เปิด \"Shorts\" ด้วย</string>
   <string name="morphe_shorts_player_type_shorts">Shorts Player</string>
   <string name="morphe_shorts_player_type_regular_player">เครื่องเล่นปกติ</string>
+  <string name="morphe_shorts_player_type_regular_player_fullscreen">โปรแกรมเล่นปกติแบบเต็มหน้าจอ</string>
   <!-- layout.shortsautoplay.shortsAutoplayPatch -->
   <string name="morphe_shorts_autoplay_title">เล่น Shorts อัตโนมัติ</string>
   <string name="morphe_shorts_autoplay_summary_on">Shorts จะเล่นอัตโนมัติ</string>
@@ -1194,9 +1194,11 @@ User id ของคุณเหมือนกับรหัสผ่าน �
   <string name="morphe_miniplayer_hide_overlay_buttons_title">ซ่อนปุ่มโอเวอร์เลย์</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">ปุ่มโอเวอร์เลย์ถูกซ่อน</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">ปุ่มโอเวอร์เลย์ถูกแสดง</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">ซ่อนปุ่มขยายและปิด</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"ปุ่มถูกซ่อน
 
 ปัดเพื่อขยายหรือปิด"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">ปุ่มขยายและปิดจะแสดงขึ้น</string>
   <string name="morphe_miniplayer_hide_subtext_title">ซ่อนข้อความย่อย</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">ข้อความย่อยถูกซ่อน</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">ข้อความย่อยแสดงอยู่</string>
@@ -1334,6 +1336,7 @@ User id ของคุณเหมือนกับรหัสผ่าน �
   <string name="morphe_shorts_quality_default_wifi_title">คุณภาพ Shorts เริ่มต้นบนเครือข่าย Wi-Fi</string>
   <string name="morphe_shorts_quality_default_mobile_title">คุณภาพ Shorts เริ่มต้นบนเครือข่ายมือถือ</string>
   <string name="morphe_remember_video_quality_mobile">มือถือ</string>
+  <string name="morphe_remember_video_quality_wifi">wifi</string>
   <string name="morphe_remember_video_quality_toast">เปลี่ยนคุณภาพ %1$s เริ่มต้นเป็น: %2$s</string>
   <string name="morphe_remember_video_quality_toast_shorts">เปลี่ยนคุณภาพ Shorts %1$s เป็น: %2$s</string>
   <!-- video.speed.button.playbackSpeedButtonPatch -->

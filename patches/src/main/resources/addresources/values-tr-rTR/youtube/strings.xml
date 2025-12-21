@@ -26,6 +26,7 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_07_seekbar_title">Zaman çubuğu</string>
   <string name="morphe_settings_screen_08_swipe_controls_title">Kaydırma denetimleri</string>
   <string name="morphe_settings_screen_11_misc_title">Çeşitli</string>
+  <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Eski ayarlar menülerini geri getir</string>
   <string name="morphe_restore_old_settings_menus_summary_on">Eski ayarlar menüleri gösteriliyor</string>
   <string name="morphe_restore_old_settings_menus_summary_off">Eski ayarlar menüleri gösterilmiyor</string>
@@ -558,6 +559,9 @@ Bu ayarı değiştirmek etkili olmazsa, Gizli moda geçmeyi deneyin."</string>
   <string name="morphe_hide_navigation_button_labels_title">Gezinme düğmeleri etiketlerini gizle</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Etiketler gizli</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Etiketler görünür</string>
+  <string name="morphe_navigation_bar_animations_title">Gezinme çubuğu animasyonlarını etkinleştir</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Gezinme geçişleri animasyonludur</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Gezinme geçişleri animasyonlu değildir</string>
   <string name="morphe_disable_translucent_status_bar_title">Yarı saydam durum çubuğunu devre dışı bırak</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Durum çubuğu opak</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Durum çubuğu opak veya yarı saydam</string>
@@ -595,6 +599,9 @@ Bu ayarı değiştirmek etkili olmazsa, Gizli moda geçmeyi deneyin."</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">Sabit ses menüsü görünür</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">Sabit ses menüsü gizli</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
+  <string name="morphe_hide_player_flyout_help_title">Yardım &amp; geri bildirim menüsünü gizle</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">Yardım &amp; geri bildirim menüsü gizlendi</string>
+  <string name="morphe_hide_player_flyout_help_summary_off">Yardım &amp; geri bildirim menüsü gösterilir</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">Oynatma hızını gizle</string>
   <string name="morphe_hide_player_flyout_speed_summary_on">Oynatma hızı menüsü gizli</string>
@@ -667,6 +674,9 @@ Ses parçası menüsünü göstermek için 'Video akışlarını taklit et' ayar
   <string name="morphe_hide_seekbar_thumbnail_title">Video kapak fotoğrafı zaman çubuğunu gizle</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Video kapak fotoğrafı zaman çubuğu gizli</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Video kapak fotoğrafı zaman çubuğu gösteriliyor</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Tam ekran büyük arama çubuğunu etkinleştir</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Tam ekran arama çubuğu büyük boyutta</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Tam ekran arama çubuğu normal boyutta</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Shorts oynatıcı</string>
   <string name="morphe_shorts_player_screen_summary">Shorts oynatıcı bileşenlerini gizle veya göster</string>
@@ -816,6 +826,7 @@ Ayarlar → Oynatma → Sonraki videoyu otomatik oynat"</string>
   <string name="morphe_player_overlay_opacity_invalid_toast">Oynatıcı katmanı opaklığı 0-100 arasında olmalıdır</string>
   <!-- layout.returnyoutubedislike.returnYouTubeDislikePatch -->
   <!-- Brief notification (toast) shown if network connection times out. Translations of this should not be longer than the original English or the text can be clipped and not entirely shown. -->
+  <string name="morphe_ryd_failure_connection_timeout">Beğenmemeler geçici olarak kullanılamıyor (API zaman aşımına uğradı)</string>
   <string name="morphe_ryd_failure_connection_status_code">Beğenilmemeler kullanılamıyor (durum %d)</string>
   <string name="morphe_ryd_failure_client_rate_limit_requested">Beğenilmemeler kullanılamıyor (istemci API sınırı)</string>
   <string name="morphe_ryd_failure_generic">Beğenilmemeler kullanılamıyor (%s)</string>
@@ -865,20 +876,6 @@ Kısıtlama: Beğenilmeme sayıları gizli modda görünmeyebilir"</string>
   <string name="morphe_wide_searchbar_title">Geniş arama çubuğunu etkinleştir</string>
   <string name="morphe_wide_searchbar_summary_on">Geniş arama çubuğu etkin</string>
   <string name="morphe_wide_searchbar_summary_off">Geniş arama çubuğu devre dışı</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Yüksek kalite küçük resimleri etkinleştir</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Zaman çubuğu küçük resimleri yüksek kalitede</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Zaman çubuğu küçük resimleri orta kalitede</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_on">Tam ekran zaman çubuğu küçük resimleri yüksek kalitede</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_off">Tam ekran zaman çubuğu küçük resimleri orta kalitede</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Bu aynı zamanda, zaman çubuğu küçük resimleri olmayan canlı yayınlardaki küçük resimleri de geri yükleyecektir.
-
-Zaman çubuğu küçük resimleri, mevcut video ile aynı kaliteyi kullanacaktır.
-
-Bu özellik, 720p veya daha düşük video kalitesi ve çok hızlı bir internet bağlantısı kullanıldığında en iyi şekilde çalışır."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Eski zaman çubuğu küçük resimlerini geri getir</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Zaman çubuğu küçük resimleri zaman çubuğunun üzerinde görünecek</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Zaman çubuğu küçük resimleri tam ekranda görünecek</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">SponsorBlock\'u etkinleştir</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock, YouTube videolarının can sıkıcı kısımlarını atlamaya yarayan kitle kaynaklı bir sistemdir</string>
@@ -960,6 +957,7 @@ Kullanıcı kimliğiniz bir parola gibidir ve asla paylaşılmamalıdır.
 "</string>
   <string name="morphe_sb_settings_morphe_export_user_id_warning_dismiss">Bir daha gösterme</string>
   <string name="morphe_sb_diff_segments">Kısım davranışını değiştir</string>
+  <string name="morphe_sb_segments_sponsor">Sponsor</string>
   <string name="morphe_sb_segments_sponsor_sum">Ücretli tanıtım, ücretli yönlendirmeler ve doğrudan reklamlar. Kendi reklamı veya beğendiği amaçlara/üreticilere/sitelere/ürünlere atıfta bulunmalar için değil</string>
   <string name="morphe_sb_segments_selfpromo">Karşılıksız / Kendi Reklamı</string>
   <string name="morphe_sb_segments_selfpromo_sum">Ücretsiz veya kendi reklamı olması dışında Sponsor\'a benzer. Ürünler, bağışlar veya kimlerle birlikte çalıştıkları hakkında kısımları içerir</string>
@@ -1020,11 +1018,13 @@ Kullanıcı kimliğiniz bir parola gibidir ve asla paylaşılmamalıdır.
   <string name="morphe_sb_submit_failed_invalid">Kısım gönderilemedi: %s</string>
   <string name="morphe_sb_submit_failed_timeout">SponsorBlock geçici olarak kapalı</string>
   <string name="morphe_sb_submit_failed_unknown_error">Kısım gönderilemedi (durum: %1$d %2$s)</string>
+  <string name="morphe_sb_submit_failed_rate_limit">Segment gönderilemedi. Hız Sınırlı (aynı kullanıcıdan veya IP\'den çok fazla)</string>
   <string name="morphe_sb_submit_failed_forbidden">Kısım gönderilemiyor: %s</string>
   <string name="morphe_sb_submit_failed_duplicate">"Kısım gönderilemiyor.
 Aynısı mevcut"</string>
   <string name="morphe_sb_submit_succeeded">Kısım başarıyla gönderildi</string>
   <!-- Notification (toast) shown if network connection times out. Translations of this should not be longer than the original English or the text can be clipped and not entirely shown. -->
+  <string name="morphe_sb_sponsorblock_connection_failure_timeout">SponsorBlock geçici olarak kullanılamıyor (API zaman aşımına uğradı)</string>
   <string name="morphe_sb_sponsorblock_connection_failure_status">SponsorBlock geçici olarak kullanılamıyor (durum %d)</string>
   <string name="morphe_sb_sponsorblock_connection_failure_generic">SponsorBlock geçici olarak kullanılamıyor</string>
   <string name="morphe_sb_vote_failed_timeout">Kısım oylanamıyor (API zaman aşımına uğradı)</string>
@@ -1091,6 +1091,7 @@ Göndermeye hazır mısınız?"</string>
   <string name="morphe_change_form_factor_title">Düzen form faktörü</string>
   <string name="morphe_change_form_factor_entry_1">Varsayılan</string>
   <string name="morphe_change_form_factor_entry_2">Telefon</string>
+  <string name="morphe_change_form_factor_entry_3">Tablet</string>
   <string name="morphe_change_form_factor_entry_4">Otomotiv</string>
   <string name="morphe_change_form_factor_user_dialog_message">"Değişiklikler şunları içerir:
 
@@ -1121,6 +1122,7 @@ Daha sonra kapatılırsa, arayüz hatalarını önlemek için uygulama verilerin
   <string name="morphe_change_start_page_entry_browse">Kanallara göz at</string>
   <string name="morphe_change_start_page_entry_courses">Kurslar / Öğrenme</string>
   <string name="morphe_change_start_page_entry_explore">Keşfet</string>
+  <string name="morphe_change_start_page_entry_fashion">Moda &amp; Güzellik</string>
   <string name="morphe_change_start_page_entry_gaming">Oyun</string>
   <string name="morphe_change_start_page_entry_history">Geçmiş</string>
   <string name="morphe_change_start_page_entry_library">Kitaplık</string>
@@ -1166,6 +1168,12 @@ Kısıtlama: Araç çubuğundaki geri düğmesini kullanmak işe yaramayabilir"<
   <string name="morphe_miniplayer_type_title">Mini oynatıcı tipi</string>
   <string name="morphe_miniplayer_type_entry_0">Devre dışı</string>
   <string name="morphe_miniplayer_type_entry_1">Varsayılan</string>
+  <string name="morphe_miniplayer_type_entry_2">Minimal</string>
+  <string name="morphe_miniplayer_type_entry_3">Tablet</string>
+  <string name="morphe_miniplayer_type_entry_4">Modern 1</string>
+  <string name="morphe_miniplayer_type_entry_5">Modern 2</string>
+  <string name="morphe_miniplayer_type_entry_6">Modern 3</string>
+  <string name="morphe_miniplayer_type_entry_7">Modern 4</string>
   <string name="morphe_miniplayer_disable_rounded_corners_title">Yuvarlatılmış köşeleri devre dışı bırak</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_on">Köşeler kare şeklinde</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_off">Köşeler yuvarlatılmış</string>
@@ -1330,6 +1338,7 @@ Bunu etkinleştirmek daha yüksek video kalitelerini açabilir"</string>
   <string name="morphe_shorts_quality_default_wifi_title">Wi-Fi ağındaki varsayılan Shorts kalitesi</string>
   <string name="morphe_shorts_quality_default_mobile_title">Mobil ağdaki varsayılan Shorts kalitesi</string>
   <string name="morphe_remember_video_quality_mobile">mobil ağ</string>
+  <string name="morphe_remember_video_quality_wifi">Wi-Fi</string>
   <string name="morphe_remember_video_quality_toast">Varsayılan %1$s kalitesi, %2$s olarak ayarlandı</string>
   <string name="morphe_remember_video_quality_toast_shorts">Shorts %1$s kalitesi, %2$s olarak ayarlandı</string>
   <!-- video.speed.button.playbackSpeedButtonPatch -->

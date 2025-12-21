@@ -20,6 +20,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_00_about_title">Acerca de</string>
   <string name="morphe_settings_screen_01_ads_title">Anuncios</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Miniaturas alternativas</string>
+  <string name="morphe_settings_screen_03_feed_title">Feed</string>
+  <string name="morphe_settings_screen_04_general_title">General</string>
   <string name="morphe_settings_screen_05_player_title">Reproductor</string>
   <string name="morphe_settings_screen_07_seekbar_title">Barra de progreso</string>
   <string name="morphe_settings_screen_08_swipe_controls_title">Controles de deslizamiento</string>
@@ -557,6 +559,9 @@ Si cambiar este ajuste no tiene efecto, intenta cambiar al modo incógnito."</st
   <string name="morphe_hide_navigation_button_labels_title">Ocultar etiquetas de navegación</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Las etiquetas están ocultas</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Las etiquetas son visibles</string>
+  <string name="morphe_navigation_bar_animations_title">Habilitar animaciones de la barra de navegación</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Las transiciones de navegación se animan</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Las transiciones de navegación no se animan</string>
   <string name="morphe_disable_translucent_status_bar_title">Desactivar la barra de estado translúcida</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">La barra de estado es opaca</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">La barra de estado es opaca o translúcida</string>
@@ -643,6 +648,8 @@ Para mostrar el menú de la pista de audio, cambia 'Suplantar transmisiones de v
   <string name="morphe_hide_player_control_buttons_background_summary_on">El fondo de los controles del reproductor está oculto</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Se muestra el fondo de los controles del reproductor</string>
   <string name="morphe_hide_player_previous_next_buttons_title">Ocultar botones Anterior &amp; Siguiente</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Los botones anterior y siguiente están ocultos</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Se muestran los botones Anterior y Siguiente</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Ocultar tarjetas de pantalla final</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Las tarjetas de pantalla de fin están ocultas</string>
@@ -667,6 +674,9 @@ Para mostrar el menú de la pista de audio, cambia 'Suplantar transmisiones de v
   <string name="morphe_hide_seekbar_thumbnail_title">Ocultar barra de búsqueda de miniaturas de vídeo</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">La barra de búsqueda de miniaturas de vídeo está oculta</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">La barra de búsqueda de miniaturas de vídeo es visible</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Habilitar barra de búsqueda grande en pantalla completa</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">La barra de búsqueda en pantalla completa es de tamaño grande</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">La barra de búsqueda en pantalla completa es de tamaño normal</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Reproductor de Shorts</string>
   <string name="morphe_shorts_player_screen_summary">Ocultar o mostrar componentes del reproductor de Shorts</string>
@@ -816,6 +826,7 @@ Configuración → Reproducción → Reproducir el siguiente vídeo automáticam
   <string name="morphe_player_overlay_opacity_invalid_toast">Opacidad del reproductor debe estar entre 0 y 100</string>
   <!-- layout.returnyoutubedislike.returnYouTubeDislikePatch -->
   <!-- Brief notification (toast) shown if network connection times out. Translations of this should not be longer than the original English or the text can be clipped and not entirely shown. -->
+  <string name="morphe_ryd_failure_connection_timeout">Los \"me disgusta\" no están disponibles temporalmente (tiempo de espera de la API)</string>
   <string name="morphe_ryd_failure_connection_status_code">Dislikes no disponibles (estado %d)</string>
   <string name="morphe_ryd_failure_client_rate_limit_requested">Los Dislikes no están disponibles (límite de la API del cliente)</string>
   <string name="morphe_ryd_failure_generic">Dislikes no disponibles (%s)</string>
@@ -865,18 +876,6 @@ Limitación: Es posible que los Dislikes no aparezcan en el modo de incógnito"<
   <string name="morphe_wide_searchbar_title">Habilitar barra de búsqueda ancha</string>
   <string name="morphe_wide_searchbar_summary_on">Barra de búsqueda ancha habilitada</string>
   <string name="morphe_wide_searchbar_summary_off">La barra de búsqueda ancha está desactivada</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Habilitar miniaturas de alta calidad</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Las miniuñas Seekbar son de alta calidad</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Las miniuñas Seekbar son de calidad media</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Esto también restaurará las miniaturas en las transmisiones en vivo que no tengan miniaturas de la barra de búsqueda.
-
-Las miniaturas de la barra de búsqueda utilizarán la misma calidad que el vídeo actual.
-
-Esta función funciona mejor con una calidad de vídeo de 720p o inferior y cuando se utiliza una conexión a Internet muy rápida."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Restaurar antiguas miniaturas de la barra de búsqueda</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Las miniaturas de la barra de búsqueda aparecerán por encima de la barra de búsqueda</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Las miniaturas de Seekbar aparecerán en pantalla completa</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Activar SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock es un sistema de colaboración abierta para omitir partes molestas de los vídeos de YouTube</string>
@@ -927,6 +926,7 @@ Esta función funciona mejor con una calidad de vídeo de 720p o inferior y cuan
   <string name="morphe_sb_guidelines_popup_content">Lee las pautas de SponsorBlock antes de crear nuevos segmentos</string>
   <string name="morphe_sb_guidelines_popup_already_read">Ya leído</string>
   <string name="morphe_sb_guidelines_popup_open">Múestrame</string>
+  <string name="morphe_sb_general">General</string>
   <string name="morphe_sb_toast_on_connection_error">Mostrar un brindis si la API no está disponible</string>
   <string name="morphe_sb_toast_on_connection_error_sum_on">Toast se muestra si SponsorBlock no está disponible</string>
   <string name="morphe_sb_toast_on_connection_error_sum_off">Toast no se muestra si SponsorBlock no está disponible</string>
@@ -1075,6 +1075,7 @@ Ya existe"</string>
   <string name="morphe_sb_stats_saved_minute_format">%1$s minutos %2$s segundos</string>
   <string name="morphe_sb_stats_saved_second_format">%s segundos</string>
   <string name="morphe_sb_color_opacity_label">Opacidad:</string>
+  <string name="morphe_sb_color_dot_label">Color:</string>
   <string name="morphe_sb_about_title">Acerca de</string>
   <string name="morphe_sb_about_api_summary">Los datos son proporcionados por la API de SponsorBlock. Pulsa aquí para aprender más y ver las descargas para otras plataformas</string>
   <!-- layout.formfactor.changeFormFactorPatch -->
@@ -1112,6 +1113,7 @@ Si se desactiva posteriormente, se recomienda borrar los datos de la aplicación
   <string name="morphe_change_start_page_entry_browse">Navegar canales</string>
   <string name="morphe_change_start_page_entry_courses">Cursos / Aprendizaje</string>
   <string name="morphe_change_start_page_entry_explore">Explorar</string>
+  <string name="morphe_change_start_page_entry_fashion">Moda y Belleza</string>
   <string name="morphe_change_start_page_entry_gaming">Juegos</string>
   <string name="morphe_change_start_page_entry_history">Historial</string>
   <string name="morphe_change_start_page_entry_library">Biblioteca</string>
@@ -1185,6 +1187,11 @@ El minireproductor se puede arrastrar fuera de la pantalla hacia la izquierda o 
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Ocultar botones de superposición</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Los botones de superposición están ocultos</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Se muestran los botones de superposición</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Ocultar botones de expandir y cerrar</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Los botones están ocultos
+
+Desliza para expandir o cerrar"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Se muestran los botones de expandir y cerrar</string>
   <string name="morphe_miniplayer_hide_subtext_title">Ocultar subtextos</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Los subtextos están ocultos</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Los subtextos se muestran</string>
@@ -1202,6 +1209,7 @@ El minireproductor se puede arrastrar fuera de la pantalla hacia la izquierda o 
   <string name="morphe_gradient_loading_screen_summary_on">La pantalla de carga tendrá un fondo gradiente</string>
   <string name="morphe_gradient_loading_screen_summary_off">La pantalla de carga tendrá un fondo sólido</string>
   <string name="morphe_splash_screen_animation_style_title">Estilo de la pantalla de presentación</string>
+  <string name="morphe_splash_screen_animation_style_entry_1">Color</string>
   <string name="morphe_splash_screen_animation_style_entry_2">Blanco y negro</string>
   <string name="morphe_seekbar_custom_color_title">Activar el color personalizado de la barra de búsqueda</string>
   <string name="morphe_seekbar_custom_color_summary_on">Se muestra el color personalizado de la barra de búsqueda</string>
@@ -1321,6 +1329,7 @@ Habilitar esto puede desbloquear calidades de vídeo más altas"</string>
   <string name="morphe_shorts_quality_default_wifi_title">Calidad predeterminada de Shorts en la red Wi-Fi</string>
   <string name="morphe_shorts_quality_default_mobile_title">Calidad predeterminada de Shorts en la red móvil</string>
   <string name="morphe_remember_video_quality_mobile">móvil</string>
+  <string name="morphe_remember_video_quality_wifi">wifi</string>
   <string name="morphe_remember_video_quality_toast">Cambió la calidad predeterminada %1$s a: %2$s</string>
   <string name="morphe_remember_video_quality_toast_shorts">Calidad de Shorts %1$s cambiada a: %2$s</string>
   <!-- video.speed.button.playbackSpeedButtonPatch -->

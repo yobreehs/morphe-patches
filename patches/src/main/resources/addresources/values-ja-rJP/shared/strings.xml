@@ -18,6 +18,7 @@ Second \"item\" text"</string>
 <resources>
   <!-- misc.settings.settingsResourcePatch -->
   <string name="morphe_settings_submenu_title">設定</string>
+  <string name="morphe_settings_about_donate">寄付</string>
   <string name="morphe_settings_confirm_user_dialog_title">続行してもよろしいですか？</string>
   <string name="morphe_settings_save">保存</string>
   <string name="morphe_settings_reset">リセット</string>
@@ -49,6 +50,9 @@ Second \"item\" text"</string>
   <string name="morphe_settings_search_history_title">設定の検索履歴を表示</string>
   <string name="morphe_settings_search_history_summary_on">設定の検索履歴は表示されます</string>
   <string name="morphe_settings_search_history_summary_off">設定の検索履歴は表示されません</string>
+  <string name="morphe_settings_disable_bold_icons_title">アイコンを太字にする</string>
+  <string name="morphe_settings_disable_bold_icons_summary_on">アイコンは太字ではありません</string>
+  <string name="morphe_settings_disable_bold_icons_summary_off">アイコンは太字です</string>
   <string name="morphe_show_menu_icons_title">Morphe の設定にアイコンを表示</string>
   <string name="morphe_show_menu_icons_summary_on">Morphe の設定メニューにはアイコンが表示されます</string>
   <string name="morphe_show_menu_icons_summary_off">Morphe の設定メニューにはアイコンは表示されません</string>

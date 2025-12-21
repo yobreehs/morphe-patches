@@ -18,6 +18,7 @@ Second \"item\" text"</string>
 <resources>
   <!-- misc.settings.settingsResourcePatch -->
   <string name="morphe_settings_submenu_title">Inställningar</string>
+  <string name="morphe_settings_about_donate">Donera</string>
   <string name="morphe_settings_confirm_user_dialog_title">Är du säker på att du vill fortsätta?</string>
   <string name="morphe_settings_save">Spara</string>
   <string name="morphe_settings_reset">Återställ</string>
@@ -49,6 +50,9 @@ Second \"item\" text"</string>
   <string name="morphe_settings_search_history_title">Visa sökhistorik för inställningar</string>
   <string name="morphe_settings_search_history_summary_on">Sökhistorik för inställningar visas</string>
   <string name="morphe_settings_search_history_summary_off">Sökhistorik för inställningar visas inte</string>
+  <string name="morphe_settings_disable_bold_icons_title">Inaktivera fetstilta ikoner</string>
+  <string name="morphe_settings_disable_bold_icons_summary_on">Ikoner är inte fetstilta</string>
+  <string name="morphe_settings_disable_bold_icons_summary_off">Ikoner är fetstilta</string>
   <string name="morphe_show_menu_icons_title">Visa ikoner för Morphe-inställningar</string>
   <string name="morphe_show_menu_icons_summary_on">Inställningsikoner visas</string>
   <string name="morphe_show_menu_icons_summary_off">Inställningsikoner visas inte</string>

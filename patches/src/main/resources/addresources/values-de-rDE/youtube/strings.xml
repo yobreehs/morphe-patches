@@ -20,11 +20,13 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_00_about_title">Über</string>
   <string name="morphe_settings_screen_01_ads_title">Werbung</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Alternative Thumbnails</string>
+  <string name="morphe_settings_screen_03_feed_title">Feed</string>
   <string name="morphe_settings_screen_04_general_title">Allgemein</string>
   <string name="morphe_settings_screen_05_player_title">Spieler</string>
   <string name="morphe_settings_screen_07_seekbar_title">Fortschrittsbalken</string>
   <string name="morphe_settings_screen_08_swipe_controls_title">Wischsteuerung</string>
   <string name="morphe_settings_screen_11_misc_title">Verschiedenes</string>
+  <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Alte Einstellungsmenüs wiederherstellen</string>
   <string name="morphe_restore_old_settings_menus_summary_on">Alte Einstellungsmenüs werden angezeigt</string>
   <string name="morphe_restore_old_settings_menus_summary_off">Alte Einstellungsmenüs werden nicht angezeigt</string>
@@ -554,6 +556,9 @@ Wenn diese Änderung nicht wirksam wird, versuchen Sie, in den Inkognito-Modus z
   <string name="morphe_hide_navigation_button_labels_title">Navigationstastenbezeichnungen ausblenden</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Labels sind ausgeblendet</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Labels werden angezeigt</string>
+  <string name="morphe_navigation_bar_animations_title">Navigation bar animations aktivieren</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Navigationen werden animiert</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Navigationen werden nicht animiert</string>
   <string name="morphe_disable_translucent_status_bar_title">Transluzente Statusleiste deaktivieren</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Statusleiste ist undurchsichtig</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Die Statusleiste ist undurchsichtig oder durchscheinend</string>
@@ -640,6 +645,8 @@ Um das Audiotrack-Menü anzuzeigen, ändern Sie \"Video-Streams fälschen\" zu i
   <string name="morphe_hide_player_control_buttons_background_summary_on">Hintergrund der Wiedergabesteuerung ist ausgeblendet</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Hintergrund der Player-Steuerelemente wird angezeigt</string>
   <string name="morphe_hide_player_previous_next_buttons_title">Vorherige &amp; Nächste Tasten ausblenden</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Vorherige- &amp; Nächste-Schaltflächen sind ausgeblendet</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Vorherige- &amp; Nächste-Schaltflächen sind sichtbar</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Endkarte ausblenden</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Endbildschirmkarten sind ausgeblendet</string>
@@ -664,6 +671,9 @@ Um das Audiotrack-Menü anzuzeigen, ändern Sie \"Video-Streams fälschen\" zu i
   <string name="morphe_hide_seekbar_thumbnail_title">Suchleiste für Video-Thumbnails ausblenden</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Suchleiste für Video-Thumbnails ist ausgeblendet</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Suchleiste für Video-Thumbnails ist eingeblendet</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Große Suchleiste im Vollbildmodus aktivieren</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Suchleiste im Vollbildmodus ist groß</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Suchleiste im Vollbildmodus ist normal groß</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Shorts Spieler</string>
   <string name="morphe_shorts_player_screen_summary">Shorts-Player-Komponenten aus- oder einblenden</string>
@@ -863,18 +873,6 @@ Einschränkung: Dislikes werden möglicherweise nicht im Inkognito-Modus angezei
   <string name="morphe_wide_searchbar_title">breite Suchleiste aktivieren</string>
   <string name="morphe_wide_searchbar_summary_on">Breite Suchleiste ist aktiviert</string>
   <string name="morphe_wide_searchbar_summary_off">Breite Suchleiste ist deaktiviert</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Aktiviere hochwertige Vorschaubilder</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Thumbnails der Suchleiste sind hohe Qualität</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Thumbnails in der Suchleiste sind mittlere Qualität</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Dadurch werden auch Miniaturansichten in Livestreams wiederhergestellt, die keine Miniaturansichten mit Suchleiste haben.
-
-Miniaturansichten mit Suchleiste verwenden die gleiche Qualität wie das aktuelle Video.
-
-Diese Funktion funktioniert am besten mit einer Videoqualität von 720p oder niedriger und bei Verwendung einer sehr schnellen Internetverbindung."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Alte Suchleisten-Thumbnails wiederherstellen</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Suchleisten-Thumbnails werden über der Suchleiste angezeigt</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Miniaturansichten werden im Vollbild angezeigt</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">SponsorBlock aktivieren</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock ist ein Crowdsourcing-System zum Überspringen von nervigen Segmenten von YouTube-Videos</string>
@@ -956,11 +954,13 @@ Ihre Benutzer-ID ist wie ein Passwort und sollte niemals weitergegeben werden.
 "</string>
   <string name="morphe_sb_settings_morphe_export_user_id_warning_dismiss">Nicht wieder anzeigen</string>
   <string name="morphe_sb_diff_segments">Segmentverhalten ändern</string>
+  <string name="morphe_sb_segments_sponsor">Sponsor</string>
   <string name="morphe_sb_segments_sponsor_sum">Bezahlte Werbung, bezahlte Empfehlungen und direkte Werbung. Nicht für Eigenwerbung oder kostenlose Shoutouts an Zwecke/Webseiten/Produkte, die ihnen gefallen</string>
   <string name="morphe_sb_segments_selfpromo">Unbezahlte oder Eigenwerbung</string>
   <string name="morphe_sb_segments_selfpromo_sum">Ähnlich wie Sponsor, jedoch für unbezahlte oder Eigenwerbung. Enthält Abschnitte über Merchandise, Spenden oder Informationen darüber, mit wem sie zusammengearbeitet haben</string>
   <string name="morphe_sb_segments_interaction">Interaktionserinnerung (Abonnieren)</string>
   <string name="morphe_sb_segments_interaction_sum">Eine kurze Erinnerung, sie in der Mitte des Inhalts zu liken, abonnieren oder folgen. Wenn er lang ist oder es um etwas Bestimmtes geht, sollte es stattdessen als Eigenwerbung gekennzeichnet sein</string>
+  <string name="morphe_sb_segments_highlight">Hervorheben</string>
   <string name="morphe_sb_segments_highlight_sum">Der Teil des Videos, nach dem die meisten Menschen suchen</string>
   <string name="morphe_sb_segments_intro">Unterbrechung/Introanimation</string>
   <string name="morphe_sb_segments_intro_sum">Ein Intervall ohne aktuellen Inhalt. Kann eine Pause, ein statischer Frame oder eine wiederholende Animation sein. Enthält keine Übergänge mit Informationen</string>
@@ -1037,6 +1037,7 @@ Existiert bereits"</string>
   <string name="morphe_sb_new_segment_disabled_category">Kategorie ist in den Einstellungen deaktiviert. Aktivieren zum Senden.</string>
   <string name="morphe_sb_new_segment_title">Neues SponsorBlock Segment</string>
   <string name="morphe_sb_new_segment_mark_time_as_question">%s als Start oder Ende eines neuen Segments festlegen?</string>
+  <string name="morphe_sb_new_segment_mark_start">Start</string>
   <string name="morphe_sb_new_segment_mark_end">Ende</string>
   <string name="morphe_sb_new_segment_now">Jetzt</string>
   <string name="morphe_sb_new_segment_time_start">Das Segiment beginnt ab</string>
@@ -1123,6 +1124,7 @@ Wenn Sie die Funktion später deaktivieren, wird empfohlen, die App-Daten zu lö
   <string name="morphe_change_start_page_entry_history">Verlauf</string>
   <string name="morphe_change_start_page_entry_library">Bibliothek</string>
   <string name="morphe_change_start_page_entry_liked_videos">Videos, die ich mag</string>
+  <string name="morphe_change_start_page_entry_live">Live</string>
   <string name="morphe_change_start_page_entry_movies">Filme</string>
   <string name="morphe_change_start_page_entry_music">Musik</string>
   <string name="morphe_change_start_page_entry_news">Nachrichten</string>
@@ -1163,7 +1165,12 @@ Einschränkung: Die Verwendung der Zurück-Taste auf der Symbolleiste funktionie
   <string name="morphe_miniplayer_type_title">Minispielertyp</string>
   <string name="morphe_miniplayer_type_entry_0">Deaktiviert</string>
   <string name="morphe_miniplayer_type_entry_1">Standard</string>
+  <string name="morphe_miniplayer_type_entry_2">Minimal</string>
   <string name="morphe_miniplayer_type_entry_3">Tablets</string>
+  <string name="morphe_miniplayer_type_entry_4">Modern 1</string>
+  <string name="morphe_miniplayer_type_entry_5">Modern 2</string>
+  <string name="morphe_miniplayer_type_entry_6">Modern 3</string>
+  <string name="morphe_miniplayer_type_entry_7">Modern 4</string>
   <string name="morphe_miniplayer_disable_rounded_corners_title">Abgerundete Ecken deaktivieren</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_on">Ecken sind Quadrat</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_off">Ecken sind abgerundet</string>
@@ -1173,6 +1180,7 @@ Einschränkung: Die Verwendung der Zurück-Taste auf der Symbolleiste funktionie
 • Doppeltippen, um die Größe des Mini-Players zu vergrößern
 • Nochmals doppeltippen, um die ursprüngliche Größe wiederherzustellen"</string>
   <string name="morphe_miniplayer_double_tap_action_summary_off">Doppel-Tipp-Aktion und Pinch um die Größe zu verändern, ist deaktiviert</string>
+  <string name="morphe_miniplayer_disable_drag_and_drop_title">Ziehen und Ablegen deaktivieren</string>
   <string name="morphe_miniplayer_disable_drag_and_drop_summary_on">Drag and Drop ist deaktiviert</string>
   <string name="morphe_miniplayer_disable_drag_and_drop_summary_off">"Drag-and-Drop ist aktiviert
 
@@ -1185,6 +1193,11 @@ Der Mini-Player kann mit einer Wischgeste vom Bildschirm nach links oder rechts 
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Overlay-Buttons ausblenden</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Overlay-Buttons sind ausgeblendet</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Overlay-Buttons werden angezeigt</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Erweitern- und Schließen-Schaltflächen ausblenden</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Schaltflächen sind ausgeblendet
+
+Wischen, um zu erweitern oder zu schließen"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Erweitern und schließen Schaltflächen werden angezeigt</string>
   <string name="morphe_miniplayer_hide_subtext_title">Untertexte ausblenden</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Subtexte sind ausgeblendet</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Untertexte werden angezeigt</string>

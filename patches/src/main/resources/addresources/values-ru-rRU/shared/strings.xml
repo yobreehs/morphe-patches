@@ -18,6 +18,7 @@ Second \"item\" text"</string>
 <resources>
   <!-- misc.settings.settingsResourcePatch -->
   <string name="morphe_settings_submenu_title">Настройки</string>
+  <string name="morphe_settings_about_donate">Пожертвовать</string>
   <string name="morphe_settings_confirm_user_dialog_title">Вы уверены, что хотите продолжить?</string>
   <string name="morphe_settings_save">Сохранить</string>
   <string name="morphe_settings_reset">Сбросить</string>
@@ -49,6 +50,9 @@ Second \"item\" text"</string>
   <string name="morphe_settings_search_history_title">Показать историю поиска настроек</string>
   <string name="morphe_settings_search_history_summary_on">История поиска настроек показана</string>
   <string name="morphe_settings_search_history_summary_off">История поиска настроек скрыта</string>
+  <string name="morphe_settings_disable_bold_icons_title">Отключить жирные значки</string>
+  <string name="morphe_settings_disable_bold_icons_summary_on">Значки не жирные</string>
+  <string name="morphe_settings_disable_bold_icons_summary_off">Значки жирные</string>
   <string name="morphe_show_menu_icons_title">Показать иконки в настройках Morphe</string>
   <string name="morphe_show_menu_icons_summary_on">Иконки в настройках Morphe показаны</string>
   <string name="morphe_show_menu_icons_summary_off">Иконки в настройках Morphe скрыты</string>

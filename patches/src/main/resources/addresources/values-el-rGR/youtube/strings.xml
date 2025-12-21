@@ -561,6 +561,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_navigation_button_labels_title">Ονομασίες κουμπιών γραμμής πλοήγησης</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Κρυμμένες</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Εμφανίζονται</string>
+  <string name="morphe_navigation_bar_animations_title">Ενεργοποίηση κινούμενων εικόνων στη γραμμή πλοήγησης</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Οι μεταβάσεις πλοήγησης κινούνται</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Οι μεταβάσεις πλοήγησης δεν κινούνται</string>
   <string name="morphe_disable_translucent_status_bar_title">Απενεργοποίηση διαφανούς γραμμής κατάστασης</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Η γραμμή κατάστασης δεν είναι διαφανής</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Η διαφάνεια της γραμμής κατάστασης ορίζεται αυτόματα</string>
@@ -599,6 +602,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">Κρυμμένο</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_help_title">Μενού «Βοήθεια &amp; σχόλια»</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">Το μενού Βοήθεια &amp; σχόλια είναι κρυφό</string>
+  <string name="morphe_hide_player_flyout_help_summary_off">Το μενού Βοήθεια &amp; σχόλια εμφανίζεται</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">Μενού «Ταχύτητα αναπαραγωγής»</string>
   <string name="morphe_hide_player_flyout_speed_summary_on">Κρυμμένο</string>
@@ -645,6 +650,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">Κρυμμένο</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Εμφανίζεται</string>
   <string name="morphe_hide_player_previous_next_buttons_title">Κουμπιά προηγούμενου &amp; επόμενου βίντεο</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Τα κουμπιά Προηγούμενο &amp; Επόμενο είναι κρυφό</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Τα κουμπιά Προηγούμενο &amp; Επόμενο εμφανίζονται</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Κάρτες τελικής οθόνης</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Κρυμμένες</string>
@@ -669,6 +676,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_seekbar_thumbnail_title">Γραμμή προόδου στις μικρογραφίες βίντεο</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Κρυμμένη</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Εμφανίζεται</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Ενεργοποίηση γραμμής αναζήτησης πλήρους οθόνης</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Η γραμμή αναζήτησης πλήρους οθόνης είναι μεγάλου μεγέθους</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Η γραμμή αναζήτησης πλήρους οθόνης είναι κανονικού μεγέθους</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Οθόνη αναπαραγωγής Shorts</string>
   <string name="morphe_shorts_player_screen_summary">Απόκρυψη ή εμφάνιση στοιχείων στην οθόνη αναπαραγωγής Shorts</string>
@@ -868,18 +878,6 @@ Second \"item\" text"</string>
   <string name="morphe_wide_searchbar_title">Ευρεία γραμμή αναζήτησης</string>
   <string name="morphe_wide_searchbar_summary_on">Η ευρεία γραμμή αναζήτησης είναι ενεργοποιημένη</string>
   <string name="morphe_wide_searchbar_summary_off">Η ευρεία γραμμή αναζήτησης είναι απενεργοποιημένη</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Μικρογραφίες υψηλής ποιότητας</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Οι μικρογραφίες της γραμμής προόδου είναι υψηλής ποιότητας</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Οι μικρογραφίες της γραμμής προόδου είναι μέτριας ποιότητας</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Αυτό θα επαναφέρει επίσης τις μικρογραφίες σε ζωντανές μεταδόσεις που δεν έχουν μικρογραφίες γραμμής προόδου.
-
-Οι μικρογραφίες γραμμής αναζήτησης θα χρησιμοποιούν την ίδια ποιότητα με το τρέχον βίντεο.
-
-Αυτή η δυνατότητα λειτουργεί καλύτερα με ποιότητα βίντεο 720p ή χαμηλότερη και όταν χρησιμοποιείται μια πολύ γρήγορη σύνδεση στο διαδίκτυο."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Παλιές μικρογραφίες γραμμής προόδου</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Οι μικρογραφίες προεπισκόπησης θα εμφανίζονται πάνω από τη γραμμή προόδου</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Οι μικρογραφίες προεπισκόπησης θα εμφανίζονται σε πλήρη οθόνη</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Ενεργοποίηση του SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">Το SponsorBlock είναι ένα σύστημα που προέρχεται από το κοινό για παράλειψη ενοχλητικών τμημάτων σε βίντεο YouTube</string>
@@ -1137,6 +1135,7 @@ Second \"item\" text"</string>
   <string name="morphe_change_start_page_entry_notifications">Ειδοποιήσεις</string>
   <string name="morphe_change_start_page_entry_playlists">Λίστες αναπαραγωγής</string>
   <string name="morphe_change_start_page_entry_search">Αναζήτηση</string>
+  <string name="morphe_change_start_page_entry_shopping">Αγορές</string>
   <string name="morphe_change_start_page_entry_sports">Αθλητικά</string>
   <string name="morphe_change_start_page_entry_subscriptions">Εγγραφές</string>
   <string name="morphe_change_start_page_entry_trending">Τάσεις</string>
@@ -1179,6 +1178,7 @@ Second \"item\" text"</string>
   <string name="morphe_miniplayer_disable_rounded_corners_title">Απενεργοποίηση στρογγυλεμένων γωνιών</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_on">Οι γωνίες είναι τετράγωνες</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_off">Οι γωνίες είναι στρογγυλεμένες</string>
+  <string name="morphe_miniplayer_double_tap_action_title">Ενεργοποίηση διπλής πατήματος και τσιμπήματος για αλλαγή μεγέθους</string>
   <string name="morphe_miniplayer_double_tap_action_summary_on">"Η λειτουργία διπλού πατήματος και τσιμπήματος για αλλαγή μεγέθους είναι ενεργοποιημένη
 
 • Πατήστε δύο φορές για να αυξήσετε το μέγεθος της ελαχιστοποιημένης οθόνης
@@ -1197,6 +1197,11 @@ Second \"item\" text"</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Κουμπιά επικάλυψης οθόνης αναπαραγωγής</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Κρυμμένα</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Εμφανίζονται</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Απόκρυψη κουμπιών επέκτασης και κλεισίματος</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Τα κουμπιά είναι κρυμμένα
+
+Σύρετε για επέκταση ή κλείσιμο"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Τα κουμπιά επέκτασης και κλεισίματος εμφανίζονται</string>
   <string name="morphe_miniplayer_hide_subtext_title">Κείμενα οθόνης αναπαραγωγής</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Κρυμμένα</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Εμφανίζονται</string>

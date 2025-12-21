@@ -440,6 +440,7 @@ Second \"item\" text"</string>
   <string name="morphe_swipe_overlay_progress_volume_color_title">滑動疊加音量顏色</string>
   <string name="morphe_swipe_overlay_progress_volume_color_summary">音量控制用進度條的顏色</string>
   <string name="morphe_swipe_text_overlay_size_title">滑動疊加文字大小</string>
+  <string name="morphe_swipe_text_overlay_size_summary">滑動覆蓋層的文字大小介於 1-30</string>
   <string name="morphe_swipe_text_overlay_size_invalid_toast">文字大小必須介於 1 至 30 之間</string>
   <string name="morphe_swipe_threshold_title">滑動幅度臨界點</string>
   <string name="morphe_swipe_threshold_summary">滑動幅度臨界點</string>
@@ -558,6 +559,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_navigation_button_labels_title">隱藏導覽列按鈕標籤</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">已隱藏「標籤」</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">已顯示「標籤」</string>
+  <string name="morphe_navigation_bar_animations_title">啟用導覽列動畫</string>
+  <string name="morphe_navigation_bar_animations_summary_on">導覽轉換會進行動畫</string>
+  <string name="morphe_navigation_bar_animations_summary_off">導覽轉換不會進行動畫</string>
   <string name="morphe_disable_translucent_status_bar_title">停用半透明狀態列</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">狀態列為不透明</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">狀態列為不透明或半透明</string>
@@ -595,6 +599,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">已顯示「平衡音量」選單</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">已隱藏「平衡音量」選單</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
+  <string name="morphe_hide_player_flyout_help_title">隱藏說明和意見回饋</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">隱藏說明與回饋選單</string>
+  <string name="morphe_hide_player_flyout_help_summary_off">顯示說明與回饋選單</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">隱藏「播放速度」</string>
   <string name="morphe_hide_player_flyout_speed_summary_on">已隱藏「播放速度」選單</string>
@@ -640,6 +647,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_control_buttons_background_title">隱藏播放器控制背景</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">播放器控制背景已隱藏</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">播放器控制背景已顯示</string>
+  <string name="morphe_hide_player_previous_next_buttons_title">隱藏「上一部」和「下一部」按鈕</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">已隱藏「上一部」和「下一部」按鈕</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">已顯示「上一部」和「下一部」按鈕</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">隱藏片尾資訊卡</string>
   <string name="morphe_hide_endscreen_cards_summary_on">已隱藏片尾資訊卡</string>
@@ -664,6 +674,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_seekbar_thumbnail_title">隱藏影片縮圖進度條</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">影片縮圖進度條已隱藏</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">影片縮圖進度條已顯示</string>
+  <string name="morphe_fullscreen_large_seekbar_title">啟用全螢幕大型搜尋欄</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">全螢幕搜尋欄為大型尺寸</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">全螢幕搜尋欄為一般尺寸</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Shorts 播放器</string>
   <string name="morphe_shorts_player_screen_summary">隱藏或顯示 Shorts 播放器元件</string>
@@ -863,19 +876,6 @@ Second \"item\" text"</string>
   <string name="morphe_wide_searchbar_title">啟用寬搜尋列</string>
   <string name="morphe_wide_searchbar_summary_on">已啟用寬搜尋列</string>
   <string name="morphe_wide_searchbar_summary_off">已停用寬搜尋列</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">啟用高畫質縮圖</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">已將跳轉列設為高畫質縮圖</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">已將跳轉列設為中畫質縮圖</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"這也會還原直播影片上沒有跳轉列縮圖的縮圖。
-
-跳轉列縮圖將使用與目前影片相同的畫質。
-
-這個功能在影片畫質為 720p 或以下，以及使用非常快速的網路連線時效果最佳。
-"</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">還原舊版跳轉列縮圖</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">跳轉列縮圖將出現在跳轉列上方</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">跳轉列縮圖將出現在全螢幕畫面</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">啟用 SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock 是一個眾包系統，用於跳過 YouTube 影片中惱人的部分</string>
@@ -1122,6 +1122,7 @@ Second \"item\" text"</string>
   <string name="morphe_change_start_page_entry_browse">瀏覽頻道</string>
   <string name="morphe_change_start_page_entry_courses">課程/學習</string>
   <string name="morphe_change_start_page_entry_explore">探索</string>
+  <string name="morphe_change_start_page_entry_fashion">時尚&amp;美妝</string>
   <string name="morphe_change_start_page_entry_gaming">遊戲</string>
   <string name="morphe_change_start_page_entry_history">歷史記錄</string>
   <string name="morphe_change_start_page_entry_library">媒體庫</string>
@@ -1207,6 +1208,7 @@ Second \"item\" text"</string>
   <string name="morphe_miniplayer_hide_rewind_forward_summary_on">已隱藏「快轉」和「倒帶」按鈕</string>
   <string name="morphe_miniplayer_hide_rewind_forward_summary_off">已顯示「快轉」和「倒帶」按鈕</string>
   <string name="morphe_miniplayer_width_dip_title">初始大小</string>
+  <string name="morphe_miniplayer_width_dip_summary">螢幕上的初始尺寸，以像素為單位</string>
   <string name="morphe_miniplayer_width_dip_invalid_toast">像素大小必須介於 %1$s 和 %2$s 之間</string>
   <string name="morphe_miniplayer_opacity_title">覆蓋不透明度</string>
   <string name="morphe_miniplayer_opacity_summary">不透明度值介於 0 到 100 之間，其中 0 為完全透明</string>
@@ -1248,8 +1250,11 @@ Second \"item\" text"</string>
   <string name="morphe_alt_thumbnail_subscription_title">訂閱分頁</string>
   <!-- 'You' should be translated using the same localized wording YouTube displays for the You (Library) tab. -->
   <string name="morphe_alt_thumbnail_library_title">個人中心分頁</string>
+  <string name="morphe_alt_thumbnail_player_title">播放器的播放清單與推薦影片</string>
   <string name="morphe_alt_thumbnail_search_title">搜尋結果</string>
   <string name="morphe_alt_thumbnail_options_entry_1">原版縮圖</string>
+  <string name="morphe_alt_thumbnail_options_entry_2">DeArrow &amp; 原版縮圖</string>
+  <string name="morphe_alt_thumbnail_options_entry_3">DeArrow &amp; 靜止捕獲</string>
   <string name="morphe_alt_thumbnail_options_entry_4">靜態截圖</string>
   <string name="morphe_alt_thumbnail_dearrow_about_summary">"DeArrow 為 YouTube 影片提供由社群提供的縮圖。
 

@@ -431,6 +431,7 @@ Second \"item\" text"</string>
   <string name="morphe_swipe_lowest_value_enable_auto_brightness_summary_off">滑动到最低亮度手势不启用自动亮度</string>
   <string name="morphe_swipe_lowest_value_enable_auto_brightness_overlay_text">自动</string>
   <string name="morphe_swipe_overlay_timeout_title">滑动提示层显示时长</string>
+  <string name="morphe_swipe_overlay_timeout_summary">覆盖层可见的毫秒数</string>
   <string name="morphe_swipe_overlay_background_opacity_title">滑动提示层背景的不透明度</string>
   <string name="morphe_swipe_overlay_background_opacity_summary">不透明度值介于 0-100 之间</string>
   <string name="morphe_swipe_overlay_background_opacity_invalid_toast">滑动不透明度必须介于 0-100 之间</string>
@@ -558,6 +559,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_navigation_button_labels_title">隐藏导航栏按钮标签</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">标签已隐藏</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">标签已显示</string>
+  <string name="morphe_navigation_bar_animations_title">启用导航栏动画</string>
+  <string name="morphe_navigation_bar_animations_summary_on">导航过渡是动画的</string>
+  <string name="morphe_navigation_bar_animations_summary_off">导航过渡没有动画</string>
   <string name="morphe_disable_translucent_status_bar_title">禁用半透明状态栏</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">状态栏为不透明</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">状态栏为不透明或半透明</string>
@@ -595,6 +599,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">稳定音量已显示</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">稳定音量已隐藏</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
+  <string name="morphe_hide_player_flyout_help_title">隐藏帮助 &amp; 反馈</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">帮助 &amp; 反馈菜单已隐藏</string>
   <string name="morphe_hide_player_flyout_help_summary_off">帮助 &amp; 反馈菜单已显示</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">隐藏「播放速度」选单</string>
@@ -641,6 +647,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_control_buttons_background_title">隐藏播放器控件背景</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">播放器控件背景已隐藏</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">播放器控件背景已显示</string>
+  <string name="morphe_hide_player_previous_next_buttons_title">隐藏上一项 &amp; 下一项按钮</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">上一项 &amp; 下一项按钮已隐藏</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">上一项 &amp; 下一项按钮已显示</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">隐藏片尾卡</string>
   <string name="morphe_hide_endscreen_cards_summary_on">片尾卡已隐藏</string>
@@ -665,6 +674,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_seekbar_thumbnail_title">隐藏视频缩略图进度条</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">视频缩略图进度条已隐藏</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">视频缩略图进度条已显示</string>
+  <string name="morphe_fullscreen_large_seekbar_title">启用全屏大进度条</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">全屏进度条尺寸较大</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">全屏播放进度条尺寸正常</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Shorts 播放器</string>
   <string name="morphe_shorts_player_screen_summary">隐藏或显示 Shorts 播放器组件</string>
@@ -864,19 +876,6 @@ Second \"item\" text"</string>
   <string name="morphe_wide_searchbar_title">启用宽搜索栏</string>
   <string name="morphe_wide_searchbar_summary_on">宽搜索栏已启用</string>
   <string name="morphe_wide_searchbar_summary_off">宽搜索栏已禁用</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">启用高质量缩略图</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">进度条缩略图质量为高质量</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">进度条缩略图质量为中等质量</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_off">全屏进度条缩略图质量为中等质量</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"这也会恢复没有进度条缩略图的直播的缩略图
-
-进度条缩略图将使用与当前视频相同的质量。
-
-此功能在视频质量为 720p 或更低且使用非常快的互联网连接时效果最佳。"</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">恢复旧的进度条缩略图</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">进度条缩略图将显示在进度条上方</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">进度条缩略图将显示在全屏</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">启用 SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock 是一个众包平台，旨在帮助人们跳过 YouTube 视频中烦人的部分</string>
@@ -912,6 +911,7 @@ Second \"item\" text"</string>
   <string name="morphe_sb_duration_9s">9 秒</string>
   <string name="morphe_sb_duration_10s">10 秒</string>
   <string name="morphe_sb_general_time_without">显示没有片段的视频长度</string>
+  <string name="morphe_sb_general_time_without_sum_on">视频时长减去所有片段的总时长将显示在进度条上</string>
   <string name="morphe_sb_general_time_without_sum_off">显示完整视频长度</string>
   <string name="morphe_sb_create_segment_category">创建新的片段</string>
   <string name="morphe_sb_enable_create_segment">显示“创建新片段”按钮</string>
@@ -1080,6 +1080,7 @@ Second \"item\" text"</string>
   <string name="morphe_sb_stats_saved_zero">SponsorBlock 排行榜</string>
   <string name="morphe_sb_stats_saved">您已帮助人们跳过 &lt;b&gt;%s&lt;/b&gt; 个片段</string>
   <string name="morphe_sb_stats_saved_sum_zero">点击这里查看全球统计数据和顶级贡献者</string>
+  <string name="morphe_sb_stats_saved_sum">这是他们生命的&lt;b&gt;%s&lt;/b&gt;。&lt;br&gt;点击此处查看排行榜</string>
   <string name="morphe_sb_stats_self_saved">您已跳过 &lt;b&gt;%s&lt;/b&gt; 个片段</string>
   <string name="morphe_sb_stats_self_saved_sum">这相当于 &lt;b&gt;%s&lt;/b&gt;</string>
   <string name="morphe_sb_stats_self_saved_reset_title">重置跳过片段计数器？</string>
@@ -1125,6 +1126,7 @@ Second \"item\" text"</string>
   <string name="morphe_change_start_page_entry_browse">浏览频道</string>
   <string name="morphe_change_start_page_entry_courses">学习</string>
   <string name="morphe_change_start_page_entry_explore">探索</string>
+  <string name="morphe_change_start_page_entry_fashion">时尚 &amp; 美妆</string>
   <string name="morphe_change_start_page_entry_gaming">游戏</string>
   <string name="morphe_change_start_page_entry_history">历史记录</string>
   <string name="morphe_change_start_page_entry_library">库</string>
@@ -1198,6 +1200,11 @@ Second \"item\" text"</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_title">隐藏悬浮窗按钮</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">悬浮窗按钮已隐藏</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">悬浮窗按钮已显示</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">隐藏展开和关闭按钮</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"按钮已隐藏
+
+滑动以展开或关闭"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">显示展开和关闭按钮</string>
   <string name="morphe_miniplayer_hide_subtext_title">隐藏副标题</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">副标题已隐藏</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">副标题已显示</string>

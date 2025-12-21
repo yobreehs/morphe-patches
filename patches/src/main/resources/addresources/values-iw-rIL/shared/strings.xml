@@ -18,6 +18,7 @@ Second \"item\" text"</string>
 <resources>
   <!-- misc.settings.settingsResourcePatch -->
   <string name="morphe_settings_submenu_title">הגדרות</string>
+  <string name="morphe_settings_about_donate">תרומה</string>
   <string name="morphe_settings_confirm_user_dialog_title">האם אתה בטוח שברצונך להמשיך?</string>
   <string name="morphe_settings_save">שמור</string>
   <string name="morphe_settings_reset">איפוס</string>
@@ -49,6 +50,9 @@ Second \"item\" text"</string>
   <string name="morphe_settings_search_history_title">הצג הגדרות היסטוריית חיפוש</string>
   <string name="morphe_settings_search_history_summary_on">הגדרות היסטוריית חיפוש מוצגות</string>
   <string name="morphe_settings_search_history_summary_off">הגדרות היסטוריית חיפוש אינן מוצגות</string>
+  <string name="morphe_settings_disable_bold_icons_title">בטל אייקונים מודגשים</string>
+  <string name="morphe_settings_disable_bold_icons_summary_on">אייקונים אינם מודגשים</string>
+  <string name="morphe_settings_disable_bold_icons_summary_off">אייקונים מודגשים</string>
   <string name="morphe_show_menu_icons_title">הצג סמלי הגדרות Morphe</string>
   <string name="morphe_show_menu_icons_summary_on">סמלי ההגדרות מוצגים</string>
   <string name="morphe_show_menu_icons_summary_off">סמלי ההגדרות אינם מוצגים</string>

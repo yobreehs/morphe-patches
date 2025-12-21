@@ -560,6 +560,9 @@ Om du ändrar den här inställningen utan att det träder i kraft kan du testa 
   <string name="morphe_hide_navigation_button_labels_title">Dölj etiketter för navigeringsknappar</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Etiketter är dolda</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Etiketter visas</string>
+  <string name="morphe_navigation_bar_animations_title">Aktivera animeringar för navigeringsfältet</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Navigeringsoverlägg animeras</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Navigeringsoverlägg animeras inte</string>
   <string name="morphe_disable_translucent_status_bar_title">Inaktivera genomskinligt statusfält</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Statusfältet är ogenomskinligt</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Statusfältet är ogenomskinligt eller genomskinligt</string>
@@ -597,6 +600,9 @@ Om du ändrar den här inställningen utan att det träder i kraft kan du testa 
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">Menyn Jämn volym visas</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">Menyn Jämn volym är dold</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
+  <string name="morphe_hide_player_flyout_help_title">Dölj Hjälp &amp; feedback</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">Menyn Hjälp &amp; feedback är dold</string>
+  <string name="morphe_hide_player_flyout_help_summary_off">Menyn Hjälp &amp; feedback visas</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">Dölj Uppspelningshastighet</string>
   <string name="morphe_hide_player_flyout_speed_summary_on">Menyn Uppspelningshastighet är dold</string>
@@ -642,6 +648,9 @@ För att visa menyn Ljudspår, ändra \"Förfalska videoströmmar\" till iPadOS"
   <string name="morphe_hide_player_control_buttons_background_title">Dölj bakgrunder för uppspelningsknappar</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">Bakgrunder för uppspelningsknappar är dolda</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Bakgrunder för uppspelningsknappar visas</string>
+  <string name="morphe_hide_player_previous_next_buttons_title">Dölj knapparna Föregående &amp; Nästa</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Knapparna Föregående &amp; Nästa är dolda</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Knapparna Föregående &amp; Nästa visas</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Dölj slutskärmskort</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Slutskärmskort är dolda</string>
@@ -666,6 +675,9 @@ För att visa menyn Ljudspår, ändra \"Förfalska videoströmmar\" till iPadOS"
   <string name="morphe_hide_seekbar_thumbnail_title">Dölj sökreglaget i videominiatyrer</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Sökreglaget i videominiatyrer är dolt</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Sökreglaget i videominiatyrer visas</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Aktivera stort sökfält i helskärmsläge</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Sökfältet i helskärmsläge är stort</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Sökfält i helskärm har normal storlek</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Shorts-spelare</string>
   <string name="morphe_shorts_player_screen_summary">Dölj eller visa komponenter i Shorts-spelaren</string>
@@ -865,18 +877,6 @@ Begränsning: Ogilla-markeringar kanske inte visas i inkognitoläge"</string>
   <string name="morphe_wide_searchbar_title">Aktivera brett sökfält</string>
   <string name="morphe_wide_searchbar_summary_on">Brett sökfält är aktiverat</string>
   <string name="morphe_wide_searchbar_summary_off">Brett sökfält är inaktiverat</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Aktivera miniatyrbilder av hög kvalitet</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Sökreglageminiatyrer är av hög kvalitet</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Sökreglageminiatyrer är av medelhög kvalitet</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Detta återställer även miniatyrer på livestreamar som inte har sökreglageminiatyrer.
-
-Sökreglageminiatyrer kommer att använda samma kvalitet som den aktuella videon.
-
-Den här funktionen fungerar bäst med en videokvalitet på 720p eller lägre och när du använder en mycket snabb internetanslutning."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Återställ gamla sökreglageminiatyrer</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Sökreglageminiatyrer visas ovanför sökreglaget</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Sökreglageminiatyrer visas i helskärm</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Aktivera SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock är ett crowdsourcing-baserat system för att hoppa över irriterande delar av YouTube-videor</string>
@@ -957,6 +957,7 @@ Den här funktionen fungerar bäst med en videokvalitet på 720p eller lägre oc
 Ditt användar-id är som ett lösenord och det bör aldrig delas."</string>
   <string name="morphe_sb_settings_morphe_export_user_id_warning_dismiss">Visa inte igen</string>
   <string name="morphe_sb_diff_segments">Ändra beteende för segment</string>
+  <string name="morphe_sb_segments_sponsor">Sponsor</string>
   <string name="morphe_sb_segments_sponsor_sum">Betald marknadsföring, betalda hänvisningar och direktannonser. Inte för egenreklam eller gratis reklam för saker/kreatörer/webbplatser/produkter som de gillar</string>
   <string name="morphe_sb_segments_selfpromo">Obetald reklam/egenreklam</string>
   <string name="morphe_sb_segments_selfpromo_sum">Som Sponsor men för obetald reklam eller egenreklam. Inkluderar avsnitt om varor, donationer eller information om vem de samarbetade med</string>
@@ -1039,6 +1040,7 @@ Finns redan"</string>
   <string name="morphe_sb_new_segment_disabled_category">Kategorin är inaktiverad i inställningarna. Aktivera kategorin för att skicka.</string>
   <string name="morphe_sb_new_segment_title">Nytt SponsorBlock-segment</string>
   <string name="morphe_sb_new_segment_mark_time_as_question">Ange %s som starten eller slutet av ett nytt segment?</string>
+  <string name="morphe_sb_new_segment_mark_start">Start</string>
   <string name="morphe_sb_new_segment_mark_end">Slut</string>
   <string name="morphe_sb_new_segment_now">Nu</string>
   <string name="morphe_sb_new_segment_time_start">Tiden segmentet börjar vid</string>
@@ -1120,15 +1122,19 @@ Om du senare inaktiverar det rekommenderar vi att rensa appens data för att fö
   <string name="morphe_change_start_page_entry_browse">Bläddra bland kanaler</string>
   <string name="morphe_change_start_page_entry_courses">Kurser/lärande</string>
   <string name="morphe_change_start_page_entry_explore">Utforska</string>
+  <string name="morphe_change_start_page_entry_fashion">Mode &amp; skönhet</string>
+  <string name="morphe_change_start_page_entry_gaming">Spel</string>
   <string name="morphe_change_start_page_entry_history">Historik</string>
   <string name="morphe_change_start_page_entry_library">Bibliotek</string>
   <string name="morphe_change_start_page_entry_liked_videos">Videor du gillat</string>
+  <string name="morphe_change_start_page_entry_live">Live</string>
   <string name="morphe_change_start_page_entry_movies">Filmer</string>
   <string name="morphe_change_start_page_entry_music">Musik</string>
   <string name="morphe_change_start_page_entry_news">Nyheter</string>
   <string name="morphe_change_start_page_entry_notifications">Aviseringar</string>
   <string name="morphe_change_start_page_entry_playlists">Spellistor</string>
   <string name="morphe_change_start_page_entry_search">Sök</string>
+  <string name="morphe_change_start_page_entry_shopping">Shopping</string>
   <string name="morphe_change_start_page_entry_sports">Sport</string>
   <string name="morphe_change_start_page_entry_subscriptions">Prenumerationer</string>
   <string name="morphe_change_start_page_entry_trending">Populärt</string>
@@ -1162,7 +1168,12 @@ Begränsning: Bakåtknappen i verktygsfältet kanske inte fungerar"</string>
   <string name="morphe_miniplayer_type_title">Minispelartyp</string>
   <string name="morphe_miniplayer_type_entry_0">Inaktiverad</string>
   <string name="morphe_miniplayer_type_entry_1">Standard</string>
+  <string name="morphe_miniplayer_type_entry_2">Minimal</string>
   <string name="morphe_miniplayer_type_entry_3">Surfplatta</string>
+  <string name="morphe_miniplayer_type_entry_4">Modern 1</string>
+  <string name="morphe_miniplayer_type_entry_5">Modern 2</string>
+  <string name="morphe_miniplayer_type_entry_6">Modern 3</string>
+  <string name="morphe_miniplayer_type_entry_7">Modern 4</string>
   <string name="morphe_miniplayer_disable_rounded_corners_title">Inaktivera rundade hörn</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_on">Hörnen är fyrkantiga</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_off">Hörnen är rundade</string>
@@ -1185,6 +1196,11 @@ Minispelaren kan dras utanför skärmen till vänster eller höger"</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Dölj överläggsknappar</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Överläggsknapparna är dolda</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Överläggsknapparna visas</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Dölj knappar för expandering och stängning</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Knappar dolda
+
+Svep för att expandera eller stänga"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Knappar för expandering och stängning visas</string>
   <string name="morphe_miniplayer_hide_subtext_title">Dölj undertexter</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Undertexter är dolda</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Undertexter visas</string>
@@ -1232,8 +1248,11 @@ Om du aktiverar detta kan det åtgärda saknade bilder som blockeras i vissa reg
   <string name="morphe_alt_thumbnail_subscription_title">Fliken Prenumerationer</string>
   <!-- 'You' should be translated using the same localized wording YouTube displays for the You (Library) tab. -->
   <string name="morphe_alt_thumbnail_library_title">Fliken Ditt YouTube</string>
+  <string name="morphe_alt_thumbnail_player_title">Spelarspellistor &amp; rekommendationer</string>
   <string name="morphe_alt_thumbnail_search_title">Sökresultat</string>
   <string name="morphe_alt_thumbnail_options_entry_1">Ursprungliga miniatyrer</string>
+  <string name="morphe_alt_thumbnail_options_entry_2">DeArrow &amp; originalminiatyrer</string>
+  <string name="morphe_alt_thumbnail_options_entry_3">DeArrow &amp; stillbilder</string>
   <string name="morphe_alt_thumbnail_options_entry_4">Stillbilder</string>
   <string name="morphe_alt_thumbnail_dearrow_about_summary">"DeArrow tillhandahåller crowdsourcing-baserade miniatyrbilder för YouTube-videor. Dessa miniatyrbilder är ofta mer relevanta än de som tillhandahålls av YouTube
 
@@ -1319,6 +1338,7 @@ Om du aktiverar detta kan högre videokvaliteter låsas upp"</string>
   <string name="morphe_shorts_quality_default_wifi_title">Standardkvalitet för Shorts-videor på Wi-Fi-nätverk</string>
   <string name="morphe_shorts_quality_default_mobile_title">Standardkvalitet för Shorts-videor på mobilnätverk</string>
   <string name="morphe_remember_video_quality_mobile">mobil</string>
+  <string name="morphe_remember_video_quality_wifi">wifi</string>
   <string name="morphe_remember_video_quality_toast">Ändrade standardkvalitet för %1$s till: %2$s</string>
   <string name="morphe_remember_video_quality_toast_shorts">Ändrade Shorts-videokvalitet för %1$s till: %2$s</string>
   <!-- video.speed.button.playbackSpeedButtonPatch -->

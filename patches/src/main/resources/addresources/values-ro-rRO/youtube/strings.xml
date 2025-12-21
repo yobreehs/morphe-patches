@@ -22,9 +22,11 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Miniaturi alternative</string>
   <string name="morphe_settings_screen_03_feed_title">Flux</string>
   <string name="morphe_settings_screen_04_general_title">Generalități</string>
+  <string name="morphe_settings_screen_05_player_title">Player</string>
   <string name="morphe_settings_screen_07_seekbar_title">Bară de progres</string>
   <string name="morphe_settings_screen_08_swipe_controls_title">Controale glisare</string>
   <string name="morphe_settings_screen_11_misc_title">Diverse</string>
+  <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Restaurare meniuri setări vechi</string>
   <string name="morphe_restore_old_settings_menus_summary_on">Meniurile de setări vechi sunt afișate</string>
   <string name="morphe_restore_old_settings_menus_summary_off">Meniurile de setări vechi nu sunt afișate</string>
@@ -555,6 +557,9 @@ Dacă modificarea acestei setări nu are efect, încercați să comutați la mod
   <string name="morphe_hide_navigation_button_labels_title">Ascunde etichetele butoanelor de navigare</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Etichetele sunt ascunse</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Etichetele sunt afișate</string>
+  <string name="morphe_navigation_bar_animations_title">Activare animații bară de navigare</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Tranzițiile de navigare sunt animate</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Tranzițiile de navigare nu sunt animate</string>
   <string name="morphe_disable_translucent_status_bar_title">Dezactivează bara de stare translucidă</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Bara de stare este opaca</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Bara de stare este opaca sau translucida</string>
@@ -641,6 +646,8 @@ Pentru a afișa meniul de piste audio, modificați „Emulare fluxuri video” l
   <string name="morphe_hide_player_control_buttons_background_summary_on">Fundalul comenzilor playerului este ascuns</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Fundalul comenzilor playerului este afișat</string>
   <string name="morphe_hide_player_previous_next_buttons_title">Ascunde butoanele Anterior &amp; Următorul</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Butoanele Precedent &amp; Următor sunt ascunse</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Butoanele Precedent &amp; Următor sunt afișate</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Ascunde cardurile ecranului final</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Cardurile de pe ecranul de închidere sunt ascunse</string>
@@ -665,6 +672,9 @@ Pentru a afișa meniul de piste audio, modificați „Emulare fluxuri video” l
   <string name="morphe_hide_seekbar_thumbnail_title">Ascunde bara de derulare a miniaturilor video</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Bara de derulare a miniaturilor video este ascunsă</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Bara de derulare a miniaturilor video este afișată</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Activare bară de căutare mare în ecran complet</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Bara de căutare în ecran complet are dimensiune mare</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Bara de căutare în ecran complet are dimensiune normală</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Player Shorts</string>
   <string name="morphe_shorts_player_screen_summary">Ascunde sau afișează componentele playerului Shorts</string>
@@ -864,18 +874,6 @@ Limitare: Este posibil ca aprecierile negative să nu apară în modul incognito
   <string name="morphe_wide_searchbar_title">Activează bara de căutare largă</string>
   <string name="morphe_wide_searchbar_summary_on">Bara de căutare largă este activată</string>
   <string name="morphe_wide_searchbar_summary_off">Bara de căutare largă este dezactivată</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Permite miniaturi de înaltă calitate</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Miniaturile din bara de afișare sunt de înaltă calitate</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Miniaturile din bara de afișare sunt de calitate medie</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Acest lucru va restaura, de asemenea, miniaturile de la transmisiunile live care nu au miniaturi pentru bara de căutare.
-
-Miniaturile barei de căutare vor folosi aceeași calitate ca și videoclipul curent.
-
-Această caracteristică funcționează cel mai bine cu o calitate video de 720p sau mai mică și atunci când se folosește o conexiune la internet foarte rapidă."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Restaurează miniaturile vechi din bara de căutare</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Miniaturile din bara de căutare vor apărea deasupra barei de căutare</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Miniaturile din bara de afișare vor apărea pe tot ecranul</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Activează SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock este un sistem bazat pe crowdsourcing pentru a sări peste părțile enervante din videoclipurile de pe YouTube</string>
@@ -956,6 +954,7 @@ Această caracteristică funcționează cel mai bine cu o calitate video de 720p
 ID-ul tău de utilizator este ca o parolă și nu ar trebui niciodată partajat."</string>
   <string name="morphe_sb_settings_morphe_export_user_id_warning_dismiss">Nu mai afișa</string>
   <string name="morphe_sb_diff_segments">Schimbă comportamentul segmentului</string>
+  <string name="morphe_sb_segments_sponsor">Sponsor</string>
   <string name="morphe_sb_segments_sponsor_sum">Promoție plătită, recomandări plătite și reclame directe. Nu este pentru auto-promovare sau strigăte gratuite cauzelor/creatorilor/site-urilor web/produselor care le plac</string>
   <string name="morphe_sb_segments_selfpromo">Promovare neplătită/autopromovare</string>
   <string name="morphe_sb_segments_selfpromo_sum">Similar cu Sponsor, cu excepția promovărilor neplătite sau proprii. Include secțiuni despre mărfuri, donații sau informații despre cu cine au colaborat</string>
@@ -1038,6 +1037,7 @@ Există deja"</string>
   <string name="morphe_sb_new_segment_disabled_category">Categoria este dezactivată în setări. Activați categoria pentru a trimite.</string>
   <string name="morphe_sb_new_segment_title">Segment de sponsorBlock nou</string>
   <string name="morphe_sb_new_segment_mark_time_as_question">Setați %s ca început sau sfârșit al unui nou segment?</string>
+  <string name="morphe_sb_new_segment_mark_start">Start</string>
   <string name="morphe_sb_new_segment_mark_end">Sfârșit</string>
   <string name="morphe_sb_new_segment_now">Acum</string>
   <string name="morphe_sb_new_segment_time_start">Timpul în care segmentul începe la</string>
@@ -1119,10 +1119,12 @@ Dacă este dezactivat ulterior, se recomandă să ștergeți datele aplicației 
   <string name="morphe_change_start_page_entry_browse">Navigare canale</string>
   <string name="morphe_change_start_page_entry_courses">Cursuri / Învățare</string>
   <string name="morphe_change_start_page_entry_explore">Explorați</string>
+  <string name="morphe_change_start_page_entry_fashion">Modă &amp; Frumusețe</string>
   <string name="morphe_change_start_page_entry_gaming">Joc</string>
   <string name="morphe_change_start_page_entry_history">Istoric</string>
   <string name="morphe_change_start_page_entry_library">Bibliotecă</string>
   <string name="morphe_change_start_page_entry_liked_videos">Videoclipuri apreciate</string>
+  <string name="morphe_change_start_page_entry_live">Live</string>
   <string name="morphe_change_start_page_entry_movies">Filme</string>
   <string name="morphe_change_start_page_entry_music">Muzică</string>
   <string name="morphe_change_start_page_entry_news">Știri</string>
@@ -1165,6 +1167,10 @@ Limitare: Utilizarea butonului Înapoi de pe bara de instrumente poate să nu fu
   <string name="morphe_miniplayer_type_entry_1">Implicit</string>
   <string name="morphe_miniplayer_type_entry_2">Minimă</string>
   <string name="morphe_miniplayer_type_entry_3">Tabletă</string>
+  <string name="morphe_miniplayer_type_entry_4">Modern 1</string>
+  <string name="morphe_miniplayer_type_entry_5">Modern 2</string>
+  <string name="morphe_miniplayer_type_entry_6">Modern 3</string>
+  <string name="morphe_miniplayer_type_entry_7">Modern 4</string>
   <string name="morphe_miniplayer_disable_rounded_corners_title">Dezactivează colțurile rotunjite</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_on">Colţurile sunt pătrate</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_off">Colţurile sunt rotunjite</string>
@@ -1187,6 +1193,11 @@ Miniplayerul poate fi tras pe ecran spre stânga sau spre dreapta"</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Ascunde butoanele suprapuse</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Butoanele suprapuse sunt ascunse</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Butoanele suprapuse sunt afișate</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Ascunde butoanele de extindere și închidere</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Butoanele sunt ascunse
+
+Glisați pentru a extinde sau închide"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Butoanele de extindere și închidere sunt afișate</string>
   <string name="morphe_miniplayer_hide_subtext_title">Ascunde subtexte</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Subtexte sunt ascunse</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Subtexte sunt afișate</string>

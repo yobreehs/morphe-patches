@@ -557,6 +557,9 @@ Mura dtagann aon athrú ar an socrú seo, bain triail as mód Incognito a chur a
   <string name="morphe_hide_navigation_button_labels_title">Folaigh lipéid cnaipe nascleanú</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Tá lipéid i bhfolach</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Taispeántar lipéid</string>
+  <string name="morphe_navigation_bar_animations_title">Cumasaigh beochan barra nascleanúna</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Déantar aistrithe nascleanúna a bheochan</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Ní dhéantar aistrithe nascleanúna a bheochan</string>
   <string name="morphe_disable_translucent_status_bar_title">Díchumasaigh barra stádais tréshoilseach</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Tá an barra stádais teimhneach</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Tá an barra stádais teimhneach nó tréshoilseach</string>
@@ -669,6 +672,9 @@ Chun roghchlár an rian fuaime a thaispeáint, athraigh 'Sruthanna físeáin bhr
   <string name="morphe_hide_seekbar_thumbnail_title">Folaigh barra cuardaigh mionsamhlacha físeáin</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Tá barra cuardaigh mionsamhlacha físeáin i bhfolach</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Taispeántar barra cuardaigh mionsamhlacha físe</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Cumasaigh barra cuardaigh mór scáileáin iomláin</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Is méid mór é barra cuardaigh scáileáin iomláin</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Is gnáthmhéid é barra cuardaigh scáileáin iomláin</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Shorts seinnteoir</string>
   <string name="morphe_shorts_player_screen_summary">Folaigh nó taispeáin comhpháirteanna seinnteora Shorts</string>
@@ -868,18 +874,6 @@ Teorainn: B’fhéidir nach dtaispeánfar 'Ní thaitníonn' i mód incognito"</s
   <string name="morphe_wide_searchbar_title">Cumasaigh barra cuardaigh leathan</string>
   <string name="morphe_wide_searchbar_summary_on">Tá barra cuardaigh leathan cumasaithe</string>
   <string name="morphe_wide_searchbar_summary_off">Tá an barra cuardaigh leathan díchumasaithe</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Cumasaigh mionsamhlacha ardchaighdeáin</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Tá mionsamhlacha Seekbar ardchaighdeáin</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Tá mionsamhlacha Seekbar ar chaighdeán meánach</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Cuirfidh sé seo na miontaispeántais ar ais ar shruth beo nach bhfuil miontaispeántais cuardaigh acu.
-
-Úsáidfidh miontaispeántais cuardaigh an caighdeán céanna leis an bhfíseán reatha.
-
-Oibríonn an ghné seo is fearr le caighdeán físeáin 720p nó níos ísle agus nuair a úsáidtear nasc idirlín an-tapa."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Cuir sean-mionsamhlacha barra cuardaigh ar ais</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Beidh mionsamhlacha Seekbar le feiceáil os cionn an barra cuardaigh</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Beidh mionsamhlacha Seekbar le feiceáil ar an scáileán</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Cumasaigh SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">Is córas sruthaíodh ó lucht an phobail é SponsorBlock le haghaidh codanna do-áisiúla físeán YouTube a leag thar n-ais</string>
@@ -1200,6 +1194,11 @@ Is féidir an mini-imreoir a tharraingt amach as an scáileán ar chlé nó ar d
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Folaigh cnaipí forleathana</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Tá cnaipí forleathana i bhfolach</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Taispeántar cnaipí forleathana</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Folaigh cnaipí leathnaithe agus dúnadh</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Tá na cnaipí i bhfolach
+
+Svaidhpeáil chun leathnú nó dúnadh"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Tá cnaipí leathnaithe agus dúnadh le feiceáil</string>
   <string name="morphe_miniplayer_hide_subtext_title">Folaigh fothéacsanna</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Tá fothéacsanna i bhfolach</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Taispeántar fothéacsanna</string>

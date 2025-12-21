@@ -23,8 +23,10 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_03_feed_title">Umpan</string>
   <string name="morphe_settings_screen_04_general_title">Umum</string>
   <string name="morphe_settings_screen_05_player_title">Pemutar</string>
+  <string name="morphe_settings_screen_07_seekbar_title">Seekbar</string>
   <string name="morphe_settings_screen_08_swipe_controls_title">Kontrol usap</string>
   <string name="morphe_settings_screen_11_misc_title">Lain-lain</string>
+  <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Pulihkan menu pengaturan lama</string>
   <string name="morphe_restore_old_settings_menus_summary_on">Menu pengaturan lama ditampilkan</string>
   <string name="morphe_restore_old_settings_menus_summary_off">Menu pengaturan lama tidak ditampilkan</string>
@@ -557,6 +559,9 @@ Jika mengubah setelan ini tidak berpengaruh, coba beralih ke mode Penyamaran."</
   <string name="morphe_hide_navigation_button_labels_title">Sembunyikan label tombol navigasi</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Label disembunyikan</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Label ditampilkan</string>
+  <string name="morphe_navigation_bar_animations_title">Aktifkan animasi bilah navigasi</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Transisi navigasi dianimasikan</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Transisi navigasi tidak dianimasikan</string>
   <string name="morphe_disable_translucent_status_bar_title">Nonaktifkan bilah status tembus cahaya</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Bilah status buram</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Bilah status buram atau tembus pandang</string>
@@ -643,6 +648,8 @@ Untuk menampilkan menu trek audio, ubah 'Palsukan aliran video' ke iPadOS"</stri
   <string name="morphe_hide_player_control_buttons_background_summary_on">Latar belakang kontrol pemutar disembunyikan</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Latar belakang kontrol pemutar ditampilkan</string>
   <string name="morphe_hide_player_previous_next_buttons_title">Sembunyikan tombol Sebelumnya &amp; Berikutnya</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Tombol Sebelumnya &amp; Berikutnya disembunyikan</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Tombol Sebelumnya &amp; Berikutnya ditampilkan</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Sembunyikan kartu layar akhir</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Kartu layar akhir disembunyikan</string>
@@ -667,6 +674,9 @@ Untuk menampilkan menu trek audio, ubah 'Palsukan aliran video' ke iPadOS"</stri
   <string name="morphe_hide_seekbar_thumbnail_title">Sembunyikan bilah pencari thumbnail video</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Bilah pencari thumbnail video disembunyikan</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Bilah pencari thumbnail video ditampilkan</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Aktifkan seekbar besar layar penuh</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Seekbar layar penuh berukuran besar</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Seekbar layar penuh berukuran normal</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Pemutar Shorts</string>
   <string name="morphe_shorts_player_screen_summary">Sembunyikan atau tampilkan komponen pemutar Shorts</string>
@@ -866,18 +876,6 @@ Batasan: Dislike mungkin tidak muncul dalam mode penyamaran"</string>
   <string name="morphe_wide_searchbar_title">Aktifkan bilah pencarian lebar</string>
   <string name="morphe_wide_searchbar_summary_on">Bilah pencarian lebar diaktifkan</string>
   <string name="morphe_wide_searchbar_summary_off">Bilah pencarian lebar dinonaktifkan</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Aktifkan thumbnail berkualitas tinggi</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Thumbnail seekbar berkualitas tinggi</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Thumbnail seekbar berkualitas sedang</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Ini juga akan memulihkan thumbnail pada livestream yang tidak memiliki gambar mini seekbar.
-
-Thumbnail seekbar akan menggunakan kualitas yang sama dengan video saat ini.
-
-Fitur ini bekerja paling baik dengan kualitas video 720p atau lebih rendah dan saat menggunakan sambungan internet yang sangat cepat."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Pulihkan thumbnail seekbar yang lama</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Thumbnail seekbar akan muncul di atas seekbar</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Thumbnail seekbar akan muncul di layar penuh</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Aktifkan SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock adalah sistem yang bersumber dari banyak orang untuk melewatkan bagian video YouTube yang mengganggu</string>
@@ -958,6 +956,7 @@ Fitur ini bekerja paling baik dengan kualitas video 720p atau lebih rendah dan s
 Id pengguna Anda seperti kata sandi dan jangan pernah dibagikan."</string>
   <string name="morphe_sb_settings_morphe_export_user_id_warning_dismiss">Jangan tampilkan lagi</string>
   <string name="morphe_sb_diff_segments">Ubah perilaku segmen</string>
+  <string name="morphe_sb_segments_sponsor">Sponsor</string>
   <string name="morphe_sb_segments_sponsor_sum">Promosi berbayar, rujukan berbayar, dan iklan langsung. Bukan untuk promosi diri atau promosi gratis untuk gerakan/kreator/situs web/produk yang mereka sukai</string>
   <string name="morphe_sb_segments_selfpromo">Tidak Dibayar/Promosi Diri Sendiri</string>
   <string name="morphe_sb_segments_selfpromo_sum">Serupa dengan Sponsor kecuali tidak dibayar atau promosi diri sendiri. Termasuk bagian merchandise, donasi, atau informasi tentang siapa yang berkolaborasi dengan mereka</string>
@@ -1091,6 +1090,7 @@ Siap mengirim?"</string>
   <string name="morphe_change_form_factor_title">Faktor bentuk tata letak</string>
   <string name="morphe_change_form_factor_entry_1">Bawaan</string>
   <string name="morphe_change_form_factor_entry_2">Ponsel</string>
+  <string name="morphe_change_form_factor_entry_3">Tablet</string>
   <string name="morphe_change_form_factor_entry_4">Otomotif</string>
   <string name="morphe_change_form_factor_user_dialog_message">"Perubahan meliputi:
 
@@ -1167,6 +1167,12 @@ Batasan: Menggunakan tombol kembali pada toolbar mungkin tidak berfungsi"</strin
   <string name="morphe_miniplayer_type_title">Jenis pemutar mini</string>
   <string name="morphe_miniplayer_type_entry_0">Nonaktif</string>
   <string name="morphe_miniplayer_type_entry_1">Bawaan</string>
+  <string name="morphe_miniplayer_type_entry_2">Minimal</string>
+  <string name="morphe_miniplayer_type_entry_3">Tablet</string>
+  <string name="morphe_miniplayer_type_entry_4">Modern 1</string>
+  <string name="morphe_miniplayer_type_entry_5">Modern 2</string>
+  <string name="morphe_miniplayer_type_entry_6">Modern 3</string>
+  <string name="morphe_miniplayer_type_entry_7">Modern 4</string>
   <string name="morphe_miniplayer_disable_rounded_corners_title">Nonaktifkan sudut membulat</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_on">Sudutnya persegi</string>
   <string name="morphe_miniplayer_disable_rounded_corners_summary_off">Sudutnya membulat</string>
@@ -1189,6 +1195,11 @@ Miniplayer dapat diseret keluar layar ke kiri atau kanan"</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Sembunyikan tombol hamparan</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Tombol hamparan disembunyikan</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Tombol hamparan ditampilkan</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Sembunyikan tombol perluas dan tutup</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Tombol disembunyikan
+
+Gesek untuk memperluas atau menutup"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Tombol perluas dan tutup ditampilkan</string>
   <string name="morphe_miniplayer_hide_subtext_title">Sembunyikan subteks</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Subteks disembunyikan</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Subteks ditampilkan</string>
@@ -1326,6 +1337,7 @@ Mengaktifkan ini dapat membuka kualitas video yang lebih tinggi"</string>
   <string name="morphe_shorts_quality_default_wifi_title">Kualitas Shorts bawaan di jaringan Wi-Fi</string>
   <string name="morphe_shorts_quality_default_mobile_title">Kualitas Shorts bawaan di jaringan seluler</string>
   <string name="morphe_remember_video_quality_mobile">seluler</string>
+  <string name="morphe_remember_video_quality_wifi">wifi</string>
   <string name="morphe_remember_video_quality_toast">Kualitas bawaan %1$s diubah ke: %2$s</string>
   <string name="morphe_remember_video_quality_toast_shorts">Kualitas Shorts %1$s diubah menjadi: %2$s</string>
   <!-- video.speed.button.playbackSpeedButtonPatch -->

@@ -559,6 +559,9 @@ Nếu thay đổi cài đặt này không có hiệu lực, hãy thử chuyển 
   <string name="morphe_hide_navigation_button_labels_title">Ẩn nhãn nút điều hướng</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Các nhãn đã bị ẩn</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Các nhãn được hiển thị</string>
+  <string name="morphe_navigation_bar_animations_title">Bật hoạt ảnh thanh điều hướng</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Chuyển đổi điều hướng có hoạt ảnh</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Chuyển đổi điều hướng không có hoạt ảnh</string>
   <string name="morphe_disable_translucent_status_bar_title">Vô hiệu hóa thanh trạng thái trong suốt</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Thanh trạng thái không trong suốt</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Thanh trạng thái có thể mờ hoặc trong suốt</string>
@@ -596,6 +599,9 @@ Nếu thay đổi cài đặt này không có hiệu lực, hãy thử chuyển 
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">Trình đơn âm lượng ổn định được hiển thị</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">Trình đơn âm lượng ổn định đã bị ẩn</string>
   <!-- 'Help & feedback' should be translated using the same localized wording YouTube displays for the menu item. -->
+  <string name="morphe_hide_player_flyout_help_title">Ẩn Trợ giúp &amp; phản hồi</string>
+  <string name="morphe_hide_player_flyout_help_summary_on">Menu Trợ giúp &amp; phản hồi bị ẩn</string>
+  <string name="morphe_hide_player_flyout_help_summary_off">Menu Trợ giúp &amp; phản hồi được hiển thị</string>
   <!-- 'Playback speed' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_speed_title">Ẩn Tốc độ phát</string>
   <string name="morphe_hide_player_flyout_speed_summary_on">Trình đơn tốc độ phát đã bị ẩn</string>
@@ -642,6 +648,8 @@ Nếu thay đổi cài đặt này không có hiệu lực, hãy thử chuyển 
   <string name="morphe_hide_player_control_buttons_background_summary_on">Nền điều khiển trình phát bị ẩn</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">Nền điều khiển trình phát được hiện</string>
   <string name="morphe_hide_player_previous_next_buttons_title">Ẩn các nút Trước &amp; Tiếp theo</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Các nút Trước &amp; Tiếp theo bị ẩn</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Các nút Trước &amp; Tiếp theo được hiển thị</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Ẩn thẻ màn hình kết thúc</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Thẻ màn hình kết thúc đã bị ẩn</string>
@@ -666,6 +674,8 @@ Nếu thay đổi cài đặt này không có hiệu lực, hãy thử chuyển 
   <string name="morphe_hide_seekbar_thumbnail_title">Ẩn thanh tiến trình trong hình thu nhỏ</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Thanh tiến trình trong hình thu nhỏ video đã xem đã bị ẩn</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Thanh tiến trình trong hình thu nhỏ video đã xem được hiển thị</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Bật thanh tìm kiếm lớn toàn màn hình</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Thanh tìm kiếm toàn màn hình có kích thước lớn</string>
   <string name="morphe_fullscreen_large_seekbar_summary_off">Thanh tìm kiếm toàn màn hình có kích thước bình thường</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Trình phát Shorts</string>
@@ -866,20 +876,6 @@ Hạn chế: Số lượt không thích có thể không xuất hiện ở chế
   <string name="morphe_wide_searchbar_title">Bật thanh tìm kiếm rộng</string>
   <string name="morphe_wide_searchbar_summary_on">Thanh tìm kiếm rộng đã bật</string>
   <string name="morphe_wide_searchbar_summary_off">Thanh tìm kiếm rộng đã tắt</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Bật hình thu nhỏ chất lượng cao</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">Hình thu nhỏ khi tua có chất lượng cao</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">Hình thu nhỏ khi tua có chất lượng trung bình</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_on">Hình thu nhỏ khi tua toàn màn hình có chất lượng cao</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_legacy_summary_off">Hình thu nhỏ khi tua toàn màn hình có chất lượng trung bình</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Tính năng này cũng sẽ khôi phục hình thu nhỏ trên luồng trực tiếp không có hình thu nhỏ thanh tiến trình.
-
-Hình thu nhỏ thanh tiến trình sẽ sử dụng cùng chất lượng với video hiện tại.
-
-Hoạt động tốt nhất với chất lượng video 720p trở xuống và khi sử dụng kết nối internet tốc độ cao."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Khôi phục hình thu nhỏ thanh tiến trình cũ</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">Hình thu nhỏ sẽ xuất hiện phía trên thanh tiến trình</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">Hình thu nhỏ sẽ xuất hiện trong chế độ toàn màn hình</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Bật SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock là một hệ thống dựa trên đóng góp bởi cộng đồng để bỏ qua các phần gây khó chịu trong video YouTube</string>
@@ -1341,6 +1337,7 @@ Bật tính năng này có thể mở khóa chất lượng video cao hơn"</str
   <string name="morphe_shorts_quality_default_wifi_title">Chất lượng Shorts mặc định trên mạng Wi-Fi</string>
   <string name="morphe_shorts_quality_default_mobile_title">Chất lượng Shorts mặc định trên mạng di động</string>
   <string name="morphe_remember_video_quality_mobile">di động</string>
+  <string name="morphe_remember_video_quality_wifi">wifi</string>
   <string name="morphe_remember_video_quality_toast">Đã thay đổi chất lượng mặc định %1$s: %2$s</string>
   <string name="morphe_remember_video_quality_toast_shorts">Đã thay đổi chất lượng Shorts %1$s: %2$s</string>
   <!-- video.speed.button.playbackSpeedButtonPatch -->

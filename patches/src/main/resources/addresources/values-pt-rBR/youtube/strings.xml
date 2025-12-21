@@ -20,6 +20,7 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_00_about_title">Sobre</string>
   <string name="morphe_settings_screen_01_ads_title">Anúncios</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Miniaturas alternativas</string>
+  <string name="morphe_settings_screen_03_feed_title">Feed</string>
   <string name="morphe_settings_screen_04_general_title">Geral</string>
   <string name="morphe_settings_screen_05_player_title">Reprodutor</string>
   <string name="morphe_settings_screen_07_seekbar_title">Barra de busca</string>
@@ -558,6 +559,9 @@ Se alterar esta configuração não fizer efeito, tente mudar para o modo anôni
   <string name="morphe_hide_navigation_button_labels_title">Ocultar rótulos dos botões de navegação</string>
   <string name="morphe_hide_navigation_button_labels_summary_on">Rótulos são ocultos</string>
   <string name="morphe_hide_navigation_button_labels_summary_off">Rótulos são mostrados</string>
+  <string name="morphe_navigation_bar_animations_title">Habilitar animações da barra de navegação</string>
+  <string name="morphe_navigation_bar_animations_summary_on">Transições de navegação são animadas</string>
+  <string name="morphe_navigation_bar_animations_summary_off">Transições de navegação não são animadas</string>
   <string name="morphe_disable_translucent_status_bar_title">Desabilitar barra de status translúcida</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">A barra de status é opaca</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">A barra de status é opaca ou translúcida</string>
@@ -641,6 +645,9 @@ Se alterar esta configuração não fizer efeito, tente mudar para o modo anôni
   <string name="morphe_hide_player_control_buttons_background_title">Ocultar plano de fundo dos controles do player</string>
   <string name="morphe_hide_player_control_buttons_background_summary_on">O plano de fundo dos controles do reprodutor está oculto</string>
   <string name="morphe_hide_player_control_buttons_background_summary_off">O plano de fundo dos controles do player está visível</string>
+  <string name="morphe_hide_player_previous_next_buttons_title">Ocultar botões Anterior &amp; Próximo</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_on">Botões Anterior &amp; Próximo estão ocultos</string>
+  <string name="morphe_hide_player_previous_next_buttons_summary_off">Botões Anterior &amp; Próximo estão visíveis</string>
   <!-- layout.hide.endscreencards.hideEndScreenCardsResourcePatch -->
   <string name="morphe_hide_endscreen_cards_title">Ocultar cartões de tela final</string>
   <string name="morphe_hide_endscreen_cards_summary_on">Cartões de tela final estão ocultos</string>
@@ -665,6 +672,9 @@ Se alterar esta configuração não fizer efeito, tente mudar para o modo anôni
   <string name="morphe_hide_seekbar_thumbnail_title">Ocultar barra de busca de miniaturas de vídeo</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">A barra de busca de miniaturas de vídeo está oculta</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">A barra de busca de miniaturas de vídeo é mostrada</string>
+  <string name="morphe_fullscreen_large_seekbar_title">Habilitar barra de busca grande em tela cheia</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_on">Barra de busca em tela cheia é de tamanho grande</string>
+  <string name="morphe_fullscreen_large_seekbar_summary_off">Barra de busca em tela cheia é de tamanho normal</string>
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Reprodutor do Shorts</string>
   <string name="morphe_shorts_player_screen_summary">Ocultar ou mostrar componentes do player de Shorts</string>
@@ -864,18 +874,6 @@ Limitação: \"Não gostei\" podem não aparecer no modo anônimo"</string>
   <string name="morphe_wide_searchbar_title">Ativar barra de busca ampla</string>
   <string name="morphe_wide_searchbar_summary_on">Barra de busca ampla está ativada</string>
   <string name="morphe_wide_searchbar_summary_off">Barra de busca ampla está desativada</string>
-  <!-- layout.seekbar.seekbarThumbnailsPatch -->
-  <string name="morphe_seekbar_thumbnails_high_quality_title">Ativar miniaturas de alta qualidade</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_on">As miniaturas na barra de busca são de qualidade alta</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_summary_off">As miniaturas na barra de busca são de qualidade média</string>
-  <string name="morphe_seekbar_thumbnails_high_quality_dialog_message">"Isso também restaurará as miniaturas em transmissões ao vivo que não possuem miniaturas de barra de busca.
-
-A barra de busca usará a mesma qualidade do vídeo atual. 
-
-Este recurso funciona melhor com uma qualidade de vídeo de 720p ou inferior e ao usar uma conexão de internet muito rápida."</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_title">Restaurar as miniaturas antigas da barra de busca</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_on">As miniaturas vão aparecer acima da barra de busca</string>
-  <string name="morphe_restore_old_seekbar_thumbnails_summary_off">As miniaturas na barra de busca vão aparecer em tela cheia</string>
   <!-- layout.sponsorblock.sponsorBlockResourcePatch -->
   <string name="morphe_sb_enable_sb">Ativar SponsorBlock</string>
   <string name="morphe_sb_enable_sb_sum">SponsorBlock é um sistema de crowdsourcing para pular partes irritantes de vídeos do YouTube</string>
@@ -1090,6 +1088,7 @@ Pronto para enviar?"</string>
   <string name="morphe_change_form_factor_title">Layout fator de forma</string>
   <string name="morphe_change_form_factor_entry_1">Padrão</string>
   <string name="morphe_change_form_factor_entry_2">Telefone</string>
+  <string name="morphe_change_form_factor_entry_3">Tablet</string>
   <string name="morphe_change_form_factor_entry_4">Automóveis</string>
   <string name="morphe_change_form_factor_user_dialog_message">"As alterações incluem:
 
@@ -1120,6 +1119,7 @@ Se posteriormente desativado, é recomendável limpar os dados do aplicativo par
   <string name="morphe_change_start_page_entry_browse">Explorar canais</string>
   <string name="morphe_change_start_page_entry_courses">Cursos / Educação</string>
   <string name="morphe_change_start_page_entry_explore">Explorar</string>
+  <string name="morphe_change_start_page_entry_fashion">Moda &amp; Beleza</string>
   <string name="morphe_change_start_page_entry_gaming">Jogos</string>
   <string name="morphe_change_start_page_entry_history">Histórico</string>
   <string name="morphe_change_start_page_entry_library">Biblioteca</string>
@@ -1129,6 +1129,7 @@ Se posteriormente desativado, é recomendável limpar os dados do aplicativo par
   <string name="morphe_change_start_page_entry_music">Música</string>
   <string name="morphe_change_start_page_entry_news">Notícias</string>
   <string name="morphe_change_start_page_entry_notifications">Notificações</string>
+  <string name="morphe_change_start_page_entry_playlists">Playlists</string>
   <string name="morphe_change_start_page_entry_search">Procurar</string>
   <string name="morphe_change_start_page_entry_shopping">Compras</string>
   <string name="morphe_change_start_page_entry_sports">Esportes</string>
@@ -1165,6 +1166,7 @@ Limitação: usar o botão Voltar na barra de ferramentas pode não funcionar"</
   <string name="morphe_miniplayer_type_entry_0">Desativado</string>
   <string name="morphe_miniplayer_type_entry_1">Padrão</string>
   <string name="morphe_miniplayer_type_entry_2">Mínimo</string>
+  <string name="morphe_miniplayer_type_entry_3">Tablet</string>
   <string name="morphe_miniplayer_type_entry_4">Moderno 1</string>
   <string name="morphe_miniplayer_type_entry_5">Moderno 2</string>
   <string name="morphe_miniplayer_type_entry_6">Moderno 3</string>
@@ -1191,6 +1193,11 @@ O miniplayer pode ser arrastado para fora da tela para a esquerda ou direita"</s
   <string name="morphe_miniplayer_hide_overlay_buttons_title">Ocultar botões de sobreposição</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_on">Botões de sobreposição estão ocultos</string>
   <string name="morphe_miniplayer_hide_overlay_buttons_summary_off">Botões de sobreposição são mostrados</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_title">Ocultar botões de expandir e fechar</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_on">"Botões ocultos
+
+Deslize para expandir ou fechar"</string>
+  <string name="morphe_miniplayer_hide_overlay_buttons_legacy_summary_off">Os botões de expandir e fechar são exibidos</string>
   <string name="morphe_miniplayer_hide_subtext_title">Ocultar subtextos</string>
   <string name="morphe_miniplayer_hide_subtext_summary_on">Subtextos estão ocultos</string>
   <string name="morphe_miniplayer_hide_subtext_summary_off">Subtextos são exibidos</string>
@@ -1222,6 +1229,7 @@ O miniplayer pode ser arrastado para fora da tela para a esquerda ou direita"</s
   <!-- layout.branding.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Logotipo do cabeçalho</string>
   <string name="morphe_header_logo_entry_1">Padrão</string>
+  <string name="morphe_header_logo_entry_2">Normal</string>
   <!-- Translation of this should be identical to morphe_custom_branding_icon_entry_3 -->
   <string name="morphe_header_logo_entry_5">Morphe mínimo</string>
   <!-- layout.thumbnails.bypassImageRegionRestrictionsPatch -->
@@ -1237,6 +1245,7 @@ Habilitar isso pode corrigir imagens ausentes que estão bloqueadas em algumas r
   <string name="morphe_alt_thumbnail_subscription_title">Guia Inscrições</string>
   <!-- 'You' should be translated using the same localized wording YouTube displays for the You (Library) tab. -->
   <string name="morphe_alt_thumbnail_library_title">Você</string>
+  <string name="morphe_alt_thumbnail_player_title">Playlists &amp; recomendações do reprodutor</string>
   <string name="morphe_alt_thumbnail_search_title">Resultado da busca</string>
   <string name="morphe_alt_thumbnail_options_entry_1">Miniaturas originais</string>
   <string name="morphe_alt_thumbnail_options_entry_2">DeArrow &amp; Miniaturas originais</string>

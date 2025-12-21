@@ -21,6 +21,7 @@ Second \"item\" text"</string>
   <string name="morphe_settings_music_screen_0_about_title">Despre</string>
   <string name="morphe_settings_music_screen_1_ads_title">Anunțuri</string>
   <string name="morphe_settings_music_screen_2_general_title">Generalități</string>
+  <string name="morphe_settings_music_screen_3_player_title">Jucător</string>
   <string name="morphe_settings_music_screen_4_misc_title">Diverse</string>
   <!-- ad.video.hideVideoAdsPatch -->
   <string name="morphe_music_hide_video_ads_title">Ascunde anunțurile video</string>

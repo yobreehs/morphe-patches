@@ -19,9 +19,13 @@ Second \"item\" text"</string>
   <!-- layout.branding.baseCustomBrandingPatch -->
   <string name="morphe_custom_branding_name_title">Sovelluksen nimi</string>
   <!-- Translations of this should be identical to morphe_custom_branding_icon_entry_4 -->
+  <string name="morphe_custom_branding_name_entry_5">Mukautettu</string>
   <string name="morphe_custom_branding_icon_title">Sovelluskuvake</string>
   <string name="morphe_custom_branding_icon_entry_1">Alkuperäinen</string>
+  <string name="morphe_custom_branding_icon_entry_2">Morphe-valo</string>
+  <string name="morphe_custom_branding_icon_entry_3">Morphe-tumma</string>
   <!-- Translations of this should be identical to morphe_custom_branding_name_entry_5 -->
+  <string name="morphe_custom_branding_icon_entry_4">Mukautettu</string>
   <!-- misc.dns.checkWatchHistoryDomainNameResolutionPatch -->
   <string name="morphe_check_watch_history_domain_name_dialog_title">Morphe-ilmoitus</string>
   <string name="morphe_check_watch_history_domain_name_dialog_message">Kellon historiaa ei tallenneta.&lt;br&gt;&lt;br&gt;Tämä todennäköisesti johtuu DNS mainosten estäjä tai verkkovälityspalvelin.&lt;br&gt;&lt;br&gt;Korjataksesi tämän, valkoiselle listalle &lt;b&gt;s.youtube.com&lt;/b&gt; tai poistaaksesi kaikki DNS-estäjät ja -profiilit.</string>
