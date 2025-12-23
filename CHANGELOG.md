@@ -1,3 +1,10 @@
+# [1.0.0-dev.18](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.17...v1.0.0-dev.18) (2025-12-23)
+
+
+### Bug Fixes
+
+* **GmsCore support:** Change recommended MicroG to MicroG-RE ([87fe57d](https://github.com/MorpheApp/morphe-patches/commit/87fe57dae2eac232741abf7c7530cc228cf95955))
+
 # [1.0.0-dev.17](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.16...v1.0.0-dev.17) (2025-12-21)
 
 
