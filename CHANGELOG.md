@@ -1,3 +1,10 @@
+# [1.0.0-dev.19](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.18...v1.0.0-dev.19) (2025-12-24)
+
+
+### Bug Fixes
+
+* Resolve ssl connection timeout in ci (test) ([031ffba](https://github.com/MorpheApp/morphe-patches/commit/031ffba84ed17cd742356fb3321198c73c99ab29))
+
 # [1.0.0-dev.18](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.17...v1.0.0-dev.18) (2025-12-23)
 
 
