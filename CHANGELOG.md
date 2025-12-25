@@ -1,3 +1,10 @@
+# [1.0.0-dev.24](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.23...v1.0.0-dev.24) (2025-12-25)
+
+
+### Bug Fixes
+
+* Create pre-release build for testing ([931017d](https://github.com/MorpheApp/morphe-patches/commit/931017d3a97a9f40b2f1acf4fc0b636c85faf210))
+
 # [1.0.0-dev.23](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.22...v1.0.0-dev.23) (2025-12-25)
 
 
