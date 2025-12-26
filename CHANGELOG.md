@@ -1,3 +1,11 @@
+# [1.0.0-dev.28](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.27...v1.0.0-dev.28) (2025-12-26)
+
+
+### Bug Fixes
+
+* **YouTube - Hide ads:** Support `Hide fullscreen ads` on Android 13+ devices ([#17](https://github.com/MorpheApp/morphe-patches/issues/17)) ([e016b8b](https://github.com/MorpheApp/morphe-patches/commit/e016b8be4a631d6ccf123464f7fb5bd2062b7b99))
+* **YouTube - Remove viewer discretion dialog:** Not working on YouTube 20.14.43+ ([#19](https://github.com/MorpheApp/morphe-patches/issues/19)) ([d951f2e](https://github.com/MorpheApp/morphe-patches/commit/d951f2ef952f6e7858699c9e981e6a375a88ef55))
+
 # [1.0.0-dev.27](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.26...v1.0.0-dev.27) (2025-12-26)
 
 
