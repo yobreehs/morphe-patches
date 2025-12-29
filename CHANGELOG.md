@@ -1,3 +1,10 @@
+# [1.0.0-dev.30](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.29...v1.0.0-dev.30) (2025-12-29)
+
+
+### Bug Fixes
+
+* **YouTube - Loop video:** Fix looping button state ([#22](https://github.com/MorpheApp/morphe-patches/issues/22)) ([d02c00e](https://github.com/MorpheApp/morphe-patches/commit/d02c00e325d967c48a9153269d52b9e94ae68f24))
+
 # [1.0.0-dev.29](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.28...v1.0.0-dev.29) (2025-12-28)
 
 
