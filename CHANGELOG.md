@@ -1,3 +1,10 @@
+# [1.0.0-dev.31](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.30...v1.0.0-dev.31) (2025-12-31)
+
+
+### Features
+
+* **Spoof video streams:** Add an option to sign-in to Android VR ([#23](https://github.com/MorpheApp/morphe-patches/issues/23)) ([a780f67](https://github.com/MorpheApp/morphe-patches/commit/a780f67a5a068a3274b4a4969a46daecbbdc0a60))
+
 # [1.0.0-dev.30](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.29...v1.0.0-dev.30) (2025-12-29)
 
 
