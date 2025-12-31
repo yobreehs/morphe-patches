@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">Σχετικά με</string>
   <string name="morphe_settings_screen_01_ads_title">Διαφημίσεις</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Εναλλακτικές μικρογραφίες</string>
@@ -323,12 +324,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_end_screen_store_banner_summary_on">Κρυμμένη</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Εμφανίζεται</string>
   <string name="morphe_hide_fullscreen_ads_title">Διαφημίσεις πλήρους οθόνης</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Κρυμμένες
-
-Αυτή η λειτουργία είναι διαθέσιμη μόνο για παλιότερες συσκευές"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Οι διαφημίσεις πλήρους οθόνης είναι κρυμμένες</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Οι διαφημίσεις πλήρους οθόνης εμφανίζονται</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Η απόκρυψη διαφημίσεων πλήρους οθόνης λειτουργεί μόνο με παλαιότερες συσκευές</string>
   <string name="morphe_hide_general_ads_title">Γενικές διαφημίσεις</string>
   <string name="morphe_hide_general_ads_summary_on">Κρυμμένες</string>
   <string name="morphe_hide_general_ads_summary_off">Εμφανίζονται</string>
@@ -350,10 +347,11 @@ Second \"item\" text"</string>
   <string name="morphe_hide_web_search_results_title">Αποτελέσματα αναζήτησης στο διαδίκτυο</string>
   <string name="morphe_hide_web_search_results_summary_on">Κρυμμένα</string>
   <string name="morphe_hide_web_search_results_summary_off">Εμφανίζονται</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">Προωθήσεις για απόκτηση YouTube Premium</string>
-  <string name="morphe_hide_get_premium_summary_on">Κρυμμένες</string>
-  <string name="morphe_hide_get_premium_summary_off">Εμφανίζονται</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">Προωθήσεις για απόκτηση YouTube Premium</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"Οι προωθήσεις του YouTube Premium είναι κρυμμένες
+
+Περιορισμοί: Η σελίδα Doodles του YouTube δεν είναι διαθέσιμη"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">Εμφανίζονται προωθήσεις του YouTube Premium</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Διαφημίσεις βίντεο</string>
   <string name="morphe_hide_video_ads_summary_on">Κρυμμένες</string>
@@ -519,6 +517,7 @@ Second \"item\" text"</string>
   <string name="morphe_hide_clip_button_title">Κουμπί «Κλιπ»</string>
   <string name="morphe_hide_clip_button_summary_on">Κρυμμένο</string>
   <string name="morphe_hide_clip_button_summary_off">Εμφανίζεται</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Η λειτουργία απόκρυψης αυτή ενδέχεται να μην λειτουργεί για ορισμένους λογαριασμούς χρηστών.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Κουμπί «Αγορές»</string>
   <string name="morphe_hide_shop_button_summary_on">Κρυμμένο</string>
@@ -567,7 +566,6 @@ Second \"item\" text"</string>
   <string name="morphe_disable_translucent_status_bar_title">Απενεργοποίηση διαφανούς γραμμής κατάστασης</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Η γραμμή κατάστασης δεν είναι διαφανής</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Η διαφάνεια της γραμμής κατάστασης ορίζεται αυτόματα</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">Σε ορισμένες συσκευές, η ενεργοποίηση αυτής της λειτουργίας μπορεί να αλλάξει τη γραμμή πλοήγησης του συστήματος σε διαφανή.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Απενεργοποίηση διαφανούς γραμμής στο φωτεινό θέμα</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">Η γραμμή πλοήγησης στο φωτεινό θέμα δεν είναι διαφανής</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">Η διαφάνεια της γραμμής πλοήγησης στο φωτεινό θέμα ορίζεται αυτόματα</string>

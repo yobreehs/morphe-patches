@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">Haqqında</string>
   <string name="morphe_settings_screen_01_ads_title">Reklamlar</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Seçmə miniatürlər</string>
@@ -321,12 +322,8 @@ Məhdudiyyətlər
   <string name="morphe_hide_end_screen_store_banner_summary_on">Son ekran mağaza afişası gizlidir</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Son ekran mağaza afişası görünür</string>
   <string name="morphe_hide_fullscreen_ads_title">Tam ekran reklamlarını gizlət</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Tam ekran reklamları gizlidir
-
-Bu xüsusiyyət yalnız köhnə cihazlar üçün mövcuddur"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Tam ekran reklamları gizlənir</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Tam ekran reklamları göstərilir</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Tam ekran reklamları gizlətmə yalnız köhnə cihazlarda işləyir</string>
   <string name="morphe_hide_general_ads_title">Ümumi reklamları gizlət</string>
   <string name="morphe_hide_general_ads_summary_on">Ümumi reklamlar gizlidir</string>
   <string name="morphe_hide_general_ads_summary_off">Ümumi reklamlar göstərilir</string>
@@ -348,10 +345,11 @@ Bu xüsusiyyət yalnız köhnə cihazlar üçün mövcuddur"</string>
   <string name="morphe_hide_web_search_results_title">Veb axtarış nəticələrini gizlət</string>
   <string name="morphe_hide_web_search_results_summary_on">Veb axtarış nəticələri gizlədilir</string>
   <string name="morphe_hide_web_search_results_summary_off">Veb axtarış nəticələri göstərilir</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">YouTube Premium reklamlarını gizlət</string>
-  <string name="morphe_hide_get_premium_summary_on">Video oynadıcı altında YouTube Premium elanları gizlidir</string>
-  <string name="morphe_hide_get_premium_summary_off">Video oynadıcı altındakı YouTube Premium elanları göstərilir</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">YouTube Premium reklamlarını gizlət</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"YouTube Premium təbliğatları gizlənir
+
+Məhdudiyyətlər: YouTube Doodles səhifəsi əlçatan deyil"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">Video oynadıcı altındakı YouTube Premium elanları göstərilir</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Video reklamlarını gizlət</string>
   <string name="morphe_hide_video_ads_summary_on">Video reklamlar gizlədilir</string>
@@ -517,6 +515,7 @@ Ekranın sağ tərəfində düzünə sürüşdürərək səs səviyyəsini tənz
   <string name="morphe_hide_clip_button_title">Kəsmə/ gizlət</string>
   <string name="morphe_hide_clip_button_summary_on">Kəsmə düyməsi gizlidir</string>
   <string name="morphe_hide_clip_button_summary_off">Kəsmə düyməsi göstərilir</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Bu gizlətmə funksiyası bəzi istifadəçi hesabları üçün işləməyə bilər.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Mağazanı Gizlət</string>
   <string name="morphe_hide_shop_button_summary_on">Mağaza düyməsi gizlidir</string>
@@ -565,7 +564,6 @@ Bu seçimi dəyişdirmə işə düşmürsə, Gizli rejimə keçməyə çalışı
   <string name="morphe_disable_translucent_status_bar_title">Yarımşəffaf mövqe cizgisin qapat</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Mövqe cizgisi qeyri-şəffafdır</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Mövqe cizgisi qeyri-şəffaf və ya şəffafdır</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">Bəzi cihazlarda bu xüsusiyyət aktivləşməsi sistem fəaliyyət cərgəsini şəffaf-a dəyişə bilər.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Açıq temada şəffaf cizgini qapat</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">İşıqlı rejim fəaliyyət cərgəsi qeyri-şəffafdır</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">İşıqlı rejim fəaliyyət cərgəsi qeyri-şəffaf və ya şəffafdır</string>

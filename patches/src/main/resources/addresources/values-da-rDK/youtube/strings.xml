@@ -17,10 +17,11 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">Om</string>
   <string name="morphe_settings_screen_01_ads_title">Annoncer</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Alternative miniaturebilleder</string>
-  <string name="morphe_settings_screen_03_feed_title">Feed</string>
+  <string name="morphe_settings_screen_03_feed_title">Foder</string>
   <string name="morphe_settings_screen_04_general_title">Generelt</string>
   <string name="morphe_settings_screen_05_player_title">Afspiller</string>
   <string name="morphe_settings_screen_07_seekbar_title">Søg i videon</string>
@@ -321,12 +322,8 @@ Begrænsninger
   <string name="morphe_hide_end_screen_store_banner_summary_on">Slutskærmsbutiksbanner er skjult</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Slutskærmsbutiksbanner vises</string>
   <string name="morphe_hide_fullscreen_ads_title">Skjul fuldskærmsannoncer</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Fuldsskærmsannoncer er skjult
-
-Denne funktion er kun tilgængelig for ældre enheder"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Fuldskærmsannoncer er skjult</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Fuldskærms annoncer vises</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Skjul reklamer på fuld skærm virker kun med ældre enheder</string>
   <string name="morphe_hide_general_ads_title">Skjul generelle annoncer</string>
   <string name="morphe_hide_general_ads_summary_on">Generelle annoncer er skjult</string>
   <string name="morphe_hide_general_ads_summary_off">Generelle annoncer vises</string>
@@ -348,10 +345,11 @@ Denne funktion er kun tilgængelig for ældre enheder"</string>
   <string name="morphe_hide_web_search_results_title">Skjul søgeresultater</string>
   <string name="morphe_hide_web_search_results_summary_on">Websøgeresultater er skjult</string>
   <string name="morphe_hide_web_search_results_summary_off">Websøgeresultater vises</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">Skjul YouTube Premium kampagner</string>
-  <string name="morphe_hide_get_premium_summary_on">YouTube Premium kampagner under videoafspiller er skjult</string>
-  <string name="morphe_hide_get_premium_summary_off">YouTube Premium kampagner under videoafspiller vises</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">Skjul YouTube Premium kampagner</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"YouTube Premium-reklamer er skjult
+
+Begrænsninger: YouTube Doodles-siden er ikke tilgængelig"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">YouTube Premium reklamer vises</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Skjul videoannoncer</string>
   <string name="morphe_hide_video_ads_summary_on">Videoannoncer er skjult</string>
@@ -517,6 +515,7 @@ Juster lydstyrken ved at swipe lodret i højre side af skærmen"</string>
   <string name="morphe_hide_clip_button_title">Skjul klip</string>
   <string name="morphe_hide_clip_button_summary_on">Klip knappen er skjult</string>
   <string name="morphe_hide_clip_button_summary_off">Klip knappen er vist</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Denne skjulfunktion fungerer måske ikke for nogle brugere.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Skjul butik</string>
   <string name="morphe_hide_shop_button_summary_on">Butiksknappen er skjult</string>
@@ -565,7 +564,6 @@ Hvis ændring af denne indstilling ikke træder i kraft, kan du prøve at skifte
   <string name="morphe_disable_translucent_status_bar_title">Deaktiver gennemsigtig statuslinje</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Statuslinjen er opak</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Statuslinjen er opak eller gennemsigtig</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">På nogle enheder kan aktivering af denne funktion ændre systemets navigationslinje til gennemsigtig.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Deaktiver lys gennemsigtig linje</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">Navigationslinjen i lys tilstand er ikke gennemsigtig</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">Lys tilstand navigationslinjen er opak eller gennemsigtig</string>

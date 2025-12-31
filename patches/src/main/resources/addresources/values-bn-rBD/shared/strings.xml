@@ -18,7 +18,6 @@ Second \"item\" text"</string>
 <resources>
   <!-- misc.settings.settingsResourcePatch -->
   <string name="morphe_settings_submenu_title">সেটিংস</string>
-  <string name="morphe_settings_about_donate">দান করুন</string>
   <string name="morphe_settings_confirm_user_dialog_title">আপনি কি এগিয়ে যেতে চান?</string>
   <string name="morphe_settings_save">সংরক্ষণ করুন</string>
   <string name="morphe_settings_reset">আবার সেট করুন</string>
@@ -64,10 +63,14 @@ Second \"item\" text"</string>
   <string name="morphe_pref_import_export_title">আমদানি এবং রপ্তানি</string>
   <string name="morphe_pref_import_export_summary">Morphe সেটিং আমদানি বা রপ্তানি করুন</string>
   <!-- Settings about dialog. -->
-  <string name="morphe_settings_about_links_body">আপনি Morphe প্যাচ সংস্করণ &lt;i&gt;%s&lt;/i&gt; ব্যবহার করছেন</string>
+  <string name="morphe_settings_about_links_body_version_current">আপনি Morphe প্যাচ সংস্করণ &lt;i&gt;%s&lt;/i&gt; ব্যবহার করছেন</string>
+  <string name="morphe_settings_about_links_body_version_outdated">আপনি Morphe প্যাচ সংস্করণ &lt;i&gt;%1$s&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;আপডেট উপলব্ধ: &lt;i&gt;%2$s&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;আপনার প্যাচগুলি আপডেট করতে, Morphe ব্যবহার করে এই অ্যাপ্লিকেশনটিকে পুনরায় প্যাচ করুন</string>
   <string name="morphe_settings_about_links_dev_header">দ্রষ্টব্য</string>
   <string name="morphe_settings_about_links_dev_body">এই সংস্করণ একটি প্রাক-প্রকাশনা এবং এতে আপনি অনাকাঙ্খিত সমস্যার সম্মুখিন হতে পারেন</string>
   <string name="morphe_settings_about_links_header">অফিশ্যাল লিংকসমূহ</string>
+  <string name="morphe_settings_about_links_website">ওয়েবসাইট</string>
+  <string name="morphe_settings_about_links_donate">দান করুন</string>
+  <string name="morphe_settings_about_links_translations">অনুবাদগুলি</string>
   <!-- misc.debugging.enableDebuggingPatch -->
   <string name="morphe_debug_screen_title">ডিবাগিং</string>
   <string name="morphe_debug_screen_summary">ডিবাগিং অপশন সক্রিয় বা নিষ্ক্রিয় করুন</string>
@@ -105,17 +108,18 @@ Second \"item\" text"</string>
   <string name="microg_settings_title">GmsCore সেটিং</string>
   <string name="microg_settings_summary">GmsCore এর জন্য সেটিং</string>
   <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="gms_core_toast_not_installed_message">MicroG GmsCore ইনস্টল করা হয়নি। ইনস্টল করুন।</string>
+  <string name="gms_core_toast_not_installed_message">MicroG គয় ইনস্টল না। ইনস্টল করুন।</string>
   <string name="gms_core_dialog_title">পদক্ষেপ প্রয়োজন</string>
-  <string name="gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG GmsCore-এর পটভূমিতে চালানোর অনুমতি নেই।
+  <!-- "Don't kill my app" should be kept in English and not translated -->
+  <string name="gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG-এর পটভূমিতে চালানোর অনুমতি নেই।
 
 আপনার ফোনের জন্য \"Don't kill my app\" গাইড অনুসরণ করুন এবং MicroG ইনস্টলেশনের জন্য নির্দেশাবলী প্রয়োগ করুন।
 
 এটি অ্যাপ্লিকেশনটি কাজ করার জন্য প্রয়োজন।"</string>
   <string name="gms_core_dialog_open_website_text">ওয়েবসাইট খুলুন</string>
-  <string name="gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"সমস্যা এড়াতে MicroG GmsCore-এর ব্যাটারি অপ্টিমাইজেশন অক্ষম করতে হবে।
+  <string name="gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"MicroG GmsCore-এর ব্যাটারি অপ্টিমাইজেশন অক্ষম করতে হবে।
 
-MicroG-এর জন্য ব্যাটারি অপ্টিমাইজেশন অক্ষম করা ব্যাটারি ব্যবহারকে নেতিবাচকভাবে প্রভাবিত করবে না।
+MicroG-এর জন্য ব্যাটারি অপ্টিমাইজেন অক্ষম করা ব্যাটারি ব্যবহারকে নেতিবাচকভាឱে প্রভাবিত করবে না।
 
 চালিয়ে যান বোতামটি ট্যাপ করুন এবং অপ্টিমাইজেশন পরিবর্তনগুলি অনুমোদন করুন।"</string>
   <string name="gms_core_dialog_continue_text">এগিয়ে যান</string>

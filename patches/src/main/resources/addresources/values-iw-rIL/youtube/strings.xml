@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">אודות</string>
   <string name="morphe_settings_screen_01_ads_title">מודעות</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">תמונות ממוזערות חלופיות</string>
@@ -321,12 +322,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_end_screen_store_banner_summary_on">באנר החנות של מסך סיום מוסתר</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">באנר החנות של מסך הסיום מוצג</string>
   <string name="morphe_hide_fullscreen_ads_title">הסתר מודעות מסך מלא</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"מודעות במסך מלא מוסתרות
-
-תכונה זו זמינה רק עבור מכשירים ישנים יותר"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">מודעות מסך מלא מוסתרות</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">מודעות מסך מלא מוצגות</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">הסתר מודעות מסך מלא עובד רק עם מכשירים ישנים יותר</string>
   <string name="morphe_hide_general_ads_title">הסתר מודעות כלליות</string>
   <string name="morphe_hide_general_ads_summary_on">מודעות כלליות מוסתרות</string>
   <string name="morphe_hide_general_ads_summary_off">מודעות כלליות מוצגות</string>
@@ -348,10 +345,11 @@ Second \"item\" text"</string>
   <string name="morphe_hide_web_search_results_title">הסתר תוצאות חיפוש באינטרנט</string>
   <string name="morphe_hide_web_search_results_summary_on">תוצאות חיפוש באינטרנט מוסתרות</string>
   <string name="morphe_hide_web_search_results_summary_off">תוצאות חיפוש באינטרנט מוצגות</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">הסתר קידומי YouTube Premium</string>
-  <string name="morphe_hide_get_premium_summary_on">קידומי YouTube Premium תחת נגן הוידאו מוסתרים</string>
-  <string name="morphe_hide_get_premium_summary_off">קידומי YouTube Premium תחת נגן הוידאו מוצגים</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">הסתר קידומי YouTube Premium</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"קידומות YouTube Premium מוסתרות
+
+מגבלות: עמוד Doodles של YouTube אינו זמין"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">קידומי YouTube Premium מוצגים</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">הסתר מודעות סרטון</string>
   <string name="morphe_hide_video_ads_summary_on">מודעות סרטון מוסתרות</string>
@@ -517,6 +515,7 @@ Second \"item\" text"</string>
   <string name="morphe_hide_clip_button_title">הסתר קליפ</string>
   <string name="morphe_hide_clip_button_summary_on">לחצן קליפ מוסתר</string>
   <string name="morphe_hide_clip_button_summary_off">לחצן קליפ מוצג</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">הפונקציה להחבא זו עשויה שלא לעבוד לחשבונות משתמשים מסויים.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">הסתר \'חנות\'</string>
   <string name="morphe_hide_shop_button_summary_on">הלחצן \'חנות\' מוסתר</string>
@@ -565,7 +564,6 @@ Second \"item\" text"</string>
   <string name="morphe_disable_translucent_status_bar_title">השבת שורת מצב שקופה</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">שורת מצב אטומה</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">שורת מצב אטומה או שקופה</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">בחלק מהמכשירים, הפעלת תכונה זו עשויה לשנות את סרגל הניווט של המערכת לשקוף.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">השבת סרגל בהיר שקוף</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">סרגל ניווט במצב בהיר הוא אטום</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">סרגל ניווט במצב בהיר הוא אטום או שקוף</string>

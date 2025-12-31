@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">О програму</string>
   <string name="morphe_settings_screen_01_ads_title">Огласи</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Алтернативне сличице</string>
@@ -321,12 +322,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_end_screen_store_banner_summary_on">Банер продавнице на завршном екрану је скривен</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Банер продавнице на завршном екрану је приказан</string>
   <string name="morphe_hide_fullscreen_ads_title">Сакриј огласе преко целог екрана</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Огласи преко целог екрана су скривени
-
-Ова функција је доступна само за старије уређаје"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Огласи преко целог екрана су скривени</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Огласи преко целог екрана су приказани</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Сакривање огласа преко целог екрана ради само са старијим уређајима</string>
   <string name="morphe_hide_general_ads_title">Сакриј опште огласе</string>
   <string name="morphe_hide_general_ads_summary_on">Општи огласи су скривени</string>
   <string name="morphe_hide_general_ads_summary_off">Општи огласи су приказани</string>
@@ -348,10 +345,11 @@ Second \"item\" text"</string>
   <string name="morphe_hide_web_search_results_title">Сакриј резултате веб-претраге</string>
   <string name="morphe_hide_web_search_results_summary_on">Резултати веб-претраге су скривени</string>
   <string name="morphe_hide_web_search_results_summary_off">Резултати веб-претраге су приказани</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">Сакриј промоције за YouTube Premium</string>
-  <string name="morphe_hide_get_premium_summary_on">Промоције за YouTube Premium испод видео плејера су скривене</string>
-  <string name="morphe_hide_get_premium_summary_off">Промоције за YouTube Premium испод видео плејера су приказане</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">Сакриј промоције за YouTube Premium</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"Промоције YouTube Premium су скривене
+
+Ограничења: YouTube Doodles страница није доступна"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">Промоције за YouTube Premium су приказане</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Сакриј видео огласе</string>
   <string name="morphe_hide_video_ads_summary_on">Видео огласи су скривени</string>
@@ -517,6 +515,7 @@ Second \"item\" text"</string>
   <string name="morphe_hide_clip_button_title">Сакриј дугме „Клип”</string>
   <string name="morphe_hide_clip_button_summary_on">Дугме „Клип” је скривено</string>
   <string name="morphe_hide_clip_button_summary_off">Дугме „Клип” је приказано</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Ова функција сакривања можда неће радити за неке корисничке налоге.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Сакриј дугме „Продавница”</string>
   <string name="morphe_hide_shop_button_summary_on">Дугме „Продавница” је скривено</string>
@@ -565,7 +564,6 @@ Second \"item\" text"</string>
   <string name="morphe_disable_translucent_status_bar_title">Онемогући прозирну статусну траку</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Статусна трака је непрозирна</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Статусна трака је непрозирна или прозирна</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">На неким уређајима, омогућавање ове функције може да промени траку за навигацију кроз систем у прозирну.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Онемогући светлу прозирну траку за навигацију</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">Трака за навигацију у светлом режиму је непрозирна</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">Трака за навигацију у светлом режиму је непрозирна или прозирна</string>

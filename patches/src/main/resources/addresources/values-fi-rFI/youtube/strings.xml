@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">Tietoja</string>
   <string name="morphe_settings_screen_01_ads_title">Mainokset</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Vaihtoehtoiset pikkukuvat</string>
@@ -321,12 +322,8 @@ Rajoitukset
   <string name="morphe_hide_end_screen_store_banner_summary_on">Loppunäytön kauppabanneri piilotetaan</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Loppunäytön kauppabanneri näytetään</string>
   <string name="morphe_hide_fullscreen_ads_title">Piilota koko näytön mainokset</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Koko näytön mainokset piilotetaan
-
-Tämä ominaisuus on käytettävissä vain vanhemmilla laitteilla"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Koko näytön mainokset piilotetaan</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Koko näytön mainokset näytetään</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Koko näytön mainosten piilottaminen toimii vain vanhemmilla laitteilla</string>
   <string name="morphe_hide_general_ads_title">Piilota yleiset mainokset</string>
   <string name="morphe_hide_general_ads_summary_on">Yleiset mainokset piilotetaan</string>
   <string name="morphe_hide_general_ads_summary_off">Yleiset mainokset näytetään</string>
@@ -348,10 +345,11 @@ Tämä ominaisuus on käytettävissä vain vanhemmilla laitteilla"</string>
   <string name="morphe_hide_web_search_results_title">Piilota verkkohakutulokset</string>
   <string name="morphe_hide_web_search_results_summary_on">Verkkohakutulokset piilotetaan</string>
   <string name="morphe_hide_web_search_results_summary_off">Verkkohakutulokset näytetään</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">Piilota YouTube Premium -mainokset</string>
-  <string name="morphe_hide_get_premium_summary_on">YouTube Premium -mainokset videosoittimen alla piilotetaan</string>
-  <string name="morphe_hide_get_premium_summary_off">YouTube Premium -mainokset videosoittimen alla näytetään</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">Piilota YouTube Premium -mainokset</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"YouTube Premium -mainokset piilotetaan
+
+Rajoitukset: YouTube Doodles -sivu ei ole käytettävissä"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">YouTube Premium -mainokset näytetään</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Piilota videomainokset</string>
   <string name="morphe_hide_video_ads_summary_on">Videomainokset piilotetaan</string>
@@ -517,6 +515,7 @@ Säädä äänenvoimakkuutta pyyhkäisemällä pystysuoraan näytön oikealta pu
   <string name="morphe_hide_clip_button_title">Piilota Klippi</string>
   <string name="morphe_hide_clip_button_summary_on">Klippi-painike piilotetaan</string>
   <string name="morphe_hide_clip_button_summary_off">Klippi-painike näytetään</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Tämä piilotustoiminto ei välttämättä toimi kaikkien käyttäjätilien kohdalla.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Piilota Kauppa</string>
   <string name="morphe_hide_shop_button_summary_on">Kauppa-painike piilotetaan</string>
@@ -565,7 +564,6 @@ Jos tämän asetuksen muuttaminen ei tule voimaan, kokeile vaihtaa Incognito-til
   <string name="morphe_disable_translucent_status_bar_title">Poista läpikuultava tilapalkki käytöstä</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Tilapalkki on läpinäkymätön</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Tilapalkki on läpinäkymätön tai läpikuultava</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">Joillakin laitteilla tämän ominaisuuden käyttöönotto voi muuttaa järjestelmän navigointipalkin läpinäkyväksi.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Poista vaalea läpikuultava palkki käytöstä</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">Vaalean tilan navigointipalkki on läpinäkymätön</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">Vaalean tilan navigointipalkki on läpinäkymätön tai läpikuultava</string>
@@ -1400,7 +1398,7 @@ Rajoitukset:
   <string name="morphe_spoof_video_streams_av1_title">Salli Android VR AV1</string>
   <string name="morphe_spoof_video_streams_av1_summary_on">"Videokoodekki on AVC (H.264), VP9 tai AV1
 
-Toisto saattaa pätkiä"</string>
+Toisto saattaa pätkiä tai pudottaa kuvakehyksiä"</string>
   <string name="morphe_spoof_video_streams_av1_summary_off">Videokoodekki on AVC (H.264) tai VP9</string>
   <string name="morphe_spoof_video_streams_av1_user_dialog_message">"Tämän asetuksen käyttöönotto saattaa käyttää ohjelmistopohjaista AV1-dekoodausta.
 

@@ -17,10 +17,11 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">Informazioni</string>
   <string name="morphe_settings_screen_01_ads_title">Pubblicità</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Miniature alternative</string>
-  <string name="morphe_settings_screen_03_feed_title">Feed</string>
+  <string name="morphe_settings_screen_03_feed_title">Alimenta</string>
   <string name="morphe_settings_screen_04_general_title">Generale</string>
   <string name="morphe_settings_screen_05_player_title">Lettore</string>
   <string name="morphe_settings_screen_07_seekbar_title">Barra di avanzamento</string>
@@ -321,12 +322,8 @@ Note:
   <string name="morphe_hide_end_screen_store_banner_summary_on">Il banner del negozio nella schermata finale è nascosto</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Il banner del negozio nella schermata finale è mostrato</string>
   <string name="morphe_hide_fullscreen_ads_title">Nascondi le pubblicità a schermo intero</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Le pubblicità a schermo intero sono nascoste
-
-Questa funzione è disponibile solo per i dispositivi più vecchi"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Gli annunci a schermo intero sono nascosti</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Le pubblicità a schermo intero sono visibili</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Nascondi gli annunci a schermo intero funziona solo con dispositivi più vecchi</string>
   <string name="morphe_hide_general_ads_title">Nascondi pubblicità generali</string>
   <string name="morphe_hide_general_ads_summary_on">Le pubblicità generali sono nascoste</string>
   <string name="morphe_hide_general_ads_summary_off">Le pubblicità generali sono visibili</string>
@@ -348,10 +345,11 @@ Questa funzione è disponibile solo per i dispositivi più vecchi"</string>
   <string name="morphe_hide_web_search_results_title">Nascondi i risultati della ricerca web</string>
   <string name="morphe_hide_web_search_results_summary_on">I risultati della ricerca web sono nascosti</string>
   <string name="morphe_hide_web_search_results_summary_off">I risultati della ricerca web sono visibili</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">Nascondi la promozione di YouTube Premium</string>
-  <string name="morphe_hide_get_premium_summary_on">Le promozioni di YouTube Premium sotto il video player sono nascoste</string>
-  <string name="morphe_hide_get_premium_summary_off">Le promozioni di YouTube Premium sotto il lettore video sono mostrate</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">Nascondi la promozione di YouTube Premium</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"Le promozioni di YouTube Premium sono nascoste
+
+Limitazioni: la pagina Doodles di YouTube non è disponibile"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">Le promozioni di YouTube Premium sono mostrate</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Nascondi le pubblicità del video</string>
   <string name="morphe_hide_video_ads_summary_on">Le pubblicità del video sono nascoste</string>
@@ -517,6 +515,7 @@ Regola il volume scorrendo verticalmente sul lato destro dello schermo"</string>
   <string name="morphe_hide_clip_button_title">Nascondi Clip</string>
   <string name="morphe_hide_clip_button_summary_on">Il pulsante Clip è nascosto</string>
   <string name="morphe_hide_clip_button_summary_off">Il pulsante Clip è visibile</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Questa funzione di nascondimento potrebbe non funzionare per alcuni account utente.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Nascondi Acquisti</string>
   <string name="morphe_hide_shop_button_summary_on">Il pulsante Acquisti è nascosto</string>
@@ -565,7 +564,6 @@ Se la modifica di questa impostazione non ha effetto, prova a passare alla modal
   <string name="morphe_disable_translucent_status_bar_title">Disabilita la barra di stato traslucida</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">La barra di stato è opaca</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">La barra di stato è opaca o traslucida</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">Su alcuni dispositivi, l\'abilitazione di questa funzione può rendere trasparente la barra di navigazione del sistema.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Disabilita la barra traslucida chiara</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">La barra di navigazione in modalità chiara è opaca</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">La barra di navigazione in modalità chiara è opaca o traslucida</string>

@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">Giới thiệu</string>
   <string name="morphe_settings_screen_01_ads_title">Quảng cáo</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Hình thu nhỏ thay thế</string>
@@ -321,12 +322,8 @@ Hạn chế
   <string name="morphe_hide_end_screen_store_banner_summary_on">Biểu ngữ cửa hàng trên màn hình kết thúc đã bị ẩn</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Biểu ngữ cửa hàng trên màn hình kết thúc được hiển thị</string>
   <string name="morphe_hide_fullscreen_ads_title">Ẩn quảng cáo toàn màn hình</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Quảng cáo toàn màn hình đã bị ẩn
-
-Tính năng này chỉ khả dụng trên các thiết bị cũ"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Quảng cáo toàn màn hình được ẩn</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Quảng cáo toàn màn hình được hiển thị</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Ẩn QC toàn màn hình chỉ hoạt động trên thiết bị cũ</string>
   <string name="morphe_hide_general_ads_title">Ẩn quảng cáo chung</string>
   <string name="morphe_hide_general_ads_summary_on">Quảng cáo chung đã bị ẩn</string>
   <string name="morphe_hide_general_ads_summary_off">Quảng cáo chung được hiển thị</string>
@@ -348,10 +345,11 @@ Tính năng này chỉ khả dụng trên các thiết bị cũ"</string>
   <string name="morphe_hide_web_search_results_title">Ẩn kết quả tìm kiếm trên web</string>
   <string name="morphe_hide_web_search_results_summary_on">Kết quả tìm kiếm trên web đã bị ẩn</string>
   <string name="morphe_hide_web_search_results_summary_off">Kết quả tìm kiếm trên web được hiển thị</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">Ẩn quảng cáo YouTube Premium</string>
-  <string name="morphe_hide_get_premium_summary_on">Quảng cáo khuyến mãi Youtube Premium bên dưới trình phát video đã bị ẩn</string>
-  <string name="morphe_hide_get_premium_summary_off">Quảng cáo khuyến mãi Youtube Premium bên dưới trình phát video được hiển thị</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">Ẩn quảng cáo YouTube Premium</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"Khuyến mãi YouTube Premium được ẩn
+
+Hạn chế: Trang Doodles YouTube không khả dụng"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">Các chương trình khuyến mãi YouTube Premium được hiển thị</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Ẩn quảng cáo trên video</string>
   <string name="morphe_hide_video_ads_summary_on">Quảng cáo trên video đã bị ẩn</string>
@@ -517,6 +515,7 @@ Vui lòng kiểm tra lại tên gói và đảm bảo ứng dụng đã được
   <string name="morphe_hide_clip_button_title">Ẩn Tạo đoạn video</string>
   <string name="morphe_hide_clip_button_summary_on">Nút tạo đoạn video đã bị ẩn</string>
   <string name="morphe_hide_clip_button_summary_off">Nút tạo đoạn video được hiển thị</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Chức năng ẩn này có thể không hoạt động với một số tài khoản người dùng.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Ẩn Mua sắm</string>
   <string name="morphe_hide_shop_button_summary_on">Nút Mua sắm đã bị ẩn</string>
@@ -565,7 +564,6 @@ Nếu thay đổi cài đặt này không có hiệu lực, hãy thử chuyển 
   <string name="morphe_disable_translucent_status_bar_title">Vô hiệu hóa thanh trạng thái trong suốt</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Thanh trạng thái không trong suốt</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Thanh trạng thái có thể mờ hoặc trong suốt</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">Trên một số thiết bị, bật tính năng này có thể thay đổi thanh điều hướng hệ thống thành trong suốt.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Vô hiệu hóa thanh điều hướng trong suốt ở chế độ sáng</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">Thanh điều hướng ở chế độ sáng không trong suốt</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">Thanh điều hướng ở chế độ sáng có thể mờ hoặc trong suốt</string>

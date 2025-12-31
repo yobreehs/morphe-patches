@@ -17,12 +17,13 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">Despre</string>
   <string name="morphe_settings_screen_01_ads_title">Reclame</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Miniaturi alternative</string>
   <string name="morphe_settings_screen_03_feed_title">Flux</string>
   <string name="morphe_settings_screen_04_general_title">Generalități</string>
-  <string name="morphe_settings_screen_05_player_title">Player</string>
+  <string name="morphe_settings_screen_05_player_title">Jucător</string>
   <string name="morphe_settings_screen_07_seekbar_title">Bară de progres</string>
   <string name="morphe_settings_screen_08_swipe_controls_title">Controale glisare</string>
   <string name="morphe_settings_screen_11_misc_title">Diverse</string>
@@ -319,12 +320,8 @@ Limitări
   <string name="morphe_hide_end_screen_store_banner_summary_on">Bannerul magazinului de pe ecranul final este ascuns.</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Bannerul magazinului de pe ecranul final este afișat.</string>
   <string name="morphe_hide_fullscreen_ads_title">Ascunde reclame pe tot ecranul</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Reclamele pe tot ecranul sunt ascunse
-
-Această funcție este disponibilă numai pentru dispozitivele mai vechi"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Reclamele pe ecran complet sunt ascunse</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Reclame pe ecran complet sunt afișate</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Ascunde reclamele pe tot ecranul funcționează doar cu dispozitive mai vechi</string>
   <string name="morphe_hide_general_ads_title">Ascunde reclamele generale</string>
   <string name="morphe_hide_general_ads_summary_on">Anunțurile generale sunt ascunse</string>
   <string name="morphe_hide_general_ads_summary_off">Anunțurile generale sunt afișate</string>
@@ -346,10 +343,11 @@ Această funcție este disponibilă numai pentru dispozitivele mai vechi"</strin
   <string name="morphe_hide_web_search_results_title">Ascunde rezultatele căutării web</string>
   <string name="morphe_hide_web_search_results_summary_on">Rezultatele căutării pe web sunt ascunse</string>
   <string name="morphe_hide_web_search_results_summary_off">Rezultatele căutării web sunt afișate</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">Ascunde promoțiile YouTube Premium</string>
-  <string name="morphe_hide_get_premium_summary_on">Promoțiile YouTube Premium sub video player sunt ascunse</string>
-  <string name="morphe_hide_get_premium_summary_off">Promoțiile YouTube Premium sub video player sunt afișate</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">Ascunde promoțiile YouTube Premium</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"Promoțiile YouTube Premium sunt ascunse
+
+Limitări: Pagina Doodles YouTube nu este disponibilă"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">Promoțiile YouTube Premium sunt afișate</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Ascunde reclamele video</string>
   <string name="morphe_hide_video_ads_summary_on">Anunțurile video sunt ascunse</string>
@@ -515,6 +513,7 @@ Reglați volumul glisând vertical pe partea dreaptă a ecranului"</string>
   <string name="morphe_hide_clip_button_title">Ascunde Clip</string>
   <string name="morphe_hide_clip_button_summary_on">Butonul clip este ascuns</string>
   <string name="morphe_hide_clip_button_summary_off">Butonul clipului este afișat</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Această funcție de ascundere poate să nu funcționeze pentru unele conturi de utilizator.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Ascunde Magazinul</string>
   <string name="morphe_hide_shop_button_summary_on">Butonul Magazin este ascuns</string>
@@ -563,7 +562,6 @@ Dacă modificarea acestei setări nu are efect, încercați să comutați la mod
   <string name="morphe_disable_translucent_status_bar_title">Dezactivează bara de stare translucidă</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Bara de stare este opaca</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Bara de stare este opaca sau translucida</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">Pe unele dispozitive, activarea acestei funcții poate schimba bara de navigare a sistemului în una transparentă.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Dezactivează bara de navigare translucidă deschisă</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">Bara de navigare în modul deschis este opacă</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">Bara de navigare în modul deschis este opaca sau translucida</string>
@@ -1037,7 +1035,7 @@ Există deja"</string>
   <string name="morphe_sb_new_segment_disabled_category">Categoria este dezactivată în setări. Activați categoria pentru a trimite.</string>
   <string name="morphe_sb_new_segment_title">Segment de sponsorBlock nou</string>
   <string name="morphe_sb_new_segment_mark_time_as_question">Setați %s ca început sau sfârșit al unui nou segment?</string>
-  <string name="morphe_sb_new_segment_mark_start">Start</string>
+  <string name="morphe_sb_new_segment_mark_start">Pornire</string>
   <string name="morphe_sb_new_segment_mark_end">Sfârșit</string>
   <string name="morphe_sb_new_segment_now">Acum</string>
   <string name="morphe_sb_new_segment_time_start">Timpul în care segmentul începe la</string>

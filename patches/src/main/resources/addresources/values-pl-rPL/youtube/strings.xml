@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">O aplikacji</string>
   <string name="morphe_settings_screen_01_ads_title">Reklamy</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Alternatywne miniaturki</string>
@@ -306,7 +307,7 @@ Ograniczenia
   <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
   <string name="morphe_hide_keyword_toast_invalid_common">Nie można użyć słowa: %s</string>
   <string name="morphe_hide_keyword_toast_invalid_common_whole_word_required">Dodaj cudzysłowy, aby użyć słowa: %s</string>
-  <string name="morphe_hide_keyword_toast_invalid_conflicting">Słowo zawiera sprzeczne deklaracje: %s</string>
+  <string name="morphe_hide_keyword_toast_invalid_conflicting">Słowo kluczowe ma sprzeczne deklaracje: %s</string>
   <string name="morphe_hide_keyword_toast_invalid_length">Słowo jest za krótkie i wymaga cudzysłowu: %s</string>
   <string name="morphe_hide_keyword_toast_invalid_broad">Słowo ukryje wszystkie filmy: %s</string>
   <!-- ad.general.hideAdsResourcePatch -->
@@ -317,12 +318,8 @@ Ograniczenia
   <string name="morphe_hide_end_screen_store_banner_summary_on">Baner sklepu na ekranie końcowym jest ukryty</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Baner sklepu na ekranie końcowym jest widoczny</string>
   <string name="morphe_hide_fullscreen_ads_title">Reklamy pełnoekranowe</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Reklamy pełnoekranowe są ukryte
-
-Ta funkcja jest dostępna tylko dla starszych urządzeń"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Reklamy pełnoekranowe są ukryte</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Reklamy pełnoekranowe są widoczne</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Ukrycie pełnoekranowych reklam działa tylko na starszych urządzeniach</string>
   <string name="morphe_hide_general_ads_title">Reklamy ogólne</string>
   <string name="morphe_hide_general_ads_summary_on">Ogólne reklamy są ukryte</string>
   <string name="morphe_hide_general_ads_summary_off">Ogólne reklamy są widoczne</string>
@@ -344,10 +341,11 @@ Ta funkcja jest dostępna tylko dla starszych urządzeń"</string>
   <string name="morphe_hide_web_search_results_title">Wyniki wyszukiwania stron internetowych</string>
   <string name="morphe_hide_web_search_results_summary_on">Wyniki wyszukiwania stron są ukryte</string>
   <string name="morphe_hide_web_search_results_summary_off">Wyniki wyszukiwania stron są widoczne</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">Promocje YouTube Premium</string>
-  <string name="morphe_hide_get_premium_summary_on">Promocje YouTube Premium w odtwarzaczu filmów są ukryte</string>
-  <string name="morphe_hide_get_premium_summary_off">Promocje YouTube Premium w odtwarzaczu filmów są widoczne</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">Promocje YouTube Premium</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"Promocje YouTube Premium są ukryte
+
+Ograniczenia: Strona \"Doodles\" YouTube nie jest dostępna"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">Promocje YouTube Premium są wyświetlane</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Reklamy filmu</string>
   <string name="morphe_hide_video_ads_summary_on">Reklamy filmu są ukryte</string>
@@ -513,6 +511,7 @@ Dostosuj głośność, przesuwając pionowo po prawej stronie ekranu"</string>
   <string name="morphe_hide_clip_button_title">Przycisk od klipów</string>
   <string name="morphe_hide_clip_button_summary_on">Przycisk tworzenia klipów jest ukryty</string>
   <string name="morphe_hide_clip_button_summary_off">Przycisk tworzenia klipów jest widoczny</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Ta funkcja ukrywania może nie działać dla niektórych kont użytkowników.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Ukryj Sklep</string>
   <string name="morphe_hide_shop_button_summary_on">Przycisk Sklep jest ukryty</string>
@@ -561,7 +560,6 @@ Jeśli zmiana tego ustawienia nie przyniesie efektu, spróbuj przełączyć się
   <string name="morphe_disable_translucent_status_bar_title">Wyłącz przezroczysty pasek statusu</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Pasek statusu jest nieprzezroczysty</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Pasek statusu jest nieprzezroczysty lub półprzezroczysty</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">Na niektórych urządzeniach włączenie tej funkcji może zmienić przezroczystość systemowego paska nawigacyjnego.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Wyłącz świetny, przezroczysty pasek</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">Pasek nawigacyjny w trybie świetnym jest nieprzezroczysty</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">Pasek nawigacji w trybie jasnym jest nieprzezroczysty lub półprzezroczysty</string>

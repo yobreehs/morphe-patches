@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">เกี่ยวกับ</string>
   <string name="morphe_settings_screen_01_ads_title">โฆษณา</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">รูปขนาดย่อทางเลือก</string>
@@ -321,12 +322,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_end_screen_store_banner_summary_on">แบนเนอร์ร้านค้าท้ายหน้าจอถูกซ่อนไว้</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">แบนเนอร์ร้านค้าท้ายหน้าจอแสดงอยู่</string>
   <string name="morphe_hide_fullscreen_ads_title">ซ่อนโฆษณาแบบเต็มหน้าจอ</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"โฆษณาแบบเต็มจอถูกซ่อน
-
-คุณสมบัตินี้มีเฉพาะสําหรับอุปกรณ์รุ่นเก่า"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">โฆษณาแบบเต็มหน้าจอจะถูกซ่อน</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">โฆษณาแบบเต็มหน้าจอจะแสดง</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">ซ่อนโฆษณาแบบเต็มหน้าจอใช้งานได้กับอุปกรณ์รุ่นเก่าเท่านั้น</string>
   <string name="morphe_hide_general_ads_title">ซ่อนโฆษณาโดยทั่วไป</string>
   <string name="morphe_hide_general_ads_summary_on">โฆษณาโดยทั่วไปถูกซ่อน</string>
   <string name="morphe_hide_general_ads_summary_off">โฆษณาโดยทั่วไปจะแสดง</string>
@@ -348,10 +345,11 @@ Second \"item\" text"</string>
   <string name="morphe_hide_web_search_results_title">ซ่อนผลลัพธ์การค้นหาบนเว็บ</string>
   <string name="morphe_hide_web_search_results_summary_on">ผลลัพธ์การค้นหาบนเว็บถูกซ่อน</string>
   <string name="morphe_hide_web_search_results_summary_off">ผลลัพธ์การค้นหาบนเว็บจะแสดง</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">ซ่อนการโปรโมต YouTube Premium</string>
-  <string name="morphe_hide_get_premium_summary_on">การโปรโมต YouTube Premium ใต้เครื่องเล่นวิดีโอถูกซ่อน</string>
-  <string name="morphe_hide_get_premium_summary_off">การโปรโมต YouTube Premium ใต้เครื่องเล่นวิดีโอจะแสดง</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">ซ่อนการโปรโมต YouTube Premium</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"การโฆษณา YouTube Premium จะถูกซ่อน
+
+ข้อจำกัด: หน้า YouTube Doodles ไม่สามารถใช้งานได้"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">การแสดงการโปรโมต YouTube Premium</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">ซ่อนโฆษณาวิดีโอ</string>
   <string name="morphe_hide_video_ads_summary_on">โฆษณาวิดีโอถูกซ่อน</string>
@@ -515,6 +513,7 @@ Second \"item\" text"</string>
   <string name="morphe_hide_clip_button_title">ซ่อนคลิป</string>
   <string name="morphe_hide_clip_button_summary_on">ปุ่มคลิปถูกซ่อน</string>
   <string name="morphe_hide_clip_button_summary_off">ปุ่มคลิปถูกแสดง</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">การซ่อนฟังก์ชันนี้อาจไม่ทำงานสำหรับบัญชีผู้ใช้บางราย</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">ซ่อนร้านค้า</string>
   <string name="morphe_hide_shop_button_summary_on">ปุ่มร้านค้าถูกซ่อน</string>
@@ -563,7 +562,6 @@ Second \"item\" text"</string>
   <string name="morphe_disable_translucent_status_bar_title">ปิดใช้งานแถบสถานะแบบโปร่งแสง</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">แถบสถานะไม่โปร่งแสง</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">แถบสถานะโปร่งแสงหรือไม่โปร่งแสง</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">ในอุปกรณ์บางรุ่น การเปิดใช้งานคุณสมบัตินี้อาจเปลี่ยนแถบนำทางระบบให้โปร่งใสได้</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">ปิดใช้งานแถบนำทางแบบโปร่งแสงสีอ่อน</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">แถบนำทางโหมดสว่างเป็นแบบทึบแสง</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">แถบนำทางโหมดสว่างโปร่งแสงหรือไม่โปร่งแสง</string>

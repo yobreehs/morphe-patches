@@ -18,7 +18,6 @@ Second \"item\" text"</string>
 <resources>
   <!-- misc.settings.settingsResourcePatch -->
   <string name="morphe_settings_submenu_title">Configurações</string>
-  <string name="morphe_settings_about_donate">Doar</string>
   <string name="morphe_settings_confirm_user_dialog_title">Tem certeza de que deseja prosseguir?</string>
   <string name="morphe_settings_save">Salvar</string>
   <string name="morphe_settings_reset">Repor</string>
@@ -64,10 +63,14 @@ Para traduzir novos idiomas ou melhorar as traduções existentes, visite transl
   <string name="morphe_pref_import_export_title">Importar / Exportar</string>
   <string name="morphe_pref_import_export_summary">Importar / Exportar as configurações do Morphe</string>
   <!-- Settings about dialog. -->
-  <string name="morphe_settings_about_links_body">Está a utilizar a versão Morphe Patches &lt;i&gt;%s&lt;/i&gt;</string>
+  <string name="morphe_settings_about_links_body_version_current">Está a utilizar a versão Morphe Patches mais recente &lt;i&gt;%s&lt;/i&gt;</string>
+  <string name="morphe_settings_about_links_body_version_outdated">Está a utilizar a versão Morphe Patches &lt;i&gt;%1$s&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Atualização disponível: &lt;i&gt;%2$s&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Para atualizar os seus patches, use o Morphe para voltar a aplicar o patch nesta aplicação</string>
   <string name="morphe_settings_about_links_dev_header">Observação</string>
   <string name="morphe_settings_about_links_dev_body">Esta versão está em pré-lançamento e poderá ter problemas inesperados</string>
   <string name="morphe_settings_about_links_header">Links oficiais</string>
+  <string name="morphe_settings_about_links_website">Website</string>
+  <string name="morphe_settings_about_links_donate">Doar</string>
+  <string name="morphe_settings_about_links_translations">Traduções</string>
   <!-- misc.debugging.enableDebuggingPatch -->
   <string name="morphe_debug_screen_title">Depuração</string>
   <string name="morphe_debug_screen_summary">Ativar ou desativar opções de depuração</string>
@@ -105,15 +108,16 @@ Não será notificado de quaisquer eventos inesperados."</string>
   <string name="microg_settings_title">Configurações do GmsCore</string>
   <string name="microg_settings_summary">Configurações para GmsCore</string>
   <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="gms_core_toast_not_installed_message">MicroG GmsCore não está instalado. Instala-o.</string>
+  <string name="gms_core_toast_not_installed_message">MicroG não está instalado. Instala-o.</string>
   <string name="gms_core_dialog_title">Ação necessária</string>
-  <string name="gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"O MicroG GmsCore não tem permissão para ser executado em segundo plano.
+  <!-- "Don't kill my app" should be kept in English and not translated -->
+  <string name="gms_core_dialog_not_whitelisted_not_allowed_in_background_message">"MicroG não tem permissão para ser executado em segundo plano.
 
-Siga o guia “Não feche a minha aplicação” do seu telemóvel e aplique as instruções à instalação do MicroG.
+Siga o guia \"Don't kill my app\" do seu telemóvel e aplique as instruções à instalação do MicroG.
 
 Isto é necessário para que a aplicação funcione."</string>
   <string name="gms_core_dialog_open_website_text">Abrir site</string>
-  <string name="gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"As otimizações de bateria do MicroG GmsCore devem ser desativadas para evitar problemas.
+  <string name="gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"As otimizações de bateria do MicroG devem ser desativadas para evitar problemas.
 
 A desativação das otimizações de bateria para o MicroG não afetará negativamente o uso da bateria.
 

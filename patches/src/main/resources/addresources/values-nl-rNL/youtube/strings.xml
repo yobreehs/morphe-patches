@@ -17,10 +17,11 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">Info</string>
   <string name="morphe_settings_screen_01_ads_title">Advertenties</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Alternatieve miniaturen</string>
-  <string name="morphe_settings_screen_03_feed_title">Feed</string>
+  <string name="morphe_settings_screen_03_feed_title">Voeden</string>
   <string name="morphe_settings_screen_04_general_title">Algemeen</string>
   <string name="morphe_settings_screen_05_player_title">Speler</string>
   <string name="morphe_settings_screen_07_seekbar_title">Zoekbalk</string>
@@ -321,12 +322,8 @@ Beperkingen
   <string name="morphe_hide_end_screen_store_banner_summary_on">Eindscherm winkelbanner is verborgen</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Eindscherm winkelbanner wordt getoond</string>
   <string name="morphe_hide_fullscreen_ads_title">Volledig scherm advertenties verbergen</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Volledig schermadvertenties zijn verborgen
-
-Deze functie is alleen beschikbaar voor oudere apparaten"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Volledige schermadvertenties worden verborgen</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Volledig scherm advertenties worden getoond</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Volledig scherm advertenties werkt alleen met oudere apparaten</string>
   <string name="morphe_hide_general_ads_title">Algemene advertenties verbergen</string>
   <string name="morphe_hide_general_ads_summary_on">Algemene advertenties zijn verborgen</string>
   <string name="morphe_hide_general_ads_summary_off">Algemene advertenties worden getoond</string>
@@ -348,10 +345,11 @@ Deze functie is alleen beschikbaar voor oudere apparaten"</string>
   <string name="morphe_hide_web_search_results_title">Webzoekresultaten verbergen</string>
   <string name="morphe_hide_web_search_results_summary_on">Webzoekresultaten zijn verborgen</string>
   <string name="morphe_hide_web_search_results_summary_off">Webzoekresultaten worden getoond</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">YouTube Premium promoties verbergen</string>
-  <string name="morphe_hide_get_premium_summary_on">YouTube Premium promoties onder de videospeler zijn verborgen</string>
-  <string name="morphe_hide_get_premium_summary_off">YouTube Premium promoties onder de videospeler worden getoond</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">YouTube Premium promoties verbergen</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"YouTube Premium-promoties worden verborgen
+
+Beperkingen: de pagina YouTube Doodles is niet beschikbaar"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">YouTube Premium-promoties worden getoond</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Video-advertenties verbergen</string>
   <string name="morphe_hide_video_ads_summary_on">Video-advertenties zijn verborgen</string>
@@ -517,6 +515,7 @@ Pas het volume aan door verticaal over de rechterkant van het scherm te vegen"</
   <string name="morphe_hide_clip_button_title">Fragment verbergen</string>
   <string name="morphe_hide_clip_button_summary_on">Fragment knop is verborgen</string>
   <string name="morphe_hide_clip_button_summary_off">Fragment knop wordt weergegeven</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Deze verbergfunctie werkt mogelijk niet voor sommige gebruikersaccounts.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Winkel verbergen</string>
   <string name="morphe_hide_shop_button_summary_on">Winkelknop is verborgen</string>
@@ -565,7 +564,6 @@ Als het wijzigen van deze instelling geen effect heeft, probeer dan over te scha
   <string name="morphe_disable_translucent_status_bar_title">Transparante statusbalk uitschakelen</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Statusbalk is ondoorzichtig</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Statusbalk is ondoorzichtig of doorschijnend</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">Op sommige apparaten kan het inschakelen van deze functie de systeemnavigatiebalk transparant maken.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Transparante lichte navigatiebalk uitschakelen</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">De lichte navigatiebalk is ondoorzichtig</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">De lichtmodus navigatiebalk is ondoorzichtig of doorschijnend</string>
@@ -1127,7 +1125,7 @@ Als het later wordt uitgeschakeld, wordt aanbevolen om de app-gegevens te wissen
   <string name="morphe_change_start_page_entry_history">Geschiedenis</string>
   <string name="morphe_change_start_page_entry_library">Bibliotheek</string>
   <string name="morphe_change_start_page_entry_liked_videos">Gelikte video\'s</string>
-  <string name="morphe_change_start_page_entry_live">Live</string>
+  <string name="morphe_change_start_page_entry_live">Leven</string>
   <string name="morphe_change_start_page_entry_movies">Films</string>
   <string name="morphe_change_start_page_entry_music">Muziek</string>
   <string name="morphe_change_start_page_entry_news">Nieuws</string>

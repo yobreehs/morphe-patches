@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">O programu</string>
   <string name="morphe_settings_screen_01_ads_title">Oglasi</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Alternativne sličice</string>
@@ -321,12 +322,8 @@ Ograničenja
   <string name="morphe_hide_end_screen_store_banner_summary_on">Baner prodavnice na završnom ekranu je skriven</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Baner prodavnice na završnom ekranu je prikazan</string>
   <string name="morphe_hide_fullscreen_ads_title">Sakrij oglase preko celog ekrana</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Oglasi preko celog ekrana su skriveni
-
-Ova funkcija je dostupna samo za starije uređaje"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Oglasi preko celog ekrana su sakriveni</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Oglasi preko celog ekrana su prikazani</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Sakrivanje oglasa preko celog ekrana radi samo sa starijim uređajima</string>
   <string name="morphe_hide_general_ads_title">Sakrij opšte oglase</string>
   <string name="morphe_hide_general_ads_summary_on">Opšti oglasi su skriveni</string>
   <string name="morphe_hide_general_ads_summary_off">Opšti oglasi su prikazani</string>
@@ -348,10 +345,11 @@ Ova funkcija je dostupna samo za starije uređaje"</string>
   <string name="morphe_hide_web_search_results_title">Sakrij rezultate veb-pretrage</string>
   <string name="morphe_hide_web_search_results_summary_on">Rezultati veb-pretrage su skriveni</string>
   <string name="morphe_hide_web_search_results_summary_off">Rezultati veb-pretrage su prikazani</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">Sakrij promocije za YouTube Premium</string>
-  <string name="morphe_hide_get_premium_summary_on">Promocije za YouTube Premium ispod video plejera su skrivene</string>
-  <string name="morphe_hide_get_premium_summary_off">Promocije za YouTube Premium ispod video plejera su prikazane</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">Sakrij promocije za YouTube Premium</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"Promotivne ponude za YouTube Premium su sakrivene
+
+Ograničenja: Stranica sa YouTube Doodle-ima nije dostupna"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">Promocije za YouTube Premium su prikazane</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Sakrij video oglase</string>
   <string name="morphe_hide_video_ads_summary_on">Video oglasi su skriveni</string>
@@ -517,6 +515,7 @@ Podesite jačinu zvuka prevlačenjem vertikalno na desnoj strani ekrana"</string
   <string name="morphe_hide_clip_button_title">Sakrij dugme „Klip”</string>
   <string name="morphe_hide_clip_button_summary_on">Dugme „Klip” je skriveno</string>
   <string name="morphe_hide_clip_button_summary_off">Dugme „Klip” je prikazano</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Ova funkcija sakrivanja možda neće raditi za neke korisničke naloge.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Sakrij dugme „Prodavnica”</string>
   <string name="morphe_hide_shop_button_summary_on">Dugme „Prodavnica” je skriveno</string>
@@ -565,7 +564,6 @@ Ako se promena ove opcije ne primeni, pokušajte da pređete u režim bez arhivi
   <string name="morphe_disable_translucent_status_bar_title">Onemogući prozirnu statusnu traku</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Statusna traka je neprozirna</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Statusna traka je neprozirna ili prozirna</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">Na nekim uređajima, omogućavanje ove funkcije može da promeni traku za navigaciju kroz sistem u prozirnu.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Onemogući svetlu prozirnu traku za navigaciju</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">Traka za navigaciju u svetlom režimu je neprozirna</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">Traka za navigaciju u svetlom režimu je neprozirna ili prozirna</string>
@@ -1250,8 +1248,8 @@ Ako ovo omogućite, mogu se popraviti nedostajuće slike koje su blokirane u nek
   <string name="morphe_alt_thumbnail_player_title">Liste za reprodukciju plejera &amp; preporuke</string>
   <string name="morphe_alt_thumbnail_search_title">Rezultati pretrage</string>
   <string name="morphe_alt_thumbnail_options_entry_1">Originalne sličice</string>
-  <string name="morphe_alt_thumbnail_options_entry_2">DeArrow &amp; Original thumbnails</string>
-  <string name="morphe_alt_thumbnail_options_entry_3">DeArrow &amp; Still captures</string>
+  <string name="morphe_alt_thumbnail_options_entry_2">DeArrow i originalne minijature</string>
+  <string name="morphe_alt_thumbnail_options_entry_3">DeArrow i statične snimke</string>
   <string name="morphe_alt_thumbnail_options_entry_4">Zahvati kadra</string>
   <string name="morphe_alt_thumbnail_dearrow_about_summary">"DeArrow pruža sličice za YouTube videe prikupljene od zajednice korisnika. Ove sličice su često relevantnije od onih koje pruža YouTube
 

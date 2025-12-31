@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">關於</string>
   <string name="morphe_settings_screen_01_ads_title">廣告</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">替代縮圖</string>
@@ -321,12 +322,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_end_screen_store_banner_summary_on">已隱藏片尾的商店橫幅</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">已顯示片尾的商店橫幅</string>
   <string name="morphe_hide_fullscreen_ads_title">隱藏全螢幕廣告</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"已隱藏全螢幕廣告
-
-此功能僅適用於舊版裝置"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">已隱藏全螢幕廣告</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">已顯示全螢幕廣告</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">只能在舊裝置上使用隱藏全螢幕廣告</string>
   <string name="morphe_hide_general_ads_title">隱藏一般廣告</string>
   <string name="morphe_hide_general_ads_summary_on">已隱藏一般廣告</string>
   <string name="morphe_hide_general_ads_summary_off">已顯示一般廣告</string>
@@ -348,10 +345,11 @@ Second \"item\" text"</string>
   <string name="morphe_hide_web_search_results_title">隱藏網頁搜尋結果</string>
   <string name="morphe_hide_web_search_results_summary_on">已隱藏網頁搜尋結果</string>
   <string name="morphe_hide_web_search_results_summary_off">已顯示網頁搜尋結果</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">隱藏 YouTube Premium 促銷內容</string>
-  <string name="morphe_hide_get_premium_summary_on">已隱藏影片播放器下方 YouTube Premium 促銷內容</string>
-  <string name="morphe_hide_get_premium_summary_off">已顯示影片播放器下方 YouTube Premium 促銷內容</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">隱藏 YouTube Premium 促銷內容</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"已隱藏 YouTube Premium 推廣
+
+限制: YouTube Doodles 頁面不可用"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">已顯示影片播放器下方 YouTube Premium 促銷內容</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">隱藏影片廣告</string>
   <string name="morphe_hide_video_ads_summary_on">已隱藏影片廣告</string>
@@ -517,6 +515,7 @@ Second \"item\" text"</string>
   <string name="morphe_hide_clip_button_title">隱藏剪輯片段</string>
   <string name="morphe_hide_clip_button_summary_on">已隱藏「剪輯片段」按鈕</string>
   <string name="morphe_hide_clip_button_summary_off">已顯示「剪輯片段」按鈕</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">這個隱藏功能可能無法對某些使用者帳戶生效。</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">隱藏「商店」</string>
   <string name="morphe_hide_shop_button_summary_on">「商店」按鈕已隱藏</string>
@@ -565,7 +564,6 @@ Second \"item\" text"</string>
   <string name="morphe_disable_translucent_status_bar_title">停用半透明狀態列</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">狀態列為不透明</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">狀態列為不透明或半透明</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">在部分裝置上，啟用這項功能可能會使系統導覽列變成透明。</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">停用淺色半透明狀態列</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">淺色模式導覽列為不透明</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">淺色模式導覽列為不透明或半透明</string>

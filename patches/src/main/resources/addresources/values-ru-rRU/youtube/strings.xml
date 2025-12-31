@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">Информация</string>
   <string name="morphe_settings_screen_01_ads_title">Реклама</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Альтернативные миниатюры</string>
@@ -321,12 +322,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_end_screen_store_banner_summary_on">Баннер магазина в конце просмотра скрыт</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Баннер магазина в конце просмотра показан</string>
   <string name="morphe_hide_fullscreen_ads_title">Скрыть полноэкранную рекламу</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Полноэкранная реклама при запуске приложения скрыта
-
-Данная опция доступна только для старых устройств"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Полноэкранная реклама скрыта</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Полноэкранная реклама при запуске приложения показана</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Скрытие полноэкранной рекламы работает только для старых устройств</string>
   <string name="morphe_hide_general_ads_title">Скрыть общую рекламу</string>
   <string name="morphe_hide_general_ads_summary_on">Общая реклама скрыта</string>
   <string name="morphe_hide_general_ads_summary_off">Общая реклама показана</string>
@@ -348,10 +345,11 @@ Second \"item\" text"</string>
   <string name="morphe_hide_web_search_results_title">Скрыть результаты веб-поиска</string>
   <string name="morphe_hide_web_search_results_summary_on">Результаты веб-поиска в ленте скрыты</string>
   <string name="morphe_hide_web_search_results_summary_off">Результаты веб-поиска в ленте показаны</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">Скрыть рекламу YouTube Premium</string>
-  <string name="morphe_hide_get_premium_summary_on">Реклама YouTube Premium под плеером скрыта</string>
-  <string name="morphe_hide_get_premium_summary_off">Реклама YouTube Premium под плеером показана</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">Скрыть рекламу YouTube Premium</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"Продвижение YouTube Premium скрыто
+
+Ограничения: страница Doodles YouTube недоступна"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">Показываются промо YouTube Premium</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Скрыть видеорекламу</string>
   <string name="morphe_hide_video_ads_summary_on">Видеореклама в плеере скрыта</string>
@@ -517,6 +515,7 @@ Second \"item\" text"</string>
   <string name="morphe_hide_clip_button_title">Скрыть кнопку \"Создать клип\"</string>
   <string name="morphe_hide_clip_button_summary_on">Кнопка \"Создать клип\" под плеером скрыта</string>
   <string name="morphe_hide_clip_button_summary_off">Кнопка \"Создать клип\" под плеером показана</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Эта функция скрытия может не работать для некоторых учетных записей пользователей.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Скрыть магазин</string>
   <string name="morphe_hide_shop_button_summary_on">Кнопка \"Магазин\" в Shorts скрыта</string>
@@ -565,7 +564,6 @@ Second \"item\" text"</string>
   <string name="morphe_disable_translucent_status_bar_title">Отключить полупрозрачность строки состояния</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Строка состояния непрозрачная</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Строка состояния непрозрачная или полупрозрачная</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">На некоторых устройствах включение данной опции может сделать системную панель навигации прозрачной.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Отключить полупрозрачность светлой панели навигации</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">Панель навигации при светлой теме непрозрачная</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">Панель навигации при светлой теме непрозрачная или полупрозрачная</string>

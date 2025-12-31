@@ -17,10 +17,11 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">Über</string>
   <string name="morphe_settings_screen_01_ads_title">Werbung</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Alternative Thumbnails</string>
-  <string name="morphe_settings_screen_03_feed_title">Feed</string>
+  <string name="morphe_settings_screen_03_feed_title">Füttern</string>
   <string name="morphe_settings_screen_04_general_title">Allgemein</string>
   <string name="morphe_settings_screen_05_player_title">Spieler</string>
   <string name="morphe_settings_screen_07_seekbar_title">Fortschrittsbalken</string>
@@ -320,12 +321,8 @@ Einschränkungen
   <string name="morphe_hide_end_screen_store_banner_summary_on">Endbildschirm-Shop-Banner ist ausgeblendet</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Endbildschirm-Shop-Banner wird angezeigt</string>
   <string name="morphe_hide_fullscreen_ads_title">Vollbild-Werbung ausblenden</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Vollbildwerbung wird ausgeblendet
-
-Diese Funktion ist nur für ältere Geräte verfügbar"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Vollbild-Anzeigen werden ausgeblendet</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Vollbild-Anzeigen werden angezeigt</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Vollbild-Werbung ausblenden funktioniert nur mit älteren Geräten</string>
   <string name="morphe_hide_general_ads_title">Allgemeine Werbung ausblenden</string>
   <string name="morphe_hide_general_ads_summary_on">Allgemeine Werbung werden ausgeblendet</string>
   <string name="morphe_hide_general_ads_summary_off">Allgemeine Werbung werden angezeigt</string>
@@ -347,10 +344,11 @@ Diese Funktion ist nur für ältere Geräte verfügbar"</string>
   <string name="morphe_hide_web_search_results_title">Suchergebnisse ausblenden</string>
   <string name="morphe_hide_web_search_results_summary_on">Web-Suchergebnisse sind ausgeblendet</string>
   <string name="morphe_hide_web_search_results_summary_off">Web-Suchergebnisse werden angezeigt</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">YouTube Premium-Aktionen ausblenden</string>
-  <string name="morphe_hide_get_premium_summary_on">YouTube-Premium-Angebote unterm Video-Player sind ausgeblendet</string>
-  <string name="morphe_hide_get_premium_summary_off">YouTube-Premium-Aktionen unter Video-Player werden angezeigt</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">YouTube Premium-Aktionen ausblenden</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"YouTube Premium-Werbungen werden ausgeblendet
+
+Einschränkungen: Die YouTube Doodles-Seite ist nicht verfügbar"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">YouTube Premium Aktionen werden angezeigt</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Videowerbung ausblenden</string>
   <string name="morphe_hide_video_ads_summary_on">Video-Anzeigen sind ausgeblendet</string>
@@ -514,6 +512,7 @@ Passen Sie die Helligkeit an, indem Sie auf der linken Seite des Bildschirms ver
   <string name="morphe_hide_clip_button_title">Clip ausblenden</string>
   <string name="morphe_hide_clip_button_summary_on">Clip-Button ist ausgeblendet</string>
   <string name="morphe_hide_clip_button_summary_off">Clip-Taste wird angezeigt</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Diese Ausblenden-Funktion funktioniert möglicherweise nicht für einige Benutzerkonten.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Shop ausblenden</string>
   <string name="morphe_hide_shop_button_summary_on">Shop-Button ist ausgeblendet</string>
@@ -562,7 +561,6 @@ Wenn diese Änderung nicht wirksam wird, versuchen Sie, in den Inkognito-Modus z
   <string name="morphe_disable_translucent_status_bar_title">Transluzente Statusleiste deaktivieren</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Statusleiste ist undurchsichtig</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Die Statusleiste ist undurchsichtig oder durchscheinend</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">Auf einigen Geräten kann die Aktivierung dieser Funktion die Systemnavigationsleiste in transparent ändern.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Hellen, lichtdurchlässigen Balken deaktivieren</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">Heller Navigationsbalken ist opak</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">Die Navigationsleiste im hellen Modus ist undurchsichtig oder durchscheinend</string>

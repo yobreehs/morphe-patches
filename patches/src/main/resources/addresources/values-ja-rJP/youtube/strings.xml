@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">Morphe について</string>
   <string name="morphe_settings_screen_01_ads_title">広告</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">代替サムネイル</string>
@@ -322,12 +323,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_end_screen_store_banner_summary_on">終了画面のストアバナーは表示されません</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">終了画面のストアバナーは表示されます</string>
   <string name="morphe_hide_fullscreen_ads_title">全画面広告を非表示</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"全画面広告は表示されません
-
-この機能は、古いデバイスでのみ利用できます"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">全画面広告は非表示</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">全画面広告は表示されます</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">全画面広告の非表示は古いデバイス専用です</string>
   <string name="morphe_hide_general_ads_title">一般的な広告を非表示</string>
   <string name="morphe_hide_general_ads_summary_on">一般的な広告は表示されません</string>
   <string name="morphe_hide_general_ads_summary_off">一般的な広告は表示されます</string>
@@ -349,10 +346,11 @@ Second \"item\" text"</string>
   <string name="morphe_hide_web_search_results_title">ウェブ検索結果を非表示</string>
   <string name="morphe_hide_web_search_results_summary_on">ウェブ検索結果は表示されません</string>
   <string name="morphe_hide_web_search_results_summary_off">ウェブ検索結果は表示されます</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">YouTube Premium の広告を非表示</string>
-  <string name="morphe_hide_get_premium_summary_on">プレーヤー下の YouTube Premium の広告は表示されません</string>
-  <string name="morphe_hide_get_premium_summary_off">プレーヤー下の YouTube Premium の広告は表示されます</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">YouTube Premium の広告を非表示</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"YouTube Premiumの広告は非表示
+
+制限: YouTube Doodlesページは利用できません"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">YouTube Premium の広告は表示されます</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">動画広告を非表示</string>
   <string name="morphe_hide_video_ads_summary_on">動画広告は表示されません</string>
@@ -518,6 +516,7 @@ Second \"item\" text"</string>
   <string name="morphe_hide_clip_button_title">クリップボタンを非表示</string>
   <string name="morphe_hide_clip_button_summary_on">クリップボタンは表示されません</string>
   <string name="morphe_hide_clip_button_summary_off">クリップボタンは表示されます</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">この非表示機能は一部のユーザーアカウントでは機能しない可能性があります。</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">購入ボタンを非表示</string>
   <string name="morphe_hide_shop_button_summary_on">購入ボタンは表示されません</string>
@@ -566,7 +565,6 @@ Second \"item\" text"</string>
   <string name="morphe_disable_translucent_status_bar_title">半透明ステータスバーを無効化</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">ステータスバーは常に透けません</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">ステータスバーは状況に応じて透けます</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">一部のデバイスでは、この機能を有効にすると、システムのナビゲーション バーが半透明になりアプリ内のコンポーネントに重なってしまう可能性があります。</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">ライトモード時の半透明バーを無効化</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">ライトモード時にはナビゲーション バーは透けません</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">ライトモード時にはナビゲーション バーが状況に応じて透けます</string>

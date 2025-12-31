@@ -17,6 +17,7 @@ Second \"item\" text"</string>
 -->
 <resources>
   <!-- misc.settings.settingsPatch -->
+  <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_screen_00_about_title">Om</string>
   <string name="morphe_settings_screen_01_ads_title">Annonser</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Alternativa miniatyrbilder</string>
@@ -322,12 +323,8 @@ Begränsningar
   <string name="morphe_hide_end_screen_store_banner_summary_on">Butiksbanner på slutskärmen är dold</string>
   <string name="morphe_hide_end_screen_store_banner_summary_off">Butiksbanner på slutskärmen visas</string>
   <string name="morphe_hide_fullscreen_ads_title">Dölj helskärmsannonser</string>
-  <string name="morphe_hide_fullscreen_ads_summary_on">"Helskärmsannonser är dolda
-
-Den här funktionen är endast tillgänglig för äldre enheter"</string>
+  <string name="morphe_hide_fullscreen_ads_summary_on">Helskärmsannonser är dolda</string>
   <string name="morphe_hide_fullscreen_ads_summary_off">Helskärmsannonser visas</string>
-  <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_hide_fullscreen_ads_feature_not_available_toast">Helskärmsannonser kan döljas bara på äldre enheter</string>
   <string name="morphe_hide_general_ads_title">Dölj allmänna annonser</string>
   <string name="morphe_hide_general_ads_summary_on">Allmänna annonser är dolda</string>
   <string name="morphe_hide_general_ads_summary_off">Allmänna annonser visas</string>
@@ -349,10 +346,11 @@ Den här funktionen är endast tillgänglig för äldre enheter"</string>
   <string name="morphe_hide_web_search_results_title">Dölj sökresultat från webben</string>
   <string name="morphe_hide_web_search_results_summary_on">Sökresultat från webben är dolda</string>
   <string name="morphe_hide_web_search_results_summary_off">Sökresultat från webben visas</string>
-  <!-- ad.getpremium.hideGetPremiumPatch -->
-  <string name="morphe_hide_get_premium_title">Dölj YouTube Premium-kampanjer</string>
-  <string name="morphe_hide_get_premium_summary_on">YouTube Premium-kampanjer under videospelaren är dolda</string>
-  <string name="morphe_hide_get_premium_summary_off">YouTube Premium-kampanjer under videospelaren visas</string>
+  <string name="morphe_hide_youtube_premium_promotions_title">Dölj YouTube Premium-kampanjer</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_on">"YouTube Premium-kampanjer är dolda
+
+Begränsningar: YouTube Doodles-sidan är inte tillgänglig"</string>
+  <string name="morphe_hide_youtube_premium_promotions_summary_off">YouTube Premium-kampanjer visas</string>
   <!-- ad.video.videoAdsPatch -->
   <string name="morphe_hide_video_ads_title">Dölj videoannonser</string>
   <string name="morphe_hide_video_ads_summary_on">Videoannonser är dolda</string>
@@ -518,6 +516,7 @@ Justera volymen genom att svepa vertikalt till höger på skärmen"</string>
   <string name="morphe_hide_clip_button_title">Dölj Klipp</string>
   <string name="morphe_hide_clip_button_summary_on">Knappen Klipp är dold</string>
   <string name="morphe_hide_clip_button_summary_off">Knappen Klipp visas</string>
+  <string name="morphe_hide_clip_button_user_dialog_message">Den här dölj-funktionen kanske inte fungerar för vissa användarkonton.</string>
   <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
   <string name="morphe_hide_shop_button_title">Dölj Butik</string>
   <string name="morphe_hide_shop_button_summary_on">Knappen Butik är dold</string>
@@ -566,7 +565,6 @@ Om du ändrar den här inställningen utan att det träder i kraft kan du testa 
   <string name="morphe_disable_translucent_status_bar_title">Inaktivera genomskinligt statusfält</string>
   <string name="morphe_disable_translucent_status_bar_summary_on">Statusfältet är ogenomskinligt</string>
   <string name="morphe_disable_translucent_status_bar_summary_off">Statusfältet är ogenomskinligt eller genomskinligt</string>
-  <string name="morphe_disable_translucent_status_bar_user_dialog_message">På vissa enheter kan aktivering av den här funktionen ändra systemets navigeringsfält till genomskinligt.</string>
   <string name="morphe_disable_translucent_navigation_bar_light_title">Inaktivera ljust genomskinligt fält</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_on">Navigeringsfältet i ljust läge är ogenomskinligt</string>
   <string name="morphe_disable_translucent_navigation_bar_light_summary_off">Navigeringsfältet i ljust läge är ogenomskinligt eller genomskinligt</string>
