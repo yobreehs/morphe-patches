@@ -1,3 +1,10 @@
+# [1.0.0-dev.33](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.32...v1.0.0-dev.33) (2026-01-01)
+
+
+### Bug Fixes
+
+* Remove PAT from GitHub actions ([92b1089](https://github.com/MorpheApp/morphe-patches/commit/92b108961c947698b21b63ca5a182d28ea094edb))
+
 # [1.0.0-dev.32](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0-dev.31...v1.0.0-dev.32) (2026-01-01)
 
 
