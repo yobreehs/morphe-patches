@@ -14,7 +14,7 @@ https://www.gnu.org/licenses/gpl-3.0.html
 Any application or derivative work that uses Morphe code must include
 an easily accessible, user-facing message with the exact wording:
 
-    "This app uses code from Morphe. To learn more, visit http://morphe.software"
+    "This app uses code from Morphe. To learn more, visit https://morphe.software"
 
 The message must be presented in a way that allows the end user to easily
 visit the URL (e.g., clickable link, UI button, or equivalent).
