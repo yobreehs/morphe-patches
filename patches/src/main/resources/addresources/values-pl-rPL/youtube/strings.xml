@@ -60,9 +60,6 @@ Włączenie tej opcji spowoduje również rejestrowanie niektórych danych użyt
   <string name="morphe_hide_compact_banner_title">Kompaktowe banery</string>
   <string name="morphe_hide_compact_banner_summary_on">Ukryte</string>
   <string name="morphe_hide_compact_banner_summary_off">Widoczne</string>
-  <string name="morphe_hide_crowdfunding_box_title">Ramki ze zbiórkami</string>
-  <string name="morphe_hide_crowdfunding_box_summary_on">Ukryte</string>
-  <string name="morphe_hide_crowdfunding_box_summary_off">Widoczne</string>
   <string name="morphe_hide_expandable_card_title">Wysuwalne karty pod filmami</string>
   <string name="morphe_hide_expandable_card_summary_on">Ukryte</string>
   <string name="morphe_hide_expandable_card_summary_off">Widoczne</string>
@@ -90,7 +87,7 @@ Włączenie tej opcji spowoduje również rejestrowanie niektórych danych użyt
   <string name="morphe_hide_movies_section_title">Sekcja z filmami kinowymi</string>
   <string name="morphe_hide_movies_section_summary_on">Ukryta</string>
   <string name="morphe_hide_movies_section_summary_off">Widoczna</string>
-  <!-- 'Notify me' should be translated using the same localized wording YouTube displays.
+  <!-- 'Notify me' should be translated using the same localized wording YouTube displays for the button.
           This item appear in the Subscriptions feed for future livestreams or unreleased videos. -->
   <string name="morphe_hide_notify_me_button_title">Przycisk \'Powiadom mnie\'</string>
   <string name="morphe_hide_notify_me_button_summary_on">Ukryty</string>
@@ -98,8 +95,8 @@ Włączenie tej opcji spowoduje również rejestrowanie niektórych danych użyt
   <string name="morphe_hide_playables_title">Pokój gier</string>
   <string name="morphe_hide_playables_summary_on">Widoczny</string>
   <string name="morphe_hide_playables_summary_off">Ukryty</string>
-  <!-- 'Show more' should be translated with the same localized wording that YouTube displays.
-          This button usually appears when searching for a YT creator. -->
+  <!-- 'Show more' should be translated using the same localized wording YouTube displays for the button.
+          This button usually appears when searching for a YouTube creator. -->
   <string name="morphe_hide_show_more_button_title">Przycisk \'Pokaż więcej\'</string>
   <string name="morphe_hide_show_more_button_summary_on">Ukryty w wynikach wyszukiwania</string>
   <string name="morphe_hide_show_more_button_summary_off">Widoczny w wynikach wyszukiwania</string>
@@ -109,7 +106,7 @@ Włączenie tej opcji spowoduje również rejestrowanie niektórych danych użyt
   <string name="morphe_hide_ticket_shelf_title">Półka z biletami</string>
   <string name="morphe_hide_ticket_shelf_summary_on">Ukryta</string>
   <string name="morphe_hide_ticket_shelf_summary_off">Widoczna</string>
-  <!-- 'People also watched' and 'You might also like' should be translated using the same localized wording YouTube displays. -->
+  <!-- 'People also watched' and 'You might also like' should be translated using the same localized wording YouTube displays for the label. -->
   <string name="morphe_hide_video_recommendation_labels_title">Etykiety z rekomendacjami filmów</string>
   <string name="morphe_hide_video_recommendation_labels_summary_on">Ukryte są etykiety \"Ludzie też oglądali\" i \"Może Ci się spodobać\" w wynikach wyszukiwania</string>
   <string name="morphe_hide_video_recommendation_labels_summary_off">Widoczne są etykiety \"Ludzie też oglądali\" i \"Może Ci się spodobać\" w wynikach wyszukiwania</string>
@@ -124,15 +121,18 @@ Jeśli Doodle jest obecnie wyświetlany w Twoim regionie, a to ustawienie jest w
   <string name="morphe_hide_channel_bar_summary_on">Ukryty</string>
   <string name="morphe_hide_channel_bar_summary_off">Widoczny</string>
   <string name="morphe_hide_channel_watermark_title">Znak wodny kanału</string>
-  <string name="morphe_hide_channel_watermark_summary_on">Ukryty</string>
-  <string name="morphe_hide_channel_watermark_summary_off">Widoczny</string>
+  <string name="morphe_hide_channel_watermark_summary_on">Wodny znak kanału jest ukryty</string>
+  <string name="morphe_hide_channel_watermark_summary_off">Wodny znak kanału jest widoczny</string>
+  <string name="morphe_hide_crowdfunding_box_title">Ramki ze zbiórkami</string>
+  <string name="morphe_hide_crowdfunding_box_summary_on">Ukryte</string>
+  <string name="morphe_hide_crowdfunding_box_summary_off">Widoczne</string>
   <string name="morphe_hide_emergency_box_title">Ramki alarmowe</string>
   <string name="morphe_hide_emergency_box_summary_on">Ukryte</string>
   <string name="morphe_hide_emergency_box_summary_off">Widoczne</string>
   <string name="morphe_hide_info_panels_title">Panele z informacjami</string>
   <string name="morphe_hide_info_panels_summary_on">Ukryte</string>
   <string name="morphe_hide_info_panels_summary_off">Widoczne</string>
-  <!-- 'Join' should be translated using the same localized wording YouTube displays.
+  <!-- 'Join' should be translated using the same localized wording YouTube displays for the button.
           This appears in the video player for certain videos. -->
   <string name="morphe_hide_join_membership_button_title">Przycisk od sponsorowania</string>
   <string name="morphe_hide_join_membership_button_summary_on">Ukryty</string>
@@ -164,27 +164,24 @@ Jeśli Doodle jest obecnie wyświetlany w Twoim regionie, a to ustawienie jest w
   <string name="morphe_hide_chapters_section_title">Sekcja rodziałów</string>
   <string name="morphe_hide_chapters_section_summary_on">Ukryta</string>
   <string name="morphe_hide_chapters_section_summary_off">Widoczna</string>
+  <string name="morphe_hide_explore_podcast_section_title">Sekcja \"Poznaj podcast\"</string>
+  <string name="morphe_hide_explore_podcast_section_summary_on">Ukryta</string>
+  <string name="morphe_hide_explore_podcast_section_summary_off">Widoczna</string>
   <string name="morphe_hide_how_this_was_made_section_title">Sekcja \"Jak to powstało\"</string>
   <string name="morphe_hide_how_this_was_made_section_summary_on">Ukryta</string>
   <string name="morphe_hide_how_this_was_made_section_summary_off">Widoczna</string>
   <string name="morphe_hide_hype_points_title">Punkty podbijania</string>
   <string name="morphe_hide_hype_points_summary_on">Ukryte</string>
   <string name="morphe_hide_hype_points_summary_off">Widoczne</string>
-  <string name="morphe_hide_podcast_section_title">Sekcja \"Poznaj podcast\"</string>
-  <string name="morphe_hide_podcast_section_summary_on">Ukryta</string>
-  <string name="morphe_hide_podcast_section_summary_off">Widoczna</string>
-  <string name="morphe_hide_featured_section_title">Sekcja z polecanymi treściami</string>
-  <string name="morphe_hide_featured_section_summary_on">Ukryta</string>
-  <string name="morphe_hide_featured_section_summary_off">Widoczna</string>
   <string name="morphe_hide_info_cards_section_title">Sekcja z kartami z informacjami</string>
   <string name="morphe_hide_info_cards_section_summary_on">Ukryta</string>
   <string name="morphe_hide_info_cards_section_summary_off">Widoczna</string>
   <string name="morphe_hide_key_concepts_section_title">Sekcja \"Kluczowe pojęcia\"</string>
   <string name="morphe_hide_key_concepts_section_summary_on">Ukryta</string>
   <string name="morphe_hide_key_concepts_section_summary_off">Widoczna</string>
-  <string name="morphe_hide_description_subscribe_button_title">Przycisk od subskrybowania</string>
-  <string name="morphe_hide_description_subscribe_button_summary_on">Ukryty</string>
-  <string name="morphe_hide_description_subscribe_button_summary_off">Widoczny</string>
+  <string name="morphe_hide_subscribe_button_title">Przycisk od subskrybowania</string>
+  <string name="morphe_hide_subscribe_button_summary_on">Ukryty</string>
+  <string name="morphe_hide_subscribe_button_summary_off">Widoczny</string>
   <string name="morphe_hide_transcript_section_title">Sekcja z transkrypcjami</string>
   <string name="morphe_hide_transcript_section_summary_on">Ukryta</string>
   <string name="morphe_hide_transcript_section_summary_off">Widoczna</string>
@@ -206,24 +203,26 @@ Jeśli Doodle jest obecnie wyświetlany w Twoim regionie, a to ustawienie jest w
   <string name="morphe_hide_filter_bar_feed_in_history_summary_off">Widoczny</string>
   <string name="morphe_channel_screen_title">Strona kanału</string>
   <string name="morphe_channel_screen_summary">Ukryj lub pokazuj komponenty strony kanału</string>
-  <!-- 'For You' should be translated using the same localized wording YouTube displays. -->
+  <!-- 'Community' should be translated using the same localized wording YouTube displays for the button. -->
+  <!-- 'For You' should be translated using the same localized wording YouTube displays for the shelf. -->
   <string name="morphe_hide_for_you_shelf_title">Półka \"Dla Ciebie\"</string>
   <string name="morphe_hide_for_you_shelf_summary_on">Ukryta</string>
   <string name="morphe_hide_for_you_shelf_summary_off">Widoczna</string>
+  <!-- 'Join' should be translated using the same localized wording YouTube displays for the button. -->
+  <string name="morphe_hide_join_button_title">Przycisk od sponsorowania</string>
+  <string name="morphe_hide_join_button_summary_on">Ukryty</string>
+  <string name="morphe_hide_join_button_summary_off">Widoczny</string>
   <string name="morphe_hide_links_preview_title">Podgląd linków</string>
   <string name="morphe_hide_links_preview_summary_on">Ukryty</string>
   <string name="morphe_hide_links_preview_summary_off">Widoczny</string>
   <string name="morphe_hide_members_shelf_title">Półka z wspierającymi kanał</string>
   <string name="morphe_hide_members_shelf_summary_on">Ukryta</string>
   <string name="morphe_hide_members_shelf_summary_off">Widoczna</string>
-  <!-- 'Visit Community' should be translated with the same localized wording that YouTube displays. -->
-  <string name="morphe_hide_visit_community_button_title">Przycisk \"Odwiedź społeczność\"</string>
-  <string name="morphe_hide_visit_community_button_summary_on">Ukryty</string>
-  <string name="morphe_hide_visit_community_button_summary_off">Widoczny</string>
-  <!-- 'Visit store' should be translated with the same localized wording that YouTube displays. -->
-  <string name="morphe_hide_visit_store_button_title">Przycisk \"Sklep\"</string>
-  <string name="morphe_hide_visit_store_button_summary_on">Ukryty</string>
-  <string name="morphe_hide_visit_store_button_summary_off">Widoczny</string>
+  <!-- 'Store' should be translated using the same localized wording YouTube displays for the button. -->
+  <!-- 'Subscribe' should be translated using the same localized wording YouTube displays for the button. -->
+  <string name="morphe_hide_subscribe_button_in_channel_page_title">Przycisk od subskrybowania</string>
+  <string name="morphe_hide_subscribe_button_in_channel_page_summary_on">Ukryty</string>
+  <string name="morphe_hide_subscribe_button_in_channel_page_summary_off">Widoczny</string>
   <string name="morphe_comments_screen_title">Komentarze</string>
   <string name="morphe_comments_screen_summary">Ukryj lub pokazuj komponenty sekcji komentarzy</string>
   <string name="morphe_hide_comments_ai_chat_summary_title">Podsumowanie czatu generowane przez AI</string>
@@ -268,14 +267,14 @@ Jeśli Doodle jest obecnie wyświetlany w Twoim regionie, a to ustawienie jest w
   <string name="morphe_hide_view_count_title">Liczba wyświetleń</string>
   <string name="morphe_hide_view_count_summary_on">Ukryta na stronie głównej i w wynikach wyszukiwania</string>
   <string name="morphe_hide_view_count_summary_off">Widoczna na stronie głównej i w wynikach wyszukiwania</string>
-  <!-- Translations should lanaguge similar to morphe_hide_upload_time_user_dialog_message -->
+  <!-- Translations should match the language used in 'morphe_hide_upload_time_user_dialog_message'. -->
   <string name="morphe_hide_view_count_user_dialog_message">"Ograniczenia:
 • Półki z Shortsami, strony kanałów i wyniki wyszukiwania mogą nadal wyświetlać liczby wyświetleń
 • Ta funkcja nie działa z samochodowym współczynnikiem kształtu"</string>
   <string name="morphe_hide_upload_time_title">Czas przesłania</string>
   <string name="morphe_hide_upload_time_summary_on">Ukryty na stronie głównej i w wynikach wyszukiwania</string>
   <string name="morphe_hide_upload_time_summary_off">Widoczny na stronie głównej i w wynikach wyszukiwania</string>
-  <!-- Translations should lanaguge similar to morphe_hide_view_count_user_dialog_message -->
+  <!-- Translations should match the language used in 'morphe_hide_view_count_user_dialog_message'. -->
   <string name="morphe_hide_upload_time_user_dialog_message">"Ograniczenia:
 • Półki z Shortsami, strony kanałów i wyniki wyszukiwania mogą nadal wyświetlać czas przesłania
 • Ta funkcja nie działa z samochodowym współczynnikiem kształtu"</string>
@@ -299,14 +298,8 @@ Słowami mogą być nazwy kanałów odraz dowolny tekst wyświetlany w tytułach
 
 Słowa zawierające duże litery w środku muszą być wpisane z odpowiednią wielkością liter (np. iPhone, TikTok, LeBlanc)"</string>
   <string name="morphe_hide_keyword_content_about_title">O filtrowaniu słów</string>
-  <string name="morphe_hide_keyword_content_about_summary">"Strona główna/Subskrybcje/Wyniki wyszukiwania są filtrowane, by ukryć zawartość, która zawiera słowa z filtra.
-
-Ograniczenia
-• Shortsy nie mogą być ukrywane po nazwie kanału
-• Niektóre komponenty interfejsu mogą nie zostać ukryte
-• Wyszukiwanie słowa z filtru może nie pokazać żadnych wyników"</string>
   <string name="morphe_hide_keyword_content_about_whole_words_title">Uwzględnij całe wyrazy</string>
-  <!-- Translations _must_ use a localized example.  For languages that do not use spaces between words (Chinese, Japanese, etc.) the English AI example should be used since no localized examples exist.  Or if using machine translations, or if nobody wants to think of a localized example, then the English 'ai' example should be left as-is. -->
+  <!-- Translations must use a localized example. For languages that do not use spaces between words (Chinese, Japanese, etc.) the English AI example should be used since no localized examples exist. Or if using machine translations, or if nobody wants to think of a localized example, then the English 'ai' example should be left as-is. -->
   <string name="morphe_hide_keyword_content_about_whole_words_summary">Otoczenie słowa/frazy podwójnym cudzysłowem może zapobiec częściowemu dopasowywaniu tytułów filmów i nazw kanałów&lt;br&gt;&lt;br&gt;Na przykład,&lt;br&gt;&lt;b&gt;\"ai\"&lt;/b&gt; ukryje film: &lt;b&gt;Jak działa AI?&lt;/b&gt;&lt;br&gt;lecz nie ukryje: &lt;b&gt;Style drzewka Bonsai&lt;/b&gt;</string>
   <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
   <string name="morphe_hide_keyword_toast_invalid_common">Nie można użyć słowa: %s</string>
@@ -358,18 +351,13 @@ Ograniczenia: Strona YouTube Doodles nie jest dostępna"</string>
   <string name="morphe_share_copy_url_success">Adres URL skopiowany do schowka</string>
   <string name="morphe_share_copy_url_timestamp_success">Skopiowano URL z czasem</string>
   <string name="morphe_copy_video_url_title">Przycisk od kopiowania URL filmu</string>
-  <string name="morphe_copy_video_url_summary_on">Widoczny. Stuknij, by skopiować adres URL filmu. Stuknij i przytrzymaj, by skopiować adres URL filmu z czasem</string>
-  <string name="morphe_copy_video_url_summary_off">Niewidoczny</string>
   <string name="morphe_copy_video_url_timestamp_title">Przycisk od kopiowania URL filmu z czasem</string>
-  <string name="morphe_copy_video_url_timestamp_summary_on">Widoczny. Stuknij, by skopiować adres URL filmu z czasem. Stuknij i przytrzymaj, aby skopiować adres URL filmu bez czasu</string>
-  <string name="morphe_copy_video_url_timestamp_summary_off">Niewidoczny</string>
   <!-- interaction.dialog.removeViewerDiscretionDialogPatch -->
   <string name="morphe_remove_viewer_discretion_dialog_title">Okno dialogowe treści ograniczonej do oglądania</string>
   <string name="morphe_remove_viewer_discretion_dialog_summary_on">Usunięte</string>
   <string name="morphe_remove_viewer_discretion_dialog_summary_off">Widoczne</string>
   <string name="morphe_remove_viewer_discretion_dialog_user_dialog_message">Nie pomija to ograniczeń wiekowych, lecz akceptuje je automatycznie.</string>
   <!-- layout.hide.signintotv.disableSignInToTvPopupPatch -->
-  <string name="morphe_disable_signin_to_tv_popup_title">Komunikat o zalogowaniu się do TV</string>
   <string name="morphe_disable_signin_to_tv_popup_summary_on">Wyłączony</string>
   <string name="morphe_disable_signin_to_tv_popup_summary_off">Włączony</string>
   <!-- interaction.doubletap.disableDoubleTapActionsPatch -->
@@ -382,7 +370,7 @@ Ograniczenia: Strona YouTube Doodles nie jest dostępna"</string>
   <string name="morphe_external_downloader_title">Przycisk zewnętrznego pobierania</string>
   <string name="morphe_external_downloader_summary_on">Widoczny</string>
   <string name="morphe_external_downloader_summary_off">Niewidoczny</string>
-  <!-- 'Download action button' should be translated using the same wording as the translation of 'morphe_hide_download_button_title'. -->
+  <!-- 'Download action button' should match the language used in 'morphe_hide_download_button_title'. -->
   <string name="morphe_external_downloader_action_button_title">Metoda pobierania filmów</string>
   <string name="morphe_external_downloader_action_button_summary_on">Zewnętrzna aplikacja</string>
   <string name="morphe_external_downloader_action_button_summary_off">Natywne pobieranie</string>
@@ -468,11 +456,11 @@ Dostosuj głośność, przesuwając pionowo po prawej stronie ekranu"</string>
   <string name="morphe_hide_like_dislike_button_title">Przycisk od łapek w górę i w dół</string>
   <string name="morphe_hide_like_dislike_button_summary_on">Ukryte</string>
   <string name="morphe_hide_like_dislike_button_summary_off">Widoczne</string>
-  <!-- 'Share' should be translated with the same localized wording that YouTube displays. -->
+  <!-- 'Share' should be translated using the same localized wording YouTube displays for the button. -->
   <string name="morphe_hide_share_button_title">Przycisk od udostępniania</string>
   <string name="morphe_hide_share_button_summary_on">Ukryty</string>
   <string name="morphe_hide_share_button_summary_off">Widoczny</string>
-  <!-- 'Stop ads' should be translated with the same localized wording that YouTube displays. -->
+  <!-- 'Stop ads' should be translated using the same localized wording YouTube displays for the button. -->
   <string name="morphe_hide_stop_ads_button_title">Przycisk od wstrzymywania reklam</string>
   <string name="morphe_hide_stop_ads_button_summary_on">Ukryty</string>
   <string name="morphe_hide_stop_ads_button_summary_off">Widoczny</string>
@@ -480,47 +468,47 @@ Dostosuj głośność, przesuwając pionowo po prawej stronie ekranu"</string>
   <string name="morphe_hide_comments_button_title">Przycisk od komentarzy</string>
   <string name="morphe_hide_comments_button_summary_on">Ukryty</string>
   <string name="morphe_hide_comments_button_summary_off">Widoczny</string>
-  <!-- 'Report' should be translated with the same localized wording that YouTube displays.
+  <!-- 'Report' should be translated using the same localized wording YouTube displays for the button.
           This button usually only shows on live streams. -->
   <string name="morphe_hide_report_button_title">Przycisk od zgłaszania</string>
   <string name="morphe_hide_report_button_summary_on">Ukryty</string>
   <string name="morphe_hide_report_button_summary_off">Widoczny</string>
-  <!-- 'Remix' should be translated with the same localized wording that YouTube displays. -->
+  <!-- 'Remix' should be translated using the same localized wording YouTube displays for the button. -->
   <string name="morphe_hide_remix_button_title">Przycisk od remiksu</string>
   <string name="morphe_hide_remix_button_summary_on">Ukryty</string>
   <string name="morphe_hide_remix_button_summary_off">Widoczny</string>
-  <!-- 'Download' should be translated with the same localized wording that YouTube displays. -->
+  <!-- 'Download' should be translated using the same localized wording YouTube displays for the button. -->
   <string name="morphe_hide_download_button_title">Przycisk od pobierania</string>
   <string name="morphe_hide_download_button_summary_on">Ukryty</string>
   <string name="morphe_hide_download_button_summary_off">Widoczny</string>
-  <!-- 'Hype' should be translated with the same localized wording that YouTube displays.
-          This button only shows on videos uploaded by the logged in user. -->
+  <!-- 'Hype' should be translated using the same localized wording YouTube displays for the button.
+          This button only shows on videos uploaded by the logged-in user. -->
   <string name="morphe_hide_hype_button_title">Przycisk od podbijania</string>
   <string name="morphe_hide_hype_button_summary_on">Ukryty</string>
   <string name="morphe_hide_hype_button_summary_off">Widoczny</string>
-  <!-- 'Promote' should be translated with the same localized wording that YouTube displays. -->
+  <!-- 'Promote' should be translated using the same localized wording YouTube displays for the button. -->
   <string name="morphe_hide_promote_button_title">Przycisk od promowania</string>
   <string name="morphe_hide_promote_button_summary_on">Ukryty</string>
   <string name="morphe_hide_promote_button_summary_off">Widoczny</string>
-  <!-- 'Thanks' should be translated with the same localized wording that YouTube displays. -->
+  <!-- 'Thanks' should be translated using the same localized wording YouTube displays for the button. -->
   <string name="morphe_hide_thanks_button_title">Przycisk od dziękowania</string>
   <string name="morphe_hide_thanks_button_summary_on">Ukryty</string>
   <string name="morphe_hide_thanks_button_summary_off">Widoczny</string>
-  <!-- 'Ask' should be translated with the same localized wording that YouTube displays.
+  <!-- 'Ask' should be translated using the same localized wording YouTube displays for the button.
           This button only shows if the user ip is from specific region such as the USA or EU. -->
   <string name="morphe_hide_ask_button_title">Przycisk od pytań</string>
   <string name="morphe_hide_ask_button_summary_on">Ukryty</string>
   <string name="morphe_hide_ask_button_summary_off">Widoczny</string>
-  <!-- 'Clip' should be translated with the same localized wording that YouTube displays. -->
+  <!-- 'Clip' should be translated using the same localized wording YouTube displays for the button. -->
   <string name="morphe_hide_clip_button_title">Przycisk od tworzenia klipów</string>
   <string name="morphe_hide_clip_button_summary_on">Ukryty</string>
   <string name="morphe_hide_clip_button_summary_off">Widoczny</string>
   <string name="morphe_hide_clip_button_user_dialog_message">Ta funkcja może nie działać na niektórych kontach.</string>
-  <!-- 'Shop' should be translated with the same localized wording that YouTube displays. -->
+  <!-- 'Shop' should be translated using the same localized wording YouTube displays for the button. -->
   <string name="morphe_hide_shop_button_title">Przycisk do sklepu</string>
   <string name="morphe_hide_shop_button_summary_on">Ukryty</string>
   <string name="morphe_hide_shop_button_summary_off">Widoczny</string>
-  <!-- 'Save' should be translated with the same localized wording that YouTube displays. -->
+  <!-- 'Save' should be translated using the same localized wording YouTube displays for the button. -->
   <string name="morphe_hide_save_button_title">Przycisk od zapisywania do playlisty</string>
   <string name="morphe_hide_save_button_summary_on">Ukryty</string>
   <string name="morphe_hide_save_button_summary_off">Widoczny</string>
@@ -531,7 +519,7 @@ Dostosuj głośność, przesuwając pionowo po prawej stronie ekranu"</string>
   <string name="morphe_hide_home_button_title">Przycisk do strony głównej</string>
   <string name="morphe_hide_home_button_summary_on">Ukryty</string>
   <string name="morphe_hide_home_button_summary_off">Widoczny</string>
-  <!-- 'Shorts' should be translated using the same localized wording YouTube displays the tab. -->
+  <!-- 'Shorts' should be translated using the same localized wording YouTube displays for the tab. -->
   <string name="morphe_hide_shorts_button_title">Przycisk do Shortsów</string>
   <string name="morphe_hide_shorts_button_summary_on">Ukryty</string>
   <string name="morphe_hide_shorts_button_summary_off">Widoczny</string>
@@ -539,14 +527,14 @@ Dostosuj głośność, przesuwając pionowo po prawej stronie ekranu"</string>
   <string name="morphe_hide_create_button_title">Przycisk od przesyłania</string>
   <string name="morphe_hide_create_button_summary_on">Ukryty</string>
   <string name="morphe_hide_create_button_summary_off">Widoczny</string>
-  <!-- 'Subscriptions' should be translated using the same localized wording YouTube displays the tab. -->
+  <!-- 'Subscriptions' should be translated using the same localized wording YouTube displays for the tab. -->
   <string name="morphe_hide_subscriptions_button_title">Przycisk do strony subskrypcji</string>
   <string name="morphe_hide_subscriptions_button_summary_on">Ukryty</string>
   <string name="morphe_hide_subscriptions_button_summary_off">Widoczny</string>
   <string name="morphe_hide_notifications_button_title">Przycisk do powiadomień</string>
   <string name="morphe_hide_notifications_button_summary_on">Ukryty</string>
   <string name="morphe_hide_notifications_button_summary_off">Widoczny</string>
-  <!-- 'Notifications' should be translated using the same localized wording YouTube displays the tab. -->
+  <!-- 'Notifications' should be translated using the same localized wording YouTube displays for the tab. -->
   <string name="morphe_switch_create_with_notifications_button_title">Zamień przyciski przesyłania i powiadomień</string>
   <string name="morphe_switch_create_with_notifications_button_summary_on">"Zamienione
 
@@ -577,10 +565,7 @@ Jeśli zmiana tego ustawienia nie przyniesie efektu, spróbuj przełączyć się
   <string name="morphe_hide_player_flyout_captions_title">Menu od napisów</string>
   <string name="morphe_hide_player_flyout_captions_summary_on">Ukryte</string>
   <string name="morphe_hide_player_flyout_captions_summary_off">Widoczne</string>
-  <!-- 'Additional settings' should be translated using the same localized wording YouTube displays for the menu item. -->
-  <string name="morphe_hide_player_flyout_additional_settings_title">Menu do dodatkowych stawień</string>
-  <string name="morphe_hide_player_flyout_additional_settings_summary_on">Ukryte</string>
-  <string name="morphe_hide_player_flyout_additional_settings_summary_off">Widoczne</string>
+  <!-- 'Additional settings / More' should be translated using the same localized wording YouTube displays for the menu item. -->
   <!-- 'Sleep timer' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_sleep_timer_title">Menu od wyłącznika czasowego</string>
   <string name="morphe_hide_player_flyout_sleep_timer_summary_on">Ukryte</string>
@@ -593,6 +578,7 @@ Jeśli zmiana tego ustawienia nie przyniesie efektu, spróbuj przełączyć się
   <string name="morphe_hide_player_flyout_ambient_mode_title">Menu od oświetlenia kinowego</string>
   <string name="morphe_hide_player_flyout_ambient_mode_summary_on">Ukryte</string>
   <string name="morphe_hide_player_flyout_ambient_mode_summary_off">Widoczne</string>
+  <!-- 'Stable volume' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_stable_volume_title">Menu od stabilnej głośności</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_off">Widoczne</string>
   <string name="morphe_hide_player_flyout_stable_volume_summary_on">Ukryte</string>
@@ -616,23 +602,21 @@ Jeśli zmiana tego ustawienia nie przyniesie efektu, spróbuj przełączyć się
   <string name="morphe_hide_player_flyout_audio_track_title">Menu od ścieżki dźwiękowej</string>
   <string name="morphe_hide_player_flyout_audio_track_summary_on">Ukryte</string>
   <string name="morphe_hide_player_flyout_audio_track_summary_off">Widoczne</string>
-  <!-- 'Spoof video streams' should be the same translation used for 'morphe_spoof_video_streams_screen_title'.
+  <!-- 'Spoof video streams' should match the language used in 'morphe_spoof_video_streams_screen_title'.
           'Android No SDK' must be kept untranslated. -->
+  <string name="morphe_hide_player_flyout_audio_track_not_available">"Menu ścieżki dźwiękowej jest ukryty
+
+Aby wyświetlić menu ścieżki dźwiękowej, zmień 'Spoof video streams' na 'Android No SDK'"</string>
   <!-- 'Watch in VR' should be translated using the same localized wording YouTube displays for the menu item. -->
   <string name="morphe_hide_player_flyout_watch_in_vr_title">Menu od oglądania w VR</string>
   <string name="morphe_hide_player_flyout_watch_in_vr_summary_on">Ukryte</string>
   <string name="morphe_hide_player_flyout_watch_in_vr_summary_off">Widoczne</string>
-  <string name="morphe_hide_player_flyout_video_quality_title">Menu od jakości filmu</string>
-  <string name="morphe_hide_player_flyout_video_quality_summary_on">Ukryte</string>
-  <string name="morphe_hide_player_flyout_video_quality_summary_off">Widoczne</string>
-  <string name="morphe_hide_player_flyout_video_quality_footer_title">Opis menu od jakości</string>
-  <string name="morphe_hide_player_flyout_video_quality_footer_summary_on">Ukryty</string>
-  <string name="morphe_hide_player_flyout_video_quality_footer_summary_off">Widoczny</string>
+  <!-- 'Quality' should be translated using the same localized wording YouTube displays for the menu item. -->
   <!-- layout.buttons.overlay.hidePlayerOverlayButtonsPatch -->
   <string name="morphe_hide_autoplay_button_title">Przycisk od automatycznego odtwarzania</string>
   <string name="morphe_hide_autoplay_button_summary_on">Ukryty</string>
   <string name="morphe_hide_autoplay_button_summary_off">Widoczny</string>
-  <!-- This button does not display any text, but 'Captions' should be translated using the same wording used as the translation of 'morphe_hide_player_flyout_captions_title'. -->
+  <!-- This button does not display any text, but 'Captions' should match the language used in 'morphe_hide_player_flyout_captions_title'. -->
   <string name="morphe_hide_captions_button_title">Przycisk od napisów</string>
   <string name="morphe_hide_captions_button_summary_on">Ukryty</string>
   <string name="morphe_hide_captions_button_summary_off">Widoczny</string>
@@ -665,7 +649,7 @@ Jeśli zmiana tego ustawienia nie przyniesie efektu, spróbuj przełączyć się
   <string name="morphe_hide_seekbar_title">Pasek postępu filmu w odtwarzaczu</string>
   <string name="morphe_hide_seekbar_summary_on">Ukryty</string>
   <string name="morphe_hide_seekbar_summary_off">Widoczny</string>
-  <!-- Seekbar shown inside video thumbnails found the home/feed/search/history.  The seekbar shows the prior watch progress when the video was last open. -->
+  <!-- Seekbar shown inside video thumbnails found on the Home / Subscriptions / Search / History.  The seekbar shows the prior watch progress from when the video was last opened. -->
   <string name="morphe_hide_seekbar_thumbnail_title">Paski postępu filmu na stronie głównej</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_on">Ukryte</string>
   <string name="morphe_hide_seekbar_thumbnail_summary_off">Widoczne</string>
@@ -675,27 +659,25 @@ Jeśli zmiana tego ustawienia nie przyniesie efektu, spróbuj przełączyć się
   <!-- layout.hide.shorts.hideShortsComponentsResourcePatch -->
   <string name="morphe_shorts_player_screen_title">Odtwarzacz Shortsów</string>
   <string name="morphe_shorts_player_screen_summary">Ukryj lub pokazuj przyciski w odtwarzaczu Shortsów</string>
-  <!-- 'Home' should be translated using the same localized wording YouTube displays for the Home tab. -->
+  <!-- 'Home' should be translated using the same localized wording YouTube displays for the tab. -->
   <string name="morphe_hide_shorts_home_title">Shortsy na stronie głównej</string>
   <string name="morphe_hide_shorts_home_summary_on">Ukryte na stronie głównej i w powiązanych filmach</string>
   <string name="morphe_hide_shorts_home_summary_off">Widoczne na stronie głównej i w powiązanych filmach</string>
   <string name="morphe_hide_shorts_search_title">Shortsy w wynikach wyszukiwania</string>
   <string name="morphe_hide_shorts_search_summary_on">Ukryte</string>
   <string name="morphe_hide_shorts_search_summary_off">Widoczne</string>
-  <!-- 'Subscriptions' should be translated using the same localized wording YouTube displays for the Subscriptions tab. -->
+  <!-- 'Subscriptions' should be translated using the same localized wording YouTube displays for the tab. -->
   <string name="morphe_hide_shorts_subscriptions_title">Shortsy na stronie subskrypcji</string>
   <string name="morphe_hide_shorts_subscriptions_summary_on">Ukryte</string>
   <string name="morphe_hide_shorts_subscriptions_summary_off">Widoczne</string>
   <string name="morphe_hide_shorts_history_title">Shortsy w historii oglądania</string>
   <string name="morphe_hide_shorts_history_summary_on">Ukryte</string>
   <string name="morphe_hide_shorts_history_summary_off">Widoczne</string>
-  <string name="morphe_hide_shorts_super_thanks_button_title">Przycisk od zakupu superpodziękowania</string>
   <string name="morphe_hide_shorts_super_thanks_button_summary_on">Ukryty</string>
   <string name="morphe_hide_shorts_super_thanks_button_summary_off">Widoczny</string>
   <string name="morphe_hide_shorts_effect_button_title">Przycisk do efektów</string>
   <string name="morphe_hide_shorts_effect_button_summary_on">Ukryty</string>
   <string name="morphe_hide_shorts_effect_button_summary_off">Widoczny</string>
-  <string name="morphe_hide_shorts_green_screen_button_title">Przycisk od greenscreena</string>
   <string name="morphe_hide_shorts_green_screen_button_summary_on">Ukryty</string>
   <string name="morphe_hide_shorts_green_screen_button_summary_off">Widoczny</string>
   <string name="morphe_hide_shorts_hashtag_button_title">Przycisk do hashtagów</string>
@@ -708,7 +690,6 @@ Jeśli zmiana tego ustawienia nie przyniesie efektu, spróbuj przełączyć się
   <string name="morphe_hide_shorts_location_label_title">Etykieta lokalizacji</string>
   <string name="morphe_hide_shorts_location_label_summary_on">Ukryta</string>
   <string name="morphe_hide_shorts_location_label_summary_off">Widoczna</string>
-  <string name="morphe_hide_shorts_new_posts_button_title">Przycisk do nowych postów</string>
   <string name="morphe_hide_shorts_new_posts_button_summary_on">Ukryty</string>
   <string name="morphe_hide_shorts_new_posts_button_summary_off">Widoczny</string>
   <string name="morphe_hide_shorts_paused_overlay_buttons_title">Zatrzymane przyciski w odtwarzaczu</string>
@@ -717,7 +698,6 @@ Jeśli zmiana tego ustawienia nie przyniesie efektu, spróbuj przełączyć się
   <string name="morphe_hide_shorts_preview_comment_title">Wyróżnione komentarze</string>
   <string name="morphe_hide_shorts_preview_comment_summary_on">Ukryte</string>
   <string name="morphe_hide_shorts_preview_comment_summary_off">Widoczne</string>
-  <string name="morphe_hide_shorts_save_sound_button_title">Przycisk od zapisywania muzyki</string>
   <string name="morphe_hide_shorts_save_sound_button_summary_on">Ukryty</string>
   <string name="morphe_hide_shorts_save_sound_button_summary_off">Widoczny</string>
   <string name="morphe_hide_shorts_search_suggestions_title">Sugestie wyszukiwań</string>
@@ -738,13 +718,11 @@ Jeśli zmiana tego ustawienia nie przyniesie efektu, spróbuj przełączyć się
   <string name="morphe_hide_shorts_upcoming_button_title">Przycisk do nadchodzących treści</string>
   <string name="morphe_hide_shorts_upcoming_button_summary_on">Ukryty</string>
   <string name="morphe_hide_shorts_upcoming_button_summary_off">Widoczny</string>
-  <string name="morphe_hide_shorts_use_sound_button_title">Przycisk od używania tego dźwięku</string>
   <string name="morphe_hide_shorts_use_sound_button_summary_on">Ukryty</string>
   <string name="morphe_hide_shorts_use_sound_button_summary_off">Widoczny</string>
-  <string name="morphe_hide_shorts_use_template_button_title">Przycisk od używania tego szablonu</string>
   <string name="morphe_hide_shorts_use_template_button_summary_on">Ukryty</string>
   <string name="morphe_hide_shorts_use_template_button_summary_off">Widoczny</string>
-  <!-- YT may no longer use this feature and this setting may be obsolete. -->
+  <!-- YouTube may no longer use this feature and this setting may be obsolete. -->
   <string name="morphe_hide_shorts_like_fountain_title">Animacja przycisku polubienia</string>
   <string name="morphe_hide_shorts_like_fountain_summary_on">Ukryta</string>
   <string name="morphe_hide_shorts_like_fountain_summary_off">Widoczna</string>
@@ -820,7 +798,7 @@ Ustawienia → Odtwarzanie → Autoodtwarzanie następnego filmu"</string>
   <string name="morphe_player_overlay_opacity_summary">Wartość przezroczystości musi wynosić między 0 a 100, gdzie 0 oznacza przezroczystość</string>
   <string name="morphe_player_overlay_opacity_invalid_toast">Przezroczystość nakładki odtwarzacza musi wynosić między 0 a 100</string>
   <!-- layout.returnyoutubedislike.returnYouTubeDislikePatch -->
-  <!-- Brief notification (toast) shown if network connection times out. Translations of this should not be longer than the original English or the text can be clipped and not entirely shown. -->
+  <!-- Brief notification (toast) shown if network connection times out. Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
   <string name="morphe_ryd_failure_connection_timeout">Łapki w dół są tymczasowo niedostępne (API nie reaguje)</string>
   <string name="morphe_ryd_failure_connection_status_code">Liczba łapek w dół nie jest dostępna (status %d)</string>
   <string name="morphe_ryd_failure_client_rate_limit_requested">Liczba łapek w dół nie jest dostępna (limit API użytkownika)</string>
@@ -839,7 +817,7 @@ Ograniczenie: Liczba łapek w dół może nie być widoczna w trybie incognito."
   <string name="morphe_ryd_dislike_percentage_title">Łapki w dół wyświetlane jako procent</string>
   <string name="morphe_ryd_dislike_percentage_summary_on">Tak</string>
   <string name="morphe_ryd_dislike_percentage_summary_off">Liczba</string>
-  <!-- Translations should use language similar to 'morphe_sb_enable_compact_skip_button'. -->
+  <!-- Translations should match the language used in 'morphe_sb_enable_compact_skip_button'. -->
   <string name="morphe_ryd_compact_layout_title">Kompaktowy przycisk łapki w górę</string>
   <string name="morphe_ryd_compact_layout_summary_on">Przycisk łapki w górę zajmuje mało miejsca</string>
   <string name="morphe_ryd_compact_layout_summary_off">Przycisk łapki w górę ładnie wygląda</string>
@@ -881,7 +859,7 @@ Ograniczenie: Liczba łapek w dół może nie być widoczna w trybie incognito."
   <string name="morphe_sb_square_layout">Układ</string>
   <string name="morphe_sb_square_layout_sum_on">Kwadratowe przyciski i elementy sterujące</string>
   <string name="morphe_sb_square_layout_sum_off">Okrągłe przyciski i elementy sterujące</string>
-  <!-- Translations should use language similar to 'morphe_ryd_compact_layout_title'. -->
+  <!-- Translations should match the language used in 'morphe_ryd_compact_layout_title'. -->
   <string name="morphe_sb_enable_compact_skip_button">Styl przycisku od pomijania</string>
   <string name="morphe_sb_enable_compact_skip_button_sum_on">Minimalna szerokość</string>
   <string name="morphe_sb_enable_compact_skip_button_sum_off">Najlepszy wygląd</string>
@@ -946,15 +924,10 @@ Ograniczenie: Liczba łapek w dół może nie być widoczna w trybie incognito."
   <string name="morphe_sb_settings_import_successful">Ustawienia zostały pomyślnie zaimportowane</string>
   <string name="morphe_sb_settings_import_failed">Nie udało się zaimportować: %s</string>
   <string name="morphe_sb_settings_export_failed">Nie udało się wyeksportować: %s</string>
-  <string name="morphe_sb_settings_morphe_export_user_id_warning">"Twoje ustawienia zawierają prywatny identyfikator użytkownika SponsorBlock.
-
-Twój identyfikator użytkownika jest jak hasło i nie powinno być nigdy udostępniane."</string>
   <string name="morphe_sb_settings_morphe_export_user_id_warning_dismiss">Nie pokazuj ponownie</string>
   <string name="morphe_sb_diff_segments">Zmień sposoby pomijania segmentów</string>
   <string name="morphe_sb_segments_sponsor">Treści Sponsorowane</string>
-  <string name="morphe_sb_segments_sponsor_sum">Płatna promocja, płatne rekomendacje oraz bezpośrednie reklamy. Nie do autopromocji ani darmowych wyrazów uznania dla kwestii / twórców / stron / produktów, które im się podobają</string>
   <string name="morphe_sb_segments_selfpromo">Nieopłacona / Auto Reklama</string>
-  <string name="morphe_sb_segments_selfpromo_sum">Podobne do treści sponsorowanych, z wyjątkiem nieopłaconych lub auto reklam. Obejmuje to sekcje o własnych towarach, darowiznach czy informacjach o tym, z kim współpracowali</string>
   <string name="morphe_sb_segments_interaction">Przypomnienie O Interakcji (Zasubskrybuj)</string>
   <string name="morphe_sb_segments_interaction_sum">Krótkie przypomnienie o łapce w górę, subskrypcji lub obserwowaniu. Jeśli trwa długo lub dotyczy czegoś konkretnego, powinno być oznaczone jako autopromocja</string>
   <string name="morphe_sb_segments_highlight">Najważniejsza część</string>
@@ -1017,7 +990,7 @@ Twój identyfikator użytkownika jest jak hasło i nie powinno być nigdy udost�
   <string name="morphe_sb_submit_failed_duplicate">"Nie można wysłać segmentu.
 Już istnieje"</string>
   <string name="morphe_sb_submit_succeeded">Segment został wysłany pomyślnie</string>
-  <!-- Notification (toast) shown if network connection times out. Translations of this should not be longer than the original English or the text can be clipped and not entirely shown. -->
+  <!-- Notification (toast) shown if network connection times out. Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
   <string name="morphe_sb_sponsorblock_connection_failure_timeout">SponsorBlock jest tymczasowo niedostępny (API nie reaguje)</string>
   <string name="morphe_sb_sponsorblock_connection_failure_status">SponsorBlock jest tymczasowo niedostępny (status %d)</string>
   <string name="morphe_sb_sponsorblock_connection_failure_generic">SponsorBlock tymczasowo niedostępny</string>
@@ -1227,8 +1200,8 @@ Przesuń, by rozwinąć lub zamknąć"</string>
   <string name="morphe_header_logo_title">Logo</string>
   <string name="morphe_header_logo_entry_1">Domyślne</string>
   <string name="morphe_header_logo_entry_2">Zwykłe</string>
-  <!-- Translation of this should be identical to morphe_custom_branding_icon_entry_3 -->
-  <string name="morphe_header_logo_entry_5">Niestandardowe</string>
+  <!-- Translations should match the language used in 'morphe_custom_branding_icon_entry_3'. -->
+  <string name="morphe_header_logo_entry_5">Niestandardowy</string>
   <!-- layout.thumbnails.bypassImageRegionRestrictionsPatch -->
   <string name="morphe_bypass_image_region_restrictions_title">Host dla obrazów</string>
   <string name="morphe_bypass_image_region_restrictions_summary_on">yt4.ggpht.com</string>
@@ -1236,11 +1209,11 @@ Przesuń, by rozwinąć lub zamknąć"</string>
 
 Włączenie tej opcji może naprawić brakujące obrazy, które są blokowane w niektórych regionach"</string>
   <!-- layout.thumbnails.alternativeThumbnailsPatch -->
-  <!-- 'Home' should be translated using the same localized wording YouTube displays for the Home tab. -->
+  <!-- 'Home' should be translated using the same localized wording YouTube displays for the tab. -->
   <string name="morphe_alt_thumbnail_home_title">Na stronie głównej</string>
-  <!-- 'Subscriptions' should be translated using the same localized wording YouTube displays for the Subscriptions tab. -->
+  <!-- 'Subscriptions' should be translated using the same localized wording YouTube displays for the tab. -->
   <string name="morphe_alt_thumbnail_subscription_title">Na stronie subskrypcji</string>
-  <!-- 'You' should be translated using the same localized wording YouTube displays for the You (Library) tab. -->
+  <!-- 'You' should be translated using the same localized wording YouTube displays for the tab. -->
   <string name="morphe_alt_thumbnail_library_title">Na stronie Ty</string>
   <string name="morphe_alt_thumbnail_player_title">W playlistach i rekomendacjach</string>
   <string name="morphe_alt_thumbnail_search_title">W wynikach wyszukiwania</string>
@@ -1259,7 +1232,6 @@ Stuknij tutaj, aby dowiedzieć się więcej o DeArrow"</string>
   <string name="morphe_alt_thumbnail_dearrow_api_url_title">Punkt końcowy API DeArrow</string>
   <string name="morphe_alt_thumbnail_dearrow_api_url_summary">Adres URL punktu końcowego do miniaturek DeArrow</string>
   <string name="morphe_alt_thumbnail_stills_about_title">Miniaturki przechwycone z filmu</string>
-  <string name="morphe_alt_thumbnail_stills_about_summary">Miniaturki przechwytywane z filmu są brane z początku, środka lub końca filmu. Obrazy te są wbudowane w YouTube, więc żadne zewnętrzne API nie jest używane</string>
   <string name="morphe_alt_thumbnail_stills_fast_title">Szybkie przechwytywanie miniaturek z filmu</string>
   <string name="morphe_alt_thumbnail_stills_fast_summary_on">Używasz przechwytywania średniej jakości. Miniaturki będą ładować się szybciej, lecz mogą pozostać puste w przypadku transmisji na żywo, niewydanych i bardzo starych filmów</string>
   <string name="morphe_alt_thumbnail_stills_fast_summary_off">Używasz przechwytywania wysokiej jakości</string>
@@ -1277,15 +1249,10 @@ Stuknij tutaj, aby dowiedzieć się więcej o DeArrow"</string>
   <string name="morphe_loop_video_summary_off">Wyłączone</string>
   <!-- misc.loopvideo.button.loopVideoButtonPatch -->
   <string name="morphe_loop_video_button_title">Przycisk od zapętlania filmu</string>
-  <string name="morphe_loop_video_button_summary_on">Widoczny</string>
-  <string name="morphe_loop_video_button_summary_off">Niewidoczny</string>
   <string name="morphe_loop_video_button_toast_on">Włączone jest zapętlanie filmu</string>
   <string name="morphe_loop_video_button_toast_off">Wyłączone jest zapętlanie filmu</string>
   <!-- misc.dimensions.spoof.spoofDeviceDimensionsPatch -->
   <string name="morphe_spoof_device_dimensions_title">Fałszuj rozdzielczość urządzenia</string>
-  <string name="morphe_spoof_device_dimensions_summary_on">"Wymiary urządzenia fałszowane
-
-Mogą zostać odblokowane wyższe jakości wideo, ale możesz doświadczyć zacinania się wideo, gorszego czasu pracy na baterii i nieznanych efektów ubocznych"</string>
   <string name="morphe_spoof_device_dimensions_summary_off">"Wymiary urządzenia nie są fałszowane
 
 Włączenie tego może odblokować wyższe jakości wideo"</string>
@@ -1316,7 +1283,7 @@ Włączenie tego może odblokować wyższe jakości wideo"</string>
   <string name="morphe_external_browser_summary_on">Włączone</string>
   <string name="morphe_external_browser_summary_off">Wyłączone</string>
   <!-- video.quality.rememberVideoQualityPatch -->
-  <!-- Translations should use the same text as 'morphe_custom_playback_speeds_auto'. -->
+  <!-- Translations should match the language used in 'morphe_custom_playback_speeds_auto'. -->
   <string name="morphe_video_quality_default_entry_1">Automatyczna</string>
   <string name="morphe_remember_video_quality_last_selected_title">Zapamiętuj zmiany jakości filmu</string>
   <string name="morphe_remember_video_quality_last_selected_summary_on">Zmiany jakości dotyczą wszystkich filmów</string>
@@ -1337,12 +1304,8 @@ Włączenie tego może odblokować wyższe jakości wideo"</string>
   <string name="morphe_remember_video_quality_toast_shorts">Zmieniono jakość Shortsów %1$s na: %2$s</string>
   <!-- video.speed.button.playbackSpeedButtonPatch -->
   <string name="morphe_playback_speed_dialog_button_title">Przycisk od prędkości</string>
-  <string name="morphe_playback_speed_dialog_button_summary_on">Widoczny. Stuknij i przytrzymaj, aby zresetować prędkość odtwarzania do domyślnej</string>
-  <string name="morphe_playback_speed_dialog_button_summary_off">Niewidoczny</string>
   <!-- video.quality.button.videoQualityDialogButtonPatch -->
   <string name="morphe_video_quality_dialog_button_title">Przycisk od jakości wideo</string>
-  <string name="morphe_video_quality_dialog_button_summary_on">Widoczny. Stuknij i przytrzymaj, aby zresetować jakość do wartości domyślnych</string>
-  <string name="morphe_video_quality_dialog_button_summary_off">Niewidoczny</string>
   <!-- video.speed.custom.customPlaybackSpeedPatch -->
   <string name="morphe_custom_speed_menu_title">Niestandardowa prędkość odtwarzania</string>
   <string name="morphe_custom_speed_menu_summary_on">Włączona</string>
@@ -1406,7 +1369,7 @@ Odtwarzanie wideo z AV1 może powodować zacinanie się lub gubienie klatek."</s
   <string name="morphe_spoof_video_streams_about_no_av1">• Brak kodeka filmu AV1</string>
   <string name="morphe_spoof_video_streams_about_no_stable_volume">• Stabilna głośność nie jest dostępna</string>
   <string name="morphe_spoof_video_streams_about_kids_videos">• Filmy dla dzieci mogą nie być odtwarzane po wylogowaniu lub w trybie incognito</string>
-  <!-- "Force original audio" should use the same text as morphe_force_original_audio_title -->
+  <!-- "Force original audio" should match the language used in 'morphe_force_original_audio_title'. -->
   <string name="morphe_spoof_video_streams_about_no_force_original_audio">• Wymuszanie oryginalnej ścieżki audio nie działa</string>
   <string name="morphe_spoof_streaming_data_stats_for_nerds_title">Typ klienta w statystykach dla nerdów</string>
   <string name="morphe_spoof_streaming_data_stats_for_nerds_summary_on">Widoczny</string>
