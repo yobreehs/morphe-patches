@@ -1,3 +1,11 @@
+# [1.1.0-dev.1](https://github.com/MorpheApp/morphe-patches/compare/v1.0.1-dev.1...v1.1.0-dev.1) (2026-01-04)
+
+
+### Features
+
+* **YouTube - Hide layout components:** Add "Hide Featured links", "Hide Featured videos", "Hide Join button", and "Hide Subscribe button" options ([#72](https://github.com/MorpheApp/morphe-patches/issues/72)) ([727c2d9](https://github.com/MorpheApp/morphe-patches/commit/727c2d9d9d6af82d0c565472a6e120a7ec43e94a))
+* **YouTube - Hide Shorts components:** Add "Hide 'Auto-dubbed' label" and "Hide live preview" options ([#70](https://github.com/MorpheApp/morphe-patches/issues/70)) ([5239e43](https://github.com/MorpheApp/morphe-patches/commit/5239e434ef44433b5efacbbaa122c8c036e1f57d))
+
 ## [1.0.1-dev.1](https://github.com/MorpheApp/morphe-patches/compare/v1.0.0...v1.0.1-dev.1) (2026-01-04)
 
 
