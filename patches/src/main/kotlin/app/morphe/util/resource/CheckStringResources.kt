@@ -57,6 +57,7 @@ internal fun main(args: Array<String>) {
             inputStreamFromBundledResource(
                 "addresources", srcSubPath
             ).use { stream ->
+                if (stream == null) throw IllegalArgumentException("Could not find resource $srcSubPath")
                 val document = DocumentBuilderFactory.newInstance()
                     .newDocumentBuilder()
                     .parse(stream)
@@ -68,7 +69,12 @@ internal fun main(args: Array<String>) {
                         val element = node as Element
                         val name = element.getAttribute("name")
                         val value = element.textContent
-                        StringResource.sanitizeAndroidResourceString(name, value, true)
+                        StringResource.sanitizeAndroidResourceString(
+                            key = name,
+                            value = value,
+                            filePath = srcSubPath,
+                            throwException = true
+                        )
                         stringsChecked++
                     }
                 }

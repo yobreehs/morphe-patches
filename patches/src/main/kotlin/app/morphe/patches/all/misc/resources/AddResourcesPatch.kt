@@ -200,7 +200,9 @@ internal val addResourcesPatch = resourcePatch(
                             if (resourceType == BundledResourceType.STRINGS) {
                                 // Check for bad text strings that will fail resource compilation.
                                 val textContent = srcNode.textContent
-                                val sanitized = sanitizeAndroidResourceString(resourceName, textContent)
+                                val sanitized = sanitizeAndroidResourceString(
+                                    resourceName, textContent, destSubPath
+                                )
                                 if (textContent != sanitized) {
                                     srcNode.textContent = sanitized
                                 }

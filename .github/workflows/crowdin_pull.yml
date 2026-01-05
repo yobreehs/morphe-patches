@@ -44,24 +44,33 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout dev branch
-      - name: Checkout dev
+      # Step 1: Checkout crowdin branch to run checks on it
+      - name: Checkout crowdin branch
+        uses: actions/checkout@v6
+        with:
+          ref: crowdin
+          fetch-depth: 0
+          clean: true
+
+      # Step 2: Run string checks on the crowdin branch
+      - name: Check strings on crowdin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./gradlew clean checkStringResources --no-daemon
+
+      # Step 3: Checkout dev branch to prepare for merging
+      - name: Checkout dev branch for merge
         uses: actions/checkout@v6
         with:
           ref: dev
           fetch-depth: 0
           clean: true
 
-      # Step 2: Fetch the latest crowdin branch
+      # Step 4: Fetch the latest crowdin branch (already checked)
       - name: Fetch crowdin branch
         run: git fetch origin crowdin
 
-      - name: Check strings
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ./gradlew clean checkStringResources --no-daemon
-
-      # Step 3: Squash merge crowdin into dev
+      # Step 5: Squash merge crowdin into dev
       - name: Squash merge crowdin into dev
         run: |
           git config --local user.name "Crowdin Bot"
