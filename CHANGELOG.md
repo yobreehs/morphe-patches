@@ -1,3 +1,10 @@
+# [1.2.0-dev.3](https://github.com/MorpheApp/morphe-patches/compare/v1.2.0-dev.2...v1.2.0-dev.3) (2026-01-06)
+
+
+### Bug Fixes
+
+* **YouTube - Hide ads:** Hide new type of general ad, movie ad and web search result ([#92](https://github.com/MorpheApp/morphe-patches/issues/92)) ([ed5c287](https://github.com/MorpheApp/morphe-patches/commit/ed5c2875be27a178368203251e7c07caa18556cf))
+
 # [1.2.0-dev.2](https://github.com/MorpheApp/morphe-patches/compare/v1.2.0-dev.1...v1.2.0-dev.2) (2026-01-06)
 
 
