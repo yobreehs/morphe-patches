@@ -305,7 +305,7 @@ Si un Doodle est actuellement visible dans votre région et que cette option de 
 "</string>
   <string name="morphe_hide_keyword_content_screen_title">Masquer le contenu par mots-clés</string>
   <string name="morphe_hide_keyword_content_screen_summary">Filtrer les vidéos par mot-clé dans les recherches et le flux</string>
-  <string name="morphe_hide_keyword_content_home_title">Les vidéos de l’onglet \'Accueil\' sont filtrées par mots-clés</string>
+  <string name="morphe_hide_keyword_content_home_title">Filtrer les vidéos dans l\'onglet \'Accueil\' par mot-clé</string>
   <string name="morphe_hide_keyword_content_home_summary_on">Les vidéos de l’onglet \'Accueil\' sont filtrées par mots-clés</string>
   <string name="morphe_hide_keyword_content_home_summary_off">Les vidéos de l’onglet \'Accueil\' ne sont pas filtrées par mots-clés</string>
   <string name="morphe_hide_keyword_content_search_title">Filtrer les résultats de recherche par mot-clé</string>
@@ -381,7 +381,7 @@ Limitations : Les Doodles YouTube ne sont pas disponibles"</string>
   <!-- interaction.copyvideourl.copyVideoUrlResourcePatch -->
   <string name="morphe_share_copy_url_success">URL copiée dans le presse-papiers</string>
   <string name="morphe_share_copy_url_timestamp_success">URL avec horodatage copiée</string>
-  <string name="morphe_copy_video_url_title">Afficher le bouton \'Copier l\'URL de la vidéo\'</string>
+  <string name="morphe_copy_video_url_title">Afficher un bouton \'Copier l\'URL de la vidéo\'</string>
   <string name="morphe_copy_video_url_summary_on">Le bouton \'Copier l\'URL de la vidéo\' est affiché. Appuyez pour copier l\'URL de la vidéo. Appuyez longuement pour copier avec horodatage.</string>
   <string name="morphe_copy_video_url_summary_off">Le bouton \'Copier l\'URL de la vidéo\' n\'est pas affiché</string>
   <string name="morphe_copy_video_url_timestamp_title">Afficher un bouton \'Copier l\'URL horodaté\'</string>
@@ -1145,7 +1145,6 @@ Si cette option est désactivée ultérieurement, il est recommandé de vider le
   <string name="morphe_spoof_app_version_target_entry_1">20.13.41 - Restaure de la barre d\'action vidéo non réduite</string>
   <string name="morphe_spoof_app_version_target_entry_2">20.05.46 - Restaurer la fonctionnalité de transcription</string>
   <string name="morphe_spoof_app_version_target_entry_3">19.35.36 - Restaure les anciennes icônes du lecteur Shorts </string>
-  <string name="morphe_spoof_app_version_target_entry_4">19.01.34 - Restaure les anciennes icônes de navigation</string>
   <!-- layout.startpage.changeStartPagePatch -->
   <string name="morphe_change_start_page_title">Modifier la page de démarrage</string>
   <string name="morphe_change_start_page_entry_default">Par défaut</string>
@@ -1293,19 +1292,19 @@ Cliquez ici pour en savoir plus sur DeArrow"</string>
   <string name="morphe_alt_thumbnail_dearrow_connection_toast_title">Afficher une notification si l\'API n\'est pas disponible</string>
   <string name="morphe_alt_thumbnail_dearrow_connection_toast_summary_on">Une notification est affiché si DeArrow n\'est pas disponible</string>
   <string name="morphe_alt_thumbnail_dearrow_connection_toast_summary_off">Aucune notification n\'est affiché si DeArrow n\'est pas disponible</string>
-  <string name="morphe_alt_thumbnail_dearrow_api_url_title">Endpoint d\'API DeArrow</string>
-  <string name="morphe_alt_thumbnail_dearrow_api_url_summary">L\'URL de l\'endpoint d\'accès au cache de miniatures DeArrow</string>
-  <string name="morphe_alt_thumbnail_stills_about_title">Images extraites des vidéos</string>
-  <string name="morphe_alt_thumbnail_stills_about_summary">Les captures d\'écran fixes sont réalisées au début, au milieu et à la fin de chaque vidéo. Ces images sont intégrées à YouTube et aucune API externe n\'est utilisée</string>
-  <string name="morphe_alt_thumbnail_stills_fast_title">Utiliser les images à extraction rapide</string>
-  <string name="morphe_alt_thumbnail_stills_fast_summary_on">Utilisation des images extraites de qualité moyenne. Les miniatures seront chargées plus rapidement, mais il se peut qu\'aucune miniature ne s\'affiche pour les diffusions en direct ou les vidéos non publiées / très anciennes.</string>
-  <string name="morphe_alt_thumbnail_stills_fast_summary_off">Utilisation des images extraites de qualité élevée</string>
-  <string name="morphe_alt_thumbnail_stills_time_title">Moment de la vidéo où extraire les images</string>
+  <string name="morphe_alt_thumbnail_dearrow_api_url_title">Point de connexion à l\'API DeArrow</string>
+  <string name="morphe_alt_thumbnail_dearrow_api_url_summary">L\'URL du point de connexion au cache des miniatures DeArrow</string>
+  <string name="morphe_alt_thumbnail_stills_about_title">Infos sur la capture d\'écran des vidéos</string>
+  <string name="morphe_alt_thumbnail_stills_about_summary">Les miniatures peuvent être capturées du début, du milieu ou de la fin de chaque vidéo. Les miniatures sont intégrées à YouTube, aucune API externe n\'est utilisée</string>
+  <string name="morphe_alt_thumbnail_stills_fast_title">Utiliser des captures rapides</string>
+  <string name="morphe_alt_thumbnail_stills_fast_summary_on">Utilisation de captures d’écran de qualité moyenne. Les miniatures se chargeront plus rapidement, mais les diffusions en direct, les vidéos non publiées ou les très anciennes vidéos peuvent afficher des miniatures vides</string>
+  <string name="morphe_alt_thumbnail_stills_fast_summary_off">Utilisation de captures d’écran de haute qualité</string>
+  <string name="morphe_alt_thumbnail_stills_time_title">Moment de la vidéo où prendre les captures d’écran</string>
   <string name="morphe_alt_thumbnail_stills_time_entry_1">Début de la vidéo</string>
   <string name="morphe_alt_thumbnail_stills_time_entry_2">Milieu de la vidéo</string>
   <string name="morphe_alt_thumbnail_stills_time_entry_3">Fin de la vidéo</string>
   <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
-  <string name="morphe_alt_thumbnail_dearrow_error">DeArrow est temporairement indisponible (code de statut : %s)</string>
+  <string name="morphe_alt_thumbnail_dearrow_error">DeArrow est temporairement indisponible (statut : %s)</string>
   <string name="morphe_alt_thumbnail_dearrow_error_generic">DeArrow est temporairement indisponible</string>
   <!-- misc.announcements.announcementsPatch -->
   <!-- misc.loopvideo.loopVideoPatch -->
@@ -1313,37 +1312,39 @@ Cliquez ici pour en savoir plus sur DeArrow"</string>
   <string name="morphe_loop_video_summary_on">La vidéo sera lue en boucle</string>
   <string name="morphe_loop_video_summary_off">La vidéo ne sera pas lue en boucle</string>
   <!-- misc.loopvideo.button.loopVideoButtonPatch -->
-  <string name="morphe_loop_video_button_title">Afficher le bouton de lecture en boucle</string>
-  <string name="morphe_loop_video_button_summary_on">Le bouton \"Reproduire la vidéo\" est affiché</string>
-  <string name="morphe_loop_video_button_summary_off">Le bouton \"Reproduire la vidéo\" n\'est pas affiché</string>
+  <string name="morphe_loop_video_button_title">Afficher le bouton \'Lecture en boucle\'</string>
+  <string name="morphe_loop_video_button_summary_on">Le bouton \'Lecture en boucle\' est affiché</string>
+  <string name="morphe_loop_video_button_summary_off">Le bouton \'Lecture en boucle\' n\'est pas affiché</string>
   <string name="morphe_loop_video_button_toast_on">La lecture en boucle est activée</string>
   <string name="morphe_loop_video_button_toast_off">La lecture en boucle est désactivée</string>
   <!-- misc.dimensions.spoof.spoofDeviceDimensionsPatch -->
   <string name="morphe_spoof_device_dimensions_title">Falsifier les dimensions de l\'appareil</string>
-  <string name="morphe_spoof_device_dimensions_summary_on">"Les dimensions de l'appareil sont falsifiées
+  <string name="morphe_spoof_device_dimensions_summary_on">"Dimensions de l’appareil falsifiées
 
-Les qualités vidéo supérieures pourraient être déverrouillées, mais la lecture vidéo peut être saccadée, l'autonomie de l'appareil peut être réduite et il peut y avoir des effets secondaires inconnus"</string>
-  <string name="morphe_spoof_device_dimensions_summary_off">"Dimensions de l'appareil non falsifiées
+Des qualités vidéo plus élevées pourraient être débloquées, mais vous risquez de rencontrer des saccades lors de la lecture vidéo, une autonomie de batterie réduite et d’autres effets secondaires imprévus
+"</string>
+  <string name="morphe_spoof_device_dimensions_summary_off">"Dimensions de l’appareil non falsifiées
 
-Activer cette option peut déverrouiller des qualités vidéo supérieures"</string>
-  <string name="morphe_spoof_device_dimensions_user_dialog_message">Activer cette option peut engendrer des saccades durant la lecture de vidéos, une dégradation de l\'autonomie de la batterie et des effets secondaires inconnus.</string>
+L’activation de cette option peut débloquer des qualités vidéo plus élevées
+"</string>
+  <string name="morphe_spoof_device_dimensions_user_dialog_message">L’activation de cette option peut entraîner des saccades lors de la lecture vidéo, une autonomie de batterie réduite et d’autres effets secondaires imprévus.</string>
   <!-- misc.hapticfeedback.disableHapticFeedbackPatch -->
   <string name="morphe_disable_haptic_feedback_title">Retour haptique</string>
-  <string name="morphe_disable_haptic_feedback_summary">Modifiez les retours haptiques</string>
+  <string name="morphe_disable_haptic_feedback_summary">Modifier le retour haptique</string>
   <string name="morphe_disable_haptic_feedback_chapters_title">Désactiver le retour haptique des chapitres</string>
   <string name="morphe_disable_haptic_feedback_chapters_summary_on">Le retour haptique des chapitres est désactivé</string>
   <string name="morphe_disable_haptic_feedback_chapters_summary_off">Le retour haptique des chapitres est activé</string>
-  <string name="morphe_disable_haptic_feedback_precise_seeking_title">Désactiver le retour haptique de la recherche précise</string>
-  <string name="morphe_disable_haptic_feedback_precise_seeking_summary_on">Le retour haptique de la recherche précise est désactivé</string>
-  <string name="morphe_disable_haptic_feedback_precise_seeking_summary_off">Le retour haptique de la recherche précise est activé</string>
-  <string name="morphe_disable_haptic_feedback_seek_undo_title">Désactiver le retour haptique d\'annulation de la recherche</string>
-  <string name="morphe_disable_haptic_feedback_seek_undo_summary_on">Le retour haptique d\'annulation de la recherche est désactivé</string>
-  <string name="morphe_disable_haptic_feedback_seek_undo_summary_off">Le retour haptique d\'annulation de la recherche est activé</string>
-  <string name="morphe_disable_haptic_feedback_zoom_title">Désactiver le retour haptique des actions de zoom</string>
+  <string name="morphe_disable_haptic_feedback_precise_seeking_title">Désactiver le retour haptique de la barre de progression</string>
+  <string name="morphe_disable_haptic_feedback_precise_seeking_summary_on">Le retour haptique de la barre de progression est désactivé</string>
+  <string name="morphe_disable_haptic_feedback_precise_seeking_summary_off">Le retour haptique de la barre de progression est activé</string>
+  <string name="morphe_disable_haptic_feedback_seek_undo_title">Désactiver le retour haptique lors du relâchement de la barre de progression</string>
+  <string name="morphe_disable_haptic_feedback_seek_undo_summary_on">Le retour haptique lors du relâchement de la barre de progression est désactivé</string>
+  <string name="morphe_disable_haptic_feedback_seek_undo_summary_off">Le retour haptique lors du relâchement de la barre de progression est activé</string>
+  <string name="morphe_disable_haptic_feedback_zoom_title">Désactiver le retour haptique du zoom</string>
   <string name="morphe_disable_haptic_feedback_zoom_summary_on">Le retour haptique du zoom est désactivé</string>
   <string name="morphe_disable_haptic_feedback_zoom_summary_off">Le retour haptique du zoom est activé</string>
   <!-- misc.gms.accountCredentialsInvalidTextPatch -->
-  <string name="microg_offline_account_login_error">Si vous avez récemment modifié vos informations de connexion, désinstallez et réinstallez MicroG.</string>
+  <string name="microg_offline_account_login_error">Si vous avez récemment modifié les identifiants de connexion de votre compte, désinstallez et réinstallez MicroG.</string>
   <!-- misc.links.bypassURLRedirectsPatch -->
   <string name="morphe_bypass_url_redirects_title">Contourner les redirections d\'URL</string>
   <string name="morphe_bypass_url_redirects_summary_on">Les redirections d\'URL sont contournées</string>
@@ -1355,97 +1356,100 @@ Activer cette option peut déverrouiller des qualités vidéo supérieures"</str
   <!-- video.quality.rememberVideoQualityPatch -->
   <!-- Translations should match the language used in 'morphe_custom_playback_speeds_auto'. -->
   <string name="morphe_video_quality_default_entry_1">Automatique</string>
-  <string name="morphe_remember_video_quality_last_selected_title">Mémoriser les changements de qualité vidéo</string>
-  <string name="morphe_remember_video_quality_last_selected_summary_on">Les changements de qualité s\'appliquent à toutes les vidéos</string>
-  <string name="morphe_remember_video_quality_last_selected_summary_off">Les changements de qualité s\'appliquent uniquement à la vidéo actuelle</string>
-  <string name="morphe_remember_video_quality_last_selected_toast_title">Afficher un message toast lors des changements de qualité vidéo</string>
-  <string name="morphe_remember_video_quality_last_selected_toast_summary_on">Un message toast est affiché lorsque la qualité vidéo par défaut est modifiée</string>
-  <string name="morphe_remember_video_quality_last_selected_toast_summary_off">Aucun message toast n\'est affiché lorsque la qualité vidéo par défaut est modifiée</string>
-  <string name="morphe_video_quality_default_wifi_title">Qualité vidéo par défaut sur les réseaux Wi-Fi</string>
-  <string name="morphe_video_quality_default_mobile_title">Qualité vidéo par défaut sur le réseau mobile</string>
-  <string name="morphe_remember_shorts_quality_last_selected_title">Mémoriser les changements de qualité des Shorts</string>
-  <string name="morphe_remember_shorts_quality_last_selected_summary_on">Les changements de qualité s\'appliquent à tous les Shorts</string>
-  <string name="morphe_remember_shorts_quality_last_selected_summary_off">Les changements de qualité s\'appliquent uniquement au Short actuel</string>
-  <string name="morphe_shorts_quality_default_wifi_title">Qualité par défaut des Shorts sur les réseaux Wi-Fi</string>
-  <string name="morphe_shorts_quality_default_mobile_title">Qualité par défaut des Shorts sur le réseau mobile</string>
+  <string name="morphe_remember_video_quality_last_selected_title">Enregistrer la modification de la qualité video</string>
+  <string name="morphe_remember_video_quality_last_selected_summary_on">La modification de la qualité est appliqué pour toutes les vidéos</string>
+  <string name="morphe_remember_video_quality_last_selected_summary_off">La modification de la qualité est appliqué pour la vidéo en cours</string>
+  <string name="morphe_remember_video_quality_last_selected_toast_title">Afficher une notification lors des changements de qualité vidéo</string>
+  <string name="morphe_remember_video_quality_last_selected_toast_summary_on">Une notification est affichée lorsque la qualité vidéo par défaut est modifiée</string>
+  <string name="morphe_remember_video_quality_last_selected_toast_summary_off">Aucune notification n\'est affichée lorsque la qualité vidéo par défaut est modifiée</string>
+  <string name="morphe_video_quality_default_wifi_title">Qualité vidéo par défaut sur le réseau Wi-Fi</string>
+  <string name="morphe_video_quality_default_mobile_title">Qualité vidéo par défaut sur les données mobiles</string>
+  <string name="morphe_remember_shorts_quality_last_selected_title">Enregistrer la modification de la qualité sur les Shorts</string>
+  <string name="morphe_remember_shorts_quality_last_selected_summary_on">La modification de la qualité est appliqué pour tous les Shorts</string>
+  <string name="morphe_remember_shorts_quality_last_selected_summary_off">La modification de la qualité est appliqué pour le Short en cours</string>
+  <string name="morphe_shorts_quality_default_wifi_title">Qualité par défaut des Shorts sur le réseau Wi-Fi</string>
+  <string name="morphe_shorts_quality_default_mobile_title">Qualité par défaut des Shorts sur les données mobiles</string>
   <string name="morphe_remember_video_quality_mobile">mobile</string>
   <string name="morphe_remember_video_quality_wifi">Wi-Fi</string>
-  <string name="morphe_remember_video_quality_toast">Nouvelle qualité %1$s par défaut : %2$s</string>
-  <string name="morphe_remember_video_quality_toast_shorts">Nouvelle qualité %1$s des Shorts par défaut : %2$s</string>
+  <string name="morphe_remember_video_quality_toast">Qualité par défaut %1$s modifiée en : %2$s</string>
+  <string name="morphe_remember_video_quality_toast_shorts">Qualité des Shorts %1$s modifiée en : %2$s.</string>
   <!-- video.speed.button.playbackSpeedButtonPatch -->
-  <string name="morphe_playback_speed_dialog_button_title">Afficher un bouton Vitesse</string>
-  <string name="morphe_playback_speed_dialog_button_summary_on">Le bouton \"Dialogue de vitesse de lecture\" est affiché. Appuyez longuement dessus pour rétablir la vitesse de lecture par défaut</string>
-  <string name="morphe_playback_speed_dialog_button_summary_off">Le bouton \"Dialogue de vitesse de lecture\" n\'est pas affiché</string>
+  <string name="morphe_playback_speed_dialog_button_title">Afficher un bouton \'Vitesse de lecture\'</string>
+  <string name="morphe_playback_speed_dialog_button_summary_on">Le bouton \'Vitesse de lecture\' est affiché. Appuyez longuement dessus pour réinitialiser la vitesse de lecture par défaut</string>
+  <string name="morphe_playback_speed_dialog_button_summary_off">Le bouton \'Vitesse de lecture\' n\'est pas affiché</string>
   <!-- video.quality.button.videoQualityDialogButtonPatch -->
-  <string name="morphe_video_quality_dialog_button_title">Afficher le bouton de qualité vidéo</string>
-  <string name="morphe_video_quality_dialog_button_summary_on">Le bouton \"Qualité vidéo\" est affiché. Appuyez longuement pour rétablir la qualité par défaut</string>
-  <string name="morphe_video_quality_dialog_button_summary_off">Le bouton \"Qualité vidéo\" n\'est pas affiché</string>
+  <string name="morphe_video_quality_dialog_button_title">Afficher un bouton \'Qualité vidéo\'</string>
+  <string name="morphe_video_quality_dialog_button_summary_on">Le bouton \'Qualité vidéo\' est affiché. Appuyez longuement pour réinitialiser la qualité par défaut</string>
+  <string name="morphe_video_quality_dialog_button_summary_off">Le bouton \'Qualité vidéo\' n\'est pas affiché</string>
   <!-- video.speed.custom.customPlaybackSpeedPatch -->
-  <string name="morphe_custom_speed_menu_title">Menu de vitesse de lecture personnalisée</string>
-  <string name="morphe_custom_speed_menu_summary_on">Le menu de vitesse personnalisée est affiché</string>
-  <string name="morphe_custom_speed_menu_summary_off">Le menu de vitesse personnalisée n\'est pas affiché</string>
+  <string name="morphe_custom_speed_menu_title">Personnaliser le menu \'Vitesse de lecture\'</string>
+  <string name="morphe_custom_speed_menu_summary_on">La personnalisation du menu \'Vitesse de lecture\' est affiché</string>
+  <string name="morphe_custom_speed_menu_summary_off">La personnalisation du menu \'Vitesse de lecture\' n\'est pas affiché</string>
   <string name="morphe_restore_old_speed_menu_title">Restaurer l\'ancien menu de vitesse de lecture</string>
-  <string name="morphe_restore_old_speed_menu_summary_on">L\'ancien menu de vitesse est affiché</string>
-  <string name="morphe_restore_old_speed_menu_summary_off">Le menu de vitesse moderne est affiché</string>
+  <string name="morphe_restore_old_speed_menu_summary_on">L\'ancien menu de vitesse de lecture est affiché</string>
+  <string name="morphe_restore_old_speed_menu_summary_off">Le menu de vitesse de lecture moderne est affiché</string>
   <string name="morphe_custom_playback_speeds_title">Vitesses de lecture personnalisées</string>
   <string name="morphe_custom_playback_speeds_summary">Ajouter ou modifier les vitesses de lecture personnalisées</string>
   <string name="morphe_custom_playback_speeds_invalid">Il doit y avoir moins de %s vitesses personnalisées</string>
   <string name="morphe_custom_playback_speeds_parse_exception">Vitesses de lecture personnalisées invalides</string>
   <string name="morphe_custom_playback_speeds_auto">Automatique</string>
-  <string name="morphe_speed_tap_and_hold_title">Vitesse personnalisée d\'accélération sur appui long</string>
+  <string name="morphe_speed_tap_and_hold_title">Vitesse personnalisée pour l’appui long</string>
   <string name="morphe_speed_tap_and_hold_summary">Vitesse de lecture comprise entre 0 et 8</string>
   <!-- video.speed.remember.rememberPlaybackSpeedPatch -->
-  <string name="morphe_remember_playback_speed_last_selected_title">Mémoriser les changements de vitesse de lecture</string>
-  <string name="morphe_remember_playback_speed_last_selected_summary_on">Les changements de vitesse de lecture s\'appliquent à toutes les vidéos</string>
-  <string name="morphe_remember_playback_speed_last_selected_summary_off">Les changements de vitesse de lecture s\'appliquent uniquement à la vidéo actuelle</string>
-  <string name="morphe_remember_playback_speed_last_selected_toast_title">Afficher un message toast lors des changements de vitesse de lecture</string>
-  <string name="morphe_remember_playback_speed_last_selected_toast_summary_on">Un message toast est affiché lorsque la vitesse de lecture par défaut est modifiée</string>
-  <string name="morphe_remember_playback_speed_last_selected_toast_summary_off">Aucun message toast n\'est affiché lorsque la vitesse de lecture par défaut est modifiée</string>
+  <string name="morphe_remember_playback_speed_last_selected_title">Enregistrer la modification de vitesse de lecture</string>
+  <string name="morphe_remember_playback_speed_last_selected_summary_on">La modification de vitesse de lecture est appliqué pour toutes les vidéos</string>
+  <string name="morphe_remember_playback_speed_last_selected_summary_off">La modification de la vitesse de lecture est appliqué pour la vidéo en cours</string>
+  <string name="morphe_remember_playback_speed_last_selected_toast_title">Afficher une notification lors des modifications de vitesse de lecture</string>
+  <string name="morphe_remember_playback_speed_last_selected_toast_summary_on">Une notification est affichée lorsque la vitesse de lecture par défaut est modifiée</string>
+  <string name="morphe_remember_playback_speed_last_selected_toast_summary_off">Aucune notification n\'est affiché lorsque la vitesse de lecture par défaut est modifiée</string>
   <string name="morphe_playback_speed_default_title">Vitesse de lecture par défaut</string>
-  <string name="morphe_remember_playback_speed_toast">Nouvelle vitesse par défaut : %s</string>
+  <string name="morphe_remember_playback_speed_toast">Vitesse de lecture par défaut modifiée en : %s</string>
   <!-- video.codecs.disableVideoCodecsPatch -->
-  <string name="morphe_disable_hdr_video_title">Désactiver le HDR dans les vidéos</string>
-  <string name="morphe_disable_hdr_video_summary_on">Le HDR est désactivé dans les vidéos</string>
-  <string name="morphe_disable_hdr_video_summary_off">Le HDR est activé dans les vidéos</string>
+  <string name="morphe_disable_hdr_video_title">Déaactiver les vidéos HDR</string>
+  <string name="morphe_disable_hdr_video_summary_on">Les vidéos en HDR sont désactivés</string>
+  <string name="morphe_disable_hdr_video_summary_off">Les vidéos en HDR sont activés</string>
   <string name="morphe_force_avc_codec_title">Forcer AVC (H.264)</string>
-  <string name="morphe_force_avc_codec_summary_on">Le codec vidéo est défini de force sur AVC (H.264)</string>
+  <string name="morphe_force_avc_codec_summary_on">Le codec vidéo est forcé à AVC (H.264)</string>
   <string name="morphe_force_avc_codec_summary_off">Le codec vidéo est déterminé automatiquement</string>
-  <string name="morphe_force_avc_codec_user_dialog_message">"Avantages :
-• Peut améliorer l'autonomie de la batterie
-• Peut restaurer les résolutions vidéo manquantes sur les appareils plus anciens
+  <string name="morphe_force_avc_codec_user_dialog_message">"Avantages :
+• Peut améliorer l’autonomie de la batterie
+• Peut restaurer des résolutions vidéo manquantes sur les appareils plus anciens  
 
-Limitations :
-• La résolution maximale est 1080p
-• La lecture vidéo utilisera plus de données Internet qu'avec VP9 ou AV1
-• Les vidéos HDR n'utiliseront pas AVC
-• Certains appareils ne peuvent pas forcer l'utilisation d'AVC"</string>
+Limitations :
+• Résolution maximale limitée à 1080p
+• La lecture vidéo consommera plus de données internet que VP9 ou AV1
+• Les vidéos HDR n’utiliseront pas AVC
+• Certains appareils ne permettent pas de forcer AVC
+
+"</string>
   <!-- video.quality.advancedVideoQualityMenuPatch -->
   <string name="morphe_advanced_video_quality_menu_title">Afficher le menu de qualité vidéo avancé</string>
   <string name="morphe_advanced_video_quality_menu_summary_on">Le menu de qualité vidéo avancé est affiché</string>
   <string name="morphe_advanced_video_quality_menu_summary_off">Le menu de qualité vidéo avancé n\'est pas affiché</string>
   <!-- interaction.seekbar.enableSlideToSeekPatch -->
-  <string name="morphe_slide_to_seek_title">Activer Glisser pour rechercher</string>
-  <string name="morphe_slide_to_seek_summary_on">Glisser pour rechercher est activé</string>
-  <string name="morphe_slide_to_seek_summary_off">Glisser pour rechercher est désactivé</string>
+  <string name="morphe_slide_to_seek_title">Activer \'Faites glisser pour rechercher\'</string>
+  <string name="morphe_slide_to_seek_summary_on">Faites glisser pour rechercher est activé</string>
+  <string name="morphe_slide_to_seek_summary_off">Faites glisser pour rechercher n\'est pas activé</string>
   <!-- misc.fix.playback.spoofVideoStreamsPatch -->
-  <string name="morphe_spoof_video_streams_av1_title">Autoriser Android VR AV1</string>
+  <string name="morphe_spoof_video_streams_av1_title">Autoriser AV1 sur Android VR</string>
   <string name="morphe_spoof_video_streams_av1_summary_on">"Le codec vidéo est AVC (H.264), VP9 ou AV1
 
-La lecture peut être saccadée et des images peuvent être perdues"</string>
+La lecture peut présenter des saccades ou des pertes d’images 
+"</string>
   <string name="morphe_spoof_video_streams_av1_summary_off">Le codec vidéo est AVC (H.264) ou VP9</string>
-  <string name="morphe_spoof_video_streams_av1_user_dialog_message">"L'activation de ce paramètre permet l'utilisation du décodage AV1 logiciel.
+  <string name="morphe_spoof_video_streams_av1_user_dialog_message">"L’activation de ce paramètre peut utiliser le décodage logiciel AV1.
 
-La lecture vidéo avec AV1 peut être saccadée et des images peuvent être perdues."</string>
+La lecture de vidéos en AV1 peut présenter des saccades ou des pertes d’images."</string>
   <string name="morphe_spoof_video_streams_about_title">Effets secondaires de la falsification</string>
-  <string name="morphe_spoof_video_streams_about_experimental">• Client expérimental, peut cesser de fonctionner à tout moment</string>
-  <string name="morphe_spoof_video_streams_about_playback_failure">• Les vidéos sont susceptibles de s\'arrêter à 1:00, ou de ne pas être disponibles dans certaines régions</string>
-  <string name="morphe_spoof_video_streams_about_no_audio_tracks">• Le menu Piste audio est absent</string>
+  <string name="morphe_spoof_video_streams_about_experimental">• Client expérimental qui peut cesser de fonctionner à tout moment</string>
+  <string name="morphe_spoof_video_streams_about_playback_failure">• La vidéo peut s’arrêter à 1:00, ou ne pas être disponible dans certaines régions</string>
+  <string name="morphe_spoof_video_streams_about_no_audio_tracks">• Le menu \'Piste Audio\' est manquant</string>
   <string name="morphe_spoof_video_streams_about_no_av1">• Codec vidéo AV1 indisponible</string>
   <string name="morphe_spoof_video_streams_about_no_stable_volume">• Le volume stable n\'est pas disponible</string>
-  <string name="morphe_spoof_video_streams_about_kids_videos">• La lecture des vidéos pour enfants peut ne pas fonctionner lorsque vous êtes déconnecté ou en mode navigation privée</string>
+  <string name="morphe_spoof_video_streams_about_kids_videos">• Les vidéos pour enfants peuvent ne pas se lire en mode déconnecté ou en navigation privée</string>
   <!-- "Force original audio" should match the language used in 'morphe_force_original_audio_title'. -->
   <string name="morphe_spoof_video_streams_about_no_force_original_audio">• Forcer la langue audio d\'origine n\'est pas disponible</string>
-  <string name="morphe_spoof_streaming_data_stats_for_nerds_title">Afficher dans les Statistiques avancées</string>
-  <string name="morphe_spoof_streaming_data_stats_for_nerds_summary_on">Le type de client est affiché dans les Statistiques avancées</string>
-  <string name="morphe_spoof_streaming_data_stats_for_nerds_summary_off">Le client est caché dans les Statistiques avancées</string>
+  <string name="morphe_spoof_streaming_data_stats_for_nerds_title">Afficher dans les \'Statistiques avancées\'</string>
+  <string name="morphe_spoof_streaming_data_stats_for_nerds_summary_on">Le type de client est affiché dans \'Statistiques avancées\'</string>
+  <string name="morphe_spoof_streaming_data_stats_for_nerds_summary_off">Le client est masqué dans \'Statistiques avancées\'</string>
 </resources>

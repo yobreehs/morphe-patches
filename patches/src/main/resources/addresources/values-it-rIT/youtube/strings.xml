@@ -21,7 +21,7 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_00_about_title">Informazioni</string>
   <string name="morphe_settings_screen_01_ads_title">Pubblicità</string>
   <string name="morphe_settings_screen_02_alt_thumbnails_title">Miniature alternative</string>
-  <string name="morphe_settings_screen_03_feed_title">Alimenta</string>
+  <string name="morphe_settings_screen_03_feed_title">Feed</string>
   <string name="morphe_settings_screen_04_general_title">Generale</string>
   <string name="morphe_settings_screen_05_player_title">Lettore</string>
   <string name="morphe_settings_screen_07_seekbar_title">Barra di avanzamento</string>
@@ -1139,7 +1139,6 @@ Se in seguito verrà disattivato, si consiglia di cancellare i dati dell'app per
   <string name="morphe_spoof_app_version_target_entry_1">20.13.41 - Ripristina la barra delle azioni video non compressa</string>
   <string name="morphe_spoof_app_version_target_entry_2">20.05.46 - Ripristina la funzionalità della trascrizione</string>
   <string name="morphe_spoof_app_version_target_entry_3">19.35.36 - Ripristinare le vecchie icone del player Shorts</string>
-  <string name="morphe_spoof_app_version_target_entry_4">19.01.34 - Ripristina le vecchie icone di navigazione</string>
   <!-- layout.startpage.changeStartPagePatch -->
   <string name="morphe_change_start_page_title">Cambia pagina iniziale</string>
   <string name="morphe_change_start_page_entry_default">Predefinito</string>

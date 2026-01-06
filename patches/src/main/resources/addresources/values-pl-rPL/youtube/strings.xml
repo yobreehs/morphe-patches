@@ -1139,7 +1139,6 @@ Jeśli później zostanie to wyłączone, rekomendowane jest usunięcie danych a
   <string name="morphe_spoof_app_version_target_entry_1">20.13.41 - Przywraca nieskondensowany pasek akcji filmu</string>
   <string name="morphe_spoof_app_version_target_entry_2">20.05.46 - Przywraca funkcjonalność transkrypcji</string>
   <string name="morphe_spoof_app_version_target_entry_3">19.35.36 - Przywraca stare ikony w odtwarzaczu Shortsów</string>
-  <string name="morphe_spoof_app_version_target_entry_4">19.01.34 – Przywraca stare ikony nawigacji</string>
   <!-- layout.startpage.changeStartPagePatch -->
   <string name="morphe_change_start_page_title">Zmień stronę startową</string>
   <string name="morphe_change_start_page_entry_default">Domyślna</string>

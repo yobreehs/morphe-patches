@@ -66,7 +66,7 @@ Second \"item\" text"</string>
   <string name="morphe_settings_about_links_body_version_current">Ви використовуєте останню версію Morphe Patches &lt;i&gt;%s&lt;/i&gt;</string>
   <string name="morphe_settings_about_links_body_version_outdated">Ви використовуєте Morphe Patches версії &lt;i&gt;%1$s&lt;/i&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Доступне оновлення: &lt;i&gt;%2$s&lt;/i&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Щоб оновити ваші патчі, скористайтесь Morphe для повторного патчування цього додатка</string>
   <string name="morphe_settings_about_links_dev_header">Примітка</string>
-  <string name="morphe_settings_about_links_dev_body">Ця версія є передрелізною, тому у Вас можуть виникати несподівані проблеми</string>
+  <string name="morphe_settings_about_links_dev_body">Ця версія є попередньою, тому у вас можуть виникати несподівані проблеми</string>
   <string name="morphe_settings_about_links_header">Офіційні посилання</string>
   <string name="morphe_settings_about_links_website">Вебсайт</string>
   <string name="morphe_settings_about_links_donate">Підтримати</string>
@@ -77,12 +77,12 @@ Second \"item\" text"</string>
   <string name="morphe_debug_title">Журнал налагодження</string>
   <string name="morphe_debug_summary_on">Журнали налагодження ввімкнено</string>
   <string name="morphe_debug_summary_off">Журнали налагодження вимкнено</string>
-  <string name="morphe_debug_stacktrace_title">Реєструвати трасування стека</string>
+  <string name="morphe_debug_stacktrace_title">Журнал стека трасування</string>
   <string name="morphe_debug_stacktrace_summary_on">Журнали налагодження містять трасування стека</string>
   <string name="morphe_debug_stacktrace_summary_off">Журнали налагодження не містять трасування стека</string>
-  <string name="morphe_debug_toast_on_error_title">Показувати тост при помилці Morphe</string>
-  <string name="morphe_debug_toast_on_error_summary_on">Тост показується, якщо сталася помилка</string>
-  <string name="morphe_debug_toast_on_error_summary_off">Тост не показується, якщо сталася помилка</string>
+  <string name="morphe_debug_toast_on_error_title">Показати повідомлення про помилку Morphe</string>
+  <string name="morphe_debug_toast_on_error_summary_on">Повідомлення показується, якщо сталася помилка</string>
+  <string name="morphe_debug_toast_on_error_summary_off">Повідомлення не показується, якщо сталася помилка</string>
   <string name="morphe_debug_toast_on_error_user_dialog_message">"Вимкнення сповіщень про помилки приховує всі сповіщення про помилки Morphe.
 
 Ви не будете отримувати сповіщення про будь-які непередбачувані події."</string>
@@ -95,18 +95,18 @@ Second \"item\" text"</string>
   <string name="morphe_debug_logs_clear_buffer_title">Очистити журнали налагодження</string>
   <string name="morphe_debug_logs_clear_buffer_summary">Очищує всі збережені журнали налагодження Morphe</string>
   <string name="morphe_debug_logs_clear_toast">Журнали очищено</string>
-  <string name="morphe_debug_feature_flags_manager_title">Менеджер експериментальних прапорців</string>
-  <string name="morphe_debug_feature_flags_manager_summary">Керувати експериментальними boolean прапорцями</string>
+  <string name="morphe_debug_feature_flags_manager_title">Функція прапорців менеджера</string>
+  <string name="morphe_debug_feature_flags_manager_summary">Керування логічних функцій прапорцями</string>
   <string name="morphe_debug_feature_flags_manager_active_header">Активні (%d)</string>
   <string name="morphe_debug_feature_flags_manager_blocked_header">Заблоковані (%d)</string>
-  <string name="morphe_debug_feature_flags_manager_search_hint">Пошук...</string>
+  <string name="morphe_debug_feature_flags_manager_search_hint">Пошук прапорів...</string>
   <string name="morphe_debug_feature_flags_manager_toast_saved">Прапорці збережено</string>
   <string name="morphe_debug_feature_flags_manager_toast_reset">Прапорці скинуто</string>
   <string name="morphe_debug_feature_flags_manager_toast_copied">Прапорці скопійовано до буфера обміну</string>
   <!-- Could be it's own resource file, but for simplicity it's shared among all apps. -->
   <!-- misc.gms.gmsCoreSupportResourcePatch -->
   <string name="microg_settings_title">Налаштування GmsCore</string>
-  <string name="microg_settings_summary">Відкрити GmsCore для налаштування та входу в обліковий запис Google</string>
+  <string name="microg_settings_summary">Налаштування для GmsCore</string>
   <!-- Translations of this should not be longer than the original English text, otherwise the text can be clipped and not entirely shown. -->
   <string name="gms_core_toast_not_installed_message">MicroG не встановлено. Встановіть його.</string>
   <string name="gms_core_dialog_title">Потрібна дія</string>
@@ -117,9 +117,9 @@ Second \"item\" text"</string>
 
 Це необхідно для роботи програми."</string>
   <string name="gms_core_dialog_open_website_text">Відкрити вебсайт</string>
-  <string name="gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"Оптимізація батерії для MicroG має бути вимкнена для запобіжження проблем.
+  <string name="gms_core_dialog_not_whitelisted_using_battery_optimizations_message">"Оптимізація батареї для MicroG має бути вимкнена для запобігання проблем.
 
-Вимкнення оптимізації батерії для MicroG не вплине негативно на користування.
+Вимкнення оптимізації батареї для MicroG не вплине негативно на користування.
 
 Натисніть кнопку «Продовжити» та вимкніть оптимізацію."</string>
   <string name="gms_core_dialog_continue_text">Продовжити</string>

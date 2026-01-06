@@ -36,7 +36,7 @@ Second \"item\" text"</string>
   <string name="morphe_shorts_disable_background_playback_summary_on">Фонове відтворення Shorts вимкнено</string>
   <string name="morphe_shorts_disable_background_playback_summary_off">Фонове відтворення Shorts увімкнено</string>
   <!-- misc.debugging.enableDebuggingPatch -->
-  <string name="morphe_debug_protobuffer_title">Реєструвати буфер протоколу</string>
+  <string name="morphe_debug_protobuffer_title">Журнал протоколу буфера</string>
   <string name="morphe_debug_protobuffer_summary_on">Журнали налагодження містять протобуфер</string>
   <string name="morphe_debug_protobuffer_summary_off">Журнали налагодження не містять протобуфер</string>
   <string name="morphe_debug_protobuffer_user_dialog_message">"Увімкнення цього налаштування реєструватиме додаткові дані про макет, зокрема текст на екрані для деяких компонентів інтерфейсу.
@@ -92,9 +92,9 @@ Second \"item\" text"</string>
   <string name="morphe_hide_notify_me_button_title">Приховати кнопку \"Сповістити мене\"</string>
   <string name="morphe_hide_notify_me_button_summary_on">Кнопку \"Сповістити мене\" приховано</string>
   <string name="morphe_hide_notify_me_button_summary_off">Кнопка \"Сповістити мене\" показується</string>
-  <string name="morphe_hide_playables_title">Приховати \"Ігрову кімнату\"</string>
-  <string name="morphe_hide_playables_summary_on">Розділ \"Ігрова кімната\" приховано</string>
-  <string name="morphe_hide_playables_summary_off">Розділ \"Ігрова кімната\" показується</string>
+  <string name="morphe_hide_playables_title">Приховати \"ігрові елементи\"</string>
+  <string name="morphe_hide_playables_summary_on">Розділ \"ігрові елементи\" приховано</string>
+  <string name="morphe_hide_playables_summary_off">Розділ \"ігрові елементи\" показується</string>
   <!-- 'Show more' should be translated using the same localized wording YouTube displays for the button.
           This button usually appears when searching for a YouTube creator. -->
   <string name="morphe_hide_show_more_button_title">Приховати кнопку \"Показати більше\"</string>
@@ -1139,7 +1139,6 @@ Second \"item\" text"</string>
   <string name="morphe_spoof_app_version_target_entry_1">20.13.41 - Відновити розгорнуту панель дій відео</string>
   <string name="morphe_spoof_app_version_target_entry_2">20.05.46 - Відновити функціональність транскрипції</string>
   <string name="morphe_spoof_app_version_target_entry_3">19.35.36 - Відновити старі іконки плеєра Shorts</string>
-  <string name="morphe_spoof_app_version_target_entry_4">19.01.34 - Відновити старі іконки панелі навігації</string>
   <!-- layout.startpage.changeStartPagePatch -->
   <string name="morphe_change_start_page_title">Змінити початкову сторінку</string>
   <string name="morphe_change_start_page_entry_default">За замовчуванням</string>
