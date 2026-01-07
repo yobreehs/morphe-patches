@@ -1,3 +1,10 @@
+# [1.2.0-dev.4](https://github.com/MorpheApp/morphe-patches/compare/v1.2.0-dev.3...v1.2.0-dev.4) (2026-01-07)
+
+
+### Bug Fixes
+
+* Changing default enum setting type setting does not always always clear preference data ([302fa77](https://github.com/MorpheApp/morphe-patches/commit/302fa773b97d032e6d0a1ff0f1de26b8ef348f13))
+
 # [1.2.0-dev.3](https://github.com/MorpheApp/morphe-patches/compare/v1.2.0-dev.2...v1.2.0-dev.3) (2026-01-06)
 
 
