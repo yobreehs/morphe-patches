@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/MorpheApp/morphe-patches/compare/v1.1.0...v1.2.0) (2026-01-07)
+
+
+### Bug Fixes
+
+* Changing default enum setting type setting does not always always clear preference data ([302fa77](https://github.com/MorpheApp/morphe-patches/commit/302fa773b97d032e6d0a1ff0f1de26b8ef348f13))
+* **YouTube - Hide ads:** Hide new type of general ad, movie ad and web search result ([#92](https://github.com/MorpheApp/morphe-patches/issues/92)) ([ed5c287](https://github.com/MorpheApp/morphe-patches/commit/ed5c2875be27a178368203251e7c07caa18556cf))
+* **YouTube - Hide layout components:** Do not change system nav bar transparency when disabling status bar transparency ([2b1330c](https://github.com/MorpheApp/morphe-patches/commit/2b1330c364cbed8ae243554616d88205fcf96376))
+
+
+### Features
+
+* **YouTube - Auto-captions:** Add an option to disable auto-captions when the device volume is muted ([#37](https://github.com/MorpheApp/morphe-patches/issues/37)) ([369f91e](https://github.com/MorpheApp/morphe-patches/commit/369f91e509d5b273624be5c75466757d9ed20a2a))
+
 # [1.2.0-dev.4](https://github.com/MorpheApp/morphe-patches/compare/v1.2.0-dev.3...v1.2.0-dev.4) (2026-01-07)
 
 
