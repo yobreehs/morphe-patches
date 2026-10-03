@@ -17,6 +17,11 @@ Second \"item\" text"</string>
 
 -->
 <resources>
+  <!-- layout.theme.splashAnimationPatch -->
+  <string name="morphe_splash_screen_animation_style_title">Animación de inicio</string>
+  <string name="morphe_splash_screen_animation_style_entry_1">Desactivado</string>
+  <string name="morphe_splash_screen_animation_style_entry_2">Color</string>
+  <string name="morphe_splash_screen_animation_style_entry_3">Monocromático</string>
   <!-- misc.initialization.initializationPatch -->
   <string name="morphe_restart_first_run">Reiniciar para finalizar la configuración</string>
   <!-- layout.branding.baseCustomBrandingPatch -->
@@ -44,7 +49,7 @@ Second \"item\" text"</string>
   <string name="morphe_external_downloader_screen_title">Descargas externas</string>
   <string name="morphe_external_downloader_name_title">Nombre del paquete del descargador</string>
   <string name="morphe_external_downloader_name_summary">Nombre del paquete de tu aplicación de descarga externa instalada</string>
-  <string name="morphe_external_downloader_other_item_hint">Ingresa el nombre del paquete</string>
+  <string name="morphe_external_downloader_other_item_hint">Introduce el nombre del paquete</string>
   <string name="morphe_external_downloader_other_item">Otro</string>
   <string name="morphe_external_downloader_not_found_title">Aplicación no instalada</string>
   <string name="morphe_external_downloader_not_installed_warning">%s no está instalado. Por favor, instálalo.</string>
@@ -65,6 +70,15 @@ Verifica que el nombre del paquete sea correcto y que la aplicación esté insta
   <string name="morphe_custom_branding_icon_entry_6">Morphe play negro</string>
   <!-- Translations of this should be identical to morphe_custom_branding_name_entry_5 -->
   <string name="morphe_custom_branding_icon_entry_7">Personalizado</string>
+  <string name="morphe_custom_branding_icon_user_dialog_message">"Esto cambia el icono que se muestra en el lanzador de aplicaciones.
+
+Este ajuste no cambiará el icono en ninguna de estas ubicaciones:
+• Lista de aplicaciones de los ajustes del sistema del dispositivo
+• Ciertas notificaciones push
+• Selector de aplicaciones 'Abrir con'
+• Icono de Android Auto
+
+Para cambiar el icono en todas partes, vuelve a parchear y cambia la opción de parches 'Icono de la aplicación'"</string>
   <string name="morphe_custom_branding_notification_icon_title">Icono de notificación</string>
   <string name="morphe_custom_branding_notification_icon_entry_1">Coincidir con el icono de la aplicación</string>
   <string name="morphe_custom_branding_notification_icon_entry_3">Morphe play</string>
@@ -75,11 +89,11 @@ Verifica que el nombre del paquete sea correcto y que la aplicación esté insta
   <!-- misc.spoof.spoofVideoStreamsPatch -->
   <string name="morphe_spoof_video_streams_screen_title">Falsificar transmisiones de vídeo</string>
   <string name="morphe_spoof_video_streams_screen_summary">Falsifica las transmisiones de vídeo del cliente para evitar problemas de reproducción</string>
-  <string name="morphe_spoof_video_streams_summary">"Corrige los problemas de reproducción para la mayoría de los usuarios solicitando una transmisión de video compatible
+  <string name="morphe_spoof_video_streams_summary">"Corrige los problemas de reproducción para la mayoría de los usuarios solicitando una transmisión de vídeo compatible
 
-Si eres usuario de YouTube Premium, esta configuración puede no ser necesaria"</string>
+Si eres usuario de YouTube Premium, este ajuste puede no ser necesario"</string>
   <string name="morphe_spoof_video_streams_no_clients_toast">No se ha podido obtener ninguna transmisión del cliente</string>
-  <string name="morphe_spoof_video_streams_user_dialog_message">Desactivar esta configuración puede causar problemas de reproducción.</string>
+  <string name="morphe_spoof_video_streams_user_dialog_message">Desactivar este ajuste puede causar problemas de reproducción.</string>
   <!-- 'Spoof video streams' must use the same translation as morphe_spoof_video_streams_title.
          "Sign in to Android VR" must use the same translation as morphe_spoof_video_streams_sign_in_android_vr_about_title -->
   <string name="morphe_spoof_video_streams_no_clients_suggest_vr_toast">Prueba a activar: \'Falsificar transmisiones de vídeo\' &gt; \'Inicio de sesión de Android VR\'</string>
@@ -106,8 +120,8 @@ Para iniciar sesión, pulsa en Continuar"</string>
 4. Pulsa 'Permitir acceso a YouTube VR'
 5. Vuelve a esta aplicación después de ver el mensaje 'Dispositivo conectado'"</string>
   <string name="morphe_spoof_video_streams_sign_in_android_vr_activation_code_dialog_open_website">Abrir sitio web</string>
-  <string name="morphe_spoof_video_streams_sign_in_android_vr_toast_get_activation_code_failed">No se pudo emitir un código de activación</string>
-  <string name="morphe_spoof_video_streams_sign_in_android_vr_toast_get_authorization_code_failed">No se pudo emitir un token de autenticación</string>
+  <string name="morphe_spoof_video_streams_sign_in_android_vr_toast_get_activation_code_failed">Error al emitir un código de activación</string>
+  <string name="morphe_spoof_video_streams_sign_in_android_vr_toast_get_authorization_code_failed">Error al emitir un token de autenticación</string>
   <string name="morphe_spoof_video_streams_sign_in_android_vr_success_dialog_title">Sesión iniciada correctamente</string>
   <string name="morphe_spoof_video_streams_sign_in_android_vr_success_dialog_message">"Autenticación guardada
 
@@ -122,6 +136,13 @@ Para iniciar sesión, pulsa en Continuar"</string>
   <string name="morphe_oauth2_connection_failure_auth_error">No se puede iniciar sesión en VR: %s</string>
   <string name="morphe_oauth2_toast_reset">Desconectado de Android VR</string>
   <string name="morphe_oauth2_toast_invalid">Token de inicio de sesión de VR no válido, intenta iniciar sesión en VR de nuevo</string>
+  <!-- misc.medianotification.mediaNotificationControlsPatch -->
+  <string name="morphe_notification_media_screen_title">Controles multimedia de notificación</string>
+  <string name="morphe_notification_media_screen_summary">Personaliza los controles de reproducción que se muestran en la pantalla de bloqueo y el panel de notificaciones</string>
+  <string name="morphe_hide_notification_media_prev_next_title">Ocultar botones Anterior y Siguiente</string>
+  <string name="morphe_hide_notification_media_prev_next_summary">Oculta los botones Anterior y Siguiente en la notificación multimedia, la pantalla de bloqueo y los controles de los auriculares</string>
+  <string name="morphe_disable_notification_media_seekbar_title">Desactivar barra de progreso</string>
+  <string name="morphe_disable_notification_media_seekbar_summary">Impide arrastrar la barra de progreso en la pantalla de bloqueo y el panel de notificaciones</string>
   <!-- misc.quic.disableQUICProtocolPatch -->
   <string name="morphe_disable_quic_protocol_title">Desactivar protocolo QUIC</string>
   <!-- misc.audio.drc.disableDRCAudioPatch  -->
@@ -159,10 +180,10 @@ Para iniciar sesión, pulsa en Continuar"</string>
   <string name="morphe_replace_music_with_youtube_title">Cambiar enlaces compartidos a youtube.com</string>
   <string name="morphe_replace_music_with_youtube_summary">Reemplaza music.youtube.com por youtube.com en los enlaces compartidos</string>
   <string name="morphe_replace_links_with_shortener_title">Cambiar enlaces compartidos a youtu.be</string>
-  <string name="morphe_replace_links_with_shortener_summary">Fuerza a los videos a usar el formato de URL abreviada youtu.be</string>
+  <string name="morphe_replace_links_with_shortener_summary">Fuerza a los vídeos a usar el formato de URL abreviada youtu.be</string>
   <!-- misc.debugging.enableDebuggingPatch -->
-  <string name="morphe_debug_protobuffer_title">Registrar búfer de protocolo</string>
-  <string name="morphe_debug_protobuffer_summary">Agrega información de registro adicional para que los desarrolladores identifiquen los componentes de la app</string>
+  <string name="morphe_debug_protobuffer_title">Búfer de protocolo de registro de depuración</string>
+  <string name="morphe_debug_protobuffer_summary">Añade información de registro adicional para que los desarrolladores identifiquen los componentes de la aplicación</string>
   <string name="morphe_debug_protobuffer_user_dialog_message">"Si activas este ajuste, se registrarán datos de diseño adicionales, incluido el texto en pantalla de algunos componentes de la interfaz de usuario.
 
 Esto puede ayudar a identificar componentes al crear filtros personalizados.
@@ -201,14 +222,14 @@ Para usar esta función, desactiva 'Falsificar transmisiones de vídeo'"</string
 
 Pulsa aquí para descargar PotHelper"</string>
   <!-- misc.spoof.appversion.spoofAppVersionPatch -->
-  <string name="morphe_spoof_app_version_title">Falsificar versión de la app</string>
+  <string name="morphe_spoof_app_version_title">Falsificar versión de la aplicación</string>
   <string name="morphe_spoof_app_version_summary">Engaña al servidor para que crea que estás usando una versión anterior de la aplicación, restaurando así funciones de la interfaz antigua</string>
   <string name="morphe_spoof_app_version_user_dialog_message">"La versión de la aplicación se falsificará a una versión anterior.
 
 Esto cambiará la apariencia y las características de la aplicación, pero pueden producirse efectos secundarios desconocidos.
 
 Si se desactiva posteriormente, se recomienda borrar los datos de la aplicación para evitar errores en la interfaz de usuario."</string>
-  <string name="morphe_spoof_app_version_target_title">Versión a falsificar de la app</string>
+  <string name="morphe_spoof_app_version_target_title">Versión de la aplicación a la que falsificar</string>
   <!-- misc.framerate.baseAppRefreshRatePatch -->
   <string name="morphe_app_refresh_rate_title">Tasa de refresco de la aplicación</string>
   <string name="morphe_app_refresh_rate_default">Predeterminada</string>
@@ -226,14 +247,13 @@ Si se desactiva posteriormente, se recomienda borrar los datos de la aplicación
   <string name="morphe_ryd_failure_generic">Los \'No me gusta\' no están disponibles (%s)</string>
   <!-- Video likes have been set to hidden by the video uploader. -->
   <string name="morphe_ryd_video_likes_hidden_by_video_owner">Oculto por el propietario</string>
+  <string name="morphe_ryd_accessibility_dislike_count">No me gusta este vídeo, al igual que a otras %s personas</string>
+  <string name="morphe_ryd_accessibility_dislike_percentage">No me gusta este vídeo; el %s de los votos son No me gusta</string>
   <string name="morphe_ryd_enabled_title">Activar Return YouTube Dislike</string>
   <string name="morphe_ryd_dislike_percentage_title">Mostrar \'No me gusta\' como porcentaje</string>
   <string name="morphe_ryd_dislike_percentage_summary">Muestra los \'No me gusta\' como un porcentaje de las reacciones positivas en lugar de un número</string>
-  <!-- Translations should match the language used in 'morphe_sb_enable_compact_skip_button'. -->
-  <string name="morphe_ryd_compact_layout_title">Usar botón de \'Me gusta\' compacto</string>
-  <string name="morphe_ryd_compact_layout_summary">Reduce el ancho del botón de \'Me gusta\' para ahorrar espacio</string>
   <string name="morphe_ryd_estimated_like_title">Mostrar estimación de \'Me gusta\'</string>
-  <string name="morphe_ryd_estimated_like_summary">Muestra una estimación del número de \'Me gusta\' en los videos donde el creador ha desactivado las reacciones</string>
+  <string name="morphe_ryd_estimated_like_summary">Muestra una estimación del número de \'Me gusta\' en los vídeos donde el creador ha desactivado los \'Me gusta\'</string>
   <string name="morphe_ryd_toast_on_connection_error_title">Mostrar alertas de error de conexión</string>
   <string name="morphe_ryd_toast_on_connection_error_summary">Muestra una notificación cuando el servidor de Return YouTube Dislike no está disponible</string>
   <string name="morphe_ryd_attribution_summary">"Los datos son proporcionados por la API de Return YouTube Dislike.
@@ -244,12 +264,12 @@ Pulsa aquí para abrir ReturnYouTubeDislike.com"</string>
   <string name="morphe_ryd_statistics_getFetchCallResponseTimeAverage_title">Tiempo de respuesta de la API, promedio</string>
   <string name="morphe_ryd_statistics_getFetchCallResponseTimeMin_title">Tiempo de respuesta de la API, mínimo</string>
   <string name="morphe_ryd_statistics_getFetchCallResponseTimeMax_title">Tiempo de respuesta de la API, máximo</string>
-  <string name="morphe_ryd_statistics_getFetchCallResponseTimeLast_title">Tiempo de respuesta de la API, último video</string>
+  <string name="morphe_ryd_statistics_getFetchCallResponseTimeLast_title">Tiempo de respuesta de la API, último vídeo</string>
   <string name="morphe_ryd_statistics_getFetchCallResponseTimeLast_rate_limit_summary">Los \'No me gusta\' no están disponibles temporalmente: se ha alcanzado el límite de solicitudes de la API del cliente</string>
   <string name="morphe_ryd_statistics_getFetchCallCount_title">Obtención de votos de la API, número de llamadas</string>
   <string name="morphe_ryd_statistics_getFetchCallCount_zero_summary">No hay llamadas de red realizadas</string>
   <string name="morphe_ryd_statistics_getFetchCallCount_non_zero_summary">%d llamadas de red realizadas</string>
-  <string name="morphe_ryd_statistics_getFetchCallNumberOfFailures_title">Obtención de votos de la API, número de errores</string>
+  <string name="morphe_ryd_statistics_getFetchCallNumberOfFailures_title">Obtención de votos de la API, número de tiempos de espera agotados</string>
   <string name="morphe_ryd_statistics_getFetchCallNumberOfFailures_zero_summary">No se agotó el tiempo de espera de ninguna llamada de red</string>
   <string name="morphe_ryd_statistics_getFetchCallNumberOfFailures_non_zero_summary">%d llamadas de red agotaron el tiempo de espera</string>
   <string name="morphe_ryd_statistics_getNumberOfRateLimitRequestsEncountered_title">Límites de la API para el cliente</string>

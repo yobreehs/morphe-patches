@@ -51,6 +51,15 @@ public final class HorizontalShelvesFilter extends Filter {
                         "shopping_item_card_list"
                 ),
                 new ByteArrayFilterGroup(
+                        Settings.HIDE_HISTORY_SHELF,
+                        // Browse id of the History page, opened by the shelf header.
+                        "FEhistory"
+                ),
+                new ByteArrayFilterGroup(
+                        Settings.HIDE_MOVIES_SECTION,
+                        "movie_card.e"
+                ),
+                new ByteArrayFilterGroup(
                         Settings.HIDE_PLAYABLES,
                         "FEmini_app_destination"
                 ),
@@ -82,7 +91,7 @@ public final class HorizontalShelvesFilter extends Filter {
     public boolean isFiltered(ContextInterface contextInterface,
                               String identifier,
                               String accessibility,
-                              String path,
+                              CharSequence path,
                               byte[] buffer,
                               BufferAsciiStrings asciiStrings,
                               StringFilterGroup matchedGroup,

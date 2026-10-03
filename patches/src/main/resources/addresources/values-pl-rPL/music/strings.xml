@@ -16,6 +16,94 @@ Second \"item\" text"</string>
 
 -->
 <resources>
+  <!-- app.morphe.patches.music.interaction.jam -->
+  <string name="morphe_music_jam_update_host_controls">Zaktualizuj modyfikację gospodarza Jam, aby używać wstrzymywania i wznawiania</string>
+  <string name="morphe_music_jam_probe_title">Udostępnianie kolejki Jam</string>
+  <string name="morphe_music_jam_probe_summary">Rozpocznij pobliski Jam lub dołącz do niego i edytuj jego kolejkę przez Jam Layer</string>
+  <string name="morphe_music_jam_enabled_title">Włącz udostępnianie kolejki Jam</string>
+  <string name="morphe_music_jam_enabled_summary">Włącza integrację Jam po ponownym uruchomieniu YouTube Music</string>
+  <string name="morphe_music_jam_download_title">Pobierz Jam Layer, aby rozpocząć</string>
+  <string name="morphe_music_jam_download_summary">Otwórz najnowsze wydanie Jam Layer w przeglądarce</string>
+  <string name="morphe_music_jam_controls_title">Sterowanie Jam</string>
+  <string name="morphe_music_jam_controls_summary">Rozpocznij pobliski Jam lub dołącz do niego i zarządzaj sesją</string>
+  <string name="morphe_music_jam_companion_package_title">Pakiet Jam Layer</string>
+  <string name="morphe_music_jam_companion_package_summary">Wybierz zainstalowaną aplikację towarzyszącą używaną do udostępniania pobliskiej kolejki</string>
+  <string name="morphe_music_jam_package_message">Użyj zainstalowanego pakietu towarzyszącego. Parowanie wymaga Twojej zgody i lokalnego tokena uprawnień</string>
+  <string name="morphe_music_jam_wifi_title">Włączyć Wi-Fi?</string>
+  <string name="morphe_music_jam_wifi_message">Włącz Wi-Fi, a następnie spróbuj ponownie rozpocząć Jam lub dołączyć do niego</string>
+  <string name="morphe_music_jam_wifi_settings">Otwórz ustawienia Wi-Fi</string>
+  <string name="morphe_music_jam_cancel">Anuluj</string>
+  <string name="morphe_music_jam_use_package">Użyj pakietu</string>
+  <string name="morphe_music_jam_invalid_package">Wprowadź prawidłową nazwę pakietu Androida</string>
+  <string name="morphe_music_jam_package_saved">Zapisano pakiet. Skonfiguruj Jam Layer, aby się połączyć</string>
+  <string name="morphe_music_jam_disconnected">Rozłączono z Jam</string>
+  <string name="morphe_music_jam_enable_layer_first">Najpierw włącz Jam Layer</string>
+  <string name="morphe_music_jam_enable_patch_first">Włącz udostępnianie kolejki Jam w ustawieniach, a następnie uruchom ponownie YouTube Music</string>
+  <string name="morphe_music_jam_install_layer_first">Najpierw zainstaluj wybrany pakiet Jam Layer</string>
+  <string name="morphe_music_jam_join_hint">Wpisz kod widoczny u gospodarza. Wi-Fi Aware może połączyć pobliskie urządzenia nawet w różnych sieciach LAN</string>
+  <string name="morphe_music_jam_join_with_code">Dołącz za pomocą kodu</string>
+  <string name="morphe_music_jam_join">Dołącz</string>
+  <string name="morphe_music_jam_scan_qr">Zeskanuj kod QR</string>
+  <string name="morphe_music_jam_invalid_invite">Wpisz ośmioznakowy kod lub wklej zaproszenie</string>
+  <string name="morphe_music_jam_join_your_jam">Dołącz do swojego Jam</string>
+  <string name="morphe_music_jam_copy_code">Skopiuj kod</string>
+  <string name="morphe_music_jam_code_clip">Kod Jam</string>
+  <string name="morphe_music_jam_show_qr">Pokaż kod QR</string>
+  <string name="morphe_music_jam_done">Gotowe</string>
+  <string name="morphe_music_jam_invite_title">Zaproś do swojego Jam</string>
+  <string name="morphe_music_jam_invite_message">Zeskanuj, aby dołączyć i edytować tę kolejkę. Zakończenie Jam cofa zaproszenie</string>
+  <string name="morphe_music_jam_copy_link">Skopiuj link</string>
+  <string name="morphe_music_jam_invitation_clip">Zaproszenie Jam</string>
+  <string name="morphe_music_jam_reconnecting_toast">Ponowne łączenie z Jam, spróbuj ponownie za chwilę</string>
+  <string name="morphe_music_jam_added_to_jam">Dodano do Jam</string>
+  <string name="morphe_music_jam_unavailable_toast">Jam jest niedostępny, utwór nie został dodany</string>
+  <string name="morphe_music_jam_your_jam">Twój Jam</string>
+  <string name="morphe_music_jam_listening_together">Wspólne słuchanie</string>
+  <string name="morphe_music_jam_joining_jam">Dołączanie do Jam</string>
+  <string name="morphe_music_jam_listen_together">Słuchaj razem</string>
+  <string name="morphe_music_jam_updating">Aktualizowanie Jam…</string>
+  <string name="morphe_music_jam_finding_host">Szukanie gospodarza przez Wi-Fi…</string>
+  <string name="morphe_music_jam_waiting_people">Oczekiwanie na uczestników</string>
+  <string name="morphe_music_jam_one_connected">%d połączona osoba</string>
+  <string name="morphe_music_jam_many_connected">Połączone osoby: %d</string>
+  <string name="morphe_music_jam_code_expires">Wpisz ten kod na pobliskim urządzeniu. Wi-Fi Aware działa w różnych sieciach LAN, jeśli jest obsługiwane. Wygasa za %d min.</string>
+  <string name="morphe_music_jam_seek_to">Przewinąć do %s?</string>
+  <string name="morphe_music_jam_edits_open">Edycja odblokowana</string>
+  <string name="morphe_music_jam_edits_locked">Edycja zablokowana</string>
+  <string name="morphe_music_jam_connected_aware">Połączono przez Wi-Fi Aware</string>
+  <string name="morphe_music_jam_connected_wifi">Połączono przez Wi-Fi</string>
+  <string name="morphe_music_jam_connected_bluetooth">Połączono przez Bluetooth</string>
+  <string name="morphe_music_jam_unsupported">Nieobsługiwane podczas Jam</string>
+  <string name="morphe_music_jam_cancelled">Anulowano dołączanie</string>
+  <string name="morphe_music_jam_reconnecting_host">Ponowne łączenie z gospodarzem…</string>
+  <string name="morphe_music_jam_share_prompt">Udostępnij kolejkę. Pozwól wszystkim dodawać utwory.</string>
+  <string name="morphe_music_jam_invite_people">Zaproś osoby</string>
+  <string name="morphe_music_jam_guest_edits">Goście mogą edytować kolejkę</string>
+  <string name="morphe_music_jam_end_jam">Zakończ Jam</string>
+  <string name="morphe_music_jam_participant_help">Gospodarz odtwarza muzykę. Dodawaj, przenoś lub usuwaj utwory bezpośrednio w kolejce YouTube Music</string>
+  <string name="morphe_music_jam_joining_help">Trzymaj oba urządzenia w pobliżu. Możesz anulować podczas wyszukiwania gospodarza</string>
+  <string name="morphe_music_jam_cancel_joining">Anuluj dołączanie</string>
+  <string name="morphe_music_jam_leave_jam">Opuść Jam</string>
+  <string name="morphe_music_jam_start_jam">Rozpocznij Jam</string>
+  <string name="morphe_music_jam_setup_layer">Skonfiguruj Jam Layer</string>
+  <string name="morphe_music_jam_manage">Zarządzaj</string>
+  <string name="morphe_music_jam_details">Szczegóły</string>
+  <string name="morphe_music_jam_open">Otwórz</string>
+  <string name="morphe_music_jam_loading_song_options">Wczytywanie opcji utworu…</string>
+  <string name="morphe_music_jam_song_options_unavailable">Opcje utworu niedostępne, spróbuj ponownie</string>
+  <string name="morphe_music_jam_song_options_failed">Nie udało się otworzyć opcji utworu</string>
+  <string name="morphe_music_jam_no_browser">Brak przeglądarki do pobrania Jam Layer</string>
+  <string name="morphe_music_jam_waiting_host_queue">Oczekiwanie na kolejkę gospodarza</string>
+  <string name="morphe_music_jam_open_song_first">Najpierw otwórz utwór w YouTube Music</string>
+  <string name="morphe_music_jam_play_on_host">Odtwórz u gospodarza</string>
+  <string name="morphe_music_jam_quit_and_play">Opuść Jam i odtwarzaj lokalnie</string>
+  <string name="morphe_music_jam_play_next">Odtwórz jako następny w Jam</string>
+  <string name="morphe_music_jam_add_to_queue">Dodaj do kolejki Jam</string>
+  <string name="morphe_music_jam_play_track">Odtwórz ten utwór Jam</string>
+  <string name="morphe_music_jam_choose_playback">Wybierz miejsce odtwarzania</string>
+  <string name="morphe_music_jam_move_host_here">Przenieś gospodarza tutaj</string>
+  <string name="morphe_music_jam_seek_not_ready">Utwór nie jest gotowy do przewijania</string>
+  <string name="morphe_music_jam_queue_changed_gesture">Kolejka została zmieniona, powtórz gest</string>
   <!-- layout.branding.customBrandingPatch -->
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Logo w nagłówku</string>
@@ -32,6 +120,50 @@ Second \"item\" text"</string>
   <string name="morphe_external_downloader_action_button_summary">Używa wybranej zewnętrznej aplikacji do pobierania zamiast domyślnego przycisku akcji Pobierz</string>
   <string name="morphe_external_downloader_flyout_menu_title">Zastąp menu Pobierz</string>
   <string name="morphe_external_downloader_flyout_menu_summary">Używa wybranej zewnętrznej aplikacji do pobierania zamiast domyślnego wysuwanego menu Pobierz</string>
+  <string name="morphe_music_in_app_downloads_title">Pobieranie w aplikacji</string>
+  <string name="morphe_music_in_app_downloads_summary">Pobiera dźwięk wewnątrz YouTube Music, zamiast otwierać zewnętrzną aplikację do pobierania</string>
+  <string name="morphe_music_in_app_downloads_user_dialog_message">"​Utwory są zapisywane w prywatnej pamięci aplikacji i zostaną usunięte w przypadku odinstalowania YouTube Music.
+
+​Gdy ta opcja jest włączona, karta Pobrane wyświetla te utwory zamiast biblioteki offline Music Premium. Wyłączenie jej przywraca pierwotny stan karty, a pobrane pliki Premium pozostają nienaruszone."</string>
+  <string name="morphe_music_downloads_screen_title">Pobrane</string>
+  <string name="morphe_music_downloads_empty">"Brak pobranych
+Tutaj pojawią się pobrane utwory"</string>
+  <string name="morphe_music_downloads_track_subtitle">%1$s • %2$s • %3$s MB</string>
+  <string name="morphe_music_downloads_summary">%1$s utw. • %2$s MB</string>
+  <string name="morphe_music_downloads_search_hint">Szukaj w pobranych</string>
+  <string name="morphe_music_downloads_sort">Sortuj</string>
+  <string name="morphe_music_downloads_sort_artist">Sortuj według wykonawcy</string>
+  <string name="morphe_music_downloads_sort_title">Sortuj według tytułu</string>
+  <string name="morphe_music_downloads_sort_size">Sortuj według rozmiaru</string>
+  <string name="morphe_music_downloads_delete_all">Usuń wszystkie pobrane</string>
+  <string name="morphe_music_downloads_delete_all_title">Usunąć wszystkie pobrane?</string>
+  <string name="morphe_music_downloads_delete_all_message">Wszystkie pobrane utwory zostaną usunięte z tego urządzenia</string>
+  <string name="morphe_music_downloads_all_deleted">Usunięto pobrane</string>
+  <string name="morphe_music_downloads_nothing_found">Nic nie znaleziono</string>
+  <string name="morphe_music_downloads_actions_for">Akcje dla %s</string>
+  <string name="morphe_music_downloads_play">Odtwórz</string>
+  <string name="morphe_music_downloads_play_pause">Odtwórz lub wstrzymaj</string>
+  <string name="morphe_music_downloads_previous">Poprzedni</string>
+  <string name="morphe_music_downloads_next">Następny</string>
+  <string name="morphe_music_downloads_pause">Wstrzymaj</string>
+  <string name="morphe_music_downloads_close">Zamknij</string>
+  <string name="morphe_music_downloads_delete">Usuń</string>
+  <string name="morphe_music_downloads_delete_track">Usuń pobrany utwór</string>
+  <string name="morphe_music_downloads_delete_track_title">Usunąć pobrany utwór?</string>
+  <string name="morphe_music_downloads_delete_track_message">Utwór %s zostanie usunięty z tego urządzenia</string>
+  <string name="morphe_music_downloads_track_deleted">Usunięto pobrany utwór</string>
+  <string name="morphe_music_downloads_track_delete_failed">Nie udało się usunąć pobranego utworu</string>
+  <string name="morphe_music_downloads_play_failed">Nie udało się odtworzyć pobranego utworu</string>
+  <string name="morphe_music_downloads_notification_channel">Pobieranie muzyki</string>
+  <string name="morphe_music_downloads_playback_channel">Odtwarzanie offline</string>
+  <string name="morphe_music_downloads_unknown_track">Nie udało się zidentyfikować utworu do pobrania</string>
+  <string name="morphe_music_downloads_already_running">Pobieranie już trwa</string>
+  <string name="morphe_music_downloads_already_saved">Już pobrano</string>
+  <string name="morphe_music_downloads_started">Rozpoczęto pobieranie</string>
+  <string name="morphe_music_downloads_starting">Rozpoczynanie pobierania…</string>
+  <string name="morphe_music_downloads_progress">Pobieranie: %s%%</string>
+  <string name="morphe_music_downloads_complete">Pobieranie ukończone</string>
+  <string name="morphe_music_downloads_failed">Pobieranie nie powiodło się</string>
   <!-- misc.settings.settingsPatch -->
   <!-- In languages where "About" is ambiguous, translate this as "About Morphe" (i.e., About this app). -->
   <string name="morphe_settings_music_screen_0_about_title">Informacje</string>
@@ -56,6 +188,7 @@ Second \"item\" text"</string>
   <string name="morphe_music_hide_lyrics_translate_button_title">Ukryj przycisk Przetłumacz</string>
   <string name="morphe_music_hide_new_from_shelf_title">Ukryj sekcję \"Nowości od\"</string>
   <string name="morphe_music_hide_playlist_shelves_title">Ukryj sekcje playlist</string>
+  <string name="morphe_music_hide_podcast_episode_download_button_title">Ukryj przycisk Pobierz odcinek podcastu</string>
   <string name="morphe_music_hide_repeat_button_title">Ukryj przycisk Powtórz</string>
   <string name="morphe_music_hide_shuffle_button_title">Ukryj przycisk \"Odtwarzaj losowo\"</string>
   <string name="morphe_music_hide_speed_dial_shelf_title">Ukryj sekcję \"Szybkie wybieranie\"</string>
@@ -135,6 +268,10 @@ Ekran blokady lub powiadomienie może przez chwilę pokazywać nieaktualny stan 
   <string name="morphe_music_remember_repeat_state_title">Zapamiętaj stan powtarzania</string>
   <!-- interaction.remember.shufflestate.rememberShuffleStatePatch -->
   <string name="morphe_music_remember_shuffle_state_title">Zapamiętaj stan odtwarzania losowego</string>
+  <!-- video.speed.playbackSpeedPatch -->
+  <string name="morphe_music_playback_speed_title">Prędkość odtwarzania</string>
+  <string name="morphe_music_playback_speed_summary">Prędkość stosowana dla wszystkich utworów. Przy 100% używana jest prędkość aplikacji, np. prędkość odtwarzania podcastów</string>
+  <string name="morphe_music_playback_speed_change_pitch_title">Zmieniaj tonację wraz z prędkością</string>
   <!-- interaction.dislikeredirection.disableDislikeRedirectionPatch -->
   <string name="morphe_music_disable_dislike_redirection_title">Wyłącz pomijanie nielubianych piosenek</string>
   <string name="morphe_music_disable_dislike_redirection_summary">Zapobiega przechodzeniu do następnego utworu po naciśnięciu łapki w dół</string>
@@ -143,11 +280,15 @@ Ekran blokady lub powiadomienie może przez chwilę pokazywać nieaktualny stan 
   <string name="morphe_music_hide_history_button_title">Ukryj przycisk Historia</string>
   <string name="morphe_music_hide_notification_button_title">Ukryj przycisk Powiadomienia</string>
   <string name="morphe_music_hide_search_button_title">Ukryj przycisk Szukaj</string>
+  <string name="morphe_music_hide_voice_search_button_title">Ukryj przycisk Wyszukiwanie głosowe</string>
+  <string name="morphe_music_hide_sound_search_button_title">Ukryj przycisk Wyszukiwanie dźwiękiem</string>
+  <string name="morphe_music_hide_library_new_button_title">Ukryj przycisk Nowa</string>
+  <string name="morphe_music_hide_library_new_button_summary">Ukrywa przycisk Nowa w zakładce Biblioteka</string>
   <!-- layout.hide.actionbuttons.hideActionButtonsPatch -->
   <string name="morphe_music_action_buttons_screen_title">Przyciski akcji</string>
   <string name="morphe_music_action_buttons_screen_summary">Zdecyduj, które przyciski akcji będą wyświetlane pod odtwarzaczem</string>
   <string name="morphe_music_hide_action_bar_title">Ukryj pasek akcji</string>
-  <string name="morphe_music_hide_like_dislike_button_title">Ukryj przyciski Lubię i Nie lubię</string>
+  <string name="morphe_music_hide_like_dislike_button_title">Ukryj przyciski Lubię i \"Nie podoba mi się\"</string>
   <string name="morphe_music_hide_comments_button_title">Ukryj przycisk Komentarze</string>
   <!-- 'Live chat replay' should be translated using the same localized wording YouTube Music displays for the button. -->
   <string name="morphe_music_hide_live_chat_replay_button_title">Ukryj przycisk \"Powtórka czatu na żywo\"</string>
@@ -165,7 +306,7 @@ Ekran blokady lub powiadomienie może przez chwilę pokazywać nieaktualny stan 
   <string name="morphe_music_hide_flyout_menu_components_screen_title">Menu wysuwane</string>
   <string name="morphe_music_hide_flyout_menu_components_screen_summary">Zdecyduj, które elementy będą wyświetlane w menu wysuwanym odtwarzacza i kolejki</string>
   <string name="morphe_music_hide_flyout_menu_3_column_component_title">Ukryj element 3-kolumnowy</string>
-  <string name="morphe_music_hide_flyout_menu_like_dislike_title">Ukryj przyciski Lubię i Nie lubię</string>
+  <string name="morphe_music_hide_flyout_menu_like_dislike_title">Ukryj przyciski Lubię i \"Nie podoba mi się\"</string>
   <string name="morphe_music_hide_flyout_menu_taste_match_title">Ukryj menu \"Dopasowanie gustu\"</string>
   <string name="morphe_music_hide_flyout_menu_add_to_listen_later_title">Ukryj menu \"Dodaj do playlisty: Słuchaj później\"</string>
   <string name="morphe_music_hide_flyout_menu_add_to_queue_title">Ukryj menu \"Dodaj do kolejki\"</string>
@@ -212,6 +353,9 @@ Ekran blokady lub powiadomienie może przez chwilę pokazywać nieaktualny stan 
   <string name="morphe_change_start_page_entry_subscriptions">Subskrypcje</string>
   <!-- layout.compactheader.hideFilterBarPatch -->
   <string name="morphe_music_hide_filter_bar_title">Ukryj pasek filtrów</string>
+  <!-- layout.orientation.forcePortraitOrientationPatch -->
+  <string name="morphe_music_force_portrait_orientation_title">Wymuś orientację pionową</string>
+  <string name="morphe_music_force_portrait_orientation_summary">Utrzymuje aplikację w orientacji pionowej po obróceniu urządzenia</string>
   <!-- layout.miniplayer.changeMiniplayerColorPatch -->
   <string name="morphe_music_change_miniplayer_color_title">Zmień kolor miniodtwarzacza</string>
   <string name="morphe_music_change_miniplayer_color_summary">Dopasowuje kolor miniodtwarzacza do odtwarzacza pełnoekranowego</string>
@@ -293,7 +437,7 @@ Ekran blokady lub powiadomienie może przez chwilę pokazywać nieaktualny stan 
   <string name="morphe_settings_music_scrobbling_metadata_title">Oczyszczanie metadanych</string>
   <string name="morphe_music_scrobbling_metadata_cleanup_title">Oczyszczaj metadane</string>
   <string name="morphe_music_scrobbling_metadata_cleanup_summary">Automatycznie usuwa typowe śmieci (takie jak \"Official Video\", \"Remaster\", \"Live\") z tytułów, wykonawców i albumów przed scrobblowaniem</string>
-  <string name="morphe_music_scrobbling_custom_regex_title">Oczyszczanie własnym regexem</string>
+  <string name="morphe_music_scrobbling_custom_regex_title">Oczyszczanie własnym wyrażeniem regularnym</string>
   <string name="morphe_music_scrobbling_custom_regex_summary">Wprowadź własne wyrażenie regularne, aby usunąć dodatkowy tekst z tytułów utworów, wykonawców lub albumów. Przykład: (?i)\\s*\\((clean|explicit)\\)</string>
   <string name="morphe_music_scrobbling_parse_title_title">Wyodrębnij wykonawcę i utwór z tytułu</string>
   <string name="morphe_music_scrobbling_parse_title_summary">Wyciąga nazwę wykonawcy i utworu z tytułu filmu, używając separatora \" - \". Przydaje się przy reuploadach, gdzie nazwa kanału mogłaby zostać mylnie uznana za wykonawcę</string>
@@ -308,32 +452,144 @@ Aby zapewnić ciągłość synchronizacji podczas odtwarzania w tle, upewnij si�
   <!-- layout.lyrics.lyricsPatch -->
   <string name="morphe_music_lyrics_enabled_title">Używaj zewnętrznych tekstów</string>
   <string name="morphe_music_lyrics_enabled_summary">Wyświetla teksty z zewnętrznej usługi, przełączając się na wbudowane, gdy nic nie zostanie znalezione</string>
-  <string name="morphe_music_lyrics_source_title">Usługa z tekstami</string>
-  <!-- 'LRCLIB' and 'KuGou' are service names and must be kept untranslated -->
-  <string name="morphe_music_lyrics_source_entry_lrclib_then_kugou">LRCLIB, następnie KuGou</string>
+  <string name="morphe_music_lyrics_keep_screen_on_title">Nie wyłączaj ekranu podczas wyświetlania tekstu</string>
+  <string name="morphe_music_lyrics_keep_screen_on_summary">Zapobiega wyłączaniu się ekranu, gdy panel z tekstem jest otwarty</string>
+  <string name="morphe_music_lyrics_section_service_title">Usługa tekstów</string>
+  <string name="morphe_music_lyrics_section_overlay_title">Nakładka</string>
+  <string name="morphe_music_lyrics_section_sync_title">Synchronizacja</string>
+  <string name="morphe_music_lyrics_section_about_title">Informacje</string>
+  <string name="morphe_music_lyrics_source_all_disabled">Wszyscy dostawcy wyłączeni - teksty wbudowane i osadzone</string>
+  <string name="morphe_music_lyrics_source_reset_title">Zresetować kolejność dostawców?</string>
+  <string name="morphe_music_lyrics_source_reset_message">Przywróć domyślną kolejność priorytetów dla dostawców</string>
+  <string name="morphe_music_token_dialog_get_token">Pobierz token</string>
+  <string name="morphe_music_apple_music_token_title">Apple Music Media-user-token</string>
+  <string name="morphe_music_apple_music_token_dialog_instruction">"Wklej ciasteczka media-user-token z music.apple.com.
+
+Kroki:
+1. Zaloguj się na music.apple.com jako subskrybent
+2. Otwórz DevTools → Application → Cookies → music.apple.com
+3. Skopiuj wartość \"media-user-token\""</string>
+  <string name="morphe_music_apple_music_token_toast_saved">Apple Music: zapisano media-user-token</string>
+  <string name="morphe_music_apple_music_token_toast_cleared">Apple Music: wyczyszczono media-user-token</string>
+  <string name="morphe_music_apple_music_token_toast_invalid">Apple Music: nieprawidłowy media-user-token - sprawdź i spróbuj ponownie</string>
+  <string name="morphe_music_spotify_token_title">Spotify SpDc</string>
+  <string name="morphe_music_spotify_token_dialog_instruction">"Wklej ciasteczka sp_dc ze Spotify.
+
+Kroki:
+1. Zaloguj się na open.spotify.com
+2. Otwórz DevTools → Application → Cookies → open.spotify.com
+3. Skopiuj wartość \"sp_dc\""</string>
+  <string name="morphe_music_spotify_token_toast_saved">Spotify: zapisano sp_dc</string>
+  <string name="morphe_music_spotify_token_toast_cleared">Spotify: wyczyszczono sp_dc</string>
+  <string name="morphe_music_spotify_token_toast_invalid">Spotify: nieprawidłowy sp_dc - sprawdź i spróbuj ponownie</string>
+  <string name="morphe_music_apple_token_optional_hint">Token Apple Music jest opcjonalny. Bez niego jako rozwiązanie zapasowe zostanie użyte Lyrically</string>
+  <string name="morphe_music_deezer_arl_title">Deezer ARL</string>
+  <string name="morphe_music_deezer_arl_dialog_instruction">"Wklej ciasteczka arl z Deezera.
+
+Kroki:
+1. Zaloguj się na deezer.com
+2. Otwórz DevTools → Application → Cookies → deezer.com
+3. Skopiuj wartość \"arl\""</string>
+  <string name="morphe_music_deezer_arl_toast_saved">Deezer: zapisano arl</string>
+  <string name="morphe_music_deezer_arl_toast_cleared">Deezer: wyczyszczono arl</string>
+  <string name="morphe_music_deezer_arl_toast_invalid">Deezer: nieprawidłowy arl - sprawdź i spróbuj ponownie</string>
+  <string name="morphe_music_musixmatch_token_title">Token Musixmatch</string>
+  <string name="morphe_music_musixmatch_token_dialog_instruction">Dodaj token tylko wtedy, gdy chcesz użyć własnego konta. Musi on pochodzić z aplikacji Musixmatch na Androida: tokeny skopiowane z musixmatch.com należą do wycofanego klienta na komputery, a API je odrzuca</string>
+  <string name="morphe_music_musixmatch_token_optional_hint">Musixmatch działa bez tokena, więc to pole może pozostać puste</string>
+  <string name="morphe_music_musixmatch_token_dialog_hint">token użytkownika</string>
+  <string name="morphe_music_musixmatch_token_toast_saved">Musixmatch: zapisano token użytkownika</string>
+  <string name="morphe_music_musixmatch_token_toast_cleared">Musixmatch: wyczyszczono token użytkownika</string>
+  <string name="morphe_music_musixmatch_token_toast_invalid">Musixmatch: nieprawidłowy token użytkownika - sprawdź i spróbuj ponownie</string>
+  <string name="morphe_music_youtube_cookies_title">Ciasteczka YouTube</string>
+  <string name="morphe_music_youtube_cookies_dialog_instruction">"Wklej ciasteczka YouTube, aby pobierać napisy i transkrypcje z YouTube.
+
+Kroki:
+1. Otwórz youtube.com w przeglądarce i zaloguj się
+2. Otwórz DevTools → Application → Cookies → youtube.com
+3. Skopiuj cały ciąg ciasteczek (pary klucz=wartość oddzielone średnikami)
+
+Wymagane ciasteczka: SID, HSID, SSID, SAPISID, __Secure-3PAPISID, __Secure-1PAPISID, LOGIN_INFO"</string>
+  <string name="morphe_music_youtube_cookies_toast_saved">YouTube: zapisano ciasteczka</string>
+  <string name="morphe_music_youtube_cookies_toast_cleared">YouTube: wyczyszczono ciasteczka</string>
+  <string name="morphe_music_youtube_cookies_toast_invalid">YouTube: nieprawidłowe ciasteczka - sprawdź i spróbuj ponownie</string>
   <string name="morphe_music_lyrics_tap_to_seek_title">Dotknij linijki, aby przewinąć</string>
   <string name="morphe_music_lyrics_tap_to_seek_summary">Dotknięcie linijki przeskakuje do tego momentu w utworze</string>
   <string name="morphe_music_lyrics_show_copy_button_title">Pokaż przycisk Kopiuj</string>
+  <string name="morphe_music_lyrics_show_copy_button_summary">Dotknij, aby skopiować oryginalny tekst jako zwykły tekst. Przytrzymaj, aby zapisać surowy plik źródłowy z tekstem w folderze Pobrane</string>
   <string name="morphe_music_lyrics_show_translate_button_title">Pokaż przycisk Przetłumacz</string>
+  <string name="morphe_music_lyrics_show_translate_button_summary">Dotknij, aby przełączyć tłumaczenie. Przytrzymaj, aby wyświetlić tylko tłumaczenie. Wykorzystuje tłumaczenia dostawcy, Tłumacza Google lub API zgodne z OpenAI</string>
+  <string name="morphe_music_lyrics_show_romanize_button_title">Pokaż przycisk Romanizuj</string>
+  <string name="morphe_music_lyrics_show_romanize_button_summary">Dotknij, aby przełączyć romanizację. Przytrzymaj, aby wyświetlić tylko romanizację. Wykorzystuje romanizację dostawcy, Tłumacza Google lub API zgodne z OpenAI</string>
+  <string name="morphe_music_lyrics_show_refresh_button_title">Pokaż przycisk Odśwież</string>
+  <string name="morphe_music_lyrics_show_refresh_button_summary">Dotknij, aby przełączyć na następną propozycję tekstu. Przytrzymaj, aby wyszukać tekst według tytułu utworu i wykonawcy</string>
+  <string name="morphe_music_lyrics_search_dialog_title">Wyszukaj tekst</string>
+  <string name="morphe_music_lyrics_search_title_hint">Tytuł utworu</string>
+  <string name="morphe_music_lyrics_search_artist_hint">Wykonawca</string>
+  <string name="morphe_music_lyrics_search_empty">Wpisz tytuł utworu i wykonawcę</string>
+  <string name="morphe_music_lyrics_search_no_providers">Żaden z włączonych dostawców nie obsługuje wyszukiwania innych utworów</string>
+  <string name="morphe_music_lyrics_saved">Zapisano</string>
+  <string name="morphe_music_lyrics_word_sync_title">Podświetlaj zsynchronizowane słowa lub sylaby</string>
+  <string name="morphe_music_lyrics_word_sync_summary">Nadaje priorytet tekstom synchronizowanym słowo po słowie, o ile są dostępne. Gdy tekst zawiera znaczniki czasu, podświetla każde słowo lub sylabę w rytm muzyki</string>
+  <string name="morphe_music_lyrics_hide_played_title">Ukryj odtworzony tekst</string>
+  <string name="morphe_music_lyrics_hide_played_summary">Ukrywa linijki tekstu znajdujące się powyżej tej aktualnie odtwarzanej</string>
+  <string name="morphe_music_lyrics_hide_unplayed_title">Ukryj nieodtworzony tekst</string>
+  <string name="morphe_music_lyrics_hide_unplayed_summary">Ukrywa linijki tekstu znajdujące się poniżej tej aktualnie odtwarzanej</string>
+  <string name="morphe_music_lyrics_mediasession_title">Pokaż teksty MediaSession na ekranie blokady</string>
+  <string name="morphe_music_lyrics_miniplayer_title">Pokaż teksty w miniodtwarzaczu</string>
+  <string name="morphe_music_lyrics_display_artist_first_title">Kolejność wyświetlania wykonawcy i tytułu</string>
+  <string name="morphe_music_lyrics_display_artist_first_summary">Zmienia kolejność wyświetlania wykonawcy i tytułu w miniodtwarzaczu i MediaSession. Włączone: \"Wykonawca - Tytuł\", wyłączone: \"Tytuł - Wykonawca\". Nie wpływa to na wyszukiwanie tekstów</string>
+  <string name="morphe_settings_music_lyrics_metadata_title">Filtry</string>
+  <string name="morphe_music_lyrics_custom_regex_title">Wyrażenie regularne dla metadanych</string>
+  <string name="morphe_music_lyrics_custom_regex_summary">Wyrażenie regularne stosowane do tytułów, wykonawców i albumów przed wyszukaniem tekstu oraz podczas oceniania zgodności dwóch tytułów. Pozostaw puste, aby wyłączyć obie funkcje. Domyślne ustawienie usuwa powszechne zbędne elementy, takie jak \"Official Video\", \"Remaster\", \"【插曲】\" i \"- Topic\"</string>
+  <string name="morphe_music_lyrics_text_filter_title">Wyrażenie regularne filtra tekstu</string>
+  <string name="morphe_music_lyrics_text_filter_summary">Wyrażenie regularne stosowane wyłącznie do oryginalnego tekstu piosenki (z pominięciem tłumaczeń i romanizacji). Pozostaw puste, aby wyłączyć</string>
+  <string name="morphe_music_lyrics_credit_line_regex_title">Znaczniki wierszy informacyjnych</string>
+  <string name="morphe_music_lyrics_credit_line_regex_summary">Jeśli standardowy tekst piosenki jest błędnie przenoszony na sam dół, dostosuj to pole lub je wyczyść. Znaczniki oddzielane przecinkami: wiersze zawierające znacznik, po którym następuje dwukropek, są traktowane jako informacje o twórcach i wyświetlane na dole. Pozostaw puste, aby wyłączyć</string>
   <string name="morphe_music_lyrics_text_size_title">Rozmiar tekstu</string>
   <string name="morphe_music_lyrics_text_size_summary">Rozmiar tekstu utworu</string>
   <string name="morphe_music_lyrics_offset_ms_title">Przesunięcie czasowe</string>
-  <string name="morphe_music_lyrics_offset_ms_summary">Przesuń zsynchronizowany tekst do przodu lub do tyłu. Użyj wartości dodatniej, jeśli tekst wyprzedza utwór</string>
+  <string name="morphe_music_lyrics_offset_ms_summary">Zsynchronizowane teksty podążają za odtwarzaniem. Jeśli się rozjeżdżają, dostosuj przesunięcie czasowe do przodu lub do tyłu. Użyj wartości dodatniej, jeśli tekst wyprzedza piosenkę</string>
   <!-- Shown under the lyrics. The placeholder is a service name such as LRCLIB. -->
   <string name="morphe_music_lyrics_source_label">Źródło: %s</string>
+  <string name="morphe_music_lyrics_translated_by_google">Przetłumaczone przez Google</string>
+  <string name="morphe_music_lyrics_romanized_by_google">Zromanizowane przez Google</string>
+  <string name="morphe_music_lyrics_translated_by_ai">Przetłumaczone przez %s</string>
+  <string name="morphe_music_lyrics_romanized_by_ai">Zromanizowane przez %s</string>
   <!-- Tappable label under the lyrics that turns the translation on. -->
-  <string name="morphe_music_lyrics_translate_show">Przetłumacz</string>
-  <string name="morphe_music_lyrics_translate_hide">Pokaż oryginał</string>
+  <string name="morphe_music_lyrics_translate_hide">Przetłumaczone</string>
+  <string name="morphe_music_lyrics_translation_language_title">Język tłumaczenia</string>
   <string name="morphe_music_lyrics_translating">Tłumaczenie…</string>
   <string name="morphe_music_lyrics_translate_failed">Nie udało się przetłumaczyć tekstu</string>
-  <string name="morphe_music_lyrics_copy">Kopiuj</string>
+  <string name="morphe_music_lyrics_romanize_hide">Zromanizowane</string>
+  <string name="morphe_music_lyrics_romanizing">Romanizowanie…</string>
+  <string name="morphe_music_lyrics_romanize_failed">Nie udało się zromanizować tekstu</string>
+  <string name="morphe_music_lyrics_translate_only">Tylko tłumaczenie</string>
+  <string name="morphe_music_lyrics_romanize_only">Tylko romanizacja</string>
   <string name="morphe_music_lyrics_copied">Skopiowano do schowka</string>
-  <string name="morphe_music_lyrics_about_title">O zewnętrznych tekstach</string>
-  <string name="morphe_music_lyrics_about_summary">"Teksty są wyszukiwane na podstawie tytułu utworu i wykonawcy, dlatego dla utworu z nietypowymi metadanymi może nie zostać znalezione nic lub znaleziona zostanie niewłaściwa wersja
-
-Zsynchronizowane teksty podążają za odtwarzaniem. Jeśli się rozjeżdżają, dostosuj przesunięcie czasowe
-
-Gdy nie zostaną znalezione żadne zewnętrzne teksty, zamiast nich wyświetlane są te wbudowane"</string>
+  <string name="morphe_music_lyrics_refreshing">Odświeżanie</string>
+  <string name="morphe_music_lyrics_refreshed">Odświeżono</string>
+  <string name="morphe_music_lyrics_about_summary">"Teksty są dopasowywane na podstawie tytułu i wykonawcy, nietypowe metadane mogą skutkować brakiem wyników lub znalezieniem niewłaściwej wersji. Użyj odświeżania, aby zmienić wersję. Dostawcy oznaczeni * wymagają tokena. Zapytania do włączonych dostawców nie zawsze są wysyłane w ustalonej przez Ciebie kolejności, odpowiadają oni w zależności od swojej szybkości"</string>
+  <string name="morphe_music_lyrics_hide_info_title">Ukryj informacje o twórcach</string>
+  <string name="morphe_music_lyrics_hide_info_summary">Ukrywa informacje o twórcach wyświetlane pod tekstem</string>
+  <string name="morphe_music_lyrics_swap_trans_roma_title">Zamień miejscami tłumaczenie i romanizację</string>
+  <string name="morphe_music_lyrics_swap_trans_roma_summary">Włączone: romanizacja znajduje się pod tekstem, a tłumaczenie nad nim. Wyłączone: romanizacja nad tekstem, a tłumaczenie pod nim</string>
+  <string name="morphe_music_lyrics_use_ai_translation_title">Tłumaczenie zgodne z OpenAI</string>
+  <string name="morphe_music_lyrics_use_ai_translation_summary">Użyj niestandardowego API zgodnego z OpenAI do tłumaczenia i romanizacji zamiast Tłumacza Google</string>
+  <string name="morphe_music_lyrics_ai_config_dialog_title">Ustawienia tłumaczenia AI</string>
+  <string name="morphe_music_lyrics_ai_config_dialog_instruction">Skonfiguruj punkt końcowy API zgodny z OpenAI do tłumaczenia i romanizacji tekstów piosenek za pomocą AI.</string>
+  <string name="morphe_music_lyrics_ai_config_base_url_hint">Adres punktu końcowego API (np. https://text.pollinations.ai/openai)</string>
+  <string name="morphe_music_lyrics_ai_config_api_token_hint">Klucz API (pozostaw puste dla dostępu anonimowego)</string>
+  <string name="morphe_music_lyrics_ai_config_model_hint">Nazwa modelu (np. openai-fast, gpt-4o-mini)</string>
+  <string name="morphe_music_lyrics_ai_config_prompt_hint">Szablon promptu (zmienne: {language}, {task}, {title}, {artist}, {count}, {lines})</string>
+  <string name="morphe_music_lyrics_ai_config_toast_saved">Zapisano ustawienia tłumaczenia AI</string>
+  <string name="morphe_music_lyrics_ai_config_toast_invalid">Nie udało się połączyć z punktem końcowym AI. Sprawdź swoje ustawienia.</string>
+  <string name="morphe_music_lyrics_ai_config_toast_reset">Zresetowano ustawienia tłumaczenia AI</string>
+  <string name="morphe_music_lyrics_ai_config_status_configured">Skonfigurowano</string>
+  <string name="morphe_music_lyrics_ai_config_status_not_configured">Dotknij, aby skonfigurować</string>
+  <string name="morphe_music_lyrics_ai_config_status_empty_url">Bazowy adres nie może być pusty</string>
+  <string name="morphe_music_lyrics_ai_config_status_invalid_url">Bazowy adres musi zaczynać się od http:// lub https://</string>
+  <string name="morphe_music_lyrics_ai_config_status_empty_model">Nazwa modelu nie może być pusta</string>
+  <string name="morphe_music_lyrics_ai_config_status_validating">Sprawdzanie połączenia…</string>
   <!-- misc.spoof.appversion.spoofAppVersionPatch -->
   <string name="morphe_music_spoof_app_version_target_entry_8_23_51">8.23.51 - Wyłącza pogrubione ikony</string>
   <string name="morphe_music_spoof_app_version_target_entry_9_13_51">9.13.51 - Przywraca zakładki Następne, Tekst i Powiązane w odtwarzaczu</string>

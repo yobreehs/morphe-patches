@@ -10,6 +10,8 @@
 
 package app.morphe.extension.music.settings;
 
+import static app.morphe.extension.shared.StringRef.str;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.BlendMode;
@@ -21,6 +23,7 @@ import android.preference.PreferenceFragment;
 import android.view.View;
 import android.widget.Toolbar;
 
+import app.morphe.extension.music.patches.downloads.LocalDownloadsFragment;
 import app.morphe.extension.music.settings.preference.MusicPreferenceFragment;
 import app.morphe.extension.music.settings.search.MusicSearchViewController;
 import app.morphe.extension.shared.Logger;
@@ -40,6 +43,7 @@ public class MusicActivityHook extends BaseActivityHook {
 
     @SuppressLint("StaticFieldLeak")
     public static MusicSearchViewController searchViewController;
+    private static boolean downloadsMode;
 
     private static final boolean USE_BOLD_ICONS = Settings.SETTINGS_INITIALIZED.get()
             && !SpoofAppVersionPatch.isSpoofingToLessThan("8.40.00");
@@ -50,9 +54,23 @@ public class MusicActivityHook extends BaseActivityHook {
 
     /**
      * Injection point.
+     * <p>
+     * Otherwise the dark mode status falls back to the device theme until the settings are
+     * opened, and the extension draws with dark colors on the dark app.
+     */
+    @SuppressWarnings("unused")
+    public static void onMainActivityCreate() {
+        Utils.setIsDarkModeEnabled(true);
+    }
+
+    /**
+     * Injection point.
      */
     @SuppressWarnings("unused")
     public static void initialize(Activity parentActivity) {
+
+        downloadsMode = BaseActivityHook.MORPHE_DOWNLOADS_INTENT.equals(
+                parentActivity.getIntent().getDataString());
 
         // Prevent opening multiple settings activities if menu is double tapped quickly.
         if (Utils.isFastClick()) {
@@ -129,7 +147,9 @@ public class MusicActivityHook extends BaseActivityHook {
      */
     @Override
     protected void onPostToolbarSetup(Activity activity, Toolbar toolbar, PreferenceFragment fragment) {
-        if (fragment instanceof MusicPreferenceFragment) {
+        if (fragment instanceof LocalDownloadsFragment) {
+            toolbar.setTitle(str("morphe_music_downloads_screen_title"));
+        } else if (fragment instanceof MusicPreferenceFragment) {
             searchViewController = MusicSearchViewController.addSearchViewComponents(
                     activity, toolbar, (MusicPreferenceFragment) fragment);
         }
@@ -140,7 +160,7 @@ public class MusicActivityHook extends BaseActivityHook {
      */
     @Override
     protected PreferenceFragment createPreferenceFragment() {
-        return new MusicPreferenceFragment();
+        return downloadsMode ? new LocalDownloadsFragment() : new MusicPreferenceFragment();
     }
 
     /**

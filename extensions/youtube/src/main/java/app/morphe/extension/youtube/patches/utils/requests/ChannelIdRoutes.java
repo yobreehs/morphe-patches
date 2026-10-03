@@ -38,7 +38,14 @@ public final class ChannelIdRoutes {
             Route.Method.POST,
             "player" +
                     "?prettyPrint=false" +
-                    "&fields=videoDetails.channelId"
+                    "&fields=videoDetails"
+    ).compile();
+
+    public static final Route.CompiledRoute GET_DESCRIPTION = new Route(
+            Route.Method.POST,
+            "player" +
+                    "?prettyPrint=false" +
+                    "&fields=videoDetails.shortDescription"
     ).compile();
 
     private ChannelIdRoutes() {
