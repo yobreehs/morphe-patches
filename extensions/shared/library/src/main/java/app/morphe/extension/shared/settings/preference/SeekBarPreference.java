@@ -125,15 +125,15 @@ public class SeekBarPreference extends Preference {
         currentLabel.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
         updateLabel(currentLabel, pending[0], config);
 
-        // Tap the value to type a precise number instead of dragging the seek bar.
-        currentLabel.setOnClickListener(v ->
-                showValueInputDialog(context, config, pending, seekBar, currentLabel));
-
         SeekBar seekBar = new SeekBar(context);
         seekBar.setMax((config.max - config.min) / config.step);
         seekBar.setProgress(valueToProgress(config, pending[0]));
         seekBar.setProgressTintList(ColorStateList.valueOf(colorAccent));
         seekBar.setThumbTintList(ColorStateList.valueOf(colorAccent));
+
+        // Tap the value to type a precise number instead of dragging the seek bar.
+        currentLabel.setOnClickListener(v ->
+                showValueInputDialog(context, config, pending, seekBar, currentLabel));
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar bar, int progress, boolean fromUser) {
