@@ -650,6 +650,10 @@ Second \"item\" text"</string>
   <string name="morphe_swipe_volume_steps_entry_default">По умолчанию</string>
   <string name="morphe_swipe_brightness_sensitivity_title">Чувствительность жеста регулировки яркости</string>
   <string name="morphe_swipe_brightness_sensitivity_summary">Более высокие значения требуют большего свайпа для каждого шага яркости</string>
+  <string name="morphe_swipe_brightness_steps_title">Ступени яркости</string>
+  <string name="morphe_swipe_brightness_steps_summary">Число уровней яркости на весь диапазон, до 1000 (значение привязывается к этой сетке)</string>
+  <string name="morphe_swipe_brightness_step_percent_title">Размер шага яркости</string>
+  <string name="morphe_swipe_brightness_step_percent_summary">На сколько процентов меняется яркость за один шаг свайпа (1–100, по умолчанию 1)</string>
   <string name="morphe_swipe_speed_sensitivity_title">Чувствительность жеста скорости</string>
   <string name="morphe_swipe_speed_sensitivity_summary">Более высокие значения требуют большего свайпа для каждого шага скорости</string>
   <string name="morphe_swipe_speed_step_title">Шаг скорости</string>
@@ -956,7 +960,7 @@ Second \"item\" text"</string>
   <string name="morphe_exit_fullscreen_entry_4">Портрет и ландшафт</string>
   <!-- layout.player.fullscreen.forceFullscreenLandscapePatch -->
   <string name="morphe_force_fullscreen_landscape_title">Принудительно включать альбомную ориентацию в полноэкранном режиме</string>
-  <string name="morphe_force_fullscreen_landscape_summary">Поверните плеер в альбомную ориентацию при переходе в полноэкранный режим. Недоступно на маленьких экранах, которые уже открывают полноэкранный режим в альбомной ориентации</string>
+  <string name="morphe_force_fullscreen_landscape_summary">Работает только на планшетах. На телефоне не действует</string>
   <!-- layout.player.fullscreen.disableFullscreenGesturesPatch -->
   <string name="morphe_disable_fullscreen_gestures_title">Жесты полноэкранного режима</string>
   <string name="morphe_disable_fullscreen_gestures_summary">Жесты плеера в полноэкранном режиме</string>

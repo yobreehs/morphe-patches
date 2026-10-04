@@ -702,6 +702,10 @@ To fix this, turn on \'Spoof video streams\' and change the \'Default client\' t
     <string name="morphe_swipe_volume_steps_entry_default">Device default</string>
     <string name="morphe_swipe_brightness_sensitivity_title">Brightness swipe sensitivity</string>
     <string name="morphe_swipe_brightness_sensitivity_summary">Higher values require more swiping per brightness step</string>
+    <string name="morphe_swipe_brightness_steps_title">Brightness steps</string>
+    <string name="morphe_swipe_brightness_steps_summary">Number of brightness levels in the full range, up to 1000 (the value snaps to this grid)</string>
+    <string name="morphe_swipe_brightness_step_percent_title">Brightness step size</string>
+    <string name="morphe_swipe_brightness_step_percent_summary">Percent the brightness changes per swipe step (1-100, default 1)</string>
     <string name="morphe_swipe_speed_sensitivity_title">Speed swipe sensitivity</string>
     <string name="morphe_swipe_speed_sensitivity_summary">Higher values require more swiping per speed step</string>
     <string name="morphe_swipe_speed_step_title">Speed step</string>
@@ -1033,7 +1037,7 @@ Settings → Playback (or Autoplay) → Autoplay next video"</string>
 
     <!-- layout.player.fullscreen.forceFullscreenLandscapePatch -->
     <string name="morphe_force_fullscreen_landscape_title">Force landscape in fullscreen</string>
-    <string name="morphe_force_fullscreen_landscape_summary">Rotate the player to landscape when entering fullscreen. Unavailable on small screens, which already open fullscreen in landscape</string>
+    <string name="morphe_force_fullscreen_landscape_summary">Forces landscape only on tablets. On phones it has no effect</string>
 
     <!-- layout.player.fullscreen.disableFullscreenGesturesPatch -->
     <string name="morphe_disable_fullscreen_gestures_title">Fullscreen gestures</string>

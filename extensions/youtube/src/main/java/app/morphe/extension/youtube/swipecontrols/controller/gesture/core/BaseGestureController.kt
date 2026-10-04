@@ -38,6 +38,8 @@ abstract class BaseGestureController(
         controller.overlay,
         controller.config.volumeSwipeDistance,
         controller.config.brightnessSwipeSensitivity,
+        controller.config.brightnessStepPercent,
+        controller.config.brightnessLevelPercent,
         controller.config.speedSwipeSensitivity,
         controller.config.speedStepInt,
         controller.config.enableSpeedGestureControl,

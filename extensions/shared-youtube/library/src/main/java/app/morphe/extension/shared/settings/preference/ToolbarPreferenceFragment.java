@@ -58,10 +58,15 @@ public class ToolbarPreferenceFragment extends AbstractPreferenceFragment {
 
     /**
      * Sets toolbar for all nested preference screens.
+     *
+     * Screens can be nested directly under another {@link PreferenceScreen}, or inside a
+     * {@link PreferenceGroup} such as a {@link PreferenceCategory} (e.g. the "New features"
+     * chapters). Both are walked so every submenu gets the toolbar and the edge-to-edge
+     * system bar insets.
      */
-    protected void setPreferenceScreenToolbar(PreferenceScreen parentScreen) {
-        for (int i = 0, count = parentScreen.getPreferenceCount(); i < count; i++) {
-            Preference childPreference = parentScreen.getPreference(i);
+    protected void setPreferenceScreenToolbar(PreferenceGroup parentGroup) {
+        for (int i = 0, count = parentGroup.getPreferenceCount(); i < count; i++) {
+            Preference childPreference = parentGroup.getPreference(i);
             setPreferenceIconColor(childPreference);
 
             if (childPreference instanceof PreferenceScreen) {
@@ -104,6 +109,12 @@ public class ToolbarPreferenceFragment extends AbstractPreferenceFragment {
                                     v.setPadding(leftPadding, topPadding, rightPadding, bottomPadding);
                                     return insets;
                                 });
+
+                                // The dialog window may have already dispatched its insets before the
+                                // listener was attached (e.g. when the dialog is reused), in which
+                                // case the listener would never fire. Force a fresh dispatch so the
+                                // padding is always applied.
+                                rootView.requestApplyInsets();
                             }
 
                             Toolbar toolbar = new Toolbar(childScreen.getContext());
@@ -131,6 +142,11 @@ public class ToolbarPreferenceFragment extends AbstractPreferenceFragment {
                             return false;
                         }
                 );
+            } else if (childPreference instanceof PreferenceGroup) {
+                // Categories (and other groups) can contain further PreferenceScreens
+                // (e.g. the "New features" chapters), which are not PreferenceScreen
+                // instances themselves but must still get the toolbar and insets.
+                setPreferenceScreenToolbar((PreferenceGroup) childPreference);
             }
         }
     }

@@ -110,6 +110,10 @@ You will not be notified of any unexpected events."</string>
     <string name="morphe_debug_export_logs_summary">Export Morphe debug logs</string>
     <string name="morphe_debug_export_logs_file">Export to file</string>
     <string name="morphe_debug_export_logs_success">Debug logs exported successfully</string>
+    <string name="morphe_debug_dump_view_hierarchy_title">Dump view hierarchy</string>
+    <string name="morphe_debug_dump_view_hierarchy_summary">Log the component tree of every open screen (find renderers that bypass filters)</string>
+    <string name="morphe_debug_view_dump_done">View hierarchy written to the log ({count} screens)</string>
+    <string name="morphe_debug_view_dump_empty">No open screens found</string>
     <string name="morphe_debug_export_logs_failed">Failed to export debug logs</string>
     <string name="morphe_debug_logs_search_hint">Search debug logs…</string>
     <string name="morphe_debug_export_logs_clear">Clear</string>

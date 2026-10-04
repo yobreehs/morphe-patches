@@ -253,6 +253,19 @@ class SwipeControlsConfigurationProvider {
         }
 
     /**
+     * How many percent of brightness each swipe step changes (configured directly, 1..100).
+     */
+    val brightnessStepPercent: Double
+        get() = Settings.SWIPE_BRIGHTNESS_STEP_PERCENT.get().coerceIn(1, 100).toDouble()
+
+    /**
+     * The discrete brightness grid (0..100 split into the configured number of steps, up to
+     * 1000), the value is snapped to so both knobs work together.
+     */
+    val brightnessLevelPercent: Double
+        get() = 100.0 / Settings.SWIPE_BRIGHTNESS_STEPS.get().coerceIn(1, 1000)
+
+    /**
      * Indicates whether the swipe gesture for playback speed control is enabled in any zone.
      */
     val enableSpeedGestureControl: Boolean

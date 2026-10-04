@@ -677,11 +677,11 @@ public abstract class AbstractPreferenceFragment extends PreferenceFragment {
 
     /**
      * @param kind What is exported, such as the settings or the debug logs.
-     * @return App name, kind and date, suggested as the name of an exported file.
+     * @return App name, kind and date (down to the second), suggested as the name of an exported file.
      */
     public static String exportFileName(String kind) {
         String appName = Utils.getApplicationName().replaceAll("\\s+", "_");
-        String date = new SimpleDateFormat("yyyy-MM-dd", Locale.US).format(new Date());
+        String date = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.US).format(new Date());
 
         return appName + "_" + kind + "_" + date + ".txt";
     }

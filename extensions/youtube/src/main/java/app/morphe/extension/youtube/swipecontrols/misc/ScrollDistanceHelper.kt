@@ -31,11 +31,14 @@ class ScrollDistanceHelper(
         // invoke the callback if we scrolled far enough
         while (abs(scrolledDistance) >= unitDistance) {
             val oldDistance = scrolledDistance
+            // Use the sign of the distance BEFORE subtracting the unit, so the direction is
+            // never 0 (which would make the last step of each swipe a no-op / "заглушка").
+            val direction = sign(oldDistance).toInt()
             subtractUnitDistance()
             callback.invoke(
                 oldDistance,
                 scrolledDistance,
-                sign(scrolledDistance).toInt(),
+                direction,
             )
         }
     }

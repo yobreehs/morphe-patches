@@ -50,10 +50,16 @@ public final class HidePlayerFlyoutMenuPatch {
             CAPTIONS_HEADER_PATH,
     };
 
-    private static final boolean HIDE_PLAYER_FLYOUT_CAPTIONS_FOOTER = Settings.HIDE_PLAYER_FLYOUT_CAPTIONS_FOOTER.get();
-    private static final boolean HIDE_PLAYER_FLYOUT_CAPTIONS_HEADER = Settings.HIDE_PLAYER_FLYOUT_CAPTIONS_HEADER.get();
-    private static final boolean HIDE_PLAYER_FLYOUT_QUALITY_FOOTER = Settings.HIDE_PLAYER_FLYOUT_QUALITY_FOOTER.get();
-    private static final boolean HIDE_PLAYER_FLYOUT_QUALITY_HEADER = Settings.HIDE_PLAYER_FLYOUT_QUALITY_HEADER.get();
+    /**
+     * These gates are read dynamically (not static final) on purpose: the header/footer hooks run
+     * on EVERY parsed proto element / tree-node list. If they were static finals captured at class
+     * load, enabling one toggle would parse every feed element forever (even after the toggle is
+     * switched off again until the app restarts) — measured as a multi-second home feed delay.
+     */
+    private static boolean isCaptionsFooterEnabled() { return Settings.HIDE_PLAYER_FLYOUT_CAPTIONS_FOOTER.get(); }
+    private static boolean isCaptionsHeaderEnabled() { return Settings.HIDE_PLAYER_FLYOUT_CAPTIONS_HEADER.get(); }
+    private static boolean isQualityFooterEnabled() { return Settings.HIDE_PLAYER_FLYOUT_QUALITY_FOOTER.get(); }
+    private static boolean isQualityHeaderEnabled() { return Settings.HIDE_PLAYER_FLYOUT_QUALITY_HEADER.get(); }
 
     private static final byte[] EMPTY_BYTE_ARRAY = new byte[0];
 
@@ -61,11 +67,11 @@ public final class HidePlayerFlyoutMenuPatch {
      * Injection point.
      */
     public static void hideNativeBottomSheetFooter(CharSequence path, List<Object> treeNodeResultList) {
-        if (HIDE_PLAYER_FLYOUT_CAPTIONS_FOOTER || HIDE_PLAYER_FLYOUT_QUALITY_FOOTER) {
+        if (isCaptionsFooterEnabled() || isQualityFooterEnabled()) {
             try {
                 final int size = treeNodeResultList.size();
                 if (size > 2) {
-                    if (Utils.startsWith(path, CAPTIONS_BODY_PATH) && HIDE_PLAYER_FLYOUT_CAPTIONS_FOOTER) {
+                    if (Utils.startsWith(path, CAPTIONS_BODY_PATH) && isCaptionsFooterEnabled()) {
                         int i = 0;
                         for (Object object : treeNodeResultList) {
                             if (!ConversionContext.ELEMENT_IDENTIFIER_COMPONENT.equals(object.toString())) {
@@ -81,7 +87,7 @@ public final class HidePlayerFlyoutMenuPatch {
                         treeNodeResultList.remove(size - 1);
 
                     } else if (Utils.startsWith(path, ADVANCED_VIDEO_QUALITY_BODY_PATH)
-                            && HIDE_PLAYER_FLYOUT_QUALITY_FOOTER) {
+                            && isQualityFooterEnabled()) {
                         for (Object object : treeNodeResultList) {
                             if (!ConversionContext.ELEMENT_IDENTIFIER_COMPONENT.equals(object.toString())) {
                                 return;
@@ -102,7 +108,7 @@ public final class HidePlayerFlyoutMenuPatch {
      * Injection point.
      */
     public static byte[] hideNativeBottomSheetHeader(byte[] bytes) {
-        if (HIDE_PLAYER_FLYOUT_CAPTIONS_HEADER || HIDE_PLAYER_FLYOUT_QUALITY_HEADER) {
+        if (isCaptionsHeaderEnabled() || isQualityHeaderEnabled()) {
             try {
                 var newElement = NewElement.parseFrom(bytes).toBuilder();
                 var identifier = newElement.getProperties().getIdentifierProperties().getIdentifier();
@@ -111,7 +117,7 @@ public final class HidePlayerFlyoutMenuPatch {
                     var type = newElement.getType().toBuilder();
                     var componentType = type.getComponentType().toBuilder();
                     var model = componentType.getModel().toBuilder();
-                    if (HIDE_PLAYER_FLYOUT_QUALITY_HEADER && model.hasYoutubeModel()) {
+                    if (isQualityHeaderEnabled() && model.hasYoutubeModel()) {
                         var youtubeModel = model.getYoutubeModel().toBuilder();
                         var viewModel = youtubeModel.getViewModel().toBuilder();
 
@@ -149,7 +155,7 @@ public final class HidePlayerFlyoutMenuPatch {
                         } else if (viewModel.hasQualitySheetHeaderViewModel()) {
                             return EMPTY_BYTE_ARRAY;
                         }
-                    } else if (HIDE_PLAYER_FLYOUT_CAPTIONS_HEADER && model.hasBottomSheetHeaderModel()) {
+                    } else if (isCaptionsHeaderEnabled() && model.hasBottomSheetHeaderModel()) {
                         // CAPTIONS_HEADER_PATH, 'bottom_sheet_header.e', is used not only
                         // for captions player flyout menu but also in other places:
                         // https://github.com/MorpheApp/morphe-patches/issues/2637.
@@ -173,7 +179,7 @@ public final class HidePlayerFlyoutMenuPatch {
      * Injection point.
      */
     public static void hideCaptionsOldBottomSheetFooter(ListView listView, View view, Object object, boolean bool) {
-        if (HIDE_PLAYER_FLYOUT_CAPTIONS_FOOTER) {
+        if (isCaptionsFooterEnabled()) {
             view = new View(listView.getContext());
         }
 
@@ -186,7 +192,7 @@ public final class HidePlayerFlyoutMenuPatch {
     public static View hideCaptionsOldBottomSheetHeader(View parentView, int resId) {
         View headerView = parentView.findViewById(resId);
         Utils.hideViewByRemovingFromParentUnderCondition(
-                HIDE_PLAYER_FLYOUT_CAPTIONS_HEADER,
+                isCaptionsHeaderEnabled(),
                 headerView
         );
 
@@ -197,7 +203,7 @@ public final class HidePlayerFlyoutMenuPatch {
      * Injection point.
      */
     public static void hideQualityOldBottomSheetFooter(ListView listView, View view, Object object, boolean bool) {
-        if (HIDE_PLAYER_FLYOUT_QUALITY_FOOTER) {
+        if (isQualityFooterEnabled()) {
             view = new View(listView.getContext());
         }
 
@@ -208,7 +214,7 @@ public final class HidePlayerFlyoutMenuPatch {
      * Injection point.
      */
     public static void hideQualityOldBottomSheetHeader(ListView listView, View view, Object object, boolean bool) {
-        if (HIDE_PLAYER_FLYOUT_QUALITY_HEADER) {
+        if (isQualityHeaderEnabled()) {
             view = new View(listView.getContext());
         }
 

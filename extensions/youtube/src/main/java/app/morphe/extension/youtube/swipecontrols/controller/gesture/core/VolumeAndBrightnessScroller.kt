@@ -60,6 +60,8 @@ interface VolumeAndBrightnessScroller {
  * @param overlayController Overlay controller instance.
  * @param volumeDistance Unit distance for volume scrolling, in dp.
  * @param brightnessDistance Unit distance for brightness scrolling, in dp; higher = more precise.
+ * @param brightnessStepPercent How many percent of brightness each step changes (e.g. 5.0).
+ * @param brightnessGridPercent Discrete grid (percent per level) the brightness value snaps to.
  * @param speedDistance Unit distance for speed scrolling, in dp; higher = more precise.
  * @param speedStepInt Playback speed change per tick, expressed as an integer multiplied by 100 (e.g. 5 = 0.05x).
  * @param enableSpeedGesture Whether the playback speed swipe gesture is enabled.
@@ -71,6 +73,8 @@ class VolumeAndBrightnessScrollerImpl(
     private val overlayController: SwipeControlsOverlay,
     volumeDistance: Int = 10,
     brightnessDistance: Int = 1,
+    brightnessStepPercent: Double = 1.0,
+    brightnessGridPercent: Double = 0.0,
     speedDistance: Int = 10,
     private val speedStepInt: Int = 5,
     private val enableSpeedGesture: Boolean = false,
@@ -109,7 +113,11 @@ class VolumeAndBrightnessScrollerImpl(
                 }
 
                 if (shouldAdjustBrightness) {
-                    screenBrightness += direction
+                    screenBrightness += direction * brightnessStepPercent
+                    // Snap to the configured level grid (number of brightness steps).
+                    if (brightnessGridPercent > 0) {
+                        screenBrightness = (screenBrightness / brightnessGridPercent).roundToInt() * brightnessGridPercent
+                    }
                 } else {
                     restoreDefaultBrightness()
                 }
