@@ -22,6 +22,7 @@ Second \"item\" text"</string>
     <string name="morphe_settings_save">Save</string>
     <string name="morphe_settings_reset">Reset</string>
     <string name="morphe_settings_reset_color">Reset color</string>
+    <string name="morphe_settings_enter_value_title">Enter value</string>
     <string name="morphe_settings_color_invalid">Invalid color</string>
     <string name="morphe_settings_restart_title">Restart required</string>
     <string name="morphe_settings_restart_dialog_message">Restart the app for this change to take effect.</string>

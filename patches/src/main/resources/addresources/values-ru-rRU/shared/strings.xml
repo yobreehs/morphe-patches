@@ -22,6 +22,7 @@ Second \"item\" text"</string>
   <string name="morphe_settings_save">Сохранить</string>
   <string name="morphe_settings_reset">Сбросить</string>
   <string name="morphe_settings_reset_color">Сбросить цвет</string>
+  <string name="morphe_settings_enter_value_title">Ввести значение</string>
   <string name="morphe_settings_color_invalid">Неверный цвет</string>
   <string name="morphe_settings_restart_title">Требуется перезапуск</string>
   <string name="morphe_settings_restart_dialog_message">Перезапустите приложение, чтобы изменения вступили в силу.</string>

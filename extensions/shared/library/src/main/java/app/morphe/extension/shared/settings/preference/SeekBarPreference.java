@@ -7,14 +7,17 @@
 
 package app.morphe.extension.shared.settings.preference;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.preference.Preference;
+import android.text.InputType;
 import android.util.AttributeSet;
 import android.util.Pair;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -122,6 +125,10 @@ public class SeekBarPreference extends Preference {
         currentLabel.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
         updateLabel(currentLabel, pending[0], config);
 
+        // Tap the value to type a precise number instead of dragging the seek bar.
+        currentLabel.setOnClickListener(v ->
+                showValueInputDialog(context, config, pending, seekBar, currentLabel));
+
         SeekBar seekBar = new SeekBar(context);
         seekBar.setMax((config.max - config.min) / config.step);
         seekBar.setProgress(valueToProgress(config, pending[0]));
@@ -228,5 +235,39 @@ public class SeekBarPreference extends Preference {
 
     public static int progressToValue(SeekBarConfig config, int progress) {
         return config.min + progress * config.step;
+    }
+
+    /**
+     * Lets the user type an exact value instead of dragging the seek bar.
+     * The entered number is clamped to the registered [min, max] range and snapped to the
+     * configured step, so it can never go beyond what the slider itself offers.
+     */
+    private void showValueInputDialog(Context context, SeekBarConfig config, int[] pending,
+                                      SeekBar seekBar, TextView label) {
+        EditText editText = new EditText(context);
+        editText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED);
+        editText.setText(String.valueOf(pending[0]));
+        editText.setSelectAllOnFocus(true);
+
+        new AlertDialog.Builder(context)
+                .setTitle(StringRef.str("morphe_settings_enter_value_title"))
+                .setMessage(String.format(Locale.ROOT, "%d – %d%s",
+                        config.min, config.max, config.unit))
+                .setView(editText)
+                .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+                    try {
+                        int value = Integer.parseInt(editText.getText().toString().trim());
+                        // Clamp to the slider range and snap to the slider step.
+                        value = Math.max(config.min, Math.min(config.max, value));
+                        value = config.min + ((value - config.min) / config.step) * config.step;
+                        pending[0] = value;
+                        seekBar.setProgress(valueToProgress(config, value));
+                        updateLabel(label, value, config);
+                    } catch (NumberFormatException ignored) {
+                        // Keep the previous value on invalid input.
+                    }
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
     }
 }
