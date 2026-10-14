@@ -697,6 +697,8 @@ To fix this, turn on \'Spoof video streams\' and change the \'Default client\' t
     <string name="morphe_swipe_volume_distance_title">Volume swipe sensitivity</string>
     <string name="morphe_swipe_volume_distance_summary">Higher values require more swiping per volume step</string>
     <string name="morphe_swipe_volume_steps_title">Volume steps</string>
+    <string name="morphe_volume_key_steps_title">Volume key steps</string>
+    <string name="morphe_volume_key_steps_summary">How many volume steps a single press of the device volume buttons changes (1 = default one step)</string>
     <string name="morphe_volume_boost_title">Volume boost</string>
     <string name="morphe_volume_boost_summary">Swiping up past maximum volume boosts it, which can distort loud audio</string>
     <string name="morphe_swipe_volume_steps_entry_default">Device default</string>
@@ -909,6 +911,8 @@ To show the \'Audio Track\' menu, change \'Spoof video streams\' to any client e
     <!-- layout.hide.autoplaypreview.hideAutoplayPreviewPatch -->
     <string name="morphe_hide_autoplay_preview_title">Hide autoplay preview</string>
     <string name="morphe_hide_autoplay_preview_summary">Hides the upcoming video preview in fullscreen before autoplay begins</string>
+    <string name="morphe_pip_seek_buttons_title">Picture-in-picture seek buttons</string>
+    <string name="morphe_pip_seek_buttons_summary">Adds rewind and forward (±5 seconds) buttons to the Picture-in-picture window</string>
 
     <!-- layout.buttons.overlay.hidePlayerOverlayButtonsPatch -->
     <string name="morphe_overlay_buttons_screen_title">Overlay buttons</string>

@@ -226,7 +226,7 @@ class SwipeControlsHostActivity(val activity: Activity) {
      * Creates the audio volume controller.
      */
     private fun createAudioController() =
-        if (config.enableVolumeControls) {
+        if (config.enableVolumeControls || config.volumeKeySteps > 1) {
             AudioVolumeController(this).takeIf { it.isAvailable }
         } else {
             null

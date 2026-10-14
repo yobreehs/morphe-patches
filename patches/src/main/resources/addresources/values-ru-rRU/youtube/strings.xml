@@ -645,6 +645,8 @@ Second \"item\" text"</string>
   <string name="morphe_swipe_volume_distance_title">Чувствительность жеста регулировки громкости</string>
   <string name="morphe_swipe_volume_distance_summary">Более высокие значения требуют больше смахиваний на шаг громкости</string>
   <string name="morphe_swipe_volume_steps_title">Шаги громкости</string>
+  <string name="morphe_volume_key_steps_title">Шагов громкости на нажатие</string>
+  <string name="morphe_volume_key_steps_summary">Сколько шагов громкости меняет одно нажатие кнопок громкости устройства (1 = как по умолчанию, один шаг)</string>
   <string name="morphe_volume_boost_title">Усиление громкости</string>
   <string name="morphe_volume_boost_summary">Проведение вверх за пределы максимальной громкости усиливает её, что может искажать громкий звук</string>
   <string name="morphe_swipe_volume_steps_entry_default">По умолчанию</string>
@@ -846,6 +848,8 @@ Second \"item\" text"</string>
   <string name="morphe_hide_player_flyout_watch_in_vr_title">Скрыть пункт \"Смотреть в VR-режиме\"</string>
   <!-- layout.hide.autoplaypreview.hideAutoplayPreviewPatch -->
   <string name="morphe_hide_autoplay_preview_title">Скрыть предварительный просмотр автовоспроизведения</string>
+  <string name="morphe_pip_seek_buttons_title">Кнопки перемотки в PiP</string>
+  <string name="morphe_pip_seek_buttons_summary">Добавляет кнопки перемотки назад и вперёд (±5 секунд) в окно «картинка в картинке»</string>
   <string name="morphe_hide_autoplay_preview_summary">Ваша конфигурация JSON SponsorBlock может быть импортирована или экспортирована в Morphe и другие платформы SponsorBlock. Она включает в себя Ваш личный идентификатор пользователя. Подумайте дважды перед тем, как делиться ею с кем-либо</string>
   <!-- layout.buttons.overlay.hidePlayerOverlayButtonsPatch -->
   <string name="morphe_overlay_buttons_screen_title">Кнопки наложения</string>

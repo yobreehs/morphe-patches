@@ -164,10 +164,11 @@ class SwipeControlsConfigurationProvider {
     //region keys enable
     /**
      * Indicates whether volume key controls should be overridden by swipe controls.
-     * Returns true if volume controls are enabled and the video is in fullscreen or multi-window mode.
+     * Returns true if volume controls are enabled (or a custom volume key step is set)
+     * and the video is in fullscreen or multi-window mode.
      */
     val overwriteVolumeKeyControls: Boolean
-        get() = enableVolumeControls && isFullscreenOrMultiWindowVideo
+        get() = (enableVolumeControls || volumeKeySteps > 1) && isFullscreenOrMultiWindowVideo
     //endregion
 
     //region gesture adjustments
@@ -224,6 +225,13 @@ class SwipeControlsConfigurationProvider {
      */
     val volumeStepCount: Int
         get() = Settings.SWIPE_VOLUME_STEPS.get().steps
+
+    /**
+     * FemAlloy: how many volume steps a single hardware volume key press changes (1..10).
+     * A value of 1 keeps the default one-step-per-press behavior.
+     */
+    val volumeKeySteps: Int
+        get() = Settings.VOLUME_KEY_STEPS.get().coerceIn(1, 10)
 
     companion object {
         /**

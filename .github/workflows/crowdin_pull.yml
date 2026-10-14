@@ -1,7 +1,10 @@
 name: Crowdin pull and merge
 on:
-  schedule:
-    - cron: "0 */12 * * *" # every 12 hours
+  # FemAlloy: the 12-hour schedule is disabled on this fork — the workflow checks out the
+  # upstream `dev` branch, which does not exist here, so it failed every run and spammed
+  # failure emails. Run manually via "Run workflow" if translations are ever needed.
+  #schedule:
+  #  - cron: "0 */12 * * *" # every 12 hours
   workflow_dispatch:
 
 jobs:

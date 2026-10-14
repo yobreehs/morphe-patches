@@ -51,8 +51,10 @@ class VolumeKeysController(
      */
     private fun handleVolumeKeyEvent(event: KeyEvent, volumeUp: Boolean): Boolean {
         if (event.action == KeyEvent.ACTION_DOWN) {
+            // FemAlloy: a single key press can change more than one volume step.
+            val steps = controller.config.volumeKeySteps
             controller.audio?.apply {
-                adjustVolumeBySteps(if (volumeUp) 1 else -1)
+                adjustVolumeBySteps(if (volumeUp) steps else -steps)
                 controller.overlay.onVolumeChanged(steppedVolume, steppedMaxVolume, boostStep)
             }
         }
