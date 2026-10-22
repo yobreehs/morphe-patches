@@ -214,15 +214,22 @@ val navigationBarPatch = bytecodePatch(
         // nothing if the flags are left to the account.
 
         // The translucent navigation bar comes from three feature flags that not every account
-        // gets, so all of them are turned on whenever the window is drawn edge to edge. The bar then
-        // looks the same on every account, and the opaque option below paints over the same
-        // translucent bar everywhere.
+        // gets, so they are turned on to make the bar look the same on every account, and the opaque
+        // option below paints over the same translucent bar everywhere. The flag that makes the bar
+        // cover the system navigation buttons is turned on only when the window is drawn edge to
+        // edge. The blur and the feed behind the bar do not change the room left for the system
+        // navigation buttons, so they are also turned on without it.
         TranslucentNavigationBarFeatureFlagsFingerprint.matchAll().forEach { match ->
             match.method.apply {
                 TRANSLUCENT_NAVIGATION_BAR_FEATURE_FLAGS.forEach { flag ->
                     if (containsLiteralInstruction(flag)) {
+                        val override = if (flag == NAVIGATION_BAR_COVERS_SYSTEM_BUTTONS_FLAG) {
+                            "useTranslucentNavigationBar"
+                        } else {
+                            "useTranslucentNavigationBarBackground"
+                        }
                         // Overrides every read of the flag in the method.
-                        insertLiteralOverride(flag, "$EXTENSION_CLASS->useTranslucentNavigationBar(Z)Z")
+                        insertLiteralOverride(flag, "$EXTENSION_CLASS->$override(Z)Z")
                     }
                 }
             }
@@ -246,7 +253,7 @@ val navigationBarPatch = bytecodePatch(
                 addInstructionsWithLabels(
                     index + 1,
                     $$"""
-                        invoke-static { }, $$EXTENSION_CLASS->isTranslucentNavigationBarForced()Z
+                        invoke-static { }, $$EXTENSION_CLASS->isTranslucentNavigationBarBackgroundForced()Z
                         move-result v$$sdkRegister
                         if-eqz v$$sdkRegister, :draw_blur
                         sget v$$sdkRegister, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -337,7 +344,7 @@ val navigationBarPatch = bytecodePatch(
                     addInstructionsWithLabels(
                         index,
                         $$"""
-                            invoke-static { }, $$EXTENSION_CLASS->isTranslucentNavigationBarForced()Z
+                            invoke-static { }, $$EXTENSION_CLASS->isTranslucentNavigationBarBackgroundForced()Z
                             move-result v$$imeRegister
                             if-eqz v$$imeRegister, :keep_padding
                             # The inset types are only on Android 11 and later.
@@ -386,7 +393,7 @@ val navigationBarPatch = bytecodePatch(
                 addInstructionsWithLabels(
                     index + 1,
                     """
-                        invoke-static { }, $EXTENSION_CLASS->isTranslucentNavigationBarForced()Z
+                        invoke-static { }, $EXTENSION_CLASS->isTranslucentNavigationBarBackgroundForced()Z
                         move-result v$freeRegister
                         if-eqz v$freeRegister, :keep_clip_to_padding
                         const/4 v$freeRegister, 0x0
