@@ -228,21 +228,54 @@ public final class NavigationBarPatch {
      * (https://github.com/MorpheApp/morphe-patches/issues/3864).
      */
     public static boolean useTranslucentNavigationBar(boolean original) {
+        boolean translucent = original;
         try {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
-                return false;
+                translucent = false;
+            } else {
+                Boolean edgeToEdge = HideStatusBarPatch.isEdgeToEdgeTopBar();
+                // Null if not read yet, or the Hide status bar patch is not included.
+                if (edgeToEdge != null) {
+                    translucent = edgeToEdge;
+                }
             }
-
-            Boolean edgeToEdge = HideStatusBarPatch.isEdgeToEdgeTopBar();
-            if (edgeToEdge == null) {
-                // Not read yet, or the Hide status bar patch is not included.
-                return original;
-            }
-            return edgeToEdge;
         } catch (Exception ex) {
             Logger.printException(() -> "useTranslucentNavigationBar failure", ex);
-            return original;
         }
+
+        translucentNavigationBarForced = translucent;
+        return translucent;
+    }
+
+    /**
+     * If {@link #useTranslucentNavigationBar(boolean)} turned the translucent navigation bar on.
+     * The fixes for what its feature flags break are only needed then, and stay off if the flags
+     * are no longer turned on by this patch.
+     */
+    private static volatile boolean translucentNavigationBarForced;
+
+    /**
+     * Injection point.
+     */
+    public static boolean isTranslucentNavigationBarForced() {
+        return translucentNavigationBarForced;
+    }
+
+    /**
+     * If the keyboard height was ever removed from the bottom margin of the layout that holds
+     * the page, the player and the navigation bar, so the keyboard covers them.
+     */
+    private static volatile boolean keyboardMarginRemoved;
+
+    /**
+     * Injection point.
+     */
+    public static void setKeyboardMarginRemoved() {
+        keyboardMarginRemoved = true;
+    }
+
+    static boolean isKeyboardMarginRemoved() {
+        return keyboardMarginRemoved;
     }
 
     /**
@@ -253,10 +286,12 @@ public final class NavigationBarPatch {
      * the keyboard, so the bar grows as tall as the keyboard and covers the page
      * (https://github.com/MorpheApp/morphe-patches/issues/3909). The page above then ends
      * the height of the system bars below the top of the keyboard, so only that much room is left.
+     * Only with the feature flags turned on by {@link #useTranslucentNavigationBar(boolean)}.
      */
     public static int getNavigationBarBottomPadding(View navigationBar, int original) {
         try {
-            if (original != 0 && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            if (translucentNavigationBarForced && original != 0
+                    && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 WindowInsets insets = navigationBar.getRootWindowInsets();
                 if (insets != null && insets.isVisible(WindowInsets.Type.ime())) {
                     return Math.min(original, insets.getInsets(WindowInsets.Type.systemBars()).bottom);

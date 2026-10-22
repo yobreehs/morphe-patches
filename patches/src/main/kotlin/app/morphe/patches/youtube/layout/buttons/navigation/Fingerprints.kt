@@ -208,6 +208,32 @@ internal object FeedListPaddingFingerprint : Fingerprint(
 )
 
 /**
+ * Sets the bottom padding of the list of a browse page laid out behind the navigation bar,
+ * to the navigation bar height plus the bottom window inset, once the window insets are known.
+ */
+internal object BrowseListBottomPaddingFingerprint : Fingerprint(
+    returnType = "V",
+    parameters = listOf("Ljava/lang/Object;"),
+    filters = listOf(
+        methodCall(
+            definingClass = "Landroid/support/v7/widget/RecyclerView;",
+            name = "getPaddingRight"
+        ),
+        fieldAccess(
+            opcode = Opcode.IGET,
+            definingClass = "Landroid/graphics/Rect;",
+            name = "bottom",
+            location = MatchAfterWithin(6)
+        ),
+        methodCall(
+            definingClass = "Landroid/support/v7/widget/RecyclerView;",
+            name = "setPadding",
+            location = MatchAfterWithin(3)
+        )
+    )
+)
+
+/**
  * Draws the blurred background of the translucent navigation bar. If the canvas is hardware
  * accelerated, a copy of the watch layout, with the player, is drawn into a blurred render node,
  * then the bar color is drawn over it.

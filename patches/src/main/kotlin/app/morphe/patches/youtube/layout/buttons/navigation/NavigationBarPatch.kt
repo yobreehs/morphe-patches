@@ -207,6 +207,12 @@ val navigationBarPatch = bytecodePatch(
         // Hide navigation bar
         addBottomBarContainerHook("$EXTENSION_CLASS->hideNavigationBar(Landroid/view/View;)V")
 
+        // region Translucent navigation bar
+
+        // Turning on the feature flags of the translucent navigation bar, and the fixes for what
+        // they break. Every fix checks that the flags are turned on by this patch, so the fixes do
+        // nothing if the flags are left to the account.
+
         // The translucent navigation bar comes from three feature flags that not every account
         // gets, so all of them are turned on whenever the window is drawn edge to edge. The bar then
         // looks the same on every account, and the opaque option below paints over the same
@@ -240,6 +246,9 @@ val navigationBarPatch = bytecodePatch(
                 addInstructionsWithLabels(
                     index + 1,
                     $$"""
+                        invoke-static { }, $$EXTENSION_CLASS->isTranslucentNavigationBarForced()Z
+                        move-result v$$sdkRegister
+                        if-eqz v$$sdkRegister, :draw_blur
                         sget v$$sdkRegister, Landroid/os/Build$VERSION;->SDK_INT:I
                         const/16 v$$minSdkRegister, 0x22
                         if-ge v$$sdkRegister, v$$minSdkRegister, :draw_blur
@@ -249,41 +258,6 @@ val navigationBarPatch = bytecodePatch(
                     """
                 )
             }
-        }
-
-        // With the translucent navigation bar, the navigation bar makes room for the system
-        // navigation buttons. If the navigation bar is hidden in the Shorts player, nothing makes
-        // that room, so the Shorts player makes it itself. The first parameter is the layout
-        // of the Shorts player fragment.
-        ShortsBottomBarContainerFingerprint.method.apply {
-            addInstruction(
-                0,
-                "invoke-static { p1 }, $EXTENSION_CLASS->setShortsPlayerBottomInset(Landroid/view/View;)V"
-            )
-
-            // The height of the navigation bar is passed to the object that reserves that room below
-            // the Shorts player, right after the view. Other patches can change the height after
-            // it's read, so the room is replaced where it's passed.
-            val getHeightIndex = indexOfFirstInstructionOrThrow {
-                getReference<MethodReference>()?.name == "getHeight"
-            }
-            val reserveRoomIndex = indexOfFirstInstructionOrThrow(getHeightIndex, Opcode.INVOKE_DIRECT_RANGE)
-            val reserveRoomInstruction = getInstruction<RegisterRangeInstruction>(reserveRoomIndex)
-            val parameterTypes = reserveRoomInstruction.getReference<MethodReference>()!!
-                .parameterTypes.map { it.toString() }
-            val heightParameterIndex = parameterTypes.indices.first { index ->
-                parameterTypes[index] == "Landroid/view/View;" && parameterTypes.getOrNull(index + 1) == "I"
-            } + 1
-            // The first register is the instance.
-            val heightRegister = reserveRoomInstruction.startRegister + 1 + heightParameterIndex
-
-            addInstructions(
-                reserveRoomIndex,
-                """
-                    invoke-static/range { v$heightRegister .. v$heightRegister }, $EXTENSION_CLASS->getShortsPlayerBottomRoom(I)I
-                    move-result v$heightRegister
-                """
-            )
         }
 
         // With the keyboard open, the bottom inset also holds the keyboard, so the bar covering
@@ -323,12 +297,17 @@ val navigationBarPatch = bytecodePatch(
                             (this as BuilderInstruction21t).target.location.index == insetIndex
                 }
                 val keyboardRegister = getInstruction<OneRegisterInstruction>(keyboardBranchIndex).registerA
+                val freeRegister = getFreeRegisterProvider(insetIndex + 1, 1).getFreeRegister4Bit()
 
                 addInstructionsAtControlFlowLabel(
                     insetIndex + 1,
                     """
                         if-eqz v$keyboardRegister, :keyboard_hidden
+                        invoke-static { }, $EXTENSION_CLASS->isTranslucentNavigationBarForced()Z
+                        move-result v$freeRegister
+                        if-eqz v$freeRegister, :keyboard_hidden
                         const/4 v$marginRegister, 0x0
+                        invoke-static { }, $EXTENSION_CLASS->setKeyboardMarginRemoved()V
                         :keyboard_hidden
                         nop
                     """
@@ -358,6 +337,9 @@ val navigationBarPatch = bytecodePatch(
                     addInstructionsWithLabels(
                         index,
                         $$"""
+                            invoke-static { }, $$EXTENSION_CLASS->isTranslucentNavigationBarForced()Z
+                            move-result v$$imeRegister
+                            if-eqz v$$imeRegister, :keep_padding
                             # The inset types are only on Android 11 and later.
                             sget v$$imeRegister, Landroid/os/Build$VERSION;->SDK_INT:I
                             const/16 v$$systemBarsRegister, 0x1e
@@ -388,6 +370,69 @@ val navigationBarPatch = bytecodePatch(
                     )
                 }
             }
+        }
+
+        // When a browse page is laid out behind the navigation bar, its list is set to draw into
+        // its padding, and the padding is set later, once the window insets are known. If the list
+        // is refreshed in between, as when coming back from the Shorts player, it's set to clip to
+        // its padding again, so the bottom padding is left as an empty band between the feed and
+        // the navigation bar. The list is set to draw into its padding again with the padding.
+        BrowseListBottomPaddingFingerprint.let {
+            it.method.apply {
+                val index = it.instructionMatches.last().index
+                val listRegister = getInstruction<FiveRegisterInstruction>(index).registerC
+                val freeRegister = getFreeRegisterProvider(index + 1, 1).getFreeRegister4Bit()
+
+                addInstructionsWithLabels(
+                    index + 1,
+                    """
+                        invoke-static { }, $EXTENSION_CLASS->isTranslucentNavigationBarForced()Z
+                        move-result v$freeRegister
+                        if-eqz v$freeRegister, :keep_clip_to_padding
+                        const/4 v$freeRegister, 0x0
+                        invoke-virtual { v$listRegister, v$freeRegister }, Landroid/support/v7/widget/RecyclerView;->setClipToPadding(Z)V
+                        :keep_clip_to_padding
+                        nop
+                    """
+                )
+            }
+        }
+
+        // endregion
+
+        // With the translucent navigation bar, the navigation bar makes room for the system
+        // navigation buttons. If the navigation bar is hidden in the Shorts player, nothing makes
+        // that room, so the Shorts player makes it itself. The first parameter is the layout
+        // of the Shorts player fragment.
+        ShortsBottomBarContainerFingerprint.method.apply {
+            addInstruction(
+                0,
+                "invoke-static { p1 }, $EXTENSION_CLASS->setShortsPlayerBottomInset(Landroid/view/View;)V"
+            )
+
+            // The height of the navigation bar is passed to the object that reserves that room below
+            // the Shorts player, right after the view. Other patches can change the height after
+            // it's read, so the room is replaced where it's passed.
+            val getHeightIndex = indexOfFirstInstructionOrThrow {
+                getReference<MethodReference>()?.name == "getHeight"
+            }
+            val reserveRoomIndex = indexOfFirstInstructionOrThrow(getHeightIndex, Opcode.INVOKE_DIRECT_RANGE)
+            val reserveRoomInstruction = getInstruction<RegisterRangeInstruction>(reserveRoomIndex)
+            val parameterTypes = reserveRoomInstruction.getReference<MethodReference>()!!
+                .parameterTypes.map { it.toString() }
+            val heightParameterIndex = parameterTypes.indices.first { index ->
+                parameterTypes[index] == "Landroid/view/View;" && parameterTypes.getOrNull(index + 1) == "I"
+            } + 1
+            // The first register is the instance.
+            val heightRegister = reserveRoomInstruction.startRegister + 1 + heightParameterIndex
+
+            addInstructions(
+                reserveRoomIndex,
+                """
+                    invoke-static/range { v$heightRegister .. v$heightRegister }, $EXTENSION_CLASS->getShortsPlayerBottomRoom(I)I
+                    move-result v$heightRegister
+                """
+            )
         }
 
         // Paint over the translucent status bar and navigation bar, instead of turning off the
