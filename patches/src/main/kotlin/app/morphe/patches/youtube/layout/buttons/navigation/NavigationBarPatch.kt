@@ -162,7 +162,14 @@ val navigationBarPatch = bytecodePatch(
             SwitchPreference("morphe_hide_navigation_bar"),
             SwitchPreference("morphe_narrow_navigation_buttons", summary = true),
             SwitchPreference("morphe_hide_navigation_button_labels"),
-            SwitchPreference("morphe_disable_icon_only_navigation_buttons", summary = true),
+            SwitchPreference("morphe_disable_icon_only_navigation_buttons", summary = true)
+        )
+
+        if (is_21_35_or_greater) {
+            navPreferences += SwitchPreference("morphe_disable_toolbar_navigation_tabs", summary = true)
+        }
+
+        navPreferences += listOf(
             SwitchPreference("morphe_hide_navigation_new_content_dot"),
             SwitchPreference("morphe_navigation_bar_animations", summary = true),
             SwitchPreference("morphe_disable_translucent_navigation", summary = true)
