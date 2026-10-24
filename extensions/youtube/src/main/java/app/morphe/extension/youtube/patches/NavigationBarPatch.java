@@ -15,6 +15,8 @@ import static app.morphe.extension.shared.StringRef.str;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.view.MenuItem;
@@ -372,6 +374,14 @@ public final class NavigationBarPatch {
                     if (view.getPaddingBottom() != padding) {
                         view.post(() -> view.setPadding(view.getPaddingLeft(), view.getPaddingTop(),
                                 view.getPaddingRight(), padding));
+                    }
+
+                    // The room is drawn with the background of the layout, which follows the app theme.
+                    // The system navigation buttons over the Shorts player are light in both themes,
+                    // so with the light theme they cannot be seen. The room is black like the Shorts player.
+                    if (!(view.getBackground() instanceof ColorDrawable background)
+                            || background.getColor() != Color.BLACK) {
+                        view.setBackgroundColor(Color.BLACK);
                     }
                 } catch (Exception ex) {
                     Logger.printException(() -> "setShortsPlayerBottomInset layout failure", ex);
