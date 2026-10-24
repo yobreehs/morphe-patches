@@ -1,3 +1,11 @@
+## [1.49.0-dev.5](https://github.com/MorpheApp/morphe-patches/compare/v1.49.0-dev.4...v1.49.0-dev.5) (2026-10-24)
+
+### 🐛 Bug Fixes
+
+* Temporarily change expired PoToken check to log only instead of a user dialog ([1669acd](https://github.com/MorpheApp/morphe-patches/commit/1669acdea4e56f6d1e812d3c0f74ee691bc2e4cd))
+* **YouTube - Miniplayer:** Minimal miniplayer is covered by the keyboard before 21.29 ([5cd2eb2](https://github.com/MorpheApp/morphe-patches/commit/5cd2eb2f8d710e3a724d309dbf98fc845e78cb94))
+* **YouTube - Theme:** Custom background colors are not applied with 21.43 ([#4019](https://github.com/MorpheApp/morphe-patches/issues/4019)) ([9cc833f](https://github.com/MorpheApp/morphe-patches/commit/9cc833f626bc456d142a6eafe2a613a3f2cc3784))
+
 ## [1.49.0-dev.4](https://github.com/MorpheApp/morphe-patches/compare/v1.49.0-dev.3...v1.49.0-dev.4) (2026-10-24)
 
 ### 🐛 Bug Fixes
