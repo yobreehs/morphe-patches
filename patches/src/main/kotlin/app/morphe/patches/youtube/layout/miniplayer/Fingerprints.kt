@@ -419,11 +419,43 @@ internal object MiniplayerSetIconsLegacyFingerprint : Fingerprint(
 )
 
 /**
- * 21.42+
+ * 21.43+
+ *
+ * Matches the resume (Continue watching) check of the show miniplayer command.
+ */
+internal object ShowMiniplayerCommandFingerprint: Fingerprint(
+    classFingerprint = Fingerprint(
+        filters = listOf(
+            literal(164817L),
+            literal(121253L)
+        )
+    ),
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "V",
+    parameters = listOf("L", "L", "Ljava/util/Map;"),
+    filters = listOf(
+        methodCall(
+            opcode = Opcode.INVOKE_DIRECT,
+            definingClass = "this",
+            returnType = "Z"
+        ),
+        opcode(
+            opcode = Opcode.MOVE_RESULT,
+            location = MatchAfterImmediately()
+        ),
+        opcode(
+            opcode = Opcode.IF_EQZ,
+            location = MatchAfterImmediately()
+        )
+    )
+)
+
+/**
+ * 21.42.
  *
  * Matches the resume (Continue watching) flag check of the show miniplayer command.
  */
-internal object ShowMiniplayerCommandFingerprint: Fingerprint(
+internal object ShowMiniplayerCommandLegacy2142Fingerprint: Fingerprint(
     classFingerprint = Fingerprint(
         filters = listOf(
             literal(164817L),
@@ -440,7 +472,7 @@ internal object ShowMiniplayerCommandFingerprint: Fingerprint(
         ),
         opcode(
             opcode = Opcode.IF_EQZ,
-            location = MatchAfterWithin(10)
+            location = MatchAfterImmediately()
         )
     )
 )
