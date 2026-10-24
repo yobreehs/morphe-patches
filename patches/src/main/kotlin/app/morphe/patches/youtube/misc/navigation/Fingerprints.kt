@@ -81,18 +81,17 @@ internal object NavigationEnumFingerprint : Fingerprint(
     }
 )
 
+/**
+ * 21.42 and earlier.
+ */
 internal object PivotBarButtonsCreateDrawableViewFingerprint : Fingerprint(
-    classFingerprint = Fingerprint(
-        definingClass = "Lcom/google/android/libraries/youtube/rendering/ui/pivotbar/PivotBar;",
-        filters = listOf(
-            string("Could not load default drawable for pivot bar tab.")
-        )
-    ),
+    definingClass = "Lcom/google/android/libraries/youtube/rendering/ui/pivotbar/PivotBar;",
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
     returnType = "Landroid/view/View;",
-    parameters = listOf(
-        "L", "Z" ,"I", "L"
-    )
+    custom = { method, _ ->
+        // Only one view creation method has a Drawable parameter.
+        method.parameterTypes.firstOrNull() == "Landroid/graphics/drawable/Drawable;"
+    }
 )
 
 internal object PivotBarButtonsCreateResourceStyledViewFingerprint : Fingerprint(

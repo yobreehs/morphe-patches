@@ -462,17 +462,15 @@ public final class NavigationBar {
     /**
      * Injection point.
      * <p>
-     * Unique hook just for the 'Create' and 'You' tab.
+     * Unique hook just for the 'Create' and 'You' tab (all tabs in 21.43+).
      */
     public static void navigationImageResourceTabLoaded(View view) {
         // 'You' tab has no YT enum name and the enum hook is not called for it.
         // Compare the last enum to figure out which tab this actually is.
-        if (NavigationBar.NavigationButton.CREATE.ytEnumNames.contains(lastYTNavigationEnumName)) {
-            navigationTabLoaded(view);
-        } else {
+        if (lastYTNavigationEnumName == null) {
             lastYTNavigationEnumName = NavigationButton.LIBRARY.ytEnumNames.get(0);
-            navigationTabLoaded(view);
         }
+        navigationTabLoaded(view);
     }
 
     /**
