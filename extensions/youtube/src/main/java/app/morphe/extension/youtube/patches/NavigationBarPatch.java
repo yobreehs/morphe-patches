@@ -257,6 +257,18 @@ public final class NavigationBarPatch {
     /**
      * Injection point.
      * <p>
+     * With the navigation bar covering the system navigation buttons, the room below the bar fixed
+     * at the bottom of some pages, such as the reply bar of the comment replies, already holds
+     * the system navigation buttons. The flag adds the navigation bar height to it as well, so an
+     * empty band is left between the two bars (https://github.com/MorpheApp/morphe-patches/issues/2300).
+     */
+    public static boolean useFixedBottomBarRoom(boolean original) {
+        return original && !translucentNavigationBarForced;
+    }
+
+    /**
+     * Injection point.
+     * <p>
      * The blurred, translucent background of the navigation bar and the feed laid out behind it
      * only change how the bar looks, not the room left for the system navigation buttons, so they
      * are turned on from Android 12 also when the window is not drawn edge to edge. If

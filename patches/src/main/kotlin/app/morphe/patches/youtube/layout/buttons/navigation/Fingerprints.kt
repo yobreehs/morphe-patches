@@ -131,6 +131,28 @@ internal object PivotBarChangedFingerprint : Fingerprint(
 )
 
 /**
+ * Adds the navigation bar height to the bottom room of the bar fixed at the bottom of some pages,
+ * such as the reply bar of the comment replies. Only read when the navigation bar covers
+ * the system navigation buttons. Not present in older targets.
+ */
+internal object CommentReplyPaddingFeatureFlagFingerprint : Fingerprint(
+    filters = listOf(
+        literal(45752241L)
+    )
+)
+
+/**
+ * Changes how the height of the navigation bar and the miniplayer is given to the pages,
+ * which leaves wrong padding in some pages, such as the incognito search.
+ * 21.29 and older read it with a single accessor method.
+ */
+internal object IncognitoSearchPaddingFeatureFlagFingerprint : Fingerprint(
+    filters = listOf(
+        literal(45724388L)
+    )
+)
+
+/**
  * Feature flags of the translucent navigation bar. 21.29 and older read each of them with a single
  * accessor method, newer targets read them inline in many classes, sometimes more than once in
  * the same method.

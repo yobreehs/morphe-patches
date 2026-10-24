@@ -23,6 +23,7 @@ import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.resourcePatch
 import app.morphe.patcher.util.getFreeRegisterProvider
 import app.morphe.patcher.util.getReference
+import app.morphe.patcher.util.matchAllMethodIndicesForEach
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod.Companion.toMutable
 import app.morphe.patches.shared.misc.bridge.addBridge
 import app.morphe.patches.shared.misc.fix.proto.fixProtoLibraryPatch
@@ -44,6 +45,7 @@ import app.morphe.patches.youtube.misc.navigation.hookNavigationButtonCreated
 import app.morphe.patches.youtube.misc.navigation.navigationBarHookPatch
 import app.morphe.patches.youtube.misc.playservice.is_20_26_or_greater
 import app.morphe.patches.youtube.misc.playservice.is_20_31_or_greater
+import app.morphe.patches.youtube.misc.playservice.is_21_07_or_greater
 import app.morphe.patches.youtube.misc.playservice.is_21_35_or_greater
 import app.morphe.patches.youtube.misc.playservice.versionCheckPatch
 import app.morphe.patches.youtube.misc.settings.PreferenceScreen
@@ -318,6 +320,34 @@ val navigationBarPatch = bytecodePatch(
                         move-result v$paddingRegister
                     """
                 )
+            }
+        }
+
+        // With the bar covering the system navigation buttons, a flag adds the navigation bar height
+        // below the bar fixed at the bottom of some pages, such as the reply bar of the comment
+        // replies, so an empty band is left between them. The read is followed to its result,
+        // as the method reuses the register of the flag for another flag right after.
+        CommentReplyPaddingFeatureFlagFingerprint.matchAllMethodIndicesForEach(requireMatches = false) { index ->
+            val moveResultIndex = indexOfFirstInstructionOrThrow(index, Opcode.MOVE_RESULT)
+            val register = getInstruction<OneRegisterInstruction>(moveResultIndex).registerA
+
+            addInstructions(
+                moveResultIndex + 1,
+                """
+                    invoke-static { v$register }, $EXTENSION_CLASS->useFixedBottomBarRoom(Z)Z
+                    move-result v$register
+                """
+            )
+        }
+
+        // A flag gives the pages the height of the navigation bar and the miniplayer in another way,
+        // which leaves wrong padding in some pages, such as the incognito search. It is turned off.
+        if (is_21_07_or_greater) {
+            IncognitoSearchPaddingFeatureFlagFingerprint.matchAllMethodIndicesForEach { index ->
+                val moveResultIndex = indexOfFirstInstructionOrThrow(index, Opcode.MOVE_RESULT)
+                val register = getInstruction<OneRegisterInstruction>(moveResultIndex).registerA
+
+                addInstruction(moveResultIndex + 1, "const/4 v$register, 0x0")
             }
         }
 
