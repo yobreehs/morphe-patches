@@ -213,6 +213,11 @@ public class FeedCardLayoutPatch {
      * with the menu button near the right edge, so their card is wider than the other cards.
      */
     private static final int VIDEO_SHELF_HORIZONTAL_PADDING_DP = 4;
+    /**
+     * Spacing between the edges of the horizontal shelf cards and the content of the first and the last item
+     * of their list. The items of the shelves have different paddings, and some have none.
+     */
+    private static final int SHELF_LIST_PADDING_DP = 8;
 
     private static final CardOutlineProvider CARD_OUTLINE = new CardOutlineProvider(
             Dim.dp(CARD_HORIZONTAL_PADDING_DP), Dim.dp(CARD_VERTICAL_PADDING_DP));
@@ -395,6 +400,10 @@ public class FeedCardLayoutPatch {
      * the spacing of a view again whenever the view shows another element.
      */
     private static final Map<View, Boolean> shelfCardItems = new WeakHashMap<>();
+    /**
+     * Lists of horizontal shelves whose padding was changed while they were scrolled to the start.
+     */
+    private static final Map<View, Boolean> shelfListsAtStart = new WeakHashMap<>();
     /**
      * The list item whose spacing is set, until its element is known.
      */
@@ -1405,6 +1414,79 @@ public class FeedCardLayoutPatch {
                                 }
                             }
 
+                            // The card of a horizontal shelf clips its list, and the items of some shelves have
+                            // no padding, so their content is cut by the edges of the card. The padding of the list
+                            // moves the content of the first item, and of the last item at the end of the list,
+                            // inside the card.
+                            for (int i = 0, count = current.getChildCount(); i < count; i++) {
+                                View shelf = current.getChildAt(i);
+                                if (shelf.getHeight() <= 0
+                                        || !(shelfCardItems.containsKey(shelf) || isShelfHeader(shelf))
+                                        || !(findNestedList(shelf, 0) instanceof ViewGroup shelfList)) {
+                                    continue;
+                                }
+
+                                View first = null;
+                                View last = null;
+                                for (int j = 0, listCount = shelfList.getChildCount(); j < listCount; j++) {
+                                    View child = shelfList.getChildAt(j);
+                                    if (child.getWidth() <= 0) {
+                                        continue;
+                                    }
+                                    if (first == null || child.getLeft() < first.getLeft()) {
+                                        first = child;
+                                    }
+                                    if (last == null || child.getRight() > last.getRight()) {
+                                        last = child;
+                                    }
+                                }
+                                if (first == null) {
+                                    continue;
+                                }
+                                // The list keeps its scroll position when its padding changes, which moves the first
+                                // item before the padding, so the list is scrolled back to its start.
+                                if (shelfListsAtStart.remove(shelfList) != null
+                                        && first.getLeft() != shelfList.getPaddingLeft()) {
+                                    shelfList.scrollBy(first.getLeft() - shelfList.getPaddingLeft(), 0);
+                                    continue;
+                                }
+
+                                int[] shelfLocation = new int[2];
+                                shelf.getLocationOnScreen(shelfLocation);
+                                int[] listLocation = new int[2];
+                                shelfList.getLocationOnScreen(listLocation);
+                                final int cardInset = Dim.dp(CARD_HORIZONTAL_PADDING_DP + SHELF_LIST_PADDING_DP);
+                                int[] content = new int[2];
+                                int paddingLeft = shelfList.getPaddingLeft();
+                                int paddingRight = shelfList.getPaddingRight();
+
+                                // The first item is the leftmost one only while the list is scrolled to the start.
+                                if (!shelfList.canScrollHorizontally(-1) && getContentBounds(first, content)) {
+                                    paddingLeft += shelfLocation[0] + cardInset
+                                            - (listLocation[0] + first.getLeft() + content[0]);
+                                }
+                                // The last item is at the end of the list only if the items don't fit the list.
+                                if (shelfList.canScrollHorizontally(-1) && !shelfList.canScrollHorizontally(1)
+                                        && getContentBounds(last, content)) {
+                                    paddingRight += listLocation[0] + last.getLeft() + content[1]
+                                            - (shelfLocation[0] + shelf.getWidth() - cardInset);
+                                }
+
+                                paddingLeft = Math.max(0, paddingLeft);
+                                paddingRight = Math.max(0, paddingRight);
+                                if (paddingLeft == shelfList.getPaddingLeft()
+                                        && paddingRight == shelfList.getPaddingRight()) {
+                                    continue;
+                                }
+                                if (paddingLeft != shelfList.getPaddingLeft()) {
+                                    shelfListsAtStart.put(shelfList, Boolean.TRUE);
+                                }
+                                // The items are drawn in the padding while scrolling, up to the edges of the card.
+                                shelfList.setClipToPadding(false);
+                                shelfList.setPadding(paddingLeft, shelfList.getPaddingTop(), paddingRight,
+                                        shelfList.getPaddingBottom());
+                            }
+
                             // Updates the clips of the Shorts of the Shorts shelves, without drawing the shelves.
                             shortsCellOutlines.clear();
                             for (int i = 0, count = current.getChildCount(); i < count; i++) {
@@ -1843,17 +1925,52 @@ public class FeedCardLayoutPatch {
     }
 
     private static boolean hasNestedList(View view, int depth) {
+        return findNestedList(view, depth) != null;
+    }
+
+    @Nullable
+    private static View findNestedList(View view, int depth) {
         if (depth > 0 && view instanceof RecyclerView) {
-            return true;
+            return view;
         }
         if (depth < 4 && view instanceof ViewGroup group) {
             for (int i = 0, count = group.getChildCount(); i < count; i++) {
-                if (hasNestedList(group.getChildAt(i), depth + 1)) {
-                    return true;
+                View list = findNestedList(group.getChildAt(i), depth + 1);
+                if (list != null) {
+                    return list;
                 }
             }
         }
-        return false;
+        return null;
+    }
+
+    /**
+     * @param bounds The left and the right edge of the views inside the item, relative to the item.
+     * @return If the item has visible views.
+     */
+    private static boolean getContentBounds(View item, int[] bounds) {
+        bounds[0] = Integer.MAX_VALUE;
+        bounds[1] = Integer.MIN_VALUE;
+        addContentBounds(item, 0, bounds, 0);
+        return bounds[0] < bounds[1];
+    }
+
+    /**
+     * The content is in the views without children, such as the thumbnail and the text of the item.
+     */
+    private static void addContentBounds(View view, int left, int[] bounds, int depth) {
+        if (view.getVisibility() != View.VISIBLE || view.getWidth() <= 0 || view.getHeight() <= 0) {
+            return;
+        }
+        if (depth < 8 && view instanceof ViewGroup group && group.getChildCount() > 0) {
+            for (int i = 0, count = group.getChildCount(); i < count; i++) {
+                View child = group.getChildAt(i);
+                addContentBounds(child, left + child.getLeft(), bounds, depth + 1);
+            }
+            return;
+        }
+        bounds[0] = Math.min(bounds[0], left);
+        bounds[1] = Math.max(bounds[1], left + view.getWidth());
     }
 
     @Nullable
