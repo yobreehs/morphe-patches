@@ -1,3 +1,10 @@
+## [1.49.0-dev.3](https://github.com/MorpheApp/morphe-patches/compare/v1.49.0-dev.2...v1.49.0-dev.3) (2026-10-24)
+
+### 🐛 Bug Fixes
+
+* **Reddit - Redgifs audio:** Error toast is shown when network request fails ([6707f0e](https://github.com/MorpheApp/morphe-patches/commit/6707f0e1215ba3620586b95e5c0f8b8576339a86))
+* **YouTube:** 21.43 navigation tabs cannot be hidden ([68b01ca](https://github.com/MorpheApp/morphe-patches/commit/68b01cad1f9419b4dc0e9141659b4def6c3660a4))
+
 ## [1.49.0-dev.2](https://github.com/MorpheApp/morphe-patches/compare/v1.49.0-dev.1...v1.49.0-dev.2) (2026-10-24)
 
 ### 🐛 Bug Fixes
