@@ -1741,7 +1741,13 @@ public class FeedCardLayoutPatch {
                 final boolean rightColumn = cellLeft + cell.getWidth() >= right;
                 final int corners = (topRow && leftColumn ? 8 : 0) | (topRow && rightColumn ? 4 : 0)
                         | (bottomRow && leftColumn ? 2 : 0) | (bottomRow && rightColumn ? 1 : 0);
-                setShortsCellOutline(cell, SHORTS_CELL_OUTLINES[corners]);
+                // The Shorts clip their thumbnail with the rounded outline of a view inside the Short,
+                // which is replaced. The views are recycled, so it's checked every time the list is drawn.
+                ViewOutlineProvider outline = SHORTS_CELL_OUTLINES[corners];
+                setShortsCellOutline(cell, cell.getWidth(), outline, 0);
+
+                // The screen bounds of the Short, for the inline player above it.
+                shortsCellOutlines.put(getScreenBounds(cell), outline);
             }
         }
 
@@ -1847,17 +1853,6 @@ public class FeedCardLayoutPatch {
                 findShortsCells(group.getChildAt(i), cells, depth + 1);
             }
         }
-    }
-
-    /**
-     * The Shorts clip their thumbnail with the rounded outline of a view inside the Short,
-     * which is replaced. The views are recycled, so it's checked every time the list is drawn.
-     */
-    private static void setShortsCellOutline(View cell, ViewOutlineProvider outline) {
-        setShortsCellOutline(cell, cell.getWidth(), outline, 0);
-
-        // The screen bounds of the Short, for the inline player above it.
-        shortsCellOutlines.put(getScreenBounds(cell), outline);
     }
 
     private static String getScreenBounds(View view) {
