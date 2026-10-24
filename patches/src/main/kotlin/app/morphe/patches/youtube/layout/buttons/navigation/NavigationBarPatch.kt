@@ -24,6 +24,7 @@ import app.morphe.patcher.patch.resourcePatch
 import app.morphe.patcher.util.getFreeRegisterProvider
 import app.morphe.patcher.util.getReference
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod.Companion.toMutable
+import app.morphe.patches.shared.misc.bridge.addBridge
 import app.morphe.patches.shared.misc.fix.proto.fixProtoLibraryPatch
 import app.morphe.patches.shared.misc.fix.proto.immutableMethodRef
 import app.morphe.patches.shared.misc.fix.proto.mutableCopyMethodRef
@@ -80,6 +81,9 @@ internal const val EXTENSION_CLASS =
 
 private const val EXTENSION_SETTING_INTERFACE =
     $$"Lapp/morphe/extension/youtube/patches/NavigationBarPatch$SettingsController;"
+
+private const val PIVOT_BAR_ACCESS_INTERFACE =
+    $$"Lapp/morphe/extension/youtube/patches/NavigationBarPatch$PivotBarAccess;"
 
 private const val EXTENSION_SUBSCRIPTIONS_CLASS =
     "Lapp/morphe/extension/youtube/patches/ClassicSubscriptionsLayoutPatch;"
@@ -274,11 +278,33 @@ val navigationBarPatch = bytecodePatch(
             }
         }
 
+        val navigationBarBottomPaddingMatches = NavigationBarBottomPaddingFingerprint.matchAll()
+
+        // The room for the system navigation buttons is stored in a field of the bar, which the
+        // method called right after adds to its height. The extension moves that room below
+        // the slim status bar while it is shown, so the bar is given a method that sets it.
+        navigationBarBottomPaddingMatches.first().instructionMatches.let { matches ->
+            val roomField = matches[0].getFieldAccessed()
+            val updateHeightMethod = matches[1].getMethodCalled()
+
+            mutableClassDefBy(PIVOT_BAR_CLASS).apply {
+                interfaces.add(PIVOT_BAR_ACCESS_INTERFACE)
+                addBridge(
+                    "patch_setSystemButtonsRoom", listOf("I"), "V", 2,
+                    """
+                        iput p1, p0, $roomField
+                        invoke-virtual { p0 }, $updateHeightMethod
+                        return-void
+                    """
+                )
+            }
+        }
+
         // With the keyboard open, the bottom inset also holds the keyboard, so the bar covering
         // the system navigation buttons grows as tall as the keyboard and covers the page.
         // The padding is first stored in a field of the bar, and the same register is then passed
         // to setPadding. Some targets set it in two places.
-        NavigationBarBottomPaddingFingerprint.matchAll().forEach { match ->
+        navigationBarBottomPaddingMatches.forEach { match ->
             match.method.apply {
                 val fieldIndex = match.instructionMatches.first().index
                 val fieldInstruction = getInstruction<TwoRegisterInstruction>(fieldIndex)
@@ -294,6 +320,11 @@ val navigationBarPatch = bytecodePatch(
                 )
             }
         }
+
+        // The slim status bar ("No connection", "Back online") is laid out below the bar covering
+        // the system navigation buttons, so the buttons cover it. The room for the buttons is moved
+        // below it while it is shown.
+        addBottomBarContainerHook("$EXTENSION_CLASS->watchSlimStatusBar(Landroid/view/View;)V")
 
         // With the translucent navigation bar, the keyboard shrinks the layout that holds the page
         // and the navigation bar to the top of the keyboard, so the navigation bar is moved above

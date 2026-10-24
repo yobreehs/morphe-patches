@@ -21,6 +21,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.view.WindowInsets;
 import android.widget.ImageView;
@@ -316,18 +317,121 @@ public final class NavigationBarPatch {
      * Only with the feature flags turned on by {@link #useTranslucentNavigationBar(boolean)}.
      */
     public static int getNavigationBarBottomPadding(View navigationBar, int original) {
+        int padding = original;
         try {
             if (translucentNavigationBarForced && original != 0
                     && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 WindowInsets insets = navigationBar.getRootWindowInsets();
                 if (insets != null && insets.isVisible(WindowInsets.Type.ime())) {
-                    return Math.min(original, insets.getInsets(WindowInsets.Type.systemBars()).bottom);
+                    padding = Math.min(original, insets.getInsets(WindowInsets.Type.systemBars()).bottom);
                 }
             }
+
+            padding = setSlimStatusBarRoom(navigationBar, padding);
         } catch (Exception ex) {
             Logger.printException(() -> "getNavigationBarBottomPadding failure", ex);
         }
-        return original;
+        return padding;
+    }
+
+    /**
+     * The bar shown below the navigation bar when the connection is lost or comes back
+     * ("No connection", "Back online").
+     */
+    private static final int SLIM_STATUS_BAR = ResourceUtils.getIdentifier(
+            ResourceType.ID, "slim_status_bar");
+
+    private static final int PIVOT_BAR = ResourceUtils.getIdentifier(
+            ResourceType.ID, "pivot_bar");
+
+    /**
+     * The navigation bar, with a method added during patching.
+     */
+    public interface PivotBarAccess {
+        /**
+         * Sets the room the navigation bar leaves below itself for the system navigation buttons,
+         * which is added to its height.
+         */
+        void patch_setSystemButtonsRoom(int room);
+    }
+
+    /**
+     * If the slim status bar is shown below the navigation bar.
+     */
+    private static volatile boolean slimStatusBarShown;
+
+    /**
+     * The room for the system navigation buttons the app last gave the navigation bar.
+     */
+    private static volatile int systemButtonsRoom;
+
+    /**
+     * When the navigation bar covers the system navigation buttons, the slim status bar is laid out
+     * below it, behind the buttons, which cover it. While the slim status bar is shown, the room for
+     * the buttons is left below the slim status bar instead of below the navigation bar.
+     * Only with the feature flags turned on by {@link #useTranslucentNavigationBar(boolean)}.
+     *
+     * @return The room the navigation bar leaves for the system navigation buttons.
+     */
+    private static int setSlimStatusBarRoom(View navigationBar, int room) {
+        if (!translucentNavigationBarForced || !(navigationBar instanceof PivotBarAccess)) {
+            return room;
+        }
+
+        systemButtonsRoom = room;
+        View slimStatusBar = navigationBar.getParent() instanceof ViewGroup container
+                ? container.findViewById(SLIM_STATUS_BAR)
+                : null;
+        final boolean moveRoom = slimStatusBarShown && slimStatusBar != null && room > 0;
+        if (slimStatusBar != null) {
+            // The top padding is the padding of the slim status bar itself.
+            final int bottomPadding = slimStatusBar.getPaddingTop() + (moveRoom ? room : 0);
+            if (slimStatusBar.getPaddingBottom() != bottomPadding) {
+                slimStatusBar.setPadding(slimStatusBar.getPaddingLeft(), slimStatusBar.getPaddingTop(),
+                        slimStatusBar.getPaddingRight(), bottomPadding);
+            }
+        }
+        return moveRoom ? 0 : room;
+    }
+
+    /**
+     * Injection point.
+     * <p>
+     * The window insets are not sent again when the slim status bar is shown or hidden,
+     * so the room for the system navigation buttons is moved whenever that happens.
+     *
+     * @param bottomBarContainer The container of the navigation bar and the slim status bar.
+     */
+    public static void watchSlimStatusBar(View bottomBarContainer) {
+        if (SLIM_STATUS_BAR == 0 || PIVOT_BAR == 0) return;
+
+        try {
+            bottomBarContainer.addOnLayoutChangeListener((view, left, top, right, bottom,
+                                                          oldLeft, oldTop, oldRight, oldBottom) -> {
+                try {
+                    View slimStatusBar = view.findViewById(SLIM_STATUS_BAR);
+                    final boolean shown = slimStatusBar != null && slimStatusBar.getVisibility() == View.VISIBLE;
+                    if (shown == slimStatusBarShown) return;
+                    slimStatusBarShown = shown;
+
+                    if (translucentNavigationBarForced
+                            && view.findViewById(PIVOT_BAR) instanceof PivotBarAccess access) {
+                        View navigationBar = (View) access;
+                        final int room = systemButtonsRoom;
+                        view.post(() -> {
+                            final int navigationBarRoom = setSlimStatusBarRoom(navigationBar, room);
+                            access.patch_setSystemButtonsRoom(navigationBarRoom);
+                            navigationBar.setPadding(navigationBar.getPaddingLeft(), navigationBar.getPaddingTop(),
+                                    navigationBar.getPaddingRight(), navigationBarRoom);
+                        });
+                    }
+                } catch (Exception ex) {
+                    Logger.printException(() -> "watchSlimStatusBar layout failure", ex);
+                }
+            });
+        } catch (Exception ex) {
+            Logger.printException(() -> "watchSlimStatusBar failure", ex);
+        }
     }
 
     /**
