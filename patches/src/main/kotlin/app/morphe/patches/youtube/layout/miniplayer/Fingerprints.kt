@@ -86,12 +86,14 @@ internal object MiniplayerDragAndDropFingerprint : Fingerprint(
     )
 )
 
+/**
+ * 21.38+ also read the animated expand feature flag here, 21.30 to 21.35 do not.
+ */
 internal object MiniplayerAnimatedExpandFingerprint : Fingerprint(
     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
     returnType = "V",
     parameters = listOf("I"),
     filters = listOf(
-        literal(45838209L),
         opcode(opcode = Opcode.IF_NE),
         fieldAccess(
             opcode = Opcode.IGET_OBJECT,
