@@ -953,6 +953,7 @@ To access Settings, enable the Settings button via General → Toolbar → Show 
     <string name="morphe_navigation_bar_style_entry_2">Translucent</string>
     <string name="morphe_navigation_bar_style_entry_3">Transparent</string>
     <string name="morphe_navigation_bar_style_entry_4">Opaque</string>
+    <string name="morphe_navigation_bar_style_user_dialog_message">This style may not be supported by your device or YouTube version, and can cause layout issues or crashes</string>
 
     <string name="morphe_toolbar_screen_title">Toolbar</string>
     <string name="morphe_toolbar_screen_summary">Choose which components appear in the toolbar</string>
@@ -1207,7 +1208,9 @@ Automotive layout
     <string name="morphe_tablet_layout_in_player_summary">"Restores the old player layout
 
 Limitation: If \'Restore old video action bar\' is turned off, \'More videos\' overlay may not be available"</string>
-    <string name="morphe_tablet_layout_in_player_user_dialog_message">Enabling this may break some player layout features, such as the comment section or \'More videos\' shown below the player</string>
+    <string name="morphe_tablet_layout_in_player_user_dialog_message">"Enabling this may break some player layout features, such as the comment section or \'More videos\' shown below the player.
+
+The tablet layout is no longer supported by YouTube, and is partially or fully broken on recent YouTube versions. For a working tablet layout, patch YouTube 20.21.37"</string>
 
     <!-- misc.spoof.appversion.spoofAppVersionPatch -->
     <string name="morphe_spoof_app_version_target_entry_21_11">21.11.48 - Restore old captions behavior</string>
