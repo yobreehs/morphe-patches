@@ -108,11 +108,6 @@ public final class LithoFilterPatch {
      */
     private static final List<WeakReference<List<?>>> observableLists = new ArrayList<>();
 
-    /**
-     * Conversion context of the element that the calling thread is parsing.
-     */
-    private static final ThreadLocal<WeakReference<ContextInterface>> parsedElementContext = new ThreadLocal<>();
-
     private static final StringTrieSearch contextSearchTree = new StringTrieSearch();
     private static final StringTrieSearch pathSearchTree = new StringTrieSearch();
     private static final StringTrieSearch identifierSearchTree = new StringTrieSearch();
@@ -229,8 +224,8 @@ public final class LithoFilterPatch {
                 if (pathBuilder.length() > identifierLength + 1
                         && pathBuilder.charAt(identifierLength) == '|'
                         && pathBuilder.indexOf("|", identifierLength + 1) == pathBuilder.length() - 1
-                        && pathBuilder.indexOf(identifier) == 0) {
-                    removeListItem(contextInterface);
+                        && Utils.startsWith(pathBuilder, identifier)) {
+                    removeFilteredElementListItem(contextInterface);
                 }
                 return true;
             }
@@ -255,75 +250,62 @@ public final class LithoFilterPatch {
 
     /**
      * Injection point.
-     * Called when the parsing of an element starts.
-     */
-    public static void setParsedElementContext(@Nullable ContextInterface contextInterface) {
-        parsedElementContext.set(contextInterface == null ? null : new WeakReference<>(contextInterface));
-    }
-
-    /**
-     * Injection point.
-     * Called when the element that is being parsed is hidden.
-     */
-    public static void removeParsedElementListItem() {
-        WeakReference<ContextInterface> reference = parsedElementContext.get();
-        ContextInterface contextInterface = reference == null ? null : reference.get();
-        if (contextInterface != null) {
-            removeListItem(contextInterface);
-        }
-    }
-
-    /**
      * Called when the whole element is hidden.
      * <p>
      * Hiding an element replaces it with an empty component, but the item of the element stays
      * in its list. The grids, such as the feed of the tablet layout, then show an empty cell
      * in its place. To prevent this, the item is removed from the list.
      */
-    private static void removeListItem(ContextInterface contextInterface) {
+    public static void removeFilteredElementListItem(@Nullable ContextInterface contextInterface) {
         try {
+            if (contextInterface == null) {
+                return;
+            }
+
             List<?> decorators = contextInterface.patch_getCommandEventDataDecorators();
             if (decorators == null) {
                 return;
             }
 
             for (Object decorator : decorators) {
-                if (!(decorator instanceof ListItemDecoratorInterface listItemDecorator)) {
-                    continue;
-                }
-
-                Object item = listItemDecorator.patch_getListItem();
-                if (item == null) {
-                    continue;
-                }
-
-                // The lists can only be changed on the main thread.
-                Utils.runOnMainThread(() -> {
-                    try {
-                        synchronized (observableLists) {
-                            Iterator<WeakReference<List<?>>> iterator = observableLists.iterator();
-                            while (iterator.hasNext()) {
-                                List<?> list = iterator.next().get();
-                                if (list == null) {
-                                    iterator.remove();
-                                    continue;
-                                }
-
-                                final int index = list.indexOf(item);
-                                if (index >= 0) {
-                                    list.remove(index);
-                                    Logger.printDebug(() -> "Removed list item of filtered element: " + item);
-                                    return;
-                                }
-                            }
-                        }
-                    } catch (Exception ex) {
-                        Logger.printException(() -> "removeListItem failure", ex);
+                if (decorator instanceof ListItemDecoratorInterface listItemDecorator) {
+                    Object item = listItemDecorator.patch_getListItem();
+                    if (item != null) {
+                        // The lists can only be changed on the main thread.
+                        Utils.runOnMainThread(() -> removeObservableListItem(item));
                     }
-                });
+                }
             }
         } catch (Exception ex) {
-            Logger.printException(() -> "removeListItem failure", ex);
+            Logger.printException(() -> "removeFilteredElementListItem failure", ex);
+        }
+    }
+
+    private static void removeObservableListItem(Object item) {
+        List<?> itemList = null;
+        int itemIndex = -1;
+
+        synchronized (observableLists) {
+            Iterator<WeakReference<List<?>>> iterator = observableLists.iterator();
+            while (iterator.hasNext()) {
+                List<?> list = iterator.next().get();
+                if (list == null) {
+                    iterator.remove();
+                    continue;
+                }
+
+                itemIndex = list.indexOf(item);
+                if (itemIndex >= 0) {
+                    itemList = list;
+                    break;
+                }
+            }
+        }
+
+        // Removing the item notifies the list observers, so it is done outside the lock.
+        if (itemList != null) {
+            itemList.remove(itemIndex);
+            Logger.printDebug(() -> "Removed list item of filtered element: " + item);
         }
     }
 

@@ -361,7 +361,7 @@ internal fun sharedLithoFilterPatch(
             CommandEventDataDecoratorFingerprint.let {
                 val dataType = it.instructionMatches.first()
                     .instruction.getReference<MethodReference>()!!.definingClass
-                val itemField = mutableClassDefBy(dataType).fields.single { field ->
+                val itemField = classDefBy(dataType).fields.single { field ->
                     field.type == "Ljava/lang/Object;"
                 }
 
