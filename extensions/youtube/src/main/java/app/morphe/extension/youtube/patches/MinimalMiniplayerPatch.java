@@ -655,6 +655,10 @@ public final class MinimalMiniplayerPatch {
      * the system navigation buttons for the translucent navigation bar, and YouTube then rests
      * the player behind them. Measured against them directly, so nothing changes when the layout
      * already ends above them.
+     * <p>
+     * The keyboard is always measured where the window insets have it. With the feature flags of
+     * the translucent navigation bar left to the account, YouTube shrinks that layout by the
+     * keyboard height less the system navigation buttons, so it still ends behind the keyboard.
      *
      * @param playerLayout The layout that holds the player, which the bounds are relative to.
      */
@@ -664,14 +668,17 @@ public final class MinimalMiniplayerPatch {
 
         final boolean keyboardMarginRemoved = NavigationBarPatch.isKeyboardMarginRemoved();
         final boolean translucentNavigationBar = NavigationBarPatch.isTranslucentNavigationBarForced();
-        if (!keyboardMarginRemoved && !translucentNavigationBar) return Integer.MAX_VALUE;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R
+                && !keyboardMarginRemoved && !translucentNavigationBar) {
+            return Integer.MAX_VALUE;
+        }
 
         WindowInsets insets = playerLayout.getRootWindowInsets();
         if (insets == null) return Integer.MAX_VALUE;
 
         final int insetBottom;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            insetBottom = insets.getInsets((keyboardMarginRemoved ? WindowInsets.Type.ime() : 0)
+            insetBottom = insets.getInsets(WindowInsets.Type.ime()
                     | (translucentNavigationBar ? WindowInsets.Type.navigationBars() : 0)).bottom;
         } else {
             // The translucent navigation bar is only used from Android 12, so this is the keyboard.
