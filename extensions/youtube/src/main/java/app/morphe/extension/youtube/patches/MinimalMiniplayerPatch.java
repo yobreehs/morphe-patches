@@ -1223,12 +1223,12 @@ public final class MinimalMiniplayerPatch {
     }
 
     private static void updateText() {
-        String title = VideoInformation.getVideoTitle();
+        String title = VideoInformation.getMiniplayerVideoName();
         if (!title.isEmpty()) {
             videoTitle = title;
         }
 
-        String channel = VideoInformation.getChannelName();
+        String channel = VideoInformation.getMiniplayerChannelName();
         if (!channel.isEmpty()) {
             channelName = channel;
         }

@@ -425,6 +425,26 @@ public final class VideoInformation {
     }
 
     /**
+     * The miniplayer only shows the video of the regular player, so the player in front
+     * is not used, as the Shorts player can be in front while the miniplayer is shown,
+     * such as when going back from the Shorts player.
+     *
+     * @return The title of the video of the regular player,
+     *         or the title restored by {@link RestoreOriginalTitlesPatch} if enabled.
+     */
+    public static String getMiniplayerVideoName() {
+        return RestoreOriginalTitlesPatch.getTitle(regularPlayerVideo.videoId, regularPlayerVideo.videoTitle);
+    }
+
+    /**
+     * @return The channel name of the video of the regular player.
+     * @see #getMiniplayerVideoName()
+     */
+    public static String getMiniplayerChannelName() {
+        return regularPlayerVideo.channelName;
+    }
+
+    /**
      * Injection point.
      *
      * @param newlyLoadedVideoId ID of the current video
