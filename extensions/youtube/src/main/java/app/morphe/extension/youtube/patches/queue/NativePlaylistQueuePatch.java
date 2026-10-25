@@ -330,18 +330,23 @@ public final class NativePlaylistQueuePatch {
 
     /** Read-only shared element hook; preserves bytes and every other patch's changes. */
     public static byte[] onElementLoaded(byte[] bytes) {
-        if (bytes == null || !CARD_COMPONENTS.matches(bytes)) {
+        // Cards are parsed on the main thread while the feed scrolls, so skip them
+        // when the native queue is off. Missing metadata is fetched when queued.
+        if (bytes == null || isNativeQueueDisabled() || !CARD_COMPONENTS.matches(bytes)) {
             return bytes;
         }
-        try {
-            VideoMetadata metadata = VideoMetadata.fromElement(bytes);
-            if (metadata != null) {
-                metadataCache.compute(metadata.videoId(), (videoId, previous) ->
-                        previous == null ? metadata : previous.withCapture(metadata));
+        byte[] element = bytes.clone();
+        Utils.runOnBackgroundThread(() -> {
+            try {
+                VideoMetadata metadata = VideoMetadata.fromElement(element);
+                if (metadata != null) {
+                    metadataCache.compute(metadata.videoId(), (videoId, previous) ->
+                            previous == null ? metadata : previous.withCapture(metadata));
+                }
+            } catch (Exception ex) {
+                Logger.printException(() -> "onElementLoaded failure", ex);
             }
-        } catch (Exception ex) {
-            Logger.printException(() -> "onElementLoaded failure", ex);
-        }
+        });
 
         return bytes;
     }
