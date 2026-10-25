@@ -338,15 +338,22 @@ val rememberVideoQualityPatch = bytecodePatch {
 
         // If this flag is enabled, Shorts restart whenever the quality changes.
         // The restart uses the initial quality of the Short, so the quality selected by the user is lost.
-        listOf(
-            ShortsQualityChangeObserverPrimaryFeatureFlagFingerprint,
-            ShortsQualityChangeObserverSecondaryFeatureFlagFingerprint
-        ).forEach { fingerprint ->
-            fingerprint.matchAll().forEach {
-                it.method.insertLiteralOverride(
-                    it.instructionMatches.first().index, false
-                )
-            }
+        ShortsQualityChangeObserverPrimaryFeatureFlagFingerprint.matchAll().forEach {
+            it.method.insertLiteralOverride(
+                it.instructionMatches.first().index, false
+            )
+        }
+
+        // The secondary flag also saves the formats of the quality selected in the quality menu with the quality
+        // last selected, so the player keeps playing them. Without the formats only the resolution YouTube
+        // gives the quality is saved, and the player can switch to another quality of that resolution,
+        // such as 720p60 after selecting a 480p quality that YouTube gives the resolution 720.
+        // The flag is enabled only for the Short the user selected the quality for.
+        ShortsQualityChangeObserverSecondaryFeatureFlagFingerprint.matchAll().forEach {
+            it.method.insertLiteralOverride(
+                it.instructionMatches.first().index,
+                "$EXTENSION_CLASS->useSelectedQualityFormats(Z)Z"
+            )
         }
     }
 }
