@@ -913,6 +913,8 @@ To show the \'Audio Track\' menu, change \'Spoof video streams\' to any client e
     <string name="morphe_hide_autoplay_preview_summary">Hides the upcoming video preview in fullscreen before autoplay begins</string>
     <string name="morphe_pip_seek_buttons_title">Picture-in-picture seek buttons</string>
     <string name="morphe_pip_seek_buttons_summary">Adds rewind and forward (±5 seconds) buttons to the Picture-in-picture window</string>
+    <string name="morphe_pip_seek_buttons_restore_near_end_title">Restore original buttons near the end</string>
+    <string name="morphe_pip_seek_buttons_restore_near_end_summary">Shows YouTube’s own Picture-in-picture buttons again during the last 30 seconds of the video</string>
 
     <!-- layout.buttons.overlay.hidePlayerOverlayButtonsPatch -->
     <string name="morphe_overlay_buttons_screen_title">Overlay buttons</string>
@@ -1362,6 +1364,17 @@ Tap here to open DeArrow.ajay.app"</string>
     <string name="morphe_remember_video_quality_toast_wifi">Changed default Wi-Fi quality to: %s</string>
     <string name="morphe_remember_video_quality_toast_shorts_mobile">Changed Shorts mobile quality to: %s</string>
     <string name="morphe_remember_video_quality_toast_shorts_wifi">Changed Shorts Wi-Fi quality to: %s</string>
+
+    <!-- video.codecs.videoCodecPatch -->
+    <string name="morphe_video_codec_title">Video codec</string>
+    <string name="morphe_video_codec_summary">Preferred codec for video playback. Another codec is used if the selected one is unavailable</string>
+    <string name="morphe_video_codec_entry_auto">Auto (recommended)</string>
+    <string name="morphe_video_codec_entry_av1">AV1</string>
+    <string name="morphe_video_codec_entry_vp9">VP9</string>
+    <string name="morphe_video_codec_entry_avc">AVC (H.264)</string>
+    <string name="morphe_video_codec_button_title">Show codec button</string>
+    <string name="morphe_video_codec_button_summary">Adds a button to the player for switching the video codec during playback</string>
+    <string name="morphe_video_codec_selected">Codec: %1$s</string>
 
     <!-- video.speed.button.playbackSpeedButtonPatch -->
     <string name="morphe_playback_speed_dialog_button_title">Show Playback speed button</string>

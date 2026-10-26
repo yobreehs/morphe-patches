@@ -850,6 +850,10 @@ Second \"item\" text"</string>
   <string name="morphe_hide_autoplay_preview_title">Скрыть предварительный просмотр автовоспроизведения</string>
   <string name="morphe_pip_seek_buttons_title">Кнопки перемотки в PiP</string>
   <string name="morphe_pip_seek_buttons_summary">Добавляет кнопки перемотки назад и вперёд (±5 секунд) в окно «картинка в картинке»</string>
+
+  <string name="morphe_pip_seek_buttons_restore_near_end_title">Возвращать старые кнопки в конце</string>
+
+  <string name="morphe_pip_seek_buttons_restore_near_end_summary">Показывает штатные кнопки PiP YouTube в последние 30 секунд видео</string>
   <string name="morphe_hide_autoplay_preview_summary">Ваша конфигурация JSON SponsorBlock может быть импортирована или экспортирована в Morphe и другие платформы SponsorBlock. Она включает в себя Ваш личный идентификатор пользователя. Подумайте дважды перед тем, как делиться ею с кем-либо</string>
   <!-- layout.buttons.overlay.hidePlayerOverlayButtonsPatch -->
   <string name="morphe_overlay_buttons_screen_title">Кнопки наложения</string>
@@ -1242,6 +1246,16 @@ Second \"item\" text"</string>
   <string name="morphe_remember_video_quality_toast_wifi">Качество Wi-Fi изменено на: %s</string>
   <string name="morphe_remember_video_quality_toast_shorts_mobile">Качество Shorts в мобильной сети изменено на: %s</string>
   <string name="morphe_remember_video_quality_toast_shorts_wifi">Качество Shorts по Wi-Fi изменено на: %s</string>
+  <!-- video.codecs.videoCodecPatch -->
+  <string name="morphe_video_codec_title">Видеокодек</string>
+  <string name="morphe_video_codec_summary">Предпочитаемый кодек для воспроизведения видео. Если выбранный кодек недоступен, используется другой</string>
+  <string name="morphe_video_codec_entry_auto">Авто (рекомендуется)</string>
+  <string name="morphe_video_codec_entry_av1">AV1</string>
+  <string name="morphe_video_codec_entry_vp9">VP9</string>
+  <string name="morphe_video_codec_entry_avc">AVC (H.264)</string>
+  <string name="morphe_video_codec_button_title">Показывать кнопку кодека</string>
+  <string name="morphe_video_codec_button_summary">Добавляет кнопку в плеер для смены видеокодека во время воспроизведения</string>
+  <string name="morphe_video_codec_selected">Кодек: %1$s</string>
   <!-- video.speed.button.playbackSpeedButtonPatch -->
   <string name="morphe_playback_speed_dialog_button_title">Показать кнопку скорости воспроизведения</string>
   <string name="morphe_playback_speed_dialog_button_summary">Нажмите и удерживайте, чтобы сбросить скорость до значения по умолчанию</string>

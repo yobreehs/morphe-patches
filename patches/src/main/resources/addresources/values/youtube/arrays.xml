@@ -599,6 +599,20 @@
         <item>MAXIMUM</item>
     </string-array>
 
+    <!-- video.codecs.videoCodecPatch -->
+    <string-array name="morphe_video_codec_entries">
+        <item>@string/morphe_video_codec_entry_auto</item>
+        <item>@string/morphe_video_codec_entry_av1</item>
+        <item>@string/morphe_video_codec_entry_vp9</item>
+        <item>@string/morphe_video_codec_entry_avc</item>
+    </string-array>
+    <string-array name="morphe_video_codec_entry_values">
+        <item>auto</item>
+        <item>av1</item>
+        <item>vp9</item>
+        <item>avc</item>
+    </string-array>
+
     <!-- video.quality.rememberVideoQualityPatch -->
     <string-array name="morphe_video_quality_default_entries">
         <item>@string/morphe_video_quality_default_entry_1</item>
