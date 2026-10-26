@@ -11,11 +11,13 @@
 package app.morphe.patches.shared.misc.litho.filter
 
 import app.morphe.patcher.Fingerprint
+import app.morphe.patcher.InstructionLocation.MatchAfterImmediately
 import app.morphe.patcher.InstructionLocation.MatchAfterWithin
 import app.morphe.patcher.OpcodesFilter
 import app.morphe.patcher.fieldAccess
 import app.morphe.patcher.literal
 import app.morphe.patcher.methodCall
+import app.morphe.patcher.opcode
 import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.Opcode
@@ -156,4 +158,29 @@ internal object ObservableListConstructorFingerprint : Fingerprint(
     name = "<init>",
     accessFlags = listOf(AccessFlags.PROTECTED, AccessFlags.CONSTRUCTOR),
     parameters = listOf("Ljava/util/List;", "L")
+)
+
+/**
+ * Removes an item from a section of a list, such as the feed or the related videos, and lays the
+ * section out again without it. The grids of the tablet layout that group the items of a section
+ * into rows, such as the related videos, are laid out again too.
+ */
+internal object ListSectionRemoveItemFingerprint : Fingerprint(
+    returnType = "V",
+    parameters = listOf("Ljava/lang/Object;"),
+    filters = listOf(
+        // The header of the section, which hides the whole section instead.
+        fieldAccess(opcode = Opcode.IGET_OBJECT),
+        opcode(Opcode.IF_NE, location = MatchAfterWithin(2)),
+        // The items of the section.
+        fieldAccess(opcode = Opcode.IGET_OBJECT, type = "Ljava/util/List;", location = MatchAfterWithin(4)),
+        methodCall(
+            definingClass = "Ljava/util/List;",
+            name = "remove",
+            parameters = listOf("Ljava/lang/Object;"),
+            location = MatchAfterImmediately()
+        ),
+        opcode(Opcode.MOVE_RESULT, location = MatchAfterImmediately()),
+        opcode(Opcode.IF_EQZ, location = MatchAfterImmediately())
+    )
 )

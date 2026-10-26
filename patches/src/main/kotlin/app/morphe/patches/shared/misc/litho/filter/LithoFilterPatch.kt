@@ -35,13 +35,17 @@ import app.morphe.patches.shared.misc.litho.context.EXTENSION_CONTEXT_INTERFACE
 import app.morphe.patches.shared.misc.litho.context.conversionContextClassDef
 import app.morphe.util.addInstructionsAtControlFlowLabel
 import app.morphe.util.findFieldFromToString
+import app.morphe.util.indexOfFirstInstruction
 import app.morphe.util.insertLiteralOverride
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.builder.MutableMethodImplementation
+import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 import com.android.tools.smali.dexlib2.immutable.ImmutableMethod
+import com.android.tools.smali.dexlib2.immutable.ImmutableMethodParameter
+import com.android.tools.smali.dexlib2.util.MethodUtil
 import java.lang.ref.WeakReference
 
 internal const val EXTENSION_CLASS = "Lapp/morphe/extension/shared/patches/components/LithoFilterPatch;"
@@ -50,6 +54,9 @@ internal const val EXTENSION_FILTER = "[Lapp/morphe/extension/shared/patches/com
 
 private const val EXTENSION_LIST_ITEM_DECORATOR_INTERFACE =
     $$"Lapp/morphe/extension/shared/patches/components/LithoFilterPatch$ListItemDecoratorInterface;"
+
+private const val EXTENSION_LIST_SECTION_INTERFACE =
+    $$"Lapp/morphe/extension/shared/patches/components/LithoFilterPatch$ListSectionInterface;"
 
 private const val COMMAND_EVENT_DATA_DECORATORS_PROPERTY = ", globalCommandEventDataDecoratorsInternal="
 
@@ -399,11 +406,71 @@ internal fun sharedLithoFilterPatch(
             }
 
             // Keep the observable lists, to remove the items from them.
+            // Some grids, such as the feed, have a list for each item.
             ObservableListConstructorFingerprint.method.apply {
                 addInstruction(
                     implementation!!.instructions.lastIndex,
                     "invoke-static { p0 }, $EXTENSION_CLASS->addObservableList(Ljava/util/List;)V"
                 )
+            }
+
+            // Keep the sections of the lists, to remove the items from them. Some grids, such as
+            // the related videos, group the items of a section into rows, which the section lays
+            // out again when an item is removed.
+            ListSectionRemoveItemFingerprint.let {
+                val itemsField = it.instructionMatches[2].getFieldAccessed()
+                val removeItemMethod = it.method
+
+                it.classDef.apply {
+                    interfaces.add(EXTENSION_LIST_SECTION_INTERFACE)
+
+                    methods.add(
+                        ImmutableMethod(
+                            type,
+                            "patch_removeListItem",
+                            listOf(ImmutableMethodParameter("Ljava/lang/Object;", null, "item")),
+                            "Z",
+                            AccessFlags.PUBLIC.value or AccessFlags.FINAL.value,
+                            null,
+                            null,
+                            MutableMethodImplementation(3),
+                        ).toMutable().apply {
+                            addInstructionsWithLabels(
+                                0,
+                                """
+                                    iget-object v0, p0, $itemsField
+                                    invoke-interface { v0, p1 }, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+                                    move-result v0
+                                    if-eqz v0, :not_found
+                                    invoke-virtual { p0, p1 }, $removeItemMethod
+                                    :not_found
+                                    return v0
+                                """
+                            )
+                        }
+                    )
+
+                    // Only the constructors that call the constructor of the superclass,
+                    // the others call those.
+                    methods.filter { method -> MethodUtil.isConstructor(method) }.forEach { constructor ->
+                        val superConstructorIndex = constructor.indexOfFirstInstruction {
+                            opcode == Opcode.INVOKE_DIRECT && getReference<MethodReference>()?.let { reference ->
+                                reference.name == "<init>" && reference.definingClass == superclass
+                            } == true
+                        }
+                        if (superConstructorIndex < 0) return@forEach
+
+                        // The instance the superclass was initialized with.
+                        val sectionRegister = constructor
+                            .getInstruction<FiveRegisterInstruction>(superConstructorIndex).registerC
+
+                        constructor.addInstruction(
+                            superConstructorIndex + 1,
+                            "invoke-static/range { v$sectionRegister .. v$sectionRegister }, $EXTENSION_CLASS->" +
+                                    "addListSection($EXTENSION_LIST_SECTION_INTERFACE)V"
+                        )
+                    }
+                }
             }
         }
 
