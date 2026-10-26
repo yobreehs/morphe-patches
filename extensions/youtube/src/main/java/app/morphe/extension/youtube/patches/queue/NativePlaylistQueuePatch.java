@@ -125,6 +125,12 @@ public final class NativePlaylistQueuePatch {
         boolean patch_canNavigateQueue(boolean next);
     }
 
+    /** Newer players keep their watch-history window separately from the queue. */
+    public interface DirectQueueNavigator extends ServiceNavigator {
+        Enum<?> patch_getQueueNavigationIntent(Object request);
+        boolean patch_canNavigateNativeQueue(Object request);
+    }
+
     /** Bridge to YouTube's mutable playback queue, independent of the watch view. */
     public interface NativePlayback {
         boolean patch_isLocalQueue();
@@ -140,6 +146,7 @@ public final class NativePlaylistQueuePatch {
         Object patch_getNavigator();
         Object patch_getPanel();
         void patch_enableRepeat();
+        void patch_setRepeatMode(int mode);
         void patch_setShuffleAvailable(boolean available);
     }
 
@@ -245,7 +252,7 @@ public final class NativePlaylistQueuePatch {
     // A return response can precede Shorts detachment. Remember its controller
     // weakly, without transferring the old panel's ownership/restoration baseline.
     private static WeakReference<PlaylistController> shortsControllerRef = new WeakReference<>(null);
-    private record RowSelection(PlaylistQueue.Entry entry) {}
+    private record RowSelection(PlaylistQueue.Entry entry, int repeatMode) {}
     private static RowSelection pendingSelection;
 
     // A menu click can open the first video before a watch controller exists.
@@ -809,6 +816,9 @@ public final class NativePlaylistQueuePatch {
             return;
         }
         if (playback.patch_attachQueue(renderer(queue), currentQueueCommand(queue))) {
+            // Opening an owned row can create a new native backend with repeat off.
+            // This is still the same local queue, so retain its pre-navigation mode.
+            playback.patch_restoreQueueRepeat(queue.repeatMode());
             nativePlaybackRef = new WeakReference<>(playback);
         }
     }
@@ -854,12 +864,20 @@ public final class NativePlaylistQueuePatch {
         if (index < 0 || index >= queue.entries().size() || !queue.entries().get(index).videoId().equals(videoId)) {
             return;
         }
-        pendingSelection = null;
-        if (queue.selectedIndex() != index || queue.repeatMode() != playback.patch_getRepeatMode()) {
-            queue = queue.select(index).withRepeatMode(playback.patch_getRepeatMode());
+        if (pendingSelection != null && pendingSelection.entry() == queue.entries().get(index)) {
+            playback.patch_restoreQueueRepeat(pendingSelection.repeatMode());
+            pendingSelection = null;
+        }
+        if (queue.selectedIndex() != index) {
+            queue = queue.select(index);
             selectionNeedsPublishing = true;
             playback.patch_updateSnapshot(renderer(queue));
         }
+        // Repeat is observed natively. It does not change the rendered row model.
+        // An old-video callback can run before the selected row starts. Do not
+        // replace its captured mode with a transient native navigation reset.
+        queue = queue.withRepeatMode(pendingSelection == null
+                ? playback.patch_getRepeatMode() : pendingSelection.repeatMode());
     }
 
     /**
@@ -881,7 +899,12 @@ public final class NativePlaylistQueuePatch {
             if (index < 0 || index >= queue.entries().size() || index == queue.selectedIndex()) {
                 return;
             }
-            RowSelection selection = new RowSelection(queue.entries().get(index));
+            NativePlayback playback = playbackFor(controller);
+            if (playback == null || !playback.patch_isLocalQueue()) {
+                return;
+            }
+            queue = queue.withRepeatMode(playback.patch_getRepeatMode());
+            RowSelection selection = new RowSelection(queue.entries().get(index), queue.repeatMode());
             pendingSelection = selection;
             Utils.runOnMainThreadDelayed(() -> {
                 if (pendingSelection == selection) {
@@ -1001,6 +1024,9 @@ public final class NativePlaylistQueuePatch {
             if (controller != null && header.patch_getPanel() == controller.patch_getPanel()) {
                 header.patch_enableRepeat();
                 NativePlayback playback = playbackFor(controller);
+                if (playback != null && playback.patch_isLocalQueue()) {
+                    header.patch_setRepeatMode(playback.patch_getRepeatMode());
+                }
                 header.patch_setShuffleAvailable(playback != null
                         && playback.patch_isLocalQueue() && queue.entries().size() > 1);
             }
@@ -1161,6 +1187,34 @@ public final class NativePlaylistQueuePatch {
 
         NativePlayback playback = service.patch_getQueuePlayback();
         return playback != null && playback.patch_isLocalQueue() && playback == nativePlaybackRef.get();
+    }
+
+    /**
+     * Injection point.
+     * <p>
+     * -1 retains the native watch-window policy for playback that we do not own.
+     */
+    public static int nativeQueueNavigationAvailability(DirectQueueNavigator navigator, Object request) {
+        if (!ownsNativePlayback(navigator) || !isQueuePlaybackIntent(navigator.patch_getQueueNavigationIntent(request))) {
+            return -1;
+        }
+        return navigator.patch_canNavigateNativeQueue(request) ? 1 : 0;
+    }
+
+    /**
+     * Injection point.
+     * <p>
+     * Called only after the native queue has committed a non-null target descriptor.
+     */
+    public static boolean retainCommittedQueueNavigation(DirectQueueNavigator navigator, Object request) {
+        return ownsNativePlayback(navigator) && isQueuePlaybackIntent(navigator.patch_getQueueNavigationIntent(request));
+    }
+
+    private static boolean isQueuePlaybackIntent(@Nullable Enum<?> intent) {
+        return intent != null && switch (intent.name()) {
+            case "NEXT", "PREVIOUS", "AUTOPLAY", "AUTONAV" -> true;
+            default -> false;
+        };
     }
 
     /** Bypass watch-history shortcuts, retaining the native queue's validation and ordering. */
@@ -1759,7 +1813,7 @@ public final class NativePlaylistQueuePatch {
                     continue;
                 }
                 dragSession = null;
-                queue = queue.select(index);
+                queue = queue.select(index).withRepeatMode(pendingSelection.repeatMode());
                 selectionNeedsPublishing = true;
                 pendingSelection = null;
 
@@ -2449,6 +2503,7 @@ public final class NativePlaylistQueuePatch {
                 }
             }
 
+            boolean restoringQueue = queue != null && !playback.patch_isLocalQueue();
             if (!playback.patch_isLocalQueue() || changedItems) {
                 if (!playback.patch_attachQueue(panel, currentQueueCommand(candidate))) {
                     controller.patch_restorePanel(acceptedModel, previousModel);
@@ -2456,6 +2511,9 @@ public final class NativePlaylistQueuePatch {
                         Utils.showToastShort(str("morphe_native_playlist_queue_unavailable"));
                     }
                     return false;
+                }
+                if (restoringQueue) {
+                    playback.patch_restoreQueueRepeat(candidate.repeatMode());
                 }
             } else {
                 playback.patch_updateSnapshot(panel);
