@@ -19,6 +19,7 @@ import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod.Companion.toMuta
 import app.morphe.patcher.util.registersUsed
 import app.morphe.patches.shared.misc.fix.proto.fixProtoLibraryPatch
 import app.morphe.patches.shared.misc.fix.proto.parseByteArrayWithRegistryMethodRef
+import app.morphe.patches.shared.misc.proto.hookElement
 import app.morphe.patches.shared.misc.settings.preference.ListPreference
 import app.morphe.patches.shared.misc.settings.preference.PreferenceScreenPreference
 import app.morphe.patches.shared.misc.settings.preference.PreferenceScreenPreference.Sorting
@@ -29,6 +30,7 @@ import app.morphe.patches.youtube.misc.auth.authHookPatch
 import app.morphe.patches.youtube.misc.playercontrols.addTopControl
 import app.morphe.patches.youtube.misc.playercontrols.initializeTopControl
 import app.morphe.patches.youtube.misc.playercontrols.legacyPlayerControlsPatch
+import app.morphe.patches.youtube.misc.proto.elementProtoParserHookPatch
 import app.morphe.patches.youtube.misc.settings.PreferenceScreen
 import app.morphe.patches.youtube.misc.settings.settingsPatch
 import app.morphe.patches.youtube.misc.spoof.spoofVideoStreamsPatch
@@ -112,7 +114,8 @@ val downloadsPatch = bytecodePatch(
         videoInformationPatch,
         legacyPlayerControlsPatch,
         fixProtoLibraryPatch,
-        spoofVideoStreamsPatch
+        spoofVideoStreamsPatch,
+        elementProtoParserHookPatch
     )
 
     compatibleWith(COMPATIBILITY_YOUTUBE)
@@ -133,6 +136,25 @@ val downloadsPatch = bytecodePatch(
                 """
             )
         }
+
+        // Open the external downloader with the playlist link, instead of saving the playlist.
+        OfflinePlaylistEndpointFingerprint.method.addInstructionsWithLabels(
+            0,
+            """
+                # The parameter registers can be higher than 15.
+                move-object/from16 v0, p3
+                move-object/from16 v1, p4
+                invoke-static { v0, v1 }, $EXTENSION_CLASS->offlinePlaylistEndpointOnClick(Ljava/lang/String;Ljava/lang/Enum;)Z
+                move-result v0
+                if-eqz v0, :show_native_downloader
+                return-void
+                :show_native_downloader
+                nop
+            """
+        )
+
+        // Add the Download button to the playlist page headers, which only Premium accounts get.
+        hookElement("$EXTENSION_IN_APP_DOWNLOADS_CLASS->addPlaylistDownloadButton")
 
         // region In-app downloads.
 
