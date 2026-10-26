@@ -20,6 +20,7 @@ import app.morphe.extension.shared.Utils;
 import app.morphe.extension.youtube.patches.VideoInformation;
 import app.morphe.extension.youtube.patches.utils.FlyoutUtils;
 import app.morphe.extension.youtube.settings.Settings;
+import app.morphe.extension.youtube.settings.YouTubeActivityHook;
 import app.morphe.extension.youtube.shared.EngagementPanel;
 import app.morphe.extension.youtube.shared.ShortsPlayerState;
 
@@ -44,6 +45,10 @@ public final class ShortsPlaybackSpeedFlyoutPatch {
      * Time for the flyout to close, so the speed menu is not dismissed with it.
      */
     private static final long SPEED_MENU_DELAY_MILLISECONDS = 100;
+
+    private static final String ICON_NAME = YouTubeActivityHook.USE_BOLD_ICONS
+            ? "yt_outline_experimental_play_circle_half_dashed_vd_theme_24"
+            : "yt_outline_play_arrow_half_circle_black_24";
 
     public static boolean isPatchIncluded() {
         return false; // Modified during patching.
@@ -81,7 +86,7 @@ public final class ShortsPlaybackSpeedFlyoutPatch {
         try {
             return FlyoutUtils.addFlyoutButton(
                     flyoutPanel,
-                    ResourceUtils.getDrawable("yt_outline_play_arrow_half_circle_black_24"),
+                    ResourceUtils.getDrawable(ICON_NAME),
                     str("morphe_shorts_playback_speed_flyout_title",
                             VideoInformation.formatSpeedStringX(VideoInformation.getPlaybackSpeed())),
                     v -> {
