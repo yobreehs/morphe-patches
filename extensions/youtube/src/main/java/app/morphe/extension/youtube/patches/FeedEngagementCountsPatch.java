@@ -9,7 +9,6 @@ package app.morphe.extension.youtube.patches;
 
 import android.animation.ValueAnimator;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
@@ -46,8 +45,8 @@ import app.morphe.extension.youtube.settings.Settings;
  * Part of the Return YouTube Dislike patch.
  * <p>
  * Feed videos do not include their like count, so it's fetched from the Return YouTube Dislike API,
- * with the same cache as the player. A video is fetched when its card is laid out, and the counts
- * fade in once the fetch completes.
+ * with the same cache as the player. A video is fetched when its card is laid out. Until the fetch
+ * completes, the badge shows a loading spinner, and the counts fade in once they are fetched.
  * The counts are not clickable, so tapping them opens the video.
  */
 @SuppressWarnings("unused")
@@ -79,6 +78,8 @@ public final class FeedEngagementCountsPatch {
     private static final int GAP_DP = 3;
     private static final int BAR_HEIGHT_DP = 3;
     private static final int MIN_WIDTH_DP = 34;
+    /** About as tall as the like count. */
+    private static final int SPINNER_DP = 12;
     private static final float COUNT_TEXT_SP = 11f;
     private static final float RATIO_TEXT_SP = 10f;
 
@@ -164,6 +165,7 @@ public final class FeedEngagementCountsPatch {
         private final Paint countPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         private final Paint ratioPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         private final Paint barPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        private final Paint spinnerPaint;
         private final RectF rect = new RectF();
         private final float density;
         private final WeakReference<ComponentHost> hostRef;
@@ -205,6 +207,8 @@ public final class FeedEngagementCountsPatch {
             ratioPaint.setColor(TEXT_COLOR);
             ratioPaint.setTextAlign(Paint.Align.CENTER);
             ratioPaint.setTextSize(RATIO_TEXT_SP * scaledDensity);
+
+            spinnerPaint = FeedVideoCardsPatch.createSpinnerPaint(density, TEXT_COLOR);
         }
 
         private int px(float dp) {
@@ -285,8 +289,9 @@ public final class FeedEngagementCountsPatch {
                         if (data != null) {
                             setData(data);
                             startFadeIn();
-                            place(host);
                         }
+                        // The counts replace the loading spinner, or the badge is removed if the fetch failed.
+                        place(host);
                     } catch (Exception ex) {
                         Logger.printException(() -> "Feed counts update failure", ex);
                     }
@@ -336,11 +341,19 @@ public final class FeedEngagementCountsPatch {
         }
 
         /**
+         * @return If the counts are being fetched, and the loading spinner is shown until then.
+         */
+        private boolean isLoading() {
+            return !hasContent() && (fetching || pendingFetch != null);
+        }
+
+        /**
          * Places the badge on the right side of the thumbnail, just above the duration.
          */
         void place(ComponentHost host) {
-            if (!hasContent()) {
-                // Nothing to show yet, or the fetch failed. A pending fetch is kept.
+            final boolean loading = isLoading();
+            if (!hasContent() && !loading) {
+                // The fetch failed, or it waits for the next layout of the card.
                 removeFromOverlay(host);
                 return;
             }
@@ -352,6 +365,10 @@ public final class FeedEngagementCountsPatch {
 
             float contentWidth = px(ICON_DP);
             float contentHeight = 0;
+            if (loading) {
+                // The like icon, if the like count is shown, and the spinner below it.
+                contentHeight = (LIKE_COUNT ? px(ICON_DP) + gap : 0) + px(SPINNER_DP);
+            }
             if (countText != null) {
                 contentWidth = Math.max(contentWidth, countPaint.measureText(countText));
                 contentHeight += px(ICON_DP) + gap + (countMetrics.descent - countMetrics.ascent);
@@ -440,7 +457,8 @@ public final class FeedEngagementCountsPatch {
 
         @Override
         public void draw(@NonNull Canvas canvas) {
-            if (!confirmed || !hasContent()) {
+            final boolean loading = isLoading();
+            if (!confirmed || (!hasContent() && !loading)) {
                 return;
             }
             ComponentHost host = hostRef.get();
@@ -450,7 +468,7 @@ public final class FeedEngagementCountsPatch {
             }
             Rect bounds = getBounds();
             final float radius = px(CORNER_RADIUS_DP);
-            backgroundPaint.setAlpha(Color.alpha(BACKGROUND_COLOR) * alpha / 255);
+            // The background was shown with the loading spinner, so only the counts fade in.
             countPaint.setAlpha(alpha);
             ratioPaint.setAlpha(alpha);
             rect.set(bounds);
@@ -461,17 +479,30 @@ public final class FeedEngagementCountsPatch {
             final float centerX = bounds.exactCenterX();
             float y = bounds.top + padding;
 
-            if (countText != null) {
+            if (countText != null || (loading && LIKE_COUNT)) {
                 final int iconSize = px(ICON_DP);
                 Drawable icon = getLikeIcon();
                 if (icon != null) {
                     final int left = Math.round(centerX - iconSize / 2f);
                     icon.setBounds(left, Math.round(y), left + iconSize, Math.round(y) + iconSize);
                     // Shared by all badges, so the alpha is set for each draw.
-                    icon.setAlpha(alpha);
+                    // Shown with the loading spinner, so it does not fade in.
+                    icon.setAlpha(255);
                     icon.draw(canvas);
                 }
                 y += iconSize + gap;
+            }
+
+            if (loading) {
+                final float spinnerSize = px(SPINNER_DP);
+                rect.set(centerX - spinnerSize / 2, y, centerX + spinnerSize / 2, y + spinnerSize);
+                FeedVideoCardsPatch.drawSpinner(canvas, rect, spinnerPaint);
+                // Drawn again, so the spinner turns.
+                invalidateSelf();
+                return;
+            }
+
+            if (countText != null) {
                 Paint.FontMetrics metrics = countPaint.getFontMetrics();
                 canvas.drawText(countText, centerX, y - metrics.ascent, countPaint);
                 y += metrics.descent - metrics.ascent;
