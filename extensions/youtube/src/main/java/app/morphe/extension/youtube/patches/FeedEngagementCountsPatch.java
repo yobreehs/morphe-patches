@@ -66,7 +66,10 @@ public final class FeedEngagementCountsPatch {
 
     /** Top margin of a thumbnail that is too small to fit the badge above the duration. */
     private static final int MARGIN_DP = 10;
-    /** Same as the duration badge and the Watch later button, so their right edges line up. */
+    /**
+     * Same as the duration badge and the Watch later button, so their right edges line up.
+     * In right to left languages it's the left margin, the same as the duration badge.
+     */
     private static final int RIGHT_MARGIN_DP = 8;
     /** Space between the badge and the duration badge below it. */
     private static final int DURATION_GAP_DP = 4;
@@ -348,7 +351,7 @@ public final class FeedEngagementCountsPatch {
         }
 
         /**
-         * Places the badge on the right side of the thumbnail, just above the duration.
+         * Places the badge on the side of the duration of the thumbnail, just above it.
          */
         void place(ComponentHost host) {
             final boolean loading = isLoading();
@@ -390,33 +393,43 @@ public final class FeedEngagementCountsPatch {
             FeedViewCountPatch.ThumbnailFrame frame = FeedViewCountPatch.findThumbnailFrame(host);
             final Rect duration = frame.duration;
             final Rect thumbnail = frame.thumbnail;
-            final int right;
+            // In right to left languages the duration badge is at the left, so the badge is too.
+            final boolean rtl = FeedViewCountPatch.isRtl(host);
+            // The right edge of the badge, or its left edge in right to left languages.
+            final int edge;
             final int bottom;
             final int thumbnailTop;
             if (duration != null) {
-                right = duration.right;
+                edge = rtl ? duration.left : duration.right;
                 bottom = duration.top - px(DURATION_GAP_DP);
                 if (thumbnail != null && thumbnail.top < duration.top) {
                     thumbnailTop = thumbnail.top;
                 } else {
                     // Thumbnails are centered on the card, and at least 16:9.
-                    final int thumbnailRight = duration.right + px(RIGHT_MARGIN_DP);
-                    final int thumbnailWidth = thumbnailRight - Math.max(0, host.getWidth() - thumbnailRight);
+                    final int thumbnailWidth;
+                    if (rtl) {
+                        final int thumbnailLeft = duration.left - px(RIGHT_MARGIN_DP);
+                        thumbnailWidth = host.getWidth() - thumbnailLeft - Math.max(0, thumbnailLeft);
+                    } else {
+                        final int thumbnailRight = duration.right + px(RIGHT_MARGIN_DP);
+                        thumbnailWidth = thumbnailRight - Math.max(0, host.getWidth() - thumbnailRight);
+                    }
                     thumbnailTop = duration.bottom + px(RIGHT_MARGIN_DP)
                             - Math.round(thumbnailWidth * FeedVideoCardsPatch.THUMBNAIL_RATIO);
                 }
             } else if (thumbnail != null) {
-                right = thumbnail.right - px(RIGHT_MARGIN_DP);
+                edge = rtl ? thumbnail.left + px(RIGHT_MARGIN_DP) : thumbnail.right - px(RIGHT_MARGIN_DP);
                 bottom = thumbnail.bottom - px(ABOVE_DURATION_DP);
                 thumbnailTop = thumbnail.top;
             } else {
-                right = host.getWidth() - px(RIGHT_MARGIN_DP);
+                edge = rtl ? px(RIGHT_MARGIN_DP) : host.getWidth() - px(RIGHT_MARGIN_DP);
                 bottom = FeedVideoCardsPatch.getThumbnailBottom(host) - px(ABOVE_DURATION_DP);
                 thumbnailTop = 0;
             }
             final int top = Math.max(thumbnailTop + px(MARGIN_DP), bottom - height);
 
-            setBounds(right - width, top, right, top + height);
+            final int left = rtl ? edge : edge - width;
+            setBounds(left, top, left + width, top + height);
             if (!added) {
                 host.getOverlay().add(this);
                 added = true;

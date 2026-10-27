@@ -55,6 +55,7 @@ import app.morphe.extension.youtube.settings.Settings;
 /**
  * Shows the view count of feed videos at the bottom left of their thumbnails,
  * lined up with the duration badge at the bottom right.
+ * In right to left languages, both are on the other side.
  * <p>
  * The view count is the text YouTube shows below the title, such as
  * "Channel - 4.7M views - 2 days ago". When that text is created, the shortened view count
@@ -105,7 +106,7 @@ public final class FeedViewCountPatch {
     /** Space between the duration badge and the edges of the thumbnail, if the badge is not found. */
     private static final int FALLBACK_MARGIN_DP = 8;
     /** A little more space than the duration badge has, so the count is not at the very edge. */
-    private static final int EXTRA_LEFT_MARGIN_DP = 2;
+    private static final int EXTRA_MARGIN_DP = 2;
     /** A square thumbnail is this much taller than 16:9, at least. */
     private static final int SQUARE_MIN_EXTRA_DP = 40;
     /** Space between the thumbnail and the title. */
@@ -480,8 +481,10 @@ public final class FeedViewCountPatch {
                     index = 1;
                 }
             } else if (parsed[0] != null && segments.get(0).startsWithNumber()
-                    && segments.get(1).startsWithNumber()) {
-                // The view count and the upload time, such as on the channel page.
+                    && segments.get(1).hasNumber()) {
+                // The view count and the upload time, such as on the channel page and on the cards.
+                // Some languages show a word before the number of the upload time,
+                // such as "vor 2 Tagen" in German.
                 index = 0;
             }
         }
@@ -834,7 +837,8 @@ public final class FeedViewCountPatch {
     }
 
     /**
-     * A host only as large as the badge, at the bottom right of the thumbnail.
+     * A host only as large as the badge, at the bottom right of the thumbnail,
+     * or at the bottom left in right to left languages.
      */
     private static boolean isDurationBadgeShaped(ComponentHost root, Rect rect) {
         final float density = root.getResources().getDisplayMetrics().density;
@@ -843,8 +847,16 @@ public final class FeedViewCountPatch {
                 && rect.width() <= MAX_DURATION_WIDTH_DP * density
                 && rect.height() >= MIN_DURATION_HEIGHT_DP * density
                 && rect.height() <= MAX_DURATION_HEIGHT_DP * density
-                && rect.centerX() > root.getWidth() / 2
+                && (isRtl(root) ? rect.centerX() < root.getWidth() / 2 : rect.centerX() > root.getWidth() / 2)
                 && rect.bottom <= root.getWidth() + TOLERANCE_DP * density;
+    }
+
+    /**
+     * @return If the card is laid out right to left, where the duration badge is at the bottom left
+     *         of the thumbnail, so the badges are placed on the other side.
+     */
+    public static boolean isRtl(View view) {
+        return view.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
     }
 
     /**
@@ -1034,18 +1046,21 @@ public final class FeedViewCountPatch {
                     : new Rect(0, 0, host.getWidth(),
                     Math.round(host.getWidth() * FeedVideoCardsPatch.THUMBNAIL_RATIO));
 
-            // Same height, bottom and margin as the duration badge.
+            // Same height, bottom and margin as the duration badge, on the other side of the thumbnail.
+            final boolean rtl = isRtl(host);
             final int top;
             final int bottom;
-            final int left;
+            // Distance of the badge from the edge of the thumbnail on its side.
+            final int margin;
             if (duration != null) {
                 top = duration.top;
                 bottom = duration.bottom;
-                left = frame.left + Math.max(0, frame.right - duration.right) + px(EXTRA_LEFT_MARGIN_DP);
+                margin = Math.max(0, rtl ? duration.left - frame.left : frame.right - duration.right)
+                        + px(EXTRA_MARGIN_DP);
             } else {
                 bottom = frame.bottom - px(FALLBACK_MARGIN_DP);
                 top = bottom - px(FALLBACK_HEIGHT_DP);
-                left = frame.left + px(FALLBACK_MARGIN_DP + EXTRA_LEFT_MARGIN_DP);
+                margin = px(FALLBACK_MARGIN_DP + EXTRA_MARGIN_DP);
             }
             final int height = bottom - top;
 
@@ -1056,6 +1071,7 @@ public final class FeedViewCountPatch {
                     : textPaint.measureText(viewCount);
             final int width = Math.round(px(PADDING_DP) * 2 + iconSize + px(GAP_DP) + contentWidth);
 
+            final int left = rtl ? frame.right - margin - width : frame.left + margin;
             setBounds(left, top, left + width, bottom);
             if (!added) {
                 host.getOverlay().add(this);
