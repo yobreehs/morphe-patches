@@ -8,13 +8,11 @@
 package app.morphe.patches.youtube.interaction.nativeplaylistqueue
 
 import app.morphe.patcher.patch.BytecodePatchContext
-import app.morphe.patcher.util.getReference
 import app.morphe.patcher.util.matchSingle
 import app.morphe.patches.youtube.misc.loadvideo.MiniAppOpenYtContentCommandEndpointFingerprint
 import app.morphe.patches.youtube.misc.playservice.is_21_32_or_greater
 import app.morphe.patches.youtube.misc.playservice.is_21_44_or_greater
 import app.morphe.util.addInstructionsAtControlFlowLabel
-import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 
 /** Observe the user close before teardown; keep the original native listener and dismissal. */
@@ -24,7 +22,7 @@ internal fun installQueuePlayerClose(
     dispatch: MethodReference
 ) = with(context) {
     val dismiss = MiniAppOpenYtContentCommandEndpointFingerprint
-        .instructionMatches.last().instruction.getReference<MethodReference>()!!
+        .instructionMatches.last().methodReference
 
     // Before 21.32 the fling has a second accepted-dismiss branch. Hook every user
     // dismissal, preserving thresholds, branch targets and the native continuation,
@@ -54,7 +52,7 @@ internal fun installQueuePlayerClose(
     // Reading it remains valid after the watch view detaches. No listener is replaced.
     val controllerType = PlaylistControllerConstructorFingerprint.originalClassDef.type
     val dispatcher = playlistControllerDispatcherFingerprint(controllerType, dispatch.definingClass)
-        .instructionMatches.first().instruction.getReference<FieldReference>()!!
+        .instructionMatches.first().fieldReference
 
     mutableClassDefBy(controllerType).addBridgeMethod(
         "patch_showQueueFeedback",

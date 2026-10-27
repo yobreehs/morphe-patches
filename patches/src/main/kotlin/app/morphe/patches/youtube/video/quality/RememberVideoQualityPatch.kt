@@ -17,7 +17,6 @@ import app.morphe.patcher.fieldAccess
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.findFreeRegister
 import app.morphe.patcher.util.getFreeRegisterProvider
-import app.morphe.patcher.util.getReference
 import app.morphe.patcher.util.matchSingle
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod.Companion.toMutable
 import app.morphe.patcher.util.smali.ExternalLabel
@@ -58,7 +57,6 @@ import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
-import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import com.android.tools.smali.dexlib2.immutable.ImmutableMethod
 import com.android.tools.smali.dexlib2.immutable.ImmutableMethodParameter
 
@@ -206,7 +204,7 @@ val rememberVideoQualityPatch = bytecodePatch {
         // (Auto, Higher picture quality, Data saver), both on the device and with the SABR requests.
         val videoQualitySettingMethod = VideoQualitySettingEnumFingerprint.let {
             val videoQualitySettingType = it.classDef.type
-            val advancedMenuField = it.instructionMatches.last().instruction.getReference<FieldReference>()!!
+            val advancedMenuField = it.instructionMatches.last().fieldReference
 
             getVideoQualitySettingFingerprint(videoQualitySettingType).method.apply {
                 addInstructionsWithLabels(
@@ -278,13 +276,13 @@ val rememberVideoQualityPatch = bytecodePatch {
         // and without one the quality is chosen automatically, such as 720p for the size of the player.
         // The default quality is used as the quality last selected, as if the user just selected it.
         val videoIdField = LastSelectedVideoQualityConstructorFingerprint.let {
-            val videoIdField = it.instructionMatches[1].instruction.getReference<FieldReference>()!!
+            val videoIdField = it.instructionMatches[1].fieldReference
 
             it.method.apply {
-                val selectedTimeField = it.instructionMatches[0].instruction.getReference<FieldReference>()!!
-                val playbackStartTimeField = it.instructionMatches[3].instruction.getReference<FieldReference>()!!
-                val resolutionField = it.instructionMatches[4].instruction.getReference<FieldReference>()!!
-                val directionField = it.instructionMatches[5].instruction.getReference<FieldReference>()!!
+                val selectedTimeField = it.instructionMatches[0].fieldReference
+                val playbackStartTimeField = it.instructionMatches[3].fieldReference
+                val resolutionField = it.instructionMatches[4].fieldReference
+                val directionField = it.instructionMatches[5].fieldReference
 
                 // All fields are set, so the registers are free before the return.
                 addInstructionsAtControlFlowLabel(
@@ -409,7 +407,7 @@ val rememberVideoQualityPatch = bytecodePatch {
         // wrong, such as 720 for the 480p quality of some Shorts, so another quality is played.
         // The quality selected is set instead, as the quality menu of regular videos does.
         val setResolutionMethod = getSetVideoQualityResolutionFingerprint(
-            SetVideoQualityFingerprint.instructionMatches[1].getFieldAccessed().type
+            SetVideoQualityFingerprint.instructionMatches[1].fieldReference.type
         ).matchSingle().method
 
         getVideoQualityItemSetResolutionFingerprint(setResolutionMethod).matchAll().forEach {

@@ -466,7 +466,7 @@ val miniplayerPatch = bytecodePatch(
         // unchanged, and the rebuild otherwise happens later, such as when scrolling the watch
         // page or when the home is laid out again after minimizing the player.
         ListLayoutChangeFingerprint.let {
-            val pendingField = it.instructionMatches[8].getFieldAccessed()
+            val pendingField = it.instructionMatches[8].fieldReference
 
             // Orientation the last size of the list was laid out in.
             val sizeOrientationField = ImmutableField(

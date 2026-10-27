@@ -69,7 +69,6 @@ import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.RegisterRangeInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
-import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 import com.android.tools.smali.dexlib2.iface.reference.TypeReference
 import com.android.tools.smali.dexlib2.immutable.ImmutableMethod
@@ -276,7 +275,7 @@ val navigationBarPatch = bytecodePatch(
         // method called right after adds to its height. The extension moves that room below
         // the slim status bar while it is shown, so the bar is given a method that sets it.
         navigationBarBottomPaddingMatches.first().instructionMatches.let { matches ->
-            val roomField = matches[0].getFieldAccessed()
+            val roomField = matches[0].fieldReference
             val updateHeightMethod = matches[1].getMethodCalled()
 
             mutableClassDefBy(PIVOT_BAR_CLASS).apply {
@@ -559,7 +558,7 @@ val navigationBarPatch = bytecodePatch(
 
                 val protoListBuilderMethod = Fingerprint(
                     accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
-                    returnType = insertMatch.instruction.getReference<FieldReference>()!!.type,
+                    returnType = insertMatch.fieldReference.type,
                     parameters = listOf("Ljava/util/Collection;")
                 ).method
 

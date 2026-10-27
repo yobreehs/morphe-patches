@@ -149,6 +149,12 @@ internal object RequestResponseParserFingerprint : Fingerprint(
             parameters = listOf("Ljava/lang/Object;", "Ljava/lang/Object;"),
             returnType = "V",
             location = MatchAfterImmediately()
+        ),
+        // Parse failure handler.
+        methodCall(
+            opcode = Opcode.INVOKE_VIRTUAL,
+            parameters = listOf("Ljava/lang/Object;", "Ljava/lang/Object;", "L", "Ljava/lang/Exception;"),
+            returnType = "V"
         )
     )
 )
