@@ -410,6 +410,10 @@ Reports are public and are reviewed before a channel is added to a list. Removal
     <string name="morphe_hide_video_ads_title">Hide video ads</string>
     <string name="morphe_hide_youtube_premium_promotions_title">Hide YouTube Premium promotions</string>
 
+    <!-- layout.flyout.flyoutPatch -->
+    <!-- Shown instead of the text of a flyout menu item while the data it needs is loading. -->
+    <string name="morphe_flyout_button_loading">Loading…</string>
+
     <!-- Channel whitelist dialog, shared by ad.hideAdsPatch and layout.sponsorblock.sponsorBlockPatch -->
     <string name="morphe_channel_whitelist_current_channel">Current channel:</string>
     <string name="morphe_channel_whitelist_add">Add to whitelist</string>
