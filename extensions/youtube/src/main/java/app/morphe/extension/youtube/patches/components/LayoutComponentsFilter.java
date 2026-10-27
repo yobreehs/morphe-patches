@@ -285,6 +285,7 @@ public final class LayoutComponentsFilter extends Filter {
 
         communityPosts = new StringFilterGroup(
                 Settings.HIDE_COMMUNITY_POSTS,
+                "communities_entrypoint.e",
                 "images_post_responsive_root.e",
                 "images_post_root.e",
                 "images_post_root_slim.e",
