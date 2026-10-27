@@ -572,18 +572,6 @@ internal fun accountPeerDispatchFingerprint(peerType: String, forwarder: MethodR
     filters = listOf(methodCall(reference = forwarder)),
 )
 
-internal fun protoDefaultInstanceFingerprint(messageType: String) = Fingerprint(
-    definingClass = messageType,
-    name = "<clinit>",
-    filters = listOf(
-        fieldAccess(
-            definingClass = messageType,
-            type = messageType,
-            opcode = Opcode.SPUT_OBJECT
-        )
-    )
-)
-
 /** Generic protobuf parser inherited by the already resolved native message type. */
 internal fun protoParserFingerprint(messageHierarchy: Set<String>) = Fingerprint(
     name = "parseFrom",
