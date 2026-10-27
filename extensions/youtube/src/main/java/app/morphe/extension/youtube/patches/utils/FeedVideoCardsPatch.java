@@ -42,6 +42,7 @@ import java.util.regex.Pattern;
 import app.morphe.extension.shared.Logger;
 import app.morphe.extension.shared.Utils;
 import app.morphe.extension.youtube.patches.FeedEngagementCountsPatch;
+import app.morphe.extension.youtube.patches.FeedVideoActionsPatch;
 import app.morphe.extension.youtube.patches.FeedViewCountPatch;
 import app.morphe.extension.youtube.patches.PostImageDownloadPatch;
 import app.morphe.extension.youtube.patches.VideoInformation;
@@ -698,14 +699,13 @@ public final class FeedVideoCardsPatch {
     }
 
     /**
-     * Checks the card again a little later, such as when what is drawn on it was not found yet,
-     * and when the list scrolls while the card is partly shown.
-     * Must be called on the main thread.
+     * Checks the card again when the list scrolls, if the card is partly shown.
+     * Litho mounts only the part of a card that is shown, so what is drawn on it can be found
+     * once more of it is shown. Must be called on the main thread.
      *
-     * @return If the card is checked again.
+     * @return If the card is partly shown, so it is checked again.
      */
-    public static boolean scheduleRetry(ComponentHost root) {
-        // Only the part of the card on the screen is mounted.
+    public static boolean scheduleScrollCheck(ComponentHost root) {
         final boolean partlyShown = root.isAttachedToWindow()
                 && (!root.getLocalVisibleRect(visibleRect) || visibleRect.height() < root.getHeight());
         if (partlyShown) {
@@ -715,6 +715,18 @@ public final class FeedVideoCardsPatch {
                 observer.addOnScrollChangedListener(scrollListener);
             }
         }
+        return partlyShown;
+    }
+
+    /**
+     * Checks the card again a little later, such as when what is drawn on it was not found yet,
+     * and when the list scrolls while the card is partly shown.
+     * Must be called on the main thread.
+     *
+     * @return If the card is checked again.
+     */
+    public static boolean scheduleRetry(ComponentHost root) {
+        final boolean partlyShown = scheduleScrollCheck(root);
 
         Integer count = retries.get(root);
         final int attempt = count == null ? 0 : count;
@@ -766,6 +778,7 @@ public final class FeedVideoCardsPatch {
                 final String cardVideoId = PLAYLIST.equals(videoId) ? null : videoId;
                 FeedEngagementCountsPatch.onCardLaidOut(root, cardVideoId);
                 FeedViewCountPatch.onCardLaidOut(root, cardVideoId);
+                FeedVideoActionsPatch.onCardLaidOut(root, cardVideoId);
                 PostImageDownloadPatch.onRootLaidOut(root);
             }
         } catch (Exception ex) {
