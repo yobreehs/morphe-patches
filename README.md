@@ -35,9 +35,9 @@ All modifications made by Morphe, along with their dates, can be found in the Gi
 ## 🩹 Patches list
 
 <!-- PATCHES_START -->
-> **[v1.49.0-dev.7](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.49.0-dev.7)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;192 patches total
+> **[v1.49.0-dev.8](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.49.0-dev.8)**&nbsp;&nbsp;•&nbsp;&nbsp;`dev`&nbsp;&nbsp;•&nbsp;&nbsp;193 patches total
 <details>
-<summary>📦 YouTube&nbsp;&nbsp;•&nbsp;&nbsp;107 patches</summary>
+<summary>📦 YouTube&nbsp;&nbsp;•&nbsp;&nbsp;108 patches</summary>
 <br>
 
 **🎯 Supported versions:**
@@ -115,6 +115,7 @@ All modifications made by Morphe, along with their dates, can be found in the Gi
 | [Mute button](#mute-button) | Adds an option to show a player button that mutes the video audio. |  |
 | [Navigation bar](#navigation-bar) | Adds options to hide and change the bottom navigation bar (such as the Shorts button) and the upper navigation toolbar. | • Hide Search app shortcut<br>• Hide Subscriptions app shortcut |
 | [Network proxy](#network-proxy) | Adds settings to route supported network requests through an HTTP or HTTPS proxy. Including this patch may cause connectivity problems on certain devices |  |
+| [Niconico comments](#niconico-comments) | Adds an option to show live chat and chat replay as comments that scroll across the video. |  |
 | [Open Shorts in regular player](#open-shorts-in-regular-player) | Adds options to open Shorts in the regular video player. |  |
 | [Open channel of live avatar](#open-channel-of-live-avatar) | Adds an option to prevent a channel's current live video from opening when tapping its avatar. |  |
 | [Open links externally](#open-links-externally) | Adds an option to always open links in your browser instead of with the in-app browser. |  |
