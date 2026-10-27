@@ -397,14 +397,6 @@
         <item>HIDE_SUMMARY_ONLY</item>
         <item>HIDE_ALL</item>
     </string-array>
-    <string-array name="morphe_hide_expandable_card_legacy_entries">
-        <item>@string/morphe_hide_expandable_card_entry_1</item>
-        <item>@string/morphe_hide_expandable_card_entry_3</item>
-    </string-array>
-    <string-array name="morphe_hide_expandable_card_legacy_entry_values">
-        <item>SHOW_ALL</item>
-        <item>HIDE_ALL</item>
-    </string-array>
 
     <!-- layout.feedcards.feedCardLayoutPatch -->
     <string-array name="morphe_feed_card_layout_entries">
@@ -455,14 +447,6 @@
         <item>BOTH_DISABLED</item>
         <item>WITH_VOLUME_ONLY</item>
         <item>WITHOUT_VOLUME_ONLY</item>
-    </string-array>
-    <string-array name="morphe_auto_captions_style_legacy_entries">
-        <item>@string/morphe_auto_captions_style_legacy_entry_1</item>
-        <item>@string/morphe_auto_captions_style_legacy_entry_2</item>
-    </string-array>
-    <string-array name="morphe_auto_captions_style_legacy_entry_values">
-        <item>BOTH_ENABLED</item>
-        <item>BOTH_DISABLED</item>
     </string-array>
 
     <!-- layout.captions.preferredCaptionLanguagePatch -->
