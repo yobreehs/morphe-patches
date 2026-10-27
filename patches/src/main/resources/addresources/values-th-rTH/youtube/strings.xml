@@ -613,6 +613,8 @@ Second \"item\" text"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">อนุญาตให้บันทึกวิดีโอที่เกี่ยวข้องกับเด็กไว้ใน \'ดูภายหลัง\' จากเมนูแบบเลื่อนออก</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">แสดงปุ่มบันทึกไปยังดูภายหลังในเมนูแบบเลื่อนออกของ Shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">อนุญาตให้บันทึก Shorts ไว้ใน \'ดูภายหลัง\' จากเมนูแบบเลื่อนออก</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">เปลี่ยนเส้นทาง \"ดูภายหลัง\" ไปยังเพลย์ลิสต์</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">ดูต่อภายหลัง</string>
   <string name="morphe_queue_flyout_title">เพิ่มลงในคิว Morphe</string>
   <string name="morphe_queue_restore_title">คงคิวไว้ระหว่างการใช้งาน</string>
   <string name="morphe_queue_restore_summary">คิวจะถูกเก็บไว้หลังจากการปิดและเปิดแอปอีกครั้ง</string>
@@ -1109,22 +1111,23 @@ Second \"item\" text"</string>
   <string name="morphe_change_form_factor_entry_2">โทรศัพท์</string>
   <string name="morphe_change_form_factor_entry_3">แท็บเล็ต</string>
   <string name="morphe_change_form_factor_entry_4">ยานยนต์</string>
-  <string name="morphe_change_form_factor_user_dialog_message">"มีการเปลี่ยนแปลงดังนี้:
+  <string name="morphe_change_form_factor_user_dialog_message">"การเปลี่ยนแปลงรวมถึง:
 
-เลย์เอาต์สำหรับแท็บเล็ต
-• โพสต์จากชุมชนจะถูกซ่อนไว้
-• จะไม่มีตัวเลือกการเล่นในฟีด
-• จะไม่มีปุ่มรีมิกซ์และปุ่มเสียงใน Shorts
-• อาจไม่สามารถใช้งานภาพซ้อนทับ 'วิดีโอเพิ่มเติม' ได้
-• แถบการทำงานของวิดีโอแบบเดิมที่ไม่ยุบจะแสดงขึ้น
+เลย์เอาต์แท็บเล็ต
+• โพสต์จากชุมชนจะถูกซ่อน
+• การตั้งค่าการเล่นในฟีดไม่สามารถใช้งาน
+• ปุ่มรีมิกซ์และปุ่มเสียงไม่สามารถใช้งานใน Shorts
+• ภาพซ้อนทับ 'วิดีโอเพิ่มเติม' อาจไม่ปรากฏ
+• แถบดำเนินการวิดีโอแบบเก่าที่ไม่ยุบจะแสดง
+• รายการเมนูป๊อปอัพอาจทำงานไม่ถูกต้อง
 
-เลย์เอาต์สำหรับรถยนต์
-• ฟีดจะถูกจัดระเบียบตามหัวข้อและช่อง
-• จะไม่มีตัวเลือกการเล่นในฟีด
-• จะไม่มีปุ่มรีมิกซ์และปุ่มเสียงใน Shorts
-• อาจไม่สามารถใช้งานภาพซ้อนทับ 'วิดีโอเพิ่มเติม' ได้
+เลย์เอาต์รถยนต์
+• ฟीडจัดเรียงตามหัวข้อและช่อง
+• การตั้งค่าการเล่นในฟีดไม่สามารถใช้งาน
+• ปุ่มรีมิกซ์และปุ่มเสียงไม่สามารถใช้งานใน Shorts
+• ภาพซ้อนทับ 'วิดีโอเพิ่มเติม' อาจไม่ปรากฏ
 • Shorts จะเปิดในเครื่องเล่นปกติ
-• แถบการทำงานของวิดีโอแบบเดิมที่ไม่ยุบจะแสดงขึ้น"</string>
+• แถบดำเนินการวิดีโอแบบเก่าที่ไม่ยุบจะแสดง"</string>
   <string name="morphe_tablet_layout_in_player_title">เปิดใช้งานรูปแบบแท็บเล็ตในเครื่องเล่น</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"คืนรูปแบบเครื่องเล่นแบบเก่า

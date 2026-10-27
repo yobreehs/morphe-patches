@@ -613,6 +613,8 @@ Informacija: gali neveikti tiesioginių transliacijų atveju"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Leidžia išsaugoti su vaikais susijusius vaizdo įrašus sąraše „Žiūrėti vėliau“ iš iškylančiojo meniu</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Rodyti „Išsaugoti žiūrėti vėliau“ mygtuką „Shorts“ iškylančiajame meniu</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Leidžia išsaugoti „Shorts“ įrašus sąraše „Žiūrėti vėliau“ iš iškylančiojo meniu</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Per nukreipti „Žiūrėti vėliau“ į playlistą</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Žiūrėti vėliau</string>
   <string name="morphe_queue_flyout_title">Pridėti į Morphe eilę</string>
   <string name="morphe_queue_restore_title">Išsaugoti eilę tarp seansų</string>
   <string name="morphe_queue_restore_summary">Eilė išsaugoma iš naujo paleidus programą</string>
@@ -1111,20 +1113,21 @@ Nustatymai → Atkūrimas (arba Automatinis atkūrimas) → Automatiškai leisti
   <string name="morphe_change_form_factor_entry_4">Automobilyje</string>
   <string name="morphe_change_form_factor_user_dialog_message">"Pakeitimai apima:
 
-Planšetės maketas
+Planšetės išdėstymas
 • Bendruomenės įrašai paslėpti
-• Nustatymas „Atkūrimas sklaidos kanaluose“ nepasiekiamas
-• „Remix“ ir „Garsas“ mygtukai nepasiekiami „Shorts“
-• „Daugiau vaizdo įrašų“ perdanga gali būti nepasiekiama
-• Rodoma nesutraukta senoji vaizdo įrašo veiksmų juosta
+• Peržiūros šerdyje nustatymas nėra prieinamas
+• „Remix“ ir „Garso“ mygtukai yra neprieinami „Shorts“
+• „Daugiau video“ persegimas gali būti neprieinamas
+• Rodo nesutrauktą senosios veiksmų juostos vaizdo įrašo
+„Flyout“ meniu elementai gali neveikti tinkamai
 
-Automobilio maketas
-• Srautas suskirstytas pagal temas ir kanalus
-• Nustatymas „Atkūrimas sklaidos kanaluose“ nepasiekiamas
-• „Remix“ ir „Garsas“ mygtukai nepasiekiami „Shorts“
-• „Daugiau vaizdo įrašų“ perdanga gali būti nepasiekiama
-• „Shorts“ atidaromi įprastame grotuve
-• Rodoma nesutraukta senoji vaizdo įrašo veiksmų juosta"</string>
+Automobilio išdėstymas
+• Šerdis organizuojama pagal temas ir kanalus
+• Peržiūros šerdyje nustatymas nėra prieinamas
+• „Remix“ ir „Garso“ mygtukai yra neprieinami „Shorts“
+• „Daugiau video“ persegimas gali būti neprieinamas
+• „Shorts“ atidaromi reguliariame grotuve
+• Rodo nesutrauktą senosios veiksmų juostos vaizdo įrašo"</string>
   <string name="morphe_tablet_layout_in_player_title">Įjungti planšetės išdėstymą grotuve</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Atkuria senąjį grotuvo maketą

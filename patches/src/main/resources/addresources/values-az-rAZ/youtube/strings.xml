@@ -500,6 +500,8 @@ Məhdudiyyətlər:
   <string name="morphe_external_downloader_quick_video">Video</string>
   <string name="morphe_external_downloader_quick_audio">Səs</string>
   <string name="morphe_external_downloader_quick_options">Bütün seçimlər</string>
+  <string name="morphe_shorts_download_flyout_button_title">Shorts menyusunda yükləməni göstər</string>
+  <string name="morphe_shorts_download_flyout_button_summary">Shorts oynadıcıya xarici yükləyici açılan menyusu elementi əlavə edir</string>
   <string name="morphe_shorts_download_flyout_title">Yüklə</string>
   <!-- video.voiceovertranslation.voiceOverTranslationPatch -->
   <string name="morphe_vot_screen_title">Səs üstələyici tərcümə</string>
@@ -611,6 +613,8 @@ Məlumat: Canlı yayımlarda işləməyə bilər"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Uşaqlarla əlaqəli videoları açılan menyudan \"Sonra izləyin\" bölməsində saxlamağa imkan verir</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Shorts açılan menyusunda \"Daha sonra İzləmək üçün Saxla\" düyməsini göstər</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Shorts-ları açılan menyudan \"Sonra izləyin\" bölməsində saxlamağa imkan verir</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Daha sonra izləni pleylistə yönləndir</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Sonra izlə</string>
   <string name="morphe_queue_flyout_title">Morphe növbəsinə əlavə et</string>
   <string name="morphe_queue_restore_title">​Sessiyalar arasında növbəni qoru</string>
   <string name="morphe_queue_restore_summary">Tətbiq yenidən başladıldıqdan sonra növbə qorunur</string>
@@ -1107,22 +1111,6 @@ Ayarlar→ Oxunuş (və ya Avtomatik oxunuş) → Növbəti videonu avtomatik ox
   <string name="morphe_change_form_factor_entry_2">Telefon</string>
   <string name="morphe_change_form_factor_entry_3">Planşet</string>
   <string name="morphe_change_form_factor_entry_4">Avtomobil</string>
-  <string name="morphe_change_form_factor_user_dialog_message">"Dəyişikliklər ehtiva edir:
-
-Planşet tərtibatı
-• İcma postları gizlədilir
-• Axınlarda oynatma seçimi mövcud deyil
-• Shorts-da Remiks düyməsi və Səs düyməsi mövcud deyil
-• \"Daha çox video\" örtüyü mövcud olmaya bilər
-• Yığılmamış köhnə video fəaliyyət cizgisi göstərilir
-
-Avtomobil tərtibatı
-• Axın mövzular və kanallara görə qruplaşdırılır
-• Axınlarda oynatma seçimi mövcud deyil
-• Shorts-da Remiks düyməsi və Səs düyməsi mövcud deyil
-• \"Daha çox video\" örtüyü mövcud olmaya bilər
-• Shorts müntəzəm oynadıcıda açılır
-• Yığılmamış köhnə video fəaliyyət cizgisi göstərilir"</string>
   <string name="morphe_tablet_layout_in_player_title">Oynadıcıda planşet tərtibatın aktivləşdir</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Köhnə oynadıcı tərtibatını bərpa edir
@@ -1631,4 +1619,7 @@ Məhdudiyyət: Köhnə üslub üçün \"Daha çox video\" örtüyünə qayıdır
   <string name="morphe_series_tracker_untitled_episode">Başlıqsız epizod</string>
   <string name="morphe_series_tracker_unavailable_episode">Əlçatmaz epizod</string>
   <!-- layout.niconicocomments.niconicoCommentsPatch -->
+  <string name="morphe_niconico_comments_screen_title">Niconico şərhləri</string>
+  <string name="morphe_niconico_comments_screen_summary">Canlı söhbəti və təkrar oxudulan söhbəti video üzərində axan şərhlər kimi göstər</string>
+  <string name="morphe_niconico_comments_summary">Video oynadıcıda örtük düyməsini göstərir. Şərhləri göstərmək və ya gizlətmək üçün toxun, sürətli tənzimləmələr üçün basıb saxla</string>
 </resources>

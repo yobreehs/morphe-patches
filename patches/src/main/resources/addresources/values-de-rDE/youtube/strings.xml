@@ -614,6 +614,8 @@ Info: Funktioniert möglicherweise nicht bei Livestreams"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Ermöglicht das Speichern von kinderbezogenen Videos in \'Später ansehen\' über das Flyout-Menü</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Zeige die Schaltfläche \'Speichern in Später ansehen\' im Shorts-Flyout</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Ermöglicht das Speichern von Shorts in \'Später ansehen\' über das Flyout-Menü</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">\"Später ansehen\" an Playlist weiterleiten</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Später ansehen</string>
   <string name="morphe_queue_flyout_title">Zur Morphe-Warteschlange hinzufügen</string>
   <string name="morphe_queue_restore_title">Warteschlange zwischen Sitzungen beibehalten</string>
   <string name="morphe_queue_restore_summary">Warteschlange wird nach Neustart der App beibehalten</string>
@@ -1110,22 +1112,22 @@ Einstellungen → Wiedergabe (oder Automatische Wiedergabe) → Nächstes Video 
   <string name="morphe_change_form_factor_entry_2">Telefon</string>
   <string name="morphe_change_form_factor_entry_3">Tablets</string>
   <string name="morphe_change_form_factor_entry_4">Automobil</string>
-  <string name="morphe_change_form_factor_user_dialog_message">"Die Änderungen umfassen:
+  <string name="morphe_change_form_factor_user_dialog_message">"Änderungen umfassen:
 
 Tablet-Layout
-• Community-Beiträge sind ausgeblendet
-• Die Einstellung 'Wiedergabe in Feeds' ist nicht verfügbar
-• Remix-Button und Sound-Button sind in Shorts nicht verfügbar
-• 'Weitere Videos'-Overlay ist möglicherweise nicht verfügbar
-• Die alte, nicht eingeklappte Video-Aktionsleiste wird angezeigt
+• Community-Beiträge werden ausgeblendet
+• Wiedergabe in Feeds-Einstellung ist nicht verfügbar
+• Remix-Schaltfläche und Sound-Schaltfläche sind in Shorts nicht verfügbar
+• 'Mehr Videos'-Overlay möglicherweise nicht verfügbar
+• Nicht zusammengeklappte alte Video-Aktionsleiste wird angezeigt
 
 Automotive-Layout
-• Der Feed ist nach Themen und Kanälen organisiert
-• Die Einstellung 'Wiedergabe in Feeds' ist nicht verfügbar
-• Remix-Button und Sound-Button sind in Shorts nicht verfügbar
-• 'Weitere Videos'-Overlay ist möglicherweise nicht verfügbar
-• Shorts werden im normalen Player geöffnet
-• Die alte, nicht eingeklappte Video-Aktionsleiste wird angezeigt"</string>
+• Feed ist nach Themen und Kanälen organisiert
+• Wiedergabe in Feeds-Einstellung ist nicht verfügbar
+• Remix-Schaltfläche und Sound-Schaltfläche sind in Shorts nicht verfügbar
+• 'Mehr Videos'-Overlay möglicherweise nicht verfügbar
+• Shorts werden im regulären Player geöffnet
+• Nicht zusammengeklappte alte Video-Aktionsleiste wird angezeigt"</string>
   <string name="morphe_tablet_layout_in_player_title">Tablet-Layout im Player aktivieren</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Stellt das alte Player-Layout wieder her

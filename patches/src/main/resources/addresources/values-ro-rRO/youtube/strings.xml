@@ -613,6 +613,8 @@ Info: S-ar putea să nu funcționeze pe transmisiuni live"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Permite salvarea videoclipurilor pentru copii în „Vizionează mai târziu” din meniul derulant</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Afișează butonul Salvează în Vizionează mai târziu în meniul pentru Shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Permite salvarea shorts-urilor în „Vizionează mai târziu” din meniul derulant</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Redirecționează „ulterior” către o listă de redare</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Urmărește mai târziu</string>
   <string name="morphe_queue_flyout_title">Adaugă în coada Morphe</string>
   <string name="morphe_queue_restore_title">Menține coada între sesiuni</string>
   <string name="morphe_queue_restore_summary">Coada este păstrată după repornirea aplicației</string>
@@ -1111,20 +1113,21 @@ Setări → Redare (sau Redare automată) → Redare automată următorul videoc
   <string name="morphe_change_form_factor_entry_4">Automatizări</string>
   <string name="morphe_change_form_factor_user_dialog_message">"Modificările includ:
 
-Aspect tablet
-• Postările comunității sunt ascunse
-• Setarea de redare în fluxuri nu este disponibilă
+Aspect tabletă
+• Postările din comunitate sunt ascunse
+• Setarea redare în feed nu este disponibilă
 • Butonul Remix și butonul Sunet nu sunt disponibile în Shorts
-• Suprapunerea 'Mai multe videoclipuri' poate să nu fie disponibilă
-• Bara de acțiuni veche a videoclipului este afișată necontractată
+• Suprapunerea „Alte videoclipuri” poate să nu fie disponibilă
+• Se afișează bara de acțiuni video vechi, nepredisată
+• Elementele meniului lateral (flyout) pot să nu funcționeze corect
 
-Aspect auto
-• Fluxul este organizat pe subiecte și canale
-• Setarea de redare în fluxuri nu este disponibilă
+Aspect pentru automotive
+• Feed-ul este organizat pe subiecte și canale
+• Setarea redare în feed nu este disponibilă
 • Butonul Remix și butonul Sunet nu sunt disponibile în Shorts
-• Suprapunerea 'Mai multe videoclipuri' poate să nu fie disponibilă
-• Shorts se deschid în playerul obișnuit
-• Bara de acțiuni veche a videoclipului este afișată necontractată"</string>
+• Suprapunerea „Alte videoclipuri” poate să nu fie disponibilă
+• Shorts se deschide în playerul obișnuit
+• Se afișează bara de acțiuni video vechi, nepredisată"</string>
   <string name="morphe_tablet_layout_in_player_title">Activează aspectul tabletă în player</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Restabilește aspectul vechi al playerului

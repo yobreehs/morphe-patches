@@ -603,6 +603,8 @@ Info: Možda neće raditi na prijenosima uživo"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Omogućuje spremanje videozapisa za djecu u \"Gledaj kasnije\" iz skočnog izbornika</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Prikaži tipku Spremi za kasnije gledanje u skočnom izborniku za Shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Omogućuje spremanje Shorts videozapisa u \"Gledaj kasnije\" iz skočnog izbornika</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Preusmjeri \"Gledaj kasnije\" na popis za reprodukciju</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Gledaj kasnije</string>
   <string name="morphe_queue_flyout_title">Dodaj u Morphe red čekanja</string>
   <string name="morphe_queue_restore_title">Čuvati red čekanja između sesija</string>
   <string name="morphe_queue_restore_summary">Red čekanja se zadržava nakon ponovnog pokretanja aplikacije</string>
@@ -1099,20 +1101,21 @@ Postavke $\rightarrow$ Reprodukcija (ili Automatsko reproduciranje) $\rightarrow
   <string name="morphe_change_form_factor_entry_4">Automobil</string>
   <string name="morphe_change_form_factor_user_dialog_message">"Promjene uključuju:
 
-Izgled za tablet
+Izgled za tablete
 • Objave zajednice su skrivene
-• Postavka za reprodukciju u feedovima nije dostupna
-• Gumb za remiks i gumb za zvuk nisu dostupni u Shortsu
-• Prekrivač „Više videozapisa“ možda neće biti dostupan
-• Prikazuje se stara traka radnji videozapisa koja nije sažeta
+• Postavka Reprodukcije u feedovima nije dostupna
+• Gumb Remix i gumb Zvuk nisu dostupni u Shorts videima
+• Preklopnik \"Više videa\" možda nije dostupan
+• Prikazuje se stara traka s radnjama za video koji nije smanjen
+• Stavke izletnog izbornika možda neće raditi ispravno
 
-Izgled za automobil
+Automobilski izgled
 • Feed je organiziran po temama i kanalima
-• Postavka za reprodukciju u feedovima nije dostupna
-• Gumb za remiks i gumb za zvuk nisu dostupni u Shortsu
-• Prekrivač „Više videozapisa“ možda neće biti dostupan
-• Shorts se otvaraju u standardnom playeru
-• Prikazuje se stara traka radnji videozapisa koja nije sažeta"</string>
+• Postavka Reprodukcije u feedovima nije dostupna
+• Gumb Remix i gumb Zvuk nisu dostupni u Shorts videima
+• Preklopnik \"Više videa\" možda nije dostupan
+• Shorts videi otvaraju se u običnom playeru
+• Prikazuje se stara traka s radnjama za video koji nije smanjen"</string>
   <string name="morphe_tablet_layout_in_player_title">Omogući tablet izgled u playeru</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Vraća stari izgled playera

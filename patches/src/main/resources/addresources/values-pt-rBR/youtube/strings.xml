@@ -613,6 +613,8 @@ Nota: pode não funcionar em transmissões ao vivo"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Permite salvar vídeos relacionados a crianças em \'Assistir mais tarde\' pelo menu flutuante</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Mostrar o botão Salvar em \'Assistir mais tarde\' no menu de Shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Permite salvar Shorts em \'Assistir mais tarde\' pelo menu flutuante</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Redirecionar \"Assistir mais tarde\" para a playlist</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Assistir mais tarde</string>
   <string name="morphe_queue_flyout_title">Adicionar à fila do Morphe</string>
   <string name="morphe_queue_restore_title">Manter a fila entre as sessões</string>
   <string name="morphe_queue_restore_summary">A fila é mantida após reiniciar o aplicativo</string>

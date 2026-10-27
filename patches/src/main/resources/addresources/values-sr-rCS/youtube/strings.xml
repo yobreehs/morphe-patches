@@ -613,6 +613,8 @@ Napomena: Možda neće raditi na direktnim prenosima"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Omogućava čuvanje video snimaka povezanih sa decom u listi „Pogledaj kasnije“ iz menija koji se otvara.</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Prikaži dugme Sačuvaj u listu „Pogledaj kasnije“ u meniju Shortsa.</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Omogućava čuvanje Shortsa u listi „Pogledaj kasnije“ iz menija koji se otvara.</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Preusmeri \"Gledaj kasnije\" na plejlistu</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Za kasnije</string>
   <string name="morphe_queue_flyout_title">Dodaj u Morphe red</string>
   <string name="morphe_queue_restore_title">Zadrži red čekanja između sesija</string>
   <string name="morphe_queue_restore_summary">Red čekanja je sačuvan nakon ponovnog pokretanja aplikacije</string>
@@ -1111,20 +1113,21 @@ Postavke → Reprodukcija (ili Automatsko puštanje) → Automatski pusti slede�
   <string name="morphe_change_form_factor_entry_4">Automobilski</string>
   <string name="morphe_change_form_factor_user_dialog_message">"Promene uključuju:
 
-Raspored za tablet
+Tablet raspored
 • Objave zajednice su sakrivene
-• Postavka „Reprodukcija u prikazu sadržaja“ nije dostupna
-• Dugme Remiks i dugme Zvuk nisu dostupni u Shorts-u
-• Prekrivač „Još video snimaka“ možda neće biti dostupan
-• Prikazuje se stara, nesažeta traka sa radnjama za video
+• Postavka reprodukcije u feedu nije dostupna
+• Dugme za remixovanje i dugme za zvuk nisu dostupni u Shorts-u
+• Preklapanje 'Još videa' možda nije dostupno
+• Priказuje se nerasklapana stara akcijska traka za video
+• Stavke flyout menija možda neće raditi ispravno
 
-Raspored za automobil
-• Prizak sadržaja je organizovan po temama i kanalima
-• Postavka „Reprodukcija u prikazu sadržaja“ nije dostupna
-• Dugme Remiks i dugme Zvuk nisu dostupni u Shorts-u
-• Prekrivač „Još video snimaka“ možda neće biti dostupan
-• Shorts se otvaraju u standardnom video plejeru
-• Prikazuje se stara, nesažeta traka sa radnjama za video"</string>
+Automotive raspored
+• Feed je organizovan po temama i kanalima
+• Postavka reprodukcije u feedu nije dostupna
+• Dugme za remixovanje i dugme za zvuk nisu dostupni u Shorts-u
+• Preklapanje 'Još videa' možda nije dostupno
+• Shorts se otvara u regularnom plejeru
+• Priказuje se nerasklapana stara akcijska traka za video"</string>
   <string name="morphe_tablet_layout_in_player_title">Omogući izgled za tablet u plejeru</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Vraća stari raspored plejera

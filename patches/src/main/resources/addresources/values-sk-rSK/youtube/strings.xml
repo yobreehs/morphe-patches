@@ -613,6 +613,8 @@ Poznámka: Možno nebude fungovať na živých prenosoch"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Umožňuje z rozbaľovacej ponuky ukladať videá pre deti do zoznamu „Pozrieť neskôr“</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Zobraziť tlačidlo „Uložiť na pozretie neskôr“ v rozbaľovacej ponuke pre Shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Umožňuje z rozbaľovacej ponuky ukladať Shorts do zoznamu „Pozrieť neskôr“</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Presmerovať „Pozrieť neskôr“ do zoznamu prevádzania</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Pozrieť neskôr</string>
   <string name="morphe_queue_flyout_title">Pridať do fronty Morphe</string>
   <string name="morphe_queue_restore_title">Uchovajte si rad medzi reláciami</string>
   <string name="morphe_queue_restore_summary">Rad zostane zachovaný aj po reštarte aplikácie</string>
@@ -1113,17 +1115,19 @@ Nastavenia → Prehrávanie (alebo Automatické prehrávanie) → Automaticky pr
 
 Rozloženie pre tablet
 • Príspevky komunity sú skryté
-• Nastavenie prehrávania vo feedoch nie je k dispozícii
-• Tlačidlo Remix a tlačidlo Zvuk nie sú v službe Shorts k dispozícii
-• Prekrytie „Ďalšie videá“ nemusí byť k dispozícii
-• Zobrazuje sa rozbalený starý panel akcií videa
+• Nastavenie prehrávania vo feedi nie je k dispozícii
+• Tlačidlá Remixovať a Zvuk nie sú k dispozícii v Shorts
+• Vrstva 'Ďalšie videá' nemusí byť k dispozícii
+• Zobrazuje sa nezbalený starý panel akcií videa
+• Položky vyskakovacieho menu nemusia fungovať správne
 
 Rozloženie pre automobil
-• Feed je usporiadaný podľa tém a kanálov
-• Nastavenie prehrávania vo feedoch nie je k dispozícii
-• Tlačidlo Remix a tlačidlo Zvuk nie sú v službe Shorts k dispozícii
+• Feed je organizovaný podľa tém a kanálov
+• Nastavenie prehrávania vo feedi nie je k dispozícii
+• Tlačidlá Remixovať a Zvuk nie sú k dispozícii v Shorts
+• Vrstva 'Ďalšie videá' nemusí byť k dispozícii
 • Shorts sa otvárajú v bežnom prehrávači
-• Zobrazuje sa rozbalený starý panel akcií videa"</string>
+• Zobrazuje sa nezbalený starý panel akcií videa"</string>
   <string name="morphe_tablet_layout_in_player_title">Povoliť rozloženie tabletu v prehrávači</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Obnoví staré rozloženie prehrávača

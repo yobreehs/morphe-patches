@@ -613,6 +613,8 @@ Second \"item\" text"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">מאפשר לשמור סרטונים הקשורים לילדים ברשימת \'צפה מאוחר יותר\' מהתפריט הנפתח</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">הצג כפתור שמירה ל\'צפה מאוחר יותר\' בתפריט הנפתח של הסרטונים הקצרים</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">מאפשר לשמור סרטונים קצרים ברשימת \'צפה מאוחר יותר\' מהתפריט הנפתח</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">הפנה את \"צפייה מאוחר יותר\" לפלייליסט</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">לצפייה בהמשך</string>
   <string name="morphe_queue_flyout_title">הוסף לתור Morphe</string>
   <string name="morphe_queue_restore_title">שמור תור בין הפעלות</string>
   <string name="morphe_queue_restore_summary">התור נשמר גם לאחר הפעלה מחדש של האפליקציה</string>
@@ -1111,20 +1113,21 @@ Second \"item\" text"</string>
   <string name="morphe_change_form_factor_entry_4">רכב</string>
   <string name="morphe_change_form_factor_user_dialog_message">"השינויים כוללים:
 
-פריסת טאבלט
-• פוסטים קהילתיים מוסתרים
-• הגדרת השמעה בפידים אינה זמינה
-• כפתור רמיקס וכפתור סאונד אינם זמינים ב-Shorts
-• שכבת 'עוד סרטונים' עשויה לא להיות זמינה
-• סרגל פעולות וידאו ישן שאינו מקופל מוצג
+מסמך טאבלט
+• פוסטים בקהילה מוסתרים
+• הגדרת ניגון בריבים אינה זמינה
+• כפתורי הרמיקס וצליל אינם זמינים בסרטונים קצרים
+• ייתכן ששכבת העל 'סרטונים נוספים' לא תהיה זמינה
+• יישור הפעולה הישן לא המקופל של הסרטון מוצג
+• פריטי תפריט קופץ עשויים לא לעבוד כראוי
 
-פריסה לרכב
-• הפיד מאורגן לפי נושאים וערוצים
-• הגדרת השמעה בפידים אינה זמינה
-• כפתור רמיקס וכפתור סאונד אינם זמינים ב-Shorts
-• שכבת 'עוד סרטונים' עשויה לא להיות זמינה
-• Shorts נפתחים בנגן הרגיל
-• סרגל פעולות וידאו ישן שאינו מקופל מוצג"</string>
+מסמך רכב
+• הריב מסודר לפי נושאים וערוצים
+• הגדרת ניגון בריבים אינה זמינה
+• כפתורים של הרמיקס וצליל אינם זמינים בסרטונים קצרים
+• ייתכן ששכבת העל 'סרטונים נוספים' לא תהיה זמינה
+• סרטונים קצרים נפתחים בנגן הרגיל
+• יישור הפעולה הישן לא המקופל של הסרטון מוצג"</string>
   <string name="morphe_tablet_layout_in_player_title">הפעל פריסת טאבלט בנגן</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"משחזר את פריסת הנגן הישנה

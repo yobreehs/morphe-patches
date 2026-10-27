@@ -601,6 +601,8 @@ API lykillinn þinn ætti aldrei að deila. Allir með aðgang að honum geta no
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Leyfir að vista barnatengd myndbönd í \'Horfa seinna\' úr sprettivalmyndinni</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Sýna hnappinn Vista í Horfa seinna í sprettivalmynd Shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Leyfir að vista Shorts í \'Horfa seinna\' úr sprettivalmyndinni</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Stefna „Horfa síðar“ á spilalista</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Horfa síðar</string>
   <string name="morphe_queue_flyout_title">Bæta í Morphe biðröð</string>
   <string name="morphe_queue_restore_title">Geymdu biðrað á milli lotna</string>
   <string name="morphe_queue_restore_summary">Biðlisti er vistaður eftir endurræsingar appinu</string>
@@ -1093,21 +1095,7 @@ Stillingar → Spilun (eða Sjálfvædd spilun) → Sjálfvædd næsta myndband"
   <string name="morphe_change_form_factor_entry_2">Sími</string>
   <string name="morphe_change_form_factor_entry_3">Tafla</string>
   <string name="morphe_change_form_factor_entry_4">Bíll</string>
-  <string name="morphe_change_form_factor_user_dialog_message">"Breytingar fela í sér:
-
-Spjaldtölvuútlit
-• Samfélagsfærslur eru falnar
-• Stillingin Spilun í straumum er ekki tiltæk
-• Remix-hnappur og hljóðhnappur eru ekki tiltækir í Shorts
-• Yfirlagið „More videos“ gæti ekki verið tiltækt
-• Gömul myndbandsaðgerðarstika sem er ekki samanfallin er sýnd
-
-Bílaútlit
-• Straumurinn er skipulagður eftir efnum og rásum
-• Stillingin Spilun í straumum er ekki tiltæk
-• Remix-hnappur og hljóðhnappur eru ekki tiltækir í Shorts
-• Shorts opnast í venjulega spilaranum
-• Gömul myndbandsaðgerðarstika sem er ekki samanfallin er sýnd"</string>
+  <string name="morphe_change_form_factor_user_dialog_message">"Breytingar fela í sér:\n\nSpjaldtölvulag\n• Færslur samfélagsins eru falin\n• Stilling fyrir spilun í flæðum er ekki tiltæk\n• Takkinn Remix og hljóðtakki eru ekki til í Shorts\n• Yfirlag „fleiri myndbönd“ kann að vera ótiltekið\n• Gamalt aðgerðastikur myrkunnar sem ekki er samanbrotið er sýnt\n• Íflýgvalmynd atriði virka kannski ekki rétt\n\nBílalag\n• Flæði er skipulegt eftir efnum og rásum\n• Stilling fyrir spilun í flæðum er ekki tiltæk\n• Takkinn Remix og hljóðtakki eru ekki til í Shorts\n• Yfirlag „fleiri myndbönd“ kann að vera ótiltekið\n• Shorts opnast í venjulega spilaranum\n• Gamalt aðgerðastikur myrkunnar sem ekki er samanbrotið er sýnt"</string>
   <string name="morphe_tablet_layout_in_player_title">Virkja taflalýsing í spilara</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Endurskipar gamla útlit spilarans

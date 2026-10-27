@@ -613,6 +613,8 @@ Second \"item\" text"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">امکان ذخیره ویدیوهای مرتبط با کودکان در «تماشای بعداً» را از منوی بازشو فراهم می‌کند</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">نمایش دکمهٔ ذخیره برای بعداً تماشا کردن در منوی بازشو Shorts ها</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">امکان ذخیره Shorts در «تماشای بعداً» را از منوی بازشو فراهم می‌کند</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">هدایت \"بعداً می‌بینم\" به لیست پخش</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">بعداً تماشا می‌کنم</string>
   <string name="morphe_queue_flyout_title">افزودن به صف Morphe</string>
   <string name="morphe_queue_restore_title">نگه‌داشتن صف بین جلسه‌ها</string>
   <string name="morphe_queue_restore_summary">صف پس از راه‌اندازی دوبارهٔ برنامه حفظ می‌شود</string>
@@ -1113,14 +1115,14 @@ Second \"item\" text"</string>
 
 طرح‌بندی تبلت
 • پست‌های انجمن پنهان می‌شوند
-• تنظیم پخش در خوراک‌ها در دسترس نیست
+• تنظیم پخش در فید در دسترس نیست
 • دکمه‌های ریمیکس و صدا در Shorts در دسترس نیستند
 • ممکن است روی‌هم‌افتادگی «ویدئوهای بیشتر» در دسترس نباشد
 • نوار عملیات قدیمی ویدئو به‌صورت بازشده نمایش داده می‌شود
 
 طرح‌بندی خودرویی
-• خوراک بر اساس موضوع‌ها و کانال‌ها سازمان‌دهی می‌شود
-• تنظیم پخش در خوراک‌ها در دسترس نیست
+• فید بر اساس موضوع‌ها و کانال‌ها سازمان‌دهی می‌شود
+• تنظیم پخش در فید در دسترس نیست
 • دکمه‌های ریمیکس و صدا در Shorts در دسترس نیستند
 • ممکن است روی‌هم‌افتادگی «ویدئوهای بیشتر» در دسترس نباشد
 • Shorts در پخش‌کنندهٔ معمولی باز می‌شود

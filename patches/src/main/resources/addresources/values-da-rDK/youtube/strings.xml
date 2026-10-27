@@ -611,6 +611,8 @@ Info: Virker muligvis ikke på live streams"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Giver mulighed for at gemme børnerelaterede videoer i \'Se senere\' fra flyoutmenuen</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Vis knappen Gem til Se senere i Shorts-flyoutmenuen</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Giver mulighed for at gemme Shorts i \'Se senere\' fra flyoutmenuen</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Omdiriger Se senere til afspilningsliste</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Se senere</string>
   <string name="morphe_queue_flyout_title">Tilføj til Morphe-kø</string>
   <string name="morphe_queue_restore_title">Behold køen mellem sessioner</string>
   <string name="morphe_queue_restore_summary">Køen bevares efter genstart af appen</string>
@@ -1105,22 +1107,23 @@ Indstillinger → Afspilning (eller Automatisk afspilning) → Afspil næste vid
   <string name="morphe_change_form_factor_entry_2">Telefon</string>
   <string name="morphe_change_form_factor_entry_3">Tablet</string>
   <string name="morphe_change_form_factor_entry_4">Bil</string>
-  <string name="morphe_change_form_factor_user_dialog_message">"Ændringer inkluderer:
+  <string name="morphe_change_form_factor_user_dialog_message">"Ændringerne inkluderer:
 
-Tablet layout
-• Fællesskabsindlæg er skjult
-• Afspilning i feed-indstillingen er ikke tilgængelig
+Tablet-layout
+• Indlæg fra fællesskabet er skjulte
+• Indstillingen for afspilning i feeds er ikke tilgængelig
 • Remix-knappen og Lyd-knappen er ikke tilgængelige i Shorts
-• 'Flere videoer'-overlayet er måske ikke tilgængeligt
-• Den gamle video-handlingslinje vises, og den er ikke sammenklappet
+• Overlayet \"Flere videoer\" er muligvis ikke tilgængeligt
+• Den gamle videoværktøjslinje, der ikke er minimeret, vises
+• Elementer i flyout-menuen fungerer muligvis ikke korrekt
 
-Bil layout
-• Feed er organiseret efter emner og kanaler
-• Afspilning i feed-indstillingen er ikke tilgængelig
+Automotive-layout
+• Feedet er organiseret efter emner og kanaler
+• Indstillingen for afspilning i feeds er ikke tilgængelig
 • Remix-knappen og Lyd-knappen er ikke tilgængelige i Shorts
-• 'Flere videoer'-overlayet er måske ikke tilgængeligt
-• Shorts åbnes i den almindelige afspiller
-• Den gamle video-handlingslinje vises, og den er ikke sammenklappet"</string>
+• Overlayet \"Flere videoer\" er muligvis ikke tilgængeligt
+• Shorts åbnes i den normale afspiller
+• Den gamle videoværktøjslinje, der ikke er minimeret, vises"</string>
   <string name="morphe_tablet_layout_in_player_title">Aktivér tabletlayout i afspilleren</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Gendanner det gamle layout for afspilleren

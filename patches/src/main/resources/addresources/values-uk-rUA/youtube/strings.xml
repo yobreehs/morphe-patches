@@ -613,6 +613,8 @@ Second \"item\" text"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Дозволяє зберегти відео для дітей у \"Дивитися пізніше\" зі спливного меню</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Показувати кнопку \"Зберегти в \'Дивитися пізніше\'\" у спливному меню Shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Дозволяє зберегти Shorts в \"Дивитися пізніше\" зі спливного меню</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Перенаправляти «Дивитися пізніше» до плейлиста</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Переглянути пізніше</string>
   <string name="morphe_queue_flyout_title">Додати до черги Morphe</string>
   <string name="morphe_queue_restore_title">Зберігати чергу між сесіями</string>
   <string name="morphe_queue_restore_summary">Черга зберігається після перезапуску застосунку</string>

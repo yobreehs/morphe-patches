@@ -613,6 +613,8 @@ Avviso: Potrebbe non funzionare sui video in diretta"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Consente di salvare video per bambini in \'Guarda più tardi\' dal menu a comparsa</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Mostra il pulsante Salva in Guarda più tardi nel menu a comparsa degli Shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Consente di salvare gli Shorts in \'Guarda più tardi\' dal menu a comparsa</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Reindirizza Guarda più tardi alla playlist</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Guarda più tardi</string>
   <string name="morphe_queue_flyout_title">Aggiungi alla coda di Morphe</string>
   <string name="morphe_queue_restore_title">Mantieni la coda tra le sessioni</string>
   <string name="morphe_queue_restore_summary">La coda viene mantenuta anche riavviando l\'app</string>

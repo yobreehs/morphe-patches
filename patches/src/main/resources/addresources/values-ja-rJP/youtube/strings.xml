@@ -614,6 +614,8 @@ APIキーは決して共有しないでください。アクセス権を持つ�
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">子ども向け動画の関連動画のフライアウト メニューに「[後で見る] に保存」を表示します</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">ショート動画のフライアウト メニューに「[後で見る] に保存」を表示</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">ショート動画のフライアウト メニューに「[後で見る] に保存」を表示します</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">「後で見る」をプレイリストにリダイレクト</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">後で見る</string>
   <string name="morphe_queue_flyout_title">Morphe キューに追加</string>
   <string name="morphe_queue_restore_title">セッションをまたいでキューを保持</string>
   <string name="morphe_queue_restore_summary">アプリを終了または再起動したときにキューを保持します</string>
@@ -1110,22 +1112,22 @@ APIキーは決して共有しないでください。アクセス権を持つ�
   <string name="morphe_change_form_factor_entry_2">スマートフォン</string>
   <string name="morphe_change_form_factor_entry_3">タブレット</string>
   <string name="morphe_change_form_factor_entry_4">Automotive</string>
-  <string name="morphe_change_form_factor_user_dialog_message">"以下の変更を伴います:
+  <string name="morphe_change_form_factor_user_dialog_message">"変更点:
 
 タブレット レイアウト
-• コミュニティ投稿が表示されない
-• YouTube の設定項目の [フィードで再生] が表示されない
-• ショート動画のリミックス ボタンとサウンドボタンが利用できない
-•「その他の動画」オーバーレイが表示されない場合がある
-• 動画プレーヤーのアクション ボタンにボタン名が表示される (旧仕様)
+• コミュニティ投稿は非表示になります
+• フィードでの再生設定は無効です
+• Shortsでのリミックス ボタンとサウンド ボタンは無効です
+• 「その他の動画」オーバーレイが表示されない場合があります
+• 折りたたみ前の旧動画アクションバーが表示されます
 
 Automotive レイアウト
-• フィードがトピックやチャンネルごとに分類された形で表示される
-• YouTube の設定項目の [フィードで再生] が表示されない
-• ショート動画のリミックス ボタンとサウンドボタンが利用できない
-• 「その他の動画」オーバーレイが表示されない場合がある
-• ショート動画が通常のプレーヤーで再生される
-• 動画プレーヤーのアクション ボタンにボタン名が表示される (旧仕様)"</string>
+• フィードはトピックやチャンネルごとに整理されます
+• フィードでの再生設定は無効です
+• Shortsでのリミックス ボタンとサウンド ボタンは無効です
+• 「その他の動画」オーバーレイが表示されない場合があります
+• Shortsは通常のプレーヤーで開きます
+• 折りたたみ前の旧動画アクションバーが表示されます"</string>
   <string name="morphe_tablet_layout_in_player_title">プレーヤーにのみタブレット レイアウトを適用</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"動画プレーヤーのレイアウトを以前のスタイルに戻します

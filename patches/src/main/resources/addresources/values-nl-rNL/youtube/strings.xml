@@ -500,8 +500,8 @@ Nadat een video met de Ask-knop eenmaal is geopend, werkt de functie voor alle v
   <string name="morphe_external_downloader_quick_video">Video</string>
   <string name="morphe_external_downloader_quick_audio">Audio</string>
   <string name="morphe_external_downloader_quick_options">Alle opties</string>
-  <string name="morphe_shorts_download_flyout_button_title">\"Shorts\" weergeven in menu Downloaden</string>
-  <string name="morphe_shorts_download_flyout_button_summary">\"Shorts\"-speler krijgt item voor extern downloadmenu</string>
+  <string name="morphe_shorts_download_flyout_button_title">Download tonen in Shorts-menu</string>
+  <string name="morphe_shorts_download_flyout_button_summary">Voegt een extern downloadmenu-item toe aan de Shorts-speler</string>
   <string name="morphe_shorts_download_flyout_title">Download</string>
   <!-- video.voiceovertranslation.voiceOverTranslationPatch -->
   <string name="morphe_vot_screen_title">Spraakvertaling</string>
@@ -613,6 +613,8 @@ Info: Werkt mogelijk niet op livestreams"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Hiermee kunt u kindgerelateerde video\'s opslaan in \'Later bekijken\' via het flyoutmenu</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Toon de knop \'Opslaan in Later bekijken\' in het flyoutmenu voor Shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Hiermee kunt u Shorts opslaan in \'Later bekijken\' via het flyoutmenu</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Stuur \'Later bekijken\' door naar afspeellijst</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Later bekijken</string>
   <string name="morphe_queue_flyout_title">Toevoegen aan Morphe-wachtrij</string>
   <string name="morphe_queue_restore_title">Wachtrij behouden tussen sessies</string>
   <string name="morphe_queue_restore_summary">Wachtrij blijft behouden na het opnieuw starten van de app</string>
@@ -1107,22 +1109,23 @@ Instellingen → Weergave (of automatisch afspelen) → Volgende video automatis
   <string name="morphe_change_form_factor_entry_2">Telefoon</string>
   <string name="morphe_change_form_factor_entry_3">Tablet</string>
   <string name="morphe_change_form_factor_entry_4">Auto</string>
-  <string name="morphe_change_form_factor_user_dialog_message">"Wijzigingen omvatten:
+  <string name="morphe_change_form_factor_user_dialog_message">"Wijzigingen zijn onder meer:
 
 Tablet-indeling
-• Community-posts zijn verborgen
-• De instelling 'Afspelen in feeds' is niet beschikbaar
-• Remix-knop en geluidsknop zijn niet beschikbaar in Shorts
-• De overlay 'Meer video's' is mogelijk niet beschikbaar
-• De niet-ingeklapte oude video-actiebalk wordt weergegeven
+• Communityberichten zijn verborgen
+• Instelling voor afspelen in feeds is niet beschikbaar
+• Remix-knop en Geluidsknop zijn niet beschikbaar in Shorts
+• Overlay 'Meer video's' is mogelijk niet beschikbaar
+• Niet ingeklapte oude actiebalk voor video's wordt weergegeven
+• Items in het uitklapmenu werken mogelijk niet correct
 
-Automotive-indeling
-• Feed is georganiseerd op onderwerpen en kanalen
-• De instelling 'Afspelen in feeds' is niet beschikbaar
-• Remix-knop en geluidsknop zijn niet beschikbaar in Shorts
-• De overlay 'Meer video's' is mogelijk niet beschikbaar
-• Shorts openen in de normale speler
-• De niet-ingeklapte oude video-actiebalk wordt weergegeven"</string>
+Auto-indeling
+• Feed is georganiseerd per onderwerp en kanaal
+• Instelling voor afspelen in feeds is niet beschikbaar
+• Remix-knop en Geluidsknop zijn niet beschikbaar in Shorts
+• Overlay 'Meer video's' is mogelijk niet beschikbaar
+• Shorts worden geopend in de reguliere speler
+• Niet ingeklapte oude actiebalk voor video's wordt weergegeven"</string>
   <string name="morphe_tablet_layout_in_player_title">Schakel tabletindeling in de speler in</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Herstelt de oude player layout
@@ -1640,7 +1643,7 @@ Automatische registratie is optioneel. Deze stopt in incognito-modus of bij een 
   <string name="morphe_niconico_comments_opacity_summary">Opaciteit van de reactietekst en achtergronden</string>
   <string name="morphe_niconico_comments_travel_duration_title">Reistijd</string>
   <string name="morphe_niconico_comments_travel_duration_summary">Hoeveel seconden reacties erover doen om het scherm te kruisen. Lagere waarden bewegen sneller</string>
-  <string name="morphe_niconico_comments_max_length_title">Maximale lengte van opmerking</string>
-  <string name="morphe_niconico_comments_max_length_summary">Verbergt opmerkingen met meer tekens dan dit. Elke emoji telt als één teken</string>
+  <string name="morphe_niconico_comments_max_length_title">Maximale commentlengte</string>
+  <string name="morphe_niconico_comments_max_length_summary">Verbergt comments met meer tekens dan dit. Elke emoji telt als één teken</string>
   <string name="morphe_niconico_comments_max_length_no_limit">Geen limiet</string>
 </resources>

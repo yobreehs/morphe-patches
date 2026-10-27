@@ -613,6 +613,8 @@ Eolas: Seans nach n-oibreoidh sé ar shruthanna beo"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Ceadaítear físeáin a bhaineann le páistí a shábháil sa liosta \'Féach níos déanaí\' ón roghchlár aníos.</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Taispeáin an cnaipe \'Sábháil le breathnú air níos déanaí\' sa phainéal aníos do na físeáin ghearra.</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Ceadaíonn sé físeáin ghearra a shábháil sa liosta \'Féach níos déanaí\' ón roghchlár aníos.</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Athdhionaigh \"Féach níos déanaí\" chuig liosta pleanála</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Féach níos déanaí</string>
   <string name="morphe_queue_flyout_title">Cuir leis an scuaine Morphe</string>
   <string name="morphe_queue_restore_title">Coinnigh scuaine idir seisiúin</string>
   <string name="morphe_queue_restore_summary">Coinnítear an scuaine tar éis an aip a atosú</string>

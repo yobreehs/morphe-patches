@@ -613,6 +613,8 @@ Second \"item\" text"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Επιτρέπει την αποθήκευση βίντεο που αφορούν παιδιά στη λίστα «Παρακολούθηση αργότερα» από το αναδυόμενο μενού</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Εμφάνιση του κουμπιού «Αποθήκευση για παρακολούθηση αργότερα» στο αναδυόμενο μενού των Shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Επιτρέπει την αποθήκευση των Shorts στη λίστα «Παρακολούθηση αργότερα» από το αναδυόμενο μενού</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Ανακατεύθυνση της λίστας \"Δείτε αργότερα\" σε λίστα αναπαραγωγής</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Παρακολούθηση αργότερα</string>
   <string name="morphe_queue_flyout_title">Προσθήκη στην ουρά Morphe</string>
   <string name="morphe_queue_restore_title">Διατήρηση ουράς μεταξύ των περιόδων σύνδεσης</string>
   <string name="morphe_queue_restore_summary">Η ουρά διατηρείται μετά την επανεκκίνηση της εφαρμογής</string>
@@ -1109,7 +1111,23 @@ Second \"item\" text"</string>
   <string name="morphe_change_form_factor_entry_2">Τηλέφωνο</string>
   <string name="morphe_change_form_factor_entry_3">Ταμπλετ</string>
   <string name="morphe_change_form_factor_entry_4">Αυτοκίνητο</string>
-  <string name="morphe_change_form_factor_user_dialog_message">"Οι αλλαγές περιλαμβάνουν:\n\nΔιάταξη tablet\n• Οι αναρτήσεις κοινότητας είναι κρυφές\n• Η ρύθμιση «Αναπαραγωγή στις ροές» δεν είναι διαθέσιμη\n• Το κουμπί Remix και το κουμπί ήχου δεν είναι διαθέσιμα στα Shorts\n• Η επικάλυψη «Περισσότερα βίντεο» ενδέχεται να μην είναι διαθέσιμη\n• Εμφανίζεται η μη συμπτυγμένη παλιά γραμμή ενεργειών βίντεο\n\nΔιάταξη αυτοκινήτου\n• Η ροή είναι οργανωμένη ανά θέμα και κανάλι\n• Η ρύθμιση «Αναπαραγωγή στις ροές» δεν είναι διαθέσιμη\n• Το κουμπί Remix και το κουμπί ήχου δεν είναι διαθέσιμα στα Shorts\n• Η επικάλυψη «Περισσότερα βίντεο» ενδέχεται να μην είναι διαθέσιμη\n• Τα Shorts ανοίγουν στο κανονικό πρόγραμμα αναπαραγωγής\n• Εμφανίζεται η μη συμπτυγμένη παλιά γραμμή ενεργειών βίντεο"</string>
+  <string name="morphe_change_form_factor_user_dialog_message">"Οι αλλαγές περιλαμβάνουν:
+
+Διάταξη tablet
+• Τα δημοσιεύματα της κοινότητας κρύβονται
+• Η ρύθμιση αναπαραγωγής στα feeds δεν είναι διαθέσιμη
+• Το κουμπί Remix και το κουμπί Ήχος δεν είναι διαθέσιμα στα Shorts
+• Το υπέρθεμα «Περισσότερα βίντεο» μπορεί να μην είναι διαθέσιμο
+• Εμφανίζεται η παλιά μπάρα εργαλείων μη συμπιεσμένων βίντεο
+• Τα στοιχεία του αναδιπλούμενου μενού μπορεί να μην λειτουργούν σωστά
+
+Διάταξη automotive
+• Το feed οργανώνεται ανά θέμα και κανάλι
+• Η ρύθμιση αναπαραγωγής στα feeds δεν είναι διαθέσιμη
+• Το κουμπί Remix και το κουμπί Ήχος δεν είναι διαθέσιμα στα Shorts
+• Το υπέρθεμα «Περισσότερα βίντεο» μπορεί να μην είναι διαθέσιμο
+• Τα Shorts ανοίγουν στον συνηθισμένο player
+• Εμφανίζεται η παλιά μπάρα εργαλείων μη συμπιεσμένων βίντεο"</string>
   <string name="morphe_tablet_layout_in_player_title">Ενεργοποίηση διάταξης για tablet στον παίκτη</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Επαναφέρει την παλιά διάταξη του παίκτη

@@ -613,6 +613,8 @@ Upozornění: Možná nebude fungovat u živých přenosů"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Umožňuje ukládat videa související s dětmi do seznamu „Přehrát později“ z rozbalovací nabídky</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Zobrazit tlačítko Uložit k přehrání později v nabídce Shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Umožňuje ukládat Shorts do seznamu „Přehrát později“ z rozbalovací nabídky</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Přesměrovat \"Sledovat později\" do seznamu přehrávání</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Sledovat později</string>
   <string name="morphe_queue_flyout_title">Přidat do Morphe fronty</string>
   <string name="morphe_queue_restore_title">Udržet frontu mezi relacemi</string>
   <string name="morphe_queue_restore_summary">Fronta je zachována i po restartu aplikace</string>
@@ -1109,20 +1111,21 @@ Nastavení → Přehrávání (nebo Automatické přehrávání) → Automaticky
   <string name="morphe_change_form_factor_entry_4">Automobilový</string>
   <string name="morphe_change_form_factor_user_dialog_message">"Změny zahrnují:
 
-Rozhraní pro tablety
-• Příspěvky komunity jsou skryté
-• Nastavení „Přehrávání ve feedech“ není k dispozici
-• U videí Shorts nejsou dostupná tlačítka „Remixovat“ a „Zvuk“
-• Překryvná vrstva „Další videa“ nemusí být k dispozici
-• Zobrazuje se nesbalený starý panel akcí videa
+Rozvržení pro tablet
+• Příspěvky komunity jsou skryty
+• Nastavení automatického přehrávání v kanálech není k dispozici
+• Tlačítko Remix a tlačítko Zvuk nejsou v Shorts k dispozici
+• Překryv „Více videí“ nemusí být k dispozici
+• Zobrazuje se starý nerozbalený panel akcí videa
+• Položky vysouvacího menu nemusí fungovat správně
 
-Rozhraní pro automobily
-• Feed je uspořádán podle témat a kanálů
-• Nastavení „Přehrávání ve feedech“ není k dispozici
-• U videí Shorts nejsou dostupná tlačítka „Remixovat“ a „Zvuk“
-• Překryvná vrstva „Další videa“ nemusí být k dispozici
-• Videa Shorts se otevírají v běžném přehrávači
-• Zobrazuje se nesbalený starý panel akcí videa"</string>
+Automobilní rozvržení
+• Kanál je organizován podle témat a kanálů
+• Nastavení automatického přehrávání v kanálech není k dispozici
+• Tlačítko Remix a tlačítko Zvuk nejsou v Shorts k dispozici
+• Překryv „Více videí“ nemusí být k dispozici
+• Shorts se otevírají v běžném přehrávači
+• Zobrazuje se starý nerozbalený panel akcí videa"</string>
   <string name="morphe_tablet_layout_in_player_title">Povolit rozložení tabletu v přehrávači</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Obnoví staré rozložení přehrávače

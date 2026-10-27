@@ -613,6 +613,8 @@ Info: Mungkin tidak berfungsi pada siaran langsung"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Memungkinkan Anda menyimpan video terkait anak-anak ke \'Tonton Nanti\' melalui menu flyout.</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Tampilkan tombol Simpan ke Tonton Nanti di flyout Shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Memungkinkan Anda menyimpan Shorts ke \'Tonton Nanti\' melalui menu flyout.</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">Alihkan Tonton nanti ke daftar putar</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Tonton nanti</string>
   <string name="morphe_queue_flyout_title">Tambahkan ke antrean Morphe</string>
   <string name="morphe_queue_restore_title">Simpan antrean antar sesi</string>
   <string name="morphe_queue_restore_summary">Antrean disimpan setelah memulai ulang aplikasi</string>

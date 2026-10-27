@@ -613,6 +613,8 @@ Impormasyon: Maaaring hindi gumana sa mga live stream"</string>
   <string name="morphe_save_to_watch_later_kids_flyout_button_summary">Nagbibigay-daan sa pag-save ng mga video na nauugnay sa mga bata sa \'Panoorin Mamaya\' mula sa flyout menu</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_title">Ipakita ang button na I-save sa Panoorin Mamaya sa flyout ng shorts</string>
   <string name="morphe_save_to_watch_later_shorts_flyout_button_summary">Nagbibigay-daan sa pag-save ng mga shorts sa \'Panoorin Mamaya\' mula sa flyout menu</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_title">I-redirect ang \"Panoorin mamaya\" sa playlist</string>
+  <string name="morphe_save_to_watch_later_redirect_playlist_id_summary">Panoorin mamaya</string>
   <string name="morphe_queue_flyout_title">Idagdag sa Morphe queue</string>
   <string name="morphe_queue_restore_title">Panatilihin ang pila sa pagitan ng mga sesyon</string>
   <string name="morphe_queue_restore_summary">Ang pila ay nananatili kahit i-restart ang app</string>
@@ -1107,22 +1109,23 @@ Mga Setting → Playback (o Autoplay) → Autoplay ng susunod na video."</string
   <string name="morphe_change_form_factor_entry_2">Telepono</string>
   <string name="morphe_change_form_factor_entry_3">Tablet</string>
   <string name="morphe_change_form_factor_entry_4">Automotive</string>
-  <string name="morphe_change_form_factor_user_dialog_message">"Kasama sa mga pagbabago ang sumusunod:
+  <string name="morphe_change_form_factor_user_dialog_message">"Kasama sa mga pagbabago ang:
 
-Layout ng tablet
-• Nakatago ang mga post sa komunidad
-• Hindi available ang setting na Playback sa mga feed
+Tablet layout
+• Nakatago ang mga community post
+• Hindi available ang setting para sa playback sa mga feed
 • Hindi available ang Remix button at Sound button sa Shorts
 • Maaaring hindi available ang overlay na 'Higit pang mga video'
-• Ipinapakita ang hindi naka-collapse na lumang video action bar
+• Ipinapakita ang lumang video action bar na hindi collapsed
+• Maaaring hindi gumana nang tama ang mga item sa flyout menu
 
-Layout ng automotive
-• Nakaayos ang feed ayon sa mga paksa at mga channel
-• Hindi available ang setting na Playback sa mga feed
+Automotive layout
+• Ang feed ay naka-organisa ayon sa mga paksa at channel
+• Hindi available ang setting para sa playback sa mga feed
 • Hindi available ang Remix button at Sound button sa Shorts
 • Maaaring hindi available ang overlay na 'Higit pang mga video'
-• Nagbubukas ang Shorts sa regular na player
-• Ipinapakita ang hindi naka-collapse na lumang video action bar"</string>
+• Ang mga Shorts ay bumubukas sa regular na player
+• Ipinapakita ang lumang video action bar na hindi collapsed"</string>
   <string name="morphe_tablet_layout_in_player_title">Paganahin ang layout ng tablet sa player</string>
   <!-- "Restore old video action bar" must be translated the same as morphe_restore_old_video_action_bar_title -->
   <string name="morphe_tablet_layout_in_player_summary">"Ibinabalik ang lumang layout ng player
