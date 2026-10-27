@@ -835,8 +835,6 @@ For at løse dette skal du slå 'Spoof video streams' til og ændre 'Standardkli
   <string name="morphe_auto_captions_style_entry_2">Vis aldrig</string>
   <string name="morphe_auto_captions_style_entry_3">Gør statuslinjen fuldstændig uigennemsigtig</string>
   <string name="morphe_auto_captions_style_entry_4">Vis når dæmpet</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">Vis automatiske undertekster</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">Skjul automatiske undertekster</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">Foretrukket undertekstsprog</string>
   <string name="morphe_preferred_caption_language_summary">Vælger udbyderens undertekster først og oversætter derefter automatisk til det foretrukne sprog</string>
@@ -1246,6 +1244,7 @@ Begrænsning: Hvis 'Gendan gammel video-handlingslinje' er slået fra, er 'Flere
   <string name="morphe_fix_status_bar_layout_title">Fixér statuslinjen, så den ikke dækker de øverste felter</string>
   <string name="morphe_fix_status_bar_layout_summary">Gør layoutet af statuslinjen konsistent, så det ikke dækker de øverste felter og ikke efterlader tom plads over afspilleren. Slå fra, hvis appen krascher, eller de øverste felter ser forkerte ud</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">Glød</string>
   <string name="morphe_theme_color_light_title">Lyst tema baggrund</string>
   <string name="morphe_theme_color_light_entry_2">Hvid</string>
   <string name="morphe_theme_color_light_entry_3">Material You (Hvid)!</string>
@@ -1268,6 +1267,9 @@ Begrænsning: Hvis 'Gendan gammel video-handlingslinje' er slået fra, er 'Flere
   <string name="morphe_seekbar_custom_color_accent_summary">Indstil andenfarven på videofremdriftlinjen</string>
   <string name="morphe_seekbar_custom_color_invalid">Ugyldig søgelinje farveværdi</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">Original analog</string>
+  <string name="morphe_custom_branding_icon_entry_9">Original kage</string>
+  <string name="morphe_custom_branding_icon_entry_10">Originalt metal</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Sidehovedlogo</string>
   <string name="morphe_header_logo_entry_1">Standard</string>

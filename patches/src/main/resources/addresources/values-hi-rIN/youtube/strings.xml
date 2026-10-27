@@ -837,8 +837,6 @@ OpenRouter.ai खोलने के लिए यहां टैप करे�
   <string name="morphe_auto_captions_style_entry_2">कभी भी नहीं दिखाएं</string>
   <string name="morphe_auto_captions_style_entry_3">जब अनम्यूट पर दिखाएं</string>
   <string name="morphe_auto_captions_style_entry_4">म्यूट किए हुए दिखाएं</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">ऑटो कैप्शंस दिखाएं</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">ऑटो कैप्शंस छुपाएं</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">पसंदीदा कैप्शन भाषा</string>
   <string name="morphe_preferred_caption_language_summary">पहले प्रदाता उपशीर्षक चुनता है, फिर स्वतः पसंदीदा भाषा में अनुवाद करता है</string>
@@ -1250,6 +1248,7 @@ OpenRouter.ai खोलने के लिए यहां टैप करे�
   <string name="morphe_fix_status_bar_layout_title">स्टेटस बार को टॉप बार्स को कवर करना ठीक करें</string>
   <string name="morphe_fix_status_bar_layout_summary">स्टेटस बार की लेआउट को स्थिर रखता है, ताकि यह टॉप बार्स को न कवर करे और प्लेयर के ऊपर खाली जगह न छोड़े। अगर ऐप क्रैश हो जाए या टॉप बार्स गलत दिखें तो इसे बंद करें</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">ग्लो</string>
   <string name="morphe_theme_color_light_title">लाइट थीम की पृष्ठभूमि</string>
   <string name="morphe_theme_color_light_entry_2">सफेद</string>
   <string name="morphe_theme_color_light_entry_3">मटेरियल यू (सफेद) </string>
@@ -1272,6 +1271,9 @@ OpenRouter.ai खोलने के लिए यहां टैप करे�
   <string name="morphe_seekbar_custom_color_accent_summary">वीडियो प्रोग्रेस बार का माध्यमिक रंग सेट करें</string>
   <string name="morphe_seekbar_custom_color_invalid">अमान्य सर्च बार रंग मूल्य</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">ओरिजनल एनालॉग</string>
+  <string name="morphe_custom_branding_icon_entry_9">ओरिजिनल केक</string>
+  <string name="morphe_custom_branding_icon_entry_10">ओरिजिनल मेटल</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">हेडर लोगो</string>
   <string name="morphe_header_logo_entry_1">डिफ़ॉल्ट</string>

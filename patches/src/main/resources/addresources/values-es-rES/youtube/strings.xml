@@ -837,8 +837,6 @@ Para solucionar esto, activa 'Falsificar transmisiones de vídeo' y cambia 'Clie
   <string name="morphe_auto_captions_style_entry_2">No mostrar nunca</string>
   <string name="morphe_auto_captions_style_entry_3">Mostrar cuando no está silenciado</string>
   <string name="morphe_auto_captions_style_entry_4">Mostrar cuando está silenciado</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">Mostrar subtítulos automáticos</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">Ocultar subtítulos automáticos</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">Idioma preferido para subtítulos</string>
   <string name="morphe_preferred_caption_language_summary">Selecciona primero los subtítulos del proveedor y luego los traduce automáticamente al idioma preferido</string>
@@ -1249,6 +1247,7 @@ Limitación: si la opción 'Restaurar antigua barra de acciones de vídeo' está
   <string name="morphe_fix_status_bar_layout_title">Corregir barra de estado que cubre barras superiores</string>
   <string name="morphe_fix_status_bar_layout_summary">Mantiene la uniformidad del diseño de la barra de estado, de modo que no cubra las barras superiores y no deje ningún espacio vacío encima del reproductor. Desactiva esta opción si la aplicación se bloquea o las barras superiores no se ven bien.</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">Resplandor</string>
   <string name="morphe_theme_color_light_title">Fondo del tema claro</string>
   <string name="morphe_theme_color_light_entry_2">Blanco</string>
   <string name="morphe_theme_color_light_entry_3">Material You (Blanco)</string>
@@ -1271,6 +1270,9 @@ Limitación: si la opción 'Restaurar antigua barra de acciones de vídeo' está
   <string name="morphe_seekbar_custom_color_accent_summary">Establece el color secundario de la barra de progreso del vídeo</string>
   <string name="morphe_seekbar_custom_color_invalid">Valor de color de la barra de progreso no válido</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">Analógico original</string>
+  <string name="morphe_custom_branding_icon_entry_9">Tarta original</string>
+  <string name="morphe_custom_branding_icon_entry_10">Metal original</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Logo del encabezado</string>
   <string name="morphe_header_logo_entry_1">Predeterminado</string>

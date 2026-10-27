@@ -837,8 +837,6 @@ Om dit op te lossen, schakel 'Videostreams vervalsen' in en wijzig de 'Standaard
   <string name="morphe_auto_captions_style_entry_2">Nooit tonen</string>
   <string name="morphe_auto_captions_style_entry_3">Weergeven wanneer gedempt</string>
   <string name="morphe_auto_captions_style_entry_4">Toon als gemuteerd</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">Toon automatisch ondertitels</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">Verberg automatisch ondertitels</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">Voorkeurstaal voor ondertiteling</string>
   <string name="morphe_preferred_caption_language_summary">Selecteert eerst de ondertiteling van de provider en vertaalt deze vervolgens automatisch naar de voorkeurstaal</string>
@@ -1248,6 +1246,7 @@ Beperking: Als 'Herstel oude video acties balk' is uitgeschakeld, is de \"Meer v
   <string name="morphe_fix_status_bar_layout_title">Statusbalk oplossen die bovenste balken bedekt</string>
   <string name="morphe_fix_status_bar_layout_summary">Houdt de lay-out van de statusbalk consistent, zodat deze de bovenste balken niet bedekt en er geen lege ruimte boven de speler overblijft. Schakel dit uit als de app crasht of als de bovenste balken verkeerd eruitzien</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">Gloed</string>
   <string name="morphe_theme_color_light_title">Achtergrond van het lichtthema</string>
   <string name="morphe_theme_color_light_entry_2">Wit</string>
   <string name="morphe_theme_color_light_entry_3">Material You (Wit)</string>
@@ -1270,6 +1269,9 @@ Beperking: Als 'Herstel oude video acties balk' is uitgeschakeld, is de \"Meer v
   <string name="morphe_seekbar_custom_color_accent_summary">Stel de secundaire kleur van de video voortgangsbalk in</string>
   <string name="morphe_seekbar_custom_color_invalid">Ongeldige waarde voor de kleur van de schuifregelaar</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">Originele analoog</string>
+  <string name="morphe_custom_branding_icon_entry_9">Originele cake</string>
+  <string name="morphe_custom_branding_icon_entry_10">Origineel metaal</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Headerlogo</string>
   <string name="morphe_header_logo_entry_1">Standaard</string>

@@ -839,8 +839,6 @@ Second \"item\" text"</string>
   <string name="morphe_auto_captions_style_entry_2">Никогда не показывать</string>
   <string name="morphe_auto_captions_style_entry_3">Показывать, когда звук отключен</string>
   <string name="morphe_auto_captions_style_entry_4">Показать при заглушенном звуке</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">Показать автоматические субтитры</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">Скрыть автоматические субтитры</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">Предпочитаемый язык субтитров</string>
   <string name="morphe_preferred_caption_language_summary">Сначала выбирает субтитры поставщика, затем автоматически переводит их на предпочитаемый язык</string>
@@ -1251,6 +1249,7 @@ Second \"item\" text"</string>
   <string name="morphe_fix_status_bar_layout_title">Исправлена строка состояния, закрывающая верхние панели</string>
   <string name="morphe_fix_status_bar_layout_summary">Сохраняет неизменным расположение строки состояния, поэтому она не закрывает верхние панели и не оставляет пустого пространства над проигрывателем. Отключите, если приложение выходит из строя или верхние панели выглядят неправильно.</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">Свечение</string>
   <string name="morphe_theme_color_light_title">Фон светлой темы</string>
   <string name="morphe_theme_color_light_entry_2">Белый</string>
   <string name="morphe_theme_color_light_entry_3">Material You (белый)</string>
@@ -1273,6 +1272,9 @@ Second \"item\" text"</string>
   <string name="morphe_seekbar_custom_color_accent_summary">Установите вторичный цвет полосы прогресса видео</string>
   <string name="morphe_seekbar_custom_color_invalid">Неверное значение цвета полосы прогресса</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">Оригинальный аналог</string>
+  <string name="morphe_custom_branding_icon_entry_9">Оригинальный торт</string>
+  <string name="morphe_custom_branding_icon_entry_10">Оригинальный металл</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Логотип заголовка</string>
   <string name="morphe_header_logo_entry_1">По умолчанию</string>

@@ -837,8 +837,6 @@ OpenRouter.ai ওপেন করতে এখানে ট্যাপ কর�
   <string name="morphe_auto_captions_style_entry_2">কখনো দেখান না</string>
   <string name="morphe_auto_captions_style_entry_3">যখন আনমিউট করা হবে তখন দেখান</string>
   <string name="morphe_auto_captions_style_entry_4">মুটি অবস্থায় দেখান</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">স্বয়ংক্রিয় ক্যাপশন দেখান</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">স্বয়ংক্রিয় ক্যাপশন লুকান</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">পছন্দের ক্যাপশন ভাষা</string>
   <string name="morphe_preferred_caption_language_summary">প্রথমে প্রদানকারীর সাবটাইটেল নির্বাচন করে, তারপর স্বয়ংক্রিয়ভাবে পছন্দের ভাষায় অনুবাদ করে</string>
@@ -1250,6 +1248,7 @@ OpenRouter.ai ওপেন করতে এখানে ট্যাপ কর�
   <string name="morphe_fix_status_bar_layout_title">স্ট্যাটাস বারটি উপরের বারগুলি ঢেকে যাওয়া ঠিক করুন</string>
   <string name="morphe_fix_status_bar_layout_summary">স্ট্যাটাস বারের লেআউট ধ্রুবক রাখে, তাই এটি উপরের বারগুলি ঢাকবে না এবং প্লেয়ারের উপরে কোনো খালি জায়গা থাকবে না। অ্যাপটি ক্র্যাশ হলে বা উপরের বারগুলো ভুল দেখালে এই সেটিংটি বন্ধ করুন</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">গ্লো</string>
   <string name="morphe_theme_color_light_title">হালকা থিমের পটভূমি</string>
   <string name="morphe_theme_color_light_entry_2">সাদা</string>
   <string name="morphe_theme_color_light_entry_3">Material You (সাদা)</string>
@@ -1272,6 +1271,9 @@ OpenRouter.ai ওপেন করতে এখানে ট্যাপ কর�
   <string name="morphe_seekbar_custom_color_accent_summary">ভিডিও অগ্রগতি বারের মাধ্যমিক রঙ সেট করুন</string>
   <string name="morphe_seekbar_custom_color_invalid">অবৈধ সিকবার রঙ মান</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">মূল অ্যানালগ</string>
+  <string name="morphe_custom_branding_icon_entry_9">অরিজিনাল কেক</string>
+  <string name="morphe_custom_branding_icon_entry_10">অরিজিনাল মেটাল</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">হেডার লোগো</string>
   <string name="morphe_header_logo_entry_1">ডিফল্ট</string>

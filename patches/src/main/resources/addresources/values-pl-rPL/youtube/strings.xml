@@ -837,8 +837,6 @@ Uwaga: Może nie działać na transmisjach na żywo"</string>
   <string name="morphe_auto_captions_style_entry_2">Nigdy nie pokazuj</string>
   <string name="morphe_auto_captions_style_entry_3">Pokazuj przy włączonym dźwięku</string>
   <string name="morphe_auto_captions_style_entry_4">Pokazuj przy wyciszonym dźwięku</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">Pokaż automatyczne napisy</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">Ukryj automatyczne napisy</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">Preferowany język napisów</string>
   <string name="morphe_preferred_caption_language_summary">Najpierw wybiera napisy dostawcy, a następnie automatycznie tłumaczy je na preferowany język</string>
@@ -1249,6 +1247,7 @@ Ograniczenie: Jeśli opcja \"Przywróć stary pasek akcji filmu\" jest wyłączo
   <string name="morphe_fix_status_bar_layout_title">Napraw pasek stanu zasłaniający górne paski</string>
   <string name="morphe_fix_status_bar_layout_summary">Utrzymuje spójny układ paska stanu, dzięki czemu nie zasłania on górnych pasków ani nie zostawia pustego miejsca nad odtwarzaczem. Wyłącz tę opcję, jeśli aplikacja ulega awarii lub górne paski wyświetlają się nieprawidłowo</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">Poświata</string>
   <string name="morphe_theme_color_light_title">Tło jasnego motywu</string>
   <string name="morphe_theme_color_light_entry_2">Białe</string>
   <string name="morphe_theme_color_light_entry_3">Material You (Biały)</string>
@@ -1271,6 +1270,9 @@ Ograniczenie: Jeśli opcja \"Przywróć stary pasek akcji filmu\" jest wyłączo
   <string name="morphe_seekbar_custom_color_accent_summary">Ustaw dodatkowy kolor paska postępu</string>
   <string name="morphe_seekbar_custom_color_invalid">Nieprawidłowa wartość koloru</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">Oryginał analogowy</string>
+  <string name="morphe_custom_branding_icon_entry_9">Oryginalny tort</string>
+  <string name="morphe_custom_branding_icon_entry_10">Oryginalny metal</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Logo w nagłówku</string>
   <string name="morphe_header_logo_entry_1">Domyślne</string>
@@ -1646,5 +1648,5 @@ Ograniczenie: Przywraca stary wygląd nakładki \"Więcej filmów\""</string>
   <string name="morphe_niconico_comments_travel_duration_summary">Ile sekund komentarze potrzebują, aby przemieścić się przez ekran. Niższe wartości oznaczają szybszy ruch</string>
   <string name="morphe_niconico_comments_max_length_title">Maksymalna długość komentarza</string>
   <string name="morphe_niconico_comments_max_length_summary">Ukrywa komentarze, które mają więcej znaków niż ta wartość. Każdy emoji liczy się jako jeden znak</string>
-  <string name="morphe_niconico_comments_max_length_no_limit">Brak limitu</string>
+  <string name="morphe_niconico_comments_max_length_no_limit">Bez limitu</string>
 </resources>

@@ -837,8 +837,6 @@ Chcete-li to opravit, zapněte 'Spoof video streams' a změňte 'Default client'
   <string name="morphe_auto_captions_style_entry_2">Nikdy neukázat</string>
   <string name="morphe_auto_captions_style_entry_3">Zobrazovat, když není ztlumené</string>
   <string name="morphe_auto_captions_style_entry_4">Zobrazit při tichém</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">Zobrazit automatické titulky</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">Skrýt automatické titulky</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">Preferovaný jazyk titulků</string>
   <string name="morphe_preferred_caption_language_summary">Nejprve vybere titulky poskytovatele a poté je automaticky přeloží do preferovaného jazyka</string>
@@ -1248,6 +1246,7 @@ Omezení: Pokud je vypnutá možnost 'Obnovit starou lištu akcí videa', překr
   <string name="morphe_fix_status_bar_layout_title">Oprava stavového řádku zakrývajícího horní lišty</string>
   <string name="morphe_fix_status_bar_layout_summary">Udržuje konzistentní rozvržení stavového řádku, takže nezakrývá horní lišty a nezanechává prázdný prostor nad přehrávačem. Toto vypněte, pokud aplikace havaruje nebo pokud horní lišty vypadají špatně</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">Záře</string>
   <string name="morphe_theme_color_light_title">Pozadí světlého motivu</string>
   <string name="morphe_theme_color_light_entry_2">Bílá</string>
   <string name="morphe_theme_color_light_entry_3">Material You (bílá)</string>
@@ -1270,6 +1269,9 @@ Omezení: Pokud je vypnutá možnost 'Obnovit starou lištu akcí videa', překr
   <string name="morphe_seekbar_custom_color_accent_summary">Nastavte sekundární barvu indikátoru průběhu videa</string>
   <string name="morphe_seekbar_custom_color_invalid">Neplatná hodnota barvy posuvníku</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">Originální analog</string>
+  <string name="morphe_custom_branding_icon_entry_9">Původní dort</string>
+  <string name="morphe_custom_branding_icon_entry_10">Původní kov</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Logo záhlaví</string>
   <string name="morphe_header_logo_entry_1">Výchozí</string>

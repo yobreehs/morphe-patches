@@ -825,8 +825,6 @@ Til að laga þetta skaltu kveikja á 'Spoofa myndstreymi' og breyta 'Sjálfgefn
   <string name="morphe_auto_captions_style_entry_2">Sýna aldrei</string>
   <string name="morphe_auto_captions_style_entry_3">Sýna þegar hljóðlaust</string>
   <string name="morphe_auto_captions_style_entry_4">Sýna þegar hljóðlát</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">Sýna sjálfvirka undirtitla</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">Fela sjálfvirka undirtitla</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">Æskilegt skjátextamál</string>
   <string name="morphe_preferred_caption_language_summary">Velur skjátexta frá veitanda fyrst, þýðir síðan sjálfkrafa á æskilegt tungumál</string>
@@ -1218,6 +1216,7 @@ Takmörkun: Ef 'Endurskapa gamla stjórnbara myndbands' er slökkt, gæti 'Fleir
   <string name="morphe_fix_status_bar_layout_title">Fixa stöðustiku sem þekur efri tækin</string>
   <string name="morphe_fix_status_bar_layout_summary">Heldir útliti stöðustikunnar í samræmi, svo hún þeki ekki efri tækin og skilur eftir sig enginn tómarúm ofan við spilarann. Slökktu á þessu ef forritið brotnar eða efri tækin líta ranglega út</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">Glóð</string>
   <string name="morphe_theme_color_light_title">Ljósþemabakgrunnur</string>
   <string name="morphe_theme_color_light_entry_2">Hvítur</string>
   <string name="morphe_theme_color_light_entry_3">Material You (hvítur)</string>
@@ -1240,6 +1239,9 @@ Takmörkun: Ef 'Endurskapa gamla stjórnbara myndbands' er slökkt, gæti 'Fleir
   <string name="morphe_seekbar_custom_color_accent_summary">Stilltu aukalitinn á vídeóleiðarstikunni</string>
   <string name="morphe_seekbar_custom_color_invalid">Ógild litagildi litastiku</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">Upprunaleg analog</string>
+  <string name="morphe_custom_branding_icon_entry_9">Upprunaleg kaka</string>
+  <string name="morphe_custom_branding_icon_entry_10">Upprunaleg málm</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Logo haus</string>
   <string name="morphe_header_logo_entry_1">Sjálfgefið</string>

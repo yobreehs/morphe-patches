@@ -837,8 +837,6 @@ A javításhoz kapcsolja be a „Videostreamek meghamisítása” beállítást,
   <string name="morphe_auto_captions_style_entry_2">Soha ne mutassa</string>
   <string name="morphe_auto_captions_style_entry_3">Megjelenítés, ha a hang ki van némítva</string>
   <string name="morphe_auto_captions_style_entry_4">Mutoltáskor mutat</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">Mutatja az automatikus feliratokat</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">Rejtje az automatikus feliratokat</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">Feliratok előnyben részesített nyelve</string>
   <string name="morphe_preferred_caption_language_summary">Először a szolgáltató feliratait választja ki, majd automatikusan lefordítja az előnyben részesített nyelvre</string>
@@ -1250,6 +1248,7 @@ Korlátozás: Ha a „Régi videós eszköztár visszaállítása” ki van kapc
   <string name="morphe_fix_status_bar_layout_title">Állítsa be, hogy az állapotsáv ne takarja ki a felső sávokat</string>
   <string name="morphe_fix_status_bar_layout_summary">A status sáv elrendezése konzisztens marad, így nem takarja le a felső sávokat, és nincs üres hely a lejátszó felett. Kapcsolja ki ezt, ha az alkalmazás összeomlik vagy a felső sávok rossz megjelenésűek</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">Ragyogás</string>
   <string name="morphe_theme_color_light_title">Világos téma háttér</string>
   <string name="morphe_theme_color_light_entry_2">Fehér</string>
   <string name="morphe_theme_color_light_entry_3">Material You (Fehér)</string>
@@ -1272,6 +1271,9 @@ Korlátozás: Ha a „Régi videós eszköztár visszaállítása” ki van kapc
   <string name="morphe_seekbar_custom_color_accent_summary">Állítsa be a videó lejátszás jelzője másodlagos színét</string>
   <string name="morphe_seekbar_custom_color_invalid">Érvénytelen keresősáv színértéke</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">Eredeti analóg</string>
+  <string name="morphe_custom_branding_icon_entry_9">Eredeti sütemény</string>
+  <string name="morphe_custom_branding_icon_entry_10">Eredeti fém</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Fejléclogó</string>
   <string name="morphe_header_logo_entry_1">Alapértelmezett</string>

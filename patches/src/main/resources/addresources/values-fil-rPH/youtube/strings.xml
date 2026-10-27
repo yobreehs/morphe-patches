@@ -837,8 +837,6 @@ Para ayusin ito, i-on ang 'I-spoof ang mga video stream' at baguhin ang 'Default
   <string name="morphe_auto_captions_style_entry_2">Huwag ipakita</string>
   <string name="morphe_auto_captions_style_entry_3">Ipakita kapag hindi naka-mute</string>
   <string name="morphe_auto_captions_style_entry_4">Ipakita kapag naka-mute</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">Ipakita ang auto captions</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">Itago ang auto captions</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">Ginustong wika ng caption</string>
   <string name="morphe_preferred_caption_language_summary">Pinipili muna ang mga subtitle mula sa provider, pagkatapos ay awtomatikong isinasalin ang mga ito sa ginustong wika</string>
@@ -1248,6 +1246,7 @@ Limitasyon: Kung ang 'Ibalik ang lumang video action bar' ay naka-off, maaaring 
   <string name="morphe_fix_status_bar_layout_title">Ayusin ang layout ng status bar na sumasakop sa mga itaas na bar</string>
   <string name="morphe_fix_status_bar_layout_summary">Pinapanatiling consistent ang layout ng status bar upang hindi ito sumakop sa mga itaas na bar at walang walang laman na espasyo sa itaas ng player. I-off ito kung crash ang app o magmukha nang mali ang mga itaas na bar</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">Kislap</string>
   <string name="morphe_theme_color_light_title">Likuran ng maliwanag na tema</string>
   <string name="morphe_theme_color_light_entry_2">Puti</string>
   <string name="morphe_theme_color_light_entry_3">Material You (Puti)</string>
@@ -1270,6 +1269,9 @@ Limitasyon: Kung ang 'Ibalik ang lumang video action bar' ay naka-off, maaaring 
   <string name="morphe_seekbar_custom_color_accent_summary">Itakda ang pangalawang kulay ng video progress bar</string>
   <string name="morphe_seekbar_custom_color_invalid">Hindi wastong halaga ng seekbar color</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">Orihinal na analog</string>
+  <string name="morphe_custom_branding_icon_entry_9">Orihinal na cake</string>
+  <string name="morphe_custom_branding_icon_entry_10">Orihinal na metal</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Header logo</string>
   <string name="morphe_header_logo_entry_1">Panimula</string>

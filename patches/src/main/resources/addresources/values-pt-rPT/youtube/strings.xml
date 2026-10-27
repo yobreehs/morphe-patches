@@ -837,8 +837,6 @@ Para corrigir isso, ative 'Falsificar streams de vídeo' e altere o 'Cliente pad
   <string name="morphe_auto_captions_style_entry_2">Não mostrar nunca</string>
   <string name="morphe_auto_captions_style_entry_3">Mostrar quando não está mudo</string>
   <string name="morphe_auto_captions_style_entry_4">Exibir quando silenciado</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">Exibir legendas automáticas</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">Ocultar legendas automáticas</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">Idioma preferido das legendas</string>
   <string name="morphe_preferred_caption_language_summary">Seleciona primeiro as legendas do provedor e depois traduz automaticamente para o idioma preferido</string>
@@ -1250,6 +1248,7 @@ Limitação: Se 'Restaurar a barra de ação de vídeo antiga' estiver desativad
   <string name="morphe_fix_status_bar_layout_title">Corrigir barra de status cobrindo as barras superiores</string>
   <string name="morphe_fix_status_bar_layout_summary">Mantém o layout da barra de status consistente, para que não cubra as barras superiores e não deixe espaço vazio acima do player. Desative isso se o aplicativo travar ou se as barras superiores estiverem incorretas</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">Brilho</string>
   <string name="morphe_theme_color_light_title">Cor de fundo do tema claro</string>
   <string name="morphe_theme_color_light_entry_2">Branco</string>
   <string name="morphe_theme_color_light_entry_3">Material You (Branco)</string>
@@ -1272,6 +1271,9 @@ Limitação: Se 'Restaurar a barra de ação de vídeo antiga' estiver desativad
   <string name="morphe_seekbar_custom_color_accent_summary">Defina a cor secundária da barra de progresso do vídeo</string>
   <string name="morphe_seekbar_custom_color_invalid">Valor de cor de seekbar inválido</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">Análogo original</string>
+  <string name="morphe_custom_branding_icon_entry_9">Bolo original</string>
+  <string name="morphe_custom_branding_icon_entry_10">Metal original</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Logotipo do cabeçalho</string>
   <string name="morphe_header_logo_entry_1">Padrão</string>

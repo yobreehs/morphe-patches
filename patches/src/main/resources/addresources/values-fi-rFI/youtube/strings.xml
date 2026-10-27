@@ -837,8 +837,6 @@ Korjaa tämä ottamalla käyttöön 'Väärennä videovirrat' ja vaihtamalla 'Ol
   <string name="morphe_auto_captions_style_entry_2">Älä näytä koskaan</string>
   <string name="morphe_auto_captions_style_entry_3">Ota tekstityskeksit käyttöön</string>
   <string name="morphe_auto_captions_style_entry_4">Näytä, kun mykistetty</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">Näytä automaattiset tekstitykset</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">Piilota automaattiset tekstitykset</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">Ensisijainen tekstityskieli</string>
   <string name="morphe_preferred_caption_language_summary">Valitsee ensin tarjoajan tekstitykset ja kääntää ne sitten automaattisesti ensisijaiselle kielelle</string>
@@ -1250,6 +1248,7 @@ Rajoitus: Jos \"Palauta vanha videotoimintopalkki\" on poissa käytöstä, \"Lis
   <string name="morphe_fix_status_bar_layout_title">Korjaa tilapalkin peittämistä yläpalkkien kanssa</string>
   <string name="morphe_fix_status_bar_layout_summary">Pysäyttää tilapalkin asettelun johdonmukaisuuden, joten se ei peitä yläpalkkeja ja jättää tyhjää tilaa soittimen yläpuolelle. Poista tämä käytöstä, jos sovellus kaatuu tai yläpalkit näyttävät vääriltä</string>
   <!-- layout.theme.themePatch -->
+  <string name="morphe_splash_screen_style_entry_6">Hehku</string>
   <string name="morphe_theme_color_light_title">Vaalean teeman tausta</string>
   <string name="morphe_theme_color_light_entry_2">Valkoinen</string>
   <string name="morphe_theme_color_light_entry_3">Material You (Valkoinen)()</string>
@@ -1272,6 +1271,9 @@ Rajoitus: Jos \"Palauta vanha videotoimintopalkki\" on poissa käytöstä, \"Lis
   <string name="morphe_seekbar_custom_color_accent_summary">Aseta videon etenemispalkin toissijainen väri</string>
   <string name="morphe_seekbar_custom_color_invalid">Virheellinen etenemispalkin väriarvo</string>
   <!-- layout.branding.customBrandingPatch -->
+  <string name="morphe_custom_branding_icon_entry_8">Alkuperäinen analogi</string>
+  <string name="morphe_custom_branding_icon_entry_9">Alkuperäinen kakku</string>
+  <string name="morphe_custom_branding_icon_entry_10">Alkuperäinen metalli</string>
   <!-- layout.branding.header.changeHeaderPatch -->
   <string name="morphe_header_logo_title">Ylätunnisteen logo</string>
   <string name="morphe_header_logo_entry_1">Oletus</string>

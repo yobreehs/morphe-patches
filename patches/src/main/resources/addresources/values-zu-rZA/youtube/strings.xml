@@ -831,8 +831,6 @@ Ukuze ulungise lokhu, vula 'Spoof video streams' bese ushintsha 'Default client'
   <string name="morphe_auto_captions_style_entry_2">Ungazikhombisile nakaze</string>
   <string name="morphe_auto_captions_style_entry_3">Khombisa lapho kukhishwe ukuthula</string>
   <string name="morphe_auto_captions_style_entry_4">Khombisa lapho kuthulekisiwe</string>
-  <string name="morphe_auto_captions_style_legacy_entry_1">Khombisa izincazelo ezizenzakalelayo</string>
-  <string name="morphe_auto_captions_style_legacy_entry_2">Fihla imibhalo yesizulu ezenzakalayo</string>
   <!-- layout.captions.preferredCaptionLanguagePatch -->
   <string name="morphe_preferred_caption_language_title">Ulimi lwezincazelo olukhethiwe</string>
   <string name="morphe_preferred_caption_language_summary">Khetha izincazelo zomhlinzeki kuqala, bese ihumusha ngokuzenzakalelayo olimini olukhethiwe</string>
