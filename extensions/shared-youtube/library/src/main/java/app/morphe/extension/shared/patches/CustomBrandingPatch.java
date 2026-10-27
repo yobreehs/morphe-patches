@@ -88,8 +88,7 @@ public class CustomBrandingPatch {
          * Returns the raw resource name of the startup animation for this theme.
          * <p>
          * Themes that share a launcher foreground share an animation. Returns {@code null} for
-         * {@link #ORIGINAL} and {@link #CUSTOM}, which keep the original animation.
-         *
+         * {@link #ORIGINAL} and {@link #CUSTOM}, which have no animation of their own.
          */
         @Nullable
         String startupAnimationResourceName() {
@@ -176,51 +175,59 @@ public class CustomBrandingPatch {
      * Injection point.
      */
     public static View getLottieViewOrNull(View lottieStartupView) {
-        if (SharedYouTubeSettings.SPLASH_SCREEN_ANIMATION_STYLE.get()
+        if (SharedYouTubeSettings.SPLASH_SCREEN_STYLE.get()
                 == SplashAnimationPatch.SplashScreenAnimationStyle.DISABLED) {
             return null;
         }
 
-        if (getStartupAnimation() != 0) {
-            // The icon has its own animation, which replaces the original one.
-            return lottieStartupView;
-        }
-
-        if (GmsCoreSupportPatch.isPackageNameOriginal()) {
-            // A mounted install cannot change the icon at runtime, so the icon chosen
-            // while patching decides if the original startup animation is kept.
-            return mountedIconApplied() ? null : lottieStartupView;
-        }
-
-        if (SharedYouTubeSettings.CUSTOM_BRANDING_ICON.get() == BrandingTheme.ORIGINAL) {
-            return lottieStartupView;
-        }
-
-        return null;
+        return lottieStartupView;
     }
 
     /**
-     * The startup animation that matches the launcher icon.
+     * If custom branding is included in the app.
+     */
+    public static boolean isPatchIncluded() {
+        return false; // Modified during patching.
+    }
+
+    private static BrandingTheme getLauncherIconBranding() {
+        if (!isPatchIncluded()) {
+            // The app keeps its original icon.
+            return BrandingTheme.ORIGINAL;
+        }
+
+        if (GmsCoreSupportPatch.isPackageNameOriginal()) {
+            // A mounted install cannot change the icon at runtime.
+            return mountedIconApplied()
+                    ? getDefaultIconStyle()
+                    : BrandingTheme.ORIGINAL;
+        }
+
+        return SharedYouTubeSettings.CUSTOM_BRANDING_ICON.get();
+    }
+
+    /**
+     * If the launcher icon has a Morphe startup animation of its own.
+     */
+    public static boolean iconHasStartupAnimation() {
+        return getLauncherIconBranding().startupAnimationResourceName() != null;
+    }
+
+    /**
+     * The branded startup animation that matches the launcher icon. The original icon and a user
+     * provided icon have no animation of their own, and use the animation of the default icon.
      *
-     * @return The raw resource id, or 0 to keep the original animation.
+     * @return The raw resource id, or 0 if the animations are excluded.
      */
     public static int getStartupAnimation() {
         try {
-            BrandingTheme branding;
-            if (GmsCoreSupportPatch.isPackageNameOriginal()) {
-                // A mounted install cannot change the icon at runtime.
-                branding = mountedIconApplied()
-                        ? getDefaultIconStyle()
-                        : BrandingTheme.ORIGINAL;
-            } else {
-                branding = SharedYouTubeSettings.CUSTOM_BRANDING_ICON.get();
+            String animationName = getLauncherIconBranding().startupAnimationResourceName();
+            if (animationName == null) {
+                animationName = BrandingTheme.BLACK.startupAnimationResourceName();
             }
 
-            String animationName = branding.startupAnimationResourceName();
-            if (animationName != null) {
-                // Not found if custom branding is excluded.
-                return ResourceUtils.getIdentifier(ResourceType.RAW, animationName);
-            }
+            // Not found if the patch that adds the startup animations is excluded.
+            return ResourceUtils.getIdentifier(ResourceType.RAW, animationName);
         } catch (Exception ex) {
             Logger.printException(() -> "getStartupAnimation failure", ex);
         }
