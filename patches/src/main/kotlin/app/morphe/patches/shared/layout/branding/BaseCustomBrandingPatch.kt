@@ -109,6 +109,27 @@ private val notificationIconPngDirectories = mapOf(
     "drawable-xxxhdpi" to "96x96 px",
 )
 
+/**
+ * The icon files of the custom icon folder at [path], each in the resource folder it goes to, or
+ * null when the folder has none or holds only part of the adaptive icon in a density.
+ */
+private fun customIconFiles(path: String): List<File>? {
+    val folder = File(path.trim())
+    if (!folder.isDirectory) return null
+
+    val adaptiveIcons = mipmapDirectories.keys.flatMap { density ->
+        val layers = USER_CUSTOM_ADAPTIVE_FILE_NAMES.map { folder.resolve("$density/$it") }.filter(File::isFile)
+        if (layers.isNotEmpty() && layers.size != USER_CUSTOM_ADAPTIVE_FILE_NAMES.size) return null
+        layers
+    }
+    val optionalIcons = listOf(
+        "drawable/$USER_CUSTOM_MONOCHROME_FILE_NAME",
+        "drawable/$USER_CUSTOM_NOTIFICATION_ICON_XML_FILE_NAME"
+    ) + notificationIconPngDirectories.keys.map { "$it/$USER_CUSTOM_NOTIFICATION_ICON_PNG_FILE_NAME" }
+
+    return (adaptiveIcons + optionalIcons.map(folder::resolve).filter(File::isFile)).ifEmpty { null }
+}
+
 internal const val EXTENSION_CLASS = "Lapp/morphe/extension/shared/patches/CustomBrandingPatch;"
 
 // Must be named in the 'app.morphe' namespace, otherwise the log is not published.
@@ -174,7 +195,9 @@ internal fun baseCustomBrandingPatch(
             - PNG raster images placed in the matching 'drawable-<dpi>' folders:
               ${notificationIconPngDirectories.map { (dpi, dim) -> "- $dpi/$USER_CUSTOM_NOTIFICATION_ICON_PNG_FILE_NAME ($dim)" }.joinToString("\n")}
         """
-    )
+    ) {
+        it == null || customIconFiles(it) != null
+    }
 
     val appIconStyle by stringOption(
         key = "appIcon",
@@ -568,97 +591,10 @@ internal fun baseCustomBrandingPatch(
         // Copy the user provided icon files here and not in the finalize block, because a mounted
         // installation uses them to replace the icon of the app and that is done while finalizing.
         if (useCustomIcon) {
-            // Copy user provided files
-            val iconPathFile = File(customIcon!!.trim())
-
-            if (!iconPathFile.exists()) {
-                throw PatchException(
-                    "The custom icon path cannot be found: " + iconPathFile.absolutePath
-                )
-            }
-
-            if (!iconPathFile.isDirectory) {
-                throw PatchException(
-                    "The custom icon path must be a folder: " + iconPathFile.absolutePath
-                )
-            }
-
+            // Reading the option already checked the folder, see customIconFiles
             val resourceDirectory = get("res")
-            var copiedFiles = false
-
-            // For each source folder, copy the files to the target resource directories.
-            iconPathFile.listFiles {
-                    file -> file.isDirectory && file.name in mipmapDirectories
-            }!!.forEach { dpiSourceFolder ->
-                val targetDpiFolder = resourceDirectory.resolve(dpiSourceFolder.name)
-                if (!targetDpiFolder.exists()) {
-                    // Should never happen.
-                    throw IllegalStateException("Resource not found: $dpiSourceFolder")
-                }
-
-                val customFiles = dpiSourceFolder.listFiles { file ->
-                    file.isFile && file.name in USER_CUSTOM_ADAPTIVE_FILE_NAMES
-                }!!
-
-                if (customFiles.isNotEmpty() && customFiles.size != USER_CUSTOM_ADAPTIVE_FILE_NAMES.size) {
-                    throw PatchException("Must include all required icon files " +
-                            "but only found " + customFiles.map { it.name })
-                }
-
-                customFiles.forEach { imgSourceFile ->
-                    val imgTargetFile = targetDpiFolder.resolve(imgSourceFile.name)
-                    imgSourceFile.copyTo(target = imgTargetFile, overwrite = true)
-
-                    copiedFiles = true
-                }
-            }
-
-            // Copy monochrome icon if provided.
-            val drawableSourceFolder = iconPathFile.resolve("drawable")
-            if (drawableSourceFolder.exists()) {
-                val monochromeFile = drawableSourceFolder.resolve(USER_CUSTOM_MONOCHROME_FILE_NAME)
-                if (monochromeFile.exists()) {
-                    monochromeFile.copyTo(
-                        target = resourceDirectory.resolve("drawable/$USER_CUSTOM_MONOCHROME_FILE_NAME"),
-                        overwrite = true
-                    )
-                    copiedFiles = true
-                }
-
-                // XML vector notification icon.
-                val notificationXml = drawableSourceFolder.resolve(USER_CUSTOM_NOTIFICATION_ICON_XML_FILE_NAME)
-                if (notificationXml.exists()) {
-                    notificationXml.copyTo(
-                        target = resourceDirectory.resolve("drawable/$USER_CUSTOM_NOTIFICATION_ICON_XML_FILE_NAME"),
-                        overwrite = true
-                    )
-                    copiedFiles = true
-                }
-            }
-
-            // PNG notification icons.
-            // If any DPI folder is present, copy what's available.
-            iconPathFile.listFiles { file ->
-                file.isDirectory && file.name in notificationIconPngDirectories
-            }!!.forEach { dpiSourceFolder ->
-                val pngFile = dpiSourceFolder.resolve(USER_CUSTOM_NOTIFICATION_ICON_PNG_FILE_NAME)
-                if (pngFile.exists()) {
-                    val targetFolder = resourceDirectory.resolve(dpiSourceFolder.name)
-                    if (!targetFolder.exists()) {
-                        throw IllegalStateException("Resource directory not found: ${dpiSourceFolder.name}")
-                    }
-                    pngFile.copyTo(
-                        target = targetFolder.resolve(USER_CUSTOM_NOTIFICATION_ICON_PNG_FILE_NAME),
-                        overwrite = true
-                    )
-                    copiedFiles = true
-                }
-            }
-
-            if (!copiedFiles) {
-                throw PatchException("Expected to find directories and files: "
-                        + USER_CUSTOM_ADAPTIVE_FILE_NAMES.contentToString()
-                        + "\nBut none were found in the provided option file path: " + iconPathFile.absolutePath)
+            customIconFiles(customIcon!!)!!.forEach { file ->
+                file.copyTo(resourceDirectory.resolve("${file.parentFile.name}/${file.name}"), overwrite = true)
             }
         }
 
