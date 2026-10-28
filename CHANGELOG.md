@@ -1,3 +1,14 @@
+## [1.49.0-dev.10](https://github.com/MorpheApp/morphe-patches/compare/v1.49.0-dev.9...v1.49.0-dev.10) (2026-10-28)
+
+### 🐛 Bug Fixes
+
+* **YouTube - Ask flyout menu:** Ask chat window can be hidden by onscreen keyboard ([7532430](https://github.com/MorpheApp/morphe-patches/commit/7532430e096f5730ba9321b32d8b4bd2c54c77f6))
+* **YouTube - Hide status bar:** Top bars are covered by a second status bar when the app is kept out of the camera cutout ([#4112](https://github.com/MorpheApp/morphe-patches/issues/4112)) ([9d3b53c](https://github.com/MorpheApp/morphe-patches/commit/9d3b53c92cb877f309b4463b7d5067aaa1a996a3))
+* **YouTube - Spoof video streams:** Patch can be included for root installs ([3edf03b](https://github.com/MorpheApp/morphe-patches/commit/3edf03b8efc2f5ea0458456002938c7dbd4bf8d8))
+* **YouTube - Theme:** Glow startup animation does not extend to fullscreen ([7f1a6b3](https://github.com/MorpheApp/morphe-patches/commit/7f1a6b35c8a3989cd2b06a1e81d817015f2ca433))
+* **YouTube - Video quality:** Selected quality is not applied to the already buffered video ([#4117](https://github.com/MorpheApp/morphe-patches/issues/4117)) ([7faa488](https://github.com/MorpheApp/morphe-patches/commit/7faa48834b1f78f8ca572c773392ed9513de8ea3))
+* **YouTube:** Restore TalkBack access to Shorts comments and descriptions ([#4128](https://github.com/MorpheApp/morphe-patches/issues/4128)) ([9542d24](https://github.com/MorpheApp/morphe-patches/commit/9542d24adf3b5ec2c25fce931418160dadbde93c))
+
 ## [1.49.0-dev.9](https://github.com/MorpheApp/morphe-patches/compare/v1.49.0-dev.8...v1.49.0-dev.9) (2026-10-27)
 
 ### 🐛 Bug Fixes
