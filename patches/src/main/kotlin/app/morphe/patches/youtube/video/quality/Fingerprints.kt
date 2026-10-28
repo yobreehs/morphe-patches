@@ -25,6 +25,7 @@ import app.morphe.patches.shared.CurrentAudioVideoFormatToStringFingerprint
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
+import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 
 internal const val FIXED_RESOLUTION_STRING = ", initialPlaybackVideoQualityFixedResolution="
 
@@ -342,7 +343,7 @@ internal fun getSetVideoQualityResolutionFingerprint(videoQualityMenuType: Strin
  * The item click listener of the Shorts quality menu, which sets the selected quality by its resolution.
  * The listener is either the menu of [VideoQualityItemOnClickFingerprint] or a class it calls.
  */
-internal fun getVideoQualityItemSetResolutionFingerprint(setResolutionMethod: String) = Fingerprint(
+internal fun getVideoQualityItemSetResolutionFingerprint(setResolutionMethod: MethodReference) = Fingerprint(
     name = "onItemClick",
     returnType = "V",
     parameters = listOf(
@@ -352,7 +353,7 @@ internal fun getVideoQualityItemSetResolutionFingerprint(setResolutionMethod: St
         "J"
     ),
     filters = listOf(
-        methodCall(smali = setResolutionMethod)
+        methodCall(reference = setResolutionMethod)
     )
 )
 

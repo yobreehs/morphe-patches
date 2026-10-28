@@ -13,9 +13,15 @@ package app.morphe.patches.youtube.video.quality
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructionsWithLabels
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
+import app.morphe.patcher.fieldAccess
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.patcher.util.findFreeRegister
+import app.morphe.patcher.util.getFreeRegisterProvider
+import app.morphe.patcher.util.getReference
+import app.morphe.patcher.util.matchSingle
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod.Companion.toMutable
 import app.morphe.patcher.util.smali.ExternalLabel
+import app.morphe.patches.shared.FormatStreamModelToStringFingerprint
 import app.morphe.patches.shared.misc.fix.proto.fixProtoLibraryPatch
 import app.morphe.patches.shared.misc.fix.proto.parseByteArrayMethodRef
 import app.morphe.patches.shared.misc.settings.preference.ListPreference
@@ -28,23 +34,17 @@ import app.morphe.patches.youtube.misc.settings.settingsPatch
 import app.morphe.patches.youtube.shared.VideoQualityChangedFingerprint
 import app.morphe.patches.youtube.shared.hookVideoIntent
 import app.morphe.patches.youtube.shared.openVideoIntentPatch
+import app.morphe.patches.youtube.video.format.hookAdaptiveFormat
+import app.morphe.patches.youtube.video.format.videoFormatPatch
 import app.morphe.patches.youtube.video.information.EXTENSION_VIDEO_QUALITY_INTERFACE
 import app.morphe.patches.youtube.video.information.EXTENSION_VIDEO_QUALITY_MENU_INTERFACE
 import app.morphe.patches.youtube.video.information.SetVideoQualityFingerprint
 import app.morphe.patches.youtube.video.information.VideoQualityFingerprint
 import app.morphe.patches.youtube.video.information.videoInformationPatch
-import app.morphe.patches.youtube.video.format.hookAdaptiveFormat
-import app.morphe.patches.youtube.video.format.videoFormatPatch
-import app.morphe.patches.shared.FormatStreamModelToStringFingerprint
-import app.morphe.util.findMethodFromToString
-import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
 import app.morphe.util.addInstructionsAtControlFlowLabel
 import app.morphe.util.findFieldFromToString
-import app.morphe.patcher.util.findFreeRegister
 import app.morphe.util.findInstructionIndicesReversedOrThrow
-import app.morphe.patcher.util.getFreeRegisterProvider
-import app.morphe.patcher.util.getReference
-import app.morphe.patcher.util.matchSingle
+import app.morphe.util.findMethodFromToString
 import app.morphe.util.indexOfFirstInstructionOrThrow
 import app.morphe.util.indexOfFirstInstructionReversedOrThrow
 import app.morphe.util.insertLiteralOverride
@@ -53,9 +53,9 @@ import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.builder.MutableMethodImplementation
 import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
+import com.android.tools.smali.dexlib2.iface.instruction.ReferenceInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
-import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 import com.android.tools.smali.dexlib2.immutable.ImmutableMethod
 import com.android.tools.smali.dexlib2.immutable.ImmutableMethodParameter
 
@@ -309,10 +309,11 @@ val rememberVideoQualityPatch = bytecodePatch {
             SetVideoQualityFingerprint.instructionMatches[1].getFieldAccessed().type
         ).matchSingle().method
 
-        getVideoQualityItemSetResolutionFingerprint(setResolutionMethod.toString()).matchAll().forEach {
+        getVideoQualityItemSetResolutionFingerprint(setResolutionMethod).matchAll().forEach {
             it.method.apply {
-                val index = it.instructionMatches.first().index
-                val setResolutionInstruction = getInstruction<FiveRegisterInstruction>(index)
+                val setResolutionMatch = it.instructionMatches.first()
+                val index = setResolutionMatch.index
+                val setResolutionInstruction = setResolutionMatch.getInstruction<FiveRegisterInstruction>()
                 val menuRegister = setResolutionInstruction.registerC
                 val qualitySetRegister = findFreeRegister(
                     index,
@@ -337,9 +338,9 @@ val rememberVideoQualityPatch = bytecodePatch {
         // A quality the player can play is set instead of a quality it cannot play.
         VideoQualityChangedFingerprint.let {
             it.method.apply {
-                val qualityIndex = it.instructionMatches[3].index
-                val qualityRegister = getInstruction<OneRegisterInstruction>(qualityIndex).registerA
-                val qualityType = getInstruction<ReferenceInstruction>(qualityIndex).reference
+                val qualityMatch = it.instructionMatches[3]
+                val qualityRegister = qualityMatch.getInstruction<OneRegisterInstruction>().registerA
+                val qualityType = qualityMatch.getInstruction<ReferenceInstruction>().reference
                 val constructorIndex = it.instructionMatches.last().index
 
                 addInstructions(
@@ -361,10 +362,9 @@ val rememberVideoQualityPatch = bytecodePatch {
         getCurrentVideoFormatConstructorFingerprint("[${VideoQualityFingerprint.classDef.type}").method.apply {
             // The first video format field set is the video format playing. The constructor
             // has no free register, so the register of the video format is used once it is set.
-            val videoFormatIndex = indexOfFirstInstructionOrThrow {
-                opcode == Opcode.IPUT_OBJECT &&
-                        getReference<FieldReference>()?.type == formatIdMethod.definingClass
-            }
+            val videoFormatIndex = indexOfFirstInstructionOrThrow(
+                fieldAccess(opcode = Opcode.IPUT_OBJECT, type = formatIdMethod.definingClass)
+            )
             val videoFormatRegister = getInstruction<TwoRegisterInstruction>(videoFormatIndex).registerA
 
             addInstructionsWithLabels(
@@ -433,12 +433,12 @@ val rememberVideoQualityPatch = bytecodePatch {
             // start of a Short, so the video plays from there faster until it reaches the audio.
             // The buffered video is cleared only after the segment that is playing.
             val videoTrackTypeField = PlaybackControllerSetVideoFormatsFingerprint.instructionMatches
-                .last().instruction.getReference<FieldReference>()!!
+                .last().getFieldAccessed()
             val discardBufferAfterSegmentMethod = BufferManagerDiscardBufferAfterSegmentFingerprint.method
 
             PlaybackControllerClearBufferFingerprint.let {
-                val stopRequestsMethod = it.instructionMatches[0].instruction.getReference<MethodReference>()!!
-                val bufferManagerField = it.instructionMatches[1].instruction.getReference<FieldReference>()!!
+                val stopRequestsMethod = it.instructionMatches[0].getMethodCalled()
+                val bufferManagerField = it.instructionMatches[1].getFieldAccessed()
 
                 it.method.addInstructionsWithLabels(
                     0,

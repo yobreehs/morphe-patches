@@ -21,7 +21,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -89,12 +88,7 @@ public class RememberVideoQualityPatch {
      * The codec of each video format by format ID (itag), by video ID.
      */
     private static final Map<String, Map<Integer, String>> videoFormatCodecs = Collections.synchronizedMap(
-            new LinkedHashMap<>(MAX_VIDEO_FORMAT_CODECS, 0.75f, true) {
-                @Override
-                protected boolean removeEldestEntry(Map.Entry<String, Map<Integer, String>> eldest) {
-                    return size() > MAX_VIDEO_FORMAT_CODECS;
-                }
-            });
+            Utils.createSizeRestrictedMap(MAX_VIDEO_FORMAT_CODECS, true));
 
     /**
      * Format ID (itag) of the video format playing.
