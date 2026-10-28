@@ -140,12 +140,20 @@ val ambientModePatch = bytecodePatch(
                     PowerSaveModeSyntheticFingerprint.matchOrNull(
                                         mutableClassDefBy(reference.definingClass)
                                     )?.method?.hook()
+
+                    // 21.43+ inlines the lambda into the receiver.
+                    if (is_21_43_or_greater) hook()
                 }
             }
         }
 
         if (is_21_43_or_greater) {
             IntentActionSyntheticAlternativeFingerprint.method.hook()
+
+            // 21.43+ inlines the lambdas that read the first value for the Ambient mode receiver.
+            // The receiver is registered on the main thread, or asynchronously if a server flag is on.
+            powerSaveModeInitialValueFingerprint(PowerSaveModeReceiverRegisterFingerprint.method).method.hook()
+            PowerSaveModeInitialValueAsyncFingerprint.method.hook()
         } else if (is_21_03_or_greater) {
             IntentActionSyntheticAlternativeLegacyFingerprint.method.hook()
         }
