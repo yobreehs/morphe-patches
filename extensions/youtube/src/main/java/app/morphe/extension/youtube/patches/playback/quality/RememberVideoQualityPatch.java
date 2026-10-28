@@ -74,6 +74,12 @@ public class RememberVideoQualityPatch {
     private static volatile long clearVideoBufferTimeUs = -1;
 
     /**
+     * ID of the video whose buffered segment that was playing when the user selected the quality
+     * is cleared once it was played, or an empty string.
+     */
+    private static volatile String clearPlayedVideoSegmentVideoId = "";
+
+    /**
      * The quality selected in the Shorts quality menu, until the menu sets it.
      */
     @Nullable
@@ -619,6 +625,7 @@ public class RememberVideoQualityPatch {
      * when the audio track changes, so the new quality is played after it without a gap.
      * The video buffered before that segment is cleared too, so a Short that loops
      * does not play the previous quality from its start.
+     * The segment itself is cleared once it was played (see {@link #shouldClearPlayedVideoSegment()}).
      *
      * @return The playback time in microseconds after and before whose segment the buffered video
      *         is cleared, or -1 to clear the whole buffered video.
@@ -626,6 +633,43 @@ public class RememberVideoQualityPatch {
     public static long getClearVideoBufferTime() {
         final long timeUs = clearVideoBufferTimeUs;
         clearVideoBufferTimeUs = -1;
+        if (timeUs >= 0) {
+            clearPlayedVideoSegmentVideoId = VideoInformation.getVideoId();
+        }
         return timeUs;
+    }
+
+    /**
+     * Injection point.
+     * <p>
+     * The segment that was playing when the user selected the quality keeps the previous quality.
+     * A Short is often buffered entirely, so it plays that segment again when it loops,
+     * such as its first segment if the quality was selected right after the Short started.
+     * While this returns true, the player clears the video buffered before the playback time,
+     * which it does only once the playback time is after the first segment buffered.
+     *
+     * @return If the video buffered before the playback time is cleared.
+     */
+    public static boolean shouldClearPlayedVideoSegment() {
+        final String videoId = clearPlayedVideoSegmentVideoId;
+        if (videoId.isEmpty()) {
+            return false;
+        }
+        if (!videoId.equals(VideoInformation.getVideoId())) {
+            // Another video started before the segment was played.
+            clearPlayedVideoSegmentVideoId = "";
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Injection point.
+     * <p>
+     * Called when the segment that was playing when the user selected the quality was cleared.
+     */
+    public static void onPlayedVideoSegmentCleared() {
+        Logger.printDebug(() -> "Cleared the video segment buffered with the previous quality");
+        clearPlayedVideoSegmentVideoId = "";
     }
 }

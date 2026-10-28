@@ -291,6 +291,43 @@ internal object SampleHolderDiscardBufferBeforeSegmentFingerprint : Fingerprint(
     )
 )
 
+/**
+ * The method of the buffered media of a track that saves the end time of its first segment.
+ * The media before a time is cleared only if the time is after it.
+ */
+internal object MediaSegmentHolderSetFirstSegmentEndTimeFingerprint : Fingerprint(
+    definingClass = "Lcom/google/android/libraries/youtube/media/player/exo2/platypus/mediapush/MediaSegmentHolder;",
+    returnType = "V",
+    parameters = listOf(),
+    filters = listOf(
+        methodCall(smali = "Ljava/util/List;->isEmpty()Z"),
+        methodCall(
+            definingClass = "Lcom/google/android/libraries/youtube/media/player/exo2/platypus/mediapush/BufferedMediaSegment;",
+            returnType = "J",
+            parameters = listOf()
+        ),
+        fieldAccess(opcode = Opcode.IPUT_WIDE, definingClass = "this", type = "J")
+    )
+)
+
+/**
+ * The method of the media source that clears the media buffered before the playback time,
+ * called by the player while the video is loaded.
+ */
+internal object MediaPushMediaSourceDiscardBufferFingerprint : Fingerprint(
+    definingClass = "Lcom/google/android/libraries/youtube/media/player/exo2/platypus/mediapush/MediaPushMediaSource;",
+    returnType = "V",
+    parameters = listOf("J"),
+    filters = listOf(
+        fieldAccess(
+            opcode = Opcode.SGET_WIDE,
+            definingClass = "Lcom/google/android/libraries/youtube/media/player/exo2/platypus/live/LiveTimeline;"
+        ),
+        fieldAccess(opcode = Opcode.IGET_OBJECT, definingClass = "this", type = BUFFER_MANAGER_CLASS),
+        methodCall(smali = "Ljava/lang/Math;->max(JJ)J")
+    )
+)
+
 internal fun getCurrentVideoFormatConstructorFingerprint(
     videoQualityArray: String
 ) = object : Fingerprint(

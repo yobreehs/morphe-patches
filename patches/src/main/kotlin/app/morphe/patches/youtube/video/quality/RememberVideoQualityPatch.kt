@@ -441,6 +441,9 @@ val rememberVideoQualityPatch = bytecodePatch {
             // The video buffered before the segment that is playing is cleared too,
             // otherwise a Short plays the previous quality from its start when it loops.
             // The method of the player is not public before 21.26, so a public method calls it.
+            // It returns if media was cleared: the player changes the end time of the first segment.
+            val firstSegmentEndTimeField = MediaSegmentHolderSetFirstSegmentEndTimeFingerprint
+                .instructionMatches.last().getFieldAccessed()
             val sampleHolderDiscardBufferMethod = if (is_21_43_or_greater) {
                 SampleHolderDiscardBufferBeforeSegmentFingerprint
             } else {
@@ -450,30 +453,39 @@ val rememberVideoQualityPatch = bytecodePatch {
                     it.classDef.type,
                     "patch_discardBufferBeforeSegment",
                     listOf(ImmutableMethodParameter("J", null, null)),
-                    "V",
+                    "Z",
                     AccessFlags.PUBLIC.value or AccessFlags.FINAL.value,
                     null,
                     null,
-                    MutableMethodImplementation(10),
+                    MutableMethodImplementation(12),
                 ).toMutable().apply {
-                    addInstructions(
+                    addInstructionsWithLabels(
                         0,
                         if (is_21_43_or_greater) {
                             // No media is kept before the playback time.
                             """
+                                iget-wide v7, p0, $firstSegmentEndTimeField
                                 move-object v0, p0
                                 move-wide v1, p1
                                 move-wide v3, p1
                                 const-wide/16 v5, 0x0
                                 invoke-virtual/range { v0 .. v6 }, ${it.method}
-                                return-void
                             """
                         } else {
                             """
+                                iget-wide v7, p0, $firstSegmentEndTimeField
                                 invoke-virtual { p0, p1, p2 }, ${it.method}
-                                return-void
                             """
-                        }
+                        } + """
+                            iget-wide v0, p0, $firstSegmentEndTimeField
+                            cmp-long v0, v0, v7
+                            if-eqz v0, :not_cleared
+                            const/4 v0, 0x1
+                            return v0
+                            :not_cleared
+                            const/4 v0, 0x0
+                            return v0
+                        """
                     )
                 }
                 it.classDef.methods.add(discardBufferBeforeSegmentMethod)
@@ -504,6 +516,34 @@ val rememberVideoQualityPatch = bytecodePatch {
                         invoke-virtual { v2, v0, v1 }, $sampleHolderDiscardBufferMethod
                         return-void
                         :clear_buffer
+                        nop
+                    """
+                )
+            }
+
+            // The segment that was playing when the quality was selected keeps the previous quality,
+            // and a Short plays it again when it loops, such as its first segment.
+            // It is cleared once it was played: the player then clears the video buffered
+            // before the playback time, as when the quality was selected.
+            MediaPushMediaSourceDiscardBufferFingerprint.let {
+                val bufferManagerField = it.instructionMatches[1].getFieldAccessed()
+
+                it.method.addInstructionsWithLabels(
+                    0,
+                    """
+                        invoke-static { }, $EXTENSION_CLASS->shouldClearPlayedVideoSegment()Z
+                        move-result v0
+                        if-eqz v0, :keep_buffer
+                        iget-object v0, p0, $bufferManagerField
+                        sget-object v1, $videoTrackTypeField
+                        invoke-virtual { v0, v1 }, $getMediaSegmentHolderMethod
+                        move-result-object v0
+                        check-cast v0, $SAMPLE_HOLDER_CLASS
+                        invoke-virtual { v0, p1, p2 }, $sampleHolderDiscardBufferMethod
+                        move-result v0
+                        if-eqz v0, :keep_buffer
+                        invoke-static { }, $EXTENSION_CLASS->onPlayedVideoSegmentCleared()V
+                        :keep_buffer
                         nop
                     """
                 )
