@@ -28,6 +28,15 @@ internal object AmbientModeFeatureFlagFingerprint : Fingerprint(
 )
 
 /**
+ * 21.12+ Server experiment of the new watch page that replaces ambient mode with a black background.
+ */
+internal object AmbientModeBlackBackgroundFeatureFlagFingerprint : Fingerprint(
+    filters = listOf(
+        literal(45767512L)
+    )
+)
+
+/**
  * CinematicContainerRenderer, the ambient mode proto of the /next response.
  * The literal is its extension field number.
  */
