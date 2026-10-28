@@ -394,6 +394,25 @@ internal fun getPlaybackStartParametersConstructorFingerprint(
     )
 ) {}
 
+/**
+ * The method that returns the initial video quality of the playback start parameters,
+ * used by the player each time it loads the video, such as when the app returns from the background.
+ */
+internal fun getPlaybackStartParametersInitialResolutionFingerprint(
+    initialResolutionField: FieldReference
+) = object : Fingerprint(
+    returnType = "Ljava/lang/Integer;",
+    parameters = listOf(),
+    filters = listOf(
+        fieldAccess(
+            opcode = Opcode.IGET_OBJECT,
+            reference = initialResolutionField
+        ),
+        methodCall(smali = "Lj\$/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;"),
+        checkCast("Ljava/lang/Integer;")
+    )
+) {}
+
 private object VideoQualityItemOnClickParentFingerprint : Fingerprint(
     returnType = "V",
     filters = listOf(

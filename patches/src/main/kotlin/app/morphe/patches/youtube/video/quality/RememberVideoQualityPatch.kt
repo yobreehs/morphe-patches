@@ -122,6 +122,23 @@ val rememberVideoQualityPatch = bytecodePatch {
             }
         }
 
+        // The player loads the video again with the playback start parameters it was started with,
+        // such as when the app returns from the background with background playback off,
+        // so the quality selected by the user for the video is used instead of the initial quality.
+        getPlaybackStartParametersInitialResolutionFingerprint(initialResolutionField).matchSingle().method.apply {
+            findInstructionIndicesReversedOrThrow(Opcode.RETURN_OBJECT).forEach { index ->
+                val register = getInstruction<OneRegisterInstruction>(index).registerA
+
+                addInstructionsAtControlFlowLabel(
+                    index,
+                    """
+                        invoke-static/range { v$register .. v$register }, $EXTENSION_CLASS->getPlaybackStartVideoQuality(Ljava/lang/Integer;)Ljava/lang/Integer;
+                        move-result-object v$register
+                    """
+                )
+            }
+        }
+
         // Turn off the YouTube automatic quality selection when the video starts,
         // so the initial video quality is used as a fixed quality.
         InitialVideoQualityFeatureFlagFingerprint.matchAll().forEach {

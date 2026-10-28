@@ -215,6 +215,24 @@ public class RememberVideoQualityPatch {
         return !videoId.isEmpty() && videoId.equals(userSelectedQualityVideoId);
     }
 
+    /**
+     * YouTube can load the current video again, such as after the user selects a quality
+     * that needs another codec, or when the app returns from the background.
+     * The video ID of the player is updated only once the video starts, so the selected
+     * quality is not used once the player response of another video is received,
+     * such as the next video of the autoplay.
+     * The Shorts player starts the next Short before its player response is received,
+     * so a quality selected in the Shorts quality menu is not used, otherwise the next Short
+     * would start with it. The Short it was selected for keeps it with the formats saved
+     * with the quality last selected (see {@link #useSelectedQualityFormats(boolean)}).
+     *
+     * @return If the quality selected by the user is used when the video loads again.
+     */
+    private static boolean useUserSelectedQualityOnReload() {
+        return isQualitySelectedByUser() && !userSelectedQualityIsShorts
+                && VideoInformation.getPlayerResponseVideoId().equals(VideoInformation.getVideoId());
+    }
+
     public static boolean shouldRememberVideoQuality() {
         BooleanSetting preference = ShortsPlayerState.isOpen()
                 ? Settings.REMEMBER_SHORTS_QUALITY_LAST_SELECTED
@@ -292,15 +310,7 @@ public class RememberVideoQualityPatch {
         // YouTube can reload the video after the user selects a quality, such as when
         // the selected quality needs another codec. The reload has no initial quality,
         // or a copy of the default quality used when the video started.
-        // The video ID of the player is updated only once the video starts, so the selected
-        // quality is not used once the player response of another video is received,
-        // such as the next video of the autoplay.
-        // The Shorts player starts the next Short before its player response is received,
-        // so a quality selected in the Shorts quality menu is not used, otherwise the next Short
-        // would start with it. The Short it was selected for keeps it with the formats saved
-        // with the quality last selected (see useSelectedQualityFormats).
-        if (isQualitySelectedByUser() && !userSelectedQualityIsShorts
-                && VideoInformation.getPlayerResponseVideoId().equals(VideoInformation.getVideoId())) {
+        if (useUserSelectedQualityOnReload()) {
             final int selectedResolution = userSelectedQualityResolution;
             Logger.printDebug(() -> "initialVideoQuality selected by the user: " + selectedResolution);
             // With 'Auto' selected, YouTube chooses the quality.
@@ -315,6 +325,30 @@ public class RememberVideoQualityPatch {
             return Optional.of(preferredQuality);
         }
         return optional;
+    }
+
+    /**
+     * Injection point.
+     * <p>
+     * The player loads the video again with the playback start parameters it was started with,
+     * such as when the app returns from the background with background playback off.
+     * Their initial video quality is the one used when the video started
+     * (see {@link #getInitialVideoQuality(Optional)}), so the quality selected by the user
+     * for the video is used instead. Nothing is changed in the Shorts player.
+     *
+     * @param resolution Initial video quality of the playback start parameters, or null.
+     * @return The initial video quality to use, or null if YouTube chooses the quality.
+     */
+    @Nullable
+    public static Integer getPlaybackStartVideoQuality(@Nullable Integer resolution) {
+        if (ShortsPlayerState.isOpen() || !useUserSelectedQualityOnReload()) {
+            return resolution;
+        }
+
+        final int selectedResolution = userSelectedQualityResolution;
+        Logger.printDebug(() -> "Playback start video quality selected by the user: " + selectedResolution);
+        // With 'Auto' selected, YouTube chooses the quality.
+        return selectedResolution > 0 ? selectedResolution : null;
     }
 
     /**
