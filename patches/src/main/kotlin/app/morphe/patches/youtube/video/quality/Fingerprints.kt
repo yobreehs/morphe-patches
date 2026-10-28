@@ -245,6 +245,52 @@ internal object BufferManagerDiscardBufferAfterSegmentFingerprint : Fingerprint(
     )
 )
 
+internal const val SAMPLE_HOLDER_CLASS =
+    "Lcom/google/android/libraries/youtube/media/player/exo2/platypus/mediapush/SampleHolder;"
+
+/**
+ * The method of the buffer manager that returns the buffered media of a track.
+ */
+internal object BufferManagerGetMediaSegmentHolderFingerprint : Fingerprint(
+    definingClass = BUFFER_MANAGER_CLASS,
+    accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.FINAL),
+    returnType = "Lcom/google/android/libraries/youtube/media/player/exo2/platypus/mediapush/MediaSegmentHolder;",
+    parameters = listOf("L")
+)
+
+/**
+ * 21.17 - 21.42
+ *
+ * The method of the buffered media of an audio or video track that clears
+ * the media before the segment that contains a time.
+ */
+internal object SampleHolderDiscardBufferBeforeSegmentLegacyFingerprint : Fingerprint(
+    definingClass = SAMPLE_HOLDER_CLASS,
+    returnType = "V",
+    parameters = listOf("J"),
+    filters = listOf(
+        methodCall(smali = "Ljava/lang/Math;->min(JJ)J"),
+        methodCall(smali = "Ljava/util/List;->subList(II)Ljava/util/List;"),
+        methodCall(smali = "Ljava/util/List;->clear()V")
+    )
+)
+
+/**
+ * 21.43+
+ *
+ * Same as [SampleHolderDiscardBufferBeforeSegmentLegacyFingerprint],
+ * with the parameters: time, playback time and size of the media kept before the playback time.
+ */
+internal object SampleHolderDiscardBufferBeforeSegmentFingerprint : Fingerprint(
+    definingClass = SAMPLE_HOLDER_CLASS,
+    returnType = "V",
+    parameters = listOf("J", "J", "J"),
+    filters = listOf(
+        methodCall(definingClass = "this", returnType = "Z", parameters = listOf("J", "J", "J")),
+        methodCall(definingClass = "this", returnType = "V", parameters = listOf("J", "J", "J"))
+    )
+)
+
 internal fun getCurrentVideoFormatConstructorFingerprint(
     videoQualityArray: String
 ) = object : Fingerprint(

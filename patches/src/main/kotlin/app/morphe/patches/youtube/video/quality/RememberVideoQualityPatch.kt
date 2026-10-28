@@ -29,6 +29,7 @@ import app.morphe.patches.shared.misc.settings.preference.SwitchPreference
 import app.morphe.patches.youtube.misc.extension.sharedExtensionPatch
 import app.morphe.patches.youtube.misc.playertype.playerTypeHookPatch
 import app.morphe.patches.youtube.misc.playservice.is_21_17_or_greater
+import app.morphe.patches.youtube.misc.playservice.is_21_43_or_greater
 import app.morphe.patches.youtube.misc.playservice.versionCheckPatch
 import app.morphe.patches.youtube.misc.settings.settingsPatch
 import app.morphe.patches.youtube.shared.VideoQualityChangedFingerprint
@@ -431,10 +432,54 @@ val rememberVideoQualityPatch = bytecodePatch {
 
             // The player buffers the video again from the time the video started, such as the
             // start of a Short, so the video plays from there faster until it reaches the audio.
-            // The buffered video is cleared only after the segment that is playing.
+            // The buffered video is cleared after and before the segment that is playing.
             val videoTrackTypeField = PlaybackControllerSetVideoFormatsFingerprint.instructionMatches
                 .last().getFieldAccessed()
             val discardBufferAfterSegmentMethod = BufferManagerDiscardBufferAfterSegmentFingerprint.method
+            val getMediaSegmentHolderMethod = BufferManagerGetMediaSegmentHolderFingerprint.method
+
+            // The video buffered before the segment that is playing is cleared too,
+            // otherwise a Short plays the previous quality from its start when it loops.
+            // The method of the player is not public before 21.26, so a public method calls it.
+            val sampleHolderDiscardBufferMethod = if (is_21_43_or_greater) {
+                SampleHolderDiscardBufferBeforeSegmentFingerprint
+            } else {
+                SampleHolderDiscardBufferBeforeSegmentLegacyFingerprint
+            }.let {
+                val discardBufferBeforeSegmentMethod = ImmutableMethod(
+                    it.classDef.type,
+                    "patch_discardBufferBeforeSegment",
+                    listOf(ImmutableMethodParameter("J", null, null)),
+                    "V",
+                    AccessFlags.PUBLIC.value or AccessFlags.FINAL.value,
+                    null,
+                    null,
+                    MutableMethodImplementation(10),
+                ).toMutable().apply {
+                    addInstructions(
+                        0,
+                        if (is_21_43_or_greater) {
+                            // No media is kept before the playback time.
+                            """
+                                move-object v0, p0
+                                move-wide v1, p1
+                                move-wide v3, p1
+                                const-wide/16 v5, 0x0
+                                invoke-virtual/range { v0 .. v6 }, ${it.method}
+                                return-void
+                            """
+                        } else {
+                            """
+                                invoke-virtual { p0, p1, p2 }, ${it.method}
+                                return-void
+                            """
+                        }
+                    )
+                }
+                it.classDef.methods.add(discardBufferBeforeSegmentMethod)
+
+                discardBufferBeforeSegmentMethod
+            }
 
             PlaybackControllerClearBufferFingerprint.let {
                 val stopRequestsMethod = it.instructionMatches[0].getMethodCalled()
@@ -453,6 +498,10 @@ val rememberVideoQualityPatch = bytecodePatch {
                         invoke-virtual { p0 }, $stopRequestsMethod
                         iget-object v2, p0, $bufferManagerField
                         invoke-virtual { v2, p1, v0, v1 }, $discardBufferAfterSegmentMethod
+                        invoke-virtual { v2, p1 }, $getMediaSegmentHolderMethod
+                        move-result-object v2
+                        check-cast v2, $SAMPLE_HOLDER_CLASS
+                        invoke-virtual { v2, v0, v1 }, $sampleHolderDiscardBufferMethod
                         return-void
                         :clear_buffer
                         nop

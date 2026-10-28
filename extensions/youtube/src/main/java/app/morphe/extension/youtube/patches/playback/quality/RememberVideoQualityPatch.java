@@ -614,9 +614,11 @@ public class RememberVideoQualityPatch {
      * from that time and is played faster until it reaches the audio.
      * The buffered video is cleared only after the segment that is playing, as YouTube does
      * when the audio track changes, so the new quality is played after it without a gap.
+     * The video buffered before that segment is cleared too, so a Short that loops
+     * does not play the previous quality from its start.
      *
-     * @return The playback time in microseconds after which the buffered video is cleared,
-     *         or -1 to clear the whole buffered video.
+     * @return The playback time in microseconds after and before whose segment the buffered video
+     *         is cleared, or -1 to clear the whole buffered video.
      */
     public static long getClearVideoBufferTime() {
         final long timeUs = clearVideoBufferTimeUs;
