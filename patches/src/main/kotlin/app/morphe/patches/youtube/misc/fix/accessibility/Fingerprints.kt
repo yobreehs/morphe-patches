@@ -11,6 +11,22 @@ import com.android.tools.smali.dexlib2.Opcode
 private const val BOTTOM_UI_CONTAINER =
     "Lcom/google/android/apps/youtube/app/common/ui/bottomui/BottomUiContainer;"
 
+internal object TouchDelegateConstructorFingerprint : Fingerprint(
+    superclass = "Landroid/view/TouchDelegate;",
+    name = "<init>",
+    parameters = listOf("Lcom/facebook/litho/ComponentHost;")
+)
+
+/**
+ * 21.30+
+ */
+internal object TouchExplorationHoverEventFingerprint : Fingerprint(
+    classFingerprint = TouchDelegateConstructorFingerprint,
+    name = "onTouchExplorationHoverEvent",
+    returnType = "Z",
+    parameters = listOf("Landroid/view/MotionEvent;")
+)
+
 internal object BottomUiKeyboardVisibilityFingerprint : Fingerprint(
     returnType = "V",
     parameters = listOf("L"),
