@@ -209,6 +209,41 @@ internal object AsyncMediaFetchControllerSetVideoFormatsFingerprint : Fingerprin
     )
 )
 
+internal const val BUFFER_MANAGER_CLASS =
+    "Lcom/google/android/libraries/youtube/media/player/exo2/platypus/mediapush/BufferManagerImpl;"
+
+/**
+ * The method of the player that clears the buffered media of a track, and buffers it again
+ * from the time the video started or was last seeked to.
+ */
+internal object PlaybackControllerClearBufferFingerprint : Fingerprint(
+    definingClass = "Lcom/google/android/libraries/youtube/media/player/exo2/platypus/PlaybackControllerWrapper;",
+    returnType = "V",
+    filters = listOf(
+        // Stops the media requests.
+        methodCall(definingClass = "this", returnType = "V", parameters = listOf()),
+        fieldAccess(
+            opcode = Opcode.IGET_OBJECT,
+            definingClass = "this",
+            type = BUFFER_MANAGER_CLASS
+        ),
+        string("setStartTimeUs with disposed BufferManager")
+    )
+)
+
+/**
+ * The method of the buffer manager that clears the buffered media of a track
+ * after the segment that contains a time.
+ */
+internal object BufferManagerDiscardBufferAfterSegmentFingerprint : Fingerprint(
+    definingClass = BUFFER_MANAGER_CLASS,
+    returnType = "V",
+    parameters = listOf("L", "J"),
+    filters = listOf(
+        string("discardBufferAfterCurrentSegment with disposed BufferManager")
+    )
+)
+
 internal fun getCurrentVideoFormatConstructorFingerprint(
     videoQualityArray: String
 ) = object : Fingerprint(

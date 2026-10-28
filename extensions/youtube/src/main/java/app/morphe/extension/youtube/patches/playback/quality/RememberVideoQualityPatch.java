@@ -12,16 +12,24 @@ package app.morphe.extension.youtube.patches.playback.quality;
 
 import static app.morphe.extension.shared.StringRef.str;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.protobuf.MessageLite;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import app.morphe.extension.shared.Logger;
 import app.morphe.extension.shared.Utils;
 import app.morphe.extension.shared.settings.BooleanSetting;
 import app.morphe.extension.shared.settings.IntegerSetting;
+import app.morphe.extension.youtube.patches.VideoFormat.FormatInterface;
 import app.morphe.extension.youtube.patches.VideoInformation;
 import app.morphe.extension.youtube.innertube.ClientAbrStateOuterClass.ClientAbrState;
 import app.morphe.extension.youtube.patches.VideoInformation.*;
@@ -61,16 +69,142 @@ public class RememberVideoQualityPatch {
     private static volatile String clearVideoBufferVideoId = "";
 
     /**
+     * Playback time in microseconds when the user selected the quality, after which
+     * the buffered video is cleared, or -1.
+     */
+    private static volatile long clearVideoBufferTimeUs = -1;
+
+    /**
      * The quality selected in the Shorts quality menu, until the menu sets it.
      */
     @Nullable
     private static volatile VideoQualityInterface shortsMenuSelectedQuality;
+
+    /**
+     * Number of videos whose video formats are kept. The next Shorts are loaded before they play.
+     */
+    private static final int MAX_VIDEO_FORMAT_CODECS = 20;
+
+    /**
+     * The codec of each video format by format ID (itag), by video ID.
+     */
+    private static final Map<String, Map<Integer, String>> videoFormatCodecs = Collections.synchronizedMap(
+            new LinkedHashMap<>(MAX_VIDEO_FORMAT_CODECS, 0.75f, true) {
+                @Override
+                protected boolean removeEldestEntry(Map.Entry<String, Map<Integer, String>> eldest) {
+                    return size() > MAX_VIDEO_FORMAT_CODECS;
+                }
+            });
+
+    /**
+     * Format ID (itag) of the video format playing.
+     */
+    private static volatile int currentVideoFormatId;
 
     private static void setUserSelectedQuality(int resolution, boolean isShorts) {
         userSelectedQualityResolution = resolution;
         userSelectedQualityIsShorts = isShorts;
         userSelectedQualityVideoId = VideoInformation.getVideoId();
         clearVideoBufferVideoId = userSelectedQualityVideoId;
+        // The playback time is read on the main thread,
+        // as the player may set the video formats on another thread.
+        final long videoTime = VideoInformation.getVideoTime();
+        clearVideoBufferTimeUs = videoTime >= 0 ? videoTime * 1000 : -1;
+    }
+
+    /**
+     * The quality menu can have qualities the player cannot play, such as a 144p quality
+     * that has only AVC formats while a VP9 format plays. The player then has no video to play
+     * and reloads the video. A quality without formats is found by the player by its resolution.
+     *
+     * @return If the quality has a format with the codec of the video format playing,
+     *         or if it is not known.
+     */
+    private static boolean isQualityPlayable(VideoQualityInterface quality) {
+        final Map<Integer, String> codecs = videoFormatCodecs.get(VideoInformation.getVideoId());
+        if (codecs == null) {
+            return true;
+        }
+        final String currentCodec = codecs.get(currentVideoFormatId);
+        final Collection<?> formatIds = quality.patch_getFormatIds();
+        if (currentCodec == null || formatIds == null || formatIds.isEmpty()) {
+            return true;
+        }
+        for (Object formatId : formatIds) {
+            if (currentCodec.equals(codecs.get(formatId))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * @return The quality selected, or if the player cannot play it, the closest quality
+     *         the player can play between the quality selected and the quality playing.
+     */
+    public static VideoQualityInterface getPlayableQuality(VideoQualityInterface selectedQuality) {
+        try {
+            final VideoQualityInterface[] qualities = VideoInformation.getCurrentQualities();
+            final VideoQualityInterface currentQuality = VideoInformation.getCurrentQuality();
+            final int selectedResolution = selectedQuality.patch_getResolution();
+            if (qualities == null || currentQuality == null || selectedResolution <= 0
+                    || isQualityPlayable(selectedQuality)) {
+                return selectedQuality;
+            }
+
+            final boolean selectedHigherQuality = selectedResolution > currentQuality.patch_getResolution();
+            VideoQualityInterface playableQuality = selectedQuality;
+            // The qualities are ordered from largest to smallest.
+            for (VideoQualityInterface quality : qualities) {
+                final int resolution = quality.patch_getResolution();
+                if (resolution <= 0 || !isQualityPlayable(quality)) {
+                    continue;
+                }
+                if (selectedHigherQuality
+                        ? playableQuality == selectedQuality && resolution < selectedResolution
+                        : resolution > selectedResolution) {
+                    playableQuality = quality;
+                }
+            }
+
+            final VideoQualityInterface replacement = playableQuality;
+            Logger.printDebug(() -> "Selected quality " + selectedQuality
+                    + " cannot be played, using: " + replacement);
+            return playableQuality;
+        } catch (Exception ex) {
+            Logger.printException(() -> "getPlayableQuality failure", ex);
+            return selectedQuality;
+        }
+    }
+
+    /**
+     * Injection point.
+     */
+    public static List<FormatInterface> setVideoFormats(@NonNull String videoId, @NonNull List<FormatInterface> adaptiveFormats) {
+        try {
+            final Map<Integer, String> codecs = new HashMap<>();
+            for (FormatInterface format : adaptiveFormats) {
+                final String mimeType = format.patch_getMimeType();
+                if (mimeType != null && mimeType.startsWith("video")) {
+                    // The codec without its profile, such as 'video/mp4; codecs="avc1' for 'video/mp4; codecs="avc1.4d401e"'.
+                    final int profileIndex = mimeType.indexOf('.');
+                    codecs.put(format.patch_getItag(), profileIndex > 0 ? mimeType.substring(0, profileIndex) : mimeType);
+                }
+            }
+            videoFormatCodecs.put(videoId, codecs);
+        } catch (Exception ex) {
+            Logger.printException(() -> "setVideoFormats failure", ex);
+        }
+        return adaptiveFormats;
+    }
+
+    /**
+     * Injection point.
+     *
+     * @param formatId Format ID (itag) of the video format playing.
+     */
+    public static void setCurrentVideoFormat(int formatId) {
+        currentVideoFormatId = formatId;
     }
 
     /**
@@ -141,6 +275,7 @@ public class RememberVideoQualityPatch {
             // the video starts, so the quality selected for the current video
             // would otherwise be used when the other video starts.
             userSelectedQualityVideoId = "";
+            clearVideoBufferTimeUs = -1;
         }
         return false;
     }
@@ -298,8 +433,9 @@ public class RememberVideoQualityPatch {
     /**
      * Injection point.
      * @param userSelectedQualityIndex Element index of {@link VideoInformation#getCurrentQualities()}.
+     * @return The element index of the quality to set (see {@link #getPlayableQuality(VideoQualityInterface)}).
      */
-    public static void userChangedShortsQuality(int userSelectedQualityIndex) {
+    public static int userChangedShortsQuality(int userSelectedQualityIndex) {
         try {
             VideoQualityInterface[] currentQualities = VideoInformation.getCurrentQualities();
             if (currentQualities == null) {
@@ -307,9 +443,16 @@ public class RememberVideoQualityPatch {
                 // The resolution is not known, so a reload uses the quality saved by YouTube.
                 setUserSelectedQuality(VideoInformation.AUTOMATIC_VIDEO_QUALITY_VALUE, true);
                 clearShortsMenuSelectedQuality();
-                return;
+                return userSelectedQualityIndex;
             }
-            VideoQualityInterface quality = currentQualities[userSelectedQualityIndex];
+            final VideoQualityInterface selectedQuality = currentQualities[userSelectedQualityIndex];
+            VideoQualityInterface quality = getPlayableQuality(selectedQuality);
+            final int qualityIndex = quality == selectedQuality
+                    ? userSelectedQualityIndex
+                    : Arrays.asList(currentQualities).indexOf(quality);
+            if (qualityIndex < 0) {
+                quality = selectedQuality;
+            }
             final int resolution = quality.patch_getResolution();
             setUserSelectedQuality(resolution, true);
             if (resolution == VideoInformation.AUTOMATIC_VIDEO_QUALITY_VALUE) {
@@ -322,8 +465,10 @@ public class RememberVideoQualityPatch {
             if (shouldRememberVideoQuality()) {
                 saveDefaultQuality(resolution);
             }
+            return qualityIndex < 0 ? userSelectedQualityIndex : qualityIndex;
         } catch (Exception ex) {
             Logger.printException(() -> "userChangedShortsQuality failure", ex);
+            return userSelectedQualityIndex;
         }
     }
 
@@ -367,10 +512,13 @@ public class RememberVideoQualityPatch {
 
     /**
      * Injection point.  Regular videos.
-     * @param quality Quality selected by the user.
+     * @param selectedQuality Quality selected by the user.
+     * @return The quality to set (see {@link #getPlayableQuality(VideoQualityInterface)}).
      */
-    public static void userChangedQuality(VideoQualityInterface quality) {
+    public static VideoQualityInterface userChangedQuality(VideoQualityInterface selectedQuality) {
+        final VideoQualityInterface quality = getPlayableQuality(selectedQuality);
         userChangedQuality(quality.patch_getResolution());
+        return quality;
     }
 
     /**
@@ -457,6 +605,28 @@ public class RememberVideoQualityPatch {
 
         clearVideoBufferVideoId = "";
         // Not cleared if another video started before the player set the selected quality.
-        return original || videoId.equals(VideoInformation.getVideoId());
+        if (original || clearVideoBufferTimeUs < 0 || !videoId.equals(VideoInformation.getVideoId())) {
+            clearVideoBufferTimeUs = -1;
+            return original;
+        }
+        return true;
+    }
+
+    /**
+     * Injection point.
+     * <p>
+     * The player clears the whole buffered video and buffers it again from the time the video
+     * started or was last seeked to, such as the start of a Short. The video then plays
+     * from that time and is played faster until it reaches the audio.
+     * The buffered video is cleared only after the segment that is playing, as YouTube does
+     * when the audio track changes, so the new quality is played after it without a gap.
+     *
+     * @return The playback time in microseconds after which the buffered video is cleared,
+     *         or -1 to clear the whole buffered video.
+     */
+    public static long getClearVideoBufferTime() {
+        final long timeUs = clearVideoBufferTimeUs;
+        clearVideoBufferTimeUs = -1;
+        return timeUs;
     }
 }

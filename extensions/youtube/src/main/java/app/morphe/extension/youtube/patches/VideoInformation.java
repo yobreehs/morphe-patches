@@ -17,6 +17,7 @@ import androidx.annotation.Nullable;
 
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -71,6 +72,10 @@ public final class VideoInformation {
         // Methods are added during patching.
         String patch_getQualityName();
         int patch_getResolution();
+        /**
+         * @return The IDs (itags) of the formats of the quality, empty if the quality has no formats.
+         */
+        Collection<?> patch_getFormatIds();
     }
 
     /**
