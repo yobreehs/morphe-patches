@@ -525,28 +525,38 @@ val rememberVideoQualityPatch = bytecodePatch {
             // and a Short plays it again when it loops, such as its first segment.
             // It is cleared once it was played: the player then clears the video buffered
             // before the playback time, as when the quality was selected.
+            // The code is added after the checks of live streams, so the buffered video is not
+            // cleared with the playback times the player does not clear the buffered media with.
             MediaPushMediaSourceDiscardBufferFingerprint.let {
-                val bufferManagerField = it.instructionMatches[1].getFieldAccessed()
+                val bufferManagerMatch = it.instructionMatches[1]
+                val bufferManagerField = bufferManagerMatch.getFieldAccessed()
+                val insertIndex = bufferManagerMatch.index
 
-                it.method.addInstructionsWithLabels(
-                    0,
-                    """
-                        invoke-static { }, $EXTENSION_CLASS->shouldClearPlayedVideoSegment()Z
-                        move-result v0
-                        if-eqz v0, :keep_buffer
-                        iget-object v0, p0, $bufferManagerField
-                        sget-object v1, $videoTrackTypeField
-                        invoke-virtual { v0, v1 }, $getMediaSegmentHolderMethod
-                        move-result-object v0
-                        check-cast v0, $SAMPLE_HOLDER_CLASS
-                        invoke-virtual { v0, p1, p2 }, $sampleHolderDiscardBufferMethod
-                        move-result v0
-                        if-eqz v0, :keep_buffer
-                        invoke-static { }, $EXTENSION_CLASS->onPlayedVideoSegmentCleared()V
-                        :keep_buffer
-                        nop
-                    """
-                )
+                it.method.apply {
+                    val registerProvider = getFreeRegisterProvider(insertIndex, 2)
+                    val sampleHolderRegister = registerProvider.getFreeRegister4Bit()
+                    val trackTypeRegister = registerProvider.getFreeRegister4Bit()
+
+                    addInstructionsAtControlFlowLabel(
+                        insertIndex,
+                        """
+                            invoke-static { }, $EXTENSION_CLASS->shouldClearPlayedVideoSegment()Z
+                            move-result v$sampleHolderRegister
+                            if-eqz v$sampleHolderRegister, :keep_buffer
+                            iget-object v$sampleHolderRegister, p0, $bufferManagerField
+                            sget-object v$trackTypeRegister, $videoTrackTypeField
+                            invoke-virtual { v$sampleHolderRegister, v$trackTypeRegister }, $getMediaSegmentHolderMethod
+                            move-result-object v$sampleHolderRegister
+                            check-cast v$sampleHolderRegister, $SAMPLE_HOLDER_CLASS
+                            invoke-virtual { v$sampleHolderRegister, p1, p2 }, $sampleHolderDiscardBufferMethod
+                            move-result v$sampleHolderRegister
+                            if-eqz v$sampleHolderRegister, :keep_buffer
+                            invoke-static { }, $EXTENSION_CLASS->onPlayedVideoSegmentCleared()V
+                            :keep_buffer
+                            nop
+                        """
+                    )
+                }
             }
         }
     }
