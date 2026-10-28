@@ -17,7 +17,6 @@ import app.morphe.patcher.literal
 import app.morphe.patcher.methodCall
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.util.getReference
-import app.morphe.patcher.util.smali.ExternalLabel
 import app.morphe.patches.shared.layout.branding.startupAnimationResourcePatch
 import app.morphe.patches.shared.misc.lottie.LOTTIE_ANIMATION_VIEW_CLASS_TYPE
 import app.morphe.patches.shared.misc.lottie.LottieAnimationViewSetAnimationIntFingerprint
@@ -194,23 +193,29 @@ val splashAnimationPatch = bytecodePatch {
                 "invoke-static { }, $EXTENSION_CLASS->onRiveFrameAvailable()V"
             )
 
+            SplashScreenOnStopFingerprint.method.addInstruction(
+                0,
+                "invoke-static { }, $EXTENSION_CLASS->onSplashScreenStop()V"
+            )
+
             // The Rive animation is loaded in the background, and a home feed that is
-            // shown quickly closes the animation before it has drawn anything. The animation
-            // is instead closed when it ends, or by the timeout of the app if it never does.
+            // shown quickly closes the animation before it has drawn anything. On the first
+            // start the animation is instead closed by the timeout of the app.
             val riveAnimationShownField = RiveSplashScreenViewFingerprint.instructionMatches[1]
                 .instruction.getReference<FieldReference>()!!
 
-            SplashScreenOnStartFingerprint.method.apply {
-                addInstructionsWithLabels(
-                    0,
-                    """
-                        iget-boolean v0, p0, $riveAnimationShownField
-                        if-eqz v0, :close_on_home_feed
-                        return-void
-                    """,
-                    ExternalLabel("close_on_home_feed", getInstruction(0))
-                )
-            }
+            SplashScreenOnStartFingerprint.method.addInstructionsWithLabels(
+                0,
+                """
+                    iget-boolean v0, p0, $riveAnimationShownField
+                    invoke-static { v0 }, $EXTENSION_CLASS->skipSplashScreenCloseOnHomeFeed(Z)Z
+                    move-result v0
+                    if-eqz v0, :close_on_home_feed
+                    return-void
+                    :close_on_home_feed
+                    nop
+                """
+            )
         }
 
         YouTubeActivityOnCreateFingerprint.method.apply {

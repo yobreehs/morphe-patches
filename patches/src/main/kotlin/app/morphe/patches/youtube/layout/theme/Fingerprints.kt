@@ -148,6 +148,12 @@ internal object SplashScreenOnStartFingerprint : Fingerprint(
     )
 )
 
+internal object SplashScreenOnStopFingerprint : Fingerprint(
+    classFingerprint = RiveSplashScreenViewFingerprint,
+    name = "onStop",
+    returnType = "V"
+)
+
 /**
  * Creates the source of a Rive file that is a raw resource,
  * with the key the app keeps the file in memory with.

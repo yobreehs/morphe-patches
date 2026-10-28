@@ -29,7 +29,6 @@ import android.view.ViewGroup;
 import android.widget.Spinner;
 
 import androidx.annotation.ColorInt;
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
@@ -190,6 +189,22 @@ public class ThemePatch extends BaseThemePatch {
     @Nullable
     private static volatile Runnable riveSplashScreenRemover;
 
+    /**
+     * How many frames the glow animation draws before the device is known to support it.
+     */
+    private static final int RIVE_SPLASH_SCREEN_SUPPORTED_FRAMES = 30;
+
+    /**
+     * Frames the glow animation still has to draw before the device is known to support it,
+     * or 0 if the animation is not starting.
+     */
+    private static volatile int riveSplashScreenFramesUntilSupported;
+
+    /**
+     * If the activity has not started since the glow animation was set up.
+     */
+    private static volatile boolean riveSplashScreenFirstStart;
+
     private static boolean riveSplashScreenCrashChecked;
 
     private static boolean isRiveSplashScreenEnabled() {
@@ -198,7 +213,7 @@ public class ThemePatch extends BaseThemePatch {
 
     /**
      * Some devices crash when drawing the glow animation, because the Rive renderer
-     * uses GPU features they do not have. If the app closed while the animation was shown,
+     * uses GPU features they do not have. If the app closed before the animation could draw,
      * the animation is turned off. Checked once when the app starts, before this launch
      * shows the animation.
      */
@@ -208,9 +223,9 @@ public class ThemePatch extends BaseThemePatch {
         }
         riveSplashScreenCrashChecked = true;
 
-        if (Settings.RIVE_SPLASH_SCREEN_SHOWING.get()) {
-            Logger.printInfo(() -> "App closed while the glow splash screen was shown, resetting splash screen style");
-            Settings.RIVE_SPLASH_SCREEN_SHOWING.save(false);
+        if (Settings.RIVE_SPLASH_SCREEN_STARTING.get()) {
+            Logger.printInfo(() -> "App closed before the glow splash screen could draw, resetting splash screen style");
+            Settings.RIVE_SPLASH_SCREEN_STARTING.save(false);
             SharedYouTubeSettings.SPLASH_SCREEN_STYLE.resetToDefault();
             Utils.showToastLong(str("morphe_splash_screen_style_glow_not_supported"));
         }
@@ -333,19 +348,10 @@ public class ThemePatch extends BaseThemePatch {
                 keepSplashScreenUntilRiveFrame(activity);
             }
 
-            // The app removes the view when the animation is closed.
-            Settings.RIVE_SPLASH_SCREEN_SHOWING.save(true);
-            animationView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
-                @Override
-                public void onViewAttachedToWindow(@NonNull View view) {
-                }
-
-                @Override
-                public void onViewDetachedFromWindow(@NonNull View view) {
-                    view.removeOnAttachStateChangeListener(this);
-                    Settings.RIVE_SPLASH_SCREEN_SHOWING.save(false);
-                }
-            });
+            // Cleared when the animation has drawn, or when the app is stopped.
+            Settings.RIVE_SPLASH_SCREEN_STARTING.save(true);
+            riveSplashScreenFramesUntilSupported = RIVE_SPLASH_SCREEN_SUPPORTED_FRAMES;
+            riveSplashScreenFirstStart = true;
         } catch (Exception ex) {
             Logger.printException(() -> "setRiveSplashScreenBackground failure", ex);
         }
@@ -384,9 +390,58 @@ public class ThemePatch extends BaseThemePatch {
      * Called for each frame the Rive renderer draws.
      */
     public static void onRiveFrameAvailable() {
-        if (riveSplashScreenRemover != null) {
-            Utils.runOnMainThreadNowOrLater(ThemePatch::removeRiveSplashScreen);
+        try {
+            if (riveSplashScreenRemover != null) {
+                Utils.runOnMainThreadNowOrLater(ThemePatch::removeRiveSplashScreen);
+            }
+
+            final int framesUntilSupported = riveSplashScreenFramesUntilSupported;
+            if (framesUntilSupported == 1) {
+                clearRiveSplashScreenStarting();
+            } else if (framesUntilSupported > 1) {
+                riveSplashScreenFramesUntilSupported = framesUntilSupported - 1;
+            }
+        } catch (Exception ex) {
+            Logger.printException(() -> "onRiveFrameAvailable failure", ex);
         }
+    }
+
+    /**
+     * Injection point.
+     * <p>
+     * The glow animation is not drawn while the app is stopped, so it cannot crash the app.
+     */
+    public static void onSplashScreenStop() {
+        try {
+            if (riveSplashScreenFramesUntilSupported > 0) {
+                clearRiveSplashScreenStarting();
+            }
+        } catch (Exception ex) {
+            Logger.printException(() -> "onSplashScreenStop failure", ex);
+        }
+    }
+
+    private static void clearRiveSplashScreenStarting() {
+        riveSplashScreenFramesUntilSupported = 0;
+        Settings.RIVE_SPLASH_SCREEN_STARTING.save(false);
+    }
+
+    /**
+     * Injection point.
+     * <p>
+     * A home feed that is shown quickly closes the glow animation before it has drawn
+     * anything, so on the first start the timeout of the app closes it instead.
+     * Stopping the app cancels the timeout, and then the home feed closes it as usual.
+     *
+     * @param riveAnimationShown If the app shows a Rive animation.
+     * @return If the home feed does not close the animation.
+     */
+    public static boolean skipSplashScreenCloseOnHomeFeed(boolean riveAnimationShown) {
+        if (riveAnimationShown && riveSplashScreenFirstStart) {
+            riveSplashScreenFirstStart = false;
+            return true;
+        }
+        return false;
     }
 
     private static Rect getWindowBounds(Activity activity) {
