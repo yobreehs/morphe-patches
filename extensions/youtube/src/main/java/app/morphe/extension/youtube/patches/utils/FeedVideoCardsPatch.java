@@ -138,6 +138,21 @@ public final class FeedVideoCardsPatch {
     private static final Map<String, String> textVideoIds = Utils
             .createSizeRestrictedMap(MAX_TEXTS, true);
 
+    /**
+     * Icon of the badge of a live video on its thumbnail, such as 'yt_outline_experimental_live_black_24'.
+     * The live badge text depends on the language, and the avatar of a channel that is live
+     * shows the same text on its other videos.
+     */
+    private static final Pattern LIVE_ICON_PATTERN = Pattern.compile("^yt_\\w+_live_\\w+$");
+
+    /** Number of live videos that are kept. */
+    private static final int MAX_LIVE_VIDEOS = 200;
+
+    /** Live videos, by video id. Oldest videos are removed first. */
+    @GuardedBy("itself")
+    private static final Map<String, Boolean> liveVideoIds = Utils
+            .createSizeRestrictedMap(MAX_LIVE_VIDEOS, true);
+
     /** Root host -> video of the card, of the cards laid out last. Used only on the main thread. */
     private static final Map<ComponentHost, String> cardVideoIds = Collections.synchronizedMap(
             new WeakHashMap<>());
@@ -173,6 +188,19 @@ public final class FeedVideoCardsPatch {
      */
     public static boolean isPlaylistCard(ComponentHost host) {
         return PLAYLIST.equals(cardVideoIds.get(host));
+    }
+
+    /**
+     * @return If the card is a live video, which has no like count yet and shows its number of viewers.
+     */
+    public static boolean isLiveCard(ComponentHost host) {
+        String videoId = cardVideoIds.get(host);
+        if (videoId == null) {
+            return false;
+        }
+        synchronized (liveVideoIds) {
+            return liveVideoIds.containsKey(videoId);
+        }
     }
 
     /**
@@ -312,24 +340,52 @@ public final class FeedVideoCardsPatch {
                 return bytes;
             }
 
-            synchronized (textVideoIds) {
-                for (ProtoNode node : textNodes) {
-                    String text = normalizeText(node.getText());
-                    if (!isVideoText(text)) {
-                        continue;
-                    }
-                    String previous = textVideoIds.get(text);
-                    if (previous == null) {
-                        textVideoIds.put(text, videoId);
-                    } else if (!previous.equals(videoId)) {
-                        textVideoIds.put(text, AMBIGUOUS);
-                    }
+            boolean live = false;
+            for (ProtoNode node : textNodes) {
+                if (LIVE_ICON_PATTERN.matcher(node.getText()).matches()) {
+                    live = true;
+                    break;
                 }
+            }
+            synchronized (liveVideoIds) {
+                if (live) {
+                    liveVideoIds.put(videoId, Boolean.TRUE);
+                } else {
+                    // The live stream ended.
+                    liveVideoIds.remove(videoId);
+                }
+            }
+
+            for (ProtoNode node : textNodes) {
+                addVideoText(videoId, node.getText());
             }
         } catch (Exception ex) {
             Logger.printException(() -> "onElementLoaded failure", ex);
         }
         return bytes;
+    }
+
+    /**
+     * Adds a text shown by the cards of a video. Also called for the titles that replace the title
+     * of a video on its cards, such as original titles and DeArrow titles, which the elements
+     * of the video do not include. Can be called on any thread.
+     */
+    public static void addVideoText(String videoId, @Nullable String text) {
+        if (!ENABLED || text == null) {
+            return;
+        }
+        String normalized = normalizeText(text);
+        if (!isVideoText(normalized)) {
+            return;
+        }
+        synchronized (textVideoIds) {
+            String previous = textVideoIds.get(normalized);
+            if (previous == null) {
+                textVideoIds.put(normalized, videoId);
+            } else if (!previous.equals(videoId)) {
+                textVideoIds.put(normalized, AMBIGUOUS);
+            }
+        }
     }
 
     public static boolean isVideoShaped(ComponentHost host) {
