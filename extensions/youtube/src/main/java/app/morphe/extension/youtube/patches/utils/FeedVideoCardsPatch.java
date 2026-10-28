@@ -115,6 +115,12 @@ public final class FeedVideoCardsPatch {
     private static final String AMBIGUOUS = "";
 
     /**
+     * Delimiter of the parts of the accessibility description of a video card,
+     * such as "Title - 12 minutes - Channel - 4.7M views - 2 days ago - play video".
+     */
+    private static final String DESCRIPTION_DELIMITER = " - ";
+
+    /**
      * Result for a card without a duration on its thumbnail, such as a mix or a playlist,
      * which shows the thumbnail of its first video. Nothing is drawn on these cards.
      * Elements of videos can include playlist ids too, such as the mix a music video
@@ -358,6 +364,9 @@ public final class FeedVideoCardsPatch {
 
             for (ProtoNode node : textNodes) {
                 addVideoText(videoId, node.getText());
+            }
+            if (!live) {
+                FeedViewCountPatch.onVideoElementLoaded(videoId, textNodes);
             }
         } catch (Exception ex) {
             Logger.printException(() -> "onElementLoaded failure", ex);
@@ -671,6 +680,35 @@ public final class FeedVideoCardsPatch {
         // The texts of a mix or a playlist, which are never shared with a video.
         // A single short text can belong to an element of another video that was not seen.
         return findBestMatch(scores);
+    }
+
+    /**
+     * Litho draws only the part of a card that is shown, so a card that enters from the bottom
+     * of the list shows its thumbnail before its texts, and its video is not known by its texts.
+     * The accessibility description of the card is set already, and starts with the title,
+     * such as "Title - 12 minutes - Channel - 4.7M views - 2 days ago - play video".
+     *
+     * @return The video of the card found by the start of its description, or null if not known.
+     */
+    @Nullable
+    public static String findVideoIdByDescription(ComponentHost root) {
+        CharSequence description = root.getContentDescription();
+        if (description == null) {
+            return null;
+        }
+        String text = description.toString();
+        synchronized (textVideoIds) {
+            // A title can contain the delimiter too, so the longest start of the description
+            // that is a text of a video is used.
+            for (int end = text.lastIndexOf(DESCRIPTION_DELIMITER); end > 0;
+                 end = text.lastIndexOf(DESCRIPTION_DELIMITER, end - 1)) {
+                String videoId = textVideoIds.get(normalizeText(text.substring(0, end)));
+                if (videoId != null) {
+                    return videoId.equals(AMBIGUOUS) ? null : videoId;
+                }
+            }
+        }
+        return null;
     }
 
     /**
