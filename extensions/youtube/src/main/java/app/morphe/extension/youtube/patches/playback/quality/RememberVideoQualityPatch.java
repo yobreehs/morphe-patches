@@ -57,7 +57,7 @@ public class RememberVideoQualityPatch {
     private static volatile int userSelectedQualityResolution = VideoInformation.AUTOMATIC_VIDEO_QUALITY_VALUE;
 
     /**
-     * If the quality selected by the user was selected in the Shorts quality menu.
+     * If the quality selected by the user was selected in the Shorts player.
      */
     private static volatile boolean userSelectedQualityIsShorts;
 
@@ -426,6 +426,9 @@ public class RememberVideoQualityPatch {
 
     /**
      * Injection point.
+     * <p>
+     * The quality menu of Shorts is also the quality menu of regular videos.
+     *
      * @param userSelectedQualityIndex Element index of {@link VideoInformation#getCurrentQualities()}.
      * @return The element index of the quality to set (see {@link #getPlayableQuality(VideoQualityInterface)}).
      */
@@ -435,7 +438,7 @@ public class RememberVideoQualityPatch {
             if (currentQualities == null) {
                 Logger.printDebug(() -> "Cannot save default quality, qualities is null");
                 // The resolution is not known, so a reload uses the quality saved by YouTube.
-                setUserSelectedQuality(VideoInformation.AUTOMATIC_VIDEO_QUALITY_VALUE, true);
+                setUserSelectedQuality(VideoInformation.AUTOMATIC_VIDEO_QUALITY_VALUE, ShortsPlayerState.isOpen());
                 clearShortsMenuSelectedQuality();
                 return userSelectedQualityIndex;
             }
@@ -448,7 +451,7 @@ public class RememberVideoQualityPatch {
                 quality = selectedQuality;
             }
             final int resolution = quality.patch_getResolution();
-            setUserSelectedQuality(resolution, true);
+            setUserSelectedQuality(resolution, ShortsPlayerState.isOpen());
             if (resolution == VideoInformation.AUTOMATIC_VIDEO_QUALITY_VALUE) {
                 // 'Auto' has no formats, so the menu sets it by its resolution.
                 clearShortsMenuSelectedQuality();
