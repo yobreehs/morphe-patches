@@ -17,11 +17,11 @@ import app.morphe.patcher.patch.PatchException
 import app.morphe.patcher.util.getReference
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod.Companion.toMutable
 import app.morphe.patcher.util.registersUsed
+import app.morphe.patches.shared.misc.fix.proto.parseByteArrayWithRegistryMethodRef
 import app.morphe.patches.youtube.layout.buttons.navigation.PivotBarRendererFingerprint
 import app.morphe.patches.youtube.layout.buttons.navigation.PivotBarRendererListFingerprint
 import app.morphe.patches.youtube.misc.backgesture.YouTubeMainActivityOnBackPressedFingerprint
 import app.morphe.util.findInstructionIndicesReversedOrThrow
-import app.morphe.util.indexOfFirstInstructionOrThrow
 import app.morphe.util.indexOfFirstInstructionReversedOrThrow
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.builder.MutableMethodImplementation
@@ -29,7 +29,6 @@ import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.RegisterRangeInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
-import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 import com.android.tools.smali.dexlib2.immutable.ImmutableMethod
 import com.android.tools.smali.dexlib2.immutable.ImmutableMethodParameter
 
@@ -38,11 +37,7 @@ private const val OUR_NAV = "${SERIES_TRACKER_EXTENSION_PREFIX}HistoryNavigation
 internal fun BytecodePatchContext.wireHistory() {
     // Build the Series navigation button from the same renderer factory YouTube uses.
     val factory = PivotBarRendererFingerprint.method
-    val parseIndex = factory.indexOfFirstInstructionOrThrow(
-        methodCall(name = "parseFrom", parameters = listOf("L", "[B"))
-    )
-    val parse = factory.getInstruction(parseIndex).getReference<MethodReference>()!!
-    val registeredParse = RegisteredParseFingerprint(parse).method
+    val registeredParse = parseByteArrayWithRegistryMethodRef.get()!!
     val registry = GeneratedRegistryFingerprint.method
     val wrapperType = factory.parameterTypes.single().toString()
     val default = classDefBy(wrapperType).fields.single {

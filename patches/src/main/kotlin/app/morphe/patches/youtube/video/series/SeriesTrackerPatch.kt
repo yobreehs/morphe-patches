@@ -13,6 +13,7 @@ import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.resourcePatch
 import app.morphe.patcher.util.proxy.mutableTypes.MutableMethod.Companion.toMutable
+import app.morphe.patches.shared.misc.fix.proto.fixProtoLibraryPatch
 import app.morphe.patches.shared.misc.settings.preference.NonInteractivePreference
 import app.morphe.patches.shared.misc.settings.preference.PreferenceScreenPreference
 import app.morphe.patches.shared.misc.settings.preference.PreferenceScreenPreference.Sorting
@@ -80,6 +81,7 @@ val seriesTrackerPatch = bytecodePatch(
         sharedExtensionPatch,
         settingsPatch,
         versionCheckPatch,
+        fixProtoLibraryPatch,
         videoInformationPatch,
         navigationBarHookPatch,
         seriesTrackerResourcesPatch,
