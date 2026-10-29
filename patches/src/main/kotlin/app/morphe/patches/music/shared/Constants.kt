@@ -37,6 +37,10 @@ internal object Constants {
                 minSdk = 26
             ),
             AppTarget(
+                version = "9.20.53",
+                minSdk = 26
+            ),
+            AppTarget(
                 version = "9.15.51",
                 minSdk = 26
             )
