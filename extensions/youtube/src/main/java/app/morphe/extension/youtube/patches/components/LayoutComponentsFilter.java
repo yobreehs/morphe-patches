@@ -46,8 +46,10 @@ import app.morphe.extension.youtube.patches.FeedViewCountPatch;
 import app.morphe.extension.youtube.patches.VersionCheckPatch;
 import app.morphe.extension.youtube.patches.utils.ProtoNode;
 import app.morphe.extension.youtube.settings.Settings;
+import app.morphe.extension.youtube.shared.EngagementPanel;
 import app.morphe.extension.youtube.shared.NavigationBar;
 import app.morphe.extension.youtube.shared.NavigationBar.NavigationButton;
+import app.morphe.extension.youtube.shared.PlayerType;
 
 @SuppressWarnings("unused")
 public final class LayoutComponentsFilter extends Filter {
@@ -63,6 +65,14 @@ public final class LayoutComponentsFilter extends Filter {
             null,
             "cell_description_body",
             "channel_profile"
+    );
+
+    /**
+     * The comments panel of videos. Newer app versions use the first id.
+     */
+    private static final List<String> COMMENTS_PANEL_IDS = List.of(
+            "comment-item-section",
+            "engagement-panel-comments-section"
     );
 
     private static final List<String> channelTabFilterStrings = Utils.getFilterStrings(Settings.HIDE_CHANNEL_TAB_FILTER_STRINGS);
@@ -597,7 +607,11 @@ public final class LayoutComponentsFilter extends Filter {
             // prevents any posts from loading (the page shows a loading spinner forever).
             // Only hide the posts when no back button is visible (home and subscription feeds).
             // https://github.com/MorpheApp/morphe-patches/issues/4101
-            if (NavigationBar.isBackButtonVisible()) {
+            // The comments of the watch page cover the page below them, whose back button
+            // stays visible when the video is opened from a page such as a playlist.
+            final boolean isCommentsPanel = PlayerType.getCurrent().isMaximizedOrFullscreen()
+                    && COMMENTS_PANEL_IDS.contains(EngagementPanel.getLastOpenedPanelId());
+            if (NavigationBar.isBackButtonVisible() && !isCommentsPanel) {
                 return false;
             }
 
