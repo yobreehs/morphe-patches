@@ -39,10 +39,12 @@ import app.morphe.patches.youtube.video.format.hookAdaptiveFormat
 import app.morphe.patches.youtube.video.format.videoFormatPatch
 import app.morphe.patches.youtube.video.information.EXTENSION_VIDEO_QUALITY_INTERFACE
 import app.morphe.patches.youtube.video.information.EXTENSION_VIDEO_QUALITY_MENU_INTERFACE
+import app.morphe.patches.youtube.video.information.PlaybackStartDescriptorToStringFingerprint
 import app.morphe.patches.youtube.video.information.SetVideoQualityFingerprint
 import app.morphe.patches.youtube.video.information.VideoQualityFingerprint
 import app.morphe.patches.youtube.video.information.videoInformationPatch
 import app.morphe.util.addInstructionsAtControlFlowLabel
+import app.morphe.util.cloneMutable
 import app.morphe.util.findFieldFromToString
 import app.morphe.util.findInstructionIndicesReversedOrThrow
 import app.morphe.util.findMethodFromToString
@@ -125,18 +127,70 @@ val rememberVideoQualityPatch = bytecodePatch {
         // The player loads the video again with the playback start parameters it was started with,
         // such as when the app returns from the background with background playback off,
         // so the quality selected by the user for the video is used instead of the initial quality.
+        // The Shorts player also loads the next Shorts before they play, so the video ID of the player
+        // that loads the video is passed, from the playback start descriptor of its player.
         getPlaybackStartParametersInitialResolutionFingerprint(initialResolutionField).matchSingle().method.apply {
-            findInstructionIndicesReversedOrThrow(Opcode.RETURN_OBJECT).forEach { index ->
-                val register = getInstruction<OneRegisterInstruction>(index).registerA
+            val descriptorMatch = getPlayerPlaybackStartDescriptorFingerprint(
+                definingClass,
+                PlaybackStartDescriptorToStringFingerprint.classDef.type
+            )
+            val playerField = descriptorMatch.instructionMatches[0].getFieldAccessed()
+            val descriptorMethod = descriptorMatch.instructionMatches[1].getMethodCalled()
+            val invokeOpcode = if (AccessFlags.INTERFACE.isSet(classDefBy(playerField.type).accessFlags))
+                "invoke-interface" else "invoke-virtual"
+            val videoIdMethod = PlaybackStartDescriptorToStringFingerprint.instructionMatches[1].getMethodCalled()
+            val playbackStartParametersGetterClass = mutableClassDefBy(definingClass)
 
-                addInstructionsAtControlFlowLabel(
-                    index,
+            // The register of 'this' can be reused before the method returns,
+            // so the original method is called by a method that also gets the video ID.
+            val originalMethod = cloneMutable(
+                name = "patch_getPlaybackStartInitialResolution",
+                accessFlags = AccessFlags.PUBLIC.value or AccessFlags.FINAL.value
+            )
+            playbackStartParametersGetterClass.methods.add(originalMethod)
+
+            val getPlaybackStartVideoQualityMethod = ImmutableMethod(
+                definingClass,
+                "patch_getPlaybackStartVideoQuality",
+                listOf(),
+                "Ljava/lang/Integer;",
+                AccessFlags.PUBLIC.value or AccessFlags.FINAL.value,
+                null,
+                null,
+                MutableMethodImplementation(3),
+            ).toMutable().apply {
+                addInstructionsWithLabels(
+                    0,
                     """
-                        invoke-static/range { v$register .. v$register }, $EXTENSION_CLASS->getPlaybackStartVideoQuality(Ljava/lang/Integer;)Ljava/lang/Integer;
-                        move-result-object v$register
+                        invoke-virtual { p0 }, $originalMethod
+                        move-result-object v1
+                        iget-object v0, p0, $playerField
+                        if-eqz v0, :no_video_id
+                        $invokeOpcode { v0 }, $descriptorMethod
+                        move-result-object v0
+                        if-eqz v0, :no_video_id
+                        invoke-virtual { v0 }, $videoIdMethod
+                        move-result-object v0
+                        :get_quality
+                        invoke-static { v1, v0 }, $EXTENSION_CLASS->getPlaybackStartVideoQuality(Ljava/lang/Integer;Ljava/lang/String;)Ljava/lang/Integer;
+                        move-result-object v0
+                        return-object v0
+                        :no_video_id
+                        const/4 v0, 0x0
+                        goto :get_quality
                     """
                 )
             }
+            playbackStartParametersGetterClass.methods.add(getPlaybackStartVideoQualityMethod)
+
+            addInstructions(
+                0,
+                """
+                    invoke-virtual { p0 }, $getPlaybackStartVideoQualityMethod
+                    move-result-object p0
+                    return-object p0
+                """
+            )
         }
 
         // Turn off the YouTube automatic quality selection when the video starts,
@@ -302,21 +356,52 @@ val rememberVideoQualityPatch = bytecodePatch {
         hookVideoIntent(EXTENSION_CLASS, detectVideo = true, detectShorts = true)
 
         // Inject a call to remember the selected quality for Shorts.
-        VideoQualityItemOnClickFingerprint.method.apply {
-            // A quality the player can play is set instead of a quality it cannot play.
-            addInstructions(
-                0,
-                """
-                    invoke-static { p3 }, $EXTENSION_CLASS->userChangedShortsQuality(I)I
-                    move-result p3
-                """
-            )
+        VideoQualityItemOnClickFingerprint.let {
+            // The menu shows the qualities it was opened with, which YouTube can change after that,
+            // so the quality selected is found in the qualities of the menu.
+            val menuQualitiesField = getVideoQualityMenuQualitiesFingerprint(
+                it.classDef.type,
+                "[${VideoQualityFingerprint.classDef.type}"
+            ).instructionMatches.first().getFieldAccessed()
 
-            findInstructionIndicesReversedOrThrow(Opcode.RETURN_VOID).forEach { index ->
-                addInstructionsAtControlFlowLabel(
-                    index,
-                    "invoke-static { }, $EXTENSION_CLASS->clearShortsMenuSelectedQuality()V"
+            val userChangedShortsQualityMethod = ImmutableMethod(
+                it.classDef.type,
+                "patch_userChangedShortsQuality",
+                listOf(ImmutableMethodParameter("I", null, null)),
+                "I",
+                AccessFlags.PUBLIC.value or AccessFlags.FINAL.value,
+                null,
+                null,
+                MutableMethodImplementation(3),
+            ).toMutable().apply {
+                addInstructions(
+                    0,
+                    """
+                        iget-object v0, p0, $menuQualitiesField
+                        invoke-static { v0, p1 }, $EXTENSION_CLASS->userChangedShortsQuality([${EXTENSION_VIDEO_QUALITY_INTERFACE}I)I
+                        move-result v0
+                        return v0
+                    """
                 )
+            }
+            it.classDef.methods.add(userChangedShortsQualityMethod)
+
+            it.method.apply {
+                // A quality the player can play is set instead of a quality it cannot play.
+                addInstructions(
+                    0,
+                    """
+                        invoke-virtual { p0, p3 }, $userChangedShortsQualityMethod
+                        move-result p3
+                    """
+                )
+
+                findInstructionIndicesReversedOrThrow(Opcode.RETURN_VOID).forEach { index ->
+                    addInstructionsAtControlFlowLabel(
+                        index,
+                        "invoke-static { }, $EXTENSION_CLASS->clearShortsMenuSelectedQuality()V"
+                    )
+                }
             }
         }
 

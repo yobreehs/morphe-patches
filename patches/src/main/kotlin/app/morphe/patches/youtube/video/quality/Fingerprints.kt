@@ -22,6 +22,7 @@ import app.morphe.patcher.string
 import app.morphe.patcher.resource.ResourceType
 import app.morphe.patcher.resourceLiteral
 import app.morphe.patches.shared.CurrentAudioVideoFormatToStringFingerprint
+import app.morphe.patches.youtube.video.information.VideoQualitySetterFingerprint
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
@@ -412,6 +413,48 @@ internal fun getPlaybackStartParametersInitialResolutionFingerprint(
         checkCast("Ljava/lang/Integer;")
     )
 ) {}
+
+/**
+ * A method of the class of [getPlaybackStartParametersInitialResolutionFingerprint] that gets
+ * the playback start descriptor of its player, which has the video the player loads.
+ */
+internal fun getPlayerPlaybackStartDescriptorFingerprint(
+    playbackStartParametersGetterClass: String,
+    playbackStartDescriptorClass: String
+) = Fingerprint(
+    definingClass = playbackStartParametersGetterClass,
+    filters = listOf(
+        fieldAccess(
+            opcode = Opcode.IGET_OBJECT,
+            definingClass = "this"
+        ),
+        methodCall(
+            returnType = playbackStartDescriptorClass,
+            parameters = listOf(),
+            location = MatchAfterImmediately()
+        )
+    )
+)
+
+/**
+ * The method of [VideoQualitySetterFingerprint] that sets the qualities the quality menu shows.
+ */
+internal fun getVideoQualityMenuQualitiesFingerprint(
+    videoQualityMenuClass: String,
+    videoQualityArrayType: String
+) = Fingerprint(
+    classFingerprint = VideoQualitySetterFingerprint,
+    returnType = "V",
+    parameters = listOf("[L", "I", "Z"),
+    strings = listOf("menu_item_video_quality"),
+    filters = listOf(
+        fieldAccess(
+            opcode = Opcode.IPUT_OBJECT,
+            definingClass = videoQualityMenuClass,
+            type = videoQualityArrayType
+        )
+    )
+)
 
 private object VideoQualityItemOnClickParentFingerprint : Fingerprint(
     returnType = "V",

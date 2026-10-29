@@ -279,6 +279,12 @@ public final class VideoInformation {
      */
     public static final Event<String> onChannelIdChange = new Event<>();
 
+    /**
+     * Fires whenever the video of a player changes, such as when the next Short starts.
+     * Not when the same video is loaded again, such as after the app returns from the background.
+     */
+    public static final Event<String> onVideoIdChange = new Event<>();
+
     @Nullable
     public static VideoQualityInterface[] getCurrentQualities() {
         return currentQualities;
@@ -466,6 +472,7 @@ public final class VideoInformation {
             Logger.printDebug(() -> "New video ID: " + newlyLoadedVideoId);
             playerVideo.videoId = newlyLoadedVideoId;
             LocalQueuePatch.onVideoChanged();
+            onVideoIdChange.invoke(newlyLoadedVideoId);
         }
     }
 
