@@ -101,12 +101,6 @@ public final class FeedViewCountPatch {
 
     /** Allowed difference of sizes and positions that are compared. */
     private static final int TOLERANCE_DP = 4;
-    /**
-     * Largest space between the thumbnail and the left, top and right edges of the card.
-     * Cards of some layouts show the thumbnail inset from their edges, such as by 12 dp.
-     */
-    private static final int MAX_THUMBNAIL_INSET_DP = 16;
-
     /** Space between the duration badge and the edges of the thumbnail, if the badge is not found. */
     private static final int FALLBACK_MARGIN_DP = 8;
     /** A little more space than the duration badge has, so the count is not at the very edge. */
@@ -118,9 +112,6 @@ public final class FeedViewCountPatch {
     private static final int FALLBACK_HEIGHT_DP = 20;
     /** Cards of a grid of up to three columns, such as the feed in landscape. */
     private static final float MIN_GRID_CARD_WIDTH_OF_SCREEN = 0.3f;
-    /** A duration badge larger than this is not the badge itself, but a host around it. */
-    private static final int MAX_DURATION_WIDTH_DP = 120;
-    private static final int MAX_DURATION_HEIGHT_DP = 32;
     private static final int MIN_DURATION_HEIGHT_DP = 12;
     private static final int PADDING_DP = 5;
     private static final int GAP_DP = 3;
@@ -820,7 +811,8 @@ public final class FeedViewCountPatch {
                     }
                     info.addText(text, rect);
                     String badgeText = text.toString().trim();
-                    if (!FeedVideoCardsPatch.isVideoBadgeText(badgeText)) {
+                    if (!FeedVideoCardsPatch.isVideoBadgeText(badgeText)
+                            || !FeedVideoCardsPatch.isThumbnailBadge(root, rect)) {
                         continue;
                     }
                     info.hasDuration = true;
@@ -921,7 +913,7 @@ public final class FeedViewCountPatch {
      */
     private static boolean isThumbnailShaped(ComponentHost root, Rect rect) {
         final float density = root.getResources().getDisplayMetrics().density;
-        final int maxInset = Math.round(MAX_THUMBNAIL_INSET_DP * density);
+        final int maxInset = Math.round(FeedVideoCardsPatch.MAX_THUMBNAIL_INSET_DP * density);
         final int width = rect.width();
         return width > 0
                 && rect.left <= maxInset
@@ -939,9 +931,9 @@ public final class FeedViewCountPatch {
         final float density = root.getResources().getDisplayMetrics().density;
         // Thumbnails are 16:9 or square, such as of music videos.
         return rect.width() > 0
-                && rect.width() <= MAX_DURATION_WIDTH_DP * density
+                && rect.width() <= FeedVideoCardsPatch.MAX_DURATION_WIDTH_DP * density
                 && rect.height() >= MIN_DURATION_HEIGHT_DP * density
-                && rect.height() <= MAX_DURATION_HEIGHT_DP * density
+                && rect.height() <= FeedVideoCardsPatch.MAX_DURATION_HEIGHT_DP * density
                 && (isRtl(root) ? rect.centerX() < root.getWidth() / 2 : rect.centerX() > root.getWidth() / 2)
                 && rect.bottom <= root.getWidth() + TOLERANCE_DP * density;
     }

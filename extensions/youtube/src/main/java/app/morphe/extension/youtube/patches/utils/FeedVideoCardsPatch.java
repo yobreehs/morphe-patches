@@ -549,22 +549,54 @@ public final class FeedVideoCardsPatch {
     }
 
     /**
+     * Largest space between the thumbnail and the left, top and right edges of the card.
+     * Cards of some layouts show the thumbnail inset from their edges, such as by 12 dp.
+     */
+    public static final int MAX_THUMBNAIL_INSET_DP = 16;
+    /** A duration badge larger than this is not the badge itself, but a host around it. */
+    public static final int MAX_DURATION_WIDTH_DP = 120;
+    public static final int MAX_DURATION_HEIGHT_DP = 32;
+
+    /**
+     * @param rect The host that shows a badge text, such as a duration or 'LIVE', relative to the root host.
+     * @return If the text is a badge of the thumbnail: the host is as wide as the thumbnail and starts in it,
+     *         such as the host of the whole thumbnail, or it's as large as a badge, on the side of the duration
+     *         (the right, or the left in right to left languages). Not a badge text elsewhere on the card,
+     *         such as the live badge on the avatar of a channel that is live, at the top of its page.
+     */
+    public static boolean isThumbnailBadge(ComponentHost root, Rect rect) {
+        final float density = root.getResources().getDisplayMetrics().density;
+        final int width = root.getWidth();
+        if (rect.width() >= width - 2 * MAX_THUMBNAIL_INSET_DP * density
+                && rect.top < width * THUMBNAIL_RATIO) {
+            return true;
+        }
+        return rect.width() <= MAX_DURATION_WIDTH_DP * density
+                && rect.height() <= MAX_DURATION_HEIGHT_DP * density
+                && (FeedViewCountPatch.isRtl(root) ? rect.centerX() < width / 2 : rect.centerX() > width / 2);
+    }
+
+    /**
      * Videos show their duration, or a badge such as the live badge, on the thumbnail.
      * Mixes, playlists and Shorts do not.
      */
-    private static boolean hasVideoBadge(ComponentHost host) {
+    private static boolean hasVideoBadge(ComponentHost root, ComponentHost host, Rect rect) {
         TextContent textContent = host.getTextContent();
         if (textContent != null) {
             for (CharSequence text : textContent.getTextItems()) {
-                if (text != null) {
-                    if (isVideoBadgeText(text.toString().trim())) {
+                if (text != null && isVideoBadgeText(text.toString().trim())) {
+                    rect.set(0, 0, host.getWidth(), host.getHeight());
+                    if (host != root) {
+                        root.offsetDescendantRectToMyCoords(host, rect);
+                    }
+                    if (isThumbnailBadge(root, rect)) {
                         return true;
                     }
                 }
             }
         }
         for (int i = 0, count = host.getChildCount(); i < count; i++) {
-            if (host.getChildAt(i) instanceof ComponentHost child && hasVideoBadge(child)) {
+            if (host.getChildAt(i) instanceof ComponentHost child && hasVideoBadge(root, child, rect)) {
                 return true;
             }
         }
@@ -661,7 +693,7 @@ public final class FeedVideoCardsPatch {
         if (texts.isEmpty()) {
             return NOT_READY;
         }
-        if (!hasVideoBadge(root)) {
+        if (!hasVideoBadge(root, root, new Rect())) {
             // A mix or a playlist, which shows a badge without a duration.
             return PLAYLIST;
         }
