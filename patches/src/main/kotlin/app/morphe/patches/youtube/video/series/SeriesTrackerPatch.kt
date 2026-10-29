@@ -17,7 +17,6 @@ import app.morphe.patches.shared.misc.settings.preference.NonInteractivePreferen
 import app.morphe.patches.shared.misc.settings.preference.PreferenceScreenPreference
 import app.morphe.patches.shared.misc.settings.preference.PreferenceScreenPreference.Sorting
 import app.morphe.patches.shared.misc.settings.preference.SwitchPreference
-import app.morphe.patches.youtube.layout.buttons.navigation.navigationBarPatch
 import app.morphe.patches.youtube.layout.player.icons.copyPlayerButtonIcons
 import app.morphe.patches.youtube.layout.playlistautoplay.navigationIntentHook
 import app.morphe.patches.youtube.misc.extension.sharedExtensionPatch
@@ -82,7 +81,6 @@ val seriesTrackerPatch = bytecodePatch(
         settingsPatch,
         versionCheckPatch,
         videoInformationPatch,
-        navigationBarPatch,
         navigationBarHookPatch,
         seriesTrackerResourcesPatch,
         legacyPlayerControlsPatch,

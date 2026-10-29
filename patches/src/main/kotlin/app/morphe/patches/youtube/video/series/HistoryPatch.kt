@@ -7,6 +7,7 @@
 
 package app.morphe.patches.youtube.video.series
 
+import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.fieldAccess
@@ -26,12 +27,12 @@ import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.builder.MutableMethodImplementation
 import com.android.tools.smali.dexlib2.iface.instruction.OneRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.instruction.RegisterRangeInstruction
+import com.android.tools.smali.dexlib2.iface.instruction.TwoRegisterInstruction
 import com.android.tools.smali.dexlib2.iface.reference.FieldReference
 import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 import com.android.tools.smali.dexlib2.immutable.ImmutableMethod
 import com.android.tools.smali.dexlib2.immutable.ImmutableMethodParameter
 
-private const val NAV = "Lapp/morphe/extension/youtube/patches/NavigationBarPatch;"
 private const val OUR_NAV = "${SERIES_TRACKER_EXTENSION_PREFIX}HistoryNavigation;"
 
 internal fun BytecodePatchContext.wireHistory() {
@@ -102,19 +103,32 @@ internal fun BytecodePatchContext.wireHistory() {
         )
     }
 
-    PivotBarRendererListFingerprint.method.apply {
-        val index = indexOfFirstInstructionOrThrow(
-            methodCall(definingClass = NAV, name = "getPivotBarRendererList")
-        )
-        val register = getInstruction<OneRegisterInstruction>(index + 1).registerA
+    // Add the Series button to the navigation bar items before they are stored.
+    // Independent of the Navigation bar patch, which hooks the same index and also converts
+    // the list back to a proto list, so the hooks chain in either order. The match is redone
+    // because the other hook shifts the index.
+    PivotBarRendererListFingerprint.let {
+        it.clearMatch()
 
-        addInstructions(
-            index + 2,
-            """
-                invoke-static/range { v$register .. v$register }, $OUR_NAV->navigation(Ljava/util/List;)Ljava/util/List;
-                move-result-object v$register
-            """
-        )
+        it.method.apply {
+            val insertMatch = it.instructionMatches[2]
+            val register = getInstruction<TwoRegisterInstruction>(insertMatch.index).registerA
+            val protoListBuilderMethod = Fingerprint(
+                accessFlags = listOf(AccessFlags.PUBLIC, AccessFlags.STATIC),
+                returnType = insertMatch.instruction.getReference<FieldReference>()!!.type,
+                parameters = listOf("Ljava/util/Collection;")
+            ).method
+
+            addInstructions(
+                insertMatch.index,
+                """
+                    invoke-static/range { v$register .. v$register }, $OUR_NAV->navigation(Ljava/util/List;)Ljava/util/List;
+                    move-result-object v$register
+                    invoke-static/range { v$register .. v$register }, $protoListBuilderMethod
+                    move-result-object v$register
+                """
+            )
+        }
     }
 
     YouTubeMainActivityOnBackPressedFingerprint.method.addInstructions(
