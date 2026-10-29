@@ -347,10 +347,6 @@ public final class NavigationBarPatch {
                 || NAVIGATION_BAR_STYLE == NavigationBarStyle.OPAQUE));
     }
 
-    /**
-     * @deprecated Handled by {@link FixPagePaddingPatch#getKeyboardMargin(int)}.
-     */
-    @Deprecated
     public static int getKeyboardMargin(int original) {
         return FixPagePaddingPatch.getKeyboardMargin(original);
     }
