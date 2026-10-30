@@ -73,6 +73,18 @@ public final class FeedVideoCardsPatch {
             || PostTranslatePatch.ENABLED;
 
     /**
+     * If the video of every card is needed. The posts are found by their own texts, so with only
+     * the post features on, the elements of the videos are not parsed and the cards are not matched
+     * to their videos. The elements are parsed on the main thread, while the page loads.
+     * {@link FeedVideoActionsPatch} is also given the video of the card for its long press menu.
+     */
+    private static final boolean VIDEO_CARDS = ENABLED
+            && (FeedEngagementCountsPatch.ENABLED
+            || FeedViewCountPatch.ENABLED
+            || Settings.FEED_WATCH_LATER_BUTTON.get()
+            || Settings.FEED_LONG_PRESS_MENU.get());
+
+    /**
      * A card must be as wide as a card of a grid of up to three columns, such as the feed in landscape.
      * Shelves are not used, as they are horizontal lists.
      */
@@ -277,17 +289,58 @@ public final class FeedVideoCardsPatch {
      * @return If the bytes include the search bytes, such as an ASCII text of an element.
      */
     public static boolean contains(byte[] bytes, byte[] search) {
-        final int last = bytes.length - search.length;
-        outer:
-        for (int i = 0; i <= last; i++) {
-            for (int j = 0; j < search.length; j++) {
-                if (bytes[i + j] != search[j]) {
-                    continue outer;
-                }
+        return getElementText(bytes).contains(new String(search, StandardCharsets.ISO_8859_1));
+    }
+
+    /**
+     * @return If a text of the element that includes ".eml", such as the identifier of the element,
+     *         can include the search text. Every text around ".eml" is checked as a whole, from the
+     *         bytes before and after it that are printable ASCII, so any such text that includes
+     *         the search text is found. Faster than parsing the element to read its texts, as words
+     *         such as "post" are found in most elements.
+     */
+    public static boolean emlTextMayContain(byte[] bytes, String search) {
+        String element = getElementText(bytes);
+        int index = element.indexOf(".eml");
+        while (index >= 0) {
+            int start = index;
+            while (start > 0 && element.charAt(start - 1) >= 0x20 && element.charAt(start - 1) <= 0x7E) {
+                start--;
             }
-            return true;
+            int end = index + 4;
+            while (end < element.length() && element.charAt(end) >= 0x20 && element.charAt(end) <= 0x7E) {
+                end++;
+            }
+            final int found = element.indexOf(search, start);
+            if (found >= 0 && found + search.length() <= end) {
+                return true;
+            }
+            index = element.indexOf(".eml", end);
         }
         return false;
+    }
+
+    /**
+     * The bytes of the element last searched on each thread, and their string.
+     */
+    private static final ThreadLocal<Object[]> lastElementText = ThreadLocal.withInitial(() -> new Object[2]);
+
+    /**
+     * The element hooks search every element on the main thread, while the page loads. Every byte is
+     * one character in ISO-8859-1, so the bytes include some bytes when the string of the bytes includes
+     * their string, which is searched in native code. That is much faster than a loop that is not compiled
+     * yet, as when the app starts. The bytes of an element are a buffer of the app that is not changed,
+     * and the hooks are called one after another for it, so the string is made once for all of them.
+     *
+     * @return The bytes as a string with one character for each byte.
+     */
+    public static String getElementText(byte[] bytes) {
+        Object[] last = lastElementText.get();
+        if (last[0] != bytes) {
+            last[1] = new String(bytes, StandardCharsets.ISO_8859_1);
+            last[0] = bytes;
+        }
+        return (String) last[1];
     }
 
     /**
@@ -311,7 +364,7 @@ public final class FeedVideoCardsPatch {
      * Called when an element is parsed. The element is not changed.
      */
     public static byte[] onElementLoaded(byte[] bytes) {
-        if (!ENABLED || bytes == null || !contains(bytes, THUMBNAIL_PATH)) {
+        if (!VIDEO_CARDS || bytes == null || !contains(bytes, THUMBNAIL_PATH)) {
             return bytes;
         }
         try {
@@ -394,7 +447,7 @@ public final class FeedVideoCardsPatch {
      * of the video do not include. Can be called on any thread.
      */
     public static void addVideoText(String videoId, @Nullable String text) {
-        if (!ENABLED || text == null) {
+        if (!VIDEO_CARDS || text == null) {
             return;
         }
         String normalized = normalizeText(text);
@@ -943,6 +996,12 @@ public final class FeedVideoCardsPatch {
                 // Added again below if the card is still checked again.
                 scrollChecks.remove(root);
                 if (!root.isAttachedToWindow() || root.getParent() instanceof ComponentHost) {
+                    continue;
+                }
+                if (!VIDEO_CARDS) {
+                    // Only the post features are on, which do not use the video of the card.
+                    PostImageDownloadPatch.onRootLaidOut(root);
+                    PostTranslatePatch.onRootLaidOut(root);
                     continue;
                 }
                 String videoId = findVideoId(root);
