@@ -1,3 +1,9 @@
+## [2.0.0-dev.3](https://github.com/MorpheApp/morphe-patches/compare/v2.0.0-dev.2...v2.0.0-dev.3) (2026-10-30)
+
+### ✨ New Features
+
+* **YouTube Music - Third-party lyrics:** UI changes, partial feature regression ([#4182](https://github.com/MorpheApp/morphe-patches/issues/4182)) ([b6e0a64](https://github.com/MorpheApp/morphe-patches/commit/b6e0a643677d7a975413ab8d1566745cac15127c))
+
 ## [2.0.0-dev.2](https://github.com/MorpheApp/morphe-patches/compare/v2.0.0-dev.1...v2.0.0-dev.2) (2026-10-30)
 
 ### 🐛 Bug Fixes
