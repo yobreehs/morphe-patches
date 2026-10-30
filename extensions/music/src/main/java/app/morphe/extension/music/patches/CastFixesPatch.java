@@ -7,12 +7,13 @@
 
 package app.morphe.extension.music.patches;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.pm.ResolveInfo;
 import android.media.MediaRoute2Info;
 import android.media.MediaRouter;
 import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +65,7 @@ public final class CastFixesPatch {
      * <p>
      * Removes the MediaRouter2 routes of the real Play Services.
      */
-    @TargetApi(Build.VERSION_CODES.R)
+    @RequiresApi(Build.VERSION_CODES.R)
     public static List<MediaRoute2Info> filterRoutes(List<MediaRoute2Info> routes) {
         try {
             List<MediaRoute2Info> filtered = new ArrayList<>(routes.size());
@@ -102,7 +103,6 @@ public final class CastFixesPatch {
      * androidx MediaRouter publishes its selected cast route to the framework router as a
      * remote user route. Screen mirroring and other system routes are not user routes.
      */
-    @SuppressWarnings("deprecation")
     private static boolean isCasting() {
         MediaRouter router = (MediaRouter) Utils.getContext().getSystemService(Context.MEDIA_ROUTER_SERVICE);
         MediaRouter.RouteInfo route = router.getSelectedRoute(MediaRouter.ROUTE_TYPE_USER);
