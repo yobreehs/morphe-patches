@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-10-30T08:57:20",
-  "description": "## [2.0.0-dev.3](https://github.com/MorpheApp/morphe-patches/compare/v2.0.0-dev.2...v2.0.0-dev.3) (2026-10-30)\n\n### ✨ New Features\n\n* **YouTube Music - Third-party lyrics:** UI changes, partial feature regression ([#4182](https://github.com/MorpheApp/morphe-patches/issues/4182)) ([b6e0a64](https://github.com/MorpheApp/morphe-patches/commit/b6e0a643677d7a975413ab8d1566745cac15127c))",
-  "download_url": "https://github.com/MorpheApp/morphe-patches/releases/download/v2.0.0-dev.3/patches-2.0.0-dev.3.mpp",
+  "created_at": "2026-10-30T10:59:35",
+  "description": "## [2.0.0-dev.4](https://github.com/MorpheApp/morphe-patches/compare/v2.0.0-dev.3...v2.0.0-dev.4) (2026-10-30)\n\n### 🐛 Bug Fixes\n\n* **YouTube - Hide layout components:** Community posts are shown below a video opened from the search results, a channel or a playlist ([b373534](https://github.com/MorpheApp/morphe-patches/commit/b3735342ce3c686f25c76d5e664703f39767fc76))\n* **YouTube - Navigation bar:** Black band below pages and the Shorts player when the window is not drawn behind the system navigation buttons ([60daa80](https://github.com/MorpheApp/morphe-patches/commit/60daa80ebabc420946991af736cc74ab8247fee7))",
+  "download_url": "https://github.com/MorpheApp/morphe-patches/releases/download/v2.0.0-dev.4/patches-2.0.0-dev.4.mpp",
   "signature_download_url": "",
-  "version": "2.0.0-dev.3",
+  "version": "2.0.0-dev.4",
   "public_key": "g8Ys9leTu2yeixojeR35HrNkK6eOSLpA6nNIizRutqI="
 }

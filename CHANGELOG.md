@@ -1,3 +1,10 @@
+## [2.0.0-dev.4](https://github.com/MorpheApp/morphe-patches/compare/v2.0.0-dev.3...v2.0.0-dev.4) (2026-10-30)
+
+### 🐛 Bug Fixes
+
+* **YouTube - Hide layout components:** Community posts are shown below a video opened from the search results, a channel or a playlist ([b373534](https://github.com/MorpheApp/morphe-patches/commit/b3735342ce3c686f25c76d5e664703f39767fc76))
+* **YouTube - Navigation bar:** Black band below pages and the Shorts player when the window is not drawn behind the system navigation buttons ([60daa80](https://github.com/MorpheApp/morphe-patches/commit/60daa80ebabc420946991af736cc74ab8247fee7))
+
 ## [2.0.0-dev.3](https://github.com/MorpheApp/morphe-patches/compare/v2.0.0-dev.2...v2.0.0-dev.3) (2026-10-30)
 
 ### ✨ New Features
