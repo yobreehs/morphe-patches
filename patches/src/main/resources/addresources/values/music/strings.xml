@@ -779,8 +779,8 @@ Lyrics come from third-party services that are not affiliated with, sponsored, o
     <string name="morphe_music_lyrics_ai_config_api_token_label">API key (optional)</string>
     <string name="morphe_music_lyrics_ai_config_extra_body_label">Extra request body (optional JSON)</string>
     <string name="morphe_music_lyrics_ai_config_extra_headers_label">Extra request headers (optional JSON)</string>
-    <string name="morphe_music_lyrics_ai_config_extra_headers_hint">"Quote names and values, e.g. {"api-key": "abc"}. An unquoted value containing / : or a number is rejected. An empty value removes a header."</string>
-    <string name="morphe_music_lyrics_ai_config_extra_body_hint">"Quote names and values, e.g. {"temperature": 0.3}. An unquoted value containing / or : is rejected. Model and messages cannot be set here."</string>
+    <string name="morphe_music_lyrics_ai_config_extra_headers_hint">Quote names and values, e.g. {\"api-key\": \"abc\"}. An unquoted value containing / : or a number is rejected. An empty value removes a header.</string>
+    <string name="morphe_music_lyrics_ai_config_extra_body_hint">Quote names and values, e.g. {\"temperature\": 0.3}. An unquoted value containing / or : is rejected. Model and messages cannot be set here.</string>
     <string name="morphe_music_lyrics_ai_config_deepl_key_label">Authentication key (Free or Pro)</string>
 
     <!-- misc.spoof.appversion.spoofAppVersionPatch -->
