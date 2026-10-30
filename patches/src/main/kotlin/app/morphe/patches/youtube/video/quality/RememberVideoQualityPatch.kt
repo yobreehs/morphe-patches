@@ -537,7 +537,8 @@ val rememberVideoQualityPatch = bytecodePatch {
             // The buffered video is cleared after and before the segment that is playing.
             val videoTrackTypeField = PlaybackControllerSetVideoFormatsFingerprint.instructionMatches
                 .last().getFieldAccessed()
-            val discardBufferAfterSegmentMethod = BufferManagerDiscardBufferAfterSegmentFingerprint.method
+            val discardBufferAfterSegmentMethod = MediaSegmentHolderDiscardBufferAfterSegmentFingerprint
+                .instructionMatches.last().getMethodCalled()
             val getMediaSegmentHolderMethod = BufferManagerGetMediaSegmentHolderFingerprint.method
 
             // The video buffered before the segment that is playing is cleared too,
@@ -596,7 +597,10 @@ val rememberVideoQualityPatch = bytecodePatch {
             }
 
             PlaybackControllerClearBufferFingerprint.let {
-                val stopRequestsMethod = it.instructionMatches[0].getMethodCalled()
+                val stopRequestsMatch = it.instructionMatches[0]
+                // The method is private in some versions, so the call uses the original opcode.
+                val stopRequestsOpcode = stopRequestsMatch.instruction.opcode.name
+                val stopRequestsMethod = stopRequestsMatch.getMethodCalled()
                 val bufferManagerField = it.instructionMatches[1].getFieldAccessed()
 
                 it.method.addInstructionsWithLabels(
@@ -609,11 +613,11 @@ val rememberVideoQualityPatch = bytecodePatch {
                         const-wide/16 v2, 0x0
                         cmp-long v2, v0, v2
                         if-ltz v2, :clear_buffer
-                        invoke-virtual { p0 }, $stopRequestsMethod
+                        $stopRequestsOpcode { p0 }, $stopRequestsMethod
                         iget-object v2, p0, $bufferManagerField
-                        invoke-virtual { v2, p1, v0, v1 }, $discardBufferAfterSegmentMethod
                         invoke-virtual { v2, p1 }, $getMediaSegmentHolderMethod
                         move-result-object v2
+                        invoke-virtual { v2, v0, v1 }, $discardBufferAfterSegmentMethod
                         check-cast v2, $SAMPLE_HOLDER_CLASS
                         invoke-virtual { v2, v0, v1 }, $sampleHolderDiscardBufferMethod
                         return-void
