@@ -80,6 +80,7 @@ import app.morphe.extension.youtube.patches.dearrow.DeArrowPatch.StillImagesAvai
 import app.morphe.extension.youtube.patches.dearrow.DeArrowPatch.ThumbnailOption;
 import app.morphe.extension.youtube.patches.dearrow.DeArrowPatch.ThumbnailStillTime;
 import app.morphe.extension.youtube.patches.spoof.SpoofVideoStreamsPatch.SpoofClientAv1Availability;
+import app.morphe.extension.youtube.patches.theme.ThemePatch.RiveSplashScreenDurationAvailability;
 import app.morphe.extension.youtube.patches.voiceovertranslation.VoiceOverTranslationPatch;
 import app.morphe.extension.youtube.patches.voiceovertranslation.VoiceOverTranslationPatch.MyMemoryServiceAvailability;
 import app.morphe.extension.youtube.patches.voiceovertranslation.VoiceOverTranslationPatch.OpenRouterServiceAvailability;
@@ -564,6 +565,7 @@ public class Settings extends SharedYouTubeSettings {
     public static final BooleanSetting BYPASS_IMAGE_REGION_RESTRICTIONS = new BooleanSetting("morphe_bypass_image_region_restrictions", FALSE, true);
     public static final BooleanSetting GRADIENT_LOADING_SCREEN = new BooleanSetting("morphe_gradient_loading_screen", FALSE, true);
     public static final IntegerSetting RIVE_SPLASH_SCREEN_STATE = new IntegerSetting("morphe_rive_splash_screen_state", 0, false, false);
+    public static final IntegerSetting RIVE_SPLASH_SCREEN_DURATION = new IntegerSetting("morphe_splash_screen_duration", 1200, true, new RiveSplashScreenDurationAvailability());
     public static final EnumSetting<HeaderLogo> HEADER_LOGO = new EnumSetting<>("morphe_header_logo", HeaderLogo.DEFAULT, true);
     public static final BooleanSetting DISABLE_SIGN_IN_TO_TV_POPUP = new BooleanSetting("morphe_disable_sign_in_to_tv_popup", FALSE);
     public static final BooleanSetting DISABLE_CONNECT_YOUR_DEVICES_POPUP = new BooleanSetting("morphe_disable_connect_your_devices_popup", FALSE);
@@ -1218,6 +1220,8 @@ public class Settings extends SharedYouTubeSettings {
                 10, 25, 1, "x", 10));
         SeekBarPreference.register(new SeekBarConfig(VIDEO_DELAY,
                 0, 5000, 25, "ms"));
+        SeekBarPreference.register(new SeekBarConfig(RIVE_SPLASH_SCREEN_DURATION,
+                1000, 3000, 200, "s", 1000));
         SeekBarPreference.register(new SeekBarConfig(NICONICO_COMMENTS_FONT_SIZE,
                 12, 40, 1, "sp"));
         SeekBarPreference.register(new SeekBarConfig(NICONICO_COMMENTS_OPACITY,

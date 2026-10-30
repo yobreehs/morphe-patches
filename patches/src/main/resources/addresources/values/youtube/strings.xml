@@ -1402,6 +1402,8 @@ Limitation: If \'Restore old video action bar\' is turned off, \'More videos\' o
     <string name="morphe_splash_screen_style_entry_7">Morphe Glow 1</string>
     <string name="morphe_splash_screen_style_entry_8">Morphe Glow 2</string>
     <string name="morphe_splash_screen_style_glow_not_supported">Glow splash screen is not supported by this device</string>
+    <string name="morphe_splash_screen_duration_title">Startup animation duration</string>
+    <string name="morphe_splash_screen_duration_summary">How long the glow animation plays. Tap the animation to skip it</string>
     <string name="morphe_theme_color_light_title">Light theme background</string>
     <string name="morphe_theme_color_light_entry_2">White</string>
     <string name="morphe_theme_color_light_entry_3">Material You (White)</string>
