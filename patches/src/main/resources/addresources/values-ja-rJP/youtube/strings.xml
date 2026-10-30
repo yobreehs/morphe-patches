@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">その他</string>
   <string name="morphe_settings_screen_12_video_title">動画</string>
   <string name="morphe_restore_old_settings_menus_title">YouTube の設定メニューを旧仕様に戻す</string>
+  <string name="morphe_native_snackbar_title">YouTubeのsnackbarにメッセージを表示</string>
+  <string name="morphe_native_snackbar_summary">プレイヤーボタンの確認など、Morpheのメッセージはポップアップの代わりにYouTubeのsnackbarで表示されます</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">バックグラウンド再生の制限を解除</string>
   <string name="morphe_shorts_disable_background_playback_title">ショートのバックグラウンド再生を無効化</string>

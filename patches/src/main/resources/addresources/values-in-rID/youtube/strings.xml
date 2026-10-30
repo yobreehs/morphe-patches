@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Lain-lain</string>
   <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Pulihkan layar setelan lama YouTube</string>
+  <string name="morphe_native_snackbar_title">Tampilkan pesan di snackbar YouTube</string>
+  <string name="morphe_native_snackbar_summary">Pesan Morphe, seperti konfirmasi tombol pemain, ditampilkan di snackbar YouTube daripada popup</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Hapus pembatasan pemutaran latar belakang</string>
   <string name="morphe_shorts_disable_background_playback_title">Nonaktifkan pemutaran di latar belakang</string>

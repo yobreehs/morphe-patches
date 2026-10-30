@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Diverse</string>
   <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Restaurare meniuri setări vechi</string>
+  <string name="morphe_native_snackbar_title">Afișează mesajele în snackbar-ul YouTube</string>
+  <string name="morphe_native_snackbar_summary">Mesajele Morphe, cum ar fi confirmarea unui buton al playerului, sunt afișate în snackbar-ul YouTube în loc de o fereastră pop-up</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Elimină restricțiile de redare în fundal</string>
   <string name="morphe_shorts_disable_background_playback_title">Dezactivează redarea în fundal</string>

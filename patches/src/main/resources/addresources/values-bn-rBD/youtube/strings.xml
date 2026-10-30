@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">বিবিধ</string>
   <string name="morphe_settings_screen_12_video_title">ভিডিও</string>
   <string name="morphe_restore_old_settings_menus_title">পুরানো YouTube সেটিংস স্ক্রিন পুনরুদ্ধার করুন</string>
+  <string name="morphe_native_snackbar_title">YouTube স্ন্যাকবারে বার্তা দেখান</string>
+  <string name="morphe_native_snackbar_summary">প্লেয়ার বাটনের নিশ্চিতকরণের মতো মোর্ফি বার্তা পপআপের পরিবর্তে YouTube স্ন্যাকবারে দেখানো হয়</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">পটভূমির প্লেব্যাক সীমাবদ্ধতা সরান</string>
   <string name="morphe_shorts_disable_background_playback_title">ব্যাকগ্রাউন্ড প্লে অক্ষম করুন</string>

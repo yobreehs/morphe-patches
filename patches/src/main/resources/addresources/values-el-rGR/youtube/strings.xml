@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Διάφορα</string>
   <string name="morphe_settings_screen_12_video_title">Βίντεο</string>
   <string name="morphe_restore_old_settings_menus_title">Επαναφορά του παλιού μενού ρυθμίσεων YouTube</string>
+  <string name="morphe_native_snackbar_title">Εμφάνιση μηνυμάτων στο snackbar του YouTube</string>
+  <string name="morphe_native_snackbar_summary">Τα μηνύματα του Morphe, όπως η επιβεβαίωση ενός κουμπιού αναπαραγωγής, εμφανίζονται στο snackbar του YouTube αντί για παράθυρο διαλόγου</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Κατάργηση περιορισμών αναπαραγωγής στο παρασκήνιο</string>
   <string name="morphe_shorts_disable_background_playback_title">Απενεργοποίηση αναπαραγωγής παρασκηνίου</string>

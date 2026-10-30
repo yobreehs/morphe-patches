@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Pozostałe</string>
   <string name="morphe_settings_screen_12_video_title">Film</string>
   <string name="morphe_restore_old_settings_menus_title">Przywróć stary ekran ustawień YouTube</string>
+  <string name="morphe_native_snackbar_title">Pokaż wiadomości w pasku snackbar YouTube</string>
+  <string name="morphe_native_snackbar_summary">Wiadomości Morphe, takie jak potwierdzenie przycisku odtwarzania, są wyświetlane w pasku snackbar YouTube zamiast okna wyskakującego</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Usuń ograniczenia odtwarzania w tle</string>
   <string name="morphe_shorts_disable_background_playback_title">Wyłącz odtwarzanie w tle</string>

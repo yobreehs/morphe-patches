@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">अन्य</string>
   <string name="morphe_settings_screen_12_video_title">वीडियो</string>
   <string name="morphe_restore_old_settings_menus_title">पुरानी YouTube सेटिंग स्क्रीन वापस लाएँ</string>
+  <string name="morphe_native_snackbar_title">YouTube स्नैकबार में संदेश दिखाएं</string>
+  <string name="morphe_native_snackbar_summary">प्लेयर बटन की पुष्टि के रूप में मोर्फे संदेश पॉपअप के बजाय YouTube स्नैकबार में दिखाए जाते हैं</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">बैकग्राउंड प्ले से पाबंदियाँ हटाएँ</string>
   <string name="morphe_shorts_disable_background_playback_title">बैकग्राउंड प्ले बंद करें</string>

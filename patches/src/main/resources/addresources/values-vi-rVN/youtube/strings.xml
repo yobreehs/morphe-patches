@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Khác</string>
   <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Khôi phục màn hình cài đặt YouTube cũ</string>
+  <string name="morphe_native_snackbar_title">Hiển thị thông báo trong snackbar của YouTube</string>
+  <string name="morphe_native_snackbar_summary">Các thông báo của Morphe, chẳng hạn như xác nhận nút phát lại, được hiển thị trong snackbar của YouTube thay vì cửa sổ pop-up</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Bỏ hạn chế phát nền</string>
   <string name="morphe_shorts_disable_background_playback_title">Tắt phát nền</string>

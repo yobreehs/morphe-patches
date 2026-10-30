@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Sonstiges</string>
   <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Alte YouTube-Einstellungen wiederherstellen</string>
+  <string name="morphe_native_snackbar_title">Nachrichten in YouTube-Snackbar anzeigen</string>
+  <string name="morphe_native_snackbar_summary">Morphe-Nachrichten, wie die Bestätigung einer Spieler-Schaltfläche, werden anstelle eines Popups in der YouTube-Snackbar angezeigt</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Einschränkungen für Hintergrundwiedergabe entfernen</string>
   <string name="morphe_shorts_disable_background_playback_title">Hintergrundwiedergabe von Shorts deaktivieren</string>

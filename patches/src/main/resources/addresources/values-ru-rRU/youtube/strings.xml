@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Прочие</string>
   <string name="morphe_settings_screen_12_video_title">Видео</string>
   <string name="morphe_restore_old_settings_menus_title">Восстановить старое меню настроек YouTube</string>
+  <string name="morphe_native_snackbar_title">Показывать сообщения в всплывающей панели YouTube</string>
+  <string name="morphe_native_snackbar_summary">Сообщения Morphe, например подтверждение нажатия кнопки воспроизведения, отображаются во всплывающей панели YouTube вместо всплывающего окна</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Убрать ограничения на фоновое воспроизведение</string>
   <string name="morphe_shorts_disable_background_playback_title">Отключить воспроизведение Shorts в фоновом режиме</string>

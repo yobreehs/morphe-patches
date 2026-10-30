@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Otros</string>
   <string name="morphe_settings_screen_12_video_title">Vídeo</string>
   <string name="morphe_restore_old_settings_menus_title">Restaurar antigua pantalla de configuración de YouTube</string>
+  <string name="morphe_native_snackbar_title">Mostrar mensajes en el snackbar de YouTube</string>
+  <string name="morphe_native_snackbar_summary">Los mensajes de Morphe, como la confirmación de un botón del reproductor, se muestran en el snackbar de YouTube en lugar de una ventana emergente</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Eliminar restricciones de reproducción en segundo plano</string>
   <string name="morphe_shorts_disable_background_playback_title">Desactivar reproducción en segundo plano</string>

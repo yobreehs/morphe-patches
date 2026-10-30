@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Diversen</string>
   <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Herstel het oude YouTube instellingenscherm</string>
+  <string name="morphe_native_snackbar_title">Berichten in de YouTube-snackbar weergeven</string>
+  <string name="morphe_native_snackbar_summary">Morphe-berichten, zoals de bevestiging van een spelerknop, worden in de YouTube-snackbar getoond in plaats van een pop-up</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Achtergrond afspeelbeperkingen verwijderen</string>
   <string name="morphe_shorts_disable_background_playback_title">Schakel afspelen in achtergrond uit</string>

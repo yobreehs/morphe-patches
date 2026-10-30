@@ -21,9 +21,9 @@ Second \"item\" text"</string>
   <string name="morphe_splash_screen_style_title">Анимация при стартиране</string>
   <string name="morphe_splash_screen_style_entry_1">Изключено</string>
   <string name="morphe_splash_screen_style_entry_2">Цвят</string>
-  <string name="morphe_splash_screen_style_entry_3">Morphe Color</string>
+  <string name="morphe_splash_screen_style_entry_3">Morphe Цвят</string>
   <string name="morphe_splash_screen_style_entry_4">Монохром</string>
-  <string name="morphe_splash_screen_style_entry_5">Morphe Monochrome</string>
+  <string name="morphe_splash_screen_style_entry_5">Morphe Монохромен - черно и бяло</string>
   <!-- misc.settings.settingsPatch -->
   <string name="morphe_settings_new_indicator_days_title">Маркиране на нови настройки</string>
   <string name="morphe_settings_new_indicator_days_summary">Брой дни, през които се показва точка до настройките и опциите, добавени чрез актуализация</string>

@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Mga sari-sari</string>
   <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Ibalik ang mga lumang menu ng pagpipilian</string>
+  <string name="morphe_native_snackbar_title">Ipakita ang mga mensahe sa YouTube snackbar</string>
+  <string name="morphe_native_snackbar_summary">Ang mga mensahe ng Morphe, tulad ng kumpirmasyon ng button ng manlalaro, ay ipinapakita sa YouTube snackbar imbes na popup</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Alisin ang mga paghihigpit sa pagtugtog sa likuran</string>
   <string name="morphe_shorts_disable_background_playback_title">Patayin ang pag-play ng Shorts sa likuran</string>

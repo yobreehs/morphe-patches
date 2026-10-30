@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">خيارات متنوعة</string>
   <string name="morphe_settings_screen_12_video_title">الفيديو</string>
   <string name="morphe_restore_old_settings_menus_title">استعادة شاشة إعدادات YouTube القديمة</string>
+  <string name="morphe_native_snackbar_title">عرض الرسائل في شريط تنبيهات YouTube</string>
+  <string name="morphe_native_snackbar_summary">يتم عرض رسائل Morphe، مثل تأكيد زر المشغل، في شريط تنبيهات YouTube بدلًا من ظهور نافذة منبثقة</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">إزالة قيود التشغيل في الخلفية</string>
   <string name="morphe_shorts_disable_background_playback_title">تعطيل التشغيل في الخلفية</string>

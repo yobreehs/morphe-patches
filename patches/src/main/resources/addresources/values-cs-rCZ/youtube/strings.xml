@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Různé</string>
   <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Obnovit starý vzhled nastavení YouTube</string>
+  <string name="morphe_native_snackbar_title">Zobrazit zprávy v YouTube snackbaru</string>
+  <string name="morphe_native_snackbar_summary">Zprávy Morphe, jako potvrzení tlačítka přehrávače, se zobrazují v YouTube snackbaru místo vyskakovacího okna</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Odstranit omezení přehrávání na pozadí</string>
   <string name="morphe_shorts_disable_background_playback_title">Zakázat automatické přehrávání Shorts v pozadí</string>

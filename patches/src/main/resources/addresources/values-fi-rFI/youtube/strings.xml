@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Sekalaiset</string>
   <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Palauta vanhat YouTube-asetusvalikot</string>
+  <string name="morphe_native_snackbar_title">Näytä YouTube-snackbarissa olevat viestit</string>
+  <string name="morphe_native_snackbar_summary">Morphe-viestit, kuten pelaajan painikkeen vahvistus, näytetään YouTube-snackbarissa ponnahdusikkunan sijaan</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Poista taustatoiston rajoitukset</string>
   <string name="morphe_shorts_disable_background_playback_title">Poista Shortsien taustatoisto käytöstä</string>

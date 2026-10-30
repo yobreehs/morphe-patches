@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Çeşitli</string>
   <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Eski YouTube ayarlar ekranını geri yükle</string>
+  <string name="morphe_native_snackbar_title">YouTube snackbar\'da mesajları göster</string>
+  <string name="morphe_native_snackbar_summary">Morphe mesajları, örneğin bir oynatıcı düğmesinin onayı gibi, popup yerine YouTube snackbar\'da gösterilir</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Arka planda oynatma kısıtlamalarını kaldır</string>
   <string name="morphe_shorts_disable_background_playback_title">Arka planda oynatmayı devre dışı bırak</string>

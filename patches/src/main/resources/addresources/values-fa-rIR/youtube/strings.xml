@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">متفرقه</string>
   <string name="morphe_settings_screen_12_video_title">ویدئو</string>
   <string name="morphe_restore_old_settings_menus_title">بازگرداندن صفحهٔ تنظیمات قدیمی YouTube</string>
+  <string name="morphe_native_snackbar_title">نمایش پیام‌ها در Snackbar یوتیوب</string>
+  <string name="morphe_native_snackbar_summary">پیام‌های Morphe، مانند تأیید دکمه پخش‌کننده، به جای پنجره بازشو در Snackbar یوتیوب نمایش داده می‌شوند</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">حذف محدودیت‌های پخش در پس‌زمینه</string>
   <string name="morphe_shorts_disable_background_playback_title">غیرفعال‌کردن پخش در پس‌زمینه</string>

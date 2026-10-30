@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">其他</string>
   <string name="morphe_settings_screen_12_video_title">视频</string>
   <string name="morphe_restore_old_settings_menus_title">恢复旧设置菜单</string>
+  <string name="morphe_native_snackbar_title">在 YouTube 信息提示栏中显示消息</string>
+  <string name="morphe_native_snackbar_summary">Morphe消息（如玩家按钮的确认信息）将显示在YouTube Snackbar中，而不是弹出窗口</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">移除后台播放限制</string>
   <string name="morphe_shorts_disable_background_playback_title">禁用 Shorts 后台播放</string>

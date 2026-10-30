@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Ýmislegt</string>
   <string name="morphe_settings_screen_12_video_title">Myndband</string>
   <string name="morphe_restore_old_settings_menus_title">Endurheimta gamla stillingaskjá YouTube</string>
+  <string name="morphe_native_snackbar_title">Sýna skilaboð í YouTube snackbar</string>
+  <string name="morphe_native_snackbar_summary">Skilaboð frá Morphe, svo sem staðfesting hnapps spilara, birtast í YouTube snackbar í stað sprettiglugga</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Fjarlægja takmarkanir á spilun í bakgrunni</string>
   <string name="morphe_shorts_disable_background_playback_title">Slökkva á spilun í bakgrunni</string>

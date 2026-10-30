@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Ilghnéitheach</string>
   <string name="morphe_settings_screen_12_video_title">Físeán</string>
   <string name="morphe_restore_old_settings_menus_title">Athchóirigh an scáileán socruithe YouTube sean</string>
+  <string name="morphe_native_snackbar_title">Teachtaireachtaí a thaispeáint i snackbar YouTube</string>
+  <string name="morphe_native_snackbar_summary">Taispeántar teachtaireachtaí Morphe, cosúil le dearbhú cnaipe imreora, i snackbar YouTube in ionad pop-up</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Bain srianta súgartha cúlra</string>
   <string name="morphe_shorts_disable_background_playback_title">Díchumasaigh súgradh sa chúlra</string>

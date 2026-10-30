@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Razno</string>
   <string name="morphe_settings_screen_12_video_title">Video</string>
   <string name="morphe_restore_old_settings_menus_title">Povrni stare nastavitve zaslona YouTube</string>
+  <string name="morphe_native_snackbar_title">Prikaži sporočila v YouTube snackbaru</string>
+  <string name="morphe_native_snackbar_summary">Sporočila Morphe, kot je potrditev glosa igralca, se prikažejo v YouTube snackbaru namesto v pojavnem oknu</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Odstrani omejitve predvajanja v ozadju</string>
   <string name="morphe_shorts_disable_background_playback_title">Onemogoči predvajanje v ozadju</string>

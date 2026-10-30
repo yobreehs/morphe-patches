@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">שונות</string>
   <string name="morphe_settings_screen_12_video_title">סרטון</string>
   <string name="morphe_restore_old_settings_menus_title">שחזר את מסך הגדרות YouTube הישן</string>
+  <string name="morphe_native_snackbar_title">הצג הודעות ב-snackbar של YouTube</string>
+  <string name="morphe_native_snackbar_summary">הודעות Morphe, כמו אישור כפתור נגן, מוצגות ב-snackbar של YouTube במקום חלונית קופצת</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">הסר הגבלות השמעת רקע</string>
   <string name="morphe_shorts_disable_background_playback_title">השבת הפעלת רקע</string>

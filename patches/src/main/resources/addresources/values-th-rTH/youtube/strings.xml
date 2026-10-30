@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">เบ็ดเตล็ด</string>
   <string name="morphe_settings_screen_12_video_title">วิดีโอ</string>
   <string name="morphe_restore_old_settings_menus_title">กู้คืนเมนูการตั้งค่าแบบเก่า</string>
+  <string name="morphe_native_snackbar_title">แสดงข้อความใน YouTube snackbar</string>
+  <string name="morphe_native_snackbar_summary">ข้อความของ Morphe เช่นการยืนยันปุ่มผู้เล่น จะแสดงใน YouTube snackbar แทนป๊อปอัป</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">ลบข้อจำกัดการเล่นในพื้นหลัง</string>
   <string name="morphe_shorts_disable_background_playback_title">ปิดการเล่นพื้นหลัง</string>

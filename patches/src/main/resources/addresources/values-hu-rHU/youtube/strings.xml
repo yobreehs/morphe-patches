@@ -29,6 +29,8 @@ Second \"item\" text"</string>
   <string name="morphe_settings_screen_11_misc_title">Egyéb</string>
   <string name="morphe_settings_screen_12_video_title">Videó</string>
   <string name="morphe_restore_old_settings_menus_title">Régi YouTube beállításképernyő visszaállítása</string>
+  <string name="morphe_native_snackbar_title">Üzenetek megjelenítése YouTube snackbarban</string>
+  <string name="morphe_native_snackbar_summary">Morphe üzenetek, például a lejátszó gomb megerősítése, a YouTube snackbarban jelennek meg felugró ablak helyett</string>
   <!-- misc.backgroundplayback.backgroundPlaybackPatch -->
   <string name="morphe_remove_background_playback_restrictions_title">Háttérben lejátszás korlátozásainak feloldása</string>
   <string name="morphe_shorts_disable_background_playback_title">Háttérben történő lejátszás kikapcsolása</string>
