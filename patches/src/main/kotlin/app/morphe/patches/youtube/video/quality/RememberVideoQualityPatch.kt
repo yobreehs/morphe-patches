@@ -350,8 +350,9 @@ val rememberVideoQualityPatch = bytecodePatch {
         }
 
         // A quality selected by the user is used again if YouTube reloads the video,
-        // until another video is opened.
-        hookVideoIntent(EXTENSION_CLASS, detectVideo = true, detectShorts = true)
+        // until another video is opened in the same player.
+        hookVideoIntent(EXTENSION_CLASS, detectVideo = true, detectShorts = false)
+        hookVideoIntent(EXTENSION_CLASS, "onShortsIntentLoaded", detectVideo = false, detectShorts = true)
 
         // Inject a call to remember the selected quality for Shorts.
         VideoQualityItemOnClickFingerprint.let {
