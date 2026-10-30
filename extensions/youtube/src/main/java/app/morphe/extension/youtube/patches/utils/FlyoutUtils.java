@@ -907,7 +907,10 @@ public final class FlyoutUtils {
      */
     public static void setCurrentButtonInfo(@Nullable Enum<?> buttonEnum, @Nullable Object buttonInfo,
                                             @Nullable CharSequence buttonText) {
-        if (buttonEnum == null) {
+        // The menu creates no row for an item without a text, such as an item hidden by a Morphe setting.
+        // It is not counted, so the index of every button matches its row.
+        // The popup menus always give the text, and keep the rows they hide.
+        if (buttonEnum == null || buttonText == null) {
             return;
         }
 
