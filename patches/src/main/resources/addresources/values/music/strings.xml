@@ -512,11 +512,18 @@ To ensure scrobbling is synced during background playback, ensure that YouTube M
     <string name="morphe_music_lyrics_source_reset_title">Reset provider order?</string>
     <string name="morphe_music_lyrics_source_reset_message">Restore providers to the default priority order</string>
     <string name="morphe_music_lyrics_rime_dict_title">Rime Wordlist</string>
-    <string name="morphe_music_lyrics_rime_dict_empty">Rime Wordlist also needs UniDict: in the Offline Dictionary provider, tick \"Chinese and Cantonese characters (UniDict)\" and let it finish downloading first. Without it, a list that reads characters yields no reading.\n\nTick the lists Rime Wordlist should read, then tap Save to download them. A list you added is removed when you untick it.\n\nEach list is your own word-to-reading table, a .dict.yaml with lines like:\n字\tham\n典\tdin2\nThe first column is the word, the second its reading; extra columns and lines without a tab are ignored.</string>
+    <string name="morphe_music_lyrics_rime_dict_empty">"Rime Wordlist also needs UniDict: in the Offline Dictionary provider, tick \"Chinese and Cantonese characters (UniDict)\" and let it finish downloading first. Without it, a list that reads characters yields no reading.
+
+Tick the lists Rime Wordlist should read, then tap Save to download them. A list you added is removed when you untick it.
+
+Each list is your own word-to-reading table, a .dict.yaml with lines like:
+字 ham
+典 din2
+The first column is the word, the second its reading; extra columns and lines without a tab are ignored."</string>
     <string name="morphe_music_lyrics_rime_dict_no_table">No Rime word list is ticked for the language above. Tap this name to tick one, or pick a language that has a list</string>
     <string name="morphe_music_lyrics_rime_dict_add">Add</string>
     <string name="morphe_music_lyrics_rime_dict_add_title">Add a Rime Wordlist</string>
-    <string name="morphe_music_lyrics_rime_dict_add_hint">A .dict.yaml file, or a zip holding one, with lines like 字\tham and 典\tdin2. The list is fetched when you tick it and tap Save, and its licence is yours to check</string>
+    <string name="morphe_music_lyrics_rime_dict_add_hint">A .dict.yaml file, or a zip holding one, with lines like 字 ham and 典 din2. The list is fetched when you tick it and tap Save, and its licence is yours to check</string>
     <string name="morphe_music_lyrics_rime_dict_field_code">Language code</string>
     <string name="morphe_music_lyrics_rime_dict_field_code_hint">Two or three letters, as in hak or wuu</string>
     <string name="morphe_music_lyrics_rime_dict_field_label">Name</string>
@@ -698,8 +705,10 @@ Applies to both limits. At 1.75, four full-width characters count as 7."</string
     <string name="morphe_music_lyrics_translate_hide">Translated</string>
     <string name="morphe_music_lyrics_translation_language_title">Translation language</string>
     <string name="morphe_music_lyrics_romanize_language_title">Romanization or transliteration language</string>
-    <string name="morphe_music_lyrics_translation_target_language">Translation target language:\n%s</string>
-    <string name="morphe_music_lyrics_romanization_target_language">Romanization or transliteration target language:\n%s</string>
+    <string name="morphe_music_lyrics_translation_target_language">"Translation target language:
+%s"</string>
+    <string name="morphe_music_lyrics_romanization_target_language">"Romanization or transliteration target language:
+%s"</string>
     <string name="morphe_music_lyrics_translating">Translating…</string>
     <string name="morphe_music_lyrics_translate_failed">Could not translate the lyrics</string>
     <string name="morphe_music_lyrics_romanize_hide">Romanized</string>
@@ -729,7 +738,9 @@ Applies to both limits. At 1.75, four full-width characters count as 7."</string
     <string name="morphe_music_lyrics_transcribe_no_text">No lyrics to align - transcribing instead</string>
     <string name="morphe_music_lyrics_transcribe_failed">QuickLRC could not process this track</string>
     <string name="morphe_music_lyrics_transcribe_out_of_credits">QuickLRC credits are used up for this track</string>
-    <string name="morphe_music_lyrics_about_summary">"Lyrics are matched by title and artist, unusual metadata may find nothing or the wrong version. Use refresh to switch versions. Providers marked * require a token. All enabled providers are not always requested in your order, but respond based on their speed.\n\nLyrics come from third-party services that are not affiliated with, sponsored, or endorsed by Morphe. Each one is used as it is: the lyrics, their availability, and their licensing stay with those services and their licensors, and using them can be subject to their terms of service. What reaches an enabled service is only the lookup you asked for - the title, the artist, and, where that service needs it, the video ID. The optional AI endpoint and QuickLRC transcription run only after you configure them, and receive the lyrics text or the track's video URL."</string>
+    <string name="morphe_music_lyrics_about_summary">"Lyrics are matched by title and artist, unusual metadata may find nothing or the wrong version. Use refresh to switch versions. Providers marked * require a token. All enabled providers are not always requested in your order, but respond based on their speed.
+
+Lyrics come from third-party services that are not affiliated with, sponsored, or endorsed by Morphe. Each one is used as it is: the lyrics, their availability, and their licensing stay with those services and their licensors, and using them can be subject to their terms of service. What reaches an enabled service is only the lookup you asked for - the title, the artist, and, where that service needs it, the video ID. The optional AI endpoint and QuickLRC transcription run only after you configure them, and receive the lyrics text or the track's video URL."</string>
     <string name="morphe_music_lyrics_source_advice_summary">Only enable the providers you use, or keep the default - constant requests can overwhelm small community lyrics sites</string>
     <string name="morphe_music_lyrics_hide_info_title">Hide credit line</string>
     <string name="morphe_music_lyrics_hide_info_summary">Hide the credit line shown below the lyrics</string>
