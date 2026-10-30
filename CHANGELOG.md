@@ -3,11 +3,6 @@
 ### ⚠ BREAKING CHANGES
 
 * Patches now use Morphe Patcher 2.0.0
-* **YouTube - Theme:** Patches now use Morphe Patcher 2.0.0
-
-Co-authored-by: MarcaDian <152095496+MarcaDian@users.noreply.github.com>
-
-* Treat breaking changes as major releases ([c596d42](https://github.com/MorpheApp/morphe-patches/commit/c596d42afb48dd79be022f81f3b731eda8870941))
 
 ### 🐛 Bug Fixes
 
