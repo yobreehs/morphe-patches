@@ -1,3 +1,9 @@
+## [2.1.0-dev.2](https://github.com/MorpheApp/morphe-patches/compare/v2.1.0-dev.1...v2.1.0-dev.2) (2026-10-31)
+
+### 🐛 Bug Fixes
+
+* **YouTube:** Update experimental target version name ([0f25ad3](https://github.com/MorpheApp/morphe-patches/commit/0f25ad37c62124744f9dce20f1700678cbc45f38))
+
 ## [2.1.0-dev.1](https://github.com/MorpheApp/morphe-patches/compare/v2.0.0...v2.1.0-dev.1) (2026-10-31)
 
 ### ✨ New Features
