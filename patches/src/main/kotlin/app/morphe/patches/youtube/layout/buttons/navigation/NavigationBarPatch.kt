@@ -45,6 +45,7 @@ import app.morphe.patches.youtube.misc.navigation.addBottomBarContainerHook
 import app.morphe.patches.youtube.misc.navigation.hookNavigationButtonCreated
 import app.morphe.patches.youtube.misc.navigation.navigationBarHookPatch
 import app.morphe.patches.youtube.misc.playservice.is_20_31_or_greater
+import app.morphe.patches.youtube.misc.playservice.is_21_23_or_greater
 import app.morphe.patches.youtube.misc.playservice.is_21_35_or_greater
 import app.morphe.patches.youtube.misc.playservice.versionCheckPatch
 import app.morphe.patches.youtube.misc.settings.PreferenceScreen
@@ -448,10 +449,10 @@ val navigationBarPatch = bytecodePatch(
         }
 
         if (is_20_31_or_greater) {
-            listOf(
-                AutoHideNavigationBarOnFeedScrollingFingerprint,
-                AutoHideNavigationBarOnDismissMiniplayerFingerprint,
-            ).forEach {
+            buildList {
+                add(AutoHideNavigationBarOnFeedScrollingFingerprint)
+                if (is_21_23_or_greater) add(AutoHideNavigationBarOnDismissMiniplayerFingerprint)
+            }.forEach {
                 it.method.addInstructionsWithLabels(
                     0,
                     """
