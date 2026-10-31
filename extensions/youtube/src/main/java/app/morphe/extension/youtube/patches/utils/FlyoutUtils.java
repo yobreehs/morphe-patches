@@ -17,8 +17,6 @@ import android.content.res.ColorStateList;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.v7.widget.RecyclerView;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -36,6 +34,7 @@ import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.lang.ref.WeakReference;
@@ -348,11 +347,11 @@ public final class FlyoutUtils {
 
     private static WeakReference<View> senderViewRef = new WeakReference<>(null);
 
-    private static final Handler flyoutVisibilityHandler = new Handler(Looper.getMainLooper());
-    private static boolean flyoutVisibilityHandlerRunning;
-    private static final Handler flyoutIdsResetHandler = new Handler(Looper.getMainLooper());
-    private static boolean flyoutIdsResetHandlerRunning;
 
+    /**
+     * If the elements were added to the open menu. Menus opened on top of it stay as they are.
+     */
+    private static boolean flyoutElementsAdded;
     private static Dialog flyoutDialog;
     private static PopupWindow flyoutPopupWindow;
     private static String flyoutVideoId = "";
@@ -466,7 +465,10 @@ public final class FlyoutUtils {
         FeedVideoActionsPatch.onBottomSheetFlyout(dialog);
         flyoutDialog = dialog;
 
-        runFlyoutVisibilityHandler();
+        Window window = dialog.getWindow();
+        if (window != null) {
+            addFlyoutElementsWhenShown(dialog, window.getDecorView());
+        }
     }
 
     /**
@@ -479,7 +481,13 @@ public final class FlyoutUtils {
         FeedVideoActionsPatch.onPopupWindowFlyout(popupWindow);
         flyoutPopupWindow = popupWindow;
 
-        runFlyoutVisibilityHandler();
+        // The app can set the content view after this call, in the same method that shows the popup.
+        Utils.runOnMainThreadDelayed(() -> {
+            View contentView = popupWindow.getContentView();
+            if (contentView != null) {
+                addFlyoutElementsWhenShown(popupWindow, contentView);
+            }
+        }, 0);
     }
 
     public static void dismissFlyout() {
@@ -493,81 +501,49 @@ public final class FlyoutUtils {
         }
     }
 
-    private static void runFlyoutVisibilityHandler() {
-        if (flyoutVisibilityHandlerRunning) {
-            return;
-        }
-        flyoutVisibilityHandlerRunning = true;
+    /**
+     * The menu is not shown yet when it is created. The show and dismiss listeners of the menu
+     * are used by the app, while a view can have any number of attach listeners.
+     *
+     * @param flyoutView View that is attached to the window while the menu is open.
+     */
+    private static void addFlyoutElementsWhenShown(Object flyoutPanel, View flyoutView) {
+        Runnable addElements = () -> {
+            if (!flyoutElementsAdded) {
+                flyoutElementsAdded = true;
+                addFlyoutElements(flyoutPanel);
+                onFlyoutListBound(flyoutPanel);
+            }
+        };
 
-        flyoutVisibilityHandler.removeCallbacksAndMessages(null);
-        flyoutVisibilityHandler.post(
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        if (flyoutDialog == null && flyoutPopupWindow == null) {
-                            flyoutVisibilityHandlerRunning = false;
-                            return;
-                        }
+        flyoutView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
+            @Override
+            public void onViewAttachedToWindow(@NonNull View view) {
+                // After the current layout pass, that binds the items of the menu.
+                view.post(addElements);
+            }
 
-                        final boolean isDialogShowing =
-                                flyoutDialog != null && flyoutDialog.isShowing();
-                        final boolean isPopupWindowShowing =
-                                flyoutPopupWindow != null && flyoutPopupWindow.isShowing();
-                        final boolean blockFlyoutVisibilityHandler =
-                                isDialogShowing || isPopupWindowShowing;
-
-                        if (blockFlyoutVisibilityHandler) {
-                            final Object targetPanel = isDialogShowing ? flyoutDialog : flyoutPopupWindow;
-
-                            // give a delay to ensure the flyout animation is finished.
-                            Utils.runOnMainThreadDelayed(
-                                    () -> {
-                                        runFlyoutIdsResetHandler();
-                                        addFlyoutElements(targetPanel);
-                                        onFlyoutListBound(targetPanel);
-                                    },
-                                    30
-                            );
-                        } else {
-                            flyoutVisibilityHandler.postDelayed(this, 10);
-                        }
+            @Override
+            public void onViewDetachedFromWindow(@NonNull View view) {
+                view.removeOnAttachStateChangeListener(this);
+                // A dialog is still showing while its window is removed.
+                Utils.runOnMainThreadDelayed(() -> {
+                    if ((flyoutDialog == null || !flyoutDialog.isShowing())
+                            && (flyoutPopupWindow == null || !flyoutPopupWindow.isShowing())) {
+                        resetFlyoutIds();
                     }
-                }
-        );
-    }
+                }, 0);
+            }
+        });
 
-    private static void runFlyoutIdsResetHandler() {
-        if (flyoutIdsResetHandlerRunning) {
-            return;
+        // The app can show the menu before this call.
+        if (flyoutView.isAttachedToWindow()) {
+            flyoutView.post(addElements);
         }
-        flyoutIdsResetHandlerRunning = true;
-
-        flyoutIdsResetHandler.removeCallbacksAndMessages(null);
-        flyoutIdsResetHandler.post(
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        final boolean isDialogClosed =
-                                flyoutDialog == null || !flyoutDialog.isShowing();
-                        final boolean isPopupWindowClosed =
-                                flyoutPopupWindow == null || !flyoutPopupWindow.isShowing();
-                        final boolean blockFlyoutIdsResetHandler =
-                                isDialogClosed && isPopupWindowClosed;
-
-                        if (blockFlyoutIdsResetHandler) {
-                            resetFlyoutIds();
-
-                            flyoutVisibilityHandlerRunning = false;
-                            flyoutIdsResetHandlerRunning = false;
-                        } else {
-                            flyoutIdsResetHandler.postDelayed(this, 10);
-                        }
-                    }
-                }
-        );
     }
 
     private static void resetFlyoutIds() {
+        flyoutElementsAdded = false;
         visibleFlyoutButtons.clear();
         visibleFlyoutButtonTexts.clear();
         flyoutHasAppSaveButton = false;
