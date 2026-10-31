@@ -48,6 +48,7 @@ import java.util.Map;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import java.util.regex.Pattern;
 import java.util.function.Predicate;
 
 import app.morphe.extension.shared.Logger;
@@ -300,11 +301,13 @@ public final class FlyoutUtils {
             getAsciiBytes(".ytimg.com/vi/"),
             getAsciiBytes("youtube.com/watch?v=")
     );
-    private static final List<byte[]> KIDS_VIDEO_ELEMENTS_BYTES = List.of(
-            getAsciiBytes("video_metadata_carousel.e"),
-            getAsciiBytes("com.google.android.apps.youtube.kids"),
-            getAsciiBytes("https://www.youtube.com/myfamily/#mf-compare")
-    );
+    /**
+     * The icon names of the Save to playlist item, by preference.
+     * The item uses the icon of a playlist or of a bookmark, depending on the app version.
+     */
+    public static final String[] SAVE_TO_PLAYLIST_ICON_NAMES = {"PLAYLIST_ADD", "ADD_TO_PLAYLIST", "BOOKMARK", "SAVE"};
+    private static final Pattern APP_SAVE_BUTTON_PATTERN =
+            Pattern.compile("WATCH_LATER|" + String.join("|", SAVE_TO_PLAYLIST_ICON_NAMES));
     private static final List<byte[]> SHORTS_VIDEO_ELEMENT_BYTES = List.of(
             getAsciiBytes("history-shorts-shelf-item"),
             getAsciiBytes("shorts-shelf-item")
@@ -334,6 +337,14 @@ public final class FlyoutUtils {
      * Text of the visible flyout buttons, by their name, to find the views of the buttons in the menu.
      */
     private static final Map<String, String> visibleFlyoutButtonTexts = new HashMap<>();
+    /**
+     * If the app menu has a save item, also if the item is hidden by a Morphe setting.
+     */
+    private static boolean flyoutHasAppSaveButton;
+    /**
+     * Injected save item. The app menu can bind its items after the injected items are added.
+     */
+    private static WeakReference<View> injectedSaveButtonRef = new WeakReference<>(null);
 
     private static WeakReference<View> senderViewRef = new WeakReference<>(null);
 
@@ -352,7 +363,6 @@ public final class FlyoutUtils {
     @Nullable
     private static byte[] flyoutBuffer;
 
-    private static boolean videoMarkedAsForKids;
     private static boolean isMyTabHistoryFlyout;
     private static boolean isShortFlyout;
     /**
@@ -444,37 +454,6 @@ public final class FlyoutUtils {
             }
         }
         return "";
-    }
-
-    /**
-     * Injection point.
-     * Detect specific elements for videos marked as for kids, displayed
-     * via the video player's comments button.
-     */
-    public static byte[] onCommentsLoaded(byte[] bytes) {
-        if (bytes == null) {
-            return null;
-        }
-
-        // Every element is searched on the main thread, see FeedVideoCardsPatch.getElementText().
-        int found = 0;
-        for (byte[] search : KIDS_VIDEO_ELEMENTS_BYTES) {
-            if (FeedVideoCardsPatch.contains(bytes, search)) {
-                found++;
-            }
-        }
-        if (found == KIDS_VIDEO_ELEMENTS_BYTES.size() - 1) {
-            videoMarkedAsForKids = true;
-        }
-
-        return bytes;
-    }
-
-    /**
-     * Injection point.
-     */
-    public static void resetVideoMarkedAsForKids() {
-        videoMarkedAsForKids = false;
     }
 
     /**
@@ -591,6 +570,8 @@ public final class FlyoutUtils {
     private static void resetFlyoutIds() {
         visibleFlyoutButtons.clear();
         visibleFlyoutButtonTexts.clear();
+        flyoutHasAppSaveButton = false;
+        injectedSaveButtonRef = new WeakReference<>(null);
         currentButtonIndex = 0;
         flyoutVideoId = "";
         flyoutPlaylistId = "";
@@ -730,8 +711,6 @@ public final class FlyoutUtils {
                     flyoutPanel,
                     nextButtonIndex,
                     flyoutVideoId,
-                    videoMarkedAsForKids,
-                    isShortFlyout,
                     PlayerFlyoutMenuComponentsFilter.getTopFlyoutMenuVisible()
             );
         }
@@ -840,6 +819,30 @@ public final class FlyoutUtils {
             int index
     ) {
         return addFlyoutMenuItem(flyoutPanel, icon, text, clickListener, index, false, null);
+    }
+
+    /**
+     * Adds a save item, which is removed if the app menu binds its own save item afterwards.
+     */
+    public static int addFlyoutSaveButton(
+            Object flyoutPanel,
+            Drawable icon,
+            String text,
+            View.OnClickListener clickListener,
+            int index
+    ) {
+        final int nextIndex = addFlyoutButton(flyoutPanel, icon, text, clickListener, index);
+        if (nextIndex >= 0 && !customItemTextRefs.isEmpty()) {
+            injectedSaveButtonRef = new WeakReference<>(customItemTextRefs.get(customItemTextRefs.size() - 1).get());
+        }
+        return nextIndex;
+    }
+
+    /**
+     * @return If the app menu has its own item to save the video. The name of the item does not depend on the language.
+     */
+    public static boolean hasAppSaveButton() {
+        return flyoutHasAppSaveButton;
     }
 
     /**
@@ -952,6 +955,34 @@ public final class FlyoutUtils {
      */
     public static void setCurrentButtonInfo(@Nullable Enum<?> buttonEnum, @Nullable Object buttonInfo,
                                             @Nullable CharSequence buttonText) {
+        // Before the checks below, as a save item hidden by a Morphe setting must not be replaced by the injected one.
+        if (buttonEnum != null && !flyoutHasAppSaveButton) {
+            String name = buttonEnum.name();
+            if (APP_SAVE_BUTTON_PATTERN.matcher(name).find() && !name.contains("REMOVE")) {
+                flyoutHasAppSaveButton = true;
+
+                View view = injectedSaveButtonRef.get();
+                injectedSaveButtonRef = new WeakReference<>(null);
+                while (view != null && view.getParent() instanceof ViewGroup parent) {
+                    if (parent.getParent() instanceof InjectedItemsScrollView injectedItems) {
+                        Utils.hideViewByRemovingFromParentUnderCondition(true, view);
+                        if (parent.getChildCount() == 0) {
+                            // The divider is right after the injected items.
+                            ViewGroup menuContainer = injectedItems.menuContainer;
+                            Utils.hideViewByRemovingFromParentUnderCondition(true,
+                                    menuContainer.getChildAt(menuContainer.indexOfChild(injectedItems) + 1));
+                            Utils.hideViewByRemovingFromParentUnderCondition(true, injectedItems);
+                        }
+                        if (flyoutPopupWindow != null && flyoutPopupWindow.isShowing()) {
+                            flyoutPopupWindow.update();
+                        }
+                        break;
+                    }
+                    view = parent;
+                }
+            }
+        }
+
         // The menu creates no row for an item without a text, such as an item hidden by a Morphe setting.
         // It is not counted, so the index of every button matches its row.
         // The popup menus always give the text, and keep the rows they hide.

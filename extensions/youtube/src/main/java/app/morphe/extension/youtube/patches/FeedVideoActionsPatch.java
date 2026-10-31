@@ -1363,19 +1363,13 @@ public final class FeedVideoActionsPatch {
         return best;
     }
 
-    /**
-     * The icon names of the Save to playlist item, by preference.
-     * The item uses the icon of a playlist or of a bookmark, depending on the app version.
-     */
-    private static final String[] SAVE_TO_PLAYLIST_ICON_NAMES = {"PLAYLIST_ADD", "ADD_TO_PLAYLIST", "BOOKMARK", "SAVE"};
-
     private static final Pattern NOT_SAVE_ITEM_PATTERN =
             Pattern.compile("DOWNLOAD|OFFLINE|SHARE|QUEUE|NOT_INTERESTED|DISMISS|FLAG|REPORT|CAST");
 
     @Nullable
     private static Pair<String, Integer> findSaveToPlaylistButton() {
         List<Pair<String, Integer>> buttons = FlyoutUtils.getVisibleFlyoutButtons();
-        for (String iconName : SAVE_TO_PLAYLIST_ICON_NAMES) {
+        for (String iconName : FlyoutUtils.SAVE_TO_PLAYLIST_ICON_NAMES) {
             for (Pair<String, Integer> button : buttons) {
                 String name = button.first;
                 if (name.contains(iconName) && !name.contains("WATCH_LATER") && !name.contains("REMOVE")) {
