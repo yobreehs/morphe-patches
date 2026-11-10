@@ -48,6 +48,8 @@ public final class VolumeAndBrightnessScroller {
      * @param overlayController  Overlay controller instance.
      * @param volumeDistance     Unit distance for volume scrolling, in dp.
      * @param brightnessDistance Unit distance for brightness scrolling, in dp; higher = more precise.
+     * @param brightnessStepPercent Percent of brightness changed by one step (FemAlloy).
+     * @param brightnessGridPercent Percent between two brightness levels, or 0 to disable snapping (FemAlloy).
      * @param speedDistance      Unit distance for speed scrolling, in dp; higher = more precise.
      * @param speedStepInt       Playback speed change per tick, expressed as an integer multiplied by 100 (e.g. 5 = 0.05x).
      * @param enableSpeedGesture Whether the playback speed swipe gesture is enabled.
@@ -59,6 +61,8 @@ public final class VolumeAndBrightnessScroller {
             SwipeControlsOverlay overlayController,
             int volumeDistance,
             int brightnessDistance,
+            double brightnessStepPercent,
+            double brightnessGridPercent,
             int speedDistance,
             int speedStepInt,
             boolean enableSpeedGesture
@@ -90,7 +94,11 @@ public final class VolumeAndBrightnessScroller {
                         }
 
                         if (shouldAdjustBrightness) {
-                            screenController.setScreenBrightness(screenBrightness + direction);
+                            double newBrightness = screenBrightness + direction * brightnessStepPercent;
+                            if (brightnessGridPercent > 0) {
+                                newBrightness = Math.round(newBrightness / brightnessGridPercent) * brightnessGridPercent;
+                            }
+                            screenController.setScreenBrightness(newBrightness);
                         } else {
                             screenController.restoreDefaultBrightness();
                         }

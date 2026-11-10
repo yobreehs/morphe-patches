@@ -299,6 +299,14 @@ If later turned off, it is recommended to clear the app data to prevent UI bugs"
     <string name="morphe_app_refresh_rate_type_entry_2">Playback portrait</string>
     <string name="morphe_app_refresh_rate_type_entry_3">Playback fullscreen</string>
     <string name="morphe_app_refresh_rate_type_entry_4">Playback portrait and fullscreen</string>
+    <string name="morphe_app_refresh_rate_custom">Custom…</string>
+    <string name="morphe_app_refresh_rate_custom_title">Custom refresh rate</string>
+    <string name="morphe_app_refresh_rate_custom_message">Enter a value between %1$s and %2$s FPS. The highest supported refresh rate that does not exceed it is used.</string>
+    <string name="morphe_app_refresh_rate_custom_hint">%1$s–%2$s FPS</string>
+    <string name="morphe_app_refresh_rate_custom_invalid">Enter a number between %1$s and %2$s</string>
+    <string name="morphe_app_refresh_rate_custom_summary">%s FPS (custom)</string>
+    <string name="morphe_app_refresh_rate_summary_effective">%1$s FPS (display: %2$s Hz)</string>
+    <string name="morphe_app_refresh_rate_custom_unsupported">%1$s FPS is not a display mode of this screen (modes: %2$s Hz). The frame rate is limited instead.</string>
 
     <!-- layout.font.baseCustomFontPatch -->
     <string name="morphe_custom_font_type_title">Font</string>

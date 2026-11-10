@@ -65,6 +65,8 @@ public abstract class BaseGestureController extends GestureDetector.SimpleOnGest
                 controller.getOverlay(),
                 config.getVolumeSwipeDistance(),
                 config.getBrightnessSwipeSensitivity(),
+                config.getBrightnessStepPercent(),
+                config.getBrightnessGridPercent(),
                 config.getSpeedSwipeSensitivity(),
                 config.getSpeedStepInt(),
                 config.isSpeedControlEnabled()

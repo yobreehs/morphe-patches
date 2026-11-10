@@ -121,6 +121,14 @@ public final class NavigationBar {
     }
 
     /**
+     * Xposed-only injection point: the host toolbar class cannot be made to implement
+     * {@link AppCompatToolbarPatchInterface}, so a proxy created by the module is passed in instead.
+     */
+    public static void setToolbar(AppCompatToolbarPatchInterface toolbar) {
+        toolbarResultsRef = new WeakReference<>(toolbar);
+    }
+
+    /**
      * Injection point.
      */
     public static void setToolbar(FrameLayout layout) {

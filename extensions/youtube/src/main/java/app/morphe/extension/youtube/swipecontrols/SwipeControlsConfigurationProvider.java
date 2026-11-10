@@ -257,6 +257,21 @@ public final class SwipeControlsConfigurationProvider {
     }
 
     /**
+     * FemAlloy: percent of brightness changed by one swipe step.
+     */
+    public double getBrightnessStepPercent() {
+        return Math.max(1, Math.min(100, Settings.SWIPE_BRIGHTNESS_STEP_PERCENT.get()));
+    }
+
+    /**
+     * FemAlloy: percent between two brightness levels of the configured grid, or 0 when disabled.
+     */
+    public double getBrightnessGridPercent() {
+        final int steps = Math.max(1, Math.min(1000, Settings.SWIPE_BRIGHTNESS_STEPS.get()));
+        return 100.0 / steps;
+    }
+
+    /**
      * Number of volume steps changed by one press of a volume key.
      */
     public int getVolumeKeySteps() {
