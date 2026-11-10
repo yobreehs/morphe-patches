@@ -256,4 +256,8 @@ If you want the most trouble free experience, then &lt;b>uninstall&lt;/b> this a
     <!-- misc.crashlog.crashLogPatch -->
     <string name="morphe_crash_log_saved_documents">Crash log saved to user documents: %s</string>
     <string name="morphe_crash_log_saved">Crash log saved: %s</string>
+
+    <!-- FemAlloy: restored after the v2.2 resource restructure -->
+    <string name="morphe_debug_dump_view_hierarchy_title">Dump view hierarchy</string>
+    <string name="morphe_debug_dump_view_hierarchy_summary">Log the component tree of every open screen (find renderers that bypass filters)</string>
 </resources>

@@ -257,6 +257,13 @@ public final class SwipeControlsConfigurationProvider {
     }
 
     /**
+     * Number of volume steps changed by one press of a volume key.
+     */
+    public int getVolumeKeySteps() {
+        return Math.max(1, Settings.VOLUME_KEY_STEPS.get());
+    }
+
+    /**
      * Number of steps the volume range is divided into.
      * Devices that expose a fine-grained volume stream (such as 150 indices) otherwise
      * adjust the volume by a tenth of what the device volume UI does.

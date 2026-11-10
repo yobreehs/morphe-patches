@@ -245,4 +245,8 @@ Second \"item\" text"</string>
   <!-- misc.crashlog.crashLogPatch -->
   <string name="morphe_crash_log_saved_documents">Журнал сбоев сохранён в документах пользователя: %s</string>
   <string name="morphe_crash_log_saved">Журнал сбоев сохранён: %s</string>
+
+    <!-- FemAlloy: restored after the v2.2 resource restructure -->
+    <string name="morphe_debug_dump_view_hierarchy_title">Дамп иерархии view</string>
+    <string name="morphe_debug_dump_view_hierarchy_summary">Записать в лог дерево компонентов открытых экранов (поиск рендереров, обходящих фильтры)</string>
 </resources>

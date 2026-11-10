@@ -316,4 +316,7 @@ Second \"item\" text"</string>
   <string name="morphe_ryd_statistics_getNumberOfRateLimitRequestsEncountered_zero_summary">Ограничения скорости клиентского API не обнаружены</string>
   <string name="morphe_ryd_statistics_getNumberOfRateLimitRequestsEncountered_non_zero_summary">Превышен лимит запросов клиента %s раз</string>
   <string name="morphe_ryd_statistics_millisecond_text">%s миллисекунд</string>
+
+    <!-- FemAlloy: restored after the v2.2 resource restructure -->
+    <string name="morphe_custom_filter_strings_title">Кастомный фильтр</string>
 </resources>

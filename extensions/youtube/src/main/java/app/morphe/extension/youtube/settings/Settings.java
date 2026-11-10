@@ -355,6 +355,7 @@ public class Settings extends SharedYouTubeSettings {
     public static final BooleanSetting DO_NOT_REMEMBER_LOOP_VIDEO = new BooleanSetting("morphe_do_not_remember_loop_video", FALSE, parent(LOOP_VIDEO_BUTTON));
     public static final BooleanSetting MUTE_VIDEO_BUTTON = new BooleanSetting("morphe_mute_video_button", FALSE, true);
     public static final BooleanSetting PIP_OVERLAY_BUTTON = new BooleanSetting("morphe_pip_button_overlay", FALSE, new PipButtonPatchAvailability());
+    public static final BooleanSetting PIP_SEEK_BUTTONS = new BooleanSetting("morphe_pip_seek_buttons", FALSE, true);
     public static final BooleanSetting PIP_FLYOUT_BUTTON = new BooleanSetting("morphe_pip_button_flyout", FALSE, new PipButtonPatchAvailability());
     public static final BooleanSetting PLAY_ALL_BUTTON = new BooleanSetting("morphe_play_all_button", FALSE);
     public static final EnumSetting<PlaylistIDPrefix> PLAY_ALL_BUTTON_TYPE = new EnumSetting<>("morphe_play_all_button_type", PlaylistIDPrefix.ALL_CONTENTS_WITH_TIME_DESCENDING,  parent(PLAY_ALL_BUTTON));
@@ -793,6 +794,7 @@ public class Settings extends SharedYouTubeSettings {
     public static final BooleanSetting SWIPE_HAPTIC_FEEDBACK = new BooleanSetting("morphe_swipe_haptic_feedback", TRUE, true, new AnySwipeZoneAvailability());
     public static final IntegerSetting SWIPE_MAGNITUDE_THRESHOLD = new IntegerSetting("morphe_swipe_threshold", 30, true, new AnySwipeZoneAvailability());
     public static final IntegerSetting SWIPE_VOLUME_DISTANCE = new IntegerSetting("morphe_swipe_volume_distance", 10, true, new SwipeActionAvailability(SwipeZoneAction.VOLUME));
+    public static final IntegerSetting VOLUME_KEY_STEPS = new IntegerSetting("morphe_volume_key_steps", 1, true);
     public static final EnumSetting<SwipeVolumeSteps> SWIPE_VOLUME_STEPS = new EnumSetting<>("morphe_swipe_volume_steps", SwipeVolumeSteps.DEVICE_DEFAULT, true, new SwipeActionAvailability(SwipeZoneAction.VOLUME));
     public static final BooleanSetting VOLUME_BOOST = new BooleanSetting("morphe_volume_boost", FALSE, new SwipeActionAvailability(SwipeZoneAction.VOLUME));
     public static final IntegerSetting SWIPE_BRIGHTNESS_SENSITIVITY = new IntegerSetting("morphe_swipe_brightness_sensitivity", 1, true, new SwipeActionAvailability(SwipeZoneAction.BRIGHTNESS));
@@ -1389,6 +1391,7 @@ public class Settings extends SharedYouTubeSettings {
                 0, 100, 1, "%"));
         SeekBarPreference.register(new SeekBarConfig(PLAYER_CONTROL_BUTTONS_BACKGROUND_OPACITY,
                 0, 100, 1, "%"));
+        SeekBarPreference.register(new SeekBarConfig(VOLUME_KEY_STEPS, 1, 10, 1, ""));
         SeekBarPreference.register(new SeekBarConfig(SWIPE_VOLUME_DISTANCE,
                 1, 50, 1, ""));
         SeekBarPreference.register(new SeekBarConfig(SWIPE_BRIGHTNESS_SENSITIVITY,

@@ -340,6 +340,7 @@ Second \"item\" text"</string>
 • Комментарии: %4$s
 • Всего: %5$s"</string>
   <string name="morphe_hide_stats_category_title">Статистика</string>
+  <string name="morphe_hide_about_category_title">О программе</string>
   <string name="morphe_hide_stats_hidden_24h_title">Видео скрыто, за последние 24 часа</string>
   <string name="morphe_hide_stats_hidden_all_title">Видео скрыто, за все время</string>
   <string name="morphe_hide_stats_hidden_24h_reset_title">Сбросить счетчик за последние 24 часа?</string>
@@ -853,6 +854,8 @@ Second \"item\" text"</string>
   <string name="morphe_swipe_volume_distance_title">Чувствительность жеста регулировки громкости</string>
   <string name="morphe_swipe_volume_distance_summary">Более высокие значения требуют больше смахиваний на шаг громкости</string>
   <string name="morphe_swipe_volume_steps_title">Шаги громкости</string>
+  <string name="morphe_volume_key_steps_title">Шагов громкости на нажатие</string>
+  <string name="morphe_volume_key_steps_summary">Сколько шагов громкости меняет одно нажатие кнопок громкости устройства (1 = как по умолчанию, один шаг)</string>
   <string name="morphe_volume_boost_title">Усиление громкости</string>
   <string name="morphe_volume_boost_summary">Проведение вверх за пределы максимальной громкости усиливает её, что может искажать громкий звук</string>
   <string name="morphe_swipe_volume_steps_entry_default">По умолчанию</string>
@@ -1084,6 +1087,10 @@ Second \"item\" text"</string>
   <!-- layout.hide.autoplaypreview.hideAutoplayPreviewPatch -->
   <string name="morphe_hide_autoplay_preview_title">Скрыть предварительный просмотр автовоспроизведения</string>
   <string name="morphe_hide_autoplay_preview_summary">Ваша конфигурация JSON SponsorBlock может быть импортирована или экспортирована в Morphe и другие платформы SponsorBlock. Она включает в себя Ваш личный идентификатор пользователя. Подумайте дважды перед тем, как делиться ею с кем-либо</string>
+  <string name="morphe_pip_seek_buttons_title">Кнопки перемотки в PiP</string>
+  <string name="morphe_pip_seek_buttons_summary">Добавляет кнопки перемотки назад и вперёд (±5 секунд) в окно «картинка в картинке»</string>
+  <string name="morphe_pip_seek_buttons_restore_near_end_title">Возвращать старые кнопки в конце</string>
+  <string name="morphe_pip_seek_buttons_restore_near_end_summary">Показывает штатные кнопки PiP YouTube в последние 30 секунд видео</string>
   <!-- layout.buttons.overlay.hidePlayerOverlayButtonsPatch -->
   <string name="morphe_overlay_buttons_screen_title">Кнопки наложения</string>
   <string name="morphe_overlay_buttons_screen_summary">Выберите, какие элементы отображаются поверх видеоплеера</string>
@@ -1575,6 +1582,9 @@ Second \"item\" text"</string>
 • HDR по-прежнему зависит от клиента подмены видеопотоков. Клиент подмены видеопотоков предполагает использование подделки потоков."</string>
   <string name="morphe_video_codec_title">Видеокодек</string>
   <string name="morphe_video_codec_entry_default">По умолчанию</string>
+  <string name="morphe_video_codec_button_title">Показывать кнопку кодека</string>
+  <string name="morphe_video_codec_button_summary">Добавляет кнопку в плеер для переключения кодека во время воспроизведения</string>
+  <string name="morphe_video_codec_selected">Кодек: %1$s</string>
   <!-- 'Spoof video streams' should be the same translation used for 'morphe_spoof_video_streams_screen_title'. -->
   <string name="morphe_video_codec_avc_not_available">Чтобы принудительно включить AVC, измените параметр \"Подмена видео потоков\" на \"Android Studio\", \"Android VR\" или \"visionOS\"</string>
   <string name="morphe_video_codec_user_dialog_message">"VP9
@@ -1852,4 +1862,27 @@ AVC (H.264)
   <string name="morphe_live_chat_translate_max_length_title">Максимальная длина сообщения</string>
   <string name="morphe_live_chat_translate_max_length_summary">Более длинные сообщения отображаются без перевода</string>
   <string name="morphe_live_chat_translate_max_length_no_limit">Без ограничений</string>
+
+    <!-- FemAlloy: restored after the v2.2 resource restructure -->
+    <string name="morphe_hide_auto_dubbed_label_title">Скрыть надпись \"Автоматически озвучено\"</string>
+    <string name="morphe_hide_history_shelf_summary">Скрывает раздел «История» на вкладке «Вы»</string>
+    <string name="morphe_hide_hyped_label_title">Скрыть метку \"В тренде\"</string>
+    <string name="morphe_hide_video_recommendation_labels_title">Скрыть метки видеорекомендаций</string>
+    <string name="morphe_hide_video_recommendation_labels_summary">Скрывает метки \"Люди также смотрели\" и \"Вам также может понравиться\" в результатах поиска</string>
+    <string name="morphe_external_downloader_title">Показать кнопку внешнего загрузчика</string>
+    <string name="morphe_external_downloader_summary">Отображает кнопку наложения в видеоплеере, которая открывает ваш внешний загрузчик</string>
+    <string name="morphe_external_downloader_action_button_title">Переопределить кнопку и меню \"Скачать\"</string>
+    <string name="morphe_external_downloader_action_button_summary">Использует выбранный вами внешний загрузчик вместо стандартной функции загрузки</string>
+    <string name="morphe_hide_quick_actions_title">Скрыть панель действий</string>
+    <string name="morphe_hide_quick_actions_ask_button_title">Скрыть кнопку \"Спросить\"</string>
+    <string name="morphe_hide_quick_actions_comments_button_title">Скрыть кнопку \"Комментарии\"</string>
+    <string name="morphe_hide_quick_actions_more_button_title">Скрыть кнопку \"Еще\"</string>
+    <string name="morphe_hide_quick_actions_save_button_title">Скрыть кнопку \"Сохранить\"</string>
+    <string name="morphe_hide_quick_actions_share_button_title">Скрыть кнопку \"Поделиться\"</string>
+    <string name="morphe_navigation_buttons_screen_title">Кнопки навигации</string>
+    <string name="morphe_navigation_buttons_screen_summary">Выберите, какие кнопки отображаются на панели инструментов</string>
+    <string name="morphe_show_search_button_index_title">Положение кнопки поиска</string>
+    <string name="morphe_show_settings_button_index_title">Положение кнопки \"Настройки\"</string>
+    <string name="morphe_disable_translucent_navigation_title">Отключить полупрозрачность панели навигации</string>
+    <string name="morphe_disable_translucent_navigation_summary">Делает панель навигации и строку состояния полностью непрозрачными</string>
 </resources>

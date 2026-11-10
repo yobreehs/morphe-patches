@@ -354,6 +354,7 @@ Limitations:
 • Total: %5$s"</string>
 
     <string name="morphe_hide_stats_category_title">Stats</string>
+    <string name="morphe_hide_about_category_title">About</string>
     <string name="morphe_hide_stats_hidden_24h_title">Videos hidden, last 24 hours</string>
     <string name="morphe_hide_stats_hidden_all_title">Videos hidden, all time</string>
     <string name="morphe_hide_stats_hidden_24h_reset_title">Reset last 24 hours counter?</string>
@@ -923,6 +924,8 @@ To fix this, turn on \'Spoof video streams\' and change the \'Default client\' t
     <string name="morphe_swipe_volume_distance_title">Volume swipe sensitivity</string>
     <string name="morphe_swipe_volume_distance_summary">Higher values require more swiping per volume step</string>
     <string name="morphe_swipe_volume_steps_title">Volume steps</string>
+    <string name="morphe_volume_key_steps_title">Volume key steps</string>
+    <string name="morphe_volume_key_steps_summary">How many volume steps a single press of the device volume buttons changes (1 = default one step)</string>
     <string name="morphe_volume_boost_title">Volume boost</string>
     <string name="morphe_volume_boost_summary">Swiping up past maximum volume boosts it, which can distort loud audio</string>
     <string name="morphe_swipe_volume_steps_entry_default">Device default</string>
@@ -1168,6 +1171,10 @@ To show the \'Audio Track\' menu, change \'Spoof video streams\' to any client e
     <!-- layout.hide.autoplaypreview.hideAutoplayPreviewPatch -->
     <string name="morphe_hide_autoplay_preview_title">Hide autoplay preview</string>
     <string name="morphe_hide_autoplay_preview_summary">Hides the upcoming video preview in fullscreen before autoplay begins</string>
+    <string name="morphe_pip_seek_buttons_title">Picture-in-picture seek buttons</string>
+    <string name="morphe_pip_seek_buttons_summary">Adds rewind and forward (±5 seconds) buttons to the Picture-in-picture window</string>
+    <string name="morphe_pip_seek_buttons_restore_near_end_title">Restore original buttons near the end</string>
+    <string name="morphe_pip_seek_buttons_restore_near_end_summary">Shows YouTube’s own Picture-in-picture buttons again during the last 30 seconds of the video</string>
 
     <!-- layout.buttons.overlay.hidePlayerOverlayButtonsPatch -->
     <string name="morphe_overlay_buttons_screen_title">Overlay buttons</string>
@@ -1735,6 +1742,9 @@ Limitations:
     <string name="morphe_video_codec_entry_default">Default</string>
     <string name="morphe_video_codec_entry_vp9" translatable="false">VP9</string>
     <string name="morphe_video_codec_entry_avc" translatable="false">AVC (H.264)</string>
+    <string name="morphe_video_codec_button_title">Show codec button</string>
+    <string name="morphe_video_codec_button_summary">Adds a button to the player for switching the video codec during playback</string>
+    <string name="morphe_video_codec_selected">Codec: %1$s</string>
     <!-- 'Spoof video streams' should be the same translation used for 'morphe_spoof_video_streams_screen_title'. -->
     <string name="morphe_video_codec_avc_not_available">To force AVC, change \'Spoof video streams\' to \'Android Studio\', \'Android VR\' or \'visionOS\'</string>
     <string name="morphe_video_codec_user_dialog_message">"VP9
@@ -2028,4 +2038,28 @@ Automatic recording is optional. It stops in incognito or when the account chang
     <string name="morphe_live_chat_translate_max_length_title">Maximum message length</string>
     <string name="morphe_live_chat_translate_max_length_summary">Longer messages are shown untranslated</string>
     <string name="morphe_live_chat_translate_max_length_no_limit">No limit</string>
+
+    <!-- FemAlloy: restored after the v2.2 resource restructure -->
+    <string name="morphe_hide_auto_dubbed_label_title">Hide \'Auto-dubbed\' label</string>
+    <string name="morphe_hide_history_shelf_summary">Hides the History shelf in the You tab</string>
+    <string name="morphe_hide_hyped_label_title">Hide Hyped label</string>
+    <string name="morphe_hide_video_recommendation_labels_title">Hide video recommendation labels</string>
+    <string name="morphe_hide_video_recommendation_labels_summary">Hides \'People also watched\' and \'You might also like\' labels in search results</string>
+    <string name="morphe_hide_aislist_attribution_title" translatable="false">AiSList</string>
+    <string name="morphe_external_downloader_title">Show external download button</string>
+    <string name="morphe_external_downloader_summary">Shows an overlay button in video player that opens your external downloader</string>
+    <string name="morphe_external_downloader_action_button_title">Override Download button &amp; menu</string>
+    <string name="morphe_external_downloader_action_button_summary">Uses your chosen external downloader instead of the stock download feature</string>
+    <string name="morphe_hide_quick_actions_title">Hide action bar</string>
+    <string name="morphe_hide_quick_actions_ask_button_title">Hide Ask button</string>
+    <string name="morphe_hide_quick_actions_comments_button_title">Hide Comments button</string>
+    <string name="morphe_hide_quick_actions_more_button_title">Hide More button</string>
+    <string name="morphe_hide_quick_actions_save_button_title">Hide Save button</string>
+    <string name="morphe_hide_quick_actions_share_button_title">Hide Share button</string>
+    <string name="morphe_navigation_buttons_screen_title">Navigation buttons</string>
+    <string name="morphe_navigation_buttons_screen_summary">Choose which buttons appear in the bottom navigation bar</string>
+    <string name="morphe_show_search_button_index_title">Search button position</string>
+    <string name="morphe_show_settings_button_index_title">Settings button position</string>
+    <string name="morphe_disable_translucent_navigation_title">Disable translucent navigation bar</string>
+    <string name="morphe_disable_translucent_navigation_summary">Makes the navigation and status bar fully opaque</string>
 </resources>
