@@ -260,4 +260,6 @@ If you want the most trouble free experience, then &lt;b>uninstall&lt;/b> this a
     <!-- FemAlloy: restored after the v2.2 resource restructure -->
     <string name="morphe_debug_dump_view_hierarchy_title">Dump view hierarchy</string>
     <string name="morphe_debug_dump_view_hierarchy_summary">Log the component tree of every open screen (find renderers that bypass filters)</string>
+    <string name="morphe_debug_stacktrace_title">Debug log stack trace</string>
+    <string name="morphe_debug_stacktrace_summary">Includes stack traces in debug logs to help identify errors</string>
 </resources>
