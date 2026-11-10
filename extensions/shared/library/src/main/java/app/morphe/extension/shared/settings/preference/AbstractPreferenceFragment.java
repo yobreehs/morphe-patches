@@ -706,7 +706,9 @@ public abstract class AbstractPreferenceFragment extends PreferenceFragment {
      */
     public static String exportFileName(String kind) {
         String appName = Utils.getApplicationName().replaceAll("\\s+", "_");
-        String date = new SimpleDateFormat("yyyy-MM-dd", Locale.US).format(new Date());
+        // FemAlloy: include the time down to seconds, so two exports made on the same day
+        // do not collide and the exact moment of the log is visible in the file name.
+        String date = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.US).format(new Date());
 
         return appName + "_" + kind + "_" + date + ".txt";
     }
@@ -1265,7 +1267,11 @@ public abstract class AbstractPreferenceFragment extends PreferenceFragment {
             final String sortValue;
             switch (preferenceSort) {
                 case BY_TITLE:
-                    sortValue = Utils.removePunctuationToLowercase(NewIndicatorSpan.removeFrom(preference.getTitle()));
+                    // FemAlloy: a preference whose title string is missing from the resources
+                    // has no title at all. Sorting must not throw, otherwise the whole screen
+                    // (or a whole section of it) is lost.
+                    CharSequence title = NewIndicatorSpan.removeFrom(preference.getTitle());
+                    sortValue = title == null ? "" : Utils.removePunctuationToLowercase(title);
                     break;
                 case BY_KEY:
                     String key = preference.getKey();

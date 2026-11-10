@@ -2040,6 +2040,8 @@ Automatic recording is optional. It stops in incognito or when the account chang
     <string name="morphe_live_chat_translate_max_length_no_limit">No limit</string>
 
     <!-- FemAlloy: restored after the v2.2 resource restructure -->
+<string name="morphe_app_refresh_rate_category_title">App refresh rate</string>
+    <string name="morphe_playback_misc_category_title">Playback</string>
     <string name="morphe_hide_auto_dubbed_label_title">Hide \'Auto-dubbed\' label</string>
     <string name="morphe_hide_history_shelf_summary">Hides the History shelf in the You tab</string>
     <string name="morphe_hide_hyped_label_title">Hide Hyped label</string>
