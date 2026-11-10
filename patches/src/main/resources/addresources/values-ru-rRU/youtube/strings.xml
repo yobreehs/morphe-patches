@@ -1864,6 +1864,8 @@ AVC (H.264)
   <string name="morphe_live_chat_translate_max_length_no_limit">Без ограничений</string>
 
     <!-- FemAlloy: restored after the v2.2 resource restructure -->
+<string name="morphe_app_refresh_rate_category_title">Частота обновления приложения</string>
+  <string name="morphe_playback_misc_category_title">Воспроизведение</string>
     <string name="morphe_hide_auto_dubbed_label_title">Скрыть надпись \"Автоматически озвучено\"</string>
     <string name="morphe_hide_history_shelf_summary">Скрывает раздел «История» на вкладке «Вы»</string>
     <string name="morphe_hide_hyped_label_title">Скрыть метку \"В тренде\"</string>
