@@ -270,6 +270,14 @@ Second \"item\" text"</string>
   <string name="morphe_app_refresh_rate_type_entry_2">Просмотр в портретной ориентации</string>
   <string name="morphe_app_refresh_rate_type_entry_3">Просмотр в полноэкранном режиме</string>
   <string name="morphe_app_refresh_rate_type_entry_4">Просмотр в портретной ориентации и в полноэкранном режиме</string>
+  <string name="morphe_app_refresh_rate_custom">Своя частота…</string>
+  <string name="morphe_app_refresh_rate_custom_title">Своя частота обновления</string>
+  <string name="morphe_app_refresh_rate_custom_message">Введите значение от %1$s до %2$s кадр/с. Будет использован максимальный поддерживаемый режим, не превышающий это значение.</string>
+  <string name="morphe_app_refresh_rate_custom_hint">%1$s–%2$s кадр/с</string>
+  <string name="morphe_app_refresh_rate_custom_invalid">Введите число от %1$s до %2$s</string>
+  <string name="morphe_app_refresh_rate_custom_summary">%s кадр/с (своя)</string>
+  <string name="morphe_app_refresh_rate_summary_effective">%1$s кадр/с (дисплей: %2$s Гц)</string>
+  <string name="morphe_app_refresh_rate_custom_unsupported">%1$s кадр/с — не режим этого экрана (режимы: %2$s Гц). Частота кадров ограничивается вместо этого.</string>
   <!-- layout.font.baseCustomFontPatch -->
   <string name="morphe_custom_font_type_title">Шрифт</string>
   <string name="morphe_custom_font_type_entry_default">По умолчанию</string>

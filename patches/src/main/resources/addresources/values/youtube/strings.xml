@@ -2062,4 +2062,9 @@ Automatic recording is optional. It stops in incognito or when the account chang
     <string name="morphe_show_settings_button_index_title">Settings button position</string>
     <string name="morphe_disable_translucent_navigation_title">Disable translucent navigation bar</string>
     <string name="morphe_disable_translucent_navigation_summary">Makes the navigation and status bar fully opaque</string>
+
+    <string name="morphe_swipe_brightness_steps_title">Brightness steps</string>
+    <string name="morphe_swipe_brightness_steps_summary">Number of brightness levels in the full range, up to 1000 (the value snaps to this grid)</string>
+    <string name="morphe_swipe_brightness_step_percent_title">Brightness step size</string>
+    <string name="morphe_swipe_brightness_step_percent_summary">Percent the brightness changes per swipe step (1-100, default 1)</string>
 </resources>
