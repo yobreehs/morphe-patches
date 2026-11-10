@@ -233,4 +233,7 @@ Second \"item\" text"</string>
   <string name="morphe_sb_about_api_summary">"SponsorBlock — это краудсорсинговая база данных видеосегментов, таких как спонсоры, интро, аутро и напоминания о подписке. Сегменты добавляются и оцениваются сообществом, а база данных открыта и бесплатна для скачивания
 
 ID просматриваемого вами видео отправляется в API SponsorBlock для получения его сегментов"</string>
+
+    <!-- FemAlloy: restored after the v2.2 resource restructure -->
+    <string name="morphe_sb_about_title">Об интеграции</string>
 </resources>

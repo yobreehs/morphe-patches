@@ -149,6 +149,26 @@ public final class LithoFilterPatch {
     };
 
     /**
+     * Filters registered at runtime by the Xposed module, which does not run the patcher
+     * that would otherwise replace the placeholder filter above.
+     */
+    private static final List<Filter> runtimeFilters = new ArrayList<>();
+
+    /**
+     * Registers a filter at runtime and adds its patterns to the search trees.
+     * Must be called after this class is initialized, before the first component is filtered.
+     */
+    public static void addFilter(Filter filter) {
+        synchronized (runtimeFilters) {
+            runtimeFilters.add(filter);
+        }
+        filterUsingCallbacks(identifierSearchTree, filter,
+                filter.identifierCallbacks, Filter.FilterContentType.IDENTIFIER);
+        filterUsingCallbacks(pathSearchTree, filter,
+                filter.pathCallbacks, Filter.FilterContentType.PATH);
+    }
+
+    /**
      * Litho layout fixed thread pool size override.
      * <p>
      * Unpatched YouTube uses a layout fixed thread pool between 1 and 3 threads:

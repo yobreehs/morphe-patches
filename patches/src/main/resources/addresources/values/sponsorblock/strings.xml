@@ -232,4 +232,8 @@ If you\'re not submitting a highlight, tap Cancel and mark the second location"<
     <string name="morphe_sb_about_api_summary">"SponsorBlock is a crowdsourced database of video segments such as sponsors, intros, outros and reminders to subscribe. Segments are submitted and voted on by the community, and the database is open and free to download
 
 The ID of the video you watch is sent to the SponsorBlock API to get its segments"</string>
+
+    <!-- FemAlloy: restored after the v2.2 resource restructure -->
+    <string name="morphe_sb_about_title">About</string>
+    <string name="morphe_sb_about_api_title" translatable="false">SponsorBlock</string>
 </resources>

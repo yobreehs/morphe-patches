@@ -61,7 +61,7 @@ public final class VolumeKeysController {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
             AudioVolumeController audio = controller.getAudio();
             if (audio != null) {
-                audio.adjustVolumeBySteps(volumeUp ? 1 : -1);
+                audio.adjustVolumeBySteps((volumeUp ? 1 : -1) * controller.getConfig().getVolumeKeySteps());
                 controller.getOverlay().onVolumeChanged(audio.getSteppedVolume(), audio.getSteppedMaxVolume(), audio.getBoostStep());
             }
         }

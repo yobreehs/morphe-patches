@@ -11,14 +11,20 @@
 package app.morphe.extension.youtube.swipecontrols;
 
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+import android.view.Window;
 import android.view.WindowInsets;
+import android.view.WindowManager;
 
 import androidx.annotation.Nullable;
 
@@ -57,6 +63,102 @@ public class SwipeControlsHostActivity extends Activity {
      * The reference may be null.
      */
     private static WeakReference<SwipeControlsHostActivity> currentHost = new WeakReference<>(null);
+
+    /**
+     * Composition mode used by the Xposed module, which cannot rewrite MainActivity's superclass.
+     * When set, this instance is a controller around the real activity instead of being the activity.
+     */
+    @Nullable
+    private Activity hostActivity;
+    @Nullable
+    private Downstream downstream;
+
+    public interface Downstream {
+        boolean dispatchTouchEvent(MotionEvent event);
+        boolean dispatchKeyEvent(KeyEvent event);
+    }
+
+    public SwipeControlsHostActivity() {
+        super();
+    }
+
+    public SwipeControlsHostActivity(Activity hostActivity, Downstream downstream) {
+        super();
+        this.hostActivity = hostActivity;
+        this.downstream = downstream;
+    }
+
+    @Override
+    public Window getWindow() {
+        return hostActivity != null ? hostActivity.getWindow() : super.getWindow();
+    }
+
+    @Override
+    public Object getSystemService(String name) {
+        return hostActivity != null ? hostActivity.getSystemService(name) : super.getSystemService(name);
+    }
+
+    @Override
+    public Resources getResources() {
+        return hostActivity != null ? hostActivity.getResources() : super.getResources();
+    }
+
+    @Override
+    public AssetManager getAssets() {
+        return hostActivity != null ? hostActivity.getAssets() : super.getAssets();
+    }
+
+    @Override
+    public Resources.Theme getTheme() {
+        return hostActivity != null ? hostActivity.getTheme() : super.getTheme();
+    }
+
+    @Override
+    public ContentResolver getContentResolver() {
+        return hostActivity != null ? hostActivity.getContentResolver() : super.getContentResolver();
+    }
+
+    @Override
+    public String getPackageName() {
+        return hostActivity != null ? hostActivity.getPackageName() : super.getPackageName();
+    }
+
+    @Override
+    public Looper getMainLooper() {
+        return hostActivity != null ? hostActivity.getMainLooper() : super.getMainLooper();
+    }
+
+    @Override
+    public ClassLoader getClassLoader() {
+        return hostActivity != null ? hostActivity.getClassLoader() : super.getClassLoader();
+    }
+
+    @Override
+    public WindowManager getWindowManager() {
+        return hostActivity != null ? hostActivity.getWindowManager() : super.getWindowManager();
+    }
+
+    @Override
+    public android.content.Context getApplicationContext() {
+        return hostActivity != null ? hostActivity.getApplicationContext() : super.getApplicationContext();
+    }
+
+    /**
+     * Initializes the controllers in composition mode, where onCreate() is not called on this instance.
+     */
+    public void patch_initialize() {
+        initialize();
+    }
+
+    public void patch_reAttachOverlays() {
+        reAttachOverlays();
+    }
+
+    public void patch_onDestroy() {
+        if (playerTypeObserver != null) {
+            PlayerType.getOnChange().removeObserver(playerTypeObserver);
+        }
+    }
 
     /**
      * Container of the native lock screen overlay.
@@ -144,6 +246,9 @@ public class SwipeControlsHostActivity extends Activity {
             }
             return true;
         }
+        if (downstream != null) {
+            return downstream.dispatchTouchEvent(ev);
+        }
         return super.dispatchTouchEvent(ev);
     }
 
@@ -155,6 +260,9 @@ public class SwipeControlsHostActivity extends Activity {
             onUserInteraction();
             return true;
         }
+        if (downstream != null) {
+            return downstream.dispatchKeyEvent(ev);
+        }
         return super.dispatchKeyEvent(ev);
     }
 
@@ -165,6 +273,9 @@ public class SwipeControlsHostActivity extends Activity {
      * @return Whether the event was consumed.
      */
     public boolean dispatchDownstreamTouchEvent(MotionEvent event) {
+        if (downstream != null) {
+            return downstream.dispatchTouchEvent(event);
+        }
         return super.dispatchTouchEvent(event);
     }
 
@@ -227,7 +338,7 @@ public class SwipeControlsHostActivity extends Activity {
         screen = config.isBrightnessControlEnabled() ? new ScreenBrightnessController(this) : null;
 
         // create overlay
-        overlay = new SwipeControlsOverlayLayout(this, config);
+        overlay = new SwipeControlsOverlayLayout(hostActivity != null ? hostActivity : this, config);
         getContentRoot().addView(overlay);
 
         // create swipe zone controller
@@ -322,7 +433,7 @@ public class SwipeControlsHostActivity extends Activity {
      */
     @Nullable
     private AudioVolumeController createAudioController() {
-        if (!config.isVolumeControlEnabled()) {
+        if (!config.isVolumeControlEnabled() && config.getVolumeKeySteps() <= 1) {
             return null;
         }
         AudioVolumeController controller = new AudioVolumeController(this);
