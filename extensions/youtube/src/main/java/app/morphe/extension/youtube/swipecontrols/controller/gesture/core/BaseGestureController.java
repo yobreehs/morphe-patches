@@ -71,7 +71,7 @@ public abstract class BaseGestureController extends GestureDetector.SimpleOnGest
                 config.getSpeedStepInt(),
                 config.isSpeedControlEnabled()
         );
-        detector = new GestureDetector(controller, this);
+        detector = new GestureDetector(controller.getHostContext(), this);
     }
 
     @Override

@@ -7,7 +7,6 @@
 
 package app.morphe.extension.shared.ui.glass;
 
-import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
@@ -15,13 +14,14 @@ import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PixelFormat;
+import android.graphics.RadialGradient;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.DecelerateInterpolator;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
@@ -39,7 +39,12 @@ import app.morphe.extension.shared.ui.Dim;
  * that background is kept and clipped to the capsule. The frosted look otherwise comes from a tinted fill,
  * a soft gradient, a rim lit from outside, a dark line inside it and a shadow, all drawn by this drawable,
  * which is set as the background of the navigation bar. Everything outside the capsule is left transparent.
- * The selected button has a rounded indicator, which moves to the next selected button.
+ * <p>
+ * The selected button has a rounded indicator, which moves to the next selected button. The movement is
+ * spring based and keeps the velocity of a previous switch, like the floating navigation bar of BakaSU
+ * ({@code FloatingBottomBar}/{@code DampedDragAnimation}): the indicator stretches while it travels and
+ * settles with a very small overshoot instead of following a fixed 200 ms curve. Pressing the bar makes
+ * the capsule breathe slightly and draws a soft highlight under the finger, which fades out on release.
  */
 @SuppressWarnings("deprecation")
 public final class GlassCapsuleDrawable extends Drawable {
@@ -85,8 +90,6 @@ public final class GlassCapsuleDrawable extends Drawable {
 
     private static final int SHADOW_LAYERS = 3;
 
-    private static final long INDICATOR_ANIMATION_MILLISECONDS = 200;
-
     private static final int INDICATOR_INSET = Dim.dp4;
     private static final int INDICATOR_MAX_WIDTH = Dim.dp(96);
     private static final float STROKE_WIDTH = Dim.dp1;
@@ -97,6 +100,32 @@ public final class GlassCapsuleDrawable extends Drawable {
     private static final float BEVEL_WIDTH = Dim.dp1;
 
     /**
+     * Spring of the selected button indicator, taken from the BakaSU floating bar. A stiffness of
+     * about 850 1/s² settles in roughly 200 ms, and the damping ratio below leaves a tiny overshoot,
+     * so a tab switch feels alive instead of ending abruptly. The velocity is carried over when the
+     * user switches tabs again before the previous movement finished.
+     */
+    private static final float INDICATOR_STIFFNESS = 850f;
+    private static final float INDICATOR_DAMPING_RATIO = 0.82f;
+    private static final float INDICATOR_SETTLE_DISTANCE = 0.25f;
+    private static final float INDICATOR_SETTLE_VELOCITY = 4f;
+
+    /**
+     * Press spring: the capsule grows by {@link #PRESS_SCALE} and the highlight fades in quickly.
+     */
+    private static final float PRESS_STIFFNESS = 600f;
+    private static final float PRESS_DAMPING_RATIO = 1f;
+    private static final float PRESS_SCALE = 0.02f;
+    private static final float PRESS_SETTLE = 0.002f;
+
+    /**
+     * The indicator stretches along its movement, and squashes across it, by at most this fraction.
+     * Like the velocity based scale of the BakaSU pill.
+     */
+    private static final float MAX_INDICATOR_STRETCH = 0.12f;
+    private static final float INDICATOR_STRETCH_PER_VELOCITY = 1f / 12000f;
+
+    /**
      * The view the drawable is the background of.
      */
     private final View view;
@@ -104,8 +133,9 @@ public final class GlassCapsuleDrawable extends Drawable {
 
     /**
      * How opaque the glass is: 1 keeps the default alphas, 0 is fully clear, 2 doubles them.
+     * Not final, so the opacity slider takes effect without restarting the app.
      */
-    private final float opacityScale;
+    private float opacityScale;
 
     /**
      * If the glass is tinted white with the dark theme.
@@ -118,10 +148,14 @@ public final class GlassCapsuleDrawable extends Drawable {
     private final Paint strokePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint rimPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint bevelPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint specularPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint indicatorPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint indicatorPressPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint highlightPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     private final RectF capsule = new RectF();
     private final Path capsulePath = new Path();
+    private final RectF scratch = new RectF();
 
     /**
      * The blurred background of the app, drawn inside the capsule, or null if the app
@@ -151,7 +185,6 @@ public final class GlassCapsuleDrawable extends Drawable {
             unscheduleSelf(what);
         }
     };
-    private final RectF scratch = new RectF();
 
     private int style = STYLE_UNKNOWN;
     private int shadowAlpha;
@@ -184,17 +217,64 @@ public final class GlassCapsuleDrawable extends Drawable {
      */
     private boolean fillOverBlur;
 
-    private final ValueAnimator indicatorAnimator = ValueAnimator.ofFloat(0, 1);
-    private float animationFromLeft;
-    private float animationFromRight;
-    private boolean animationFromValid;
+    /**
+     * A small spring, the same model the BakaSU navigation bar uses for its pill and press scale.
+     */
+    private static final class Spring {
+        float value;
+        float target;
+        float velocity;
+
+        /**
+         * Advances the spring by one frame.
+         *
+         * @return If the spring is still moving.
+         */
+        boolean step(float deltaSeconds, float stiffness, float dampingRatio,
+                     float distanceEpsilon, float velocityEpsilon) {
+            if (Math.abs(value - target) <= distanceEpsilon
+                    && Math.abs(velocity) <= velocityEpsilon) {
+                value = target;
+                velocity = 0;
+                return false;
+            }
+
+            final float damping = 2f * dampingRatio * (float) java.lang.Math.sqrt(stiffness);
+            final float acceleration = -stiffness * (value - target) - damping * velocity;
+            velocity += acceleration * deltaSeconds;
+            value += velocity * deltaSeconds;
+            return true;
+        }
+    }
+
+    private final Spring indicatorLeft = new Spring();
+    private final Spring indicatorRight = new Spring();
+    private final Spring press = new Spring();
+    private boolean indicatorPositionValid;
 
     /**
-     * The horizontal edges of the selected tab indicator in the last frame.
+     * If the "no selected tab view" skip of the indicator was logged, so it is logged only when
+     * the state changes and not on every frame.
      */
-    private float lastIndicatorLeft;
-    private float lastIndicatorRight;
-    private boolean lastIndicatorValid;
+    private boolean indicatorSkipLogged;
+
+    /**
+     * The finger position, in the coordinates of the navigation bar.
+     */
+    private float touchX = Float.NaN;
+    private float touchY = Float.NaN;
+    private boolean trackingTouch;
+
+    /**
+     * The highlight shader is reused while the finger is down, and remade when the finger moved.
+     */
+    private float highlightShaderX = Float.NaN;
+    private float highlightShaderY = Float.NaN;
+    private float highlightShaderRadius = Float.NaN;
+    private float highlightShaderPress = Float.NaN;
+
+    private boolean animating;
+    private long lastFrameNanos;
 
     /**
      * @param view         The view the drawable is set as the background of.
@@ -224,11 +304,10 @@ public final class GlassCapsuleDrawable extends Drawable {
         rimPaint.setStrokeWidth(RIM_WIDTH);
         bevelPaint.setStyle(Paint.Style.STROKE);
         bevelPaint.setStrokeWidth(BEVEL_WIDTH);
+        specularPaint.setStyle(Paint.Style.FILL);
         indicatorPaint.setStyle(Paint.Style.FILL);
-
-        indicatorAnimator.setDuration(INDICATOR_ANIMATION_MILLISECONDS);
-        indicatorAnimator.setInterpolator(new DecelerateInterpolator());
-        indicatorAnimator.addUpdateListener(animation -> invalidateSelf());
+        indicatorPressPaint.setStyle(Paint.Style.FILL);
+        highlightPaint.setStyle(Paint.Style.FILL);
 
         updateStyle();
     }
@@ -238,6 +317,23 @@ public final class GlassCapsuleDrawable extends Drawable {
      */
     public static float scaledAlpha(float alpha, float opacityScale) {
         return Math.max(0, Math.min(1, alpha * opacityScale));
+    }
+
+    /**
+     * Updates how opaque the glass is without recreating the drawable. The colors are
+     * recalculated and the drawable is invalidated, so a changed slider is visible right away.
+     */
+    public void setOpacityScale(float opacityScale) {
+        if (this.opacityScale == opacityScale) return;
+
+        this.opacityScale = opacityScale;
+        style = STYLE_UNKNOWN;
+        updateStyle();
+        invalidateSelf();
+    }
+
+    public float getOpacityScale() {
+        return opacityScale;
     }
 
     private float scaledAlpha(float alpha) {
@@ -348,19 +444,106 @@ public final class GlassCapsuleDrawable extends Drawable {
     }
 
     /**
-     * Moves the indicator to the selected button.
+     * Moves the indicator to the selected button. The spring keeps its current position and
+     * velocity, so switching tabs quickly does not restart the movement from a standstill.
      */
     public void onSelectedTabChanged() {
-        animationFromValid = lastIndicatorValid;
-        animationFromLeft = lastIndicatorLeft;
-        animationFromRight = lastIndicatorRight;
+        startAnimation();
+        invalidateSelf();
+    }
 
-        indicatorAnimator.cancel();
-        if (animationFromValid) {
-            indicatorAnimator.start();
-        } else {
-            invalidateSelf();
+    /**
+     * Called from the touch hook of the navigation bar. The events are only observed: the app
+     * still receives them and handles the tab clicks itself.
+     */
+    public void onTouchEvent(MotionEvent event) {
+        switch (event.getActionMasked()) {
+            case MotionEvent.ACTION_DOWN -> {
+                trackingTouch = true;
+                touchX = event.getX();
+                touchY = event.getY();
+                press.target = 1f;
+                startAnimation();
+            }
+            case MotionEvent.ACTION_MOVE -> {
+                if (!trackingTouch) return;
+                touchX = event.getX();
+                touchY = event.getY();
+                invalidateSelf();
+            }
+            case MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
+                trackingTouch = false;
+                press.target = 0f;
+                startAnimation();
+            }
+            default -> {
+            }
         }
+    }
+
+    private void startAnimation() {
+        if (animating) return;
+        animating = true;
+        lastFrameNanos = 0L;
+        view.postOnAnimation(animationFrame);
+    }
+
+    private final Runnable animationFrame = new Runnable() {
+        @Override
+        public void run() {
+            if (!animating) return;
+
+            final long now = System.nanoTime();
+            final float deltaSeconds = lastFrameNanos == 0L
+                    ? 1f / 60f
+                    : Math.max(1f / 240f, Math.min(1f / 30f, (now - lastFrameNanos) / 1e9f));
+            lastFrameNanos = now;
+
+            final boolean active = stepSprings(deltaSeconds);
+            invalidateSelf();
+
+            if (active) {
+                view.postOnAnimation(this);
+            } else {
+                animating = false;
+                lastFrameNanos = 0L;
+            }
+        }
+    };
+
+    private boolean stepSprings(float deltaSeconds) {
+        boolean active = false;
+
+        if (indicatorPositionValid) {
+            active |= indicatorLeft.step(deltaSeconds, INDICATOR_STIFFNESS,
+                    INDICATOR_DAMPING_RATIO, INDICATOR_SETTLE_DISTANCE, INDICATOR_SETTLE_VELOCITY);
+            active |= indicatorRight.step(deltaSeconds, INDICATOR_STIFFNESS,
+                    INDICATOR_DAMPING_RATIO, INDICATOR_SETTLE_DISTANCE, INDICATOR_SETTLE_VELOCITY);
+        }
+        active |= press.step(deltaSeconds, PRESS_STIFFNESS, PRESS_DAMPING_RATIO, PRESS_SETTLE, 0.01f);
+
+        return active;
+    }
+
+    private void setIndicatorTarget(float left, float right) {
+        if (indicatorPositionValid
+                && Math.abs(indicatorLeft.target - left) < 0.5f
+                && Math.abs(indicatorRight.target - right) < 0.5f) {
+            return;
+        }
+
+        final boolean snap = !indicatorPositionValid;
+        indicatorLeft.target = left;
+        indicatorRight.target = right;
+        if (!indicatorPositionValid) {
+            indicatorLeft.value = left;
+            indicatorRight.value = right;
+            indicatorPositionValid = true;
+        } else {
+            startAnimation();
+        }
+        Logger.printDebug(() -> "Glass navigation bar indicator target: " + left + " - " + right
+                + (snap ? " (snapped)" : " (spring)"));
     }
 
     private void updateShaders() {
@@ -384,6 +567,17 @@ public final class GlassCapsuleDrawable extends Drawable {
         rimPaint.setShader(new LinearGradient(capsule.left, 0, capsule.right, 0,
                 new int[]{rimEndColor, rimMiddleColor, rimMiddleColor, rimEndColor},
                 new float[]{0, end, 1 - end, 1}, Shader.TileMode.CLAMP));
+
+        // A soft glint in the upper left, the way a rounded glass edge catches the light.
+        final float glintAlpha = style == STYLE_DARK_PLAYER
+                ? 0.06f
+                : lightTint ? 0.14f : 0.10f;
+        specularPaint.setShader(new RadialGradient(
+                capsule.left + capsule.width() * 0.22f,
+                capsule.top + capsule.height() * 0.04f,
+                Math.max(capsule.height() * 1.6f, capsule.width() * 0.42f),
+                new int[]{withAlpha(Color.WHITE, glintAlpha), Color.TRANSPARENT},
+                null, Shader.TileMode.CLAMP));
     }
 
     @Override
@@ -395,81 +589,143 @@ public final class GlassCapsuleDrawable extends Drawable {
             final float radius = capsule.height() / 2;
             updateShaders();
 
-            // The dark player can end above the navigation bar, so the background of the window
-            // would show around the capsule, which is white with the light theme.
-            // The player is always dark, so the bar is kept black around the capsule.
-            if (style == STYLE_DARK_PLAYER) {
-                canvas.drawColor(Color.BLACK);
-            }
+            final int saveCount = canvas.save();
+            try {
+                final float pressProgress = press.value;
+                if (pressProgress > 0.001f) {
+                    final float scale = 1f + PRESS_SCALE * pressProgress;
+                    canvas.scale(scale, scale, capsule.centerX(), capsule.centerY());
+                }
 
-            // Soft shadow below the capsule.
-            for (int i = SHADOW_LAYERS; i >= 1; i--) {
+                // The dark player can end above the navigation bar, so the background of the window
+                // would show around the capsule, which is white with the light theme.
+                // The player is always dark, so the bar is kept black around the capsule.
+                if (style == STYLE_DARK_PLAYER) {
+                    canvas.drawColor(Color.BLACK);
+                }
+
+                // Soft shadow below the capsule.
+                for (int i = SHADOW_LAYERS; i >= 1; i--) {
+                    scratch.set(capsule);
+                    scratch.inset(-i * 0.5f * STROKE_WIDTH, -i * 0.5f * STROKE_WIDTH);
+                    scratch.offset(0, i * STROKE_WIDTH);
+                    shadowPaint.setAlpha(shadowAlpha / i);
+                    final float shadowRadius = scratch.height() / 2;
+                    canvas.drawRoundRect(scratch, shadowRadius, shadowRadius, shadowPaint);
+                }
+
+                final boolean overBlur = appBackground != null && style != STYLE_DARK_PLAYER;
+                if (overBlur != fillOverBlur) {
+                    fillOverBlur = overBlur;
+                    fillPaint.setColor(overBlur ? Color.TRANSPARENT : fillColor);
+                }
+                if (overBlur) {
+                    // The blurred background of the app, only inside the capsule.
+                    final int backgroundSaveCount = canvas.save();
+                    try {
+                        canvas.clipPath(capsulePath);
+                        appBackground.draw(canvas);
+                    } catch (Exception ex) {
+                        // The background of the app may expect to be drawn by the bar itself.
+                        Logger.printException(() -> "Glass navigation bar app background failure", ex);
+                        appBackgroundFailed = true;
+                        setAppBackground(null);
+                    } finally {
+                        canvas.restoreToCount(backgroundSaveCount);
+                    }
+                } else if (style != STYLE_DARK_PLAYER) {
+                    final int backdropSaveCount = canvas.save();
+                    try {
+                        canvas.clipPath(capsulePath);
+                        host.drawBackdrop(canvas);
+                    } finally {
+                        canvas.restoreToCount(backdropSaveCount);
+                    }
+                }
+
+                if (Color.alpha(fillPaint.getColor()) != 0) {
+                    canvas.drawRoundRect(capsule, radius, radius, fillPaint);
+                }
+                canvas.drawRoundRect(capsule, radius, radius, sheenPaint);
+                if (style != STYLE_DARK_PLAYER) {
+                    canvas.drawRoundRect(capsule, radius, radius, specularPaint);
+                }
+
+                drawInteractiveHighlight(canvas);
+                drawIndicator(canvas);
+
+                // The dark line inside the rim.
                 scratch.set(capsule);
-                scratch.inset(-i * 0.5f * STROKE_WIDTH, -i * 0.5f * STROKE_WIDTH);
-                scratch.offset(0, i * STROKE_WIDTH);
-                shadowPaint.setAlpha(shadowAlpha / i);
-                final float shadowRadius = scratch.height() / 2;
-                canvas.drawRoundRect(scratch, shadowRadius, shadowRadius, shadowPaint);
+                scratch.inset(RIM_WIDTH + BEVEL_WIDTH / 2, RIM_WIDTH + BEVEL_WIDTH / 2);
+                final float bevelRadius = scratch.height() / 2;
+                canvas.drawRoundRect(scratch, bevelRadius, bevelRadius, bevelPaint);
+
+                // The rim lit from outside, brighter at the top.
+                scratch.set(capsule);
+                scratch.inset(RIM_WIDTH / 2, RIM_WIDTH / 2);
+                final float rimRadius = scratch.height() / 2;
+                canvas.drawRoundRect(scratch, rimRadius, rimRadius, rimPaint);
+                canvas.drawRoundRect(scratch, rimRadius, rimRadius, strokePaint);
+            } finally {
+                canvas.restoreToCount(saveCount);
             }
-
-            final boolean overBlur = appBackground != null && style != STYLE_DARK_PLAYER;
-            if (overBlur != fillOverBlur) {
-                fillOverBlur = overBlur;
-                fillPaint.setColor(overBlur ? Color.TRANSPARENT : fillColor);
-            }
-            if (overBlur) {
-                // The blurred background of the app, only inside the capsule.
-                final int saveCount = canvas.save();
-                try {
-                    canvas.clipPath(capsulePath);
-                    appBackground.draw(canvas);
-                } catch (Exception ex) {
-                    // The background of the app may expect to be drawn by the bar itself.
-                    Logger.printException(() -> "Glass navigation bar app background failure", ex);
-                    appBackgroundFailed = true;
-                    setAppBackground(null);
-                } finally {
-                    canvas.restoreToCount(saveCount);
-                }
-            } else if (style != STYLE_DARK_PLAYER) {
-                final int saveCount = canvas.save();
-                try {
-                    canvas.clipPath(capsulePath);
-                    host.drawBackdrop(canvas);
-                } finally {
-                    canvas.restoreToCount(saveCount);
-                }
-            }
-
-            if (Color.alpha(fillPaint.getColor()) != 0) {
-                canvas.drawRoundRect(capsule, radius, radius, fillPaint);
-            }
-            canvas.drawRoundRect(capsule, radius, radius, sheenPaint);
-
-            drawIndicator(canvas);
-
-            // The dark line inside the rim.
-            scratch.set(capsule);
-            scratch.inset(RIM_WIDTH + BEVEL_WIDTH / 2, RIM_WIDTH + BEVEL_WIDTH / 2);
-            final float bevelRadius = scratch.height() / 2;
-            canvas.drawRoundRect(scratch, bevelRadius, bevelRadius, bevelPaint);
-
-            // The rim lit from outside, brighter at the top.
-            scratch.set(capsule);
-            scratch.inset(RIM_WIDTH / 2, RIM_WIDTH / 2);
-            final float rimRadius = scratch.height() / 2;
-            canvas.drawRoundRect(scratch, rimRadius, rimRadius, rimPaint);
-            canvas.drawRoundRect(scratch, rimRadius, rimRadius, strokePaint);
         } catch (Exception ex) {
             Logger.printException(() -> "Glass navigation bar draw failure", ex);
         }
     }
 
-    private void drawIndicator(Canvas canvas) {
-        lastIndicatorValid = false;
+    /**
+     * The soft light under the finger, adapted from the interactive highlight of the BakaSU bar.
+     * It is clipped to the capsule and fades with the press spring.
+     */
+    private void drawInteractiveHighlight(Canvas canvas) {
+        final float pressProgress = press.value;
+        if (pressProgress <= 0.01f || Float.isNaN(touchX) || Float.isNaN(touchY)) return;
 
+        try {
+            final int saveCount = canvas.save();
+            try {
+                canvas.clipPath(capsulePath);
+
+                final float radius = Math.max(capsule.height() * 2.2f, Dim.dp(96));
+                // The alpha follows the press spring, so the shader is remade while the finger
+                // is down. The values are kept to avoid a pointless allocation when nothing moved.
+                if (highlightPaint.getShader() == null
+                        || Math.abs(highlightShaderX - touchX) > 0.5f
+                        || Math.abs(highlightShaderY - touchY) > 0.5f
+                        || Math.abs(highlightShaderRadius - radius) > 0.5f
+                        || Math.abs(pressProgress - highlightShaderPress) > 0.01f) {
+                    highlightShaderX = touchX;
+                    highlightShaderY = touchY;
+                    highlightShaderRadius = radius;
+                    highlightShaderPress = pressProgress;
+                    highlightPaint.setShader(new RadialGradient(touchX, touchY, radius,
+                            withAlpha(Color.WHITE, 0.14f * pressProgress),
+                            Color.TRANSPARENT, Shader.TileMode.CLAMP));
+                }
+                canvas.drawRect(capsule, highlightPaint);
+
+                highlightPaint.setShader(null);
+                highlightPaint.setColor(withAlpha(Color.WHITE, 0.04f * pressProgress));
+                canvas.drawRect(capsule, highlightPaint);
+            } finally {
+                canvas.restoreToCount(saveCount);
+            }
+        } catch (Exception ex) {
+            Logger.printException(() -> "Glass navigation bar highlight failure", ex);
+        }
+    }
+
+    private void drawIndicator(Canvas canvas) {
         View tab = host.getSelectedTabView();
-        if (tab == null || tab.getVisibility() != View.VISIBLE || tab.getWidth() <= 0) return;
+        if (tab == null || tab.getVisibility() != View.VISIBLE || tab.getWidth() <= 0) {
+            if (indicatorPositionValid && !indicatorSkipLogged) {
+                indicatorSkipLogged = true;
+                Logger.printDebug(() -> "Glass navigation bar indicator skipped, no selected tab view");
+            }
+            return;
+        }
+        indicatorSkipLogged = false;
 
         // The position of the tab inside the navigation bar.
         final float tabLeft = GlassNavigationBarLayout.getLeftIn(tab, view);
@@ -486,24 +742,46 @@ public final class GlassCapsuleDrawable extends Drawable {
         }
         targetLeft = Math.max(targetLeft, minLeft);
         targetRight = Math.min(targetRight, maxRight);
+        if (targetRight - targetLeft <= 0) return;
 
-        float left = targetLeft;
-        float right = targetRight;
-        if (animationFromValid && indicatorAnimator.isRunning()) {
-            final float fraction = (float) indicatorAnimator.getAnimatedValue();
-            left = animationFromLeft + (targetLeft - animationFromLeft) * fraction;
-            right = animationFromRight + (targetRight - animationFromRight) * fraction;
+        setIndicatorTarget(targetLeft, targetRight);
+
+        final float left = indicatorLeft.value;
+        final float right = indicatorRight.value;
+        if (right - left <= 0.5f) return;
+
+        // The pill stretches along its movement and squashes across it while it travels,
+        // like the velocity based scale of the BakaSU indicator.
+        final float velocity = (indicatorLeft.velocity + indicatorRight.velocity) * 0.5f;
+        final float stretch = Math.min(MAX_INDICATOR_STRETCH,
+                Math.abs(velocity) * INDICATOR_STRETCH_PER_VELOCITY);
+        final float scaleX = 1f + stretch;
+        final float scaleY = 1f - stretch * 0.30f;
+
+        final int saveCount = canvas.save();
+        try {
+            canvas.scale(scaleX, scaleY,
+                    (left + right) / 2f, (capsule.top + capsule.bottom) / 2f);
+
+            scratch.set(left, capsule.top + INDICATOR_INSET,
+                    right, capsule.bottom - INDICATOR_INSET);
+            if (scratch.height() <= 0) return;
+            final float radius = scratch.height() / 2;
+
+            canvas.drawRoundRect(scratch, radius, radius, indicatorPaint);
+            if (press.value > 0.01f) {
+                final float pressAlpha = (style == STYLE_LIGHT ? 0.06f : 0.04f) * press.value;
+                indicatorPressPaint.setColor(withAlpha(
+                        style == STYLE_LIGHT ? Color.BLACK : Color.WHITE, pressAlpha));
+                canvas.drawRoundRect(scratch, radius, radius, indicatorPressPaint);
+            }
+
+            // The indicator is a small lens of the same glass: a top sheen and the bright rim.
+            canvas.drawRoundRect(scratch, radius, radius, sheenPaint);
+            canvas.drawRoundRect(scratch, radius, radius, strokePaint);
+        } finally {
+            canvas.restoreToCount(saveCount);
         }
-        if (right - left <= 0) return;
-
-        scratch.set(left, capsule.top + INDICATOR_INSET, right, capsule.bottom - INDICATOR_INSET);
-        if (scratch.height() <= 0) return;
-        final float radius = scratch.height() / 2;
-        canvas.drawRoundRect(scratch, radius, radius, indicatorPaint);
-
-        lastIndicatorLeft = left;
-        lastIndicatorRight = right;
-        lastIndicatorValid = true;
     }
 
     @Override

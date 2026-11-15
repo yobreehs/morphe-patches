@@ -133,6 +133,138 @@ public final class GlassNavigationBarLayout {
     }
 
     /**
+     * The icons of the buttons are on the same line, unless a button has no label, such as the
+     * profile button of the app, which then centers its icon in the bar on its own, lower than
+     * the icons of the buttons with a label. The icons of the buttons with a label are the line,
+     * and the other icons are moved to it. The label is moved with its icon, so the room between
+     * them stays the same.
+     *
+     * @param tabs    The parent of the buttons.
+     * @param iconId  The id of the view that holds the icon of a button, or 0 if not known.
+     * @param labelId The id of the label of a button, or 0 if not known.
+     * @return If an icon was moved.
+     */
+    public static boolean alignIcons(ViewGroup tabs, int iconId, int labelId) {
+        if (iconId == 0) return false;
+
+        final int count = tabs.getChildCount();
+        List<View> buttons = new ArrayList<>(count);
+        List<View> icons = new ArrayList<>(count);
+        List<View> labels = new ArrayList<>(count);
+        List<Integer> centers = new ArrayList<>(count);
+        for (int i = 0; i < count; i++) {
+            View button = tabs.getChildAt(i);
+            if (button.getVisibility() != View.VISIBLE || !(button instanceof ViewGroup group)) continue;
+
+            View icon = group.findViewById(iconId);
+            if (icon == null || icon.getHeight() <= 0) continue;
+
+            // The container can be taller than the icon it holds, such as the round avatar of
+            // the profile button, so the visible icon is the image inside it.
+            View image = findIconImage(icon);
+            buttons.add(button);
+            icons.add(icon);
+            labels.add(labelId == 0 ? null : group.findViewById(labelId));
+            centers.add(getTopIn(image, tabs) + image.getHeight() / 2);
+        }
+        if (buttons.size() < 2) return false;
+
+        // The icons of the buttons with a label are the line. Without such a button, the usual
+        // middle of the icons, the lower of the two middle ones, is the line.
+        List<Integer> line = new ArrayList<>(centers.size());
+        for (int i = 0, size = centers.size(); i < size; i++) {
+            if (labels.get(i) != null) line.add(centers.get(i));
+        }
+        if (line.isEmpty()) line.addAll(centers);
+        Collections.sort(line);
+        final int middle = line.get((line.size() - 1) / 2);
+
+        boolean changed = false;
+        boolean moved = false;
+        for (int i = 0, size = buttons.size(); i < size; i++) {
+            final View icon = icons.get(i);
+            final View label = labels.get(i);
+            // A bar that is animating is measured with a smaller height than the buttons, and
+            // an icon without its label can be much lower than the others. The shift is limited,
+            // so an icon is never moved out of its button and clipped in half.
+            final float translation = Math.max(-Dim.dp16, Math.min(Dim.dp16, middle - centers.get(i)));
+            if (Math.abs(icon.getTranslationY() - translation) > 0.5f) {
+                icon.setTranslationY(translation);
+                changed = true;
+            }
+            if (label != null && Math.abs(label.getTranslationY() - translation) > 0.5f) {
+                label.setTranslationY(translation);
+                changed = true;
+            }
+            moved |= translation != 0;
+
+            // The icon can reach over the top of its button while the labels are not created yet.
+            // Nothing in a navigation button needs clipping, so the moved icon stays whole.
+            final ViewGroup button = (ViewGroup) buttons.get(i);
+            final boolean clip = translation == 0;
+            if (button.getClipChildren() != clip) {
+                button.setClipChildren(clip);
+                button.setClipToPadding(clip);
+            }
+        }
+
+        final boolean clip = !moved;
+        if (tabs.getClipChildren() != clip) {
+            tabs.setClipChildren(clip);
+            tabs.setClipToPadding(clip);
+        }
+        return changed;
+    }
+
+    /**
+     * @return The first image of the icon container, or the container itself if it has no image.
+     */
+    private static View findIconImage(View icon) {
+        if (icon instanceof android.widget.ImageView) return icon;
+        if (!(icon instanceof ViewGroup group)) return icon;
+
+        for (int i = 0, count = group.getChildCount(); i < count; i++) {
+            View child = group.getChildAt(i);
+            if (child instanceof android.widget.ImageView) return child;
+            if (child instanceof ViewGroup) {
+                View image = findIconImage(child);
+                if (image != child) return image;
+            }
+        }
+        return icon;
+    }
+
+    /**
+     * Puts the icons back under the labels, such as when the glass is turned off.
+     */
+    public static void resetIconAlignment(ViewGroup tabs, int iconId, int labelId) {
+        if (iconId == 0) return;
+
+        for (int i = 0, count = tabs.getChildCount(); i < count; i++) {
+            View button = tabs.getChildAt(i);
+            if (!(button instanceof ViewGroup group)) continue;
+
+            View icon = group.findViewById(iconId);
+            if (icon != null && icon.getTranslationY() != 0) {
+                icon.setTranslationY(0);
+            }
+            View label = labelId == 0 ? null : group.findViewById(labelId);
+            if (label != null && label.getTranslationY() != 0) {
+                label.setTranslationY(0);
+            }
+
+            if (group.getClipChildren() != true) {
+                group.setClipChildren(true);
+                group.setClipToPadding(true);
+            }
+        }
+        if (tabs.getClipChildren() != true) {
+            tabs.setClipChildren(true);
+            tabs.setClipToPadding(true);
+        }
+    }
+
+    /**
      * The content of the buttons of a navigation bar.
      */
     public static final class Buttons {
@@ -223,7 +355,8 @@ public final class GlassNavigationBarLayout {
                                 + label.getPaddingLeft() + label.getPaddingRight()
                         : child.getWidth());
                 if (laidOut && child.getHeight() > 0) {
-                    final int top = getTopIn(child, button);
+                    // The icons moved in line with the others are measured where they are drawn.
+                    final int top = getTopIn(child, button) + Math.round(child.getTranslationY());
                     contentTop = Math.min(contentTop, top);
                     contentBottom = Math.max(contentBottom, top + child.getHeight());
                 }

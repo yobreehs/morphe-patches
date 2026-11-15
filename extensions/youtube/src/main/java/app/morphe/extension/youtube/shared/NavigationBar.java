@@ -448,7 +448,9 @@ public final class NavigationBar {
             }
 
             // Unknown tabs do no harm, and are only relevant to developers.
-            Logger.printExceptionIfDebug(() -> "Unknown tab: " + lastEnumName
+            // Log only: the debug mode of the module shows exceptions as toasts, and an
+            // unknown tab must not produce a toast over the app.
+            Logger.printDebug(() -> "Unknown tab: " + lastEnumName
                     + " view: " + navigationButtonGroup.getClass());
         } catch (Exception ex) {
             Logger.printException(() -> "navigationTabLoaded failure", ex);
@@ -482,7 +484,8 @@ public final class NavigationBar {
             NavigationButton oldButton = NavigationButton.selectedNavigationButton;
 
             if (button == null) { // An unknown tab was selected.
-                Logger.printExceptionIfDebug(() -> "Unknown navigation view selected: " + navButtonImageView);
+                // Log only, see navigationTabLoaded(). The debug mode shows exceptions as toasts.
+                Logger.printDebug(() -> "Unknown navigation view selected: " + navButtonImageView);
 
                 NavigationButton.selectedNavigationButton = null;
                 openedFromNavigationButton = null;

@@ -795,8 +795,8 @@ public final class NavigationBarPatch {
      * @param bottomBarContainer The container of the navigation bar.
      */
     public static void setNavigationBarGlass(View bottomBarContainer) {
-        if (!YouTubeGlassNavigationBar.isEnabled()) return;
-
+        // The glass is set up even when it is turned off, so turning it on in the settings
+        // takes effect without restarting the app.
         try {
             YouTubeGlassNavigationBar.apply(bottomBarContainer);
         } catch (Exception ex) {

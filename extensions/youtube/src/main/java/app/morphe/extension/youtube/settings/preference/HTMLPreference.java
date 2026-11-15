@@ -10,9 +10,6 @@ import android.util.AttributeSet;
  */
 @SuppressWarnings({"unused", "deprecation"})
 public class HTMLPreference extends Preference {
-    {
-        setSummary(Html.fromHtml(getSummary().toString(), Html.FROM_HTML_MODE_COMPACT));
-    }
 
     public HTMLPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
@@ -28,5 +25,18 @@ public class HTMLPreference extends Preference {
 
     public HTMLPreference(Context context) {
         super(context);
+    }
+
+    /**
+     * The runtime preference builder sets the summary after the constructor has returned,
+     * so the HTML conversion must happen here instead of in an instance initializer.
+     * An instance initializer would also throw a NullPointerException because the summary
+     * is still null at that point.
+     */
+    @Override
+    public void setSummary(CharSequence summary) {
+        super.setSummary(summary == null
+                ? null
+                : Html.fromHtml(summary.toString(), Html.FROM_HTML_MODE_COMPACT));
     }
 }

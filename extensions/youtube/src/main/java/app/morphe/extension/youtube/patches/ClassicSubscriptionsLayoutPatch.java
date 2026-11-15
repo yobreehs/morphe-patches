@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 
 import com.google.protobuf.MessageLite;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,6 +92,30 @@ public final class ClassicSubscriptionsLayoutPatch {
     }
 
     /**
+     * Serializes a YouTube proto object. The module and the host app each have their own
+     * {@code com.google.protobuf.MessageLite} class, so an object created by YouTube cannot be
+     * cast to the module's copy. Reflection calls the method on the object itself instead.
+     */
+    @Nullable
+    private static byte[] toByteArray(@Nullable Object message) {
+        if (message == null) return null;
+        // The runtime hook already serializes the host object and passes raw bytes here.
+        if (message instanceof byte[] bytes) {
+            return bytes;
+        }
+        if (message instanceof MessageLite messageLite) {
+            return messageLite.toByteArray();
+        }
+        try {
+            Method method = message.getClass().getMethod("toByteArray");
+            return (byte[]) method.invoke(message);
+        } catch (Exception ex) {
+            Logger.printException(() -> "Failed to serialize a YouTube proto", ex);
+            return null;
+        }
+    }
+
+    /**
      * Injection point.
      *
      * @param tabs Tab protos of the browse response.
@@ -103,9 +128,9 @@ public final class ClassicSubscriptionsLayoutPatch {
             int selectedIndex = 0;
             boolean isFeed = false;
             for (int i = tabs.size() - 1; i >= 0; i--) {
-                TabRenderer tabRenderer = BrowseTab.parseFrom(
-                        ((MessageLite) tabs.get(i)).toByteArray()
-                ).getTabRenderer();
+                byte[] tabBytes = toByteArray(tabs.get(i));
+                if (tabBytes == null) continue;
+                TabRenderer tabRenderer = BrowseTab.parseFrom(tabBytes).getTabRenderer();
 
                 isFeed |= isFeedTab(tabRenderer);
                 if (tabRenderer.getSelected()) {
@@ -135,10 +160,23 @@ public final class ClassicSubscriptionsLayoutPatch {
      */
     @Nullable
     public static byte[] convertIconOnlyPivotBarItem(MessageLite pivotBarItem) {
-        if (!DISABLE_ICON_ONLY_NAVIGATION_BUTTONS) return null;
+        return convertIconOnlyPivotBarItemBytes(toByteArray(pivotBarItem));
+    }
+
+    /**
+     * Same as {@link #convertIconOnlyPivotBarItem(MessageLite)}, but accepts the serialized
+     * host app proto. The runtime Xposed hook serializes the YouTube object itself because the
+     * module and the app each bundle their own protobuf runtime.
+     *
+     * @param itemBytes Serialized {@code PivotBarItem} proto.
+     * @return The item converted to a button with a label, or null if the item is not icon only.
+     */
+    @Nullable
+    public static byte[] convertIconOnlyPivotBarItemBytes(@Nullable byte[] itemBytes) {
+        if (!DISABLE_ICON_ONLY_NAVIGATION_BUTTONS || itemBytes == null) return null;
 
         try {
-            PivotBarItemBytes item = PivotBarItemBytes.parseFrom(pivotBarItem.toByteArray());
+            PivotBarItemBytes item = PivotBarItemBytes.parseFrom(itemBytes);
             if (!item.hasPivotBarIconOnlyItemRenderer()) return null;
 
             PivotBarIconOnlyItemRendererBytes iconOnly =
@@ -157,7 +195,17 @@ public final class ClassicSubscriptionsLayoutPatch {
                     .setThumbnail(iconOnly.getThumbnail())
                     .build();
 
-            Logger.printDebug(() -> "Converting icon only navigation button: " + iconOnly.getPivotIdentifier());
+            // A rebuilt item without its navigation command is a dead button: tapping it throws
+            // `Expected only one extension, saw 0` and the tab never opens. The item is then left
+            // exactly as the app sent it; the glass navigation bar adds its label instead.
+            if (renderer.getNavigationEndpoint().isEmpty()) {
+                Logger.printDebug(() -> "Keeping the icon-only navigation button without a command: "
+                        + iconOnly.getPivotIdentifier());
+                return null;
+            }
+
+            Logger.printDebug(() -> "Converting icon only navigation button: " + iconOnly.getPivotIdentifier()
+                    + " command: " + renderer.getNavigationEndpoint().size() + "B");
             return PivotBarItemBytes.newBuilder()
                     .setPivotBarItemRenderer(renderer.toByteString())
                     .build()
@@ -172,9 +220,16 @@ public final class ClassicSubscriptionsLayoutPatch {
     @Nullable
     private static PivotBarItemRenderer getPivotBarItemRenderer(Object pivotBarItem) {
         try {
-            if (!(pivotBarItem instanceof PivotBarItemInterface renderInterface)) {
-                Logger.printExceptionIfDebug(() -> "Debug: Unknown pivot bar class: " + pivotBarItem.getClass());
-            } else {
+            byte[] itemBytes = toByteArray(pivotBarItem);
+            if (itemBytes != null) {
+                PivotBarItemBytes item = PivotBarItemBytes.parseFrom(itemBytes);
+                if (item.hasPivotBarItemRenderer()) {
+                    return PivotBarItemRenderer.parseFrom(item.getPivotBarItemRenderer());
+                }
+            }
+
+            // Fallback for builds where the bridge methods were added by the patcher.
+            if (pivotBarItem instanceof PivotBarItemInterface renderInterface) {
                 MessageLite messageLite = renderInterface.patch_getPivotBarItemRenderer();
                 if (messageLite != null) {
                     return PivotBarItemRenderer.parseFrom(messageLite.toByteArray());
@@ -197,19 +252,58 @@ public final class ClassicSubscriptionsLayoutPatch {
         }
 
         // Navigation buttons without labels, if they are not converted to buttons with labels.
-        if (pivotBarItem instanceof PivotBarItemInterface renderInterface) {
-            MessageLite iconOnly = renderInterface.patch_getPivotBarIconOnlyItemRenderer();
-            if (iconOnly != null) {
-                try {
-                    var iconOnlyRenderer = PivotBarIconOnlyItemRendererBytes.parseFrom(iconOnly.toByteArray());
-                    return new PivotBarItemInfo(iconOnlyRenderer.getPivotIdentifier(),
-                            iconOnlyRenderer.getAccessibility().getRuns().getText());
-                } catch (Exception ex) {
-                    Logger.printException(() -> "Failed to parse PivotBarIconOnlyItemRenderer", ex);
+        try {
+            byte[] itemBytes = toByteArray(pivotBarItem);
+            if (itemBytes != null) {
+                PivotBarItemBytes item = PivotBarItemBytes.parseFrom(itemBytes);
+                if (item.hasPivotBarIconOnlyItemRenderer()) {
+                    PivotBarIconOnlyItemRendererBytes iconOnly =
+                            PivotBarIconOnlyItemRendererBytes.parseFrom(
+                                    item.getPivotBarIconOnlyItemRenderer());
+                    return new PivotBarItemInfo(iconOnly.getPivotIdentifier(),
+                            iconOnly.getAccessibility().getRuns().getText());
                 }
             }
+
+            if (pivotBarItem instanceof PivotBarItemInterface renderInterface) {
+                MessageLite iconOnly = renderInterface.patch_getPivotBarIconOnlyItemRenderer();
+                if (iconOnly != null) {
+                    PivotBarIconOnlyItemRendererBytes iconOnlyRenderer =
+                            PivotBarIconOnlyItemRendererBytes.parseFrom(iconOnly.toByteArray());
+                    return new PivotBarItemInfo(iconOnlyRenderer.getPivotIdentifier(),
+                            iconOnlyRenderer.getAccessibility().getRuns().getText());
+                }
+            }
+        } catch (Exception ex) {
+            Logger.printException(() -> "Failed to parse PivotBarIconOnlyItemRenderer", ex);
         }
         return null;
+    }
+
+    /**
+     * The 'You' (library) tab keeps its icon only renderer. Converting it to the labelled
+     * renderer loses the navigation command of the tab, and tapping it stops opening the
+     * account page. The tab is left exactly as the app sent it: the navigation bar registers
+     * it through {@code navigationImageResourceTabLoaded}, the glass bar adds its label and
+     * the hide settings match it by its label.
+     *
+     * @param itemBytes Serialized {@code PivotBarItem} proto.
+     * @return If the item is the icon only 'You' tab.
+     */
+    public static boolean isIconOnlyLibraryItem(@Nullable byte[] itemBytes) {
+        if (itemBytes == null) return false;
+
+        try {
+            PivotBarItemBytes item = PivotBarItemBytes.parseFrom(itemBytes);
+            if (!item.hasPivotBarIconOnlyItemRenderer()) return false;
+
+            PivotBarIconOnlyItemRendererBytes iconOnly =
+                    PivotBarIconOnlyItemRendererBytes.parseFrom(item.getPivotBarIconOnlyItemRenderer());
+            return LIBRARY_BROWSE_ID.equals(iconOnly.getPivotIdentifier());
+        } catch (Exception ex) {
+            Logger.printException(() -> "isIconOnlyLibraryItem failure", ex);
+            return false;
+        }
     }
 
     /**

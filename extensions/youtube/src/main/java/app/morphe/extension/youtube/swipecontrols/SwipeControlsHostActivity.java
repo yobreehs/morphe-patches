@@ -12,6 +12,7 @@ package app.morphe.extension.youtube.swipecontrols;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.Build;
@@ -141,6 +142,19 @@ public class SwipeControlsHostActivity extends Activity {
     @Override
     public android.content.Context getApplicationContext() {
         return hostActivity != null ? hostActivity.getApplicationContext() : super.getApplicationContext();
+    }
+
+    /**
+     * A real {@link android.content.Context} for framework objects.
+     * <p>
+     * In composition mode this instance is not attached to the framework, so its own
+     * {@code Context} has no base context and calls such as
+     * {@link android.view.ViewConfiguration#get(android.content.Context)} throw a
+     * {@code NullPointerException}. Gesture detectors and similar objects are created
+     * with this context instead.
+     */
+    public Context getHostContext() {
+        return hostActivity != null ? hostActivity : this;
     }
 
     /**
